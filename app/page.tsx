@@ -1,3 +1,4 @@
+'use client';
 import { Hero } from '@/components/homepage/hero';
 import { Struggles } from '@/components/homepage/struggles';
 import { WhyChooseUs } from '@/components/homepage/why-choose-us';
@@ -40,16 +41,22 @@ import {
   IconStar,
   IconSocial,
 } from '@tabler/icons-react';
-
 export default function Homepage() {
   return (
     <main>
       <Hero
-        headline="🚀 Not Just a Digital Marketing Agency - Your Growth Partner"
-        subheadline="At Digi Aerotech, we build predictable, scalable, and profitable marketing systems for service businesses, eCommerce brands, and local entrepreneurs. If you're tired of low leads, poor ROI, and unreliable agencies — you've just found your team."
+        headlineKeywords={["Growth", "Scale", "Freedom"]}
+        brandLine="Think Digi Aerotech"
+        subheadline="we solve real business problems through smart, performance - first digital marketing and tech solutions."
         ctaButtons={[
           { icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/" },
           { icon: <IconPhone size={30} />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        ]}
+        stats={[
+          { icon: <IconChartLine size={24} />, title: "100+ Clients", description: "Trusted by over 100 businesses" },
+          { icon: <IconWorld size={24} />, title: "Global Reach", description: "Serving clients across the globe" },
+          { icon: <IconReportAnalytics size={24} />, title: "Proven Results", description: "Delivering measurable ROI" },
+          { icon: <IconUsers size={24} />, title: "Dedicated Team", description: "In-house experts for your success" }
         ]}
       />
 
@@ -287,7 +294,7 @@ export default function Homepage() {
           {
             id: "2",
             message: "I have been working on couple of projects with Digi Aerotech and the experience has been amazing. Their immense talent in building websites to marketing is truly outstanding. I would definitely recommend them for one stop solution for all your website and marketing needs.",
-            highlight: "I have been working on couple of projects with Digi Aerotech and the experience has been amazing", 
+            highlight: "I have been working on couple of projects with Digi Aerotech and the experience has been amazing",
             stars: 4.5,
             name: "Sharath Tc",
             designation: "CTO",
@@ -353,7 +360,7 @@ export default function Homepage() {
           {
             id: "11",
             message: "Good service , they maintain good TAT.",
-            image:'/logo.svg',
+            image: '/logo.svg',
             stars: 5,
             name: "Mukaram",
             designation: "Owner",
@@ -383,7 +390,7 @@ export default function Homepage() {
             {
               icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/strategy-call"
             },
-            { icon: <Phone />,text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+            { icon: <Phone />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
           ]
         }}
         quickFormProps={{

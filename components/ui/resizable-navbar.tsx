@@ -448,15 +448,14 @@ export const NavbarLogo = ({ visible }: { visible?: boolean }) => {
   return (
     <Link
       href="/"
-      className="relative z-20 mr-auto h-12 w-30"
+      className={cn("relative z-20 mr-auto h-12 w-30", visible ? "scale-100" : "scale-120 sm:ml-3")}
     >
       <Image
         src="/logo.svg"
         alt="DIGI AEROTECH"
         fill
         className={cn(
-          "object-contain self-start transition-all duration-300 rounded-lg  bg-transparent px-3 py-2 invert dark:invert-0",
-          visible ? "scale-105 ml-4" : "scale-150 ml-10"
+          "object-contain self-start transition-all duration-300 rounded-lg  bg-transparent px-3 py-2 invert dark:invert-0"
         )}
       />
     </Link>
