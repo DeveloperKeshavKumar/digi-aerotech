@@ -138,6 +138,7 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -163,4 +164,57 @@ body {
 /* Ensure the navbar allows overflow */
 .navbar-container {
   overflow: visible !important;
+}
+
+@keyframes scroll-left-infinite {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes scroll-right-infinite {
+  0% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left-infinite {
+  animation-name: scroll-left-infinite;
+}
+
+.animate-scroll-right-infinite {
+  animation-name: scroll-right-infinite;
+}
+
+.animate-scroll-left-infinite:hover,
+.animate-scroll-right-infinite:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-up {
+  animation-name: scroll-up;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animate-scroll-up:hover {
+  animation-play-state: paused;
 }

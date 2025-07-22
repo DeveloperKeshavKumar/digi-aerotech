@@ -7,7 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-import { Flow_Rounded } from "next/font/google";
+import Image from "next/image";
 import { usePathname } from 'next/navigation';
 
 import React, { useRef, useState } from "react";
@@ -52,7 +52,7 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
-export const Navbar = ({ children, className }: NavbarProps) => {
+export const ResizableNavbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
     target: ref,
@@ -71,7 +71,6 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       ref={ref}
-      // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn("fixed inset-x-0 top-2 z-40 w-full", className)}
     >
       {React.Children.map(children, (child) =>
@@ -104,14 +103,11 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       style={{
         minWidth: "800px",
-        // Remove z-index from style if it's causing issues
         position: "relative",
       }}
       className={cn(
-        // Reduce z-index or remove it entirely from here
         "relative mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent border",
         visible && "bg-white/80 dark:bg-neutral-950/80 border",
-        // Add overflow visible to ensure dropdowns can escape
         "overflow-visible",
         className,
       )}
@@ -259,7 +255,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         width: visible ? "90%" : "100%",
         paddingRight: visible ? "12px" : "0px",
         paddingLeft: visible ? "12px" : "0px",
-        borderRadius: visible ? "4px" : "2rem",
+        borderRadius: visible ? "40px" : "24px",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -268,7 +264,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden rounded-full",
         visible && "bg-white/80 dark:bg-neutral-950/80",
         className,
       )}
@@ -285,7 +281,7 @@ export const MobileNavHeader = ({
   return (
     <div
       className={cn(
-        "flex w-full flex-row items-center justify-between",
+        "flex w-full flex-row items-center justify-between px-4",
         className,
       )}
     >
@@ -308,7 +304,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
+            "absolute inset-x-0 top-18 z-0 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-white px-6 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
             className,
           )}
         >
@@ -348,7 +344,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                   href={item.link}
                   onClick={onItemClick}
                   className={cn(
-                    "w-full rounded-md px-4 py-3 text-neutral-600 transition-colors dark:text-neutral-300 flex items-center justify-between",
+                    "w-full rounded-xl px-4 py-3 text-neutral-600 transition-colors dark:text-neutral-300 flex items-center justify-between",
                     isActive
                       ? "bg-gray-100 font-semibold text-black dark:bg-neutral-800 dark:text-white"
                       : "hover:bg-gray-50 dark:hover:bg-neutral-800/50"
@@ -359,7 +355,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                 <button
                   onClick={() => toggleExpanded(idx)}
                   className={cn(
-                    "w-full rounded-md px-4 py-2 text-neutral-600 transition-colors dark:text-neutral-300 flex items-center justify-center",
+                    "w-full rounded-xl px-4 py-2 text-neutral-600 transition-colors dark:text-neutral-300 flex items-center justify-center",
                     "hover:bg-gray-50 dark:hover:bg-neutral-800/50 -mt-1"
                   )}
                 >
@@ -388,7 +384,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                               href={dropdownItem.link}
                               onClick={onItemClick}
                               className={cn(
-                                "block w-full rounded-md px-4 py-2 text-sm text-neutral-600 dark:text-neutral-300 transition-colors",
+                                "block w-full rounded-lg px-4 py-2 text-sm text-neutral-600 dark:text-neutral-300 transition-colors",
                                 isDropdownActive
                                   ? "bg-gray-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
                                   : "hover:bg-gray-100 dark:hover:bg-neutral-800/50"
@@ -407,7 +403,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
               <a
                 onClick={onItemClick}
                 className={cn(
-                  "w-full rounded-md px-4 py-3 text-neutral-600 transition-colors dark:text-neutral-300 block",
+                  "w-full rounded-xl px-4 py-3 text-neutral-600 transition-colors dark:text-neutral-300 block",
                   isActive
                     ? "bg-gray-100 font-semibold text-black dark:bg-neutral-800 dark:text-white"
                     : "hover:bg-gray-50 dark:hover:bg-neutral-800/50"
@@ -431,24 +427,29 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
-  ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+  return (
+    <button className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">
+      {isOpen ? (
+        <IconX className="text-black dark:text-white h-5 w-5" onClick={onClick} />
+      ) : (
+        <IconMenu2 className="text-black dark:text-white h-5 w-5" onClick={onClick} />
+      )}
+    </button>
   );
 };
 
 export const NavbarLogo = ({ visible }: { visible?: boolean }) => {
   return (
     <a
-      href="#"
-      className="relative z-20 mr-auto"
+      href="/"
+      className="relative z-20 mr-auto h-12 w-30"
     >
-      <img
+      <Image
         src="/logo.svg"
         alt="DIGI AEROTECH"
+        fill
         className={cn(
-          "object-contain self-start transition-all duration-300 rounded-lg h-12 bg-transparent px-3 py-2 invert dark:invert-0",
+          "object-contain self-start transition-all duration-300 rounded-lg  bg-transparent px-3 py-2 invert dark:invert-0",
           visible ? "scale-105 ml-4" : "scale-150 ml-10"
         )}
       />
@@ -476,7 +477,7 @@ export const NavbarButton = ({
     | React.ComponentPropsWithoutRef<"button">
   )) => {
   const baseStyles =
-    "px-4 py-2  button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition  duration-800 ease-in-out inline-block text-center";
+    "px-4 py-2 button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-800 ease-in-out inline-block text-center";
 
   const variantStyles = {
     primary:

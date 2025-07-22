@@ -1,6 +1,6 @@
 "use client";
 import {
-    Navbar,
+    ResizableNavbar,
     NavBody,
     NavItems,
     MobileNav,
@@ -10,14 +10,14 @@ import {
     MobileNavToggle,
     MobileNavMenu,
     MobileNavItems,
-} from "@/components/ui/resizeable-navbar";
+} from "@/components/ui/resizable-navbar";
 import { IconSearch } from "@tabler/icons-react";
 import { useState, useRef } from "react";
 import { useScroll, useMotionValueEvent } from "motion/react";
-import { ModeToggle } from "./ui/toggle";
+import { ModeToggle } from "../ui/toggle";
 import { cn } from "@/lib/utils";
 
-export function NavbarDemo() {
+export function Navbar() {
     const navItems = [
         {
             name: "Home",
@@ -54,8 +54,6 @@ export function NavbarDemo() {
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    // Create our own visible state to pass to buttons
     const ref = useRef(null);
     const { scrollY } = useScroll();
     const [visible, setVisible] = useState(false);
@@ -70,7 +68,8 @@ export function NavbarDemo() {
 
     return (
         <div className="relative w-full" ref={ref}>
-            <Navbar>
+            <ResizableNavbar>
+                {/* Desktop Navigation */}
                 <NavBody>
                     <NavbarLogo visible={visible} />
                     <NavItems items={navItems} />
@@ -79,20 +78,22 @@ export function NavbarDemo() {
                         <NavbarButton
                             variant="secondary"
                             visible={visible}
-                            href="tel:+919625707191"
+                            href="tel:+918607119872"
                         >
-                            +91 9625707191
+                            +91 8607119872
                         </NavbarButton>
                         <NavbarButton
+                            href="/"
                             variant="primary"
                             visible={visible}
-                            className="bg-black text-white dark:bg-white dark:text-black"
+                            className="bg-black text-white dark:bg-white dark:text-black px-2"
                         >
                             <IconSearch />
                         </NavbarButton>
                     </div>
                 </NavBody>
 
+                {/* Mobile Navigation */}
                 <MobileNav>
                     <MobileNavHeader>
                         <NavbarLogo visible={visible} />
@@ -115,12 +116,13 @@ export function NavbarDemo() {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 variant="secondary"
                                 visible={visible}
-                                href="tel:+919625707191"
+                                href="tel:+918607119872"
                                 className="text-left"
                             >
-                                +91 9625707191
+                                +91 8607119872
                             </NavbarButton>
                             <NavbarButton
+                                href="/"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 variant="primary"
                                 visible={visible}
@@ -133,7 +135,7 @@ export function NavbarDemo() {
                         </div>
                     </MobileNavMenu>
                 </MobileNav>
-            </Navbar>
+            </ResizableNavbar>
         </div>
     );
 }
