@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'motion/react';
-import { inView } from 'motion';
+import { motion, inView } from 'motion/react';
 import {
   ArrowRight, User, Phone, ChevronDown,
   Globe, Clock, Briefcase, Calendar

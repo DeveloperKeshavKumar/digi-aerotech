@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import { motion } from 'motion/react';
-import { inView } from 'motion';
+import { motion, inView } from 'motion/react';
 import { IconMoodCry, IconMoodHappy } from '@tabler/icons-react';
 import { LucideArrowBigRightDash } from 'lucide-react';
 

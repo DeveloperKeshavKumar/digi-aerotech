@@ -201,7 +201,6 @@ export default function Homepage() {
             icon: <Monitor size={24} />,
             gridClass: "md:col-span-6 lg:col-span-4",
             description: "Custom websites that convert visitors into customers.",
-            highlight: true
           },
           {
             name: "Local SEO & Google Business",

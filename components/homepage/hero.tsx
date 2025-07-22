@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
-import { inView } from 'motion';
+import { motion, inView } from 'motion/react';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';

@@ -69,19 +69,25 @@ export const ResizableNavbar = ({ children, className }: NavbarProps) => {
     }
   });
 
+  const childrenWithProps = React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      const childProps = typeof child.props === 'object' && child.props !== null
+        ? child.props as Record<string, any>
+        : {};
+      return React.createElement(child.type, {
+        ...childProps,
+        visible,
+      });
+    }
+    return child;
+  });
+
   return (
     <motion.div
       ref={ref}
       className={cn("fixed inset-x-0 top-2 z-40 w-full", className)}
     >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-            child as React.ReactElement<{ visible?: boolean }>,
-            { visible },
-          )
-          : child,
-      )}
+      {childrenWithProps}
     </motion.div>
   );
 };

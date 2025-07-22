@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { inView } from 'motion';
+import { motion, inView } from 'motion/react';
 import { TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 

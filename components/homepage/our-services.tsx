@@ -2,9 +2,9 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { inView } from 'motion';
+import { inView } from 'motion'
 import { ArrowRight, Layout } from 'lucide-react';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 interface ServiceTag {
   icon: React.ReactNode;
@@ -118,7 +118,7 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
                   } : {}}
                   className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center bg-black/5 dark:bg-white/5"
                 >
-                  {React.cloneElement(service.icon as React.ReactElement)}
+                  {service.icon}
                 </motion.div>
 
                 <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
@@ -129,7 +129,7 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
                   {service.description}
                 </p>
 
-                <Link href={`services/${service.url || ''}`} className="mt-auto">
+                <a href={`services/${service.url || ''}`} className="mt-auto">
                   <motion.span
                     whileHover={{ x: 3 }}
                     className="inline-flex items-center gap-1 text-sm font-medium text-black dark:text-white"
@@ -137,7 +137,7 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
                     Learn more
                     <ArrowRight size={16} />
                   </motion.span>
-                </Link>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -161,14 +161,14 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
           }}
           className="text-center"
         >
-          <Link
+          <a
             href={cta.link}
             className="inline-flex items-center gap-4 justify-center px-5 py-3 text-base font-medium text-center rounded-lg bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white text-white dark:text-black"
           >
             <Layout size={20} />
             {cta.text}
             <ArrowRight size={18} />
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>
