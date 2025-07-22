@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { inView } from 'motion';
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 interface TrustPoint {
   icon: React.ReactNode;
@@ -74,13 +75,13 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
           transition={{ duration: 0.4, delay: 0.3 }}
           className="text-center"
         >
-          <a
+          <Link
             href={cta.link}
             className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center rounded-lg bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white text-white dark:text-black"
           >
             {cta.icon && <span className="mr-2">{cta.icon}</span>}
             {cta.text}
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

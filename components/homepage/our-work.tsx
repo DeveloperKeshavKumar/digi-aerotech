@@ -1,3 +1,4 @@
+import { Link } from 'lucide-react';
 import React from 'react';
 
 interface Example {
@@ -24,23 +25,23 @@ export const OurWork: React.FC<OurWorkProps> = ({ title, examples, cta }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {examples.map((example, index) => (
-            <a
+            <Link
               key={index}
               href={example.link}
               className="p-6 border-2 border-black dark:border-white rounded-lg hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors"
             >
               <h3 className="text-xl font-bold">{example.title}</h3>
-            </a>
+            </Link>
           ))}
         </div>
         
         <div className="text-center">
-          <a
+          <Link
             href={cta.link}
             className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium rounded-md text-lg"
           >
             {cta.text}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

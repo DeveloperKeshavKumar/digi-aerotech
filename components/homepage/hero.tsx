@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { inView } from 'motion';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 interface CTAButton {
   icon?: React.ReactNode;
@@ -67,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ headline, subheadline, ctaButtons })
             className="flex flex-col sm:flex-row justify-start gap-4"
           >
             {ctaButtons.map((button, index) => (
-              <a
+              <Link
                 key={index}
                 href={button.link}
                 className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center rounded-lg ${button.variant === 'secondary'
@@ -77,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ headline, subheadline, ctaButtons })
               >
                 {button.icon && <span className="mr-2">{button.icon}</span>}
                 {button.text}
-              </a>
+              </Link>
             ))}
           </motion.div>
         </motion.div>

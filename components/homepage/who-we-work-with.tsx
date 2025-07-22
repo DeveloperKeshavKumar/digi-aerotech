@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { inView } from 'motion';
 import { TrendingUp } from 'lucide-react';
+import Link from 'next/link';
 
 interface IndustryItem {
   name: string;
@@ -78,7 +79,7 @@ export const WhoWeWorkWith = ({
           }}
         >
           {duplicatedItems.map((item, index) => (
-            <a
+            <Link
               href={item.url}
               key={`${index}`}
               className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 flex items-center gap-3 hover:shadow-md transition-all duration-300 group flex-shrink-0"
@@ -93,7 +94,7 @@ export const WhoWeWorkWith = ({
               <span className="text-sm font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">
                 {item.name}
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

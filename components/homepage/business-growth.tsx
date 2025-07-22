@@ -4,10 +4,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { inView } from 'motion';
 import {
-  Check, ArrowRight, User, Phone, ChevronDown,
+  ArrowRight, User, Phone, ChevronDown,
   Globe, Clock, Briefcase, Calendar
 } from 'lucide-react';
-import { IconCheck, IconCircleCheck } from '@tabler/icons-react';
+import { IconCircleCheck } from '@tabler/icons-react';
+import Link from 'next/link';
 
 export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
   growBizProps: {
@@ -101,17 +102,17 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               {growBizProps.ctaButtons.map((button, index) => (
-                <a
+                <Link
                   key={index}
                   href={button.link}
                   className={`group inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 ${button.variant === 'secondary'
-                      ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
-                      : 'bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white text-white dark:text-black'
+                    ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
+                    : 'bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white text-white dark:text-black'
                     }`}
                 >
                   {button.icon && <span className="mr-2">{button.icon}</span>}
                   {button.text}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>

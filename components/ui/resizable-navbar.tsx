@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from 'next/navigation';
 
 import React, { useRef, useState } from "react";
@@ -150,7 +151,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         return (
           <div key={`nav-item-${idx}`} className="relative">
             {hasDropdown ? (
-              <a
+              <Link
                 href={item.link}
                 onMouseEnter={() => handleMouseEnter(idx)}
                 onClick={onItemClick}
@@ -179,9 +180,9 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
                     dropdownOpen === idx && "rotate-180"
                   )}
                 />
-              </a>
+              </Link>
             ) : (
-              <a
+              <Link
                 onMouseEnter={() => handleMouseEnter(idx)}
                 onClick={onItemClick}
                 className={cn(
@@ -204,7 +205,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
                   />
                 )}
                 <span className="relative z-20">{item.name}</span>
-              </a>
+              </Link>
             )}
 
             <AnimatePresence>
@@ -221,7 +222,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
                   {item.dropdown?.map((dropdownItem, dropdownIdx) => {
                     const isDropdownActive = pathname === dropdownItem.link;
                     return (
-                      <a
+                      <Link
                         key={`dropdown-${idx}-${dropdownIdx}`}
                         href={dropdownItem.link}
                         onClick={onItemClick}
@@ -231,7 +232,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
                         )}
                       >
                         {dropdownItem.name}
-                      </a>
+                      </Link>
                     );
                   })}
                 </motion.div>
@@ -294,7 +295,6 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
@@ -340,7 +340,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
           <div key={`mobile-nav-item-${idx}`} className="w-full">
             {hasDropdown ? (
               <>
-                <a
+                <Link
                   href={item.link}
                   onClick={onItemClick}
                   className={cn(
@@ -351,7 +351,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                   )}
                 >
                   <span>{item.name}</span>
-                </a>
+                </Link>
                 <button
                   onClick={() => toggleExpanded(idx)}
                   className={cn(
@@ -379,7 +379,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                         {item.dropdown?.map((dropdownItem, dropdownIdx) => {
                           const isDropdownActive = pathname === dropdownItem.link;
                           return (
-                            <a
+                            <Link
                               key={`mobile-dropdown-${idx}-${dropdownIdx}`}
                               href={dropdownItem.link}
                               onClick={onItemClick}
@@ -391,7 +391,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                               )}
                             >
                               {dropdownItem.name}
-                            </a>
+                            </Link>
                           );
                         })}
                       </div>
@@ -400,7 +400,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                 </AnimatePresence>
               </>
             ) : (
-              <a
+              <Link
                 onClick={onItemClick}
                 className={cn(
                   "w-full rounded-xl px-4 py-3 text-neutral-600 transition-colors dark:text-neutral-300 block",
@@ -411,7 +411,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                 href={item.link}
               >
                 {item.name}
-              </a>
+              </Link>
             )}
           </div>
         );
@@ -440,7 +440,7 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = ({ visible }: { visible?: boolean }) => {
   return (
-    <a
+    <Link
       href="/"
       className="relative z-20 mr-auto h-12 w-30"
     >
@@ -453,7 +453,7 @@ export const NavbarLogo = ({ visible }: { visible?: boolean }) => {
           visible ? "scale-105 ml-4" : "scale-150 ml-10"
         )}
       />
-    </a>
+    </Link>
   );
 };
 
