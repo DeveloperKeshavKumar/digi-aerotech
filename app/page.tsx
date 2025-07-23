@@ -26,7 +26,7 @@ import {
   Home,
   Briefcase,
   Store,
-  Phone, Apple, Chrome, Github, Slack, Twitter, Youtube, Zap, Figma, Dribbble
+  Phone,
 } from 'lucide-react';
 import {
   IconChartLine,

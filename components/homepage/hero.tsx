@@ -1,7 +1,6 @@
 'use client';
 
 import { motion, inView } from 'motion/react';
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
@@ -40,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    let animationFrame: number;
+
 
     const animate = () => {
       if (showing) {
@@ -61,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
       }
     };
 
-    animationFrame = requestAnimationFrame(animate);
+    const animationFrame: number = requestAnimationFrame(animate);
 
     return () => {
       cancelAnimationFrame(animationFrame);
@@ -201,7 +200,7 @@ const ContactForm = () => {
             Get Started Today
           </h3>
           <p className="text-gray-600 text-center dark:text-gray-400 text-sm">
-            Tell us about your project and we'll get back to you within 24 hours.
+            Tell us about your project and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
 
@@ -285,7 +284,7 @@ const ContactForm = () => {
               required
               className="flex h-10 w-full rounded-md border border-input bg-white/50 dark:bg-gray-800/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <option value="">What's your business type</option>
+              <option value="">What&apos;s your business type</option>
               <option value="startup">Startup</option>
               <option value="small-business">Small Business</option>
               <option value="enterprise">Enterprise</option>
@@ -318,7 +317,7 @@ const ContactForm = () => {
         </form>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
-          We respect your privacy. Your information is secure and won't be shared.
+          We respect your privacy. Your information is secure and won&apos;t be shared.
         </p>
       </div>
     </div>

@@ -72,7 +72,7 @@ export const ResizableNavbar = ({ children, className }: NavbarProps) => {
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       const childProps = typeof child.props === 'object' && child.props !== null
-        ? child.props as Record<string, any>
+        ? child.props as Record<string, unknown>
         : {};
       return React.createElement(child.type, {
         ...childProps,

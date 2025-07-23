@@ -10,7 +10,7 @@ interface Logo {
     name?: string;
     url?: string;
     icon?: React.ReactNode;
-    image?: string; // Added image property
+    image?: string;
 }
 
 interface CompaniesProps {
@@ -30,6 +30,7 @@ export const Companies = ({
 }: CompaniesProps) => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
+    const [randomizedRows, setRandomizedRows] = useState<Logo[][]>([]);
 
     useEffect(() => {
         if (sectionRef.current) {
@@ -37,9 +38,80 @@ export const Companies = ({
                 setVisible(true);
             }, { margin: '-50px' });
         }
-    }, []);
 
-    const industryRows = Array.from({ length: rows }).map((_, i) => logos);
+        // Create randomized rows with unique logos per row
+        const createRandomizedRows = () => {
+            if (logos.length === 0) return;
+            
+            const newRows: Logo[][] = [];
+            
+            // If we have fewer logos than rows, duplicate logos but distribute them differently
+            if (logos.length < rows) {
+                // Create a larger pool by duplicating logos
+                const expandedLogos = [];
+                const duplicationsNeeded = Math.ceil(rows / logos.length);
+                
+                for (let d = 0; d < duplicationsNeeded; d++) {
+                    expandedLogos.push(...logos);
+                }
+                
+                // Shuffle the expanded pool
+                const shuffledExpanded = [...expandedLogos].sort(() => 0.5 - Math.random());
+                
+                // Distribute to rows ensuring no duplicates within each row
+                for (let i = 0; i < rows; i++) {
+                    const rowLogos = [];
+                    const usedInThisRow = new Set();
+                    
+                    // Try to fill each row with unique logos
+                    for (const logo of shuffledExpanded) {
+                        const logoKey = logo.name || logo.image || JSON.stringify(logo.icon);
+                        if (!usedInThisRow.has(logoKey) && rowLogos.length < Math.ceil(logos.length * 0.8)) {
+                            rowLogos.push(logo);
+                            usedInThisRow.add(logoKey);
+                        }
+                    }
+                    
+                    // If we still need more logos for visual continuity, add from remaining pool
+                    if (rowLogos.length < 5) {
+                        const remaining = shuffledExpanded.filter(logo => {
+                            const logoKey = logo.name || logo.image || JSON.stringify(logo.icon);
+                            return !usedInThisRow.has(logoKey);
+                        });
+                        
+                        rowLogos.push(...remaining.slice(0, 5 - rowLogos.length));
+                    }
+                    
+                    newRows.push(rowLogos);
+                }
+            } else {
+                // We have enough logos to create unique sets for each row
+                const shuffledLogos = [...logos].sort(() => 0.5 - Math.random());
+                const logosPerRow = Math.floor(logos.length / rows);
+                const remainingLogos = logos.length % rows;
+                
+                let startIndex = 0;
+                
+                for (let i = 0; i < rows; i++) {
+                    // Calculate how many logos this row should get
+                    const currentRowSize = logosPerRow + (i < remainingLogos ? 1 : 0);
+                    
+                    // Get logos for this row
+                    const rowLogos = shuffledLogos.slice(startIndex, startIndex + currentRowSize);
+                    
+                    // Shuffle the row logos again for extra randomness
+                    const shuffledRowLogos = [...rowLogos].sort(() => 0.5 - Math.random());
+                    
+                    newRows.push(shuffledRowLogos);
+                    startIndex += currentRowSize;
+                }
+            }
+            
+            setRandomizedRows(newRows);
+        };
+
+        createRandomizedRows();
+    }, [logos, rows]);
 
     const speedClasses = {
         slow: '60s',
@@ -56,28 +128,25 @@ export const Companies = ({
         direction: 'left' | 'right';
         delay: number;
     }) => {
-        const getRowItems = (colIndex: number) => {
-            const startPos = Math.floor(items.length * (colIndex / rows));
-            const baseItems = [...items.slice(startPos), ...items.slice(0, startPos)];
-
-            // Calculate how many duplications we need to fill screen width
-            // Using average item width of ~120px (min-width + padding + gap)
-            const itemWidth = 120; // Estimated average width including padding and gaps
+        const getRowItems = (rowItems: Logo[]) => {
+            // Create multiple shuffled versions of the same row items for seamless scrolling
+            const itemWidth = 120;
             const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1920;
             const itemsNeeded = Math.ceil((screenWidth * 2) / itemWidth);
-            const duplications = Math.ceil(itemsNeeded / baseItems.length);
+            const duplications = Math.ceil(itemsNeeded / rowItems.length);
 
-            // Create enough duplicated items to fill the screen
             const fullItems = [];
             for (let i = 0; i < duplications; i++) {
-                fullItems.push(...baseItems);
+                // Shuffle the same set of logos differently each time for visual variety
+                const shuffledItems = [...rowItems].sort(() => 0.5 - Math.random());
+                fullItems.push(...shuffledItems);
             }
 
             return fullItems;
         };
-        const rowItems = getRowItems(delay);
 
-        // Render icon or image appropriately with flexible sizing
+        const rowItems = getRowItems(items);
+
         const renderLogoContent = (item: Logo) => {
             if (item.image) {
                 return (
@@ -102,7 +171,6 @@ export const Companies = ({
 
         return (
             <div className="overflow-hidden py-4 whitespace-nowrap relative w-full">
-                {/* Enhanced blur gradients for full width */}
                 <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
                 <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
 
@@ -117,13 +185,13 @@ export const Companies = ({
                         animationTimingFunction: 'linear',
                         animationIterationCount: 'infinite',
                         width: 'max-content',
-                        minWidth: '200%', 
+                        minWidth: '200%',
                     }}
                 >
                     {rowItems.map((item, index) => (
                         <Link
                             href={item.url || '#'}
-                            key={index}
+                            key={`${item.name || 'logo'}-${index}-${delay}`}
                             title={item.name || 'company logo'}
                             className="flex-shrink-0 flex items-center justify-center min-w-[80px] min-h-[60px] px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-sm"
                         >
@@ -140,7 +208,6 @@ export const Companies = ({
             ref={sectionRef}
             className="py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-50 w-full"
         >
-            {/* Full width container without px-4 constraint */}
             <div className="w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -162,7 +229,7 @@ export const Companies = ({
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="w-full"
                 >
-                    {industryRows.map((row, i) => (
+                    {randomizedRows.map((row, i) => (
                         <TopicRow
                             key={i}
                             items={row}
