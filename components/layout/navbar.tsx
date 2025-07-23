@@ -87,6 +87,8 @@ export function Navbar() {
                             variant="primary"
                             visible={visible}
                             className="bg-black text-white dark:bg-white dark:text-black px-2"
+                            aria-label="Search"
+                            title="Search"
                         >
                             <IconSearch />
                         </NavbarButton>
@@ -127,6 +129,7 @@ export function Navbar() {
                                 variant="primary"
                                 visible={visible}
                                 className="w-full"
+                                aria-label="Search"
                             >
                                 <div className="flex items-center justify-center gap-x-2.5">
                                     <IconSearch /> Search Now

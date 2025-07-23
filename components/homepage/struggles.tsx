@@ -29,23 +29,27 @@ export const Struggles: React.FC<StrugglesProps> = ({
 
   useEffect(() => {
     if (sectionRef.current) {
-      inView(sectionRef.current, () => {
-        setVisible(true);
-      }, { margin: '-50px' });
+      inView(
+        sectionRef.current,
+        () => {
+          setVisible(true);
+        },
+        { margin: '-50px' }
+      );
     }
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="py-12 px-4 bg-white dark:bg-black border-b border-border dark:border-white"
+      className="py-12 px-4 bg-white dark:bg-black border-b border-gray-300 dark:border-gray-700"
     >
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={visible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-2xl text-center md:text-3xl font-light mb-4 text-black dark:text-white"
+          className="text-2xl text-center md:text-3xl font-light mb-4 text-gray-900 dark:text-white"
         >
           {title}
         </motion.h2>
@@ -54,21 +58,23 @@ export const Struggles: React.FC<StrugglesProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={visible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-md text-center mb-8 text-black dark:text-white"
+          className="text-md text-center mb-8 text-gray-800 dark:text-gray-200"
         >
           {subheadline}
         </motion.p>
 
         <ul className="space-y-4 md:space-y-0 mb-10">
-          <li className="hidden md:grid md:grid-cols-2 md:gap-8 border-b border-gray-200 dark:border-gray-800 pb-4 md:pb-0 md:border-0 last:border-0">
+          <li className="hidden md:grid md:grid-cols-2 md:gap-8 border-b border-gray-300 dark:border-gray-700 pb-4 md:pb-0 md:border-0 last:border-0">
             <div className="flex items-start mb-7 md:mb-4">
-              <span className="flex items-center text-xl text-black dark:text-white underline underline-offset-5">
-                <LucideArrowBigRightDash /> If your business is struggling from this.
+              <span className="flex items-center text-xl text-gray-900 dark:text-white underline underline-offset-4">
+                <LucideArrowBigRightDash className="mr-2" />
+                Your business is struggling from this.
               </span>
             </div>
             <div className="flex items-start">
-              <span className="flex items-center text-xl text-black dark:text-white underline underline-offset-5">
-                <LucideArrowBigRightDash /> Digi Aerotech can do this!
+              <span className="flex items-center text-xl text-gray-900 dark:text-white underline underline-offset-4">
+                <LucideArrowBigRightDash className="mr-2" />
+                Digi Aerotech can do this!
               </span>
             </div>
           </li>
@@ -79,19 +85,21 @@ export const Struggles: React.FC<StrugglesProps> = ({
               initial={{ opacity: 0, y: 30 }}
               animate={visible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-              className="md:grid md:grid-cols-2 md:gap-8 border-b border-gray-200 dark:border-gray-800 pb-4 md:pb-0 md:border-0 last:border-0"
+              className="md:grid md:grid-cols-2 md:gap-8 border-b border-gray-300 dark:border-gray-700 pb-4 md:pb-0 md:border-0 last:border-0"
             >
               <div className="flex items-start mb-7 md:mb-4">
-                <span className="text-2xl mr-2 text-red-400 dark:text-red-300">
+                <span className="text-2xl mr-2 text-red-600 dark:text-red-400">
                   <IconMoodCry />
                 </span>
-                <span className="text-lg text-black dark:text-white">{painPoint}</span>
+                <span className="text-lg text-gray-900 dark:text-gray-100">
+                  {painPoint}
+                </span>
               </div>
               <div className="flex items-start">
-                <span className="text-2xl mr-2 text-green-400 dark:text-green-300">
+                <span className="text-2xl mr-2 text-green-600 dark:text-green-400">
                   <IconMoodHappy />
                 </span>
-                <span className="text-lg text-black dark:text-white">
+                <span className="text-lg text-gray-900 dark:text-gray-100">
                   {solutionPoints[index]}
                 </span>
               </div>
@@ -104,7 +112,7 @@ export const Struggles: React.FC<StrugglesProps> = ({
           initial={{ opacity: 0, scale: 0.95 }}
           animate={visible ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center rounded-lg bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white text-white dark:text-black"
+          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium rounded-lg bg-gray-900 text-white hover:bg-gray-100 hover:text-black dark:bg-white dark:text-black dark:hover:bg-gray-800 dark:hover:text-white border border-transparent"
         >
           <div className="flex items-center gap-3">
             <span>{cta.icon}</span>

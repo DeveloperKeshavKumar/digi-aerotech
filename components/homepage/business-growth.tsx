@@ -72,7 +72,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
   return (
     <section ref={sectionRef} className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-36 items-center">
 
           {/* Left Column */}
           <motion.div
@@ -99,7 +99,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col justify-center lg:justify-start sm:flex-row gap-4 pt-4">
               {growBizProps.ctaButtons.map((button, index) => (
                 <Link
                   key={index}
@@ -121,9 +121,9 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
             initial={{ opacity: 0, x: 40 }}
             animate={visible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-1"
+            className="lg:col-span-1 lg:mx-auto"
           >
-            <div className="sticky top-8">
+            <div className="sticky top-8 md:p-16 xl:ml-16 lg:p-0 lg:mr-8">
               <div className="bg-white dark:bg-black rounded-2xl border-2 border-gray-300 dark:border-gray-700 overflow-hidden">
                 <div className="bg-black p-6 text-center border-b border-gray-300 dark:border-gray-700">
                   <h3 className="text-2xl font-bold text-white mb-2">{quickFormProps.headline}</h3>
@@ -134,16 +134,18 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                   <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {quickFormProps.fields.slice(0, 2).map((field) => (
                       <div key={field.name}>
-                        <label className="block text-sm font-medium mb-2 text-black dark:text-white">
+                        <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
                           {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
                         </label>
                         <div className="relative">
                           {getFieldIcon(field.name)}
                           <input
+                            id={field.name}
                             type={field.type}
                             name={field.name}
                             required={field.required}
                             onChange={handleChange}
+                            autoComplete={"true"}
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 placeholder-gray-500 dark:placeholder-gray-400"
                             placeholder={`Enter your ${field.label.toLowerCase()}`}
                           />
@@ -155,12 +157,13 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                   {/* Website Field */}
                   {quickFormProps.fields.slice(2, 3).map((field) => (
                     <div key={field.name}>
-                      <label className="block text-sm font-medium mb-2 text-black dark:text-white">
+                      <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
                         {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
                       </label>
                       <div className="relative">
                         {getFieldIcon(field.name)}
                         <input
+                          id={field.name}
                           type={field.type}
                           name={field.name}
                           required={field.required}
@@ -179,11 +182,12 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                       initial={{ opacity: 0, y: 20 }}
                       animate={visible ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.5, delay: index * 0.1 }}>
-                      <label className="block text-sm font-medium mb-2 text-black dark:text-white">
+                      <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
                         {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
                       </label>
                       <div className="relative">
                         <select
+                          id={field.name}
                           name={field.name}
                           required={field.required}
                           onChange={handleChange}
@@ -203,16 +207,18 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {quickFormProps.fields.slice(4, 6).map((field) => (
                       <div key={field.name}>
-                        <label className="block text-sm font-medium mb-2 text-black dark:text-white">
+                        <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
                           {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
                         </label>
                         <div className="relative">
                           {getFieldIcon(field.name)}
                           <input
+                            id={field.name}
                             type={field.type}
                             name={field.name}
                             required={field.required}
                             onChange={handleChange}
+                            autoComplete={field.name === 'phone' ? 'true' : 'false'}
                             placeholder={field.name === 'phone' ? '+918607119872' : 'Morning, Evening, etc.'}
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
                           />
@@ -224,7 +230,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full px-6 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg text-base hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-600 flex items-center justify-center group border-2 border-black dark:border-white"
+                    className="w-full px-6 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg text-base hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-600 flex items-center justify-center group border-2 border-black dark:border-white"
                   >
                     <Calendar className="mr-2 h-5 w-5" />
                     <span>{quickFormProps.cta.text}</span>

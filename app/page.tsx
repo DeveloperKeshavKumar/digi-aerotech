@@ -40,6 +40,9 @@ import {
   IconFlame,
   IconStar,
   IconSocial,
+  IconStarsFilled,
+  IconUsersGroup,
+  IconSchool,
 } from '@tabler/icons-react';
 export default function Homepage() {
   return (
@@ -47,16 +50,32 @@ export default function Homepage() {
       <Hero
         headlineKeywords={["Growth", "Scale", "Freedom"]}
         brandLine="Think Digi Aerotech"
-        subheadline="we solve real business problems through smart, performance - first digital marketing and tech solutions."
+        subheadline="We solve real business problems through smart, performance - first digital marketing and tech solutions."
         ctaButtons={[
           { icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/" },
           { icon: <IconPhone size={30} />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
         ]}
         stats={[
-          { icon: <IconChartLine size={24} />, title: "100+ Clients", description: "Trusted by over 100 businesses" },
-          { icon: <IconWorld size={24} />, title: "Global Reach", description: "Serving clients across the globe" },
-          { icon: <IconReportAnalytics size={24} />, title: "Proven Results", description: "Delivering measurable ROI" },
-          { icon: <IconUsers size={24} />, title: "Dedicated Team", description: "In-house experts for your success" }
+          {
+            icon: <IconUsersGroup size={34}  className='fill-gray-600'/>,
+            title: "140+ Clients",
+            description: "Trusted by over 140 businesses"
+          },
+          {
+            icon: <IconReportAnalytics size={34} />,
+            title: "50 Lac+",
+            description: "More than 50 lac leads generated"
+          },
+          {
+            icon: <IconSchool size={34}  />,
+            title: "10+ Years",
+            description: "Proven track record since 2013"
+          },
+          {
+            icon: <IconStarsFilled size={34} />,
+            title: "4.9 Stars",
+            description: "Average rating from happy clients"
+          }
         ]}
       />
 
@@ -191,7 +210,7 @@ export default function Homepage() {
               text: "Most Wanted",
               styles: "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200"
             },
-            url: "meta-ads"
+            url: "/meta-ads"
           },
           {
             name: "Google Ads (Search + Call)",
@@ -415,7 +434,7 @@ export default function Homepage() {
             { name: "phone", label: "Phone Number / WhatsApp", type: "tel", required: true },
             { name: "time", label: "Preferred Time to Contact You", type: "datetime-local" }
           ],
-          cta: { text: "Submit & Book Free Strategy Call", action: "/submit-lead" }
+          cta: { text: "Book Free Strategy Call", action: "/submit-lead" }
         }}
       />
     </main>

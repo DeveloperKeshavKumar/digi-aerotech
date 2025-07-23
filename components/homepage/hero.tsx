@@ -128,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
             initial={{ opacity: 0, x: -30 }}
             animate={visible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="max-w-xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300"
+            className="max-w-xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg md:text-center lg:text-left lg:text-xl dark:text-gray-300"
           >
             {subheadline}
           </motion.p>
@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
             initial={{ opacity: 0 }}
             animate={visible ? { opacity: 1 } : {}}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex flex-col sm:flex-row justify-start gap-4 mb-8"
+            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 md:mb-8"
           >
             {ctaButtons.map((button, index) => (
               <Link
@@ -194,8 +194,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="hidden md:block w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
-      <div className="bg-white/80 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-xl">
+    <div className="hidden md:block w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10">
+      <div className="bg-white/80 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-xl dark:shadow-gray-600/50">
         <div className="mb-4">
           <h3 className="text-2xl text-center font-semibold text-gray-900 dark:text-white mb-2">
             Get Started Today
@@ -216,6 +216,7 @@ const ContactForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                autoComplete={"true"}
                 placeholder="Enter your full name"
                 className="bg-white/50 dark:bg-gray-800/50"
               />
@@ -230,6 +231,7 @@ const ContactForm = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
+                autoComplete={"true"}
                 placeholder="+1 (555) 123-4567"
                 className="bg-white/50 dark:bg-gray-800/50"
               />
@@ -246,6 +248,7 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                autoComplete={"true"}
                 placeholder="your@email.com"
                 className="bg-white/50 dark:bg-gray-800/50"
               />
@@ -325,8 +328,8 @@ const ContactForm = () => {
 const StatsSection: React.FC<{ stats: StatsProps[] }> = ({ stats }) => {
   if (!stats || stats.length === 0) return null;
   return (
-    <div className="w-full col-span-12 mt-8 lg:mt-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+    <div className="w-full col-span-12 md:mt-8 lg:mt-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
         {stats?.map((stat, index) => (
           <motion.div
             key={index}
@@ -334,7 +337,7 @@ const StatsSection: React.FC<{ stats: StatsProps[] }> = ({ stats }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="flex items-start gap-3 p-4 sm:p-3 rounded-lg bg-gray-50/50 dark:bg-gray-900/30 backdrop-blur-sm border border-gray-200/40 dark:border-gray-800/40"
+            className="flex flex-col sm:flex-row items-start gap-3 p-4 sm:p-3 rounded-lg bg-gray-50/50 dark:bg-gray-900/30 backdrop-blur-sm border border-gray-200/40 dark:border-gray-800/40 shadow-lg hover:shadow-lg transition-shadow duration-300 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900/90 dark:shadow-gray-700/50 hover:scale-[1.02] transform"
           >
             {stat.icon && (
               <div className="flex-shrink-0 mt-0.5 text-gray-600 dark:text-gray-400">

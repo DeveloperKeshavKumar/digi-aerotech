@@ -129,7 +129,7 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
                   {service.description}
                 </p>
 
-                <a href={`services/${service.url || ''}`} className="mt-auto">
+                <a href={`services${service.url || ''}`} className="mt-auto">
                   <motion.span
                     whileHover={{ x: 3 }}
                     className="inline-flex items-center gap-1 text-sm font-medium text-black dark:text-white"
