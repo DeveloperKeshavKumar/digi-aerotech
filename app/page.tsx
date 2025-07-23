@@ -26,7 +26,7 @@ import {
   Home,
   Briefcase,
   Store,
-  Phone
+  Phone, Apple, Chrome, Github, Slack, Twitter, Youtube, Zap, Figma, Dribbble
 } from 'lucide-react';
 import {
   IconChartLine,
@@ -44,6 +44,7 @@ import {
   IconUsersGroup,
   IconSchool,
 } from '@tabler/icons-react';
+import { Companies } from '@/components/homepage/comapnies';
 export default function Homepage() {
   return (
     <main>
@@ -57,7 +58,7 @@ export default function Homepage() {
         ]}
         stats={[
           {
-            icon: <IconUsersGroup size={34}  className='fill-gray-600'/>,
+            icon: <IconUsersGroup size={34} className='fill-gray-600 dark:fill-gray-400' />,
             title: "140+ Clients",
             description: "Trusted by over 140 businesses"
           },
@@ -67,7 +68,7 @@ export default function Homepage() {
             description: "More than 50 lac leads generated"
           },
           {
-            icon: <IconSchool size={34}  />,
+            icon: <IconSchool size={34} />,
             title: "10+ Years",
             description: "Proven track record since 2013"
           },
@@ -78,6 +79,84 @@ export default function Homepage() {
           }
         ]}
       />
+
+      <Companies logos={[
+        {
+          image: '/logos/1.png',
+        },
+        {
+          image: '/logos/2.png',
+        },
+        {
+          image: '/logos/3.png',
+        },
+        {
+          image: '/logos/4.png',
+        },
+        {
+          image: '/logos/5.png',
+        },
+        {
+          image: '/logos/6.png',
+        },
+        {
+          image: '/logos/7.png',
+        },
+        {
+          image: '/logos/8.png',
+        },
+        {
+          image: '/logos/9.png',
+        },
+        {
+          image: '/logos/10.png',
+        },
+        {
+          image: '/logos/11.png',
+        },
+        {
+          image: '/logos/12.png',
+        },
+        {
+          image: '/logos/13.png',
+        },
+        {
+          image: '/logos/14.png',
+        },
+        {
+          image: '/logos/15.png',
+        },
+        {
+          image: '/logos/16.png',
+        },
+        {
+          image: '/logos/17.png',
+        },
+        {
+          image: '/logos/18.png',
+        },
+        {
+          image: '/logos/19.png',
+        },
+        {
+          image: '/logos/20.png',
+        },
+        {
+          image: '/logos/21.png',
+        },
+        {
+          image: '/logos/22.png',
+        },
+        {
+          image: '/logos/23.png',
+        },
+        {
+          image: '/logos/24.png',
+        },
+        {
+          image: '/logos/25.png',
+        },
+      ]} rows={2} speed="fast" />
 
       <WhyChooseUs
         title="Why Top Brands & Local Businesses Trust Digi Aerotech"
