@@ -103,7 +103,7 @@ export const WhoWeWorkWith = ({
   return (
     <section
       ref={sectionRef}
-      className="py-16 px-4 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-50"
+      className="py-16 px-4 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700"
     >
       <div className="container mx-auto">
         <motion.div

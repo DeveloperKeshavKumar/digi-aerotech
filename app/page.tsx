@@ -158,6 +158,28 @@ export default function Homepage() {
         },
       ]} rows={2} speed="fast" />
 
+      <Struggles
+        title="We're Not Just a Marketing Team - We're the Fix for What's Broken"
+        subheadline="Most agencies sell you dreams. We solve real-world problems - the kind that cost you leads, sales, and growth."
+        painPoints={[
+          "No leads or poor-quality inquiries",
+          "Non-converting website",
+          "Poor local visibility on Google",
+          "Dead social media pages",
+          "Burnt by unreliable freelancers",
+          "Wearing too many hats as a founder"
+        ]}
+        solutionPoints={[
+          "High-quality leads through targeted ad campaigns",
+          "Conversion-optimized websites with clear CTAs",
+          "Dominant local SEO & Google Maps ranking",
+          "Engaging social content that builds community",
+          "Reliable, results-driven team with proven track record",
+          "End-to-end marketing handled by experts"
+        ]}
+        cta={{ icon: <ArrowRight />, text: " Let's Solve This Together", link: "/contact" }}
+      />
+
       <WhyChooseUs
         title="Why Top Brands & Local Businesses Trust Digi Aerotech"
         trustPoints={[
@@ -197,82 +219,6 @@ export default function Homepage() {
           link: "/strategy-session",
           icon: <IconChartLine size={20} />
         }}
-      />
-
-      <Struggles
-        title="We're Not Just a Marketing Team - We're the Fix for What's Broken"
-        subheadline="Most agencies sell you dreams. We solve real-world problems - the kind that cost you leads, sales, and growth."
-        painPoints={[
-          "No leads or poor-quality inquiries",
-          "Non-converting website",
-          "Poor local visibility on Google",
-          "Dead social media pages",
-          "Burnt by unreliable freelancers",
-          "Wearing too many hats as a founder"
-        ]}
-        solutionPoints={[
-          "High-quality leads through targeted ad campaigns",
-          "Conversion-optimized websites with clear CTAs",
-          "Dominant local SEO & Google Maps ranking",
-          "Engaging social content that builds community",
-          "Reliable, results-driven team with proven track record",
-          "End-to-end marketing handled by experts"
-        ]}
-        cta={{ icon: <ArrowRight />, text: " Let's Solve This Together", link: "/contact" }}
-      />
-
-      <WhoWeWorkWith
-        title="Who we work with ?"
-        description="We work with businesses across these industries"
-        speed='fast'
-        rows={3}
-        industries={[
-          {
-            name: "Restaurants & Cafes",
-            url: "/restaurants",
-            icon: <Utensils className="w-5 h-5" />
-          },
-          {
-            name: "Hotels & Resorts",
-            url: "/hotels",
-            icon: <Hotel className="w-5 h-5" />
-          },
-          {
-            name: "Doctors & Clinics",
-            url: "/clinics",
-            icon: <Stethoscope className="w-5 h-5" />
-          },
-          {
-            name: "Gyms & Fitness",
-            url: "/gyms",
-            icon: <Dumbbell className="w-5 h-5" />
-          },
-          {
-            name: "Fashion Brands",
-            url: "/brands",
-            icon: <Shirt className="w-5 h-5" />
-          },
-          {
-            name: "Real Estate",
-            url: "/real-estate",
-            icon: <Home className="w-5 h-5" />
-          },
-          {
-            name: "Consultants",
-            url: "/consultants",
-            icon: <Briefcase className="w-5 h-5" />
-          },
-          {
-            name: "Local Shops",
-            url: "/locals",
-            icon: <Store className="w-5 h-5" />
-          },
-          {
-            name: "eCommerce",
-            url: "/ecommerce",
-            icon: <ShoppingCart className="w-5 h-5" />
-          },
-        ]}
       />
 
       <OurServices
@@ -354,6 +300,60 @@ export default function Homepage() {
           }
         ]}
         cta={{ text: "View All Services", link: "/services" }}
+      />
+
+      <WhoWeWorkWith
+        title="Who we work with ?"
+        description="We work with businesses across these industries"
+        speed='fast'
+        rows={3}
+        industries={[
+          {
+            name: "Restaurants & Cafes",
+            url: "/restaurants",
+            icon: <Utensils className="w-5 h-5" />
+          },
+          {
+            name: "Hotels & Resorts",
+            url: "/hotels",
+            icon: <Hotel className="w-5 h-5" />
+          },
+          {
+            name: "Doctors & Clinics",
+            url: "/clinics",
+            icon: <Stethoscope className="w-5 h-5" />
+          },
+          {
+            name: "Gyms & Fitness",
+            url: "/gyms",
+            icon: <Dumbbell className="w-5 h-5" />
+          },
+          {
+            name: "Fashion Brands",
+            url: "/brands",
+            icon: <Shirt className="w-5 h-5" />
+          },
+          {
+            name: "Real Estate",
+            url: "/real-estate",
+            icon: <Home className="w-5 h-5" />
+          },
+          {
+            name: "Consultants",
+            url: "/consultants",
+            icon: <Briefcase className="w-5 h-5" />
+          },
+          {
+            name: "Local Shops",
+            url: "/locals",
+            icon: <Store className="w-5 h-5" />
+          },
+          {
+            name: "eCommerce",
+            url: "/ecommerce",
+            icon: <ShoppingCart className="w-5 h-5" />
+          },
+        ]}
       />
 
       <OurWork

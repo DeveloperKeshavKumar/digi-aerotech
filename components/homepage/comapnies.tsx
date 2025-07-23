@@ -206,7 +206,7 @@ export const Companies = ({
     return (
         <section
             ref={sectionRef}
-            className="py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-50 w-full"
+            className="py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700 w-full"
         >
             <div className="w-full">
                 <motion.div

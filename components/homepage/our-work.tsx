@@ -17,7 +17,7 @@ interface OurWorkProps {
 
 export const OurWork: React.FC<OurWorkProps> = ({ title, examples, cta }) => {
   return (
-    <section className="py-12 px-4 bg-white dark:bg-black border-b border-black dark:border-white">
+    <section className="py-12 px-4 bg-white dark:bg-black border-b border-black dark:border-gray-700">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-black dark:text-white">
           {title}

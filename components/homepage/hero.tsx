@@ -310,7 +310,7 @@ const ContactForm = () => {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-neutral-600 to-gray-600 hover:from-neutral-700 hover:to-gray-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 shadow-lg mt-4"
+            className="w-full bg-gradient-to-r from-orange-600 via-pink-600 to-red-500 text-lg text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 shadow-lg mt-4"
           >
             Send Inquiry
           </button>

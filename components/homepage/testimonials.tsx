@@ -84,7 +84,7 @@ export const Testimonials = ({
   };
 
   return (
-    <section className="py-16 px-4 bg-white dark:bg-black overflow-hidden border-b border-border dark:border-white">
+    <section className="py-16 px-4 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700">
       <div className="container mx-auto">
         <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-white mb-4 leading-tight">
@@ -119,7 +119,7 @@ export const Testimonials = ({
                   {columnTestimonials.map((testimonial, index) => (
                     <div
                       key={`${colIndex}-${index}`}
-                      className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-6 mb-6 hover:shadow-md transition-all duration-300"
+                      className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-6 mb-6 hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex flex-col sm:flex-row items-start gap-4 mb-4">
                         {testimonial.image ? (

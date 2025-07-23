@@ -45,7 +45,7 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 px-4 bg-white dark:bg-black border-b border-border dark:border-white">
+    <section ref={sectionRef} className="py-16 px-4 bg-white dark:bg-black border-b border-border dark:border-gray-700">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="relative w-full border-t border-border dark:border-gray-900 overflow-hidden font-nunito">
+        <footer className="relative w-full bg-gray-100 dark:bg-gray-950 border-t border-border dark:border-gray-700 overflow-hidden font-nunito">
             <div className="absolute inset-0 opacity-30 pointer-events-none">
                 <motion.div
                     className="absolute top-4 left-4 sm:top-10 sm:left-10 text-primary"
