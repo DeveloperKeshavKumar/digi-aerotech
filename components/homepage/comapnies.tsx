@@ -171,8 +171,8 @@ export const Companies = ({
 
         return (
             <div className="overflow-hidden py-4 whitespace-nowrap relative w-full">
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
+                <div className="hidden sm:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
+                <div className="hidden sm:block absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
 
                 <div
                     className={`inline-flex items-center gap-6 ${direction === 'left'

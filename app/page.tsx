@@ -49,8 +49,8 @@ export default function Homepage() {
   return (
     <main>
       <Hero
-        headlineKeywords={["Growth", "Scale", "Freedom"]}
-        brandLine="Think Digi Aerotech"
+        headlineKeywords={["Leads", "Sales", "Reach", "Growth", "Visibility", "Revenue", "Success"  ]}
+        brandLine="Call Digi Aerotech"
         subheadline="We solve real business problems through smart, performance - first digital marketing and tech solutions."
         ctaButtons={[
           { icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/" },
@@ -65,17 +65,17 @@ export default function Homepage() {
           {
             icon: <IconReportAnalytics size={34} />,
             title: "50 Lac+",
-            description: "More than 50 lac leads generated"
+            description: "leads generated"
           },
           {
             icon: <IconSchool size={34} />,
             title: "10+ Years",
-            description: "Proven track record since 2013"
+            description: "of experience in market"
           },
           {
             icon: <IconStarsFilled size={34} />,
             title: "4.9 Stars",
-            description: "Average rating from happy clients"
+            description: "Avg. rating from happy clients"
           }
         ]}
       />

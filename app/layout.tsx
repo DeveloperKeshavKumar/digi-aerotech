@@ -9,6 +9,13 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 0.9,
+  maximumScale: 0.9,
+  userScalable: false,
+}
+
 export const metadata: Metadata = {
   title: "Digi Aerotech",
   description: "At Digi Aerotech, we build predictable, scalable, and profitable marketing systems for service businesses, eCommerce brands, and local entrepreneurs. If you're tired of low leads, poor ROI, and unreliable agencies — you've just found your team.",
@@ -26,9 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no" />
-      </head>
       <body
         className={`${inter.variable} flex min-h-screen flex-col antialiased`}
       >

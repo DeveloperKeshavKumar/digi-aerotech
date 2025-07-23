@@ -69,9 +69,13 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
   }, [letterIndex, showing, currentWord, headlineKeywords]);
 
   const gradientMap: Record<string, string> = {
+    Leads: "from-green-400 via-blue-500 to-purple-500",
+    Sales: "from-orange-400 via-pink-500 to-red-500",
+    Reach: "from-yellow-300 via-rose-400 to-fuchsia-500",
     Growth: "from-green-400 via-blue-500 to-purple-500",
-    Scale: "from-orange-400 via-pink-500 to-red-500",
-    Freedom: "from-yellow-300 via-rose-400 to-fuchsia-500",
+    Visibility: "from-orange-400 via-pink-500 to-red-500",
+    Revenue: "from-yellow-300 via-rose-400 to-fuchsia-500",
+    Success: "from-green-400 via-blue-500 to-purple-500",
   };
 
   useEffect(() => {
@@ -101,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
             className="mb-4 text-4xl sm:text-center lg:text-left font-semibold tracking-tight leading-tight md:text-5xl xl:text-6xl dark:text-white"
           >
             <span className="block">
-              Think{" "}
+              Need{" "}
               <span className={`inline-flex bg-clip-text text-transparent bg-gradient-to-r ${gradientMap[currentWord] || "from-pink-500 via-yellow-500 to-blue-500"}`}>
                 <motion.span
                   key={wordIndex}
@@ -109,7 +113,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {currentDisplay}
+                  {currentDisplay}?
                   <motion.span
                     animate={{ opacity: [0, 1, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
@@ -136,7 +140,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
             initial={{ opacity: 0 }}
             animate={visible ? { opacity: 1 } : {}}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 md:mb-8"
+            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 md:mb-8 sm:hidden"
           >
             {ctaButtons.map((button, index) => (
               <Link
@@ -152,6 +156,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
               </Link>
             ))}
           </motion.div>
+          <StatsSection stats={stats} />
         </motion.div>
 
         <motion.div
@@ -163,7 +168,6 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
           <ContactForm />
         </motion.div>
 
-        <StatsSection stats={stats} />
       </div>
     </section>
   );
@@ -328,7 +332,8 @@ const StatsSection: React.FC<{ stats: StatsProps[] }> = ({ stats }) => {
   if (!stats || stats.length === 0) return null;
   return (
     <div className="w-full col-span-12 md:mt-8 lg:mt-4">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+      {/* Small devices - individual cards */}
+      <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
         {stats?.map((stat, index) => (
           <motion.div
             key={index}
@@ -354,6 +359,38 @@ const StatsSection: React.FC<{ stats: StatsProps[] }> = ({ stats }) => {
           </motion.div>
         ))}
       </div>
+
+      {/* Large devices - single container with dividers */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="hidden lg:block max-w-4xl p-6 rounded-lg bg-gray-50/50 dark:bg-gray-900/30 backdrop-blur-sm border border-gray-200/40 dark:border-gray-800/40 shadow-lg"
+      >
+        <div className="grid grid-cols-4 divide-x divide-gray-300 dark:divide-gray-700">
+          {stats?.map((stat, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-start gap-3 px-6 first:pl-0 last:pr-0"
+            >
+              {stat.icon && (
+                <div className="flex-shrink-0 text-gray-600 dark:text-gray-400">
+                  {stat.icon}
+                </div>
+              )}
+              <div className="flex-1">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white leading-tight">
+                  {stat.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1 leading-relaxed">
+                  {stat.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 };
