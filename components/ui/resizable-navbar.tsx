@@ -12,6 +12,7 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 
 import React, { useRef, useState } from "react";
+import { BorderBeam } from "./border-beam";
 
 
 interface NavbarProps {
@@ -500,6 +501,17 @@ export const NavbarButton = ({
       {...props}
     >
       {children}
+      {
+        variant === "secondary" && (
+          <BorderBeam
+            duration={2}
+            size={120}
+            reverse={true}
+            className="rounded-lg dark:from-red-50 dark:via-white dark:to-white from-gray-600 via-gray-600 to-gray-600 "
+          />
+
+        )}
+
     </Tag>
   );
 };

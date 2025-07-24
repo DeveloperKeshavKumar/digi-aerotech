@@ -70,7 +70,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
         <div className="text-center">
           <Link
             href={cta.link}
-            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center rounded-lg bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white text-white dark:text-black transition-all duration-300"
+            className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium text-center rounded-lg bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 dark:bg-white   transition-all duration-300 text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400"
           >
             {cta.icon && <span className="mr-2">{cta.icon}</span>}
             {cta.text}

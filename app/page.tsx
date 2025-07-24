@@ -27,6 +27,9 @@ import {
   Briefcase,
   Store,
   Phone,
+  FlashlightIcon,
+  Plane,
+  Ambulance,
 } from 'lucide-react';
 import {
   IconChartLine,
@@ -43,6 +46,8 @@ import {
   IconStarsFilled,
   IconUsersGroup,
   IconSchool,
+  IconBuilding,
+  IconPalette,
 } from '@tabler/icons-react';
 import { Companies } from '@/components/homepage/comapnies';
 export default function Homepage() {
@@ -160,8 +165,8 @@ export default function Homepage() {
         rows={2}
         speed="fast"
         title={[
-          { text: 'Trusted By ' }, 
-          { text: '140+ Businesses', gradient:true, gradientClass: "from-purple-500 via-pink-500 to-red-500" }
+          { text: 'Trusted By ' },
+          { text: '140+ Businesses', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" }
         ]}
         description='We are grateful to work with incredible clients 💖' />
 
@@ -360,6 +365,11 @@ export default function Homepage() {
             icon: <Home className="w-5 h-5" />
           },
           {
+            name:"B2C Brands",
+            url:"/b2c",
+            icon:<IconBuilding className="w-5 h-5" />
+          },
+          {
             name: "Consultants",
             url: "/consultants",
             icon: <Briefcase className="w-5 h-5" />
@@ -374,6 +384,31 @@ export default function Homepage() {
             url: "/ecommerce",
             icon: <ShoppingCart className="w-5 h-5" />
           },
+          {
+            name: "Startups",
+            url: "/startups",
+            icon: <Phone className="w-5 h-5" />
+          },
+          {
+            name: "B2B Businesses",
+            url: "/b2b",
+            icon: <IconBuilding className="w-5 h-5" />
+          },
+          {
+            name: "Travel & Tourism",
+            url: "/travel",
+            icon: <Plane className="w-5 h-5" />
+          },
+          {
+            name: "Interior Designers",
+            url: "/interior-design",
+            icon: <IconPalette className="w-5 h-5" />
+          },
+          {
+            name:"Pharma Companies",
+            url:'/pharma',
+            icon:<Ambulance className="w-5 h-5" />
+          }
         ]}
       />
       <OurWork
@@ -501,7 +536,11 @@ export default function Homepage() {
 
       <BusinessGrowthSection
         growBizProps={{
-          title: "We're Not Here to Just Impress You - We're Here to Grow You.",
+          title: [
+            { text: "We're Not Here to Just " },
+            { text: "Impress You", gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" },
+            { text: " - We're Here to " },
+            { text: "Grow You.", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }],
           subheadline: "Let's get you leads, visibility, and revenue - without the stress.",
           highlights: [
             "Transparent Process",

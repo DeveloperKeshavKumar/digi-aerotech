@@ -125,7 +125,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                   href={button.link}
                   className={`group inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 ${button.variant === 'secondary'
                     ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
-                    : 'bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white text-white dark:text-black'
+                    : 'bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 dark:bg-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
                     }`}
                 >
                   {button.icon && <span className="mr-2">{button.icon}</span>}
@@ -249,7 +249,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full px-6 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg text-base hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-600 flex items-center justify-center group border-2 border-black dark:border-white"
+                    className="w-full px-6 py-4 bg-black dark:bg-white text-white font-semibold rounded-lg text-base hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-600 flex items-center justify-center group border-2 bg-gradient-to-r from-orange-600 via-pink-600 to-yellow-500 hover:from-orange-500 hover:via-pink-500 hover:to-yellow-400"
                   >
                     <Calendar className="mr-2 h-5 w-5" />
                     <span>{quickFormProps.cta.text}</span>

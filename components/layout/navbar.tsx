@@ -75,7 +75,7 @@ export function Navbar() {
                             variant="secondary"
                             visible={visible}
                             href="/contact"
-                            className="text-left text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400 mx-2"
+                            className="text-left text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400 py-3 mx-2"
                             aria-label="Contact"
                             title="Contact"
                         >
