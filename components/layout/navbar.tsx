@@ -46,11 +46,7 @@ export function Navbar() {
         {
             name: "About",
             link: "/about",
-        },
-        {
-            name: "Contact",
-            link: "/contact",
-        },
+        }
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -78,9 +74,12 @@ export function Navbar() {
                         <NavbarButton
                             variant="secondary"
                             visible={visible}
-                            href="tel:+918607119872"
+                            href="/contact"
+                            className="text-left text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400 mx-2"
+                            aria-label="Contact"
+                            title="Contact"
                         >
-                            +91 8607119872
+                            Contact Us
                         </NavbarButton>
                         <NavbarButton
                             href="/"
@@ -118,10 +117,10 @@ export function Navbar() {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 variant="secondary"
                                 visible={visible}
-                                href="tel:+918607119872"
-                                className="text-left"
+                                href="/contact"
+                                className="text-left text-white bg-gradient-to-r from-red-600 via-orange-600 to-pink-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400 "
                             >
-                                +91 8607119872
+                                Contact
                             </NavbarButton>
                             <NavbarButton
                                 href="/"
