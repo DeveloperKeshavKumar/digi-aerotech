@@ -13,7 +13,7 @@ interface IndustryItem {
 
 interface WhoWeWorkWithProps {
   industries: IndustryItem[];
-  title?: string;
+  title?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
   description?: string;
   rows?: number;
   speed?: 'slow' | 'medium' | 'fast';
@@ -100,6 +100,25 @@ export const WhoWeWorkWith = ({
     );
   };
 
+  // Helper to render title with gradient
+  const renderTitle = () => {
+    if (typeof title === 'string') {
+      return title;
+    }
+    return title.map((part, idx) =>
+      part.gradient ? (
+        <span
+          key={idx}
+          className={`bg-clip-text text-transparent bg-gradient-to-r ${part.gradientClass || "from-pink-500 via-yellow-500 to-blue-500"}`}
+        >
+          {part.text}
+        </span>
+      ) : (
+        <span key={idx}>{part.text}</span>
+      )
+    );
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -112,8 +131,8 @@ export const WhoWeWorkWith = ({
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-white mb-4 leading-tight">
-            {title}
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
+            {renderTitle()}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             {description}

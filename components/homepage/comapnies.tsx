@@ -15,7 +15,7 @@ interface Logo {
 
 interface CompaniesProps {
     logos: Logo[];
-    title?: string;
+    title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
     description?: string;
     rows?: number;
     speed?: 'slow' | 'medium' | 'fast';
@@ -42,27 +42,27 @@ export const Companies = ({
         // Create randomized rows with unique logos per row
         const createRandomizedRows = () => {
             if (logos.length === 0) return;
-            
+
             const newRows: Logo[][] = [];
-            
+
             // If we have fewer logos than rows, duplicate logos but distribute them differently
             if (logos.length < rows) {
                 // Create a larger pool by duplicating logos
                 const expandedLogos = [];
                 const duplicationsNeeded = Math.ceil(rows / logos.length);
-                
+
                 for (let d = 0; d < duplicationsNeeded; d++) {
                     expandedLogos.push(...logos);
                 }
-                
+
                 // Shuffle the expanded pool
                 const shuffledExpanded = [...expandedLogos].sort(() => 0.5 - Math.random());
-                
+
                 // Distribute to rows ensuring no duplicates within each row
                 for (let i = 0; i < rows; i++) {
                     const rowLogos = [];
                     const usedInThisRow = new Set();
-                    
+
                     // Try to fill each row with unique logos
                     for (const logo of shuffledExpanded) {
                         const logoKey = logo.name || logo.image || JSON.stringify(logo.icon);
@@ -71,17 +71,17 @@ export const Companies = ({
                             usedInThisRow.add(logoKey);
                         }
                     }
-                    
+
                     // If we still need more logos for visual continuity, add from remaining pool
                     if (rowLogos.length < 5) {
                         const remaining = shuffledExpanded.filter(logo => {
                             const logoKey = logo.name || logo.image || JSON.stringify(logo.icon);
                             return !usedInThisRow.has(logoKey);
                         });
-                        
+
                         rowLogos.push(...remaining.slice(0, 5 - rowLogos.length));
                     }
-                    
+
                     newRows.push(rowLogos);
                 }
             } else {
@@ -89,24 +89,24 @@ export const Companies = ({
                 const shuffledLogos = [...logos].sort(() => 0.5 - Math.random());
                 const logosPerRow = Math.floor(logos.length / rows);
                 const remainingLogos = logos.length % rows;
-                
+
                 let startIndex = 0;
-                
+
                 for (let i = 0; i < rows; i++) {
                     // Calculate how many logos this row should get
                     const currentRowSize = logosPerRow + (i < remainingLogos ? 1 : 0);
-                    
+
                     // Get logos for this row
                     const rowLogos = shuffledLogos.slice(startIndex, startIndex + currentRowSize);
-                    
+
                     // Shuffle the row logos again for extra randomness
                     const shuffledRowLogos = [...rowLogos].sort(() => 0.5 - Math.random());
-                    
+
                     newRows.push(shuffledRowLogos);
                     startIndex += currentRowSize;
                 }
             }
-            
+
             setRandomizedRows(newRows);
         };
 
@@ -170,7 +170,7 @@ export const Companies = ({
         };
 
         return (
-            <div className="overflow-hidden py-4 whitespace-nowrap relative w-full">
+            <div className="overflow-hidden py-4  whitespace-nowrap relative w-full">
                 <div className="hidden sm:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
                 <div className="hidden sm:block absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-50 dark:from-gray-950 via-gray-50/80 dark:via-gray-950/80 to-transparent z-10 backdrop-blur-sm" />
 
@@ -203,10 +203,28 @@ export const Companies = ({
         );
     };
 
+    const renderTitle = () => {
+        if (typeof title === 'string') {
+            return title;
+        }
+        return title.map((part, idx) =>
+            part.gradient ? (
+                <span
+                    key={idx}
+                    className={`bg-clip-text text-transparent bg-gradient-to-r ${part.gradientClass || "from-pink-500 via-yellow-500 to-blue-500"}`}
+                >
+                    {part.text}
+                </span>
+            ) : (
+                <span key={idx}>{part.text}</span>
+            )
+        );
+    };
+
     return (
         <section
             ref={sectionRef}
-            className="py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700 w-full"
+            className="py-24 sm:py-32 sm:min-h-[50vh] bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700 w-full"
         >
             <div className="w-full">
                 <motion.div
@@ -215,8 +233,8 @@ export const Companies = ({
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12 px-4"
                 >
-                    <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-white mb-4 leading-tight">
-                        {title}
+                    <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
+                        {renderTitle()}
                     </h2>
                     <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
                         {description}

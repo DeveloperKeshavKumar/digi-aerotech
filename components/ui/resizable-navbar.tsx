@@ -155,14 +155,14 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         const hasDropdown = item.dropdown && item.dropdown.length > 0;
 
         return (
-          <div key={`nav-item-${idx}`} className="relative">
+          <div key={`nav-item-${idx}`} className="relative mr-0">
             {hasDropdown ? (
               <Link
                 href={item.link}
                 onMouseEnter={() => handleMouseEnter(idx)}
                 onClick={onItemClick}
                 className={cn(
-                  "relative px-4 py-2 text-neutral-600 dark:text-neutral-300 cursor-pointer flex items-center gap-1",
+                  "relative px-4 py-2 text-neutral-600 dark:text-neutral-300 cursor-pointer flex items-center",
                   isActive && "font-semibold text-black dark:text-white"
                 )}
               >

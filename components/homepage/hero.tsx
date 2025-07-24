@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { BorderBeam } from '../ui/border-beam';
 
 interface StatsProps {
   icon?: React.ReactNode;
@@ -21,7 +22,7 @@ interface CTAButton {
 
 interface HeroProps {
   headlineKeywords: string[];
-  brandLine: string;
+  brandLine: string | { text: string; gradient?: boolean; gradientClass?: string }[];
   subheadline: string;
   ctaButtons: CTAButton[];
   stats: StatsProps[];
@@ -47,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
           setCurrentDisplay(currentWord.substring(0, letterIndex + 1));
           timeout = setTimeout(() => setLetterIndex(prev => prev + 1), 80);
         } else {
-          timeout = setTimeout(() => setShowing(false), 1500);
+          timeout = setTimeout(() => setShowing(false), 3500);
         }
       } else {
         if (letterIndex > 0) {
@@ -86,8 +87,31 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
     }
   }, []);
 
+  // Helper to render brandLine with gradients
+  const renderBrandLine = () => {
+    if (typeof brandLine === "string") {
+      return <span className="block mt-2 text-gray-900 dark:text-white">{brandLine}</span>;
+    }
+    return (
+      <span className="block mt-2 text-gray-900 dark:text-white">
+        {brandLine.map((part, idx) =>
+          part.gradient ? (
+            <span
+              key={idx}
+              className={`inline bg-clip-text text-transparent bg-gradient-to-r ${part.gradientClass || "from-pink-500 via-yellow-500 to-blue-500"}`}
+            >
+              {part.text}
+            </span>
+          ) : (
+            <span key={idx}>{part.text}</span>
+          )
+        )}
+      </span>
+    );
+  };
+
   return (
-    <section className="py-9 px-4 bg-white dark:bg-black border-b border-border dark:border-0 min-h-screen flex items-center">
+    <section className="py-9 px-4 bg-white dark:bg-black border-b border-border dark:border-0 md:min-h-screen flex items-center">
       <div
         ref={heroRef}
         className=" max-w-7xl mx-auto px-4 py-8 lg:py-16 flex flex-col lg:grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 xl:gap-20"
@@ -124,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
                 </motion.span>
               </span>
             </span>
-            <span className="block mt-2 text-gray-900 dark:text-white">{brandLine}</span>
+            {renderBrandLine()}
           </motion.h1>
 
           <motion.p
@@ -146,9 +170,9 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
               <Link
                 key={index}
                 href={button.link}
-                className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center rounded-lg transition-all duration-300 ${button.variant === 'secondary'
+                className={`inline-flex items-center justify-center px-4 py-3 text-base font-medium text-center rounded-lg transition-all duration-300 ${button.variant === 'secondary'
                   ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 border border-black dark:border-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800'
-                  : 'bg-gray-900 hover:bg-gray-700 border border-transparent hover:border-gray-700 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black'
+                  : 'bg-gray-900 hover:bg-gray-700 border border-transparent hover:border-gray-700 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black bg-gradient-to-r from-orange-600 via-pink-600 to-red-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
                   }`}
               >
                 {button.icon && <span className="mr-2">{button.icon}</span>}
@@ -208,7 +232,7 @@ const ContactForm = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-2">
+        <form onSubmit={handleSubmit} className=" rounded-lg">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name"></Label>
@@ -318,6 +342,18 @@ const ContactForm = () => {
           >
             Send Inquiry
           </button>
+          <BorderBeam
+            duration={6}
+            size={400}
+            className="from-transparent via-red-500 to-transparent mt-4"
+          />
+          <BorderBeam
+            duration={6}
+            delay={3}
+            size={400}
+            borderWidth={2}
+            className="rounded-lg from-transparent via-blue-500 to-transparent"
+          />
         </form>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
@@ -331,7 +367,7 @@ const ContactForm = () => {
 const StatsSection: React.FC<{ stats: StatsProps[] }> = ({ stats }) => {
   if (!stats || stats.length === 0) return null;
   return (
-    <div className="w-full col-span-12 md:mt-8 lg:mt-4">
+    <div className="w-full col-span-12 md:mt-8 lg:mt-4 sm:mb-20">
       {/* Small devices - individual cards */}
       <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
         {stats?.map((stat, index) => (

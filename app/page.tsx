@@ -49,7 +49,7 @@ export default function Homepage() {
   return (
     <main>
       <Hero
-        headlineKeywords={["Leads", "Sales", "Reach", "Growth", "Visibility", "Revenue", "Success"  ]}
+        headlineKeywords={["Leads", "Sales", "Reach", "Growth", "Visibility", "Revenue", "Success"]}
         brandLine="Call Digi Aerotech"
         subheadline="We solve real business problems through smart, performance - first digital marketing and tech solutions."
         ctaButtons={[
@@ -156,10 +156,22 @@ export default function Homepage() {
         {
           image: '/logos/25.png',
         },
-      ]} rows={2} speed="fast" />
+      ]}
+        rows={2}
+        speed="fast"
+        title={[
+          { text: 'Trusted By ' }, 
+          { text: '140+ Businesses', gradient:true, gradientClass: "from-purple-500 via-pink-500 to-red-500" }
+        ]}
+        description='We are grateful to work with incredible clients 💖' />
 
       <Struggles
-        title="We're Not Just a Marketing Team - We're the Fix for What's Broken"
+        title={[
+          { text: "We're Not Just a " },
+          { text: 'Marketing Team', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" },
+          { text: " Team - We're the Fix for " },
+          { text: "What's Broken", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+        ]}
         subheadline="Most agencies sell you dreams. We solve real-world problems - the kind that cost you leads, sales, and growth."
         painPoints={[
           "No leads or poor-quality inquiries",
@@ -181,7 +193,12 @@ export default function Homepage() {
       />
 
       <WhyChooseUs
-        title="Why Top Brands & Local Businesses Trust Digi Aerotech"
+        title={[
+          { text: "Why " },
+          { text: "Top Brands & Local Businesses", gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" },
+          { text: " Trust " },
+          { text: "Digi Aerotech", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+        ]}
         trustPoints={[
           {
             icon: <IconChartLine size={40} />,
@@ -220,9 +237,11 @@ export default function Homepage() {
           icon: <IconChartLine size={20} />
         }}
       />
-
       <OurServices
-        title="All-in-One Digital Growth Solutions"
+        title={[
+          { text: "All-in-One " },
+          { text: "Digital Growth Solutions", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+        ]}
         subheadline="From building your website to driving leads and managing your reputation — we do it all, so you don't have to."
         services={[
           {
@@ -301,9 +320,11 @@ export default function Homepage() {
         ]}
         cta={{ text: "View All Services", link: "/services" }}
       />
-
       <WhoWeWorkWith
-        title="Who we work with ?"
+        title={[
+          { text: "Who we " },
+          { text: "work with?", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+        ]}
         description="We work with businesses across these industries"
         speed='fast'
         rows={3}
@@ -355,9 +376,11 @@ export default function Homepage() {
           },
         ]}
       />
-
       <OurWork
-        title="Our Work Speaks Louder Than Words"
+        title={[
+          { text: "Our Work " },
+          { text: "Speaks Louder Than Words", gradient: true, gradientClass: "from-orange-400 via-pink-500 to-red-500" }
+        ]}
         examples={[
           {
             title: "How We Generated 142 Travel Leads in 10 Days",
@@ -374,9 +397,11 @@ export default function Homepage() {
         ]}
         cta={{ text: "🎥 View Case Studies / Client Results", link: "/case-studies" }}
       />
-
       <Testimonials
-        title="Client Success Stories"
+        title={[
+          { text: "Client " },
+          { text: "Success Stories", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+        ]}
         description="Hear what our partners say about us"
         columns={3}
         highlightColor="text-green-600 dark:text-green-400 font-medium"

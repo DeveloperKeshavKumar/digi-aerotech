@@ -17,7 +17,7 @@ interface Testimonial {
 
 interface TestimonialsProps {
   testimonials: Testimonial[];
-  title?: string;
+  title?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
   description?: string;
   speed?: "slow" | "medium" | "fast";
   columns?: number;
@@ -83,12 +83,31 @@ export const Testimonials = ({
     );
   };
 
+  // Helper to render title with gradient
+  const renderTitle = () => {
+    if (typeof title === 'string') {
+      return title;
+    }
+    return title.map((part, idx) =>
+      part.gradient ? (
+        <span
+          key={idx}
+          className={`bg-clip-text text-transparent bg-gradient-to-r ${part.gradientClass || "from-green-400 via-blue-500 to-purple-500"}`}
+        >
+          {part.text}
+        </span>
+      ) : (
+        <span key={idx}>{part.text}</span>
+      )
+    );
+  };
+
   return (
     <section className="py-16 px-4 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700">
       <div className="container mx-auto">
         <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-white mb-4 leading-tight">
-            {title}
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
+            {renderTitle()}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             {description}

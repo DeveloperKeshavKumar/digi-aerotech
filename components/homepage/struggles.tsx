@@ -6,7 +6,7 @@ import { IconMoodCry, IconMoodHappy } from '@tabler/icons-react';
 import { LucideArrowBigRightDash } from 'lucide-react';
 
 interface StrugglesProps {
-  title: string;
+  title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
   subheadline: string;
   painPoints: string[];
   solutionPoints: string[];
@@ -39,19 +39,38 @@ export const Struggles: React.FC<StrugglesProps> = ({
     }
   }, []);
 
+  // Helper to render title with gradient
+  const renderTitle = () => {
+    if (typeof title === 'string') {
+      return title;
+    }
+    return title.map((part, idx) =>
+      part.gradient ? (
+        <span
+          key={idx}
+          className={`bg-clip-text text-transparent bg-gradient-to-r ${part.gradientClass || "from-red-500 via-pink-500 to-yellow-500"}`}
+        >
+          {part.text}
+        </span>
+      ) : (
+        <span key={idx}>{part.text}</span>
+      )
+    );
+  };
+
   return (
     <section
       ref={sectionRef}
-      className="py-12 px-4 bg-white dark:bg-black border-b border-gray-300 dark:border-gray-700"
+      className="py-24 sm:mt-10 px-4 bg-white dark:bg-black border-b border-gray-300 dark:border-gray-700"
     >
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={visible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-2xl text-center md:text-3xl font-light mb-4 text-gray-900 dark:text-white"
+          className="text-2xl text-center md:text-3xl font-semibold mb-4 text-gray-900 dark:text-white"
         >
-          {title}
+          {renderTitle()}
         </motion.h2>
 
         <motion.p
@@ -63,7 +82,7 @@ export const Struggles: React.FC<StrugglesProps> = ({
           {subheadline}
         </motion.p>
 
-        <ul className="space-y-4 md:space-y-0 mb-10">
+        <ul className="space-y-4 md:space-y-0 mb-10 mx-auto">
           <li className="hidden md:grid md:grid-cols-2 md:gap-8 border-b border-gray-300 dark:border-gray-700 pb-4 md:pb-0 md:border-0 last:border-0">
             <div className="flex items-start mb-7 md:mb-4">
               <span className="flex items-center text-xl text-gray-900 dark:text-white underline underline-offset-4">

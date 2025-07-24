@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
   growBizProps: {
-    title: string;
+    title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
     subheadline: string;
     highlights: string[];
     ctaButtons: {
@@ -69,6 +69,25 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
     }
   };
 
+  // Helper to render title with gradient
+  const renderTitle = () => {
+    if (typeof growBizProps.title === 'string') {
+      return growBizProps.title;
+    }
+    return growBizProps.title.map((part, idx) =>
+      part.gradient ? (
+        <span
+          key={idx}
+          className={`bg-clip-text text-transparent bg-gradient-to-r ${part.gradientClass || "from-pink-500 via-yellow-500 to-blue-500"}`}
+        >
+          {part.text}
+        </span>
+      ) : (
+        <span key={idx}>{part.text}</span>
+      )
+    );
+  };
+
   return (
     <section ref={sectionRef} className="py-16 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
@@ -82,10 +101,10 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
             className="lg:col-span-1 space-y-8"
           >
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight text-gray-900 dark:text-white">
-                {growBizProps.title}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center sm:text-left leading-tight text-gray-900 dark:text-white">
+                {renderTitle()}
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
+              <p className="text-lg text-center sm:text-left sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
                 {growBizProps.subheadline}
               </p>
             </div>
@@ -243,6 +262,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                 </div>
               </div>
             </div>
+            
           </motion.div>
         </div>
       </div>

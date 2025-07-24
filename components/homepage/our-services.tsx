@@ -23,7 +23,7 @@ interface Service {
 }
 
 interface OurServicesProps {
-  title: string;
+  title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
   subheadline: string;
   services: Service[];
   cta: {
@@ -44,6 +44,25 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
     }
   }, []);
 
+  // Helper to render title with gradient
+  const renderTitle = () => {
+    if (typeof title === 'string') {
+      return title;
+    }
+    return title.map((part, idx) =>
+      part.gradient ? (
+        <span
+          key={idx}
+          className={`bg-clip-text text-transparent bg-gradient-to-r ${part.gradientClass || "from-pink-500 via-yellow-500 to-blue-500"}`}
+        >
+          {part.text}
+        </span>
+      ) : (
+        <span key={idx}>{part.text}</span>
+      )
+    );
+  };
+
   return (
     <section ref={sectionRef} className="py-16 px-4 bg-white dark:bg-black border-b border-border dark:border-gray-700">
       <div className="max-w-7xl mx-auto">
@@ -54,8 +73,8 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black dark:text-white">
-            {title}
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-black dark:text-white">
+            {renderTitle()}
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {subheadline}
@@ -86,8 +105,8 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
               className={`
                 ${service.gridClass || 'md:col-span-3'} 
                 border relative group overflow-hidden rounded-2xl p-6 transition-all duration-300 
-                bg-gray-50 dark:bg-gray-800/60 
-                hover:bg-gray-100 dark:hover:bg-gray-800/40 hover:ring-2 ring-pink-500/70 dark:ring-pink-400/50 hover:shadow-2xl shadow-pink-400/40 dark:shadow-pink-500/30 hover:105`
+                bg-gray-50 dark:bg-gray-800/60 shadow-lg 
+                hover:bg-gray-100 dark:hover:bg-gray-800/40 hover:ring-2 ring-pink-500/70 dark:hover:ring-pink-400/50 hover:shadow-2xl hover:shadow-pink-400/40 dark:shadow-pink-500/30 hover:105`
               }
             >
               {/* Tag */}

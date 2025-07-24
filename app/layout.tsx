@@ -43,7 +43,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1 mt-10 p-1 lg:p-0">
+          <main className="flex-1 mt-10 p-1 lg:p-0 overflow-hidden">
             {children}
           </main>
           <Footer />
