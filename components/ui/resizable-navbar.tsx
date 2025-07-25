@@ -501,16 +501,15 @@ export const NavbarButton = ({
       {...props}
     >
       {children}
-      {
-        variant === "secondary" && (
+      {/* {variant === "secondary" && (<>
           <BorderBeam
-            duration={2}
-            size={120}
-            reverse={true}
-            className="rounded-lg dark:from-red-50 dark:via-white dark:to-white from-gray-600 via-gray-600 to-gray-600 "
+            size={40}
+            borderWidth={2}
+            className="rounded-lg from-transparent via-blue-500 to-transparent dark:from-white dark:via-white dark:to-white"
           />
 
-        )}
+        </>
+        )} */}
 
     </Tag>
   );

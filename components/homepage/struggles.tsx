@@ -131,7 +131,7 @@ export const Struggles: React.FC<StrugglesProps> = ({
           initial={{ opacity: 0, scale: 0.95 }}
           animate={visible ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-lg bg-gray-900 hover:bg-gray-100 hover:text-black dark:bg-white dark:hover:bg-gray-800 dark:hover:text-white border border-transparent text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400"
+          className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-lg bg-gray-900 hover:bg-gray-100 hover dark:bg-white dark:hover:bg-gray-800 hover:scale-105 transition-all duration-200 border border-transparent text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400"
         >
           <div className="flex items-center gap-3">
             <span>{cta.icon}</span>

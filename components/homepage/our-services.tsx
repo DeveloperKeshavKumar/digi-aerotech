@@ -105,8 +105,8 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
               className={`
                 ${service.gridClass || 'md:col-span-3'} 
                 border relative group overflow-hidden rounded-2xl p-6 transition-all duration-300 
-                bg-gray-50 dark:bg-gray-800/60 shadow-lg 
-                hover:bg-gray-100 dark:hover:bg-gray-800/40 hover:ring-2 ring-pink-500/70 dark:hover:ring-pink-400/50 hover:shadow-2xl hover:shadow-pink-400/40 dark:shadow-pink-500/30 hover:105`
+                bg-gray-50 dark:bg-gray-800/60 shadow-lg dark:shadow-gray-800
+                hover:bg-gray-100 dark:hover:bg-gray-800/40 hover:ring-2 ring-pink-500/70 dark:hover:ring-pink-400/50 hover:shadow-2xl hover:shadow-pink-400/40 dark:hover:shadow-pink-500/30 hover:105`
               }
             >
               {/* Tag */}
@@ -182,7 +182,7 @@ export const OurServices: React.FC<OurServicesProps> = ({ title, subheadline, se
         >
           <a
             href={cta.link}
-            className="inline-flex items-center gap-4 justify-center px-5 py-3 text-lg font-medium text-center rounded-lg bg-gray-900 hover:bg-gray-200 border border-transparent hover:border-gray-700 hover:dark:bg-gray-200 hover:text-black dark:bg-white dark:text-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400"
+            className="inline-flex items-center gap-4 justify-center px-5 py-3 text-lg font-medium text-center rounded-lg bg-gray-900 hover:bg-gray-200 hover:scale-105 transition-all duration-300 hover:dark:bg-gray-200 dark:bg-white dark:text-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400"
           >
             <Layout size={20} />
             {cta.text}

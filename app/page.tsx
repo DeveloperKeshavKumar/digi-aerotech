@@ -365,9 +365,9 @@ export default function Homepage() {
             icon: <Home className="w-5 h-5" />
           },
           {
-            name:"B2C Brands",
-            url:"/b2c",
-            icon:<IconBuilding className="w-5 h-5" />
+            name: "B2C Brands",
+            url: "/b2c",
+            icon: <IconBuilding className="w-5 h-5" />
           },
           {
             name: "Consultants",
@@ -405,9 +405,9 @@ export default function Homepage() {
             icon: <IconPalette className="w-5 h-5" />
           },
           {
-            name:"Pharma Companies",
-            url:'/pharma',
-            icon:<Ambulance className="w-5 h-5" />
+            name: "Pharma Companies",
+            url: '/pharma',
+            icon: <Ambulance className="w-5 h-5" />
           }
         ]}
       />
@@ -416,21 +416,25 @@ export default function Homepage() {
           { text: "Our Work " },
           { text: "Speaks Louder Than Words", gradient: true, gradientClass: "from-orange-400 via-pink-500 to-red-500" }
         ]}
-        examples={[
+        videos={[
           {
-            title: "How We Generated 142 Travel Leads in 10 Days",
-            link: "/case-studies/travel-leads"
+            title: "Why Clients Trust Digi Aerotech 💼",
+            youtubeId: "vLZW6BhFWrg"
           },
           {
-            title: "Doctor in Gurgaon Ranked #1 on Google Maps in 21 Days",
-            link: "/case-studies/doctor-seo"
+            title: "Client Feedback for Digi Aerotech 🚀",
+            youtubeId: "sN09gj21nTw"
           },
           {
-            title: "From Zero to 7 ROAS in Shopify Store with Ads + Retargeting",
-            link: "/case-studies/ecommerce-roas"
-          }
+            title: "What Our Clients Say 💬 | Digi Aerotech",
+            youtubeId: "B3FnhScIp4E"
+          },
+          {
+            title: "Real Testimonials from Real Clients 🎯",
+            youtubeId: "g9Ut0rA1drg"
+          },
         ]}
-        cta={{ text: "🎥 View Case Studies / Client Results", link: "/case-studies" }}
+        // cta={{ text: "View Client Results", link: "/case-studies" }}
       />
       <Testimonials
         title={[
@@ -467,7 +471,7 @@ export default function Homepage() {
           },
           {
             id: "4",
-            message: "We’re thrilled to announce our partnership with Digi Aerotech for all our digital marketing solutions. After working closely with their team, we truly believe they are one of the best agencies out there for growing startups looking to:✅ Boost online leads✅ Increase conversion rates✅ Establish a strong digital presence.If you’re a startup aiming to scale digitally, Digi Aerotech is the team you want by your side!",
+            message: "We're thrilled to announce our partnership with Digi Aerotech for all our digital marketing solutions. After working closely with their team, we truly believe they are one of the best agencies out there for growing startups looking to:✅ Boost online leads✅ Increase conversion rates✅ Establish a strong digital presence.If you're a startup aiming to scale digitally, Digi Aerotech is the team you want by your side!",
             stars: 5,
             name: "Aman Kumar",
             designation: "Director",
@@ -525,7 +529,7 @@ export default function Homepage() {
           },
           {
             id: "11",
-            message: "They are the best people for startup’s 👍",
+            message: "They are the best people for startup's 👍",
             stars: 5,
             name: "Ankit Sehra",
             designation: "Director",

@@ -222,7 +222,7 @@ const ContactForm = () => {
 
   return (
     <div className="hidden md:block w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10">
-      <div className="bg-white/80 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-xl dark:shadow-gray-600/50">
+      <div className="bg-white/80 dark:bg-gray-800/60 border-b-0 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-xl dark:shadow-gray-600/50">
         <div className="mb-4">
           <h3 className="text-2xl text-center font-semibold text-gray-900 dark:text-white mb-2">
             Get Started Today
@@ -232,7 +232,7 @@ const ContactForm = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className=" rounded-lg">
+        <form onSubmit={handleSubmit} className="rounded-lg">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name"></Label>
@@ -342,24 +342,26 @@ const ContactForm = () => {
           >
             Send Inquiry
           </button>
-          <BorderBeam
-            duration={6}
-            size={400}
-            className="from-transparent via-red-500 to-transparent mt-4"
-          />
-          <BorderBeam
-            duration={6}
-            delay={3}
-            size={400}
-            borderWidth={2}
-            className="rounded-lg from-transparent via-blue-500 to-transparent"
-          />
+
         </form>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
           We respect your privacy. Your information is secure and won&apos;t be shared.
         </p>
+        <BorderBeam
+          duration={6}
+          size={400}
+          className="from-transparent via-red-500 to-transparent mt-4"
+        />
+        <BorderBeam
+          duration={6}
+          delay={3}
+          size={400}
+          borderWidth={2}
+          className="rounded-lg from-transparent via-blue-500 to-transparent"
+        />
       </div>
+
     </div>
   );
 };
