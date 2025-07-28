@@ -165,7 +165,7 @@ export const Footer: React.FC = () => {
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                 >
-                                    <span className="relative h-12 w-24 sm:h-12 sm:w-28 lg:h-16 lg:w-30 flex justify-center group-hover:text-primary transition-colors duration-300">
+                                    <span className="relative h-12 w-24 sm:h-12 sm:w-28 lg:h-16 lg:w-30 lg:ml-1 flex justify-center group-hover:text-primary transition-colors duration-300">
                                         <Image
                                             src="/logo.svg"
                                             alt="Rippple"

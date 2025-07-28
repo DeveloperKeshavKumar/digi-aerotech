@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Footer } from "@/components/layout/footer";
+import MegaMenuExample from "@/components/layout/mega-navbar";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -42,7 +43,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          {/* <Navbar /> */}
+          <MegaMenuExample />
           <main className="flex-1 mt-10 p-1 lg:p-0 overflow-hidden">
             {children}
           </main>

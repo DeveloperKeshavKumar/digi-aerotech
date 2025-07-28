@@ -12,7 +12,6 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 
 import React, { useRef, useState } from "react";
-import { BorderBeam } from "./border-beam";
 
 
 interface NavbarProps {

@@ -172,7 +172,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
                 href={button.link}
                 className={`inline-flex items-center justify-center px-4 py-3 text-base font-medium text-center rounded-lg transition-all duration-300 ${button.variant === 'secondary'
                   ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 border border-black dark:border-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800'
-                  : 'bg-gray-900 hover:bg-gray-700 border border-transparent hover:border-gray-700 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black bg-gradient-to-r from-orange-600 via-pink-600 to-red-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
+                  : 'text-white bg-gradient-to-r from-orange-600 via-pink-600 to-red-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
                   }`}
               >
                 {button.icon && <span className="mr-2">{button.icon}</span>}
@@ -221,7 +221,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="hidden md:block w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10">
+    <div
+      style={{ backgroundImage: 'url(/images/contact-bg.jpg)' }}
+      className="hidden md:block w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10"
+      data-aos="fade-up">
       <div className="bg-white/80 dark:bg-gray-800/60 border-b-0 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-xl dark:shadow-gray-600/50">
         <div className="mb-4">
           <h3 className="text-2xl text-center font-semibold text-gray-900 dark:text-white mb-2">

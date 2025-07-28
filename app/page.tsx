@@ -27,7 +27,6 @@ import {
   Briefcase,
   Store,
   Phone,
-  FlashlightIcon,
   Plane,
   Ambulance,
 } from 'lucide-react';
