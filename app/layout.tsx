@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Footer } from "@/components/layout/footer";
 import MegaMenuExample from "@/components/layout/mega-navbar";

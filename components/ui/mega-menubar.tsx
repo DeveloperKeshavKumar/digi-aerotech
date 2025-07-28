@@ -13,15 +13,6 @@ import { usePathname } from 'next/navigation';
 
 import React, { useRef, useState } from "react";
 
-interface MegaMenuCategory {
-    title: string;
-    items: {
-        name: string;
-        link: string;
-        icon?: React.ReactNode;
-    }[];
-}
-
 interface NavbarProps {
     children: React.ReactNode;
     className?: string;

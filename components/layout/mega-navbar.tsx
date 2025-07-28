@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import {
     ResizableNavbar,
     NavBody,
@@ -82,7 +82,6 @@ export default function MegaMenuExample() {
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const ref = useRef(null);
     const { scrollY } = useScroll();
     const [visible, setVisible] = useState(false);
 
