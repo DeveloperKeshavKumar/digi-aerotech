@@ -60,6 +60,7 @@ interface NavItemsProps {
             };
         };
     }[];
+    visible?: boolean;
     className?: string;
     onItemClick?: () => void;
 }
@@ -122,7 +123,7 @@ export const ResizableNavbar = ({ children, className }: NavbarProps) => {
     );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, visible }: NavItemsProps) => {
     const [hovered, setHovered] = useState<number | null>(null);
     const [megaMenuOpen, setMegaMenuOpen] = useState<number | null>(null);
     const pathname = usePathname();
@@ -144,15 +145,10 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <motion.div
             onMouseLeave={handleMouseLeave}
             className={cn(
-                "flex items-center justify-center space-x-7 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800",
+                "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+                visible && "w-1/2 mx-auto",
                 className,
             )}
-            style={{
-                width: "45%", // Reduced width
-                maxWidth: "45%",
-                display: 'flex',
-                justifyContent: 'center' // Center the items
-            }}
         >
             {items.map((item, idx) => {
                 const isActive = pathname === item.link ||
@@ -163,17 +159,14 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
                 const hasDropdown = (item.dropdown && item.dropdown.length > 0) || item.megaMenu;
 
                 return (
-                    <div
-                        key={`nav-item-${idx}`}
-                        className="relative flex justify-center"
-                    >
+                    <div key={`nav-item-${idx}`} className="relative mr-0">
                         {hasDropdown ? (
                             <Link
                                 href={item.link}
                                 onMouseEnter={() => handleMouseEnter(idx)}
                                 onClick={onItemClick}
                                 className={cn(
-                                    "relative px-3 py-2 text-neutral-600 dark:text-neutral-300 cursor-pointer flex items-center justify-center whitespace-nowrap",
+                                    "relative px-4 py-2 text-neutral-600 dark:text-neutral-300 cursor-pointer flex items-center",
                                     isActive && "font-semibold text-black dark:text-white"
                                 )}
                             >
@@ -350,7 +343,6 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     );
 };
 
-// Update NavBody to ensure proper spacing
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
     return (
         <motion.div
@@ -359,7 +351,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
                 boxShadow: visible
                     ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
                     : "none",
-                width: visible ? "90%" : "100%",
+                width: visible ? "70%" : "100%",
                 y: visible ? 20 : 0,
             }}
             transition={{

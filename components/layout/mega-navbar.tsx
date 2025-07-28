@@ -100,12 +100,13 @@ export default function MegaMenuExample() {
             <NavBody>
                 <NavbarLogo visible={visible} />
                 <NavItems
+                    visible={visible}
                     items={navItems}
                     onItemClick={() => { }}
                     className=""
                 />
-                <div className={cn("flex items-center justify-center ml-10", !visible && "mr-8")}>
-                    <ModeToggle className={cn(visible && "hidden")} />
+                <div className={cn("flex items-center justify-center", !visible && "mr-8")}>
+                    <ModeToggle className={cn(visible && "hidden", "transition-all duration-300")} />
                     <NavbarButton
                         variant="secondary"
                         visible={visible}
