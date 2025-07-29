@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 interface Technology {
   id: number;
@@ -72,16 +73,17 @@ export const TechStack: React.FC<TechStackProps> = ({
           {filteredTechnologies.map((tech, index) => (
             <motion.div
               key={tech.id}
-              className="p-4 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 h-32 w-full"
+              className="relative p-4 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 h-32 w-full"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <img
+              <Image
                 src={tech.logo}
                 alt={tech.name}
-                className="h-12 object-contain mb-3"
+                fill
+                className="object-contain mb-3"
               />
               <p className="text-sm text-center font-medium text-gray-700 dark:text-gray-300">
                 {tech.name}

@@ -20,11 +20,8 @@ import {
     IconShoppingCart,
     IconBrandWordpress,
     IconTools,
-    IconArrowRight,
-    IconHttpConnect,
     IconMovie,
 } from '@tabler/icons-react';
-import { BluetoothConnected } from 'lucide-react';
 
 // Define the service data type
 interface ServiceData {
@@ -45,6 +42,7 @@ interface ServiceData {
         cta: {
             text: string;
             link: string;
+            icon: React.ReactNode;
         };
     };
     typesOfServices: {
