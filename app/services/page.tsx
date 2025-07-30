@@ -4,7 +4,8 @@ import { motion } from 'motion/react';
 import { inView } from 'motion';
 import { ArrowRight } from 'lucide-react';
 import { StatsSection } from "@/components/stats-section";
-import { IconReportAnalytics, IconSchool, IconStarsFilled, IconUsersGroup } from "@tabler/icons-react";
+import { IconFreeRights, IconPhone, IconReportAnalytics, IconSchool, IconStarsFilled, IconUsersGroup } from "@tabler/icons-react";
+import { Hero } from '@/components/homepage/hero';
 
 export default function ServicesPage() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -66,6 +67,36 @@ export default function ServicesPage() {
 
   return (
     <section ref={sectionRef} className="py-16 px-4 bg-white dark:bg-black border-b border-border dark:border-gray-700">
+      <Hero
+        headlineKeywords={["Leads", "Sales", "Reach", "Growth", "Visibility", "Revenue", "Success"]}
+        brandLine="Call Digi Aerotech"
+        subheadline="We solve real business problems through smart, performance - first digital marketing and tech solutions."
+        ctaButtons={[
+          { icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/" },
+          { icon: <IconPhone size={30} />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        ]}
+        stats={[
+          {
+            icon: <IconUsersGroup size={34} className="fill-gray-600 dark:fill-gray-400" />,
+            title: "140+ Clients",
+            description: "Web solutions delivered"
+          },
+          {
+            icon: <IconReportAnalytics size={34} />,
+            title: "50L+ Visitors",
+            description: "Driven through our websites"
+          },
+          {
+            icon: <IconSchool size={34} />,
+            title: "10+ Years",
+            description: "Expertise in web development"
+          },
+          {
+            icon: <IconStarsFilled size={34} />,
+            title: "4.9/5 Rating",
+            description: "From happy clients"
+          }
+        ]} />
       <div className="max-w-7xl mx-auto mb-12 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

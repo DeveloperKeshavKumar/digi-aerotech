@@ -21,16 +21,39 @@ import {
     IconBrandWordpress,
     IconTools,
     IconMovie,
+    IconFreeRights,
+    IconPhone,
+    IconUsersGroup,
+    IconReportAnalytics,
+    IconSchool,
+    IconStarsFilled,
+    IconRocket,
 } from '@tabler/icons-react';
+import { Hero } from '@/components/homepage/hero';
+
+interface StatsProps {
+    icon?: React.ReactNode;
+    title: string;
+    description: string;
+}
+
+interface CTAButton {
+    icon?: React.ReactNode;
+    text: string;
+    link: string;
+    variant?: 'primary' | 'secondary';
+}
 
 // Define the service data type
 interface ServiceData {
     slug: string;
     hero: {
-        titlepart1: string;
-        titlepart2: string;
-        subtitle: string;
-        description: string;
+        initial: string;
+        headlineKeywords: string[];
+        brandLine: string | { text: string; gradient?: boolean; gradientClass?: string }[];
+        subheadline: string;
+        ctaButtons: CTAButton[];
+        stats: StatsProps[];
     };
     whyChooseUs: {
         title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
@@ -105,10 +128,36 @@ const services: Record<string, ServiceData> = {
     'web-design-development': {
         slug: 'web-design-development',
         hero: {
-            titlepart1: 'Transform Your ',
-            titlepart2: 'Online Presence',
-            subtitle: 'CUSTOM SOLUTIONS',
-            description: 'DigiaeroTech crafts responsive, SEO-optimized websites that captivate audiences and drive business growth. From stunning designs to powerful functionality, we build digital experiences that convert.',
+            initial: "Want ",
+            headlineKeywords: ["E-commerce", "Web App", "Landing Page", "Portfolio", "CMS", "Redesign"],
+            brandLine: "Call Digi Aerotech",
+            subheadline: "Professional web development and design services that convert visitors into customers. Fast, responsive, and SEO-optimized.",
+            ctaButtons: [
+                { icon: <IconFreeRights size={30} />, text: "Get Free Quote", link: "/contact" },
+                { icon: <IconPhone size={30} />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+            ],
+            stats: [
+                {
+                    icon: <IconCode size={34} />,
+                    title: "200+ Clients",
+                    description: "Successfully served"
+                },
+                {
+                    icon: <IconDeviceDesktop size={34} />,
+                    title: "Mobile First",
+                    description: "Responsive layouts"
+                },
+                {
+                    icon: <IconRocket size={34} />,
+                    title: "8-9 Days",
+                    description: "Average project delivery"
+                },
+                {
+                    icon: <IconStarsFilled size={34} />,
+                    title: "4.8+ Stars",
+                    description: "Client satisfaction score"
+                }
+            ]
         },
         whyChooseUs: {
             title: [
@@ -329,7 +378,7 @@ export default function ServicePage() {
         <section ref={sectionRef} className="">
             <div className="mx-auto">
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                    <ServiceHero {...serviceData.hero} />
+                    <Hero {...serviceData.hero} />
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>

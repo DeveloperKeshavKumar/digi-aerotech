@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { StatsSection } from '../stats-section';
 import { ContactForm } from '../contact-form';
+import { init } from 'next/dist/compiled/webpack/webpack';
 
 interface StatsProps {
   icon?: React.ReactNode;
@@ -20,6 +21,7 @@ interface CTAButton {
 }
 
 interface HeroProps {
+  initial?: string;
   headlineKeywords: string[];
   brandLine: string | { text: string; gradient?: boolean; gradientClass?: string }[];
   subheadline: string;
@@ -27,7 +29,7 @@ interface HeroProps {
   stats: StatsProps[];
 }
 
-export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subheadline, ctaButtons, stats }) => {
+export const Hero: React.FC<HeroProps> = ({initial, headlineKeywords, brandLine, subheadline, ctaButtons, stats }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
@@ -39,7 +41,6 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-
 
     const animate = () => {
       if (showing) {
@@ -68,14 +69,19 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
     };
   }, [letterIndex, showing, currentWord, headlineKeywords]);
 
-  const gradientMap: Record<string, string> = {
-    Leads: "from-green-400 via-blue-500 to-purple-500",
-    Sales: "from-orange-400 via-pink-500 to-red-500",
-    Reach: "from-yellow-300 via-rose-400 to-fuchsia-500",
-    Growth: "from-green-400 via-blue-500 to-purple-500",
-    Visibility: "from-orange-400 via-pink-500 to-red-500",
-    Revenue: "from-yellow-300 via-rose-400 to-fuchsia-500",
-    Success: "from-green-400 via-blue-500 to-purple-500",
+  // Array of gradient classes that cycle based on index
+  const gradientClasses = [
+    "from-green-400 via-blue-500 to-purple-500",
+    "from-orange-400 via-pink-500 to-red-500", 
+    "from-yellow-300 via-rose-400 to-fuchsia-500",
+    "from-blue-400 via-purple-500 to-pink-500",
+    "from-emerald-400 via-cyan-500 to-blue-500",
+    "from-red-400 via-orange-500 to-yellow-500"
+  ];
+
+  // Get gradient class based on current word index
+  const getCurrentGradient = () => {
+    return gradientClasses[wordIndex % gradientClasses.length];
   };
 
   useEffect(() => {
@@ -128,8 +134,8 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
             className="mb-4 text-4xl sm:text-center lg:text-left font-semibold tracking-tight leading-tight md:text-5xl xl:text-6xl dark:text-white"
           >
             <span className="block">
-              Need{" "}
-              <span className={`inline-flex bg-clip-text text-transparent bg-gradient-to-r ${gradientMap[currentWord] || "from-pink-500 via-yellow-500 to-blue-500"}`}>
+              {initial || "Need "}
+              <span className={`inline-flex bg-clip-text text-transparent bg-gradient-to-r ${getCurrentGradient()}`}>
                 <motion.span
                   key={wordIndex}
                   initial={{ opacity: 0 }}
@@ -186,7 +192,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
           initial={{ opacity: 0, scale: 0.8 }}
           animate={visible ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="lg:col-span-5 xl:col-span-6 hidden md:block sm:flex items-center "
+          className="lg:col-span-5 xl:col-span-6 hidden sm:flex items-center justify-center"
         >
           <ContactForm />
         </motion.div>

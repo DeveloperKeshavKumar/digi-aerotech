@@ -62,10 +62,10 @@ export const StatsSection: React.FC<{ stats: StatsProps[] }> = ({ stats }) => {
                 </div>
               )}
               <div className="flex-1">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white leading-tight">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
                   {stat.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1 leading-relaxed line-clamp-2">
                   {stat.description}
                 </p>
               </div>

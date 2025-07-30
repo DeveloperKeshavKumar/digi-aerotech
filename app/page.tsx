@@ -62,24 +62,24 @@ export default function Homepage() {
         ]}
         stats={[
           {
-            icon: <IconUsersGroup size={34} className='fill-gray-600 dark:fill-gray-400' />,
+            icon: <IconUsersGroup size={34} className="fill-gray-600 dark:fill-gray-400" />,
             title: "140+ Clients",
-            description: "Trusted by over 140 businesses"
+            description: "Web solutions delivered"
           },
           {
             icon: <IconReportAnalytics size={34} />,
-            title: "50 Lac+",
-            description: "leads generated"
+            title: "50L+ Visitors",
+            description: "Driven through our websites"
           },
           {
             icon: <IconSchool size={34} />,
             title: "10+ Years",
-            description: "of experience in market"
+            description: "Expertise in web development"
           },
           {
             icon: <IconStarsFilled size={34} />,
-            title: "4.9 Stars",
-            description: "Avg. rating from happy clients"
+            title: "4.9/5 Rating",
+            description: "From happy clients"
           }
         ]}
       />
@@ -433,7 +433,7 @@ export default function Homepage() {
             youtubeId: "g9Ut0rA1drg"
           },
         ]}
-        // cta={{ text: "View Client Results", link: "/case-studies" }}
+      // cta={{ text: "View Client Results", link: "/case-studies" }}
       />
       <Testimonials
         title={[
