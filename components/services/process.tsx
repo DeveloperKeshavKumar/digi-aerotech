@@ -80,7 +80,7 @@
                                     {/* Background line */}
                                     <div className="absolute top-1/2 left-8 right-8 h-px bg-gray-200 dark:bg-gray-800 -translate-y-1/2" />
 
-                                    {steps.map((step, index) => (
+                                    {steps.map((step) => (
                                         <motion.div
                                             key={step.id}
                                             className="relative cursor-pointer group flex flex-col items-center"

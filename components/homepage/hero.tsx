@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { StatsSection } from '../stats-section';
 import { ContactForm } from '../contact-form';
-import { init } from 'next/dist/compiled/webpack/webpack';
 
 interface StatsProps {
   icon?: React.ReactNode;

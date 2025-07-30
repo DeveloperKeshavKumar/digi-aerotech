@@ -4,7 +4,6 @@ import { useParams } from 'next/navigation'
 import { notFound } from 'next/navigation';
 import { motion } from 'motion/react';
 import { inView } from 'motion';
-import { ServiceHero } from '@/components/services/service-hero';
 import { WhyChooseUs } from '@/components/services/why-choose-us';
 import { TypesOfServices } from '@/components/services/types-of-services';
 import { Process } from '@/components/services/process';
@@ -23,9 +22,6 @@ import {
     IconMovie,
     IconFreeRights,
     IconPhone,
-    IconUsersGroup,
-    IconReportAnalytics,
-    IconSchool,
     IconStarsFilled,
     IconRocket,
 } from '@tabler/icons-react';
@@ -383,11 +379,12 @@ const services: Record<string, ServiceData> = {
 
 export default function ServicePage() {
     const sectionRef = useRef<HTMLElement>(null);
-    const [visible, setVisible] = useState(false);
     const params = useParams<{ slug: string; }>()
 
     useEffect(() => {
-        if (sectionRef.current) inView(sectionRef.current, () => setVisible(true), { margin: '-100px' });
+        if (sectionRef.current) {
+            inView(sectionRef.current, () => { }, { margin: '-100px' });
+        }
     }, []);
 
     const serviceData = services[params.slug];
