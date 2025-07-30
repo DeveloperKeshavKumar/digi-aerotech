@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react'; 
+import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 interface ProcessStep {
@@ -36,7 +36,7 @@ export const Process: React.FC<ProcessProps> = ({
     };
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-300 border-b border-border dark:border-gray-800">
             <div className="py-12 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-6xl">
                     {/* Header Section */}
@@ -47,17 +47,16 @@ export const Process: React.FC<ProcessProps> = ({
                         transition={{ duration: 0.6 }}
                     >
                         <motion.span
-                            className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-3"
+                            className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-br from-red-500 via-pink-600 to-orange-500 tracking-wide uppercase mb-4 block"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.1 }}
                         >
                             {subtitle}
-                            <ArrowRight size={14} />
                         </motion.span>
 
                         <motion.h1
-                            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+                            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
@@ -102,7 +101,7 @@ export const Process: React.FC<ProcessProps> = ({
                                         </span>
                                     </motion.div>
 
-                                    <div className={`relative p-6 md:p-8 rounded-2xl border transition-all duration-500 ${'bg-white/80 border-black/10 hover:border-black/20 backdrop-blur-sm dark:bg-black/50 dark:border-white/10 hover:border-white/20 dark:hover:border-white/20 backdrop-blur-sm'} group-hover:shadow-lg`}>
+                                    <div className={`relative p-6 md:p-8 rounded-2xl border transition-all duration-500 ${'bg-white/80 border-black/10 hover:border-black/20 dark:bg-black/50 dark:border-white/10 dark:hover:border-white/20 backdrop-blur-sm'} group-hover:shadow-lg`}>
 
                                         <motion.h3
                                             className="text-xl md:text-2xl font-bold mb-4 text-black dark:text-white"

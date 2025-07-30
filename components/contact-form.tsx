@@ -29,8 +29,7 @@ export const ContactForm = () => {
 
     return (
         <div
-            style={{ backgroundImage: 'url(/images/contact-bg.jpg)' }}
-            className="hidden md:block w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10"
+            className=" w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10"
             data-aos="fade-up">
             <div className="bg-white/80 dark:bg-gray-800/60 border-b-0 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-xl dark:shadow-gray-600/50">
                 <div className="mb-4">

@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { motion } from 'motion/react';
 import { inView } from 'motion';
 import { ServiceHero } from '@/components/services/service-hero';
-import { WhyChooseUs } from '@/components/homepage/why-choose-us';
+import { WhyChooseUs } from '@/components/services/why-choose-us';
 import { TypesOfServices } from '@/components/services/types-of-services';
 import { Process } from '@/components/services/process';
 import { TechStack } from '@/components/services/tech-stack';
@@ -27,10 +27,10 @@ import {
 interface ServiceData {
     slug: string;
     hero: {
-        title: string;
+        titlepart1: string;
+        titlepart2: string;
         subtitle: string;
         description: string;
-        image: string;
     };
     whyChooseUs: {
         title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
@@ -105,10 +105,10 @@ const services: Record<string, ServiceData> = {
     'web-design-development': {
         slug: 'web-design-development',
         hero: {
-            title: 'Transform Your Digital Presence',
+            titlepart1: 'Transform Your ',
+            titlepart2: 'Online Presence',
             subtitle: 'CUSTOM SOLUTIONS',
             description: 'DigiaeroTech crafts responsive, SEO-optimized websites that captivate audiences and drive business growth. From stunning designs to powerful functionality, we build digital experiences that convert.',
-            image: '/services/1.png'
         },
         whyChooseUs: {
             title: [
@@ -270,7 +270,7 @@ const services: Record<string, ServiceData> = {
         testimonials: {
             title: [
                 { text: 'What ', gradient: false },
-                { text: 'Our Clients ', gradient: true, gradientClass: 'from-blue-600 to-purple-500' },
+                { text: 'Our Clients ', gradient: true, gradientClass: 'from-orange-500 via-pink-500 to-red-500' },
                 { text: 'Say', gradient: false }
             ],
             description: 'Success stories from businesses we\'ve worked with',
@@ -308,7 +308,6 @@ const services: Record<string, ServiceData> = {
             title: 'Ready to Start Your Web Development Project?',
             subtitle: 'GET IN TOUCH',
             description: 'Contact us today to discuss your web development needs and get a free consultation and quote for your project.',
-            backgroundColor: 'bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-blue-950/30'
         }
     }
 };
@@ -327,8 +326,8 @@ export default function ServicePage() {
     if (!serviceData) notFound();
 
     return (
-        <section ref={sectionRef} className="bg-white dark:bg-gray-900">
-            <div className="mx-auto space-y-16">
+        <section ref={sectionRef} className="">
+            <div className="mx-auto">
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
                     <ServiceHero {...serviceData.hero} />
                 </motion.div>

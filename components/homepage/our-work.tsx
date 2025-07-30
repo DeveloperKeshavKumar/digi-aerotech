@@ -38,7 +38,6 @@ export const OurWork: React.FC<OurWorkProps> = ({ title, videos, cta }) => {
     );
   };
 
-  // Only show first 3 videos
   const shorts = videos.slice(0, 4);
 
   return (
@@ -48,39 +47,42 @@ export const OurWork: React.FC<OurWorkProps> = ({ title, videos, cta }) => {
           {renderTitle()}
         </h2>
 
-        {/* Shorts Grid */}
-        <div className="flex flex-col md:flex-row gap-10 justify-center items-center mb-16">
-            {shorts.map((video: VideoType, idx: number) => (
-            <div key={video.youtubeId} className="relative w-full md:w-[22rem] h-[40rem] rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col">
+        {/* Shorts Grid - Updated for responsive layout */}
+        <div className="grid grid-cols-2 md:flex lg:flex-row gap-6 sm:gap-4 lg:gap-10 justify-center items-center mb-16">
+          {shorts.map((video: VideoType, idx: number) => (
+            <div
+              key={video.youtubeId}
+              className="relative w-full sm:w-[calc(50%-1rem)] lg:w-[22rem] h-[40rem] rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col"
+            >
               <div className="relative w-full h-full flex-1 flex items-center justify-center shadow-lg">
-              <iframe
-                src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=0&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&enablejsapi=1&playsinline=1&iv_load_policy=3&fs=0&disablekb=1`}
-                title={video.title}
-                className="w-full h-full rounded-2xl"
-                allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                style={{ aspectRatio: '9/16', minHeight: '100%' }}
-              />
-              <BorderBeam
-                duration={6}
-                delay={idx * 1.5}
-                size={150}
-                borderWidth={2}
-              />
-              <BorderBeam
-                duration={6}
-                delay={idx * 1.5 + 3}
-                size={150}
-                borderWidth={2}
-              />
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=0&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&enablejsapi=1&playsinline=1&iv_load_policy=3&fs=0&disablekb=1`}
+                  title={video.title}
+                  className="w-full h-full rounded-2xl"
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  style={{ aspectRatio: '9/16', minHeight: '100%' }}
+                />
+                <BorderBeam
+                  duration={6}
+                  delay={idx * 1.5}
+                  size={150}
+                  borderWidth={2}
+                />
+                <BorderBeam
+                  duration={6}
+                  delay={idx * 1.5 + 3}
+                  size={150}
+                  borderWidth={2}
+                />
               </div>
               <div className="p-4 bg-gradient-to-t from-black/80 to-transparent absolute bottom-0 left-0 right-0">
-              <h3 className="text-white font-semibold text-lg text-center">
-                {video.title}
-              </h3>
+                <h3 className="text-white font-semibold text-lg text-center">
+                  {video.title}
+                </h3>
               </div>
             </div>
-            ))}
+          ))}
         </div>
 
         {/* CTA Button */}

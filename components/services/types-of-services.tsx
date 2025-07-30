@@ -28,7 +28,7 @@ export const TypesOfServices: React.FC<TypesOfServicesProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="py-16"
+      className="py-16 border-b border-border dark:border-gray-800"
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}

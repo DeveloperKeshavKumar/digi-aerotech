@@ -186,7 +186,7 @@ export const Hero: React.FC<HeroProps> = ({ headlineKeywords, brandLine, subhead
           initial={{ opacity: 0, scale: 0.8 }}
           animate={visible ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="lg:col-span-5 xl:col-span-6 flex items-center"
+          className="lg:col-span-5 xl:col-span-6 hidden md:block sm:flex items-center "
         >
           <ContactForm />
         </motion.div>
