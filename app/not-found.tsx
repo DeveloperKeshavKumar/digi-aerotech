@@ -10,7 +10,7 @@ export default function NotFound() {
         <div className="text-center space-y-4 relative">
           <div className="absolute -inset-4 rounded-lg bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 opacity-10 blur-md"></div>
           <h1 className="text-5xl font-bold text-gray-900 dark:text-white relative">
-            404 - Unkonwn Service
+            404
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 relative">
             Oops! You&apos;ve found a hidden path.
@@ -26,8 +26,8 @@ export default function NotFound() {
             <span>Go to Services</span>
           </Link>
         </div>
-        <div className="mt-16 p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-950/50 shadow-sm">
-          <ContactForm className='mt-20' />
+        <div >
+          <ContactForm />
         </div>
       </div>
     </div>

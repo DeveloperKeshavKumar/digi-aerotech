@@ -3,8 +3,9 @@ import { Label } from "@radix-ui/react-label";
 import { BorderBeam } from "./ui/border-beam";
 import { Input } from "./ui/input";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
-export const ContactForm = () => {
+export const ContactForm = ({ className }: { className?: string }) => {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -29,7 +30,7 @@ export const ContactForm = () => {
 
     return (
         <div
-            className=" w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10"
+            className={cn("w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:-mt-10", className)}
             data-aos="fade-up">
             <div className="bg-white/80 dark:bg-gray-800/60 border-b-0 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 lg:p-8 shadow-xl dark:shadow-gray-600/50">
                 <div className="mb-4">

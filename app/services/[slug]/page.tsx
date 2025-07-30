@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useParams } from 'next/navigation'
 import { notFound } from 'next/navigation';
 import { motion } from 'motion/react';
