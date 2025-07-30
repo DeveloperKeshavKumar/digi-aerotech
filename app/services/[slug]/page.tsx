@@ -47,6 +47,16 @@ interface CTAButton {
 // Define the service data type
 interface ServiceData {
     slug: string;
+    showSections?: {
+        hero?: boolean;
+        whyChooseUs?: boolean;
+        typesOfServices?: boolean;
+        process?: boolean;
+        techStack?: boolean;
+        testimonials?: boolean;
+        cta?: boolean;
+    };
+    customSections?: React.ReactNode[];
     hero: {
         initial: string;
         headlineKeywords: string[];
@@ -127,6 +137,15 @@ interface ServiceData {
 const services: Record<string, ServiceData> = {
     'web-design-development': {
         slug: 'web-design-development',
+        showSections: {
+            hero: true,
+            whyChooseUs: true,
+            typesOfServices: true,
+            process: true,
+            techStack: true,
+            testimonials: true,
+            cta: true
+        },
         hero: {
             initial: "Want ",
             headlineKeywords: ["E-commerce", "Web App", "Landing Page", "Portfolio", "CMS", "Redesign"],
@@ -374,36 +393,64 @@ export default function ServicePage() {
     const serviceData = services[params.slug];
     if (!serviceData) notFound();
 
+    const { showSections = {}, customSections = [] } = serviceData;
+
     return (
         <section ref={sectionRef} className="">
             <div className="mx-auto">
-                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                    <Hero {...serviceData.hero} />
-                </motion.div>
+                {showSections.hero !== false && (
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+                        <Hero {...serviceData.hero} />
+                    </motion.div>
+                )}
 
-                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
-                    <WhyChooseUs {...serviceData.whyChooseUs} />
-                </motion.div>
+                {showSections.whyChooseUs !== false && (
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+                        <WhyChooseUs {...serviceData.whyChooseUs} />
+                    </motion.div>
+                )}
 
-                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
-                    <TypesOfServices {...serviceData.typesOfServices} />
-                </motion.div>
+                {showSections.typesOfServices !== false && (
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
+                        <TypesOfServices {...serviceData.typesOfServices} />
+                    </motion.div>
+                )}
 
-                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
-                    <Process {...serviceData.process} />
-                </motion.div>
+                {showSections.process !== false && (
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
+                        <Process {...serviceData.process} />
+                    </motion.div>
+                )}
 
-                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}>
-                    <TechStack {...serviceData.techStack} />
-                </motion.div>
+                {showSections.techStack !== false && (
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}>
+                        <TechStack {...serviceData.techStack} />
+                    </motion.div>
+                )}
 
-                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}>
-                    <Testimonials {...serviceData.testimonials} />
-                </motion.div>
+                {showSections.testimonials !== false && (
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}>
+                        <Testimonials {...serviceData.testimonials} />
+                    </motion.div>
+                )}
 
-                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.6 }}>
-                    <CTA {...serviceData.cta} />
-                </motion.div>
+                {showSections.cta !== false && (
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.6 }}>
+                        <CTA {...serviceData.cta} />
+                    </motion.div>
+                )}
+
+                {customSections.map((Component, idx) => (
+                    <motion.div
+                        key={`custom-${idx}`}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.6 + idx * 0.1 }}
+                    >
+                        {Component}
+                    </motion.div>
+                ))}
             </div>
         </section>
     );
