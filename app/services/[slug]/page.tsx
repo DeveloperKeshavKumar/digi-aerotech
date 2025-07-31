@@ -26,7 +26,6 @@ import {
     IconRocket,
     IconSpeakerphone,
     IconFriends,
-    IconFlower,
 } from '@tabler/icons-react';
 import { Hero } from '@/components/homepage/hero';
 import { TechDiff } from '@/components/services/web-dev-design/tech-diff';

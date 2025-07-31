@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion, Reorder } from 'motion/react';
-import { ChevronLeft, ChevronRight, GripVertical, Smartphone, Monitor } from 'lucide-react';
+import { GripVertical, Smartphone, Monitor } from 'lucide-react';
 
 interface Technology {
     name: string;
@@ -35,7 +35,7 @@ interface TechDiffProps {
         part2?: string;
     };
     subheading?: string;
-    data: CategoryData;
+    data?: CategoryData;
     fieldConfig?: FieldConfig[];
 }
 
@@ -212,12 +212,11 @@ export function TechDiff({
     data = defaultData,
     fieldConfig = defaultFieldConfig
 }: TechDiffProps) {
-    const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
+    const categories = Object.keys(data);
+    const [currentCategory, setCurrentCategory] = useState(categories[0]);
     const [viewMode, setViewMode] = useState<'desktop' | 'mobile'>('desktop');
     const [expandedCard, setExpandedCard] = useState<string | null>(null);
-    const categories = Object.keys(data);
-    const currentCategory = categories[currentCategoryIndex];
-    const currentTechs = data[currentCategory] || [];
+    const currentTechs = useMemo(() => data[currentCategory] || [], [data, currentCategory]);
 
     const [techOrder, setTechOrder] = useState<Technology[]>(currentTechs);
 
@@ -237,7 +236,7 @@ export function TechDiff({
                 setExpandedCard(null); // Clear expanded state on larger screens
             }
         }
-    }, [currentCategoryIndex, currentTechs]);
+    }, [currentCategory, currentTechs]);
 
     // Auto-detect screen size for view mode
     React.useEffect(() => {
@@ -250,14 +249,6 @@ export function TechDiff({
         window.addEventListener('resize', checkScreenSize);
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
-
-    const nextCategory = () => {
-        setCurrentCategoryIndex((prev) => (prev + 1) % categories.length);
-    };
-
-    const prevCategory = () => {
-        setCurrentCategoryIndex((prev) => (prev - 1 + categories.length) % categories.length);
-    };
 
     const getDifficultyColor = (difficulty: string) => {
         switch (difficulty) {
@@ -280,9 +271,7 @@ export function TechDiff({
         return (
             <div className="w-full flex justify-center px-2 sm:px-4 overflow-hidden">
                 <div className="w-full max-w-7xl mx-auto space-y-4 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 lg:flex justify-center lg:gap-6">
-
                     {techOrder.map((tech) => {
-                        // Check if we're on mobile (small screen)
                         const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
                         const shouldShowContent = !isMobile || expandedCard === tech.name;
 
@@ -442,8 +431,7 @@ export function TechDiff({
         return (
             <div className="w-full max-w-max overflow-x-auto">
                 <div className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-900/30 backdrop-blur-sm relative flex flex-col items-center justify-center">
-
-                    {/* Draggable Column Headers - add hide-scrollbar class */}
+                    {/* Draggable Column Headers */}
                     <div className="flex bg-gray-50 dark:bg-gray-800/50 overflow-x-auto hide-scrollbar">
                         <div className="flex-shrink-0 w-32 lg:w-40 p-3 lg:p-4 font-bold border-r border-gray-200 dark:border-gray-600">
                             Features
@@ -476,7 +464,7 @@ export function TechDiff({
                         </Reorder.Group>
                     </div>
 
-                    {/* Table Rows - add hide-scrollbar class */}
+                    {/* Table Rows */}
                     <div className="overflow-x-auto hide-scrollbar">
                         {tableFields.map((field, fieldIndex) => (
                             <motion.div
@@ -561,31 +549,22 @@ export function TechDiff({
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center justify-center mb-6 sm:mb-8 lg:mb-12 px-2"
+                    className="flex items-center justify-center mb-6 sm:mb-8 lg:mb-12 px-2 overflow-x-auto"
                 >
-                    <button
-                        onClick={prevCategory}
-                        className="p-2 sm:p-3 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                        disabled={categories.length <= 1}
-                    >
-                        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </button>
-
-                    <div className="mx-4 sm:mx-6 lg:mx-12 text-center">
-                        <h2 className="text-2xl sm:text-3xl font-bold capitalize">
-                            <span className="bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
-                                {currentCategory}
-                            </span>
-                        </h2>
+                    <div className="flex items-center gap-2 sm:gap-4 px-4 py-2">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => setCurrentCategory(category)}
+                                className={`px-4 py-2 rounded-full text-sm sm:text-lg font-medium transition-colors capitalize  ${currentCategory === category
+                                    ? "bg-gradient-to-r from-orange-500 via-pink-600 to-red-500 text-white" 
+                                    : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                                    }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
                     </div>
-
-                    <button
-                        onClick={nextCategory}
-                        className="p-2 sm:p-3 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                        disabled={categories.length <= 1}
-                    >
-                        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </button>
                 </motion.div>
 
                 {/* Drag Instructions (Desktop only) */}
