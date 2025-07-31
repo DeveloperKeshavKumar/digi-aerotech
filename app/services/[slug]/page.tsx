@@ -30,6 +30,8 @@ import {
 } from '@tabler/icons-react';
 import { Hero } from '@/components/homepage/hero';
 import { TechDiff } from '@/components/services/web-dev-design/tech-diff';
+import { ProvideServicesTo } from '@/components/services/web-dev-design/provide-services-to';
+import { Companies } from '@/components/homepage/companies';
 
 interface StatsProps {
     icon?: React.ReactNode;
@@ -45,7 +47,7 @@ interface CTAButton {
 }
 
 interface CustomSection {
-   component: React.ComponentType<any>;
+    component: React.ComponentType<any>;
     props?: Record<string, any>;
     position: 'beforeHero' | 'afterHero' |
     'beforeWhyChooseUs' | 'afterWhyChooseUs' |
@@ -161,10 +163,154 @@ const services: Record<string, ServiceData> = {
         },
         customSections: [
             {
-                component: TechDiff ,
-                props:{},
+                component: TechDiff,
                 position: 'afterTech'
             },
+            {
+                component: ProvideServicesTo,
+                props: {
+                    services: [
+                        {
+                            id: '1',
+                            name: 'Real Estate',
+                            image: '/web-dev/real-estate.jpeg',
+                            slug: 'real-estate'
+                        },
+                        {
+                            id: '2',
+                            name: 'Hotel & Resorts',
+                            image: '/web-dev/hotel-resorts.jpeg',
+                            slug: 'hotel-resorts'
+                        },
+                        {
+                            id: '3',
+                            name: 'Doctors & Clinics',
+                            image: '/web-dev/doctors-clinics.jpeg',
+                            slug: 'doctors-clinics'
+                        },
+                        {
+                            id: '4',
+                            name: 'Gyms & Fitness',
+                            image: '/web-dev/gyms.jpeg',
+                            slug: 'gyms-fitness'
+                        },
+                        {
+                            id: '5',
+                            name: 'Restaurants & Cafes',
+                            image: '/web-dev/cafes.jpeg',
+                            slug: 'restaurants-cafes'
+                        },
+                        {
+                            id: '6',
+                            name: 'Fashion Brands',
+                            image: '/web-dev/fashion-brands.jpeg',
+                            slug: 'fashion-brands'
+                        },
+                        {
+                            id: '7',
+                            name: 'B2B Services',
+                            image: '/web-dev/b2b-services.jpeg',
+                            slug: 'b2b-services'
+                        },
+                        {
+                            id: '8',
+                            name: 'Consultants & Coaches',
+                            image: '/web-dev/consultants.jpeg',
+                            slug: 'consultants'
+                        },
+                        {
+                            id: '9',
+                            name: 'Local Businesses',
+                            image: '/web-dev/locals.png',
+                            slug: 'local-businesses'
+                        },
+                        {
+                            id: '10',
+                            name: 'Pharma Companies',
+                            image: '/web-dev/pharma.jpeg',
+                            slug: 'pharma-companies'
+                        },
+                        {
+                            id: '11',
+                            name: 'Interior Designers',
+                            image: '/web-dev/interior-designers.jpeg',
+                            slug: 'interior-designers'
+                        },
+                        {
+                            id: '12',
+                            name: 'Travel & Tourism',
+                            image: '/web-dev/travel-tourism.jpeg',
+                            slug: 'travel-tourism'
+                        },
+                        {
+                            id: '13',
+                            name: 'Startups',
+                            image: '/web-dev/startups.jpeg',
+                            slug: 'startups'
+                        },
+                        {
+                            id: '14',
+                            name: 'B2C Services',
+                            image: '/web-dev/b2c-services.jpeg',
+                            slug: 'b2c-services'
+                        },
+                        {
+                            id: '15',
+                            name: 'Educational Institutions',
+                            image: '/web-dev/educational.jpeg',
+                            slug: 'educational-institutions'
+                        },
+                        {
+                            id: '15',
+                            name: 'E-Commerce',
+                            image: '/web-dev/ecommerce.jpeg',
+                            slug: 'e-commerce'
+                        },
+                    ],
+                    heading: 'We Provide Services To',
+                    subheading: 'Businesses looking for high-quality web solutions'
+                },
+                position: 'afterWhyChooseUs'
+            }, {
+                component: Companies,
+                props: {
+                    logos: [{ image: '/logos/1.png', },
+                    { image: '/logos/2.png', },
+                    { image: '/logos/3.png', },
+                    { image: '/logos/4.png', },
+                    { image: '/logos/5.png', },
+                    { image: '/logos/6.png', },
+                    { image: '/logos/7.png', },
+                    { image: '/logos/8.png', },
+                    { image: '/logos/9.png', },
+                    { image: '/logos/10.png', },
+                    { image: '/logos/11.png', },
+                    { image: '/logos/12.png', },
+                    { image: '/logos/13.png', },
+                    { image: '/logos/14.png', },
+                    { image: '/logos/15.png', },
+                    { image: '/logos/16.png', },
+                    { image: '/logos/17.png', },
+                    { image: '/logos/18.png', },
+                    { image: '/logos/18.png', },
+                    { image: '/logos/19.png', },
+                    { image: '/logos/20.png', },
+                    { image: '/logos/21.png', },
+                    { image: '/logos/22.png', },
+                    { image: '/logos/23.png', },
+                    { image: '/logos/24.png', },
+                    { image: '/logos/25.png', },
+                    ],
+                    rows: 2,
+                    speed: "fast",
+                    title: [
+                        { text: 'Trusted By ' },
+                        { text: '140+ Businesses', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" }
+                    ],
+                    description: 'We are grateful to work with incredible clients 💖',
+                },
+                position: 'beforeWhyChooseUs'
+            }
         ],
         hero: {
             initial: "Want ",
@@ -403,7 +549,7 @@ const services: Record<string, ServiceData> = {
 
 export default function ServicePage() {
     const sectionRef = useRef<HTMLElement>(null);
-    const params = useParams<{ slug: string; }>()
+    const params = useParams<{ slug: string; }>();
 
     useEffect(() => {
         if (sectionRef.current) {
@@ -411,13 +557,13 @@ export default function ServicePage() {
         }
     }, []);
 
-    const serviceData = services[params.slug];
+    const serviceData = services[params.slug as keyof typeof services];
     if (!serviceData) notFound();
 
     const { showSections = {}, customSections = [] } = serviceData;
 
-    const renderCustomSections = (position: string) =>
-        customSections
+    const renderCustomSections = (position: string) => {
+        return customSections
             .filter(section => section.position === position)
             .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
             .map((section, idx) => {
@@ -434,7 +580,7 @@ export default function ServicePage() {
                     </motion.div>
                 );
             });
-
+    };
 
     return (
         <section ref={sectionRef} className="">
@@ -446,6 +592,8 @@ export default function ServicePage() {
                 )}
 
                 {renderCustomSections('afterHero')}
+                {renderCustomSections('beforeWhyChooseUs')}
+
                 {showSections.whyChooseUs !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
                         <WhyChooseUs {...serviceData.whyChooseUs} />
@@ -453,6 +601,8 @@ export default function ServicePage() {
                 )}
 
                 {renderCustomSections('afterWhyChooseUs')}
+                {renderCustomSections('beforeTypes')}
+
                 {showSections.typesOfServices !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
                         <TypesOfServices {...serviceData.typesOfServices} />
@@ -460,6 +610,8 @@ export default function ServicePage() {
                 )}
 
                 {renderCustomSections('afterTypes')}
+                {renderCustomSections('beforeProcess')}
+
                 {showSections.process !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
                         <Process {...serviceData.process} />
@@ -467,12 +619,16 @@ export default function ServicePage() {
                 )}
 
                 {renderCustomSections('afterProcess')}
+                {renderCustomSections('beforeTech')}
+
                 {showSections.techStack !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}>
                         <TechStack {...serviceData.techStack} />
                     </motion.div>
                 )}
+
                 {renderCustomSections('afterTech')}
+                {renderCustomSections('beforeTestimonials')}
 
                 {showSections.testimonials !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}>
@@ -481,11 +637,14 @@ export default function ServicePage() {
                 )}
 
                 {renderCustomSections('afterTestimonials')}
+                {renderCustomSections('beforeCTA')}
+
                 {showSections.cta !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.6 }}>
                         <CTA {...serviceData.cta} />
                     </motion.div>
                 )}
+
                 {renderCustomSections('afterCTA')}
                 {renderCustomSections('afterAll')}
             </div>

@@ -48,7 +48,7 @@ import {
   IconBuilding,
   IconPalette,
 } from '@tabler/icons-react';
-import { Companies } from '@/components/homepage/comapnies';
+import { Companies } from '@/components/homepage/companies';
 export default function Homepage() {
   return (
     <main>

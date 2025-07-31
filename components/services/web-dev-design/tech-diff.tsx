@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, Reorder } from 'framer-motion';
+import { motion, Reorder } from 'motion/react';
 import { ChevronLeft, ChevronRight, GripVertical, Smartphone, Monitor } from 'lucide-react';
 
 interface Technology {
