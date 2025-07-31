@@ -20,6 +20,15 @@ interface CategoryData {
     [key: string]: Technology[];
 }
 
+interface FieldConfig {
+    key: keyof Technology;
+    label: string;
+    type?: 'text' | 'list' | 'grid' | 'difficulty' | 'rating';
+    gridCols?: number;
+    showInCard?: boolean;
+    showInTable?: boolean;
+}
+
 interface TechDiffProps {
     heading?: {
         part1: string;
@@ -27,6 +36,7 @@ interface TechDiffProps {
     };
     subheading?: string;
     data: CategoryData;
+    fieldConfig?: FieldConfig[];
 }
 
 const defaultData: CategoryData = {
@@ -183,10 +193,24 @@ const defaultData: CategoryData = {
     ]
 };
 
+const defaultFieldConfig: FieldConfig[] = [
+    { key: 'description', label: 'Description', type: 'text', showInCard: true, showInTable: true },
+    { key: 'useCase', label: 'Use Case', type: 'text', showInCard: true, showInTable: true },
+    { key: 'difficulty', label: 'Difficulty', type: 'difficulty', showInCard: false, showInTable: true },
+    { key: 'performance', label: 'Performance', type: 'grid', gridCols: 2, showInCard: true, showInTable: true },
+    { key: 'learningCurve', label: 'Learning Curve', type: 'grid', gridCols: 2, showInCard: true, showInTable: true },
+    { key: 'community', label: 'Community', type: 'grid', gridCols: 2, showInCard: true, showInTable: true },
+    { key: 'documentation', label: 'Documentation', type: 'grid', gridCols: 2, showInCard: true, showInTable: true },
+    { key: 'popularity', label: 'Popularity', type: 'rating', showInCard: false, showInTable: true },
+    { key: 'pros', label: 'Pros', type: 'list', showInCard: true, showInTable: true },
+    { key: 'cons', label: 'Cons', type: 'list', showInCard: true, showInTable: true }
+];
+
 export function TechDiff({
     heading = { part1: "Technology ", part2: "Differences" },
     subheading = "Explore the differences in web development technologies.",
-    data = defaultData
+    data = defaultData,
+    fieldConfig = defaultFieldConfig
 }: TechDiffProps) {
     const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
     const [viewMode, setViewMode] = useState<'desktop' | 'mobile'>('desktop');
@@ -196,6 +220,10 @@ export function TechDiff({
     const currentTechs = data[currentCategory] || [];
 
     const [techOrder, setTechOrder] = useState<Technology[]>(currentTechs);
+
+    // Derive card and table fields from fieldConfig
+    const cardFields = fieldConfig.filter(field => field.showInCard !== false);
+    const tableFields = fieldConfig.filter(field => field.showInTable !== false);
 
     // Update tech order when category changes
     React.useEffect(() => {
@@ -248,22 +276,9 @@ export function TechDiff({
         ));
     };
 
-    const tableRows = [
-        { label: 'Description', key: 'description' as keyof Technology },
-        { label: 'Use Case', key: 'useCase' as keyof Technology },
-        { label: 'Difficulty', key: 'difficulty' as keyof Technology },
-        { label: 'Learning Curve', key: 'learningCurve' as keyof Technology },
-        { label: 'Performance', key: 'performance' as keyof Technology },
-        { label: 'Community', key: 'community' as keyof Technology },
-        { label: 'Documentation', key: 'documentation' as keyof Technology },
-        { label: 'Popularity', key: 'popularity' as keyof Technology },
-        { label: 'Pros', key: 'pros' as keyof Technology },
-        { label: 'Cons', key: 'cons' as keyof Technology }
-    ];
-
     const renderMobileCards = () => {
         return (
-            <div className="w-full flex justify-center px-2 sm:px-4">
+            <div className="w-full flex justify-center px-2 sm:px-4 overflow-hidden">
                 <div className="w-full max-w-7xl mx-auto space-y-4 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 lg:flex justify-center lg:gap-6">
 
                     {techOrder.map((tech) => {
@@ -276,7 +291,7 @@ export function TechDiff({
                                 key={tech.name}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className={`bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm transition-all duration-200 flex flex-col ${isMobile ? 'w-full' : 'h-full min-h-[400px]'
+                                className={`bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm transition-all duration-200 flex flex-col ${isMobile ? 'w-full max-w-full' : 'h-full min-h-[400px] max-w-md lg:max-w-sm xl:max-w-md'
                                     }`}
                             >
                                 {/* Card Header - Always visible */}
@@ -300,7 +315,7 @@ export function TechDiff({
                                         animate={{ opacity: 1, height: 'auto' }}
                                         exit={{ opacity: 0, height: 0 }}
                                         transition={{ duration: 0.2 }}
-                                        className={`p-4 space-y-4 ${isMobile ? '' : 'flex-grow flex flex-col justify-between'
+                                        className={`p-4 space-y-4 overflow-hidden ${isMobile ? '' : 'flex-grow flex flex-col justify-between'
                                             }`}
                                     >
                                         <CardContent tech={tech} />
@@ -331,69 +346,94 @@ export function TechDiff({
     const CardContent = ({ tech }: { tech: Technology }) => {
         const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
+        const renderFieldContent = (field: FieldConfig, tech: Technology) => {
+            const value = tech[field.key];
+
+            switch (field.type) {
+                case 'difficulty':
+                    return (
+                        <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(value as string)}`}>
+                            {value as string}
+                        </span>
+                    );
+                case 'rating':
+                    return <div className="flex">{renderStars(value as number)}</div>;
+                case 'list':
+                    if (field.key === 'pros') {
+                        return (
+                            <ul className={`space-y-1 ${isMobile ? '' : 'flex-grow'} overflow-hidden`}>
+                                {(value as string[]).map((item, i) => (
+                                    <li key={i} className="flex items-start text-sm">
+                                        <span className="text-green-500 mr-1 sm:mr-2 flex-shrink-0 mt-0.5">✓</span>
+                                        <span className="text-green-600 dark:text-green-400 break-words">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        );
+                    } else if (field.key === 'cons') {
+                        return (
+                            <ul className={`space-y-1 ${isMobile ? '' : 'flex-grow'} overflow-hidden`}>
+                                {(value as string[]).map((item, i) => (
+                                    <li key={i} className="flex items-start text-sm">
+                                        <span className="text-red-500 mr-1 sm:mr-2 flex-shrink-0 mt-0.5">✗</span>
+                                        <span className="text-red-600 dark:text-red-400 break-words">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        );
+                    }
+                    return (
+                        <ul className="space-y-1 text-sm">
+                            {(value as string[]).map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    );
+                default:
+                    return <p className="text-sm text-gray-600 dark:text-gray-400">{value as string}</p>;
+            }
+        };
+
+        const prosConsFields = cardFields.filter(field => field.key === 'pros' || field.key === 'cons');
+        const otherFields = cardFields.filter(field => field.key !== 'pros' && field.key !== 'cons');
+        const gridFields = otherFields.filter(field => field.type === 'grid');
+        const regularFields = otherFields.filter(field => field.type !== 'grid');
+
         return (
             <div className={`space-y-4 ${isMobile ? '' : 'h-full flex flex-col'}`}>
-                {/* Description */}
-                <div className="flex-shrink-0">
-                    <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Description</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{tech.description}</p>
-                </div>
+                {/* Regular fields */}
+                {regularFields.map((field) => (
+                    <div key={field.key} className="flex-shrink-0">
+                        <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">{field.label}</h4>
+                        {renderFieldContent(field, tech)}
+                    </div>
+                ))}
 
-                {/* Use Case */}
-                <div className="flex-shrink-0">
-                    <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Use Case</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{tech.useCase}</p>
-                </div>
-
-                {/* Performance & Learning */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-shrink-0">
-                    <div>
-                        <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Performance</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{tech.performance}</p>
+                {/* Grid fields */}
+                {gridFields.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-shrink-0">
+                        {gridFields.map((field) => (
+                            <div key={field.key}>
+                                <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">{field.label}</h4>
+                                {renderFieldContent(field, tech)}
+                            </div>
+                        ))}
                     </div>
-                    <div>
-                        <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Learning Curve</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{tech.learningCurve}</p>
-                    </div>
-                </div>
-
-                {/* Community & Documentation */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-shrink-0">
-                    <div>
-                        <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Community</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{tech.community}</p>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Documentation</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{tech.documentation}</p>
-                    </div>
-                </div>
+                )}
 
                 {/* Pros & Cons */}
-                <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${isMobile ? '' : 'flex-grow'}`}>
-                    <div className={isMobile ? '' : 'flex flex-col'}>
-                        <h4 className="font-semibold text-sm text-green-700 dark:text-green-400 mb-2">Pros</h4>
-                        <ul className={`space-y-1 ${isMobile ? '' : 'flex-grow'}`}>
-                            {tech.pros.map((pro, i) => (
-                                <li key={i} className="flex items-start text-sm">
-                                    <span className="text-green-500 mr-2 flex-shrink-0 mt-0.5">+</span>
-                                    <span className="text-green-600 dark:text-green-400">{pro}</span>
-                                </li>
-                            ))}
-                        </ul>
+                {prosConsFields.length > 0 && (
+                    <div className={`grid grid-cols-2 gap-3 sm:gap-4 ${isMobile ? '' : 'flex-grow'}`}>
+                        {prosConsFields.map((field) => (
+                            <div key={field.key} className={`${isMobile ? '' : 'flex flex-col'} overflow-hidden`}>
+                                <h4 className={`font-semibold text-sm mb-2 ${field.key === 'pros' ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'}`}>
+                                    {field.label}
+                                </h4>
+                                {renderFieldContent(field, tech)}
+                            </div>
+                        ))}
                     </div>
-                    <div className={isMobile ? '' : 'flex flex-col'}>
-                        <h4 className="font-semibold text-sm text-red-700 dark:text-red-400 mb-2">Cons</h4>
-                        <ul className={`space-y-1 ${isMobile ? '' : 'flex-grow'}`}>
-                            {tech.cons.map((con, i) => (
-                                <li key={i} className="flex items-start text-sm">
-                                    <span className="text-red-500 mr-2 flex-shrink-0 mt-0.5">-</span>
-                                    <span className="text-red-600 dark:text-red-400">{con}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+                )}
             </div>
         );
     };
@@ -438,51 +478,51 @@ export function TechDiff({
 
                     {/* Table Rows - add hide-scrollbar class */}
                     <div className="overflow-x-auto hide-scrollbar">
-                        {tableRows.map((row, rowIndex) => (
+                        {tableFields.map((field, fieldIndex) => (
                             <motion.div
-                                key={row.label}
+                                key={field.label}
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: rowIndex * 0.05 }}
-                                className={`flex min-w-max hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors ${rowIndex < tableRows.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''}`}
+                                transition={{ delay: fieldIndex * 0.05 }}
+                                className={`flex min-w-max hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors ${fieldIndex < tableFields.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''}`}
                             >
                                 <div className="flex-shrink-0 w-32 lg:w-40 p-3 lg:p-4 font-semibold bg-gray-50 dark:bg-gray-800/50 border-r border-gray-200 dark:border-gray-600">
-                                    <span className="text-xs lg:text-sm">{row.label}</span>
+                                    <span className="text-xs lg:text-sm">{field.label}</span>
                                 </div>
                                 {techOrder.map((tech, techIndex) => (
                                     <div
                                         key={tech.name}
                                         className={`flex-shrink-0 w-48 lg:w-64 p-3 lg:p-4 ${techIndex < techOrder.length - 1 ? 'border-r border-gray-200 dark:border-gray-600' : ''}`}
                                     >
-                                        {row.key === 'difficulty' ? (
-                                            <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(tech[row.key] as string)}`}>
-                                                {tech[row.key]}
+                                        {field.type === 'difficulty' ? (
+                                            <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(tech[field.key] as string)}`}>
+                                                {tech[field.key]}
                                             </span>
-                                        ) : row.key === 'popularity' ? (
+                                        ) : field.type === 'rating' ? (
                                             <div className="flex">
-                                                {renderStars(tech[row.key] as number)}
+                                                {renderStars(tech[field.key] as number)}
                                             </div>
-                                        ) : row.key === 'pros' ? (
+                                        ) : field.key === 'pros' ? (
                                             <ul className="space-y-1 text-xs lg:text-sm">
-                                                {(tech[row.key] as string[]).map((item, i) => (
+                                                {(tech[field.key] as string[]).map((item, i) => (
                                                     <li key={i} className="flex items-start">
                                                         <span className="text-green-500 mr-1 flex-shrink-0 mt-0.5">✓</span>
                                                         <span className="text-green-600 dark:text-green-400">{item}</span>
                                                     </li>
                                                 ))}
                                             </ul>
-                                        ) : row.key === 'cons' ? (
+                                        ) : field.key === 'cons' ? (
                                             <ul className="space-y-1 text-xs lg:text-sm">
-                                                {(tech[row.key] as string[]).map((item, i) => (
+                                                {(tech[field.key] as string[]).map((item, i) => (
                                                     <li key={i} className="flex items-start">
                                                         <span className="text-red-500 mr-1 flex-shrink-0 mt-0.5">✗</span>
-                                                        <span className="text-red-600 dark:text-red-400">{item}</span>
+                                                        <span className="text-red-500 dark:text-red-400">{item}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         ) : (
                                             <span className="text-xs lg:text-sm text-gray-700 dark:text-gray-300">
-                                                {tech[row.key] as string}
+                                                {tech[field.key] as string}
                                             </span>
                                         )}
                                     </div>
@@ -532,7 +572,7 @@ export function TechDiff({
                     </button>
 
                     <div className="mx-4 sm:mx-6 lg:mx-12 text-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold capitalize">
+                        <h2 className="text-2xl sm:text-3xl font-bold capitalize">
                             <span className="bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
                                 {currentCategory}
                             </span>
@@ -553,7 +593,7 @@ export function TechDiff({
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center mb-6"
+                        className="hidden md:block text-center mb-6"
                     >
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                             <GripVertical className="inline w-4 h-4 mr-1" />
@@ -568,8 +608,8 @@ export function TechDiff({
                     animate={{ opacity: 1, y: 0 }}
                     className="w-full relative flex flex-col items-center"
                 >
-                    {/* View Mode Toggle */}
-                    <div className="flex justify-end mb-4">
+                    {/* View Mode Toggle - Hide on small devices */}
+                    <div className="hidden md:flex justify-end mb-4">
                         <div className="flex items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-1 shadow-sm">
                             <button
                                 onClick={() => setViewMode('desktop')}
@@ -594,7 +634,13 @@ export function TechDiff({
                         </div>
                     </div>
 
-                    {viewMode === 'desktop' ? renderDesktopTable() : renderMobileCards()}
+                    {/* Always show cards on mobile, conditional on desktop */}
+                    <div className="block md:hidden w-full">
+                        {renderMobileCards()}
+                    </div>
+                    <div className="hidden md:block">
+                        {viewMode === 'desktop' ? renderDesktopTable() : renderMobileCards()}
+                    </div>
                 </motion.div>
             </div>
         </div>
