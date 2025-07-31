@@ -24,8 +24,12 @@ import {
     IconPhone,
     IconStarsFilled,
     IconRocket,
+    IconSpeakerphone,
+    IconFriends,
+    IconFlower,
 } from '@tabler/icons-react';
 import { Hero } from '@/components/homepage/hero';
+import { TechDiff } from '@/components/services/web-dev-design/tech-diff';
 
 interface StatsProps {
     icon?: React.ReactNode;
@@ -40,6 +44,19 @@ interface CTAButton {
     variant?: 'primary' | 'secondary';
 }
 
+interface CustomSection {
+   component: React.ComponentType<any>;
+    props?: Record<string, any>;
+    position: 'beforeHero' | 'afterHero' |
+    'beforeWhyChooseUs' | 'afterWhyChooseUs' |
+    'beforeTypes' | 'afterTypes' |
+    'beforeProcess' | 'afterProcess' |
+    'beforeTech' | 'afterTech' |
+    'beforeTestimonials' | 'afterTestimonials' |
+    'beforeCTA' | 'afterCTA' | 'afterAll';
+    order?: number;
+}
+
 // Define the service data type
 interface ServiceData {
     slug: string;
@@ -52,7 +69,7 @@ interface ServiceData {
         testimonials?: boolean;
         cta?: boolean;
     };
-    customSections?: React.ReactNode[];
+    customSections?: CustomSection[];
     hero: {
         initial: string;
         headlineKeywords: string[];
@@ -142,6 +159,13 @@ const services: Record<string, ServiceData> = {
             testimonials: true,
             cta: true
         },
+        customSections: [
+            {
+                component: TechDiff ,
+                props:{},
+                position: 'afterTech'
+            },
+        ],
         hero: {
             initial: "Want ",
             headlineKeywords: ["E-commerce", "Web App", "Landing Page", "Portfolio", "CMS", "Redesign"],
@@ -204,12 +228,12 @@ const services: Record<string, ServiceData> = {
                     description: 'We optimize images and code for speed. Fast-loading pages improve user satisfaction and SEO: Google favors pages that load quickly.'
                 },
                 {
-                    icon: <IconTools size={24} />,
+                    icon: <IconFriends size={24} />,
                     title: 'User-Friendly CMS',
                     description: 'We often build on platforms like WordPress or Shopify so you can easily manage your own content. You’ll get training and documentation so updating text, images, or products is simple – no developer needed.'
                 },
                 {
-                    icon: <IconTools size={24} />,
+                    icon: <IconSpeakerphone size={24} />,
                     title: 'Ongoing Support',
                     description: 'After launch, we don’t disappear. We offer maintenance and support plans (updates, security, backups, etc.) so your site stays up-to-date and continues to meet your marketing needs.'
                 },
@@ -309,12 +333,12 @@ const services: Record<string, ServiceData> = {
             title: 'Technologies We Use',
             subtitle: 'OUR TECH STACK',
             description: 'We use the latest and most reliable technologies to build powerful, scalable web solutions.',
-            categories: ['Frontend', 'Backend', 'CMS', 'Databases', 'DevOps'],
+            categories: ['Frontend', 'Backend', 'CMS', 'Databases'],
             technologies: [
                 { id: 1, name: 'React', logo: '/tech/icons8-react-96.png', category: 'Frontend' },
                 { id: 2, name: 'Next.js', logo: '/tech/icons8-next-js-96.svg', category: 'Frontend' },
-                { id: 3, name: 'Angular', logo: '/tech/icons8-angularjs-96.png', category: 'Frontend' },
                 { id: 4, name: 'Vue.js', logo: '/tech/icons8-vuejs-96.png', category: 'Frontend' },
+                { id: 3, name: 'Tailwind CSS', logo: '/tech/icons8-tailwindcss-96.png', category: 'Frontend' },
                 { id: 5, name: 'JavaScript', logo: '/tech/icons8-javascript-96.png', category: 'Frontend' },
                 { id: 6, name: 'TypeScript', logo: '/tech/icons8-typescript-96.png', category: 'Frontend' },
                 { id: 7, name: 'Node.js', logo: '/tech/icons8-node-js-96.png', category: 'Backend' },
@@ -326,9 +350,9 @@ const services: Record<string, ServiceData> = {
                 { id: 13, name: 'MongoDB', logo: '/tech/icons8-mongodb-96.png', category: 'Databases' },
                 { id: 14, name: 'PostgreSQL', logo: '/tech/icons8-postgresql-96.png', category: 'Databases' },
                 { id: 15, name: 'MySQL', logo: '/tech/icons8-mysql-96.png', category: 'Databases' },
-                { id: 16, name: 'AWS', logo: '/tech/icons8-aws-96.png', category: 'DevOps' },
-                { id: 17, name: 'Docker', logo: '/tech/icons8-docker-96.png', category: 'DevOps' },
-                { id: 18, name: 'GitHub', logo: '/tech/icons8-github-96.png', category: 'DevOps' }
+                // { id: 16, name: 'AWS', logo: '/tech/icons8-aws-96.png', category: 'DevOps' },
+                // { id: 17, name: 'Docker', logo: '/tech/icons8-docker-96.png', category: 'DevOps' },
+                // { id: 18, name: 'GitHub', logo: '/tech/icons8-github-96.png', category: 'DevOps' }
             ]
         },
         testimonials: {
@@ -392,6 +416,26 @@ export default function ServicePage() {
 
     const { showSections = {}, customSections = [] } = serviceData;
 
+    const renderCustomSections = (position: string) =>
+        customSections
+            .filter(section => section.position === position)
+            .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+            .map((section, idx) => {
+                const Component = section.component;
+                return (
+                    <motion.div
+                        key={`custom-${position}-${idx}`}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.6 + idx * 0.1 }}
+                    >
+                        <Component {...section.props} />
+                    </motion.div>
+                );
+            });
+
+
     return (
         <section ref={sectionRef} className="">
             <div className="mx-auto">
@@ -401,29 +445,34 @@ export default function ServicePage() {
                     </motion.div>
                 )}
 
+                {renderCustomSections('afterHero')}
                 {showSections.whyChooseUs !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
                         <WhyChooseUs {...serviceData.whyChooseUs} />
                     </motion.div>
                 )}
 
+                {renderCustomSections('afterWhyChooseUs')}
                 {showSections.typesOfServices !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
                         <TypesOfServices {...serviceData.typesOfServices} />
                     </motion.div>
                 )}
 
+                {renderCustomSections('afterTypes')}
                 {showSections.process !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
                         <Process {...serviceData.process} />
                     </motion.div>
                 )}
 
+                {renderCustomSections('afterProcess')}
                 {showSections.techStack !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}>
                         <TechStack {...serviceData.techStack} />
                     </motion.div>
                 )}
+                {renderCustomSections('afterTech')}
 
                 {showSections.testimonials !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}>
@@ -431,23 +480,14 @@ export default function ServicePage() {
                     </motion.div>
                 )}
 
+                {renderCustomSections('afterTestimonials')}
                 {showSections.cta !== false && (
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.6 }}>
                         <CTA {...serviceData.cta} />
                     </motion.div>
                 )}
-
-                {customSections.map((Component, idx) => (
-                    <motion.div
-                        key={`custom-${idx}`}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.6 + idx * 0.1 }}
-                    >
-                        {Component}
-                    </motion.div>
-                ))}
+                {renderCustomSections('afterCTA')}
+                {renderCustomSections('afterAll')}
             </div>
         </section>
     );
