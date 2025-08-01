@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center lg:min-h-screen px-4 py-12">
-      <div className=" w-full space-y-8 flex justify-evenly items-center ">
+      <div className=" w-full space-y-8 flex flex-col md:flex-row justify-evenly items-center ">
         {/* 404 Message with Discovery Feel */}
         <div className="text-center space-y-4 relative">
           <div className="absolute -inset-4 rounded-lg bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 opacity-10 blur-md"></div>

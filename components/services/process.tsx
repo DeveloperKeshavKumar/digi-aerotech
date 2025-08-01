@@ -33,7 +33,7 @@ export const Process: React.FC<ProcessProps> = ({
     const activeStepData = steps.find(step => step.id === activeStep);
 
     return (
-        <div className="bg-gray-50 dark:bg-gray-950 transition-colors duration-300 py-8 md:py-12 border-b border-border dark:border-gray-700">
+        <div className="bg-gray-50 dark:bg-gray-950 transition-colors duration-300 py-8 md:pt-32 md:pb-24">
             <div className="px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
                     {/* Header Section - Compact */}

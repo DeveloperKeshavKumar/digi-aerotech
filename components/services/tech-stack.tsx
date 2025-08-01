@@ -37,7 +37,7 @@ export const TechStack: React.FC<TechStackProps> = ({
   }, [technologies, activeCategory, categories]);
 
   return (
-    <div className="py-16 bg-white dark:bg-gray-950 border-b border-border dark:border-gray-800">
+    <div className="py-16 md:pb-32 bg-white dark:bg-gray-950 border-b border-border dark:border-gray-800">
       <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         <div className="text-center mb-12" data-aos="fade-up">
           <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-br from-red-500 via-pink-600 to-orange-500 tracking-wide uppercase mb-4 block">
