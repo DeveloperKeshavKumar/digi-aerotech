@@ -115,7 +115,7 @@ export const Hero: React.FC<HeroProps> = ({initial, headlineKeywords, brandLine,
   };
 
   return (
-    <section className="py-9 px-4 bg-white dark:bg-black border-b border-border dark:border-0 md:min-h-screen flex items-center">
+    <section className="py-9 px-4 bg-white dark:bg-black border-b border-border dark:border-gray-800 md:min-h-screen flex items-center">
       <div
         ref={heroRef}
         className=" max-w-7xl mx-auto px-4 py-8 lg:py-16 flex flex-col lg:grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 xl:gap-20"

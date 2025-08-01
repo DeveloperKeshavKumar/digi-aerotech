@@ -44,7 +44,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
   };
 
   return (
-    <section className="py-16 mt-10 px-4 bg-gray-50 dark:bg-gray-950 border-b border-border dark:border-gray-700">
+    <section className="py-16 px-4 bg-gray-50 dark:bg-gray-950 border-b border-border dark:border-gray-700">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center text-black dark:text-white">
           {renderTitle()}

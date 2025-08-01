@@ -524,7 +524,7 @@ export function TechDiff({
     };
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+        <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white border-b bodrder">
             <div className="container mx-auto px-2 sm:px-4 py-6 sm:py-8 lg:py-16 max-w-7xl">
                 {/* Header */}
                 <motion.div

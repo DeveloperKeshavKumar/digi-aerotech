@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import { notFound } from 'next/navigation';
 import { motion } from 'motion/react';
 import { inView } from 'motion';
-import { WhyChooseUs } from '@/components/services/why-choose-us';
+import { WhyChooseUs } from '@/components/homepage/why-choose-us';
 import { TypesOfServices } from '@/components/services/types-of-services';
 import { Process } from '@/components/services/process';
 import { TechStack } from '@/components/services/tech-stack';
@@ -401,7 +401,7 @@ const services: Record<string, ServiceData> = {
         hero: {
             initial: "Want ",
             headlineKeywords: ["E-commerce", "Web App", "Landing Page", "Portfolio", "CMS", "Redesign"],
-            brandLine: [{ text: "Website Development", gradient: true, gradientClass: "text-dark dark:text-white text-5xl" }],
+            brandLine: [{ text: "Website Development", gradient: false, gradientClass: "text-dark dark:text-white text-5xl" }],
             subheadline: "Professional web development and design services that convert visitors into customers. Fast, responsive, and SEO-optimized.",
             ctaButtons: [
                 { icon: <IconFreeRights size={30} />, text: "Get Free Quote", link: "/contact" },

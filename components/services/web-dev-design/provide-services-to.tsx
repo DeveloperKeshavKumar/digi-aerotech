@@ -124,17 +124,17 @@ function ServiceCard({ service, index, setIsPaused }: ServiceCardProps) {
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col-reverse justify-between p-8">
             {/* Bottom Section - Service Name */}
-            <div className="flex justify-start dark:bg-black/60 group-hover:dark:bg-white/60 p-4 py-2 rounded-lg transition-background duration-300">
+            <div className="flex justify-start  rounded-lg transition-background duration-300">
               <div>
                 <motion.h3 
-                  className="text-xl font-bold text-white dark:text-white group-hover:dark:text-black mb-3 tracking-wide"
+                  className="text-xl font-bold text-white mb-3 tracking-wide"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {service.name}
                 </motion.h3>
                 <motion.div 
-                  className="h-0.5 bg-white group-hover:dark:bg-black opacity-60"
+                  className="h-0.5 bg-white opacity-60"
                   initial={{ width: '3rem' }}
                   animate={{ 
                     width: isHovered ? '4.5rem' : '3rem',
