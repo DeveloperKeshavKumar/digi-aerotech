@@ -30,7 +30,7 @@ export const Testimonials = ({
   description = "Hear from businesses we've worked with",
   speed = "medium",
   columns = 3,
-  highlightColor = "text-blue-600 dark:text-blue-400 font-medium",
+  highlightColor = "text-pink-600 dark:text-pink-400 font-medium",
 }: TestimonialsProps) => {
   const [isVisible, setIsVisible] = useState(false);
 

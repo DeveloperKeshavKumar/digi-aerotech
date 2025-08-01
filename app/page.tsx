@@ -161,7 +161,7 @@ export default function Homepage() {
         title={[
           { text: "We're Not Just a " },
           { text: 'Marketing Team', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" },
-          { text: " Team - We're the Fix for " },
+          { text: " - We're the Fix for " },
           { text: "What's Broken", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
         ]}
         subheadline="Most agencies sell you dreams. We solve real-world problems - the kind that cost you leads, sales, and growth."
