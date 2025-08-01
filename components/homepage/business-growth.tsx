@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, inView } from 'motion/react';
 import {
-  ArrowRight, User, Phone, ChevronDown,
+  ArrowRight, User, Phone, ChevronDown, Mail,
   Globe, Clock, Briefcase, Calendar
 } from 'lucide-react';
 import { IconCircleCheck } from '@tabler/icons-react';
@@ -37,6 +37,8 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
   };
 }) => {
   const [formData, setFormData] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '', text: '' });
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -48,23 +50,86 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
     }
   }, []);
 
+  // Clear message after 5 seconds
+  useEffect(() => {
+    if (message.text) {
+      const timer = setTimeout(() => {
+        setMessage({ type: '', text: '' });
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    setLoading(true);
+    setMessage({ type: '', text: '' });
+
+    try {
+      // Map form data to API expected format
+      const apiData = {
+        name: formData.name || '',
+        email: formData.email || '',
+        phone: formData.phone || '',
+        service: formData.service || '',
+        businessType: formData.business || formData.businessType || '',
+        startDate: formData.time || formData.startDate || '',
+        website: formData.website || '',
+        formType: 'business-growth',
+      };
+
+      console.log('Submitting form data:', apiData);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(apiData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setMessage({
+          type: 'success',
+          text: 'Thank you! Your inquiry has been submitted successfully. We\'ll get back to you within 24 hours.'
+        });
+        // Reset form
+        setFormData({});
+      } else {
+        setMessage({
+          type: 'error',
+          text: result.error || 'Something went wrong. Please try again.'
+        });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setMessage({
+        type: 'error',
+        text: 'Failed to submit form. Please check your connection and try again.'
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const getFieldIcon = (fieldName: string) => {
     switch (fieldName) {
       case 'name': return <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
-      case 'business': return <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
+      case 'email': return <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
+      case 'business':
+      case 'businessType':
+        return <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
       case 'website': return <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
       case 'phone': return <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
-      case 'time': return <Clock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
+      case 'time':
+      case 'startDate':
+        return <Clock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />;
       default: return null;
     }
   };
@@ -140,9 +205,9 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
             initial={{ opacity: 0, x: 40 }}
             animate={visible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-1 lg:mx-auto"
+            className="lg:col-span-1"
           >
-            <div className="sticky top-8 md:p-16 xl:ml-16 lg:p-0 lg:mr-8">
+            <div className="sticky top-8 md:p-16 lg:p-0 lg:mr-8">
               <div className="bg-white dark:bg-black rounded-2xl border-2 border-gray-300 dark:border-gray-700 overflow-hidden">
                 <div className="bg-black p-6 text-center border-b border-gray-300 dark:border-gray-700">
                   <h3 className="text-2xl font-bold text-white mb-2">{quickFormProps.headline}</h3>
@@ -150,119 +215,210 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                 </div>
 
                 <div className="p-6 space-y-6">
-                  <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {quickFormProps.fields.slice(0, 2).map((field) => (
-                      <div key={field.name}>
-                        <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
-                          {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
+                  {/* Success/Error Message */}
+                  {message.text && (
+                    <div className={`mb-4 p-3 rounded-lg text-sm ${message.type === 'success'
+                      ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-400 border border-green-200 dark:border-green-800'
+                      : 'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-400 border border-red-200 dark:border-red-800'
+                      }`}>
+                      {message.text}
+                    </div>
+                  )}
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* Name and Email Fields */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium mb-2 text-black dark:text-white">
+                          Full Name<span className="text-red-500 ml-1">*</span>
                         </label>
                         <div className="relative">
-                          {getFieldIcon(field.name)}
+                          {getFieldIcon('name')}
                           <input
-                            id={field.name}
-                            type={field.type}
-                            name={field.name}
-                            required={field.required}
+                            id="name"
+                            type="text"
+                            name="name"
+                            required
+                            value={formData.name || ''}
                             onChange={handleChange}
-                            autoComplete={"true"}
+                            disabled={loading}
+                            autoComplete="name"
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 placeholder-gray-500 dark:placeholder-gray-400"
-                            placeholder={`Enter your ${field.label.toLowerCase()}`}
+                            placeholder="Enter your full name"
                           />
                         </div>
                       </div>
-                    ))}
-                  </form>
 
-                  {/* Website Field */}
-                  {quickFormProps.fields.slice(2, 3).map((field) => (
-                    <div key={field.name}>
-                      <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
-                        {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium mb-2 text-black dark:text-white">
+                          Email Address<span className="text-red-500 ml-1">*</span>
+                        </label>
+                        <div className="relative">
+                          {getFieldIcon('email')}
+                          <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            required
+                            value={formData.email || ''}
+                            onChange={handleChange}
+                            disabled={loading}
+                            autoComplete="email"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 placeholder-gray-500 dark:placeholder-gray-400"
+                            placeholder="your@email.com"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Website Field (Optional) */}
+                    <div>
+                      <label htmlFor="website" className="block text-sm font-medium mb-2 text-black dark:text-white">
+                        Website/Social Media
                       </label>
                       <div className="relative">
-                        {getFieldIcon(field.name)}
+                        {getFieldIcon('website')}
                         <input
-                          id={field.name}
-                          type={field.type}
-                          name={field.name}
-                          required={field.required}
+                          id="website"
+                          type="text"
+                          name="website"
+                          value={formData.website || ''}
                           onChange={handleChange}
+                          disabled={loading}
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
                           placeholder="https://yourwebsite.com or @instagram"
                         />
                       </div>
                     </div>
-                  ))}
 
-                  {/* Service Select Field */}
-                  {quickFormProps.fields.slice(3, 4).map((field, index) => (
-                    <motion.div
-                      key={field.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={visible ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}>
-                      <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
-                        {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
+                    {/* Service Select Field */}
+                    <div>
+                      <label htmlFor="service" className="block text-sm font-medium mb-2 text-black dark:text-white">
+                        Service Needed<span className="text-red-500 ml-1">*</span>
                       </label>
                       <div className="relative">
                         <select
-                          id={field.name}
-                          name={field.name}
-                          required={field.required}
+                          id="service"
+                          name="service"
+                          required
+                          value={formData.service || ''}
                           onChange={handleChange}
+                          disabled={loading}
                           className="w-full pl-4 pr-10 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg appearance-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
                         >
                           <option value="">Select a service</option>
-                          {field.options?.map((option) => (
-                            <option key={option} value={option}>{option}</option>
-                          ))}
+                          <option value="web-development">Web Development</option>
+                          <option value="mobile-app">Mobile App Development</option>
+                          <option value="digital-marketing">Digital Marketing</option>
+                          <option value="ecommerce">E-commerce Solutions</option>
+                          <option value="consulting">IT Consulting</option>
+                          <option value="other">Other</option>
                         </select>
                         <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
                       </div>
-                    </motion.div>
-                  ))}
+                    </div>
 
-                  {/* Phone and Time Fields */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {quickFormProps.fields.slice(4, 6).map((field) => (
-                      <div key={field.name}>
-                        <label htmlFor={field.name} className="block text-sm font-medium mb-2 text-black dark:text-white">
-                          {field.label}{field.required && <span className="text-red-500 ml-1">*</span>}
+                    {/* Business Type Field */}
+                    <div>
+                      <label htmlFor="businessType" className="block text-sm font-medium mb-2 text-black dark:text-white">
+                        Business Type<span className="text-red-500 ml-1">*</span>
+                      </label>
+                      <div className="relative">
+                        <select
+                          id="businessType"
+                          name="businessType"
+                          required
+                          value={formData.businessType || ''}
+                          onChange={handleChange}
+                          disabled={loading}
+                          className="w-full pl-4 pr-10 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg appearance-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
+                        >
+                          <option value="">What&apos;s your business type</option>
+                          <option value="startup">Startup</option>
+                          <option value="small-business">Small Business</option>
+                          <option value="enterprise">Enterprise</option>
+                          <option value="agency">Agency</option>
+                          <option value="nonprofit">Non-Profit</option>
+                          <option value="individual">Individual</option>
+                        </select>
+                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                      </div>
+                    </div>
+
+                    {/* Phone and Start Date Fields */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium mb-2 text-black dark:text-white">
+                          Phone Number<span className="text-red-500 ml-1">*</span>
                         </label>
                         <div className="relative">
-                          {getFieldIcon(field.name)}
+                          {getFieldIcon('phone')}
                           <input
-                            id={field.name}
-                            type={field.type}
-                            name={field.name}
-                            required={field.required}
+                            id="phone"
+                            type="tel"
+                            name="phone"
+                            required
+                            value={formData.phone || ''}
                             onChange={handleChange}
-                            autoComplete={field.name === 'phone' ? 'true' : 'false'}
-                            placeholder={field.name === 'phone' ? '+918607119872' : 'Morning, Evening, etc.'}
+                            disabled={loading}
+                            autoComplete="tel"
+                            placeholder="+918607119872"
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
                           />
                         </div>
                       </div>
-                    ))}
-                  </div>
 
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full px-6 py-4 bg-black dark:bg-white text-white font-semibold rounded-lg text-base hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-600 flex items-center justify-center group border-2 bg-gradient-to-r from-orange-600 via-pink-600 to-yellow-500 hover:from-orange-500 hover:via-pink-500 hover:to-yellow-400"
-                  >
-                    <Calendar className="mr-2 h-5 w-5" />
-                    <span>{quickFormProps.cta.text}</span>
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </button>
+                      <div>
+                        <label htmlFor="startDate" className="block text-sm font-medium mb-2 text-black dark:text-white">
+                          When to Start<span className="text-red-500 ml-1">*</span>
+                        </label>
+                        <div className="relative">
+                          {getFieldIcon('startDate')}
+                          <input
+                            id="startDate"
+                            type="text"
+                            name="startDate"
+                            required
+                            value={formData.startDate || ''}
+                            onChange={handleChange}
+                            disabled={loading}
+                            placeholder="ASAP, Next month, etc."
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
+                          />
+                        </div>
+                      </div>
+                    </div>
 
-                  <p className="text-xs text-gray-600 dark:text-gray-400 text-center">
-                    We respect your privacy. Your information will never be shared.
-                  </p>
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full px-6 py-4 bg-black dark:bg-white text-white font-semibold rounded-lg text-base hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-600 flex items-center justify-center group border-2 bg-gradient-to-r from-orange-600 via-pink-600 to-yellow-500 hover:from-orange-500 hover:via-pink-500 hover:to-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    >
+                      {loading ? (
+                        <div className="flex items-center justify-center">
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </div>
+                      ) : (
+                        <>
+                          <Calendar className="mr-2 h-5 w-5" />
+                          <span>{quickFormProps.cta.text}</span>
+                          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        </>
+                      )}
+                    </button>
+
+                    <p className="text-xs text-gray-600 dark:text-gray-400 text-center">
+                      We respect your privacy. Your information will never be shared.
+                    </p>
+                  </form>
                 </div>
               </div>
             </div>
-            
           </motion.div>
         </div>
       </div>

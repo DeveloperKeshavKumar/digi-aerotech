@@ -5,41 +5,43 @@ import nodemailer from 'nodemailer';
 
 // Define the type for the data object used in the inquiry process.
 interface InquiryData {
-    name: string;
-    email: string;
-    phone: string;
-    service: string;
-    businessType: string;
-    startDate: string;
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  businessType: string;
+  startDate: string;
+  website?: string; // Optional website field
+  formType: 'contact' | 'business-growth';
 }
 
 // Database connection pool configuration
 const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: parseInt(process.env.DB_PORT || '3306'),
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: parseInt(process.env.DB_PORT || '3306'),
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
 });
 
 // Email transporter configuration
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: false, // true for 465, false for other ports
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-    },
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT || '587'),
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
 });
 
 // --- Rate Limiting Logic ---
 const rateLimitMap = new Map();
 // Changed to allow only 1 request per day
-const LIMIT = 1; // Max number of requests
+const LIMIT = 2; // Max number of requests
 // Time window in milliseconds (24 hours)
 const WINDOW_MS = 24 * 60 * 60 * 1000;
 
@@ -49,9 +51,10 @@ const WINDOW_MS = 24 * 60 * 60 * 1000;
  * @param {string} name - The client's name.
  * @param {string} service - The service they inquired about.
  * @param {string} businessType - The client's business type.
+ * @param {string} website - The client's website (optional).
  * @returns {string} The complete HTML for the client email.
  */
-const getClientEmailTemplate = (name: string, service: string, businessType: string): string => `
+const getClientEmailTemplate = (name: string, service: string, businessType: string, website?: string): string => `
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,6 +75,7 @@ const getClientEmailTemplate = (name: string, service: string, businessType: str
       <div style="background: white; padding: 15px; border-left: 4px solid #000000; margin: 20px 0; border-radius: 4px;">
         <p style="margin: 0;"><strong style="color: #555;">Service Requested:</strong> ${service}</p>
         <p style="margin: 5px 0 0;"><strong style="color: #555;">Your Business Type:</strong> ${businessType}</p>
+        ${website ? `<p style="margin: 5px 0 0;"><strong style="color: #555;">Website/Social:</strong> ${website}</p>` : ''}
         <p style="margin: 15px 0 0; font-style: italic; color: #666;">Our team is excited to help you achieve your business goals.</p>
       </div>
       <p style="margin-bottom: 0;">Best regards,<br>The DigiAerotech Team</p>
@@ -111,16 +115,10 @@ const getOfficeEmailTemplate = (data: InquiryData): string => `
         <p style="margin: 5px 0 0; font-size: 0.9em; color: #333;">A new potential client has submitted an inquiry. Please follow up promptly.</p>
       </div>
       <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
-        <span style="font-weight: bold; color: #555;">Name:</span> ${data.name}
-      </div>
-      <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
-        <span style="font-weight: bold; color: #555;">Email:</span> <a href="mailto:${data.email}" style="color: #ff69b4; text-decoration: none;">${data.email}</a>
-      </div>
-      <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
-        <span style="font-weight: bold; color: #555;">Phone:</span> <a href="tel:${data.phone}" style="color: #ff69b4; text-decoration: none;">${data.phone}</a>
-      </div>
-      <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
         <span style="font-weight: bold; color: #555;">Service:</span> ${data.service}
+      </div>
+      <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
+        <span style="font-weight: bold; color: #555;">Query Type:</span> ${data.formType}
       </div>
       <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
         <span style="font-weight: bold; color: #555;">Business Type:</span> ${data.businessType}
@@ -142,96 +140,96 @@ const getOfficeEmailTemplate = (data: InquiryData): string => `
 
 // Async email sending function
 async function sendEmails(data: InquiryData): Promise<void> {
-    try {
-        // Use the authenticated user's email as the 'from' address to satisfy server policies.
-        const fromEmail = process.env.SMTP_USER;
+  try {
+    // Use the authenticated user's email as the 'from' address to satisfy server policies.
+    const fromEmail = process.env.SMTP_USER;
 
-        const clientEmailOptions = {
-            from: fromEmail,
-            to: data.email,
-            subject: 'Thank you for your inquiry - DigiAerotech',
-            html: getClientEmailTemplate(data.name, data.service, data.businessType),
-        };
+    const clientEmailOptions = {
+      from: fromEmail,
+      to: data.email,
+      subject: 'Thank you for your inquiry - DigiAerotech',
+      html: getClientEmailTemplate(data.name, data.service, data.businessType, data.website),
+    };
 
-        const officeEmailOptions = {
-            from: fromEmail,
-            to: process.env.OFFICE_EMAIL,
-            subject: `New ${data.service} Inquiry from ${data.name}`,
-            html: getOfficeEmailTemplate(data),
-        };
+    const officeEmailOptions = {
+      from: fromEmail,
+      to: process.env.OFFICE_EMAIL,
+      subject: `New ${data.service} Inquiry from ${data.name}`,
+      html: getOfficeEmailTemplate(data),
+    };
 
-        // Send emails concurrently
-        await Promise.all([
-            transporter.sendMail(clientEmailOptions),
-            transporter.sendMail(officeEmailOptions),
-        ]);
+    // Send emails concurrently
+    await Promise.all([
+      transporter.sendMail(clientEmailOptions),
+      transporter.sendMail(officeEmailOptions),
+    ]);
 
-        console.log('Emails sent successfully');
-    } catch (error) {
-        console.error('Error sending emails:', error);
-    }
+    console.log('Emails sent successfully');
+  } catch (error) {
+    console.error('Error sending emails:', error);
+  }
 }
 
 export async function POST(request: Request) {
-    let connection: mysql.PoolConnection | undefined;
+  let connection: mysql.PoolConnection | undefined;
 
-    // --- Rate Limiting Middleware ---
-    // Get the client's IP address
-    const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip');
+  // --- Rate Limiting Middleware ---
+  // Get the client's IP address
+  const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip');
 
-    if (ip) {
-        const now = Date.now();
-        const client = rateLimitMap.get(ip);
+  if (ip) {
+    const now = Date.now();
+    const client = rateLimitMap.get(ip);
 
-        // Check if the client is already in the map
-        if (client) {
-            // Check if the time window has elapsed
-            if (now - client.lastRequestTime > WINDOW_MS) {
-                // Reset the count for the new window
-                rateLimitMap.set(ip, { count: 1, lastRequestTime: now });
-            } else if (client.count >= LIMIT) {
-                // Rate limit exceeded
-                return NextResponse.json(
-                    { error: 'Too many requests, please try again later.' },
-                    { status: 429 }
-                );
-            } else {
-                // Increment the count for the current window
-                client.count++;
-                client.lastRequestTime = now;
-            }
-        } else {
-            // First request from this IP
-            rateLimitMap.set(ip, { count: 1, lastRequestTime: now });
-        }
+    // Check if the client is already in the map
+    if (client) {
+      // Check if the time window has elapsed
+      if (now - client.lastRequestTime > WINDOW_MS) {
+        // Reset the count for the new window
+        rateLimitMap.set(ip, { count: 1, lastRequestTime: now });
+      } else if (client.count >= LIMIT) {
+        // Rate limit exceeded
+        return NextResponse.json(
+          { error: 'Too many requests, please try again later.' },
+          { status: 429 }
+        );
+      } else {
+        // Increment the count for the current window
+        client.count++;
+        client.lastRequestTime = now;
+      }
+    } else {
+      // First request from this IP
+      rateLimitMap.set(ip, { count: 1, lastRequestTime: now });
+    }
+  }
+
+  try {
+    const body: InquiryData = await request.json();
+    const { name, email, phone, service, businessType, startDate, website, formType } = body;
+
+    // Basic validation
+    if (!name || !email || !phone || !service || !businessType || !startDate || !formType) {
+      return NextResponse.json(
+        { error: 'All required fields must be filled' },
+        { status: 400 }
+      );
     }
 
-    try {
-        const body: InquiryData = await request.json();
-        const { name, email, phone, service, businessType, startDate } = body;
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      );
+    }
 
-        // Basic validation
-        if (!name || !email || !phone || !service || !businessType || !startDate) {
-            return NextResponse.json(
-                { error: 'All fields are required' },
-                { status: 400 }
-            );
-        }
+    // Get a connection from the pool
+    connection = await pool.getConnection();
 
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return NextResponse.json(
-                { error: 'Invalid email format' },
-                { status: 400 }
-            );
-        }
-
-        // Get a connection from the pool
-        connection = await pool.getConnection();
-
-        // Create table if it doesn't exist. This is idempotent and safe to run on every request.
-        await connection.execute(`
+    // Create table if it doesn't exist. This is idempotent and safe to run on every request.
+    await connection.execute(`
             CREATE TABLE IF NOT EXISTS contact_queries (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 name VARCHAR(255) NOT NULL,
@@ -239,43 +237,45 @@ export async function POST(request: Request) {
                 phone VARCHAR(20) NOT NULL,
                 service VARCHAR(100) NOT NULL,
                 business_type VARCHAR(100) NOT NULL,
+                form_type VARCHAR(100) NOT NULL,
                 start_date VARCHAR(255) NOT NULL,
+                website VARCHAR(500) NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 status ENUM('new', 'in_progress', 'resolved') DEFAULT 'new'
             )
         `);
 
-        // Insert the query into the database using a parameterized query to prevent SQL injection.
-        const [result] = await connection.execute(
-            'INSERT INTO contact_queries (name, email, phone, service, business_type, start_date) VALUES (?, ?, ?, ?, ?, ?)',
-            [name, email, phone, service, businessType, startDate]
-        );
+    // Insert the query into the database using a parameterized query to prevent SQL injection.
+    const [result] = await connection.execute(
+      'INSERT INTO contact_queries (name, email, phone, service, business_type, start_date, website, form_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      [name, email, phone, service, businessType, startDate, website || null, formType]
+    );
 
-        // Return success response to the client immediately
-        const response = NextResponse.json(
-            {
-                success: true,
-                message: 'Your message has been submitted successfully!',
-                id: (result as any).insertId
-            },
-            { status: 200 }
-        );
+    // Return success response to the client immediately
+    const response = NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been submitted successfully!',
+        id: (result as any).insertId
+      },
+      { status: 200 }
+    );
 
-        // Send emails asynchronously without blocking the response to the client
-        sendEmails({ name, email, phone, service, businessType, startDate });
+    // Send emails asynchronously without blocking the response to the client
+    sendEmails({ name, email, phone, service, businessType, startDate, website, formType });
 
-        return response;
+    return response;
 
-    } catch (error) {
-        console.error('An error occurred:', error);
-        return NextResponse.json(
-            { error: 'Internal server error' },
-            { status: 500 }
-        );
-    } finally {
-        // Release the connection back to the pool.
-        if (connection) {
-            connection.release();
-        }
+  } catch (error) {
+    console.error('An error occurred:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  } finally {
+    // Release the connection back to the pool.
+    if (connection) {
+      connection.release();
     }
+  }
 }

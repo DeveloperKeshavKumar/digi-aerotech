@@ -48,12 +48,24 @@ export const ContactForm = ({ className }: { className?: string }) => {
         setMessage({ type: '', text: '' });
 
         try {
+            // Map form data to API expected format
+            const apiData = {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                service: formData.service,
+                businessType: formData.businessType,
+                startDate: formData.startDate,
+                formType: 'contact'
+            };
+
+            console.log(apiData)
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(apiData),
             });
 
             const result = await response.json();

@@ -1,9 +1,8 @@
-// api/getQueries/route.ts
+// app/api/getQueries/route.ts
 import { NextResponse } from 'next/server';
 import mysql from 'mysql2/promise';
 import * as XLSX from 'xlsx';
 
-// Define the type for a single contact query entry from the database.
 interface ContactQuery {
     id: number;
     name: string;
@@ -11,18 +10,19 @@ interface ContactQuery {
     phone: string;
     service: string;
     business_type: string;
+    form_type: 'contact' | 'business-growth' | 'all';
     start_date: string;
+    website?: string;
     created_at: string;
     status: 'new' | 'in_progress' | 'resolved';
 }
 
-// Define the type for the PATCH request body.
 interface PatchBody {
     id: number;
     status: 'new' | 'in_progress' | 'resolved';
+    form_type?: 'contact' | 'business-growth';
 }
 
-// Database connection pool configuration
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -34,40 +34,60 @@ const pool = mysql.createPool({
     queueLimit: 0,
 });
 
-/**
- * Handles GET requests to retrieve contact queries.
- * Supports filtering, pagination, and exporting to Excel.
- */
 export async function GET(request: Request) {
     let connection: mysql.PoolConnection | undefined;
 
     try {
         const { searchParams } = new URL(request.url);
         const format = searchParams.get('format');
+        const form_type = searchParams.get('form_type') as 'contact' | 'business-growth' | 'all' | null;
         const status = searchParams.get('status');
         const limit = searchParams.get('limit');
         const offset = searchParams.get('offset');
+        const search = searchParams.get('search');
+        const sortField = searchParams.get('sort') || 'created_at';
+        const sortOrder = searchParams.get('order') || 'DESC';
 
-        // Get a connection from the pool
         connection = await pool.getConnection();
 
-        // Build the base query and parameters
         let query = 'SELECT * FROM contact_queries';
         let countQuery = 'SELECT COUNT(*) as total FROM contact_queries';
         const queryParams: (string | number)[] = [];
         const countParams: (string | number)[] = [];
 
+        const conditions: string[] = [];
+
+        if (form_type && form_type !== 'all' && ['contact', 'business-growth'].includes(form_type)) {
+            conditions.push('form_type = ?');
+            queryParams.push(form_type);
+            countParams.push(form_type);
+        }
         // Apply status filter if provided
         if (status && ['new', 'in_progress', 'resolved'].includes(status)) {
-            query += ' WHERE status = ?';
-            countQuery += ' WHERE status = ?';
+            conditions.push('status = ?');
             queryParams.push(status);
             countParams.push(status);
         }
 
-        query += ' ORDER BY created_at DESC';
+        // Apply search filter if provided
+        if (search) {
+            conditions.push('(name LIKE ? OR email LIKE ? OR phone LIKE ? OR service LIKE ? OR business_type LIKE ? OR website LIKE ?)');
+            const searchTerm = `%${search}%`;
+            queryParams.push(searchTerm, searchTerm, searchTerm, searchTerm, searchTerm, searchTerm);
+            countParams.push(searchTerm, searchTerm, searchTerm, searchTerm, searchTerm, searchTerm);
+        }
 
-        // Apply limit and offset for pagination if provided
+        // Add WHERE clause if there are conditions
+        if (conditions.length > 0) {
+            const whereClause = ` WHERE ${conditions.join(' AND ')}`;
+            query += whereClause;
+            countQuery += whereClause;
+        }
+
+        // Add sorting
+        query += ` ORDER BY ${sortField} ${sortOrder}`;
+
+        // Apply pagination if provided
         if (limit) {
             query += ' LIMIT ?';
             queryParams.push(parseInt(limit));
@@ -77,7 +97,7 @@ export async function GET(request: Request) {
             }
         }
 
-        // Execute queries concurrently for performance
+        // Execute queries
         const [rows] = await connection.execute(query, queryParams);
         const queries = rows as ContactQuery[];
 
@@ -94,15 +114,26 @@ export async function GET(request: Request) {
                 'Phone': query.phone,
                 'Service': query.service,
                 'Business Type': query.business_type,
+                'Form Type': query.form_type,
                 'Start Date': query.start_date,
+                'Website': query.website || 'N/A',
                 'Status': query.status,
                 'Created At': new Date(query.created_at).toLocaleString(),
             }));
+
             const worksheet = XLSX.utils.json_to_sheet(excelData);
             const columnWidths = [
-                { wch: 5 }, { wch: 20 }, { wch: 25 }, { wch: 15 },
-                { wch: 25 }, { wch: 20 }, { wch: 20 }, { wch: 12 },
-                { wch: 20 },
+                { wch: 5 },   // ID
+                { wch: 20 },  // Name
+                { wch: 25 },  // Email
+                { wch: 15 },  // Phone
+                { wch: 25 },  // Service
+                { wch: 20 },  // Business Type
+                { wch: 15 },  // Form Type
+                { wch: 20 },  // Start Date
+                { wch: 30 },  // Website
+                { wch: 12 },  // Status
+                { wch: 20 },  // Created At
             ];
             worksheet['!cols'] = columnWidths;
             XLSX.utils.book_append_sheet(workbook, worksheet, 'Contact Queries');
@@ -111,12 +142,11 @@ export async function GET(request: Request) {
             return new NextResponse(excelBuffer, {
                 headers: {
                     'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    'Content-Disposition': `attachment; filename="contact-queries-${new Date().toISOString().split('T')[0]}.xlsx"`,
+                    'Content-Disposition': `attachment; filename="${form_type || 'all'}-queries-${new Date().toISOString().split('T')[0]}.xlsx"`,
                 },
             });
         }
 
-        // Return JSON response by default
         return NextResponse.json({
             success: true,
             data: queries,
@@ -126,6 +156,11 @@ export async function GET(request: Request) {
                 offset: offset ? parseInt(offset) : 0,
                 hasMore: limit ? (parseInt(offset || '0') + parseInt(limit)) < total : false,
             },
+            filters: {
+                form_type: form_type || 'all',
+                status: status || 'all',
+                search: search || null,
+            }
         });
 
     } catch (error) {
@@ -135,15 +170,10 @@ export async function GET(request: Request) {
             { status: 500 }
         );
     } finally {
-        if (connection) {
-            connection.release(); // Release the connection back to the pool
-        }
+        if (connection) connection.release();
     }
 }
 
-/**
- * Handles PATCH requests to update the status of a contact query.
- */
 export async function PATCH(request: Request) {
     let connection: mysql.PoolConnection | undefined;
 
@@ -151,7 +181,6 @@ export async function PATCH(request: Request) {
         const body: PatchBody = await request.json();
         const { id, status } = body;
 
-        // Validate the request body
         if (!id || !status || !['new', 'in_progress', 'resolved'].includes(status)) {
             return NextResponse.json(
                 { error: 'Valid ID and status are required' },
@@ -159,7 +188,6 @@ export async function PATCH(request: Request) {
             );
         }
 
-        // Get a connection from the pool
         connection = await pool.getConnection();
 
         const [result] = await connection.execute(
@@ -186,8 +214,50 @@ export async function PATCH(request: Request) {
             { status: 500 }
         );
     } finally {
-        if (connection) {
-            connection.release(); // Release the connection back to the pool
+        if (connection) connection.release();
+    }
+}
+
+export async function DELETE(request: Request) {
+    let connection: mysql.PoolConnection | undefined;
+
+    try {
+        const { searchParams } = new URL(request.url);
+        const id = searchParams.get('id');
+
+        if (!id || isNaN(parseInt(id))) {
+            return NextResponse.json(
+                { error: 'Valid ID is required' },
+                { status: 400 }
+            );
         }
+
+        connection = await pool.getConnection();
+
+        const [result] = await connection.execute(
+            'DELETE FROM contact_queries WHERE id = ?',
+            [parseInt(id)]
+        );
+
+        if ((result as any).affectedRows === 0) {
+            return NextResponse.json(
+                { error: 'Query not found' },
+                { status: 404 }
+            );
+        }
+
+        return NextResponse.json({
+            success: true,
+            message: 'Query deleted successfully',
+        });
+
+    } catch (error) {
+        console.error('Database error:', error);
+        return NextResponse.json(
+            { error: 'Internal server error' },
+            { status: 500 }
+        );
+    } finally {
+        if (connection) connection.release();
     }
 }
