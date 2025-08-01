@@ -26,11 +26,14 @@ import {
     IconRocket,
     IconSpeakerphone,
     IconFriends,
+    IconClockHour8,
 } from '@tabler/icons-react';
 import { Hero } from '@/components/homepage/hero';
 import { TechDiff } from '@/components/services/web-dev-design/tech-diff';
 import { ProvideServicesTo } from '@/components/services/web-dev-design/provide-services-to';
 import { Companies } from '@/components/homepage/companies';
+import { FaqSection } from '@/components/services/faq-section';
+import { BarChart4, Briefcase, Brush, Code2, GaugeCircle, LayoutGrid, LifeBuoy, SearchCode, ServerCog, Settings2 } from 'lucide-react';
 
 interface StatsProps {
     icon?: React.ReactNode;
@@ -182,12 +185,6 @@ const services: Record<string, ServiceData> = {
                             slug: 'hotel-resorts'
                         },
                         {
-                            id: '3',
-                            name: 'Doctors & Clinics',
-                            image: '/web-dev/doctors-clinics.jpeg',
-                            slug: 'doctors-clinics'
-                        },
-                        {
                             id: '4',
                             name: 'Gyms & Fitness',
                             image: '/web-dev/gyms.jpeg',
@@ -242,6 +239,12 @@ const services: Record<string, ServiceData> = {
                             slug: 'travel-tourism'
                         },
                         {
+                            id: '3',
+                            name: 'Doctors & Clinics',
+                            image: '/web-dev/doctors-clinics.jpeg',
+                            slug: 'doctors-clinics'
+                        },
+                        {
                             id: '13',
                             name: 'Startups',
                             image: '/web-dev/startups.jpeg',
@@ -266,7 +269,7 @@ const services: Record<string, ServiceData> = {
                             slug: 'e-commerce'
                         },
                     ],
-                    heading: 'We Provide Services To',
+                    heading: 'We do Website Development for',
                     subheading: 'Businesses looking for high-quality web solutions'
                 },
                 position: 'afterWhyChooseUs'
@@ -309,12 +312,96 @@ const services: Record<string, ServiceData> = {
                     description: 'We are grateful to work with incredible clients 💖',
                 },
                 position: 'beforeWhyChooseUs'
+            }, {
+                component: FaqSection,
+                position: 'afterTestimonials',
+                props: {
+                    faqs: [
+                        {
+                            id: '1',
+                            question: 'What types of websites do you develop?',
+                            answer: 'We specialize in developing responsive websites for e-commerce stores, landing pages, business portfolios, startups, blogs, and fully custom web applications tailored to your brand’s needs and customer behavior.',
+                            icon: <LayoutGrid />
+                        },
+                        {
+                            id: '2',
+                            question: 'How much time does it typically take to launch a website?',
+                            answer: 'Our standard turnaround time is 8–9 business days for most projects, including design, development, and initial content population. Timelines may vary based on project scope, feature set, and client feedback cycles.',
+                            icon: <IconClockHour8 />
+                        },
+                        {
+                            id: '3',
+                            question: 'Is the website optimized for mobile and modern browsers?',
+                            answer: 'Every website we build follows a mobile-first approach and is rigorously tested across modern browsers (Chrome, Firefox, Safari, Edge) and all screen sizes to ensure pixel-perfect responsiveness and accessibility.',
+                            icon: <IconDeviceMobile />
+                        },
+                        {
+                            id: '4',
+                            question: 'Can I manage my website without technical skills?',
+                            answer: 'Absolutely. We use user-friendly Content Management Systems (CMS) such as WordPress and Shopify, enabling you to update content, images, and products effortlessly—without writing a single line of code.',
+                            icon: <Settings2 />
+                        },
+                        {
+                            id: '5',
+                            question: 'Do you integrate SEO best practices during development?',
+                            answer: 'All websites are built with search engine optimization (SEO) in mind. We implement clean code architecture, semantic HTML, meta tags, structured data (schema), optimized images, and fast-loading pages to improve Google rankings.',
+                            icon: <SearchCode />
+                        },
+                        {
+                            id: '6',
+                            question: 'What if I already have a website but need a redesign?',
+                            answer: 'We offer complete website redesign services to transform outdated interfaces into modern, conversion-focused experiences. The new version will be optimized for speed, SEO, mobile responsiveness, and user engagement.',
+                            icon: <Brush />
+                        },
+                        {
+                            id: '7',
+                            question: 'Which industries do you work with most often?',
+                            answer: 'Our portfolio includes websites for real estate, hospitality, healthcare, fashion, education, fitness, food & beverage, consultants, startups, and e-commerce brands—delivering industry-specific solutions and functionality.',
+                            icon: <Briefcase />
+                        },
+                        {
+                            id: '8',
+                            question: 'How do you ensure fast loading and performance?',
+                            answer: 'We implement performance optimization techniques such as image compression, lazy loading, code minification, caching strategies, and CDN integration. Our focus is to keep your Core Web Vitals green and bounce rates low.',
+                            icon: <GaugeCircle />
+                        },
+                        {
+                            id: '9',
+                            question: 'Is post-launch support and maintenance available?',
+                            answer: 'Our service doesn’t end at launch. We offer flexible maintenance plans that include software updates, bug fixes, security monitoring, backups, and performance reviews to ensure your website runs smoothly long-term.',
+                            icon: <LifeBuoy />
+                        },
+                        {
+                            id: '10',
+                            question: 'Can I track user activity and performance on my website?',
+                            answer: 'Yes, we integrate analytics tools such as Google Analytics and Search Console, allowing you to monitor user behavior, traffic sources, and goal conversions for data-driven marketing and business decisions.',
+                            icon: <BarChart4 />
+                        },
+                        {
+                            id: '11',
+                            question: 'What makes your websites different from templates builders?',
+                            answer: 'Unlike generic templates, our websites are built from scratch with your brand’s identity, target audience, and conversion goals in mind. This results in cleaner code, better SEO performance, faster speed, and higher ROI.',
+                            icon: <Code2 />
+                        },
+                        {
+                            id: '12',
+                            question: 'Do you handle domain and hosting setup?',
+                            answer: 'If needed, we assist in registering your domain, setting up secure hosting environments, configuring SSL certificates, and deploying the final website—ensuring everything is optimized, secured, and production-ready.',
+                            icon: <ServerCog />
+                        }
+                    ]
+                    ,
+                    heading: {
+                        part1: 'Frequently Asked ',
+                        part2: 'Questions'
+                    }
+                }
             }
         ],
         hero: {
             initial: "Want ",
             headlineKeywords: ["E-commerce", "Web App", "Landing Page", "Portfolio", "CMS", "Redesign"],
-            brandLine: "Call Digi Aerotech",
+            brandLine: [{ text: "Website Development", gradient: true, gradientClass: "text-dark dark:text-white text-5xl" }],
             subheadline: "Professional web development and design services that convert visitors into customers. Fast, responsive, and SEO-optimized.",
             ctaButtons: [
                 { icon: <IconFreeRights size={30} />, text: "Get Free Quote", link: "/contact" },
@@ -334,7 +421,7 @@ const services: Record<string, ServiceData> = {
                 {
                     icon: <IconRocket size={34} />,
                     title: "8-9 Days",
-                    description: "Average project delivery"
+                    description: "Avg. project delivery"
                 },
                 {
                     icon: <IconStarsFilled size={34} />,

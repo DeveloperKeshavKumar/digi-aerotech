@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({initial, headlineKeywords, brandLine,
             initial={{ opacity: 0, x: -50 }}
             animate={visible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mb-4 text-4xl sm:text-center lg:text-left font-semibold tracking-tight leading-tight md:text-5xl xl:text-6xl dark:text-white"
+            className="mb-4 text-4xl sm:text-center lg:text-left font-semibold tracking-tight leading-tight md:text-5xl dark:text-white"
           >
             <span className="block">
               {initial || "Need "}

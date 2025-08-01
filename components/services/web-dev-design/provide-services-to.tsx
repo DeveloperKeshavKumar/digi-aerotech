@@ -19,7 +19,7 @@ interface ServicesCarouselProps {
 }
 
 export function ProvideServicesTo({ services, heading, subheading }: ServicesCarouselProps) {
-  const [isPaused, setIsPaused] = React.useState(true);
+  const [isPaused, setIsPaused] = React.useState(false);
   // Duplicate services for infinite scroll effect
   const infiniteServices = [...services, ...services, ...services];
 
@@ -110,31 +110,31 @@ function ServiceCard({ service, index, setIsPaused }: ServiceCardProps) {
         setIsPaused(false);
       }}
     >
-      <Link href={`/web-dev-for-${service.slug}`}>
-        <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black dark:from-gray-100 dark:via-gray-200 dark:to-white shadow-2xl border border-gray-200 dark:border-gray-700">
+      <Link href={`/services/website-design-development/for-${service.slug}`}>
+        <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border border-gray-200 dark:border-gray-700">
           {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 group-hover:opacity-40 transition-opacity duration-500"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70 group-hover:opacity-40 transition-opacity duration-500"
             style={{ backgroundImage: `url(${service.image})` }}
           />
           
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent dark:from-white/80 dark:via-white/20 dark:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-black/10 to-transparent " />
           
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col-reverse justify-between p-8">
-            {/* Top Section - Service Name */}
-            <div className="flex justify-start">
+            {/* Bottom Section - Service Name */}
+            <div className="flex justify-start dark:bg-black/60 group-hover:dark:bg-white/60 p-4 py-2 rounded-lg transition-background duration-300">
               <div>
                 <motion.h3 
-                  className="text-2xl font-bold text-white dark:text-black mb-3 tracking-wide"
+                  className="text-xl font-bold text-white dark:text-white group-hover:dark:text-black mb-3 tracking-wide"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {service.name}
                 </motion.h3>
                 <motion.div 
-                  className="h-0.5 bg-white dark:bg-black opacity-60"
+                  className="h-0.5 bg-white group-hover:dark:bg-black opacity-60"
                   initial={{ width: '3rem' }}
                   animate={{ 
                     width: isHovered ? '4.5rem' : '3rem',
@@ -145,32 +145,32 @@ function ServiceCard({ service, index, setIsPaused }: ServiceCardProps) {
               </div>
             </div>
             
-            {/* Bottom Section - Small Elegant Arrow */}
+            {/* Top Section - Small Elegant Arrow */}
             <div className="flex justify-end items-end">
               <motion.div
                 whileHover={{ x: 3, y: -3, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="w-8 h-8 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-sm border border-white/30 dark:border-black/30 flex items-center justify-center group-hover:bg-white/30 dark:group-hover:bg-black/30 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-sm border border-white/30 dark:border-gray-300 flex items-center justify-center group-hover:bg-white/30 dark:group-hover:bg-black/30 transition-colors duration-300"
               >
                 <motion.div
                   animate={{ rotate: isHovered ? -45 : 0 }}
                   transition={{ duration: 0.3, ease: 'easeOut' }}
                 >
-                  <ArrowRight className="w-4 h-4 text-white dark:text-black" />
+                  <ArrowRight className="w-4 h-4 text-white dark:text-white" />
                 </motion.div>
               </motion.div>
             </div>
           </div>
           
           {/* Hover Effect Overlay */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-l from-transparent via-white/5 to-transparent dark:via-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          {/* <motion.div
+            className="absolute inset-0 bg-gradient-to-r dark:from-gray-800/80 to-transparent dark:via-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             initial={false}
             whileHover={{
               x: ['-100%', '100%'],
               transition: { duration: 0.6, ease: 'easeInOut' }
             }}
-          />
+          /> */}
         </div>
       </Link>
     </motion.div>
