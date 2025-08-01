@@ -92,7 +92,9 @@ interface CTAButton {
 }
 
 interface CustomSection {
+    // @ts-ignore
     component: React.ComponentType<any>;
+    // @ts-ignore
     props?: Record<string, any>;
     position: 'beforeHero' | 'afterHero' |
     'beforeWhyChooseUs' | 'afterWhyChooseUs' |
@@ -282,6 +284,7 @@ const services: Record<string, ServiceData> = {
             }, {
                 component: WhoWeWorkWith,
                 props: {
+                    title: "Who we work for",
                     description: "",
                     className: "relative -skew-y-3 hover:scale-112 transition-all duration-500 ease-in-out shadow-lg rounded-2xl border-t border-border dark:border-gray-800",
                 },
@@ -293,7 +296,7 @@ const services: Record<string, ServiceData> = {
                         { text: "We're Not Just a " },
                         { text: 'Marketing Team', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" },
                         { text: " — We’re the Solution to " },
-                        { text: "What's Broken", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+                        { text: "Your Growth Blocks", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
                     ],
                     subheadline: "Forget vanity metrics. We focus on what matters - leads, conversions, visibility, and real business impact.",
                     painPoints: [
