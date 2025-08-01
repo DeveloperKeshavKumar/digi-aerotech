@@ -74,8 +74,9 @@ import { TechDiff } from '@/components/services/web-dev-design/tech-diff';
 import { ProvideServicesTo } from '@/components/services/provide-services-to';
 import { Companies } from '@/components/homepage/companies';
 import { FaqSection } from '@/components/services/faq-section';
-import { BarChart4, Briefcase, Brush, Code2, GaugeCircle, LayoutGrid, LifeBuoy, SearchCode, ServerCog, Settings2, ShoppingBag } from 'lucide-react';
+import { ArrowRight, BarChart4, Briefcase, Brush, Code2, GaugeCircle, LayoutGrid, LifeBuoy, SearchCode, ServerCog, Settings2, ShoppingBag } from 'lucide-react';
 import { WhoWeWorkWith } from '@/components/homepage/who-we-work-with';
+import { Struggles } from '@/components/homepage/struggles';
 
 interface StatsProps {
     icon?: React.ReactNode;
@@ -281,11 +282,39 @@ const services: Record<string, ServiceData> = {
             }, {
                 component: WhoWeWorkWith,
                 props: {
-                    title: "",
                     description: "",
                     className: "relative -skew-y-3 hover:scale-112 transition-all duration-500 ease-in-out shadow-lg rounded-2xl border-t border-border dark:border-gray-800",
                 },
                 position: 'beforeProcess'
+            }, {
+                component: Struggles,
+                props: {
+                    title: [
+                        { text: "We're Not Just a " },
+                        { text: 'Marketing Team', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" },
+                        { text: " — We’re the Solution to " },
+                        { text: "What's Broken", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+                    ],
+                    subheadline: "Forget vanity metrics. We focus on what matters - leads, conversions, visibility, and real business impact.",
+                    painPoints: [
+                        "Wasting money on ads that don’t convert",
+                        "Website traffic but zero inquiries",
+                        "Low visibility on Google and Maps",
+                        "Inconsistent or lifeless social media presence",
+                        "Working with agencies that overpromise and underdeliver",
+                        "Doing everything yourself with no time to scale"
+                    ],
+                    solutionPoints: [
+                        "Laser-focused ad campaigns that attract qualified leads",
+                        "Landing pages and websites built to convert",
+                        "Top rankings on Google Search and Maps through local SEO",
+                        "Magnetic social content that drives brand engagement",
+                        "A proactive team that executes, reports, and iterates",
+                        "We handle your entire marketing engine so you can lead your business"
+                    ],
+                    cta: { icon: <ArrowRight />, text: " Let's Solve This Together", link: "/contact" }
+                },
+                position: 'beforeWhyChooseUs'
             }
         ],
         hero: {
