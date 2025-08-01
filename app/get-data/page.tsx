@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -10,7 +11,8 @@ import {
   CheckCircle,
   Lock,
   Key,
-  Unlock
+  Unlock,
+  LoaderIcon
 } from 'lucide-react';
 
 interface ContactQuery {
@@ -40,7 +42,15 @@ interface Filters {
   search: string;
 }
 
-export default function ContactQueriesDashboard() {
+export default function Page() {
+  return (
+    <Suspense fallback={<LoaderIcon />}>
+      <ContactQueriesDashboard />
+    </Suspense>
+  );
+}
+
+function ContactQueriesDashboard() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
