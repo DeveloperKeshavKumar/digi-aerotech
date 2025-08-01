@@ -141,7 +141,7 @@ export const Hero: React.FC<HeroProps> = ({initial, headlineKeywords, brandLine,
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {currentDisplay}?
+                  {currentDisplay}
                   <motion.span
                     animate={{ opacity: [0, 1, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}

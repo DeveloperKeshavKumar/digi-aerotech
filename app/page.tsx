@@ -18,17 +18,7 @@ import {
   ShoppingCart,
   TrendingUp,
   Book,
-  Utensils,
-  Hotel,
-  Stethoscope,
-  Dumbbell,
-  Shirt,
-  Home,
-  Briefcase,
-  Store,
   Phone,
-  Plane,
-  Ambulance,
 } from 'lucide-react';
 import {
   IconChartLine,
@@ -45,15 +35,13 @@ import {
   IconStarsFilled,
   IconUsersGroup,
   IconSchool,
-  IconBuilding,
-  IconPalette,
 } from '@tabler/icons-react';
 import { Companies } from '@/components/homepage/companies';
 export default function Homepage() {
   return (
     <main>
       <Hero
-        headlineKeywords={["Leads", "Sales", "Reach", "Growth", "Visibility", "Revenue", "Success"]}
+        headlineKeywords={["Leads?", "Sales?", "Reach?", "Growth?", "Visibility?", "Revenue?", "Success?"]}
         brandLine="Call Digi Aerotech"
         subheadline="We solve real business problems through smart, performance - first digital marketing and tech solutions."
         ctaButtons={[
@@ -325,90 +313,6 @@ export default function Homepage() {
         cta={{ text: "View All Services", link: "/services" }}
       />
       <WhoWeWorkWith
-        title={[
-          { text: "Who we " },
-          { text: "work with?", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
-        ]}
-        description="We work with businesses across these industries"
-        speed='fast'
-        rows={3}
-        industries={[
-          {
-            name: "Restaurants & Cafes",
-            url: "/restaurants",
-            icon: <Utensils className="w-5 h-5" />
-          },
-          {
-            name: "Hotels & Resorts",
-            url: "/hotels",
-            icon: <Hotel className="w-5 h-5" />
-          },
-          {
-            name: "Doctors & Clinics",
-            url: "/clinics",
-            icon: <Stethoscope className="w-5 h-5" />
-          },
-          {
-            name: "Gyms & Fitness",
-            url: "/gyms",
-            icon: <Dumbbell className="w-5 h-5" />
-          },
-          {
-            name: "Fashion Brands",
-            url: "/brands",
-            icon: <Shirt className="w-5 h-5" />
-          },
-          {
-            name: "Real Estate",
-            url: "/real-estate",
-            icon: <Home className="w-5 h-5" />
-          },
-          {
-            name: "B2C Brands",
-            url: "/b2c",
-            icon: <IconBuilding className="w-5 h-5" />
-          },
-          {
-            name: "Consultants",
-            url: "/consultants",
-            icon: <Briefcase className="w-5 h-5" />
-          },
-          {
-            name: "Local Shops",
-            url: "/locals",
-            icon: <Store className="w-5 h-5" />
-          },
-          {
-            name: "eCommerce",
-            url: "/ecommerce",
-            icon: <ShoppingCart className="w-5 h-5" />
-          },
-          {
-            name: "Startups",
-            url: "/startups",
-            icon: <Phone className="w-5 h-5" />
-          },
-          {
-            name: "B2B Businesses",
-            url: "/b2b",
-            icon: <IconBuilding className="w-5 h-5" />
-          },
-          {
-            name: "Travel & Tourism",
-            url: "/travel",
-            icon: <Plane className="w-5 h-5" />
-          },
-          {
-            name: "Interior Designers",
-            url: "/interior-design",
-            icon: <IconPalette className="w-5 h-5" />
-          },
-          {
-            name: "Pharma Companies",
-            url: '/pharma',
-            icon: <Ambulance className="w-5 h-5" />
-          }
-        ]}
       />
       <OurWork
         title={[

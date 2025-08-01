@@ -2,8 +2,10 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, inView } from 'motion/react';
-import { TrendingUp } from 'lucide-react';
+import { Ambulance, Briefcase, Dumbbell, Home, Hotel, Phone, Plane, Shirt, ShoppingCart, Stethoscope, Store, TrendingUp, Utensils } from 'lucide-react';
 import Link from 'next/link';
+import { IconBuilding, IconBuildingFactory2, IconPalette } from '@tabler/icons-react';
+import { cn } from '@/lib/utils';
 
 interface IndustryItem {
   name: string;
@@ -12,19 +14,100 @@ interface IndustryItem {
 }
 
 interface WhoWeWorkWithProps {
-  industries: IndustryItem[];
+  industries?: IndustryItem[];
   title?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
   description?: string;
   rows?: number;
   speed?: 'slow' | 'medium' | 'fast';
+  className?: string;
 }
 
 export const WhoWeWorkWith = ({
-  industries = [],
-  title = 'Who We Work With',
-  description = 'Trusted by businesses across industries',
+  industries = [
+    {
+      name: "Restaurants & Cafes",
+      url: "/restaurants",
+      icon: <Utensils className="w-5 h-5" />
+    },
+    {
+      name: "Hotels & Resorts",
+      url: "/hotels",
+      icon: <Hotel className="w-5 h-5" />
+    },
+    {
+      name: "Doctors & Clinics",
+      url: "/clinics",
+      icon: <Stethoscope className="w-5 h-5" />
+    },
+    {
+      name: "Gyms & Fitness",
+      url: "/gyms",
+      icon: <Dumbbell className="w-5 h-5" />
+    },
+    {
+      name: "Fashion Brands",
+      url: "/brands",
+      icon: <Shirt className="w-5 h-5" />
+    },
+    {
+      name: "Real Estate",
+      url: "/real-estate",
+      icon: <Home className="w-5 h-5" />
+    },
+    {
+      name: "B2C Brands",
+      url: "/b2c",
+      icon: <IconBuilding className="w-5 h-5" />
+    },
+    {
+      name: "Consultants",
+      url: "/consultants",
+      icon: <Briefcase className="w-5 h-5" />
+    },
+    {
+      name: "Local Shops",
+      url: "/locals",
+      icon: <Store className="w-5 h-5" />
+    },
+    {
+      name: "eCommerce",
+      url: "/ecommerce",
+      icon: <ShoppingCart className="w-5 h-5" />
+    },
+    {
+      name: "Startups",
+      url: "/startups",
+      icon: <Phone className="w-5 h-5" />
+    },
+    {
+      name: "B2B Businesses",
+      url: "/b2b",
+      icon: <IconBuildingFactory2 className="w-5 h-5" />
+    },
+    {
+      name: "Travel & Tourism",
+      url: "/travel",
+      icon: <Plane className="w-5 h-5" />
+    },
+    {
+      name: "Interior Designers",
+      url: "/interior-design",
+      icon: <IconPalette className="w-5 h-5" />
+    },
+    {
+      name: "Pharma Companies",
+      url: '/pharma',
+      icon: <Ambulance className="w-5 h-5" />
+    }
+  ],
+  title = [
+    { text: "Who we " },
+    { text: "work with?", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+  ],
+  description = 'We work with businesses across these industries',
   rows = 3,
-  speed = 'medium',
+  speed = 'fast',
+  className = '',
 }: WhoWeWorkWithProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -65,11 +148,10 @@ export const WhoWeWorkWith = ({
         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-gray-50 dark:from-gray-950 to-transparent z-10" />
 
         <div
-          className={`inline-flex items-center gap-4 ${
-            direction === 'left'
-              ? 'animate-scroll-left-infinite'
-              : 'animate-scroll-right-infinite'
-          }`}
+          className={`inline-flex items-center gap-4 ${direction === 'left'
+            ? 'animate-scroll-left-infinite'
+            : 'animate-scroll-right-infinite'
+            }`}
           style={{
             animationDelay: `${delay}ms`,
             animationDuration: speedClasses[speed],
@@ -122,22 +204,27 @@ export const WhoWeWorkWith = ({
   return (
     <section
       ref={sectionRef}
-      className="py-16 px-4 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700"
+      className={cn("py-16 px-4 bg-gray-50 dark:bg-gray-950 overflow-hidden border-b border-border dark:border-gray-700", className)}
     >
       <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={visible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
-            {renderTitle()}
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            {description}
-          </p>
-        </motion.div>
+        {
+          title.length > 0 &&
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={visible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
+              {renderTitle()}
+            </h2>
+            {
+              description.length > 0 &&
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                {description}
+              </p>
+            }
+          </motion.div>}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

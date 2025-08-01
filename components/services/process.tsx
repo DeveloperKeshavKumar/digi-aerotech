@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface ProcessStep {
     id: number;
@@ -16,13 +17,15 @@ interface ProcessProps {
     subtitle: string;
     description: string;
     steps: ProcessStep[];
+    className?: string;
 }
 
 export const Process: React.FC<ProcessProps> = ({
     title,
     subtitle,
     description,
-    steps
+    steps,
+    className
 }) => {
     const [activeStep, setActiveStep] = useState(steps[0]?.id || 1);
 
@@ -33,7 +36,7 @@ export const Process: React.FC<ProcessProps> = ({
     const activeStepData = steps.find(step => step.id === activeStep);
 
     return (
-        <div className="bg-gray-50 dark:bg-gray-950 transition-colors duration-300 py-8 md:pt-32 md:pb-24">
+        <div className={cn("bg-gray-50 dark:bg-gray-950 transition-colors duration-300 py-8 md:pt-32 md:pb-24", className)}>
             <div className="px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
                     {/* Header Section - Compact */}
