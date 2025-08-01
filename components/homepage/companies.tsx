@@ -21,12 +21,43 @@ interface CompaniesProps {
     speed?: 'slow' | 'medium' | 'fast';
 }
 
+const CLogos: Logo[] = [{ image: '/logos/1.png', },
+{ image: '/logos/2.png', },
+{ image: '/logos/3.png', },
+{ image: '/logos/4.png', },
+{ image: '/logos/5.png', },
+{ image: '/logos/6.png', },
+{ image: '/logos/7.png', },
+{ image: '/logos/8.png', },
+{ image: '/logos/9.png', },
+{ image: '/logos/10.png', },
+{ image: '/logos/11.png', },
+{ image: '/logos/12.png', },
+{ image: '/logos/13.png', },
+{ image: '/logos/14.png', },
+{ image: '/logos/15.png', },
+{ image: '/logos/16.png', },
+{ image: '/logos/17.png', },
+{ image: '/logos/18.png', },
+{ image: '/logos/18.png', },
+{ image: '/logos/19.png', },
+{ image: '/logos/20.png', },
+{ image: '/logos/21.png', },
+{ image: '/logos/22.png', },
+{ image: '/logos/23.png', },
+{ image: '/logos/24.png', },
+{ image: '/logos/25.png', },
+]
+
 export const Companies = ({
-    logos = [],
-    title = 'Our Partners',
-    description = 'Trusted by businesses across industries',
+    logos = CLogos,
+    title =  [
+    { text: 'Trusted By ' },
+    { text: '140+ Businesses', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" }
+],
+    description = 'We are grateful to work with incredible clients 💖',
     rows = 2,
-    speed = 'medium',
+    speed = 'fast',
 }: CompaniesProps) => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);

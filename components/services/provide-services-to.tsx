@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface Service {
   id: string;
@@ -18,7 +19,108 @@ interface ServicesCarouselProps {
   subheading: string;
 }
 
-export function ProvideServicesTo({ services, heading, subheading }: ServicesCarouselProps) {
+const servicess = [
+  {
+    id: '1',
+    name: 'Real Estate',
+    image: '/web-dev/real-estate.jpeg',
+    slug: 'real-estate'
+  },
+  {
+    id: '2',
+    name: 'Hotel & Resorts',
+    image: '/web-dev/hotel-resorts.jpeg',
+    slug: 'hotel-resorts'
+  },
+  {
+    id: '3',
+    name: 'Gyms & Fitness',
+    image: '/web-dev/gyms.jpeg',
+    slug: 'gyms-fitness'
+  },
+  {
+    id: '4',
+    name: 'Restaurants & Cafes',
+    image: '/web-dev/cafes.jpeg',
+    slug: 'restaurants-cafes'
+  },
+  {
+    id: '5',
+    name: 'Fashion Brands',
+    image: '/web-dev/fashion-brands.jpeg',
+    slug: 'fashion-brands'
+  },
+  {
+    id: '6',
+    name: 'B2B Services',
+    image: '/web-dev/b2b-services.jpeg',
+    slug: 'b2b-services'
+  },
+  {
+    id: '7',
+    name: 'Consultants & Coaches',
+    image: '/web-dev/consultants.jpeg',
+    slug: 'consultants'
+  },
+  {
+    id: '8',
+    name: 'Local Businesses',
+    image: '/web-dev/locals.png',
+    slug: 'local-businesses'
+  },
+  {
+    id: '9',
+    name: 'Pharma Companies',
+    image: '/web-dev/pharma.jpeg',
+    slug: 'pharma-companies'
+  },
+  {
+    id: '10',
+    name: 'Interior Designers',
+    image: '/web-dev/interior-designers.jpeg',
+    slug: 'interior-designers'
+  },
+  {
+    id: '11',
+    name: 'Travel & Tourism',
+    image: '/web-dev/travel-tourism.jpeg',
+    slug: 'travel-tourism'
+  },
+  {
+    id: '12',
+    name: 'Doctors & Clinics',
+    image: '/web-dev/doctors-clinics.jpeg',
+    slug: 'doctors-clinics'
+  },
+  {
+    id: '13',
+    name: 'Startups & Entrepreneurs',
+    image: '/web-dev/startups.jpeg',
+    slug: 'startups-entrepreneurs'
+  },
+  {
+    id: '14',
+    name: 'B2C Services',
+    image: '/web-dev/b2c-services.jpeg',
+    slug: 'b2c-services'
+  },
+  {
+    id: '15',
+    name: 'Educational Institutions',
+    image: '/web-dev/educational.jpeg',
+    slug: 'educational-institutions'
+  },
+  {
+    id: '16',
+    name: 'E-Commerce Brands',
+    image: '/web-dev/ecommerce.jpeg',
+    slug: 'e-commerce-brands'
+  }
+]
+
+export function ProvideServicesTo({ services = servicess, heading, subheading }: ServicesCarouselProps) {
+  const pathName = usePathname();
+  const parent = pathName.split('/')[2];
   const [isPaused, setIsPaused] = React.useState(false);
   // Duplicate services for infinite scroll effect
   const infiniteServices = [...services, ...services, ...services];
@@ -28,7 +130,7 @@ export function ProvideServicesTo({ services, heading, subheading }: ServicesCar
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -36,7 +138,7 @@ export function ProvideServicesTo({ services, heading, subheading }: ServicesCar
           >
             {heading}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -75,6 +177,7 @@ export function ProvideServicesTo({ services, heading, subheading }: ServicesCar
                   key={`${service.id}-${index}`}
                   service={service}
                   index={index}
+                  parent={parent}
                   setIsPaused={setIsPaused}
                 />
               ))}
@@ -89,10 +192,11 @@ export function ProvideServicesTo({ services, heading, subheading }: ServicesCar
 interface ServiceCardProps {
   service: Service;
   index: number;
+  parent?: string
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function ServiceCard({ service, index, setIsPaused }: ServiceCardProps) {
+function ServiceCard({ service, index, parent, setIsPaused }: ServiceCardProps) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
@@ -110,41 +214,41 @@ function ServiceCard({ service, index, setIsPaused }: ServiceCardProps) {
         setIsPaused(false);
       }}
     >
-      <Link href={`/services/website-design-development/for-${service.slug}`}>
+      <Link href={`/services/${parent}/for-${service.slug}`}>
         <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border border-gray-200 dark:border-gray-700">
           {/* Background Image */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70 group-hover:opacity-40 transition-opacity duration-500"
             style={{ backgroundImage: `url(${service.image})` }}
           />
-          
+
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-black/10 to-transparent " />
-          
+
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col-reverse justify-between p-8">
             {/* Bottom Section - Service Name */}
             <div className="flex justify-start  rounded-lg transition-background duration-300">
               <div>
-                <motion.h3 
+                <motion.h3
                   className="text-xl font-bold text-white mb-3 tracking-wide"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {service.name}
                 </motion.h3>
-                <motion.div 
+                <motion.div
                   className="h-0.5 bg-white opacity-60"
                   initial={{ width: '3rem' }}
-                  animate={{ 
+                  animate={{
                     width: isHovered ? '4.5rem' : '3rem',
-                    opacity: isHovered ? 1 : 0.6 
+                    opacity: isHovered ? 1 : 0.6
                   }}
                   transition={{ duration: 0.3, ease: 'easeOut' }}
                 />
               </div>
             </div>
-            
+
             {/* Top Section - Small Elegant Arrow */}
             <div className="flex justify-end items-end">
               <motion.div
@@ -161,7 +265,7 @@ function ServiceCard({ service, index, setIsPaused }: ServiceCardProps) {
               </motion.div>
             </div>
           </div>
-          
+
           {/* Hover Effect Overlay */}
           {/* <motion.div
             className="absolute inset-0 bg-gradient-to-r dark:from-gray-800/80 to-transparent dark:via-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
