@@ -41,7 +41,7 @@ const transporter = nodemailer.createTransport({
 // --- Rate Limiting Logic ---
 const rateLimitMap = new Map();
 // Changed to allow only 1 request per day
-const LIMIT = 2; // Max number of requests
+const LIMIT = 1; // Max number of requests
 // Time window in milliseconds (24 hours)
 const WINDOW_MS = 24 * 60 * 60 * 1000;
 

@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { motion } from 'motion/react';
+import { ContactForm } from '../contact-form';
 
 interface TrustPoint {
   icon: React.ReactNode;
@@ -24,6 +25,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
   trustPoints,
   cta,
 }) => {
+  const [showContact, setShowContact] = React.useState(false);
   // Helper to render title with gradient
   const renderTitle = () => {
     if (typeof title === 'string') {
@@ -67,15 +69,37 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
           ))}
         </div>
 
-        <div className="text-center">
-          <Link
-            href={cta.link}
-            className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium text-center rounded-lg hover:dark:bg-gray-200 dark:bg-white hover:scale-105  transition-all duration-300 text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400"
-          >
-            {cta.icon && <span className="mr-2">{cta.icon}</span>}
-            {cta.text}
-          </Link>
-        </div>
+        <>
+            <div className="flex justify-center">
+            <motion.button
+              type="button"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-lg bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400 transition-all duration-200 border border-transparent text-white"
+              onClick={() => setShowContact(true)}
+            >
+              <div className="flex items-center gap-3">
+              <span>{cta.icon}</span>
+              <span className="text-lg">{cta.text}</span>
+              </div>
+            </motion.button>
+            </div>
+
+          {showContact && (
+            <div
+              className="fixed inset-0 flex items-center justify-center bg-opacity-70 backdrop-blur-md z-50"
+              onClick={() => setShowContact(false)}
+            >
+              <div
+                className=""
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ContactForm />
+              </div>
+            </div>
+          )}
+        </>
       </div>
     </section>
   );

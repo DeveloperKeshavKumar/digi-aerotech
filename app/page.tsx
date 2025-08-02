@@ -45,7 +45,7 @@ export default function Homepage() {
         brandLine="Call Digi Aerotech"
         subheadline="We solve real business problems through smart, performance - first digital marketing and tech solutions."
         ctaButtons={[
-          { icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/" },
+          { icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", },
           { icon: <IconPhone size={30} />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
         ]}
         stats={[
@@ -457,7 +457,7 @@ export default function Homepage() {
           ],
           ctaButtons: [
             {
-              icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/strategy-call"
+              icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call",
             },
             { icon: <Phone />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
           ]

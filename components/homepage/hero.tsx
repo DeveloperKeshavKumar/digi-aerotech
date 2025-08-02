@@ -15,7 +15,7 @@ interface StatsProps {
 interface CTAButton {
   icon?: React.ReactNode;
   text: string;
-  link: string;
+  link?: string;
   variant?: 'primary' | 'secondary';
 }
 
@@ -28,7 +28,7 @@ interface HeroProps {
   stats: StatsProps[];
 }
 
-export const Hero: React.FC<HeroProps> = ({initial, headlineKeywords, brandLine, subheadline, ctaButtons, stats }) => {
+export const Hero: React.FC<HeroProps> = ({ initial, headlineKeywords, brandLine, subheadline, ctaButtons, stats }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({initial, headlineKeywords, brandLine,
   // Array of gradient classes that cycle based on index
   const gradientClasses = [
     "from-green-400 via-blue-500 to-purple-500",
-    "from-orange-400 via-pink-500 to-red-500", 
+    "from-orange-400 via-pink-500 to-red-500",
     "from-yellow-300 via-rose-400 to-fuchsia-500",
     "from-blue-400 via-purple-500 to-pink-500",
     "from-emerald-400 via-cyan-500 to-blue-500",
@@ -170,19 +170,51 @@ export const Hero: React.FC<HeroProps> = ({initial, headlineKeywords, brandLine,
             transition={{ delay: 0.6, duration: 0.5 }}
             className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 md:mb-8 sm:hidden"
           >
-            {ctaButtons.map((button, index) => (
-              <Link
-                key={index}
-                href={button.link}
-                className={`inline-flex items-center justify-center px-4 py-3 text-base font-medium text-center rounded-lg transition-all duration-300 ${button.variant === 'secondary'
-                  ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 border border-black dark:border-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800'
-                  : 'text-white bg-gradient-to-r from-orange-600 via-pink-600 to-red-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
-                  }`}
-              >
-                {button.icon && <span className="mr-2">{button.icon}</span>}
-                {button.text}
-              </Link>
-            ))}
+            <div className="flex flex-col justify-center lg:justify-start sm:flex-row gap-4 pt-4">
+              {ctaButtons.map((button, index) =>
+                button.link ? (
+                  <Link
+                    key={index}
+                    href={button.link}
+                    onClick={
+                      button.variant !== 'secondary'
+                        ? () => {
+                          const firstInput = document.querySelector<HTMLInputElement>('#business-growth-form input');
+                          firstInput?.focus();
+                        }
+                        : undefined
+                    }
+                    className={`group inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 ${button.variant === 'secondary'
+                        ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
+                        : 'hover:dark:bg-gray-200 dark:bg-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
+                      }`}
+                  >
+                    {button.icon && <span className="mr-2">{button.icon}</span>}
+                    {button.text}
+                  </Link>
+                ) : (
+                  <button
+                    key={index}
+                    onClick={
+                      button.variant !== 'secondary'
+                        ? () => {
+                          const firstInput = document.querySelector<HTMLInputElement>('#business-growth-form input');
+                          firstInput?.focus();
+                        }
+                        : undefined
+                    }
+                    className={`group inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 ${button.variant === 'secondary'
+                        ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
+                        : 'hover:dark:bg-gray-200 dark:bg-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
+                      }`}
+                  >
+                    {button.icon && <span className="mr-2">{button.icon}</span>}
+                    {button.text}
+                  </button>
+                )
+              )}
+            </div>
+
           </motion.div>
           <StatsSection stats={stats} />
         </motion.div>

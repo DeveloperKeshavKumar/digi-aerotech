@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, inView } from 'motion/react';
 import { IconMoodCry, IconMoodHappy } from '@tabler/icons-react';
 import { LucideArrowBigRightDash } from 'lucide-react';
+import { ContactForm } from '../contact-form';
 
 interface StrugglesProps {
   title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
@@ -13,7 +14,7 @@ interface StrugglesProps {
   cta: {
     icon: React.ReactNode;
     text: string;
-    link: string;
+    link?: string;
   };
 }
 
@@ -26,6 +27,7 @@ export const Struggles: React.FC<StrugglesProps> = ({
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   useEffect(() => {
     if (sectionRef.current) {
@@ -126,18 +128,34 @@ export const Struggles: React.FC<StrugglesProps> = ({
           ))}
         </ul>
 
-        <motion.a
-          href={cta.link}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={visible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-lg bg-gray-900 hover:bg-gray-100 hover dark:bg-white dark:hover:bg-gray-800 hover:scale-105 transition-all duration-200 border border-transparent text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400"
-        >
-          <div className="flex items-center gap-3">
-            <span>{cta.icon}</span>
-            <span className="text-lg">{cta.text}</span>
-          </div>
-        </motion.a>
+        <>
+          <motion.button
+            type="button"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={visible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-lg bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400 transition-all duration-200 border border-transparent text-white"
+            onClick={() => setShowContact(true)}
+          >
+            <div className="flex items-center gap-3">
+              <span>{cta.icon}</span>
+              <span className="text-lg">{cta.text}</span>
+            </div>
+          </motion.button>
+          {showContact && (
+            <div 
+              className="fixed inset-0 flex items-center justify-center  bg-opacity-70 backdrop-blur-md z-50"
+              onClick={() => setShowContact(false)}
+            >
+              <div 
+          className="" 
+          onClick={(e) => e.stopPropagation()}
+              >
+          <ContactForm />
+              </div>
+            </div>
+          )}
+        </>
       </div>
     </section>
   );

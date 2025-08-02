@@ -16,7 +16,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
     highlights: string[];
     ctaButtons: {
       text: string;
-      link: string;
+      link?: string;
       variant?: 'primary' | 'secondary';
       icon?: React.ReactNode;
     }[];
@@ -184,20 +184,50 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
             </div>
 
             <div className="flex flex-col justify-center lg:justify-start sm:flex-row gap-4 pt-4">
-              {growBizProps.ctaButtons.map((button, index) => (
-                <Link
-                  key={index}
-                  href={button.link}
-                  className={`group inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 ${button.variant === 'secondary'
-                    ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
-                    : ' hover:dark:bg-gray-200 dark:bg-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
-                    }`}
-                >
-                  {button.icon && <span className="mr-2">{button.icon}</span>}
-                  {button.text}
-                </Link>
-              ))}
+              {growBizProps.ctaButtons.map((button, index) =>
+                button.link ? (
+                  <Link
+                    key={index}
+                    href={button.link}
+                    onClick={
+                      button.variant !== 'secondary'
+                        ? () => {
+                          const firstInput = document.querySelector<HTMLInputElement>('#business-growth-form input');
+                          firstInput?.focus();
+                        }
+                        : undefined
+                    }
+                    className={`group inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 ${button.variant === 'secondary'
+                        ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
+                        : 'hover:dark:bg-gray-200 dark:bg-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
+                      }`}
+                  >
+                    {button.icon && <span className="mr-2">{button.icon}</span>}
+                    {button.text}
+                  </Link>
+                ) : (
+                  <button
+                    key={index}
+                    onClick={
+                      button.variant !== 'secondary'
+                        ? () => {
+                          const firstInput = document.querySelector<HTMLInputElement>('#business-growth-form input');
+                          firstInput?.focus();
+                        }
+                        : undefined
+                    }
+                    className={`group inline-flex items-center justify-center px-6 py-4 text-base font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 ${button.variant === 'secondary'
+                        ? 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-600'
+                        : 'hover:dark:bg-gray-200 dark:bg-white text-white bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400'
+                      }`}
+                  >
+                    {button.icon && <span className="mr-2">{button.icon}</span>}
+                    {button.text}
+                  </button>
+                )
+              )}
             </div>
+
           </motion.div>
 
           {/* Right Column - Form */}
@@ -225,7 +255,7 @@ export const BusinessGrowthSection = ({ growBizProps, quickFormProps }: {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} id='business-growth-form' className="space-y-4">
                     {/* Name and Email Fields */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>

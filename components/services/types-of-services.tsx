@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import { motion } from 'motion/react';
+import { IconDiscGolf, IconMessageCircle } from '@tabler/icons-react';
+import { ContactForm } from '../contact-form';
 
 interface Service {
   id: number;
@@ -22,6 +24,7 @@ export const TypesOfServices: React.FC<TypesOfServicesProps> = ({
   description,
   services
 }) => {
+  const [showContact, setShowContact] = React.useState(false);
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
@@ -105,13 +108,38 @@ export const TypesOfServices: React.FC<TypesOfServicesProps> = ({
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-16"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-br from-red-500 via-pink-600 to-orange-500 hover:from-red-600 hover:via-pink-500 hover:to-orange-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Discuss Your Project
-          </motion.button>
+          <>
+            <div className="flex justify-center">
+              <motion.button
+                type="button"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-lg bg-gradient-to-r from-red-600 via-pink-600 to-orange-500 hover:from-orange-500 hover:via-pink-500 hover:to-red-400 transition-all duration-200 border border-transparent text-white"
+                onClick={() => setShowContact(true)}
+              >
+                <div className="flex items-center gap-3">
+                    <IconMessageCircle size={24} className="text-white" />
+                  <span className="text-lg">Discuss Your Project</span>
+                </div>
+              </motion.button>
+            </div>
+
+            {showContact && (
+              <div
+                className="fixed inset-0 flex items-center justify-center bg-opacity-70 backdrop-blur-md z-50"
+                onClick={() => setShowContact(false)}
+              >
+                <div
+                  className=""
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ContactForm />
+                </div>
+              </div>
+            )}
+          </>
+
         </motion.div>
       </div>
     </motion.section>

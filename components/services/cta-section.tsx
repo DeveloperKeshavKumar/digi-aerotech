@@ -30,16 +30,28 @@ export const CTA: React.FC<CTAProps> = ({
               {description}
             </p>
             <div className="hidden lg:flex flex-row gap-4 pt-4">
-              <button className="px-6 py-3 text-white font-medium bg-gradient-to-r from-red-500 via-pink-600 to-orange-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 rounded-lg transition-all">
-                Get Started
+              <button
+              onClick={() => {
+                const firstInput = document.querySelector<HTMLInputElement>('#cta-form input');
+                firstInput?.focus();
+              }}
+              className="px-6 py-3 text-white font-medium bg-gradient-to-r from-red-500 via-pink-600 to-orange-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 rounded-lg transition-all"
+              >
+              Get Started
               </button>
-              <button className="px-6 py-3 text-semibold text-black dark:text-white font-medium bg-transparent border border-gray-600 hover:bg-gray-50 dark:hover:bg-blue-900/20 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 rounded-lg transition-all">
-                Contact Sales
+              <button
+              onClick={() => {
+                const firstInput = document.querySelector<HTMLInputElement>('#cta-form input');
+                firstInput?.focus();
+              }}
+              className="px-6 py-3 text-semibold text-black dark:text-white font-medium bg-transparent border border-gray-600 hover:bg-gray-50 dark:hover:bg-blue-900/20 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 rounded-lg transition-all"
+              >
+              Contact Sales
               </button>
             </div>
           </div>
 
-          <div data-aos="fade-up" data-aos-delay="200">
+          <div data-aos="fade-up" id='cta-form' data-aos-delay="200">
             <ContactForm />
           </div>
         </div>
