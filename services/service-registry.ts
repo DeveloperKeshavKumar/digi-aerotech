@@ -7,6 +7,9 @@ import { localSeoService } from './local-seo.service';
 import { ecommerceMarketingService } from './ecommerce-marketing.service';
 import { webDevelopmentService } from './web-development.service';
 import { socialMediaMarketingService } from './social-media-marketing.service';
+import { seoService } from './seo.service';
+import { gmbService } from './gmb.service';
+import { asoService } from './aso.service';
 
 export const serviceRegistry: Record<string, ServiceData> = {
     '360-digital-marketing': digitalMarketingService,
@@ -17,6 +20,9 @@ export const serviceRegistry: Record<string, ServiceData> = {
     'ecommerce-marketing': ecommerceMarketingService,
     'web-design-development': webDevelopmentService,
     'social-media-marketing': socialMediaMarketingService,
+    'seo-services': seoService,
+    'gmb-services': gmbService,
+    'aso-services': asoService,
 };
 
 export const getServiceBySlug = (slug: string): ServiceData | undefined => {

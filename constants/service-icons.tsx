@@ -56,6 +56,12 @@ import {
     IconUserPlus,
     IconBrandFacebook,
     IconPackage,
+    IconFileText,
+    IconMessage,
+    IconClock,
+    IconCamera,
+    IconDownload,
+    IconBrandApple,
 } from '@tabler/icons-react';
 
 import {
@@ -76,6 +82,12 @@ import {
 // Export all icons for use in service configurations
 export const ServiceIcons = {
     // Tabler Icons
+    IconBrandApple,
+    IconDownload,
+    IconCamera,
+    IconClock,
+    IconMessage,
+    IconFileText,
     IconCode,
     IconDeviceMobile,
     IconBrandReact,
