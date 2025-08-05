@@ -454,6 +454,7 @@ export const NavbarLogo = ({ visible }: { visible?: boolean }) => {
         src="/logo.svg"
         alt="DIGI AEROTECH"
         fill
+        priority
         className={cn(
           "object-contain self-start transition-all duration-300 rounded-lg  bg-transparent px-3 py-2 invert dark:invert-0"
         )}

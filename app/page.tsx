@@ -366,7 +366,6 @@ export default function Homepage() {
           },
           {
             id: "3",
-            image: '/logo.svg',
             message: "I have been associated with him for 4-5 months and I am getting my company's work done through him and I am very happy with his work. I don't have even 1% complaint with his work... The best part is that if you want to make any changes or additions or want to suggest something, let me know. The reply comes within 5 minutes. I liked this the most about him... and his team also keeps their work good...",
             stars: 5,
             name: "Abhishek Singh",
@@ -425,7 +424,6 @@ export default function Homepage() {
           {
             id: "11",
             message: "Good service , they maintain good TAT.",
-            image: '/logo.svg',
             stars: 5,
             name: "Mukaram",
             designation: "Owner",

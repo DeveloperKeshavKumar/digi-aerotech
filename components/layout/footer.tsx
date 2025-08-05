@@ -170,6 +170,7 @@ export const Footer: React.FC = () => {
                                             src="/logo.svg"
                                             alt="Rippple"
                                             fill
+                                            priority
                                             className="scale-200 ml-9 md:ml-6 object-contain self-start transition-all duration-300 rounded-lg  bg-transparent px-2 sm:px-3 py-2 invert dark:invert-0" />
                                     </span>
                                 </motion.div>
