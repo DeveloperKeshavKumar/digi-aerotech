@@ -10,6 +10,10 @@ import { socialMediaMarketingService } from './social-media-marketing.service';
 import { seoService } from './seo.service';
 import { gmbService } from './gmb.service';
 import { asoService } from './aso.service';
+import { mobileDevelopmentService } from './mobile-development.service';
+import { websiteMaintenanceService } from './website-maintenance.service';
+import { leadGenerationService } from './lead-generation.service';
+import { marketingAutomationService } from './marketing-automation.service';
 
 export const serviceRegistry: Record<string, ServiceData> = {
     '360-digital-marketing': digitalMarketingService,
@@ -23,6 +27,10 @@ export const serviceRegistry: Record<string, ServiceData> = {
     'seo-services': seoService,
     'gmb-services': gmbService,
     'aso-services': asoService,
+    'mobile-development': mobileDevelopmentService,
+    'website-maintenance': websiteMaintenanceService,
+    'lead-generation': leadGenerationService,
+    'marketing-automation': marketingAutomationService,
 };
 
 export const getServiceBySlug = (slug: string): ServiceData | undefined => {
