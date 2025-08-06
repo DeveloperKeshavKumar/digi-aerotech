@@ -161,7 +161,7 @@ export const WhoWeWorkWith = ({
         >
           {duplicatedItems.map((item, index) => (
             <Link
-              href={item.url}
+              href={`/services${item.url}`}
               key={`${index}`}
               className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 flex items-center gap-3 hover:shadow-md transition-all duration-300 group flex-shrink-0"
             >

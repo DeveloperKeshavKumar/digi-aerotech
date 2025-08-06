@@ -257,18 +257,21 @@ export default function Homepage() {
               icon: <IconStar size={14} />,
               text: "Top Rated"
             },
+            url: "/google-ads"
           },
           {
             name: "Website Design & Development",
             icon: <Monitor size={24} />,
             gridClass: "md:col-span-6 lg:col-span-4",
             description: "Custom websites that convert visitors into customers.",
+            url:"/web-design-development"
           },
           {
             name: "Local SEO & Google Business",
             icon: <MapPin size={24} />,
             gridClass: "md:col-span-2 lg:col-span-3",
-            description: "Dominate local search results and get found by nearby customers."
+            description: "Dominate local search results and get found by nearby customers.",
+            url: "/local-seo"
           },
           {
             name: "Social Media Marketing",
@@ -279,7 +282,8 @@ export default function Homepage() {
               icon: <TrendingUp size={14} />,
               text: "Fastest Growing",
               styles: "bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
-            }
+            },
+            url: "/social-media-marketing"
           },
           {
             name: "Landing Page Creation",
@@ -288,16 +292,18 @@ export default function Homepage() {
             description: "High-converting landing pages designed for maximum results."
           },
           {
-            name: "CRM/Lead Automation",
+            name: "Marketing Automation",
             icon: <Bot size={24} />,
             gridClass: "md:col-span-3 lg:col-span-6",
             description: "Streamline your sales process with intelligent automation.",
+            url: "/marketing-automation"
           },
           {
             name: "Branding & Design",
             icon: <Palette size={24} />,
             gridClass: "md:col-span-3 lg:col-span-3",
-            description: "Create a memorable brand identity that stands out from the competition."
+            description: "Create a memorable brand identity that stands out from the competition.",
+            url: "/gmb-services"
           },
           {
             name: "E-Commerce & Shopify",
@@ -307,7 +313,8 @@ export default function Homepage() {
             tag: {
               icon: <IconFlame size={24} />,
               text: "Fastest Growing",
-            }
+            },
+            url:"/ecommerce-marketing"
           }
         ]}
         cta={{ text: "View All Services", link: "/services" }}
