@@ -52,6 +52,70 @@ export async function GET(request: Request) {
     }
 }
 
+// PATCH - Update the Publish Status
+export async function PATCH(request: Request) {
+    let connection: mysql.PoolConnection | undefined;
+
+    try {
+        const url = new URL(request.url);
+        const slug = url.pathname.split('/').pop();
+        const body = await request.json();
+
+        if (typeof body.published !== 'boolean' && typeof body.published !== 'number' && body.published !== 0 && body.published !== 1) {
+            return NextResponse.json(
+                { error: 'Invalid publish status' },
+                { status: 400 }
+            );
+        }
+
+        connection = await pool.getConnection();
+
+        const [existing] = await connection.execute(
+            'SELECT id FROM blogs WHERE slug = ?',
+            [slug]
+        );
+
+        if ((existing as any).length === 0) {
+            return NextResponse.json(
+                { error: 'Blog not found' },
+                { status: 404 }
+            );
+        }
+
+        await connection.execute(
+            'UPDATE blogs SET published = ? WHERE slug = ?',
+            [body.published, slug]
+        );
+
+        const [updatedBlog] = await connection.execute(
+            'SELECT * FROM blogs WHERE slug = ?',
+            [slug]
+        );
+
+        const blogData = (updatedBlog as any)[0];
+        const formatted = {
+            ...camelcaseKeys(blogData),
+            paragraphs: JSON.parse(blogData.paragraphs || '[]'),
+            tags: blogData.tags ? JSON.parse(blogData.tags) : [],
+        };
+
+        return NextResponse.json({
+            success: true,
+            message: 'Publish status updated successfully',
+            data: formatted,
+        });
+
+    } catch (error) {
+        console.error('Error updating publish status:', error);
+        return NextResponse.json(
+            { error: 'Internal server error' },
+            { status: 500 }
+        );
+    } finally {
+        if (connection) connection.release();
+    }
+}
+
 // PUT - Update a blog
 export async function PUT(request: Request) {
     let connection: mysql.PoolConnection | undefined;

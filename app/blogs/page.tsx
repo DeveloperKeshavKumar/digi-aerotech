@@ -16,7 +16,7 @@ export default function BlogList() {
     const fetchBlogs = async (page = 1, search = '') => {
         setLoading(true);
         try {
-            const res = await fetch(`/api/blogs?page=${page}&limit=10&search=${search}`);
+            const res = await fetch(`/api/blogs?page=${page}&limit=10&search=${search}&published=true`);
             const data = await res.json();
             setBlogs(data.data);
             setTotalPages(data.pagination.totalPages);
@@ -81,7 +81,7 @@ export default function BlogList() {
                             })}</span>
                         </div>
                         <div className="text-xs font-mono bg-gray-100 dark:bg-gray-900 px-2 py-1 rounded">
-                            /{blog.slug}
+                            /{blog.slug.substring(0,25)+'...'}
                         </div>
                     </div>
 

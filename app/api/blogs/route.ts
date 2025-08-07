@@ -14,6 +14,7 @@ export async function GET(request: Request) {
         const page = parseInt(searchParams.get('page') || '1');
         const limit = parseInt(searchParams.get('limit') || '10');
         const offset = (page - 1) * limit;
+        const published = searchParams.get('published') === 'true';
 
         // Get a connection from the pool
         connection = await pool.getConnection();
@@ -38,14 +39,15 @@ export async function GET(request: Request) {
 
         // Get total count of published blogs
         const [totalCount] = await connection.execute(
-            'SELECT COUNT(*) as count FROM blogs WHERE published = TRUE'
+            `SELECT COUNT(*) as count FROM blogs ${published ? "WHERE published = ?" : ""}`,
+            [published]
         );
         const total = (totalCount as any)[0].count;
 
         // Get paginated blogs
         const [rows] = await connection.execute(
-            'SELECT * FROM blogs WHERE published = TRUE ORDER BY created_at DESC LIMIT ? OFFSET ?',
-            [limit, offset]
+            `SELECT * FROM blogs ${published ? "WHERE published = ?" : ""} ORDER BY created_at DESC LIMIT ? OFFSET ?`,
+            [published, limit, offset]
         );
         const blogs = (rows as any[]).map((row) => {
             const camel = camelcaseKeys(row);
