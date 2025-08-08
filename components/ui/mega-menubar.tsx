@@ -444,54 +444,81 @@ export const MobileNavMenu = ({ children, className, isOpen }: MobileNavMenuProp
 };
 
 export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps) => {
-    const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
+    const [expandedStates, setExpandedStates] = useState<{
+        mainItems: Record<number, boolean>;
+        categories: Record<string, boolean>;
+    }>({
+        mainItems: {},
+        categories: {}
+    });
     const pathname = usePathname();
 
-    const toggleExpanded = (idx: number) => {
-        const newExpanded = new Set(expandedItems);
-        if (newExpanded.has(idx)) {
-            newExpanded.delete(idx);
-        } else {
-            newExpanded.add(idx);
-        }
-        setExpandedItems(newExpanded);
+    const toggleMainItem = (idx: number) => {
+        setExpandedStates(prev => ({
+            ...prev,
+            mainItems: {
+                ...prev.mainItems,
+                [idx]: !prev.mainItems[idx]
+            }
+        }));
+    };
+
+    const toggleCategory = (parentIdx: number, categoryIdx: number) => {
+        const categoryKey = `${parentIdx}-${categoryIdx}`;
+        setExpandedStates(prev => ({
+            ...prev,
+            categories: {
+                ...prev.categories,
+                [categoryKey]: !prev.categories[categoryKey]
+            }
+        }));
     };
 
     return (
-        <div className={cn("flex w-full flex-col gap-2", className)}>
+        <div className={cn("flex w-full flex-col gap-1", className)}>
             {items.map((item, idx) => {
                 const isActive = pathname === item.link ||
                     (item.dropdown?.some(subItem => pathname === subItem.link) ?? false) ||
                     (item.megaMenu?.categories.some(category =>
                         category.items.some(subItem => pathname === subItem.link)
                     ) ?? false);
+
                 const hasDropdown = (item.dropdown && item.dropdown.length > 0) || item.megaMenu;
-                const isExpanded = expandedItems.has(idx);
+                const isMainItemExpanded = expandedStates.mainItems[idx] || false;
 
                 return (
                     <div key={`mobile-nav-item-${idx}`} className="w-full">
-                        <div className="flex items-center">
+                        <div className={cn(
+                            "flex items-center rounded-xl",
+                            isActive ? "bg-gray-100 dark:bg-neutral-800" : "hover:bg-gray-50 dark:hover:bg-neutral-800/50"
+                        )}>
                             <Link
                                 href={item.link}
-                                onClick={onItemClick}
+                                onClick={(e) => {
+                                    if (hasDropdown) {
+                                        e.preventDefault();
+                                        toggleMainItem(idx);
+                                    } else {
+                                        onItemClick?.();
+                                    }
+                                }}
                                 className={cn(
-                                    "flex-1 rounded-xl px-4 py-3 text-neutral-600 transition-colors dark:text-neutral-300",
-                                    isActive
-                                        ? "bg-gray-100 font-semibold text-black dark:bg-neutral-800 dark:text-white"
-                                        : "hover:bg-gray-50 dark:hover:bg-neutral-800/50"
+                                    "flex-1 px-4 py-3 text-neutral-600 dark:text-neutral-300",
+                                    isActive && "font-semibold text-black dark:text-white"
                                 )}
                             >
                                 {item.name}
                             </Link>
                             {hasDropdown && (
                                 <button
-                                    onClick={() => toggleExpanded(idx)}
-                                    className="p-3 text-neutral-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-xl ml-2"
+                                    onClick={() => toggleMainItem(idx)}
+                                    className="p-3 text-neutral-600 dark:text-neutral-300 rounded-xl"
+                                    aria-expanded={isMainItemExpanded}
                                 >
                                     <IconChevronDown
                                         className={cn(
                                             "h-4 w-4 transition-transform duration-200",
-                                            isExpanded && "rotate-180"
+                                            isMainItemExpanded && "rotate-180"
                                         )}
                                     />
                                 </button>
@@ -499,7 +526,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                         </div>
 
                         <AnimatePresence>
-                            {hasDropdown && isExpanded && (
+                            {hasDropdown && isMainItemExpanded && (
                                 <motion.div
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: "auto" }}
@@ -507,38 +534,68 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                                     transition={{ duration: 0.2 }}
                                     className="overflow-hidden"
                                 >
-                                    <div className="pl-4 pt-2 space-y-2 max-h-64 overflow-y-auto">
+                                    <div className="ml-4 pl-4 pt-1 space-y-1 border-l-2 border-gray-200 dark:border-neutral-700">
                                         {item.megaMenu ? (
-                                            // Mobile Mega Menu
-                                            item.megaMenu.categories.map((category, categoryIdx) => (
-                                                <div key={`mobile-category-${categoryIdx}`} className="mb-3">
-                                                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 px-2">
-                                                        {category.title}
-                                                    </h4>
-                                                    <div className="space-y-1 pl-4">
-                                                        {category.items.map((subItem, subIdx) => {
-                                                            const isSubItemActive = pathname === subItem.link;
-                                                            return (
-                                                                <Link
-                                                                    key={`mobile-subitem-${categoryIdx}-${subIdx}`}
-                                                                    href={subItem.link}
-                                                                    onClick={onItemClick}
+                                            item.megaMenu.categories.map((category, categoryIdx) => {
+                                                const categoryKey = `${idx}-${categoryIdx}`;
+                                                const isCategoryExpanded = expandedStates.categories[categoryKey] || false;
+
+                                                return (
+                                                    <div key={`mobile-category-${categoryKey}`} className="pt-2">
+                                                        <div className="flex items-center">
+                                                            <button
+                                                                onClick={() => toggleCategory(idx, categoryIdx)}
+                                                                className={cn(
+                                                                    "flex-1 text-left text-sm font-medium text-gray-900 dark:text-white mb-1 px-2 py-1 rounded-lg",
+                                                                    isCategoryExpanded ? "bg-gray-200 dark:bg-neutral-700" : "hover:bg-gray-100 dark:hover:bg-neutral-800/50"
+                                                                )}
+                                                            >
+                                                                {category.title}
+                                                                <IconChevronDown
                                                                     className={cn(
-                                                                        "block w-full rounded-lg px-3 py-2 text-sm text-neutral-600 dark:text-neutral-300 transition-colors",
-                                                                        isSubItemActive
-                                                                            ? "bg-gray-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
-                                                                            : "hover:bg-gray-100 dark:hover:bg-neutral-800/50"
+                                                                        "h-3 w-3 ml-1 inline-block transition-transform duration-200",
+                                                                        isCategoryExpanded && "rotate-180"
                                                                     )}
+                                                                />
+                                                            </button>
+                                                        </div>
+
+                                                        <AnimatePresence>
+                                                            {isCategoryExpanded && (
+                                                                <motion.div
+                                                                    initial={{ opacity: 0, height: 0 }}
+                                                                    animate={{ opacity: 1, height: "auto" }}
+                                                                    exit={{ opacity: 0, height: 0 }}
+                                                                    transition={{ duration: 0.15 }}
+                                                                    className="overflow-hidden ml-2 pl-2 border-l border-gray-300 dark:border-neutral-600"
                                                                 >
-                                                                    {subItem.name}
-                                                                </Link>
-                                                            );
-                                                        })}
+                                                                    <div className="space-y-1 py-1">
+                                                                        {category.items.map((subItem, subIdx) => {
+                                                                            const isSubItemActive = pathname === subItem.link;
+                                                                            return (
+                                                                                <Link
+                                                                                    key={`mobile-subitem-${categoryKey}-${subIdx}`}
+                                                                                    href={subItem.link}
+                                                                                    onClick={onItemClick}
+                                                                                    className={cn(
+                                                                                        "block w-full rounded-lg px-3 py-2 text-sm text-neutral-600 dark:text-neutral-300 transition-colors",
+                                                                                        isSubItemActive
+                                                                                            ? "bg-gray-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
+                                                                                            : "hover:bg-gray-100 dark:hover:bg-neutral-800/50"
+                                                                                    )}
+                                                                                >
+                                                                                    {subItem.name}
+                                                                                </Link>
+                                                                            );
+                                                                        })}
+                                                                    </div>
+                                                                </motion.div>
+                                                            )}
+                                                        </AnimatePresence>
                                                     </div>
-                                                </div>
-                                            ))
+                                                );
+                                            })
                                         ) : (
-                                            // Regular Mobile Dropdown
                                             item.dropdown?.map((dropdownItem, dropdownIdx) => {
                                                 const isDropdownActive = pathname === dropdownItem.link;
                                                 return (
@@ -547,7 +604,7 @@ export const MobileNavItems = ({ items, className, onItemClick }: NavItemsProps)
                                                         href={dropdownItem.link}
                                                         onClick={onItemClick}
                                                         className={cn(
-                                                            "block w-full rounded-lg px-4 py-2 text-sm text-neutral-600 dark:text-neutral-300 transition-colors",
+                                                            "block w-full rounded-lg px-3 py-2 text-sm text-neutral-600 dark:text-neutral-300 transition-colors",
                                                             isDropdownActive
                                                                 ? "bg-gray-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
                                                                 : "hover:bg-gray-100 dark:hover:bg-neutral-800/50"
