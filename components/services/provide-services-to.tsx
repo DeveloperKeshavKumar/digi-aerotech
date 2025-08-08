@@ -23,97 +23,97 @@ const servicess = [
   {
     id: '1',
     name: 'Real Estate',
-    image: '/web-dev/real-estate.jpeg',
+    image: '/business/real-estate.jpeg',
     slug: 'real-estate'
   },
   {
     id: '2',
     name: 'Hotel & Resorts',
-    image: '/web-dev/hotel-resorts.jpeg',
+    image: '/business/hotel-resorts.jpeg',
     slug: 'hotel-resorts'
   },
   {
     id: '3',
     name: 'Gyms & Fitness',
-    image: '/web-dev/gyms.jpeg',
+    image: '/business/gyms.jpeg',
     slug: 'gyms-fitness'
   },
   {
     id: '4',
     name: 'Restaurants & Cafes',
-    image: '/web-dev/cafes.jpeg',
+    image: '/business/cafes.jpeg',
     slug: 'restaurants-cafes'
   },
   {
     id: '5',
     name: 'Fashion Brands',
-    image: '/web-dev/fashion-brands.jpeg',
+    image: '/business/fashion-brands.jpeg',
     slug: 'fashion-brands'
   },
   {
     id: '6',
     name: 'B2B Services',
-    image: '/web-dev/b2b-services.jpeg',
+    image: '/business/b2b-services.jpeg',
     slug: 'b2b-services'
   },
   {
     id: '7',
     name: 'Consultants & Coaches',
-    image: '/web-dev/consultants.jpeg',
+    image: '/business/consultants.jpeg',
     slug: 'consultants'
   },
   {
     id: '8',
     name: 'Local Businesses',
-    image: '/web-dev/locals.png',
+    image: '/business/locals.png',
     slug: 'local-businesses'
   },
   {
     id: '9',
     name: 'Pharma Companies',
-    image: '/web-dev/pharma.jpeg',
+    image: '/business/pharma.jpeg',
     slug: 'pharma-companies'
   },
   {
     id: '10',
     name: 'Interior Designers',
-    image: '/web-dev/interior-designers.jpeg',
+    image: '/business/interior-designers.jpeg',
     slug: 'interior-designers'
   },
   {
     id: '11',
     name: 'Travel & Tourism',
-    image: '/web-dev/travel-tourism.jpeg',
+    image: '/business/travel-tourism.jpeg',
     slug: 'travel-tourism'
   },
   {
     id: '12',
     name: 'Doctors & Clinics',
-    image: '/web-dev/doctors-clinics.jpeg',
+    image: '/business/doctors-clinics.jpeg',
     slug: 'doctors-clinics'
   },
   {
     id: '13',
     name: 'Startups & Entrepreneurs',
-    image: '/web-dev/startups.jpeg',
+    image: '/business/startups.jpeg',
     slug: 'startups-entrepreneurs'
   },
   {
     id: '14',
     name: 'B2C Services',
-    image: '/web-dev/b2c-services.jpeg',
+    image: '/business/b2c-services.jpeg',
     slug: 'b2c-services'
   },
   {
     id: '15',
     name: 'Educational Institutions',
-    image: '/web-dev/educational.jpeg',
+    image: '/business/educational.jpeg',
     slug: 'educational-institutions'
   },
   {
     id: '16',
     name: 'E-Commerce Brands',
-    image: '/web-dev/ecommerce.jpeg',
+    image: '/business/ecommerce.jpeg',
     slug: 'e-commerce-brands'
   }
 ]
