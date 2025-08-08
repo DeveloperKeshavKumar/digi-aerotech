@@ -56,13 +56,13 @@ export default function Homepage() {
           },
           {
             icon: <IconReportAnalytics size={34} />,
-            title: "50L+ Visitors",
-            description: "Driven through our websites"
+            title: "50L+ Leads",
+            description: "Generated for our clients"
           },
           {
             icon: <IconSchool size={34} />,
             title: "10+ Years",
-            description: "Expertise in web development"
+            description: "Expertise in market"
           },
           {
             icon: <IconStarsFilled size={34} />,

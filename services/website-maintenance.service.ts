@@ -98,10 +98,10 @@ export const websiteMaintenanceService: ServiceData = {
         subheadline: 'Ensure your site is always updated, secure, and performing at its best.',
         ctaButtons: [ { icon: React.createElement(IconShield, { size: 30 }), text: 'Get Maintenance Plan', link: '/contact' } ],
         stats: [
-            { icon: React.createElement(IconRefresh, { size: 34 }), title: '99.9% Uptime', description: 'Guaranteed Availability' },
-            { icon: React.createElement(IconClockHour8, { size: 34 }), title: '24/7 Support', description: 'Always Available' },
-            { icon: React.createElement(Settings2, { size: 34 }), title: 'Regular Updates', description: 'Security & Features' },
-            { icon: React.createElement(BarChart4, { size: 34 }), title: 'Performance Reports', description: 'Monthly Insights' }
+            { icon: React.createElement(IconRefresh, { size: 34 }), title: '99.9% Uptime', description: 'Guaranteed availability' },
+            { icon: React.createElement(IconClockHour8, { size: 34 }), title: '24/7 Support', description: 'Always available' },
+            { icon: React.createElement(Settings2, { size: 34 }), title: 'Updates', description: 'Security & features' },
+            { icon: React.createElement(BarChart4, { size: 34 }), title: 'Performance', description: 'Reports monthly insights' }
         ]
     },
     whyChooseUs: {

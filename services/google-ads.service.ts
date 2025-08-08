@@ -136,8 +136,8 @@ export const googleAdsService: ServiceData = {
             },
             {
                 icon: React.createElement(IconTrendingUp, { size: 34 }),
-                title: "520% Avg ROI",
-                description: "For our clients"
+                title: "5.2x Avg.",
+                description: "ROI for our clients"
             },
             {
                 icon: React.createElement(IconTarget, { size: 34 }),

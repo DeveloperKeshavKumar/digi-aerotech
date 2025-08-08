@@ -152,8 +152,8 @@ export const otherAdsService: ServiceData = {
             },
             {
                 icon: React.createElement(IconTrendingUp, { size: 34 }),
-                title: "380% Avg ROI",
-                description: "Across platforms"
+                title: "3.8x Avg.",
+                description: "ROI across platforms"
             },
             {
                 icon: React.createElement(IconCertificate, { size: 34 }),

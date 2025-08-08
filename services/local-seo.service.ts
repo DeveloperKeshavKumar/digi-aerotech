@@ -139,23 +139,23 @@ export const localSeoService: ServiceData = {
             stats: [
                 {
                     icon: React.createElement(IconMapPin, { size: 34 }),
-                    title: "89% Local Searches",
-                    description: "Result in action"
+                    title: "89% Local",
+                    description: "Searches result in action"
                 },
                 {
                     icon: React.createElement(IconTrendingUp, { size: 34 }),
-                    title: "280% Avg Growth",
-                    description: "In local visibility"
+                    title: "280% Avg.",
+                    description: "Growth in local visibility"
                 },
                 {
                     icon: React.createElement(IconStar, { size: 34 }),
                     title: "4.7+ Rating",
-                    description: "Average client GMB"
+                    description: "Average client rating"
                 },
                 {
                     icon: React.createElement(IconUsers, { size: 34 }),
                     title: "500+ Businesses",
-                    description: "Locally optimized"
+                    description: "Locally optimized till now"
                 }
             ]
         },

@@ -155,12 +155,12 @@ export const asoService: ServiceData = {
         stats: [
             {
                 icon: React.createElement(IconDownload, { size: 34 }),
-                title: "400% More Downloads",
-                description: "Average increase"
+                title: "4x More",
+                description: "Downloads Avg. increase"
             },
             {
                 icon: React.createElement(IconTarget, { size: 34 }),
-                title: "Top 10 Rankings",
+                title: "Top 10 Rank",
                 description: "For target keywords"
             },
             {

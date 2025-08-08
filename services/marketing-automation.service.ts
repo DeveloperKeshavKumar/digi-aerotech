@@ -7,6 +7,7 @@ import { WhoWeWorkWith } from '@/components/homepage/who-we-work-with';
 import { Struggles } from '@/components/homepage/struggles';
 import { ServiceIcons } from '@/constants/service-icons';
 import { ArrowRight } from 'lucide-react';
+import { IconRocket } from '@tabler/icons-react';
 
 const { IconMail, IconUsers, IconClockHour8, IconTrendingUp, BarChart4, Settings2, Briefcase, IconShield } = ServiceIcons;
 
@@ -122,8 +123,9 @@ export const marketingAutomationService: ServiceData = {
         ],
         stats: [
             { icon: React.createElement(IconTrendingUp, { size: 34 }), title: '70% Increase', description: 'In Engagement' },
-            { icon: React.createElement(BarChart4, { size: 34 }), title: '50% Time Saved', description: 'On Manual Tasks' },
-            { icon: React.createElement(IconUsers, { size: 34 }), title: '40% Lead Quality', description: 'Improvement' }
+            { icon: React.createElement(BarChart4, { size: 34 }), title: '50% Time', description: ' Saved on Tasks' },
+            { icon: React.createElement(IconUsers, { size: 34 }), title: '40% Lead', description: 'Quality improvement' },
+            { icon: React.createElement(IconRocket, { size: 34 }), title: '30% Revenue', description: 'Growth' }
         ]
     },
     whyChooseUs: {

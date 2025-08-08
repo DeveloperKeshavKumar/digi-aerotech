@@ -143,8 +143,8 @@ export const metaAdsService: ServiceData = {
             },
             {
                 icon: React.createElement(IconTrendingUp, { size: 34 }),
-                title: "450% Avg ROI",
-                description: "For our clients"
+                title: "4.5x Avg.",
+                description: "ROI for our clients"
             },
             {
                 icon: React.createElement(IconTarget, { size: 34 }),

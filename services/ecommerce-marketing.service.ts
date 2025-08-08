@@ -138,13 +138,13 @@ export const ecommerceMarketingService: ServiceData = {
             stats: [
                 {
                     icon: React.createElement(IconTrendingUp, { size: 34 }),
-                    title: "340% Avg ROI",
+                    title: "340% Avg. ROI",
                     description: "For e-commerce clients"
                 },
                 {
                     icon: React.createElement(IconShoppingCart, { size: 34 }),
-                    title: "2.8% Conversion",
-                    description: "Average rate achieved"
+                    title: "2.8% Avg.",
+                    description: "Conversion rate achieved"
                 },
                 {
                     icon: React.createElement(IconCurrencyDollar, { size: 34 }),

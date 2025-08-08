@@ -155,13 +155,13 @@ export const gmbService: ServiceData = {
         stats: [
             {
                 icon: React.createElement(IconMapPin, { size: 34 }),
-                title: "300% More Visibility",
-                description: "In local searches"
+                title: "300% More",
+                description: "Visibility in local searches"
             },
             {
                 icon: React.createElement(IconPhone, { size: 34 }),
-                title: "500% More Calls",
-                description: "From Google listings"
+                title: "50% More",
+                description: "Calls from Google"
             },
             {
                 icon: React.createElement(IconStar, { size: 34 }),

@@ -27,9 +27,9 @@ export const serviceRegistry: Record<string, ServiceData> = {
     'seo-services': seoService,
     'gmb-services': gmbService,
     'aso-services': asoService,
-    'mobile-development': mobileDevelopmentService,
+    'mobile-apps-development': mobileDevelopmentService,
     'website-maintenance': websiteMaintenanceService,
-    'lead-generation': leadGenerationService,
+    'leads-generation': leadGenerationService,
     'marketing-automation': marketingAutomationService,
 };
 

@@ -11,7 +11,7 @@ import { ArrowRight } from 'lucide-react';
 const { IconUsers, IconTarget, IconTrendingUp, IconPhone, IconClockHour8, BarChart4, Settings2 } = ServiceIcons;
 
 export const leadGenerationService: ServiceData = {
-    slug: 'lead-generation',
+    slug: 'leads-generation',
     showSections: {
         hero: true,
         whyChooseUs: true,
@@ -121,8 +121,8 @@ export const leadGenerationService: ServiceData = {
         ],
         stats: [
             { icon: React.createElement(IconUsers, { size: 34 }), title: '300% Increase', description: 'In Qualified Leads' },
-            { icon: React.createElement(IconTarget, { size: 34 }), title: '85% Conversion', description: 'Rate from landing pages' },
-            { icon: React.createElement(IconTrendingUp, { size: 34 }), title: '50+ Campaigns', description: 'Executed Successfully' },
+            { icon: React.createElement(IconTarget, { size: 34 }), title: '85% Avg.', description: 'Conversion Rate' },
+            { icon: React.createElement(IconTrendingUp, { size: 34 }), title: '50+ Avg.', description: 'Campaigns Executed' },
             { icon: React.createElement(BarChart4, { size: 34 }), title: '4.7/5 Rating', description: 'Client Satisfaction' }
         ]
     },

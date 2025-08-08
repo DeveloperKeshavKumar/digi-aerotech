@@ -155,17 +155,17 @@ export const seoService: ServiceData = {
         stats: [
             {
                 icon: React.createElement(IconTrendingUp, { size: 34 }),
-                title: "500% Avg Growth",
-                description: "In organic traffic"
+                title: "500% Avg.",
+                description: "Growth in organic traffic"
             },
             {
                 icon: React.createElement(IconTarget, { size: 34 }),
-                title: "85% Keywords",
-                description: "Rank in top 3"
+                title: "85% Times",
+                description: "Ranked in top 3"
             },
             {
                 icon: React.createElement(IconUsers, { size: 34 }),
-                title: "200+ Websites",
+                title: "200+ Clients",
                 description: "Successfully ranked"
             },
             {

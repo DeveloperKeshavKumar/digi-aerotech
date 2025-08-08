@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Footer } from "@/components/layout/footer";
 import MegaMenuExample from "@/components/layout/mega-navbar";
+import { GoToWhatsApp } from "@/components/layout/go-to-whatsapp";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
           <main className="flex-1 mt-10 p-1 lg:p-0 overflow-hidden">
             {children}
           </main>
+          <GoToWhatsApp />
           <Footer />
         </ThemeProvider>
         <Analytics />

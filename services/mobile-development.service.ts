@@ -11,7 +11,7 @@ import { ArrowRight } from 'lucide-react';
 const { IconDeviceMobile, IconCode, IconClockHour8, IconRocket, IconUsers, IconShield, BarChart4, Settings2 } = ServiceIcons;
 
 export const mobileDevelopmentService: ServiceData = {
-    slug: 'mobile-development',
+    slug: 'mobile-apps-development',
     showSections: {
         hero: true,
         whyChooseUs: true,
@@ -113,8 +113,8 @@ export const mobileDevelopmentService: ServiceData = {
         ],
         stats: [
             { icon: React.createElement(IconDeviceMobile, { size: 34 }), title: '50+ Apps', description: 'Launched Successfully' },
-            { icon: React.createElement(IconUsers, { size: 34 }), title: '100k+ Downloads', description: 'Across platforms' },
-            { icon: React.createElement(IconClockHour8, { size: 34 }), title: 'Fast Delivery', description: '8-12 weeks' },
+            { icon: React.createElement(IconUsers, { size: 34 }), title: '100k+ Avg.', description: 'Downloads in platforms' },
+            { icon: React.createElement(IconClockHour8, { size: 34 }), title: 'Fast Delivery', description: '8-12 weeks acc. to app' },
             { icon: React.createElement(BarChart4, { size: 34 }), title: '4.8/5 Rating', description: 'Client Satisfaction' }
         ]
     },

@@ -154,7 +154,7 @@ export const digitalMarketingService: ServiceData = {
         stats: [
             {
                 icon: React.createElement(IconTrendingUp, { size: 34 }),
-                title: "300% Avg ROI",
+                title: "300% Avg. ROI",
                 description: "Across all channels"
             },
             {
