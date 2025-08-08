@@ -161,7 +161,7 @@ export const ecommerceMarketingService: ServiceData = {
         whyChooseUs: {
             title: [
                 { text: 'Why Choose Our ', gradient: false },
-                { text: 'E-commerce Marketing', gradient: true, gradientClass: 'from-orange-600 via-red-500 to-pink-500' },
+                { text: 'E-commerce Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
                 { text: ' Services?', gradient: false }
             ],
             trustPoints: [
@@ -285,7 +285,7 @@ export const ecommerceMarketingService: ServiceData = {
         testimonials: {
             title: [
                 { text: 'E-commerce ', gradient: false },
-                { text: 'Success Stories', gradient: true, gradientClass: 'from-orange-600 via-red-500 to-pink-500' }
+                { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
             ],
             description: 'Real results from e-commerce businesses that achieved remarkable growth',
             testimonials: [

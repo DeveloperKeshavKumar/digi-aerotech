@@ -160,7 +160,7 @@ export const webDevelopmentService: ServiceData = {
     hero: {
         initial: "Want ",
         headlineKeywords: ["E-commerce", "Web App", "Landing Page", "Portfolio", "CMS", "Redesign"],
-        brandLine: [{ text: "Website Development ?", gradient: false, gradientClass: "text-dark dark:text-white text-5xl" }],
+        brandLine: [{ text: "Website Development ?", gradient: false, gradientClass: "from-orange-500 via-pink-500 to-red-500" }],
         subheadline: "Professional web development and design services that convert visitors into customers. Fast, responsive, and SEO-optimized.",
         ctaButtons: [
             { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Quote", link: "/contact" },
@@ -192,9 +192,9 @@ export const webDevelopmentService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Key Benefits of ' },
-            { text: 'working', gradient: true, gradientClass: 'from-red-600 via-pink-500 to-orange-500' },
+            { text: 'working', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: ' with ', gradient: false },
-            { text: 'DigiAerotech', gradient: true, gradientClass: 'from-orange-600 via-pink-500 to-red-500' },
+            { text: 'DigiAerotech', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
         ],
         trustPoints: [
             {
@@ -348,7 +348,7 @@ export const webDevelopmentService: ServiceData = {
     testimonials: {
         title: [
             { text: 'What ', gradient: false },
-            { text: 'Our Clients ', gradient: true, gradientClass: 'from-orange-500 via-pink-500 to-red-500' },
+            { text: 'Our Clients ', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: 'Say', gradient: false }
         ],
         description: 'Success stories from businesses we\'ve worked with',

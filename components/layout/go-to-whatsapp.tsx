@@ -38,7 +38,7 @@ export function GoToWhatsApp() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white dark:bg-neutral-800 text-green-500 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-900/50 transition-colors border border-green-500/20 dark:border-green-400/20"
+                    className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white dark:bg-neutral-950 text-green-500 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-900/50 transition-colors border border-green-500/20 dark:border-green-400/20"
                 >
                     <IconBrandWhatsapp size={24} />
                 </Link>

@@ -155,7 +155,7 @@ export const socialMediaMarketingService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: 'Social Media', gradient: true, gradientClass: 'from-orange-500 via-pink-500 to-red-500' },
+            { text: 'Social Media', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: ' Services?', gradient: false }
         ],
         trustPoints: [
@@ -279,7 +279,7 @@ export const socialMediaMarketingService: ServiceData = {
     testimonials: {
         title: [
             { text: 'Social Media ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-orange-500 via-pink-500 to-red-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'See how we\'ve helped brands transform their social media presence',
         testimonials: [

@@ -162,7 +162,7 @@ export const localSeoService: ServiceData = {
         whyChooseUs: {
             title: [
                 { text: 'Why Choose Our ', gradient: false },
-                { text: 'Local SEO', gradient: true, gradientClass: 'from-green-600 via-blue-500 to-purple-500' },
+                { text: 'Local SEO', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
                 { text: ' Services?', gradient: false }
             ],
             trustPoints: [
@@ -286,7 +286,7 @@ export const localSeoService: ServiceData = {
         testimonials: {
             title: [
                 { text: 'Local SEO ', gradient: false },
-                { text: 'Success Stories', gradient: true, gradientClass: 'from-green-600 via-blue-500 to-purple-500' }
+                { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
             ],
             description: 'Real results from local businesses that dominate their markets',
             testimonials: [

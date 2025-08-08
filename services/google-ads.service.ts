@@ -131,8 +131,8 @@ export const googleAdsService: ServiceData = {
         stats: [
             {
                 icon: React.createElement(IconSearch, { size: 34 }),
-                title: "8.5B Searches",
-                description: "Daily on Google"
+                title: "10x Avg.",
+                description: "Calls from Google Ads"
             },
             {
                 icon: React.createElement(IconTrendingUp, { size: 34 }),
@@ -154,7 +154,7 @@ export const googleAdsService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: 'Google Ads', gradient: true, gradientClass: 'from-blue-600 via-green-500 to-yellow-500' },
+            { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: ' Management?', gradient: false }
         ],
         trustPoints: [
@@ -278,7 +278,7 @@ export const googleAdsService: ServiceData = {
     testimonials: {
         title: [
             { text: 'Google Ads ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-blue-600 via-green-500 to-yellow-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Real results from businesses powered by our Google Ads expertise',
         testimonials: [

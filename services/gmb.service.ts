@@ -108,9 +108,9 @@ export const gmbService: ServiceData = {
             props: {
                 title: [
                     { text: "Your Business is " },
-                    { text: 'Invisible on Google Maps?', gradient: true, gradientClass: "from-red-500 via-orange-500 to-yellow-500" },
+                    { text: 'Invisible on Google Maps?', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
                     { text: " We Make You " },
-                    { text: "Impossible to Miss!", gradient: true, gradientClass: "from-yellow-500 via-orange-500 to-red-500" }
+                    { text: "Impossible to Miss!", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
                 ],
                 subheadline: "Stop losing local customers to competitors. Our GMB optimization gets you found, called, and visited.",
                 painPoints: [
@@ -178,7 +178,7 @@ export const gmbService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: 'GMB Services', gradient: true, gradientClass: 'from-red-600 via-orange-500 to-yellow-500' },
+            { text: 'GMB Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: '?', gradient: false }
         ],
         trustPoints: [
@@ -319,7 +319,7 @@ export const gmbService: ServiceData = {
     testimonials: {
         title: [
             { text: 'GMB ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-red-500 via-orange-500 to-yellow-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Local businesses dominating Google Maps and attracting more customers than ever before',
         testimonials: [

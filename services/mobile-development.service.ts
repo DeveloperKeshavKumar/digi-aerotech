@@ -121,7 +121,7 @@ export const mobileDevelopmentService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ' },
-            { text: 'Mobile Development', gradient: true, gradientClass: 'from-blue-500 via-green-500 to-teal-500' }
+            { text: 'Mobile Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         trustPoints: [
             {
@@ -183,7 +183,7 @@ export const mobileDevelopmentService: ServiceData = {
     testimonials: {
         title: [
             { text: 'Mobile App ' },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-blue-500 via-green-500 to-teal-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Hear from our satisfied clients.',
         testimonials: [

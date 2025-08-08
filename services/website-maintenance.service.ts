@@ -89,7 +89,7 @@ export const websiteMaintenanceService: ServiceData = {
             }
         },
         { component: WhoWeWorkWith, position: 'beforeProcess', props: { title: 'Who we work for', description: '', className: 'relative -skew-y-3 hover:scale-112 transition-all duration-500 ease-in-out shadow-lg rounded-2xl border-t border-border dark:border-gray-800' } },
-        { component: Struggles, position: 'beforeWhyChooseUs', props: { title: [ { text: 'Tired of website issues? ' }, { text: 'We Fix Them', gradient: true, gradientClass: 'from-blue-500 via-green-500 to-teal-500' } ], subheadline: 'Stop worrying about security, updates, and downtime. Let us handle your site maintenance.', painPoints: [ 'Outdated software exposing vulnerabilities', 'Slow page loads hurting user experience', 'Data loss due to infrequent backups', 'Unexpected downtime impacting sales' ], solutionPoints: [ 'Regular updates and security patches', 'Performance optimizations and caching', 'Automated daily backups and recovery', '24/7 monitoring and rapid support' ], cta: { icon: React.createElement(ArrowRight), text: 'Get Maintenance Plan', link: '/contact' } } }
+        { component: Struggles, position: 'beforeWhyChooseUs', props: { title: [ { text: 'Tired of website issues? ' }, { text: 'We Fix Them', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ], subheadline: 'Stop worrying about security, updates, and downtime. Let us handle your site maintenance.', painPoints: [ 'Outdated software exposing vulnerabilities', 'Slow page loads hurting user experience', 'Data loss due to infrequent backups', 'Unexpected downtime impacting sales' ], solutionPoints: [ 'Regular updates and security patches', 'Performance optimizations and caching', 'Automated daily backups and recovery', '24/7 monitoring and rapid support' ], cta: { icon: React.createElement(ArrowRight), text: 'Get Maintenance Plan', link: '/contact' } } }
     ],
     hero: {
         initial: 'Need ',
@@ -105,7 +105,7 @@ export const websiteMaintenanceService: ServiceData = {
         ]
     },
     whyChooseUs: {
-        title: [ { text: 'Why Choose Our ' }, { text: 'Website Maintenance', gradient: true, gradientClass: 'from-blue-600 via-green-500 to-teal-500' } ],
+        title: [ { text: 'Why Choose Our ' }, { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ],
         trustPoints: [
             { icon: React.createElement(IconShield, { size: 24 }), title: 'Security First', description: 'Proactive vulnerability management and patches.' },
             { icon: React.createElement(Settings2, { size: 24 }), title: 'Proactive Monitoring', description: 'Real-time alerts and 24/7 response.' },
@@ -153,7 +153,7 @@ export const websiteMaintenanceService: ServiceData = {
         ]
     },
     testimonials: {
-        title: [ { text: 'Maintenance ' }, { text: 'Success Stories', gradient: true, gradientClass: 'from-blue-500 via-green-500 to-teal-500' } ],
+        title: [ { text: 'Maintenance ' }, { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ],
         description: 'Clients trust us to keep their sites running flawlessly.',
         testimonials: [
             { id: '1', message: 'Their maintenance team has kept our site secure and online 24/7. Performance has never been better.', highlight: '', stars: 5, name: 'Sanjay Mehta', designation: 'IT Manager', company: 'FinTech Solutions' },

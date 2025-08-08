@@ -108,9 +108,9 @@ export const asoService: ServiceData = {
             props: {
                 title: [
                     { text: "Your App is " },
-                    { text: 'Lost in App Stores?', gradient: true, gradientClass: "from-blue-500 via-purple-500 to-pink-500" },
+                    { text: 'Lost in App Stores?', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
                     { text: " We Get You " },
-                    { text: "Discovered & Downloaded!", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-blue-500" }
+                    { text: "Discovered & Downloaded!", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
                 ],
                 subheadline: "Stop wasting money on ads while your app stays invisible. Our ASO gets you found, downloaded, and loved.",
                 painPoints: [
@@ -145,7 +145,7 @@ export const asoService: ServiceData = {
             "Organic Traffic?"
         ],
         brandLine: [
-            { text: "App Store Optimization (ASO)", gradient: false }
+            { text: "App Store Optimization", gradient: false }
         ],
         subheadline: "Maximize your app's visibility and downloads with expert ASO strategies. Get discovered in app stores, increase organic downloads, and reduce user acquisition costs through proven optimization techniques.",
         ctaButtons: [
@@ -178,7 +178,7 @@ export const asoService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: 'ASO Services', gradient: true, gradientClass: 'from-blue-600 via-purple-500 to-pink-500' },
+            { text: 'ASO Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: '?', gradient: false }
         ],
         trustPoints: [
@@ -319,7 +319,7 @@ export const asoService: ServiceData = {
     testimonials: {
         title: [
             { text: 'ASO ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-blue-500 via-purple-500 to-pink-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Real apps achieving top rankings and explosive download growth through strategic ASO',
         testimonials: [

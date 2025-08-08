@@ -29,7 +29,7 @@ export const leadGenerationService: ServiceData = {
             props: {
                 title: [
                     { text: 'Struggling to Get ' },
-                    { text: 'Quality Leads?', gradient: true, gradientClass: 'from-blue-500 via-green-500 to-teal-500' }
+                    { text: 'Quality Leads?', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
                 ],
                 subheadline: 'Our lead generation strategies fill your pipeline with qualified prospects.',
                 painPoints: [
@@ -129,7 +129,7 @@ export const leadGenerationService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ' },
-            { text: 'Lead Generation', gradient: true, gradientClass: 'from-blue-600 via-green-500 to-teal-500' }
+            { text: 'Lead Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         trustPoints: [
             { icon: React.createElement(IconUsers, { size: 24 }), title: 'Precise Targeting', description: 'Reach prospects who match your ideal customer profile.' },
@@ -176,7 +176,7 @@ export const leadGenerationService: ServiceData = {
         ]
     },
     testimonials: {
-        title: [ { text: 'Lead Generation ' }, { text: 'Success Stories', gradient: true, gradientClass: 'from-blue-500 via-green-500 to-teal-500' } ],
+        title: [ { text: 'Lead Generation ' }, { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ],
         description: 'Clients who expanded their pipeline with us.',
         testimonials: [
             { id: '1', message: 'Their campaigns increased our qualified leads by 250% in three months.', highlight: '', stars: 5, name: 'Rohit Singh', designation: 'Sales Director', company: 'B2B SaaS Co.' },

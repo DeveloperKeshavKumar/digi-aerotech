@@ -30,7 +30,7 @@ export const marketingAutomationService: ServiceData = {
             props: {
                 title: [
                     { text: 'Overwhelmed by ' },
-                    { text: 'Manual Tasks?', gradient: true, gradientClass: 'from-purple-500 via-pink-500 to-red-500' }
+                    { text: 'Manual Tasks?', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
                 ],
                 subheadline: 'Automate repetitive marketing workflows and focus on strategy.',
                 painPoints: [
@@ -131,7 +131,7 @@ export const marketingAutomationService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ' },
-            { text: 'Marketing Automation', gradient: true, gradientClass: 'from-purple-500 via-pink-500 to-red-500' }
+            { text: 'Marketing Automation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         trustPoints: [
             { icon: React.createElement(IconMail, { size: 24 }), title: 'Automated Email Sequences', description: 'Engage leads with personalized workflows.' },
@@ -178,7 +178,7 @@ export const marketingAutomationService: ServiceData = {
         ]
     },
     testimonials: {
-        title: [ { text: 'Automation ' }, { text: 'Success Stories', gradient: true, gradientClass: 'from-purple-500 via-pink-500 to-red-500' } ],
+        title: [ { text: 'Automation ' }, { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ],
         description: 'Clients who streamlined their marketing efforts.',
         testimonials: [
             { id: '1', message: 'Automated sequences boosted our lead engagement by 80%.', highlight: '', stars: 5, name: 'Deepa Sen', designation: 'Head of Marketing', company: 'SaaS Platform' },

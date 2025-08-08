@@ -108,9 +108,9 @@ export const seoService: ServiceData = {
             props: {
                 title: [
                     { text: "Tired of Being " },
-                    { text: 'Invisible on Google?', gradient: true, gradientClass: "from-blue-500 via-green-500 to-teal-500" },
+                    { text: 'Invisible on Google?', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
                     { text: " We Fix That with " },
-                    { text: "Proven SEO Strategies", gradient: true, gradientClass: "from-green-500 via-teal-500 to-blue-500" }
+                    { text: "Proven SEO Strategies", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
                 ],
                 subheadline: "Stop losing customers to competitors who rank higher. Our SEO gets you found, clicked, and chosen.",
                 painPoints: [
@@ -178,7 +178,7 @@ export const seoService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: 'SEO Services', gradient: true, gradientClass: 'from-blue-600 via-green-500 to-teal-500' },
+            { text: 'SEO Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: '?', gradient: false }
         ],
         trustPoints: [
@@ -319,7 +319,7 @@ export const seoService: ServiceData = {
     testimonials: {
         title: [
             { text: 'SEO ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-blue-500 via-green-500 to-teal-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Real businesses achieving top Google rankings and explosive organic growth',
         testimonials: [

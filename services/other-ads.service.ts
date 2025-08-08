@@ -165,7 +165,7 @@ export const otherAdsService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: 'Multi-Platform', gradient: true, gradientClass: 'from-purple-600 via-pink-500 to-red-500' },
+            { text: 'Multi-Platform', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: ' Advertising?', gradient: false }
         ],
         trustPoints: [
@@ -290,7 +290,7 @@ export const otherAdsService: ServiceData = {
     testimonials: {
         title: [
             { text: 'Multi-Platform ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-purple-600 via-pink-500 to-red-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Real results from businesses that diversified their advertising across multiple platforms',
         testimonials: [

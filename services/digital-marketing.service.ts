@@ -107,9 +107,9 @@ export const digitalMarketingService: ServiceData = {
             props: {
                 title: [
                     { text: "We're Not Just a " },
-                    { text: 'Marketing Team', gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" },
+                    { text: 'Marketing Team', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
                     { text: " — We're the Solution to " },
-                    { text: "Your Growth Blocks", gradient: true, gradientClass: "from-red-500 via-pink-500 to-yellow-500" }
+                    { text: "Your Growth Blocks", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
                 ],
                 subheadline: "Forget vanity metrics. We focus on what matters - leads, conversions, visibility, and real business impact.",
                 painPoints: [
@@ -144,7 +144,7 @@ export const digitalMarketingService: ServiceData = {
             "Market Dominance?"
         ],
         brandLine: [
-            { text: "360° Digital Marketing", gradient: false, gradientClass: "from-orange-600 via-pink-500 to-red-500" }
+            { text: "360° Digital Marketing", gradient: false, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         subheadline: "Comprehensive digital marketing strategies that cover every channel and touchpoint. From SEO to social media, paid ads to email marketing - we handle it all to maximize your online growth and ROI.",
         ctaButtons: [
@@ -177,7 +177,7 @@ export const digitalMarketingService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: '360° Digital', gradient: true, gradientClass: 'from-red-600 via-pink-500 to-orange-500' },
+            { text: '360° Digital', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: ' Marketing?', gradient: false }
         ],
         trustPoints: [
@@ -318,7 +318,7 @@ export const digitalMarketingService: ServiceData = {
     testimonials: {
         title: [
             { text: '360° Marketing ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-orange-500 via-pink-500 to-red-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Real results from businesses that chose our comprehensive digital marketing approach',
         testimonials: [

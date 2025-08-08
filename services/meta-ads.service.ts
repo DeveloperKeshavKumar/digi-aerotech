@@ -161,7 +161,7 @@ export const metaAdsService: ServiceData = {
     whyChooseUs: {
         title: [
             { text: 'Why Choose Our ', gradient: false },
-            { text: 'Meta Ads', gradient: true, gradientClass: 'from-blue-600 via-purple-500 to-pink-500' },
+            { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
             { text: ' Management?', gradient: false }
         ],
         trustPoints: [
@@ -285,7 +285,7 @@ export const metaAdsService: ServiceData = {
     testimonials: {
         title: [
             { text: 'Meta Ads ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: 'from-blue-600 via-purple-500 to-pink-500' }
+            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
         ],
         description: 'Real results from businesses that chose our Meta advertising expertise',
         testimonials: [
