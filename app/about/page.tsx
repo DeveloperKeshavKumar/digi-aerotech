@@ -36,7 +36,7 @@ export default function AboutPage() {
       name: "Keshav Kumar", 
       role: "Tech Lead", 
       image: "/team/tech-lead.jpg",
-      bio: "Full-stack developer with expertise in React, Next.js and mobile app development."
+      bio: "Full-stack developer with expertise in React, Next.js and Web development."
     },
   ];
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
     <main>
       {/* Hero Section */}
       <section className="min-h-[60vh] mt-16 flex items-center justify-center border-b border-border dark:border-gray-700">
-        <div className="text-center text-white px-4">
+        <div className="text-center px-4">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl my-6 max-w-4xl"
+            className="text-xl md:text-2xl my-6 max-w-4xl text-neutral-700 dark:text-neutral-300"
           >
             Digi Aerotech is a leading digital marketing agency in India that provides top-notch marketing solutions to small, medium, and large-scale businesses.
           </motion.p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl md:text-4xl max-w-max font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-pink-500 to-red-500">Our Journey</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Founded in 2015, Digi Aerotech began with a simple mission: to help businesses succeed in the digital world. 
+                Founded in 2020, Digi Aerotech began with a simple mission: to help businesses succeed in the digital world. 
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 We built our agency on the principle that digital marketing and web development should be transparent, 

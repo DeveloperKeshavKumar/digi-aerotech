@@ -24,31 +24,31 @@ export default function ContactPage() {
 
     const contactInfo = [
         {
-            icon: <IconPhone size={28} className="text-primary" />,
+            icon: <IconPhone size={28} />,
             title: "Phone",
             info: "+91 86071 19872",
             link: "tel:+918607119872"
         },
         {
-            icon: <IconPhone size={28} className="text-primary" />,
+            icon: <IconPhone size={28} />,
             title: "Phone",
             info: "+91 83071 05140",
             link: "tel:+918307105140"
         },
         {
-            icon: <IconMail size={28} className="text-primary" />,
+            icon: <IconMail size={28} />,
             title: "Email",
             info: "business@digiaerotech.com",
             link: "mailto:business@digiaerotech.com"
         },
         {
-            icon: <IconBrandWhatsapp size={28} className="text-primary" />,
+            icon: <IconBrandWhatsapp size={28} />,
             title: "WhatsApp",
             info: "+91 86071 19872",
             link: "https://wa.me/918607119872"
         },
         {
-            icon: <IconMapPin size={28} className="text-primary" />,
+            icon: <IconMapPin size={28} />,
             title: "Address",
             info: "Shop No.4, Palika Bazar, New Bus Stand Rd, opposite Nidhi Glass Works, Dera Surjanhar, Ratia, Haryana 125051",
         },
