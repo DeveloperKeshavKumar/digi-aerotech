@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { hover, motion } from 'motion/react';
 import { inView } from 'motion';
 import { ContactForm } from "@/components/contact-form";
 import { IconBrandWhatsapp, IconMail, IconMapPin, IconPhone, IconClock, IconBrandLinkedin, IconBrandTwitter, IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 export default function ContactPage() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -25,32 +26,37 @@ export default function ContactPage() {
     const contactInfo = [
         {
             icon: <IconPhone size={28} />,
-            title: "Phone",
-            info: "+91 86071 19872",
-            link: "tel:+918607119872"
-        },
-        {
-            icon: <IconPhone size={28} />,
-            title: "Phone",
-            info: "+91 83071 05140",
-            link: "tel:+918307105140"
+            title: "Phone Numbers",
+            info: (
+                <div className="space-y-2">
+                    <a href="tel:+918607119872" className="block hover:text-primary transition-colors">
+                        +91 86071 19872
+                    </a>
+                    <a href="tel:+918307105140" className="block hover:text-primary transition-colors">
+                        +91 83071 05140
+                    </a>
+                </div>
+            )
         },
         {
             icon: <IconMail size={28} />,
             title: "Email",
-            info: "business@digiaerotech.com",
-            link: "mailto:business@digiaerotech.com"
-        },
-        {
-            icon: <IconBrandWhatsapp size={28} />,
-            title: "WhatsApp",
-            info: "+91 86071 19872",
-            link: "https://wa.me/918607119872"
+            info: (
+                <div className="space-y-2">
+                    <a href="mailto:business@digiaerotech.com" className="block hover:text-primary transition-colors">
+                        business@digiaerotech.com
+                    </a>
+                    <a href="mailto:digiaerotech@gmail.com" className="block hover:text-primary transition-colors">
+                        digiaerotech@gmail.com
+                    </a>
+
+                </div>
+            )
         },
         {
             icon: <IconMapPin size={28} />,
             title: "Address",
-            info: "Shop No.4, Palika Bazar, New Bus Stand Rd, opposite Nidhi Glass Works, Dera Surjanhar, Ratia, Haryana 125051",
+            info: "Shop No.4, Palika Bazar, New Bus Stand Rd,  Ratia, Haryana 125051",
         },
     ];
 
@@ -58,22 +64,34 @@ export default function ContactPage() {
         {
             icon: <IconBrandFacebook size={22} />,
             link: "https://facebook.com/digiaerotech",
-            name: "Facebook"
+            name: "Facebook",
+            hover: "hover:text-blue-600 dark:hover:text-blue-400",
+            glow: "hover:shadow-blue-500/50",
+            bg: "hover:bg-blue-100 dark:hover:bg-blue-900/20"
         },
         {
             icon: <IconBrandInstagram size={22} />,
             link: "https://instagram.com/digiaerotech",
-            name: "Instagram"
+            name: "Instagram",
+            hover: "hover:text-purple-600 dark:hover:text-purple-400",
+            glow: "hover:shadow-purple-500/50",
+            bg: "hover:bg-purple-100 dark:hover:bg-purple-900/20"
         },
         {
             icon: <IconBrandTwitter size={22} />,
             link: "https://twitter.com/digiaerotech",
-            name: "Twitter"
+            name: "Twitter",
+            hover: "hover:text-sky-500 dark:hover:text-sky-400",
+            glow: "hover:shadow-sky-500/50",
+            bg: "hover:bg-sky-100 dark:hover:bg-sky-900/20"
         },
         {
             icon: <IconBrandLinkedin size={22} />,
             link: "https://linkedin.com/company/digiaerotech",
-            name: "LinkedIn"
+            name: "LinkedIn",
+            hover: "hover:text-blue-700 dark:hover:text-blue-500",
+            glow: "hover:shadow-blue-600/50",
+            bg: "hover:bg-blue-100 dark:hover:bg-blue-900/20"
         }
     ];
 
@@ -159,16 +177,9 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-                                        {item.link ? (
-                                            <a
-                                                href={item.link}
-                                                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-                                            >
-                                                {item.info}
-                                            </a>
-                                        ) : (
-                                            <p className="text-gray-700 dark:text-gray-300">{item.info}</p>
-                                        )}
+                                        <div className="text-gray-700 dark:text-gray-300">
+                                            {item.info}
+                                        </div>
                                     </div>
                                 </div>
                             </motion.div>
@@ -191,11 +202,19 @@ export default function ContactPage() {
                                     href={social.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-white dark:bg-gray-900 p-4 rounded-full shadow-md hover:shadow-lg hover:scale-110 border border-gray-200 dark:border-gray-800 
-                           hover:bg-gradient-to-r hover:from-orange-500/10 hover:via-pink-600/10 hover:to-red-500/10 transition-all duration-300 group"
+                                    className={`
+                                        bg-white dark:bg-gray-900 p-4 rounded-full shadow-md
+                                        border border-gray-200 dark:border-gray-800
+                                        transition-all duration-300 group relative
+                                        hover:scale-110 overflow-hidden
+                                        ${social.bg} ${social.hover}
+                                    `}
                                     aria-label={social.name}
                                 >
-                                    <span className="text-gray-700 dark:text-gray-300 group-hover:text-orange-500 dark:group-hover:text-orange-500 transition-colors">
+                                    {/* Glow effect */}
+                                    <span className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${social.glow} group-hover:shadow-[0_0_15px_3px]`}></span>
+
+                                    <span className={cn("relative z-10 text-gray-700 dark:text-gray-300 transition-colors", social.hover)}>
                                         {social.icon}
                                     </span>
                                 </a>
