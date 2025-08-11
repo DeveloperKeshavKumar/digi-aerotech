@@ -15,9 +15,11 @@ export default function ServiceForBusinessPage() {
     }
 
     return (
-        <BusinessServiceRenderer
-            service={params.slug}
-            business={params.business}
-        />
+        <div className='mt-12 flex flex-col items-center justify-center'>
+            <BusinessServiceRenderer
+                service={params.slug}
+                business={params.business}
+            />
+        </div>
     );
 }

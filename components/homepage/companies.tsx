@@ -14,8 +14,8 @@ interface Logo {
 }
 
 interface CompaniesProps {
-    logos: Logo[];
-    title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
+    logos?: Logo[];
+    title?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
     description?: string;
     rows?: number;
     speed?: 'slow' | 'medium' | 'fast';

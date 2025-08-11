@@ -15,11 +15,11 @@ export const BusinessServiceRenderer: React.FC<BusinessServiceRendererProps> = (
   return (
     <>
       <HeroVariants business={business} service={service} />
-      <CTAVariants business={business} service={service} />
+      {/* <CTAVariants business={business} service={service} />
       <ProcessVariants business={business} service={service} />
       <WhyChooseVariants business={business} service={service} />
-      <TestimonialVariants business={business} service={service} />
-      <FAQVariants business={business} service={service} />
+      <TestimonialVariants business={business} service={service} /> */}
+      {/* <FAQVariants business={business} service={service} /> */}
     </>
   );
 };

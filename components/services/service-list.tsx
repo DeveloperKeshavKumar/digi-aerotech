@@ -40,7 +40,7 @@ export const ServiceList: React.FC<ServiceListProps> = ({
     };
 
     return (
-        <section className="py-16 mt-10 px-4 w-full bg-gray-50 dark:bg-gray-950 border-b border-border dark:border-gray-700">
+        <section className="py-16 w-full   border-b border-border dark:border-gray-700">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center text-black dark:text-white">
                     {renderTitle()}
@@ -57,7 +57,7 @@ export const ServiceList: React.FC<ServiceListProps> = ({
                                     <motion.img
                                         src={point.image}
                                         alt={point.title}
-                                        className="w-full h-40 object-contain rounded-lg mb-"
+                                        className="w-full h-40 object-cover rounded-lg bg-white outline"
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ duration: 0.5, delay: 0.1 }}

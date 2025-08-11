@@ -4,8 +4,12 @@ import { motion } from 'motion/react';
 import { inView } from 'motion';
 import { ArrowRight } from 'lucide-react';
 import { StatsSection } from "@/components/stats-section";
-import { IconFreeRights, IconPhone, IconReportAnalytics, IconSchool, IconStarsFilled, IconUsersGroup } from "@tabler/icons-react";
+import { IconFreeRights, IconPhone, IconReportAnalytics, IconSchool, IconStars, IconStarsFilled, IconUsersGroup } from "@tabler/icons-react";
 import { Hero } from '@/components/homepage/hero';
+import { ServiceList } from '@/components/services/service-list';
+import { CTA } from '@/components/services/cta-section';
+import { Companies } from '@/components/homepage/companies';
+import { Struggles } from '@/components/homepage/struggles';
 
 export default function ServicesPage() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -17,158 +21,196 @@ export default function ServicesPage() {
     }
   }, []);
 
-  const services = [
-    { id: 1, title: 'Website Development', description: 'Custom-designed, responsive websites tailored to your business needs.', image: '/services/1.png', href: '/services/web-development-and-design' },
-    { id: 2, title: 'Mobile App Development', description: 'Scalable and user-friendly Android applications for your business.', image: '/services/2.png', href: '/services/mobile-app-development' },
-    { id: 3, title: 'Digital Marketing', description: 'End-to-end solutions to enhance your digital presence and brand visibility.', image: '/services/3.png', href: '/services/digital-marketing' },
+  const servicesData = [
+    {
+      id: 1,
+      title: "360 Digital Marketing",
+      description: "End-to-end digital marketing solutions covering all channels for holistic brand growth and maximum ROI.",
+      image: "/services/digital-marketing.png",
+      url: "360-digital-marketing"
+    },
+    {
+      id: 2,
+      title: "Meta Ads",
+      description: "Targeted advertising campaigns across Facebook, Instagram, and WhatsApp to reach your ideal audience.",
+      image: "/services/meta-ads.png",
+      url: "meta-ads"
+    },
+    {
+      id: 3,
+      title: "Google Ads",
+      description: "Performance-driven Google Search, Display, and YouTube ads that convert visitors into customers.",
+      image: "/services/google-ads.png",
+      url: "google-ads"
+    },
     {
       id: 4,
-      title: "Social Media Marketing",
-      description: "Complete social media management for audience engagement and growth.",
-      image: "/services/4.png",
-      href: "/services/social-media-marketing",
+      title: "Other Ads",
+      description: "Specialized advertising on LinkedIn, Twitter, Snapchat, and emerging platforms to diversify your reach.",
+      image: "/services/social-ads.webp",
+      url: "other-ads"
     },
     {
       id: 5,
-      title: "SEO Services",
-      description: "Boost organic traffic and visibility through proven SEO strategies.",
-      image: "/services/5.png",
-      href: "/services/seo-services",
+      title: "Local SEO",
+      description: "Dominate local search results and Google Maps to drive foot traffic and local online visibility.",
+      image: "/services/local-seo.png",
+      url: "local-seo"
     },
     {
       id: 6,
-      title: "Lead Generation",
-      description: "Targeted ad campaigns and landing pages to drive quality leads.",
-      image: "/services/6.png",
-      href: "/services/lead-generation",
+      title: "Ecommerce Marketing",
+      description: "Boost online store sales with conversion-optimized product listings, ads, and remarketing strategies.",
+      image: "/services/ecommerce.jpeg",
+      url: "ecommerce-marketing"
     },
     {
       id: 7,
-      title: "E-Commerce Services",
-      description: "End-to-end support for selling on Amazon, Flipkart, Meesho, and more.",
-      image: "/services/7.png",
-      href: "/services/e-commerce-services",
+      title: "Web Design & Development",
+      description: "Custom, high-performance websites that blend stunning design with seamless functionality.",
+      image: "/services/web-dev.png",
+      url: "web-design-development"
     },
     {
       id: 8,
-      title: "Local SEO",
-      description: "Optimize for local search and reach more customers in your area.",
-      image: "/services/8.png",
-      href: "/services/local-seo",
+      title: "Social Media Marketing",
+      description: "Strategic content and engagement plans to build brand loyalty and organic growth across platforms.",
+      image: "/services/social-media.jpeg",
+      url: "social-media-marketing"
     },
     {
       id: 9,
-      title: "App Promotion",
-      description: "Increase app downloads and visibility through effective ASO strategies.",
-      image: "/services/9.png",
-      href: "/services/app-promotion",
+      title: "SEO Services",
+      description: "Sustainable organic growth through technical optimization, content strategy, and authoritative backlinks.",
+      image: "/services/seo.png",
+      url: "seo-services"
     },
+    {
+      id: 10,
+      title: "GMB Services",
+      description: "Optimize and manage your Google Business Profile to enhance local discoverability and credibility.",
+      image: "/services/gmb.webp",
+      url: "gmb-services"
+    },
+    {
+      id: 11,
+      title: "ASO Services",
+      description: "Increase app store visibility and downloads through keyword optimization and conversion-focused listings.",
+      image: "/services/aso.jpeg",
+      url: "aso-services"
+    },
+    {
+      id: 12,
+      title: "Mobile App Development",
+      description: "Build intuitive, scalable mobile applications for iOS and Android with cutting-edge technologies.",
+      image: "/services/mobile-app.jpg",
+      url: "mobile-apps-development"
+    },
+    {
+      id: 13,
+      title: "Website Maintenance",
+      description: "Ongoing updates, security patches, and performance tuning to keep your site running flawlessly.",
+      image: "/services/maintenance.jpg",
+      url: "website-maintenance"
+    },
+    {
+      id: 14,
+      title: "Leads Generation",
+      description: "Data-driven campaigns to capture high-quality leads and fill your sales pipeline consistently.",
+      image: "/services/leads.jpg",
+      url: "leads-generation"
+    },
+    {
+      id: 15,
+      title: "Marketing Automation",
+      description: "Streamline workflows with automated email sequences, chatbots, and CRM integrations for scalable growth.",
+      image: "/services/automation.jpg",
+      url: "marketing-automation"
+    }
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 px-4 bg-white dark:bg-black border-b border-border dark:border-gray-700">
-      <Hero
-        headlineKeywords={["Leads", "Sales", "Reach", "Growth", "Visibility", "Revenue", "Success"]}
-        brandLine="Call Digi Aerotech"
-        subheadline="We solve real business problems through smart, performance - first digital marketing and tech solutions."
-        ctaButtons={[
-          { icon: <IconFreeRights size={30} />, text: "Get a Free Strategy Call", link: "/" },
-          { icon: <IconPhone size={30} />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+    <section ref={sectionRef} className="">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : 50 }}
+        transition={{ duration: 0.6 }}
+      >
+        <Hero
+          headlineKeywords={["Innovation", "Excellence", "Expertise", "Performance"]}
+          brandLine="Elevate Your Brand"
+          subheadline="Expert solutions for modern digital challenges. From strategy to execution, we drive results that matter."
+          ctaButtons={[
+        { icon: <IconFreeRights size={30} />, text: "Get a Consultation", link: "/" },
+        { icon: <IconPhone size={30} />, text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+          ]}
+          stats={[
+        {
+          icon: <IconUsersGroup size={34} />,
+          title: "200+ Projects",
+          description: "Successful campaigns"
+        },
+        {
+          icon: <IconReportAnalytics size={34} />,
+          title: "500K+ ",
+          description: "Impressions done"
+        },
+        {
+          icon: <IconStars size={34} />,
+          title: "4.9/5 Rating",
+          description: "Client satisfaction"
+        },
+        {
+          icon: <IconSchool size={34} />,
+          title: "10+ Years",
+          description: "Industry experience"
+        }
+          ]}
+        />
+      </motion.div>
+
+      <Companies />
+
+      <Struggles
+        title={[
+          { text: "Struggling with " },
+          { text: "Fragmented Digital Services?", gradient: true, gradientClass: "from-purple-500 via-pink-500 to-red-500" }
         ]}
-        stats={[
-          {
-            icon: <IconUsersGroup size={34} className="fill-gray-600 dark:fill-gray-400" />,
-            title: "140+ Clients",
-            description: "Web solutions delivered"
-          },
-          {
-            icon: <IconReportAnalytics size={34} />,
-            title: "50L+ Visitors",
-            description: "Driven through our websites"
-          },
-          {
-            icon: <IconSchool size={34} />,
-            title: "10+ Years",
-            description: "Expertise in web development"
-          },
-          {
-            icon: <IconStarsFilled size={34} />,
-            title: "4.9/5 Rating",
-            description: "From happy clients"
-          }
-        ]} />
-      <div className="max-w-7xl mx-auto mb-12 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={visible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-3xl md:text-4xl font-semibold text-black dark:text-white"
-        >
-          Our Services
-        </motion.h2>
+        subheadline="In today's fast-paced digital world, disjointed strategies can stall your growth. Our services are designed to address the full spectrum of your digital needs."
+        painPoints={[
+          "Fragmented marketing strategy across channels",
+          "Inefficient ad spend and underperforming campaigns",
+          "Non-responsive or outdated website design",
+          "Low online visibility and poor local SEO",
+          "Difficulty in tracking and measuring ROI",
+          "Overwhelmed by countless digital service options"
+        ]}
+        solutionPoints={[
+          "Unified strategy across digital channels",
+          "Conversion-optimized ad campaigns",
+          "Modern, responsive web designs",
+          "Robust local SEO and online presence",
+          "Transparent performance tracking",
+          "Tailored solutions that drive measurable growth"
+        ]}
+        cta={{ icon: <ArrowRight />, text: "Discover Our Services", link: "/contact" }}
+      />
+
+      <div className=" mx-auto bg-gray-50 dark:bg-gray-950">
+        <ServiceList
+          title={[
+            { text: "Explore " },
+            { text: "Our Digital Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+          ]}
+          services={servicesData}
+        />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16 max-w-7xl mx-auto">
-        {services.map((service, index) => (
-          <motion.div
-            key={service.id}
-            initial={{ opacity: 0, y: 20, scale: 0.98 }}
-            animate={visible ? {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              transition: { delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }
-            } : {}}
-            whileHover={{ y: -5, scale: 1.02, transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] } }}
-            className="border relative group overflow-hidden rounded-2xl p-6 bg-gray-50 dark:bg-gray-800/60 shadow-lg dark:shadow-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800/40 hover:ring-2 ring-pink-500/70 dark:hover:ring-pink-400/50 hover:shadow-2xl hover:shadow-pink-400/40"
-          >
-            <div className="relative z-10 flex flex-col h-full">
-              <motion.img
-                src={service.image}
-                alt={service.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={visible ? { opacity: 1, scale: 1, transition: { delay: index * 0.08 + 0.1, duration: 0.5 } } : {}}
-                className="w-full h-40 object-contain mb-4 rounded-lg"
-              />
-              <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{service.title}</h3>
-              <p className="mb-4 text-gray-600 dark:text-gray-400">{service.description}</p>
-              <a href={service.href} className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-black dark:text-white">
-                Learn More <ArrowRight size={16} />
-              </a>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={visible ? { opacity: 1, y: 0, transition: { delay: 0.1, duration: 0.5 } } : {}}
-        >
-          <StatsSection stats={[
-            {
-              icon: <IconUsersGroup size={34} className='fill-gray-600 dark:fill-gray-400' />,
-              title: "140+ Clients",
-              description: "Trusted by over 140 businesses"
-            },
-            {
-              icon: <IconReportAnalytics size={34} />,
-              title: "50 Lac+",
-              description: "leads generated"
-            },
-            {
-              icon: <IconSchool size={34} />,
-              title: "10+ Years",
-              description: "of experience in market"
-            },
-            {
-              icon: <IconStarsFilled size={34} />,
-              title: "4.9 Stars",
-              description: "Avg. rating from happy clients"
-            }
-          ]} />
-        </motion.div>
-      </div>
+      <CTA
+        title="Want to accelerate your digital growth?"
+        subtitle="Your success is our priority"
+        description="Reach out to us for tailored strategies that guarantee results."
+      />
     </section>
   );
 }
