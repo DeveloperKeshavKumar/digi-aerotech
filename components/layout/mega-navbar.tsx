@@ -67,6 +67,56 @@ export default function MegaMenuExample() {
             },
         },
         {
+            name: "Business",
+            link: "/business",
+            megaMenu: {
+                categories: [
+                    {
+                        title: "Retail & Commerce",
+                        items: [
+                            { name: "E-commerce Brands", link: "/business/e-commerce-brands" },
+                            { name: "Local Businesses", link: "/business/local-businesses" },
+                            { name: "Pharma Companies", link: "/business/pharma-companies" },
+                            { name: "B2C Services", link: "/business/b2c-services" },
+                        ],
+                    },
+                    {
+                        title: "Professional Services",
+                        items: [
+                            { name: "Real Estate", link: "/business/real-estate" },
+                            { name: "B2B Services", link: "/business/b2b-services" },
+                            { name: "Consultants", link: "/business/consultants" },
+                            { name: "Doctors & Clinics", link: "/business/doctors-clinics" },
+                            { name: "Interior Designers", link: "/business/interior-designers" },
+                        ],
+                    },
+                    {
+                        title: "Hospitality & Lifestyle",
+                        items: [
+                            { name: "Hotels & Resorts", link: "/business/hotel-resorts" },
+                            { name: "Restaurants & Cafes", link: "/business/restaurants-cafes" },
+                            { name: "Gyms & Fitness", link: "/business/gyms-fitness" },
+                            { name: "Travel & Tourism", link: "/business/travel-tourism" },
+                            { name: "Fashion Brands", link: "/business/fashion-brands" },
+                        ],
+                    },
+                    {
+                        title: "Education & Innovation",
+                        items: [
+                            { name: "Educational Institutions", link: "/business/educational-institutions" },
+                            { name: "Startups & Entrepreneurs", link: "/business/startups-entrepreneurs" },
+                        ],
+                    },
+                ],
+                featured: {
+                    title: "Industry-Specific Marketing",
+                    description: "Specialized digital marketing strategies tailored for your industry's unique challenges and opportunities.",
+                    link: "/business-solutions",
+                },
+            },
+        },
+
+        {
             name: "Blogs",
             link: "/blogs",
         },

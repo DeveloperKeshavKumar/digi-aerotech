@@ -14,27 +14,27 @@ export default function AboutPage() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
-  
+
   const isSectionInView = useInView(sectionRef, { margin: "-100px", once: true });
   const isTeamInView = useInView(teamRef, { margin: "-100px", once: true });
   const isValuesInView = useInView(valuesRef, { margin: "-100px", once: true });
 
   const team = [
-    { 
-      name: "Deepak Goyal", 
-      role: "CEO & Founder", 
+    {
+      name: "Deepak Goyal",
+      role: "CEO & Founder",
       image: "/team/ceo.jpg",
       bio: "Over 10 years of experience in digital marketing and web development."
     },
-    { 
-      name: "Yatin", 
-      role: "Creative Director", 
+    {
+      name: "Yatin",
+      role: "Creative Director",
       image: "/team/creative-director.jpg",
       bio: "Award-winning designer with expertise in UX/UI and brand identity."
     },
-    { 
-      name: "Keshav Kumar", 
-      role: "Tech Lead", 
+    {
+      name: "Keshav Kumar",
+      role: "Tech Lead",
       image: "/team/tech-lead.jpg",
       bio: "Full-stack developer with expertise in React, Next.js and Web development."
     },
@@ -68,17 +68,17 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="min-h-[60vh] mt-16 flex items-center justify-center border-b border-border dark:border-gray-700">
         <div className="text-center px-4">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-6xl font-bold mb-4"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-pink-600 to-red-500">
-                                About Us
-                            </span>
+              About Us
+            </span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -86,16 +86,16 @@ export default function AboutPage() {
           >
             Digi Aerotech is a leading digital marketing agency in India that provides top-notch marketing solutions to small, medium, and large-scale businesses.
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex space-x-4 justify-center"
           >
-            <Link href="/contact" className="flex items-center gap-2 bg-gradient-to-r from-orange-500 via-pink-600 to-red-500 text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+            <Link href="/contact" className="flex items-center gap-2 bg-gradient-to-r from-orange-500 via-pink-600 to-red-500 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all">
               Contact Us
             </Link>
-            <Link href="/services" className="flex items-center gap-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all">
+            <Link href="/services" className="flex items-center gap-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all">
               Our Services
             </Link>
           </motion.div>
@@ -114,14 +114,14 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl md:text-4xl max-w-max font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-pink-500 to-red-500">Our Journey</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Founded in 2020, Digi Aerotech began with a simple mission: to help businesses succeed in the digital world. 
+                Founded in 2020, Digi Aerotech began with a simple mission: to help businesses succeed in the digital world.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We built our agency on the principle that digital marketing and web development should be transparent, 
+                We built our agency on the principle that digital marketing and web development should be transparent,
                 results-driven, and focused on real business outcomes.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Today, we've grown into a full-service digital agency with expertise spanning web development, 
+                Today, we've grown into a full-service digital agency with expertise spanning web development,
                 mobile apps, SEO, social media marketing, and more.
               </p>
             </motion.div>
@@ -155,7 +155,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
@@ -189,7 +189,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap gap-8 justify-center">
             {team.map((member, index) => (
@@ -217,7 +217,7 @@ export default function AboutPage() {
       {/* Contact Section */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-6xl mx-auto text-center mb-15">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -226,7 +226,7 @@ export default function AboutPage() {
           >
             Let's Work Together
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

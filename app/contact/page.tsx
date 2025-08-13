@@ -132,14 +132,14 @@ export default function ContactPage() {
                     >
                         <a
                             href="tel:+918607119872"
-                            className="flex items-center gap-2 bg-gradient-to-r from-orange-500 via-pink-600 to-red-500 text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                            className="flex items-center gap-2 bg-gradient-to-r from-orange-500 via-pink-600 to-red-500 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                         >
                             <IconPhone size={20} />
                             <span>Call Now</span>
                         </a>
                         <a
                             href="#contact-form"
-                            className="flex items-center gap-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all"
+                            className="flex items-center gap-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all"
                         >
                             <IconMail size={20} />
                             <span>Send Message</span>

@@ -10,7 +10,7 @@ export function GoToWhatsApp() {
     const whatsappUrl = `https://wa.me/+918307105140?text=${message}`;
 
     return (
-        <div className="hidden md:block fixed bottom-10 left-4 z-50">
+        <div className="hidden md:block fixed bottom-10 right-4 z-50">
             <motion.span
                 className="absolute w-12 h-12 rounded-full bg-green-500"
                 style={{ zIndex: -1 }}

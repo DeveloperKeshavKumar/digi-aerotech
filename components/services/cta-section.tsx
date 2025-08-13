@@ -14,8 +14,8 @@ export const CTA: React.FC<CTAProps> = ({
   description
 }) => {
   return (
-    <div className={`py-16 `}>
-      <div className="container px-4 md:px-6 min-h-[700px] flex flex-col justify-center mx-auto max-w-7xl">
+    <div>
+      <div className="container px-4 md:px-6 min-h-[70vh] flex flex-col justify-center mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col space-y-4" data-aos="fade-up">
             {subtitle && (
