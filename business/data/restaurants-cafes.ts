@@ -1,9 +1,9 @@
 import { BusinessData } from '@/types/business.types';
 import {
-  IconChefHat,
-  IconBrandGoogle,
   IconBrandMeta,
+  IconBrandGoogle,
   IconBrandInstagram,
+  IconBrandYoutube,
   IconMapSearch,
   IconShoppingCart,
   IconCode,
@@ -16,230 +16,281 @@ import {
   IconChartArea,
   IconAd,
   IconTrophy,
-  IconMapPin,
   IconSettings,
+  IconMapPin,
+  IconBrandGooglePlay,
+  IconTarget,
+  IconStar,
+  IconChefHat,
+  IconMail,
+  IconPlanet,
+  IconTools,
+  IconClock,
+  IconPhone
 } from '@tabler/icons-react';
 import React from 'react';
 
 export const restaurantsCafes: BusinessData = {
   id: '4',
-  image: '/business/restaurant-cafe.jpg',
-  slug: 'restaurants-cafes',
-  name: 'Restaurants & Cafés',
+  image: '/business/restaurant-cafe-digital-marketing.webp',
+  slug: 'restaurant-cafe-digital-marketing',
+  name: 'Restaurant & Cafe Digital Marketing Agency',
+
   hero: {
-    name: 'Digital Marketing for Restaurants',
-    initial: 'Drive more diners with ',
+    name: 'Restaurant & Cafe Marketing Experts',
+    initial: 'Fill Your Tables & Boost Sales with',
     headlineKeywords: [
-      'online reservations',
-      'local search visibility',
-      'loyal customer growth'
+      'Food Delivery Optimization',
+      'Experts of Digital Marketing',
+      'Dine-In Customer Growth'
     ],
-    brandLine: 'Smart marketing for culinary brands that crave results',
-    subheadline: 'We help restaurants and cafés increase footfall and orders by up to 200% using SEO, ads, and automation.',
+    brandLine: [
+      {
+        text: 'Get 5X More Customers & Higher Revenue',
+        gradient: false,
+      }
+    ],
+    subheadline: 'Our proven restaurant marketing strategies help cafes, restaurants, and food businesses in India increase foot traffic by 280%, boost online orders by 350%, and build loyal customer communities through targeted digital campaigns.',
     ctaButtons: [
       {
-        text: 'Get Free Performance Audit',
-        link: '/free-revenue-audit',
+        text: 'Get Free Restaurant Marketing Audit',
+        link: '/contact',
         variant: 'primary',
         icon: React.createElement(IconChartArea, { size: 20 })
       },
       {
-        text: 'See Our Client Results',
-        link: '/restaurant-case-studies',
+        text: 'View Restaurant Success Stories',
+        link: '/restaurant-marketing-case-studies',
         variant: 'secondary',
         icon: React.createElement(IconTrophy, { size: 20 })
       }
     ],
-    backgroundImage: '/business/restaurant-hero.jpg'
+    backgroundImage: '/business/modern-restaurant-cafe-ambiance.webp'
   },
+
   services: {
-    title: 'Restaurant Marketing Services',
-    description: 'A complete digital suite designed to boost online reservations, grow delivery orders, and build repeat customers for restaurants, cafés, and food chains.',
+    title: 'Complete Restaurant & Cafe Digital Marketing Services',
+    subtitle: 'Everything Your Food Business Needs to Attract More Customers',
+    description: 'Comprehensive digital marketing solutions designed specifically for restaurants, cafes, food trucks, and culinary businesses. Our data-driven strategies help food service businesses increase dine-in customers, boost delivery orders, and build lasting customer relationships.',
     items: [
       {
         id: '360-digital-marketing',
-        title: '360° Restaurant Marketing',
-        description: 'Unified campaigns across SEO, social media, and ads to drive bookings, orders, and walk-ins.',
-        icon: React.createElement(IconChartArea, { size: 30 }),
-        url: 'restaurant-digital-marketing'
+        title: 'Complete Restaurant Digital Marketing',
+        description: 'Integrated omnichannel marketing campaigns combining local SEO, food photography, social media, and review management to maximize restaurant visibility and drive both dine-in and delivery orders.',
+        icon: React.createElement(IconPlanet, { size: 30 }),
+        link: '/360-digital-marketing'
       },
       {
         id: 'meta-ads',
-        title: 'Meta Ads for Restaurants',
-        description: 'Instagram & Facebook campaigns that showcase food, ambiance, and seasonal promotions.',
+        title: 'Facebook & Instagram Restaurant Advertising',
+        description: 'Mouth-watering Meta ad campaigns featuring food photography, video content, and special promotions to attract food lovers and drive reservations, takeout, and delivery orders.',
         icon: React.createElement(IconBrandMeta, { size: 30 }),
-        url: 'restaurant-meta-ads'
+        link: '/meta-ads'
       },
       {
         id: 'google-ads',
-        title: 'Google Ads for Dining Spots',
-        description: 'Target “best cafés in [city]” and “restaurants near me” with high-ROI search ads.',
+        title: 'Google Ads for Restaurants',
+        description: 'Targeted PPC campaigns for high-intent searches like "restaurants near me", "food delivery [city]", and "best [cuisine] restaurant" that drive hungry customers to your establishment.',
         icon: React.createElement(IconBrandGoogle, { size: 30 }),
-        url: 'restaurant-google-ads'
+        link: '/google-ads'
       },
       {
         id: 'other-ads',
-        title: 'Display & Video Ads',
-        description: 'YouTube and banner ads to boost visibility during peak dining hours and festive seasons.',
-        icon: React.createElement(IconAd, { size: 30 }),
-        url: 'restaurant-other-ads'
+        title: 'YouTube & Display Advertising',
+        description: 'Engaging video content showcasing signature dishes, chef stories, and restaurant atmosphere on YouTube and food-related websites to build brand awareness and attract food enthusiasts.',
+        icon: React.createElement(IconBrandYoutube, { size: 30 }),
+        link: '/other-ads'
       },
       {
         id: 'local-seo',
         title: 'Local SEO for Restaurants',
-        description: 'Own the map with top rankings for “best brunch near me” and location-based food searches.',
+        description: 'Dominate local food searches like "best restaurant in [city]", "[cuisine] near me", and "lunch delivery" with location-based optimization strategies that get you found by hungry customers.',
         icon: React.createElement(IconMapSearch, { size: 30 }),
-        url: 'restaurant-local-seo'
+        link: '/local-seo'
       },
       {
         id: 'ecommerce-marketing',
-        title: 'Online Order Optimization',
-        description: 'Increase direct orders by improving your digital menu, checkout flow, and delivery UX.',
+        title: 'Food Delivery & Online Ordering Optimization',
+        description: 'Optimization for food delivery platforms like Zomato, Swiggy, and direct online ordering systems to increase visibility, orders, and average order value.',
         icon: React.createElement(IconShoppingCart, { size: 30 }),
-        url: 'restaurant-order-optimization'
+        link: '/ecommerce-marketing'
       },
       {
         id: 'web-design-development',
-        title: 'Restaurant Website Design',
-        description: 'Beautiful, mobile-first websites with booking engines, menus, reviews, and gallery sections.',
+        title: 'Restaurant Website Development',
+        description: 'Mobile-responsive restaurant websites with online menus, reservation systems, food gallery, customer reviews, and integrated ordering capabilities that convert visitors into customers.',
         icon: React.createElement(IconCode, { size: 30 }),
-        url: 'restaurant-web-design'
+        link: '/web-design-development'
       },
       {
         id: 'social-media-marketing',
-        title: 'Instagram for Food Brands',
-        description: 'Engaging reels, influencer partnerships, and campaigns that go viral and drive reservations.',
+        title: 'Restaurant Social Media Marketing',
+        description: 'Strategic social media management across Instagram, Facebook, and TikTok with appetizing food content, behind-the-scenes videos, and community engagement that drives foot traffic.',
         icon: React.createElement(IconBrandInstagram, { size: 30 }),
-        url: 'restaurant-social-media'
+        link: '/social-media-marketing'
       },
       {
         id: 'seo-services',
-        title: 'SEO for Food & Beverage',
-        description: 'Rank for high-value keywords like “romantic dinner [city]” and “late night café near me”.',
+        title: 'Restaurant SEO Services',
+        description: 'Comprehensive SEO for restaurants targeting keywords like "fine dining [city]", "authentic [cuisine] restaurant", and food-related searches to increase organic visibility.',
         icon: React.createElement(IconSeo, { size: 30 }),
-        url: 'restaurant-seo'
+        link: '/seo-services'
       },
       {
         id: 'gmb-services',
-        title: 'Google Business Optimization',
-        description: 'Enhance your listing with photos, reviews, real-time hours, and order/reserve buttons.',
+        title: 'Google Business Profile for Restaurants',
+        description: 'Optimized Google My Business profiles with professional food photography, customer reviews, menu highlights, and regular posts to dominate local restaurant searches.',
         icon: React.createElement(IconMapPin, { size: 30 }),
-        url: 'restaurant-gmb'
+        link: '/gmb-services'
       },
       {
         id: 'aso-services',
-        title: 'Restaurant App ASO',
-        description: 'Rank your food app for local delivery searches on App Store & Google Play.',
-        icon: React.createElement(IconDeviceMobile, { size: 30 }),
-        url: 'restaurant-aso'
+        title: 'Restaurant App Store Optimization',
+        description: 'Improve visibility and downloads for restaurant mobile apps in app stores by optimizing for "food delivery", "restaurant finder", and "online ordering" searches.',
+        icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
+        link: '/aso-services'
       },
       {
         id: 'mobile-apps-development',
-        title: 'Restaurant App Development',
-        description: 'Custom food ordering apps with loyalty rewards, reservation booking, and push notifications.',
+        title: 'Custom Restaurant Mobile Apps',
+        description: 'Feature-rich restaurant apps with online ordering, table reservations, loyalty programs, push notifications for offers, and customer feedback systems.',
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
-        url: 'restaurant-mobile-apps'
+        link: '/mobile-apps-development'
       },
       {
         id: 'website-maintenance',
-        title: 'Menu & Website Updates',
-        description: 'Keep your online presence fresh with regular updates for menus, events, and seasonal offers.',
-        icon: React.createElement(IconCalendar, { size: 30 }),
-        url: 'restaurant-website-maintenance'
+        title: 'Restaurant Website Maintenance',
+        description: 'Ongoing website support including menu updates, seasonal promotions, event listings, reservation system maintenance, and performance optimization.',
+        icon: React.createElement(IconSettings, { size: 30 }),
+        link: '/website-maintenance'
       },
       {
         id: 'leads-generation',
-        title: 'Group Bookings & Catering Leads',
-        description: 'Generate large event, party, and corporate catering inquiries through smart campaigns.',
+        title: 'Restaurant Customer Acquisition',
+        description: 'Multi-channel lead generation using special offers, loyalty programs, food events, and conversion-optimized campaigns that attract new customers and increase repeat visits.',
         icon: React.createElement(IconUsers, { size: 30 }),
-        url: 'restaurant-lead-generation'
+        link: '/leads-generation'
       },
       {
         id: 'marketing-automation',
-        title: 'Restaurant Automation & Loyalty',
-        description: 'Automated campaigns to bring back guests with birthday deals, loyalty points, and feedback flows.',
+        title: 'Restaurant Marketing Automation',
+        description: 'Automated email and SMS campaigns for reservation confirmations, birthday offers, loyalty rewards, new menu announcements, and customer re-engagement sequences.',
         icon: React.createElement(IconRobot, { size: 30 }),
-        url: 'restaurant-marketing-automation'
+        link: '/marketing-automation'
       }
     ]
   },
+
   stats: {
-    title: 'Performance-Driven Dining Results',
+    title: "Proven Restaurant Marketing Results",
+    subtitle: "Data-Driven Success for Food & Beverage Businesses",
     items: [
       {
-        icon: React.createElement(IconAd, { size: 30 }),
-        title: 'Increase in Bookings',
-        value: '170%',
-        description: 'More online table reservations and pre-orders in 60 days'
+        icon: React.createElement(IconUsers, { size: 30 }),
+        title: 'Customer Growth',
+        value: '280%',
+        description: 'Average increase in foot traffic and new customers within 90 days of our marketing campaigns',
+      },
+      {
+        icon: React.createElement(IconShoppingCart, { size: 30 }),
+        title: 'Online Orders',
+        value: '350%',
+        description: 'Improvement in delivery and takeout orders through optimized digital presence',
       },
       {
         icon: React.createElement(IconChartArea, { size: 30 }),
-        title: 'SEO Ranking Boost',
-        value: '+260%',
-        description: 'Improved rankings for high-intent food keywords'
+        title: 'Revenue Boost',
+        value: '5.2X',
+        description: 'Average revenue increase through comprehensive digital marketing strategies',
       },
       {
-        icon: React.createElement(IconUsersGroup, { size: 30 }),
-        title: 'Customer Retention',
-        value: '47%',
-        description: 'More repeat guests with loyalty and automation strategies'
+        icon: React.createElement(IconStar, { size: 30 }),
+        title: 'Customer Satisfaction',
+        value: '4.7/5',
+        description: 'Average rating improvement through enhanced online presence and customer engagement',
       },
-      {
-        icon: React.createElement(IconSettings, { size: 30 }),
-        title: 'Google Ads ROI',
-        value: '6.2x',
-        description: 'Return on ad spend via search & map campaigns'
-      }
     ]
   },
+
   testimonials: {
     title: [
-      { text: "Food Business " },
-      { text: "Testimonials", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+      { text: "Restaurant & Cafe " },
+      { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
     ],
+    subtitle: "How We've Helped Food Businesses Thrive",
+    description: "Read testimonials from successful restaurant owners, cafe managers, and food entrepreneurs who have transformed their businesses with our digital marketing expertise.",
     items: [
       {
         id: '1',
-        message:
-          'We jumped to the top 3 on Google Maps for “Italian restaurants in Indiranagar” and doubled our weekend bookings.',
+        message: 'Our restaurant\'s revenue doubled within 6 months thanks to their social media campaigns and Google Ads. The food photography and Instagram strategy they created brought in so many new customers that we had to expand our seating capacity.',
+        highlight: 'restaurant revenue doubled within 6 months',
         stars: 5,
-        name: 'Arjun Desai',
-        designation: 'Co-founder',
-        company: 'Trattoria Italiano, Bangalore'
+        name: 'Rahul Khanna',
+        designation: 'Restaurant Owner',
+        company: 'Spice Garden Mumbai'
       },
       {
         id: '2',
-        message:
-          'Their Instagram ads and Reels strategy helped us hit 50K followers and brought in a ton of foot traffic.',
+        message: 'Their local SEO work got our cafe ranking #1 for "best coffee shop Delhi" and "brunch places near me". Our weekend bookings are now completely full and we\'ve had to implement a reservation system.',
+        highlight: 'ranking #1 for best coffee shop Delhi',
         stars: 5,
-        name: 'Fatima Khan',
-        designation: 'Marketing Manager',
-        company: 'Chai Junction, Hyderabad'
+        name: 'Priya Sharma',
+        designation: 'Cafe Owner',
+        company: 'Brew & Beans Delhi'
       },
       {
         id: '3',
-        message:
-          'Our online ordering improved by 3X once they redesigned the site and checkout. Great team!',
-        stars: 4.5,
-        name: 'Neeraj Malhotra',
-        designation: 'Owner',
-        company: 'The Urban Curry, Pune'
+        message: 'The online ordering system optimization and food delivery marketing increased our delivery orders by 400%. We went from 20 orders per day to 80+ orders consistently.',
+        highlight: 'delivery orders increased by 400%',
+        stars: 5,
+        name: 'Amit Patel',
+        designation: 'Restaurant Manager',
+        company: 'Taste of India Pune'
       },
       {
         id: '4',
-        message:
-          "Catering leads went up by 200% within 3 months. We're now booking large parties regularly.",
+        message: 'Their Facebook and Instagram campaigns featuring our dishes have been incredible. We now have a waiting list every weekend and our catering business has grown by 250%.',
+        highlight: 'catering business grown by 250%',
         stars: 5,
-        name: 'Sneha Rao',
-        designation: 'General Manager',
-        company: 'Coastal Treats, Goa'
+        name: 'Neha Gupta',
+        designation: 'Bistro Owner',
+        company: 'Urban Bites Bangalore'
+      },
+      {
+        id: '5',
+        message: 'As a small family restaurant, we struggled with online visibility. Their marketing team helped us get featured in food blogs, improved our Google reviews, and increased our customer base by 300%.',
+        stars: 4,
+        name: 'Suresh Reddy',
+        designation: 'Restaurant Owner',
+        company: 'Authentic Flavors Hyderabad'
+      },
+      {
+        id: '6',
+        message: 'The loyalty program and email marketing automation they set up has been game-changing. Our customer retention improved by 70% and average order value increased significantly.',
+        highlight: 'customer retention improved by 70%',
+        stars: 5,
+        name: 'Kavya Nair',
+        designation: 'Cafe Chain Manager',
+        company: 'Coffee Culture Kerala'
       }
-    ]
+    ],
   },
+
   cta: {
-    title: 'Hungry for More Diners & Orders?',
-    subtitle: 'Let’s Grow Your Restaurant Online',
-    description:
-      'Request a free digital audit and discover how to fill tables, grow delivery, and build loyal customers.',
-  }
+    title: 'Ready to Fill Your Restaurant Every Night?',
+    subtitle: 'Get More Customers, Increase Orders, Grow Your Food Business',
+    description: 'Schedule your free restaurant marketing consultation today. Our food industry experts will analyze your current marketing efforts and show you exactly how to attract more customers and increase revenue.',
+
+    backgroundColor: 'bg-gradient-to-r from-gray-900 to-black',
+  },
+
+  showSections: {
+    hero: true,
+    companies: true,
+    services: true,
+    stats: true,
+    testimonials: true,
+    cta: true,
+  },
+
 };

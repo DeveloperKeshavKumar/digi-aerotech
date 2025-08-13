@@ -66,7 +66,7 @@ export function BusinessServices({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((service, index) => (
             <motion.a
-              href={`/services/${service.url || service.link || '#'}`}
+              href={`/services${service.url || service.link || '#'}`}
               key={service.id || index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

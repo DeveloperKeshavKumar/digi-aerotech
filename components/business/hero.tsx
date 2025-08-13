@@ -9,7 +9,7 @@ import { IconChartArea, IconTrophy } from '@tabler/icons-react';
 type CTAButton = {
   text: string;
   link?: string;
-  variant: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
   icon?: React.ReactNode;
 };
 

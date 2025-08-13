@@ -1,9 +1,9 @@
 import { realEstate } from './data/real-estate';
-import { hotelsResorts } from './data/hotel-resorts';
+import { hotelResorts } from './data/hotel-resorts';
 import { gymsFitness } from './data/gyms-fitness';
 import { restaurantsCafes } from './data/restaurants-cafes';
-// import { fashionBrands } from './data/fashion-brands';
-// import { b2bServices } from './data/b2b-services';
+import { fashionBrands } from './data/fashion-brands';
+import { b2bServices } from './data/b2b-services';
 // import { consultants } from './data/consultants';
 // import { localBusinesses } from './data/local-businesses';
 // import { pharmaCompanies } from './data/pharma-companies';
@@ -19,11 +19,11 @@ import { BusinessData } from '@/types/business.types';
 // Business Registry with typed data
 export const businessRegistry: Record<string, BusinessData> = {
   'real-estate': realEstate,
-  'hotel-resorts': hotelsResorts,
+  'hotel-resorts': hotelResorts,
   'gyms-fitness': gymsFitness,
   'restaurants-cafes': restaurantsCafes,
-  // 'fashion-brands': fashionBrands,
-  // 'b2b-services': b2bServices,
+  'fashion-brands': fashionBrands,
+  'b2b-services': b2bServices,
   // 'consultants': consultants,
   // 'local-businesses': localBusinesses,
   // 'pharma-companies': pharmaCompanies,
