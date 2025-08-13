@@ -4,16 +4,16 @@ import { gymsFitness } from './data/gyms-fitness';
 import { restaurantsCafes } from './data/restaurants-cafes';
 import { fashionBrands } from './data/fashion-brands';
 import { b2bServices } from './data/b2b-services';
-// import { consultants } from './data/consultants';
-// import { localBusinesses } from './data/local-businesses';
-// import { pharmaCompanies } from './data/pharma-companies';
-// import { interiorDesigners } from './data/interior-designers';
-// import { travelTourism } from './data/travel-tourism';
-// import { doctorsClinics } from './data/doctors-clinics';
-// import { startupsEntrepreneurs } from './data/startups-entrepreneurs';
-// import { b2cServices } from './data/b2c-services';
+import { consultants } from './data/consultants';
+import { localBusinesses } from './data/local-businesses';
+import { pharmaCompanies } from './data/pharma-companies';
+import { interiorDesigners } from './data/interior-designers';
+import { travelTourism } from './data/travel-tourism';
+import { doctorsClinics } from './data/doctors-clinics';
+import { startupsEntrepreneurs } from './data/startups-entrepreneurs';
+import { b2cServices } from './data/b2c-services';
 // import { educationalInstitutions } from './data/educational-institutions';
-// import { ecommerceBrands } from './data/e-commerce-brands';
+import { ecommerceBrands } from './data/e-commerce-brands';
 import { BusinessData } from '@/types/business.types';
 
 // Business Registry with typed data
@@ -24,16 +24,16 @@ export const businessRegistry: Record<string, BusinessData> = {
   'restaurants-cafes': restaurantsCafes,
   'fashion-brands': fashionBrands,
   'b2b-services': b2bServices,
-  // 'consultants': consultants,
-  // 'local-businesses': localBusinesses,
-  // 'pharma-companies': pharmaCompanies,
-  // 'interior-designers': interiorDesigners,
-  // 'travel-tourism': travelTourism,
-  // 'doctors-clinics': doctorsClinics,
-  // 'startups-entrepreneurs': startupsEntrepreneurs,
-  // 'b2c-services': b2cServices,
+  'consultants': consultants,
+  'local-businesses': localBusinesses,
+  'pharma-companies': pharmaCompanies,
+  'interior-designers': interiorDesigners,
+  'travel-tourism': travelTourism,
+  'doctors-clinics': doctorsClinics,
+  'startups-entrepreneurs': startupsEntrepreneurs,
+  'b2c-services': b2cServices,
   // 'educational-institutions': educationalInstitutions,
-  // 'e-commerce-brands': ecommerceBrands,
+  'e-commerce-brands': ecommerceBrands,
 };
 
 // Get business data by slug with type safety
