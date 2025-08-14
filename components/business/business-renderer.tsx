@@ -8,6 +8,8 @@ import { BusinessData } from '@/types/business.types';
 import { CTA } from '../services/cta-section';
 import { Testimonials } from '../homepage/testimonials';
 import { Companies } from '../homepage/companies';
+import { WhyChooseUs } from './why-choose-us';
+import { FaqSection } from '../services/faq-section';
 
 interface BusinessRendererProps {
     businessData: BusinessData;
@@ -92,6 +94,20 @@ export function BusinessRenderer({ businessData }: BusinessRendererProps) {
                 )}
 
                 {renderCustomSections('afterCompanies')}
+                {renderCustomSections('beforeWhyChooseUs')}
+
+                {showSections.whychoseus !== false && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <WhyChooseUs />
+                    </motion.div>
+                )}
+
+                {renderCustomSections('afterWhyChooseUs')}
                 {renderCustomSections('beforeServices')}
 
                 {/* Services Section */}
@@ -100,13 +116,27 @@ export function BusinessRenderer({ businessData }: BusinessRendererProps) {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
                     >
                         <BusinessServices {...businessData.services} />
                     </motion.div>
                 )}
 
                 {renderCustomSections('afterServices')}
+                {renderCustomSections('beforeFAQ')}
+
+                {showSections.faq !== false && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <FaqSection />
+                    </motion.div>
+                )}
+
+                {renderCustomSections('afterFAQ')}
                 {renderCustomSections('beforeTestimonials')}
 
                 {/* Testimonials Section */}

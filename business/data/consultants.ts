@@ -75,105 +75,105 @@ export const consultants: BusinessData = {
                 title: 'Complete Consultant Digital Marketing',
                 description: 'Integrated omnichannel marketing campaigns combining thought leadership content, speaking opportunities, LinkedIn strategy, and authority building to position consultants as industry experts and attract premium clients.',
                 icon: React.createElement(IconPlanet, { size: 30 }),
-                link: '/services/360-digital-marketing'
+                link: '/360-digital-marketing'
             },
             {
                 id: 'meta-ads',
                 title: 'LinkedIn & Facebook Consultant Advertising',
                 description: 'Targeted social media advertising campaigns focusing on decision-makers and business leaders, showcasing expertise through case studies, testimonials, and thought leadership content.',
                 icon: React.createElement(IconBrandMeta, { size: 30 }),
-                link: '/services/meta-ads'
+                link: '/meta-ads'
             },
             {
                 id: 'google-ads',
                 title: 'Google Ads for Consultants',
                 description: 'Strategic PPC campaigns targeting high-intent searches like "business consultant", "executive coach", and industry-specific consulting keywords that attract clients ready to invest in expertise.',
                 icon: React.createElement(IconBrandGoogle, { size: 30 }),
-                link: '/services/google-ads'
+                link: '/google-ads'
             },
             {
                 id: 'other-ads',
                 title: 'LinkedIn & YouTube Consultant Advertising',
                 description: 'Professional video content and thought leadership ads on LinkedIn and YouTube to demonstrate expertise, share insights, and attract high-value consulting opportunities.',
                 icon: React.createElement(IconBrandYoutube, { size: 30 }),
-                link: '/services/other-ads'
+                link: '/other-ads'
             },
             {
                 id: 'local-seo',
                 title: 'Local Consultant SEO',
                 description: 'Optimize for location-based searches like "business consultant in [city]", "executive coach near me", and "management consultant [location]" to capture local high-value opportunities.',
                 icon: React.createElement(IconMapSearch, { size: 30 }),
-                link: '/services/local-seo'
+                link: '/local-seo'
             },
             {
                 id: 'ecommerce-marketing',
                 title: 'Consultant Service Sales Optimization',
                 description: 'Conversion-optimized booking systems for consultations, online course sales, coaching packages, and premium service offerings that maximize revenue per client interaction.',
                 icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/services/ecommerce-marketing'
+                link: '/ecommerce-marketing'
             },
             {
                 id: 'web-design-development',
                 title: 'Professional Consultant Website Development',
                 description: 'Authority-building websites with case studies, client testimonials, expertise showcases, speaking portfolios, and consultation booking systems that convert prospects into paying clients.',
                 icon: React.createElement(IconCode, { size: 30 }),
-                link: '/services/web-design-development'
+                link: '/web-design-development'
             },
             {
                 id: 'social-media-marketing',
                 title: 'Consultant Social Media Marketing',
                 description: 'Strategic LinkedIn, Twitter, and professional platform management with thought leadership content, industry insights, and expertise demonstration that builds credibility and attracts clients.',
                 icon: React.createElement(IconBrandInstagram, { size: 30 }),
-                link: '/services/social-media-marketing'
+                link: '/social-media-marketing'
             },
             {
                 id: 'seo-services',
                 title: 'Consultant SEO Services',
                 description: 'Comprehensive SEO for consultants targeting keywords like "business strategy consultant", "executive coaching", and expertise-specific terms to increase visibility among potential clients.',
                 icon: React.createElement(IconSeo, { size: 30 }),
-                link: '/services/seo-services'
+                link: '/seo-services'
             },
             {
                 id: 'gmb-services',
                 title: 'Google Business Profile for Consultants',
                 description: 'Optimized Google My Business profiles with professional credentials, client reviews, service descriptions, and regular insights to dominate local consultant searches.',
                 icon: React.createElement(IconMapPin, { size: 30 }),
-                link: '/services/gmb-services'
+                link: '/gmb-services'
             },
             {
                 id: 'aso-services',
                 title: 'Consultant App Store Optimization',
                 description: 'Improve visibility and downloads for coaching and consulting mobile applications by optimizing for "business coaching apps", "consultant tools", and professional development searches.',
                 icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-                link: '/services/aso-services'
+                link: '/aso-services'
             },
             {
                 id: 'mobile-apps-development',
                 title: 'Custom Consultant Mobile Applications',
                 description: 'Professional coaching and consulting apps with client management, session scheduling, progress tracking, resource libraries, and communication tools for enhanced client experience.',
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
-                link: '/services/mobile-apps-development'
+                link: '/mobile-apps-development'
             },
             {
                 id: 'website-maintenance',
                 title: 'Consultant Website Maintenance',
                 description: 'Ongoing website support including content updates, case study additions, testimonial management, speaking engagement updates, and performance optimization for consultant websites.',
                 icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/services/website-maintenance'
+                link: '/website-maintenance'
             },
             {
                 id: 'leads-generation',
                 title: 'High-Value Client Lead Generation',
                 description: 'Multi-channel lead generation using expertise-based content, webinars, whitepapers, and conversion-optimized campaigns that attract decision-makers seeking consulting services.',
                 icon: React.createElement(IconUsers, { size: 30 }),
-                link: '/services/leads-generation'
+                link: '/leads-generation'
             },
             {
                 id: 'marketing-automation',
                 title: 'Consultant Marketing Automation',
                 description: 'Automated email sequences, CRM integration, and nurture campaigns designed for consultant sales cycles, including proposal follow-ups, client onboarding, and relationship maintenance.',
                 icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/services/marketing-automation'
+                link: '/marketing-automation'
             }
         ]
     },

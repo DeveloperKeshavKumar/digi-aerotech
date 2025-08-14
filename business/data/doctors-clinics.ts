@@ -75,105 +75,105 @@ export const doctorsClinics: BusinessData = {
         title: 'Complete Medical Digital Marketing',
         description: 'Integrated omnichannel marketing campaigns combining medical SEO, patient education content, reputation management, and healthcare-compliant advertising to maximize medical practice visibility and patient acquisition[3].',
         icon: React.createElement(IconPlanet, { size: 30 }),
-        link: '/services/360-digital-marketing'
+        link: '/360-digital-marketing'
       },
       {
         id: 'meta-ads',
         title: 'Facebook & Instagram Medical Advertising',
         description: 'Targeted Meta advertising campaigns focusing on local patients, health awareness, and medical education with HIPAA-compliant content that builds trust and drives appointment bookings[4].',
         icon: React.createElement(IconBrandMeta, { size: 30 }),
-        link: '/services/meta-ads'
+        link: '/meta-ads'
       },
       {
         id: 'google-ads',
         title: 'Google Ads for Doctors',
         description: 'Strategic PPC campaigns targeting high-intent medical searches like "doctor near me", "specialist consultation", and symptom-based keywords that connect with patients actively seeking healthcare[5].',
         icon: React.createElement(IconBrandGoogle, { size: 30 }),
-        link: '/services/google-ads'
+        link: '/google-ads'
       },
       {
         id: 'other-ads',
         title: 'YouTube & Healthcare Platform Advertising',
         description: 'Educational video content and medical advertising on YouTube and healthcare platforms to demonstrate expertise, share health tips, and attract patients through informative content[6].',
         icon: React.createElement(IconBrandYoutube, { size: 30 }),
-        link: '/services/other-ads'
+        link: '/other-ads'
       },
       {
         id: 'local-seo',
         title: 'Medical Local SEO',
         description: 'Dominate "doctor near me" searches and location-based medical keywords like "[specialty] in [city]", "clinic near me" to ensure local patients find your practice first online[7].',
         icon: React.createElement(IconMapSearch, { size: 30 }),
-        link: '/services/local-seo'
+        link: '/local-seo'
       },
       {
         id: 'ecommerce-marketing',
         title: 'Medical Appointment Booking Optimization',
         description: 'Conversion-optimized online appointment systems, telemedicine platforms, health packages, and patient portal integration that streamlines healthcare service delivery and booking processes.',
         icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/services/ecommerce-marketing'
+        link: '/ecommerce-marketing'
       },
       {
         id: 'web-design-development',
         title: 'Medical Website Development',
         description: 'HIPAA-compliant medical websites with appointment booking, patient portals, medical credentials showcase, health resources, and trust-building elements that convert visitors into patients[8].',
         icon: React.createElement(IconCode, { size: 30 }),
-        link: '/services/web-design-development'
+        link: '/web-design-development'
       },
       {
         id: 'social-media-marketing',
         title: 'Healthcare Social Media Marketing',
         description: 'Strategic medical social media management across Facebook, Instagram, and LinkedIn with health education content, patient testimonials, and community building that enhances medical authority[9].',
         icon: React.createElement(IconBrandInstagram, { size: 30 }),
-        link: '/services/social-media-marketing'
+        link: '/social-media-marketing'
       },
       {
         id: 'seo-services',
         title: 'Medical SEO Services',
         description: 'Comprehensive SEO for healthcare professionals targeting medical specialties, health conditions, treatment keywords, and local medical searches to increase organic patient acquisition[10].',
         icon: React.createElement(IconSeo, { size: 30 }),
-        link: '/services/seo-services'
+        link: '/seo-services'
       },
       {
         id: 'gmb-services',
         title: 'Google Business Profile for Doctors',
         description: 'Optimized Google My Business profiles with medical credentials, patient reviews, clinic photos, appointment booking, and regular health tips to dominate local medical searches[11].',
         icon: React.createElement(IconMapPin, { size: 30 }),
-        link: '/services/gmb-services'
+        link: '/gmb-services'
       },
       {
         id: 'aso-services',
         title: 'Medical App Store Optimization',
         description: 'Improve visibility for healthcare and medical apps in app stores by optimizing for "doctor consultation", "health tracker", and "medical appointment" searches that patients use.',
         icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-        link: '/services/aso-services'
+        link: '/aso-services'
       },
       {
         id: 'mobile-apps-development',
         title: 'Custom Medical Mobile Applications',
         description: 'HIPAA-compliant healthcare apps with telemedicine capabilities, appointment scheduling, patient records, health monitoring, and secure communication for enhanced patient care.',
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
-        link: '/services/mobile-apps-development'
+        link: '/mobile-apps-development'
       },
       {
         id: 'website-maintenance',
         title: 'Medical Website Maintenance',
         description: 'Ongoing healthcare website support including medical content updates, appointment system maintenance, patient portal management, and HIPAA compliance monitoring.',
         icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/services/website-maintenance'
+        link: '/website-maintenance'
       },
       {
         id: 'leads-generation',
         title: 'Patient Lead Generation',
         description: 'Multi-channel patient acquisition using health screenings, medical webinars, symptom checkers, and conversion-optimized campaigns that attract patients seeking quality healthcare[12].',
         icon: React.createElement(IconUsers, { size: 30 }),
-        link: '/services/leads-generation'
+        link: '/leads-generation'
       },
       {
         id: 'marketing-automation',
         title: 'Healthcare Marketing Automation',
         description: 'Automated patient communication, appointment reminders, follow-up care messages, health tips delivery, and patient retention campaigns designed for medical practice workflows[13].',
         icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/services/marketing-automation'
+        link: '/marketing-automation'
       }
     ]
   },

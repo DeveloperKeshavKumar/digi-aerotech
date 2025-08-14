@@ -2,7 +2,7 @@
 
 import { useState, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Code} from 'lucide-react';
+import { ChevronDown, Code, Cpu, Globe, Rocket, Shield, Zap } from 'lucide-react';
 import { BorderBeam } from '../ui/border-beam';
 
 interface FAQItem {
@@ -13,11 +13,11 @@ interface FAQItem {
 }
 
 interface FaqSectionProps {
-    heading: {
+    heading?: {
         part1: string;
         part2: string;
     };
-    faqs: FAQItem[];
+    faqs?: FAQItem[];
 }
 
 // Memoized FAQ item component with enhanced visuals
@@ -101,7 +101,50 @@ const FAQItem = memo(({ faq, onToggle, isActive }: {
 
 FAQItem.displayName = 'FAQItem';
 
-export function FaqSection({ heading, faqs }: FaqSectionProps) {
+export function FaqSection({
+    heading = {
+        part1: "Frequently Asked ",
+        part2: "Questions"
+    },
+    faqs = [
+        {
+            id: '1',
+            question: 'What services do you offer?',
+            answer: 'We provide a comprehensive suite of digital services including web development, mobile app creation, UI/UX design, cloud solutions, and digital marketing strategies tailored to your business needs.',
+            icon: <Rocket className="w-5 h-5" />
+        },
+        {
+            id: '2',
+            question: 'How do you ensure data security?',
+            answer: 'We implement industry-standard security protocols including end-to-end encryption, regular security audits, and compliance with GDPR and other privacy regulations to protect your sensitive information.',
+            icon: <Shield className="w-5 h-5" />
+        },
+        {
+            id: '3',
+            question: 'What industries do you specialize in?',
+            answer: 'Our team has expertise across multiple sectors including healthcare, finance, e-commerce, education, and SaaS platforms. We adapt our approach to meet industry-specific challenges.',
+            icon: <Globe className="w-5 h-5" />
+        },
+        {
+            id: '4',
+            question: 'What technologies do you work with?',
+            answer: 'Our stack includes modern technologies like React, Next.js, Node.js, Python, AWS, and more. We choose the right tools based on your project requirements for optimal performance.',
+            icon: <Cpu className="w-5 h-5" />
+        },
+        {
+            id: '5',
+            question: 'What is your development process?',
+            answer: 'We follow an agile methodology with iterative development cycles, regular client checkpoints, and continuous testing to ensure quality and alignment with your business goals.',
+            icon: <Code className="w-5 h-5" />
+        },
+        {
+            id: '6',
+            question: 'How do you handle project timelines?',
+            answer: 'We provide realistic timelines upfront with milestones and regular progress updates. Our project management tools ensure transparency and allow for adjustments as needed.',
+            icon: <Zap className="w-5 h-5" />
+        }
+    ]
+}: FaqSectionProps) {
     const [activeItems, setActiveItems] = useState<Set<string>>(new Set());
 
     const toggleItem = useCallback((id: string) => {

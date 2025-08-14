@@ -81,105 +81,105 @@ export const localBusinesses: BusinessData = {
                 title: 'Complete Local Business Marketing',
                 description: 'Integrated omnichannel marketing campaigns combining local SEO, community engagement, neighborhood advertising, and reputation management to maximize local visibility and drive foot traffic.',
                 icon: React.createElement(IconPlanet, { size: 30 }),
-                link: '/services/360-digital-marketing'
+                link: '/360-digital-marketing'
             },
             {
                 id: 'meta-ads',
                 title: 'Facebook & Instagram Local Advertising',
                 description: 'Geo-targeted Meta advertising campaigns focusing on neighborhood audiences, local events, community promotions, and location-based offers that drive nearby customers to your business.',
                 icon: React.createElement(IconBrandMeta, { size: 30 }),
-                link: '/services/meta-ads'
+                link: '/meta-ads'
             },
             {
                 id: 'google-ads',
                 title: 'Google Ads for Local Businesses',
                 description: 'Location-based PPC campaigns targeting "near me" searches, local service keywords, and neighborhood-specific terms that connect you with customers actively looking for local solutions.',
                 icon: React.createElement(IconBrandGoogle, { size: 30 }),
-                link: '/services/google-ads'
+                link: '/google-ads'
             },
             {
                 id: 'other-ads',
                 title: 'YouTube & Local Display Advertising',
                 description: 'Community-focused video content and display advertising on local websites, community platforms, and regional publications to build neighborhood brand awareness.',
                 icon: React.createElement(IconBrandYoutube, { size: 30 }),
-                link: '/services/other-ads'
+                link: '/other-ads'
             },
             {
                 id: 'local-seo',
                 title: 'Hyper-Local SEO Optimization',
                 description: 'Dominate "near me" searches and neighborhood-specific keywords like "[service] in [locality]", "best [business type] [area]" to ensure locals find you first online.',
                 icon: React.createElement(IconMapSearch, { size: 30 }),
-                link: '/services/local-seo'
+                link: '/local-seo'
             },
             {
                 id: 'ecommerce-marketing',
                 title: 'Local E-commerce & Online Ordering',
                 description: 'Local delivery optimization, neighborhood e-commerce solutions, online booking systems, and local marketplace presence to serve customers both online and offline.',
                 icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/services/ecommerce-marketing'
+                link: '/ecommerce-marketing'
             },
             {
                 id: 'web-design-development',
                 title: 'Local Business Website Development',
                 description: 'Mobile-responsive local business websites with location information, customer reviews, service areas, contact forms, and local SEO optimization for maximum neighborhood visibility.',
                 icon: React.createElement(IconCode, { size: 30 }),
-                link: '/services/web-design-development'
+                link: '/web-design-development'
             },
             {
                 id: 'social-media-marketing',
                 title: 'Local Social Media Marketing',
                 description: 'Community-focused social media management across Facebook, Instagram, and local platforms with neighborhood events, customer spotlights, and local engagement strategies.',
                 icon: React.createElement(IconBrandInstagram, { size: 30 }),
-                link: '/services/social-media-marketing'
+                link: '/social-media-marketing'
             },
             {
                 id: 'seo-services',
                 title: 'Local Business SEO Services',
                 description: 'Comprehensive local SEO targeting neighborhood keywords, service area optimization, and location-based content to dominate local search results and attract nearby customers.',
                 icon: React.createElement(IconSeo, { size: 30 }),
-                link: '/services/seo-services'
+                link: '/seo-services'
             },
             {
                 id: 'gmb-services',
                 title: 'Google My Business Optimization',
                 description: 'Complete Google My Business management with local photos, customer reviews, Q&A optimization, posts, and local attributes to dominate local map searches and attract walk-ins.',
                 icon: React.createElement(IconMapPin, { size: 30 }),
-                link: '/services/gmb-services'
+                link: '/gmb-services'
             },
             {
                 id: 'aso-services',
                 title: 'Local Business App Optimization',
                 description: 'Improve visibility for local business mobile apps in app stores by optimizing for location-based searches and "local services" keywords that neighborhood customers use.',
                 icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-                link: '/services/aso-services'
+                link: '/aso-services'
             },
             {
                 id: 'mobile-apps-development',
                 title: 'Local Business Mobile Apps',
                 description: 'Custom mobile applications with location features, loyalty programs, local offers, push notifications for neighborhood promotions, and easy contact/booking functionality.',
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
-                link: '/services/mobile-apps-development'
+                link: '/mobile-apps-development'
             },
             {
                 id: 'website-maintenance',
                 title: 'Local Business Website Maintenance',
                 description: 'Ongoing website support including hours updates, seasonal promotions, local event listings, customer testimonial management, and local SEO maintenance.',
                 icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/services/website-maintenance'
+                link: '/website-maintenance'
             },
             {
                 id: 'leads-generation',
                 title: 'Local Customer Acquisition',
                 description: 'Neighborhood-focused lead generation using local offers, community events, referral programs, and geo-targeted campaigns that attract customers from your immediate service area.',
                 icon: React.createElement(IconUsers, { size: 30 }),
-                link: '/services/leads-generation'
+                link: '/leads-generation'
             },
             {
                 id: 'marketing-automation',
                 title: 'Local Marketing Automation',
                 description: 'Automated email and SMS campaigns for appointment reminders, local promotions, customer follow-ups, birthday offers, and neighborhood event notifications.',
                 icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/services/marketing-automation'
+                link: '/marketing-automation'
             }
         ]
     },

@@ -43,12 +43,7 @@ export const hotelResorts: BusinessData = {
       'Revenue Growth Solutions',
       'Experts of Digital Marketing',
     ],
-    brandLine: [
-      {
-        text: 'Get 4X More Direct Bookings & Higher RevPAR',
-        gradient: false,
-      }
-    ],
+    brandLine: 'Get 4X More Direct Bookings & Higher RevPAR',
     subheadline: 'Our proven hospitality marketing strategies help hotels, resorts, and boutique properties in India increase direct bookings by 320% and reduce OTA dependency while maximizing revenue per available room.',
     ctaButtons: [
       {

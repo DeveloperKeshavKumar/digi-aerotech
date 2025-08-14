@@ -44,12 +44,7 @@ export const restaurantsCafes: BusinessData = {
       'Experts of Digital Marketing',
       'Dine-In Customer Growth'
     ],
-    brandLine: [
-      {
-        text: 'Get 5X More Customers & Higher Revenue',
-        gradient: false,
-      }
-    ],
+    brandLine: 'Get 5X More Customers & Higher Revenue',
     subheadline: 'Our proven restaurant marketing strategies help cafes, restaurants, and food businesses in India increase foot traffic by 280%, boost online orders by 350%, and build loyal customer communities through targeted digital campaigns.',
     ctaButtons: [
       {

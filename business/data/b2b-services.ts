@@ -45,13 +45,7 @@ export const b2bServices: BusinessData = {
       'Lead Generation Strategies',
       'Business Growth Solutions'
     ],
-    brandLine: [
-      {
-        text: 'Get 5X More Qualified B2B Leads & Higher Conversion Rates',
-        gradient: true,
-        gradientClass: 'from-orange-500 via-pink-500 to-red-500'
-      }
-    ],
+    brandLine: 'Get 5X More Qualified B2B Leads & Higher Conversion Rates',
     subheadline: 'Our proven B2B marketing strategies help service companies, consultants, and business solution providers in India generate 380% more qualified leads, shorten sales cycles, and build authority in their industries through targeted digital campaigns.',
     ctaButtons: [
       {

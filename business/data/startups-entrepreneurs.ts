@@ -75,105 +75,105 @@ export const startupsEntrepreneurs: BusinessData = {
         title: 'Complete Startup Digital Marketing',
         description: 'Integrated omnichannel marketing campaigns combining growth hacking, viral marketing, investor relations, and customer acquisition strategies to maximize startup visibility and accelerate business growth.',
         icon: React.createElement(IconPlanet, { size: 30 }),
-        link: '/services/360-digital-marketing'
+        link: '/360-digital-marketing'
       },
       {
         id: 'meta-ads',
         title: 'Social Media Startup Advertising',
         description: 'Targeted Meta advertising campaigns focusing on early adopters, tech enthusiasts, and potential customers with disruptive messaging that builds startup buzz and drives user acquisition.',
         icon: React.createElement(IconBrandMeta, { size: 30 }),
-        link: '/services/meta-ads'
+        link: '/meta-ads'
       },
       {
         id: 'google-ads',
         title: 'Google Ads for Startups',
         description: 'Strategic PPC campaigns targeting innovation-focused searches, problem-solution keywords, and startup ecosystem terms that connect with potential customers and investors.',
         icon: React.createElement(IconBrandGoogle, { size: 30 }),
-        link: '/services/google-ads'
+        link: '/google-ads'
       },
       {
         id: 'other-ads',
         title: 'LinkedIn & YouTube Startup Advertising',
         description: 'Professional advertising on LinkedIn and YouTube targeting investors, industry leaders, and potential partners with startup pitch videos and thought leadership content.',
         icon: React.createElement(IconBrandYoutube, { size: 30 }),
-        link: '/services/other-ads'
+        link: '/other-ads'
       },
       {
         id: 'local-seo',
         title: 'Startup Local SEO',
         description: 'Optimize for location-based startup searches, innovation hubs, and local entrepreneurship keywords to build community presence and attract local talent and customers.',
         icon: React.createElement(IconMapSearch, { size: 30 }),
-        link: '/services/local-seo'
+        link: '/local-seo'
       },
       {
         id: 'ecommerce-marketing',
         title: 'Startup Product Launch Optimization',
         description: 'Conversion-optimized product launch strategies, subscription models, freemium conversions, and customer onboarding funnels that maximize startup revenue and growth metrics.',
         icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/services/ecommerce-marketing'
+        link: '/ecommerce-marketing'
       },
       {
         id: 'web-design-development',
         title: 'Startup Website Development',
         description: 'Investor-ready websites with product demos, founder stories, growth metrics, investor relations pages, and conversion-optimized landing pages that build startup credibility.',
         icon: React.createElement(IconCode, { size: 30 }),
-        link: '/services/web-design-development'
+        link: '/web-design-development'
       },
       {
         id: 'social-media-marketing',
         title: 'Startup Social Media Marketing',
         description: 'Strategic social media management across LinkedIn, Twitter, and industry platforms with thought leadership content, startup journey storytelling, and community building.',
         icon: React.createElement(IconBrandInstagram, { size: 30 }),
-        link: '/services/social-media-marketing'
+        link: '/social-media-marketing'
       },
       {
         id: 'seo-services',
         title: 'Startup SEO Services',
         description: 'Comprehensive SEO for startups targeting innovation keywords, industry disruption terms, and solution-based searches to increase visibility among target audiences.',
         icon: React.createElement(IconSeo, { size: 30 }),
-        link: '/services/seo-services'
+        link: '/seo-services'
       },
       {
         id: 'gmb-services',
         title: 'Google Business Profile for Startups',
         description: 'Optimized Google My Business profiles with startup information, team photos, innovation showcases, and regular updates to build local startup ecosystem presence.',
         icon: React.createElement(IconMapPin, { size: 30 }),
-        link: '/services/gmb-services'
+        link: '/gmb-services'
       },
       {
         id: 'aso-services',
         title: 'Startup App Store Optimization',
         description: 'Improve visibility for startup mobile applications in app stores by optimizing for innovation keywords, problem-solving apps, and disruptive technology searches.',
         icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-        link: '/services/aso-services'
+        link: '/aso-services'
       },
       {
         id: 'mobile-apps-development',
         title: 'Custom Startup Mobile Applications',
         description: 'MVP and scalable mobile applications with user analytics, growth tracking, customer feedback systems, and iterative improvement capabilities for startup success.',
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
-        link: '/services/mobile-apps-development'
+        link: '/mobile-apps-development'
       },
       {
         id: 'website-maintenance',
         title: 'Startup Website Maintenance',
         description: 'Ongoing website support including growth metric updates, product feature additions, investor information management, and performance optimization for startup sites.',
         icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/services/website-maintenance'
+        link: '/website-maintenance'
       },
       {
         id: 'leads-generation',
         title: 'Startup Customer & Investor Lead Generation',
         description: 'Multi-channel lead generation targeting early adopters, potential investors, strategic partners, and beta users using growth hacking techniques and viral campaigns.',
         icon: React.createElement(IconUsers, { size: 30 }),
-        link: '/services/leads-generation'
+        link: '/leads-generation'
       },
       {
         id: 'marketing-automation',
         title: 'Startup Marketing Automation',
         description: 'Automated email campaigns, CRM integration, and growth funnel optimization for customer onboarding, investor updates, user engagement, and retention strategies.',
         icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/services/marketing-automation'
+        link: '/marketing-automation'
       }
     ]
   },

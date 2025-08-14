@@ -80,7 +80,7 @@ export function BusinessStats({
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               whileHover={{ scale: 1.05 }}
-              className="text-center group border rounded-2xl p-6"
+              className="text-center group border rounded-2xl p-6 bg-gray-50 dark:bg-gray-900"
             >
               {/* Icon */}
               {stat.icon && (

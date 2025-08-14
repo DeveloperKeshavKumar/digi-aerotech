@@ -17,7 +17,7 @@ export const gmbService: ServiceData = {
         whyChooseUs: true,
         typesOfServices: true,
         process: true,
-        techStack: true,
+        techStack: false,
         testimonials: true,
         cta: true
     },
@@ -298,22 +298,6 @@ export const gmbService: ServiceData = {
                 title: 'Performance Tracking & Reporting',
                 description: 'Monthly analytics reports showing GMB insights, local search performance, customer actions, and ROI from optimization efforts.'
             }
-        ]
-    },
-    techStack: {
-        title: 'Our GMB Management Tools',
-        subtitle: 'PROFESSIONAL PLATFORMS',
-        description: 'We use advanced tools and platforms to manage, optimize, and track your Google My Business performance.',
-        categories: ['GMB Tools', 'Review Management', 'Analytics', 'Local SEO'],
-        technologies: [
-            { id: 1, name: 'Google My Business', logo: '/tech/icons8-google-my-business-96.png', category: 'GMB Tools' },
-            { id: 2, name: 'BirdEye', logo: '/tech/icons8-birdeye-96.png', category: 'Review Management' },
-            { id: 3, name: 'ReviewTrackers', logo: '/tech/icons8-reviewtrackers-96.png', category: 'Review Management' },
-            { id: 4, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-            { id: 5, name: 'BrightLocal', logo: '/tech/icons8-brightlocal-96.png', category: 'Local SEO' },
-            { id: 6, name: 'Moz Local', logo: '/tech/icons8-moz-local-96.png', category: 'Local SEO' },
-            { id: 7, name: 'Hootsuite', logo: '/tech/icons8-hootsuite-96.png', category: 'GMB Tools' },
-            { id: 8, name: 'LocalClarity', logo: '/tech/icons8-localclarity-96.png', category: 'Analytics' }
         ]
     },
     testimonials: {

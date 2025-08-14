@@ -81,105 +81,105 @@ export const pharmaCompanies: BusinessData = {
                 title: 'Complete Pharma Digital Marketing',
                 description: 'Integrated omnichannel marketing campaigns combining medical content strategy, HCP targeting, patient education, and regulatory-compliant messaging to maximize pharmaceutical brand visibility and engagement.',
                 icon: React.createElement(IconPlanet, { size: 30 }),
-                link: '/services/360-digital-marketing'
+                link: '/360-digital-marketing'
             },
             {
                 id: 'meta-ads',
                 title: 'Healthcare Professional Social Advertising',
                 description: 'Targeted Meta advertising campaigns focusing on healthcare professionals, medical associations, and patient education with compliance-approved content and therapeutic area expertise.',
                 icon: React.createElement(IconBrandMeta, { size: 30 }),
-                link: '/services/meta-ads'
+                link: '/meta-ads'
             },
             {
                 id: 'google-ads',
                 title: 'Google Ads for Pharmaceutical Companies',
                 description: 'Strategic PPC campaigns targeting healthcare professional searches, medical condition keywords, and therapeutic area terms while maintaining strict regulatory compliance and approval processes.',
                 icon: React.createElement(IconBrandGoogle, { size: 30 }),
-                link: '/services/google-ads'
+                link: '/google-ads'
             },
             {
                 id: 'other-ads',
                 title: 'Medical Platform & LinkedIn Advertising',
                 description: 'Professional advertising on medical platforms, LinkedIn, and healthcare publications to reach doctors, specialists, and healthcare decision-makers with educational and promotional content.',
                 icon: React.createElement(IconBrandYoutube, { size: 30 }),
-                link: '/services/other-ads'
+                link: '/other-ads'
             },
             {
                 id: 'local-seo',
                 title: 'Healthcare Facility SEO',
                 description: 'Optimize for location-based healthcare searches, medical facility listings, and regional therapeutic area keywords to help patients and HCPs find pharmaceutical information and support.',
                 icon: React.createElement(IconMapSearch, { size: 30 }),
-                link: '/services/local-seo'
+                link: '/local-seo'
             },
             {
                 id: 'ecommerce-marketing',
                 title: 'Pharmaceutical E-commerce Optimization',
                 description: 'Compliant online pharmaceutical sales optimization, prescription fulfillment systems, patient support programs, and medication delivery platform integration.',
                 icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/services/ecommerce-marketing'
+                link: '/ecommerce-marketing'
             },
             {
                 id: 'web-design-development',
                 title: 'Pharmaceutical Website Development',
                 description: 'Medical-grade websites with product information, clinical data, patient resources, HCP portals, and regulatory compliance features that meet pharmaceutical industry standards.',
                 icon: React.createElement(IconCode, { size: 30 }),
-                link: '/services/web-design-development'
+                link: '/web-design-development'
             },
             {
                 id: 'social-media-marketing',
                 title: 'Pharma Social Media Marketing',
                 description: 'Compliant social media management across LinkedIn, medical platforms, and professional networks with educational content, disease awareness campaigns, and HCP engagement strategies.',
                 icon: React.createElement(IconBrandInstagram, { size: 30 }),
-                link: '/services/social-media-marketing'
+                link: '/social-media-marketing'
             },
             {
                 id: 'seo-services',
                 title: 'Pharmaceutical SEO Services',
                 description: 'Comprehensive SEO for pharma companies targeting medical terminology, therapeutic areas, drug information, and healthcare professional searches while maintaining regulatory compliance.',
                 icon: React.createElement(IconSeo, { size: 30 }),
-                link: '/services/seo-services'
+                link: '/seo-services'
             },
             {
                 id: 'gmb-services',
                 title: 'Medical Facility Google Business Profile',
                 description: 'Optimized Google My Business profiles for pharmaceutical facilities, research centers, and medical offices with compliance-approved information and professional credibility elements.',
                 icon: React.createElement(IconMapPin, { size: 30 }),
-                link: '/services/gmb-services'
+                link: '/gmb-services'
             },
             {
                 id: 'aso-services',
                 title: 'Medical App Store Optimization',
                 description: 'Improve visibility for pharmaceutical and medical apps in app stores by optimizing for healthcare searches, medical reference apps, and patient support application keywords.',
                 icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-                link: '/services/aso-services'
+                link: '/aso-services'
             },
             {
                 id: 'mobile-apps-development',
                 title: 'Pharmaceutical Mobile Applications',
                 description: 'HIPAA-compliant mobile apps for patient support programs, HCP engagement, medical reference tools, clinical data access, and pharmaceutical sales force automation.',
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
-                link: '/services/mobile-apps-development'
+                link: '/mobile-apps-development'
             },
             {
                 id: 'website-maintenance',
                 title: 'Pharma Website Maintenance',
                 description: 'Ongoing website support including regulatory updates, clinical data management, product information updates, and compliance monitoring for pharmaceutical websites.',
                 icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/services/website-maintenance'
+                link: '/website-maintenance'
             },
             {
                 id: 'leads-generation',
                 title: 'Healthcare Professional Lead Generation',
                 description: 'Multi-channel lead generation targeting healthcare professionals, medical institutions, and decision-makers using medical education, clinical studies, and therapeutic expertise.',
                 icon: React.createElement(IconUsers, { size: 30 }),
-                link: '/services/leads-generation'
+                link: '/leads-generation'
             },
             {
                 id: 'marketing-automation',
                 title: 'Pharma Marketing Automation',
                 description: 'Automated email campaigns, CRM integration, and nurture sequences designed for pharmaceutical sales cycles, medical education delivery, and HCP relationship management.',
                 icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/services/marketing-automation'
+                link: '/marketing-automation'
             }
         ]
     },

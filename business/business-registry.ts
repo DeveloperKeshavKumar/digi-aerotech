@@ -12,7 +12,7 @@ import { travelTourism } from './data/travel-tourism';
 import { doctorsClinics } from './data/doctors-clinics';
 import { startupsEntrepreneurs } from './data/startups-entrepreneurs';
 import { b2cServices } from './data/b2c-services';
-// import { educationalInstitutions } from './data/educational-institutions';
+import { educationalInstitutions } from './data/educational-institutions';
 import { ecommerceBrands } from './data/e-commerce-brands';
 import { BusinessData } from '@/types/business.types';
 
@@ -32,7 +32,7 @@ export const businessRegistry: Record<string, BusinessData> = {
   'doctors-clinics': doctorsClinics,
   'startups-entrepreneurs': startupsEntrepreneurs,
   'b2c-services': b2cServices,
-  // 'educational-institutions': educationalInstitutions,
+  'educational-institutions': educationalInstitutions,
   'e-commerce-brands': ecommerceBrands,
 };
 

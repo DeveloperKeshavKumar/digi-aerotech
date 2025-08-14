@@ -75,105 +75,105 @@ export const educationalInstitutions: BusinessData = {
                 title: 'Complete Education Digital Marketing',
                 description: 'Integrated omnichannel marketing campaigns combining student recruitment, parent engagement, academic showcasing, and reputation management to maximize educational institution visibility and enrollment rates.',
                 icon: React.createElement(IconPlanet, { size: 30 }),
-                link: '/services/360-digital-marketing'
+                link: '/360-digital-marketing'
             },
             {
                 id: 'meta-ads',
                 title: 'Facebook & Instagram Education Advertising',
                 description: 'Targeted Meta advertising campaigns focusing on prospective students, parents, and career-focused audiences with campus showcases, success stories, and program highlights that drive admissions.',
                 icon: React.createElement(IconBrandMeta, { size: 30 }),
-                link: '/services/meta-ads'
+                link: '/meta-ads'
             },
             {
                 id: 'google-ads',
                 title: 'Google Ads for Educational Institutions',
                 description: 'Strategic PPC campaigns targeting high-intent education searches like "best colleges in [city]", "admission 2024", and course-specific keywords that connect with students actively seeking education.',
                 icon: React.createElement(IconBrandGoogle, { size: 30 }),
-                link: '/services/google-ads'
+                link: '/google-ads'
             },
             {
                 id: 'other-ads',
                 title: 'YouTube & LinkedIn Education Advertising',
                 description: 'Educational video content and professional platform advertising showcasing campus life, faculty expertise, student achievements, and career outcomes to attract quality applicants.',
                 icon: React.createElement(IconBrandYoutube, { size: 30 }),
-                link: '/services/other-ads'
+                link: '/other-ads'
             },
             {
                 id: 'local-seo',
                 title: 'Local Education SEO',
                 description: 'Dominate location-based education searches like "colleges near me", "schools in [city]", and "coaching centers [area]" to attract students from your catchment area.',
                 icon: React.createElement(IconMapSearch, { size: 30 }),
-                link: '/services/local-seo'
+                link: '/local-seo'
             },
             {
                 id: 'ecommerce-marketing',
                 title: 'Educational Service Sales Optimization',
                 description: 'Conversion-optimized admission portals, online course sales, fee payment systems, and enrollment funnel optimization that streamline the student admission and registration process.',
                 icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/services/ecommerce-marketing'
+                link: '/ecommerce-marketing'
             },
             {
                 id: 'web-design-development',
                 title: 'Educational Website Development',
                 description: 'Academic-grade websites with course information, faculty profiles, admission portals, virtual campus tours, student testimonials, and trust-building elements that convert visitors into students.',
                 icon: React.createElement(IconCode, { size: 30 }),
-                link: '/services/web-design-development'
+                link: '/web-design-development'
             },
             {
                 id: 'social-media-marketing',
                 title: 'Education Social Media Marketing',
                 description: 'Strategic social media management across Facebook, Instagram, LinkedIn, and YouTube with campus life content, academic achievements, and student success stories that build institutional reputation.',
                 icon: React.createElement(IconBrandInstagram, { size: 30 }),
-                link: '/services/social-media-marketing'
+                link: '/social-media-marketing'
             },
             {
                 id: 'seo-services',
                 title: 'Educational SEO Services',
                 description: 'Comprehensive SEO for educational institutions targeting academic programs, course keywords, admission-related searches, and educational content to increase organic student acquisition.',
                 icon: React.createElement(IconSeo, { size: 30 }),
-                link: '/services/seo-services'
+                link: '/seo-services'
             },
             {
                 id: 'gmb-services',
                 title: 'Google Business Profile for Education',
                 description: 'Optimized Google My Business profiles with campus photos, student reviews, course information, admission details, and regular updates to dominate local education searches.',
                 icon: React.createElement(IconMapPin, { size: 30 }),
-                link: '/services/gmb-services'
+                link: '/gmb-services'
             },
             {
                 id: 'aso-services',
                 title: 'Educational App Store Optimization',
                 description: 'Improve visibility for educational mobile apps in app stores by optimizing for "online learning", "education apps", and "student portal" searches that learners use.',
                 icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-                link: '/services/aso-services'
+                link: '/aso-services'
             },
             {
                 id: 'mobile-apps-development',
                 title: 'Custom Educational Mobile Applications',
                 description: 'Feature-rich educational apps with learning management systems, student portals, online classrooms, assignment tracking, and parent communication features.',
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
-                link: '/services/mobile-apps-development'
+                link: '/mobile-apps-development'
             },
             {
                 id: 'website-maintenance',
                 title: 'Educational Website Maintenance',
                 description: 'Ongoing website support including academic content updates, admission information management, event listings, and performance optimization for educational websites.',
                 icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/services/website-maintenance'
+                link: '/website-maintenance'
             },
             {
                 id: 'leads-generation',
                 title: 'Student Enrollment Lead Generation',
                 description: 'Multi-channel lead generation using educational webinars, campus tours, scholarship information, and conversion-optimized campaigns that attract prospective students and parents.',
                 icon: React.createElement(IconUsers, { size: 30 }),
-                link: '/services/leads-generation'
+                link: '/leads-generation'
             },
             {
                 id: 'marketing-automation',
                 title: 'Education Marketing Automation',
                 description: 'Automated email campaigns, admission follow-ups, student communication, parent updates, and enrollment nurture sequences designed for educational institution workflows.',
                 icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/services/marketing-automation'
+                link: '/marketing-automation'
             }
         ]
     },

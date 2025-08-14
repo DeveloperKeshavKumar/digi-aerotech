@@ -9,10 +9,10 @@ export interface StatsProps {
 }
 
 interface CTAProps {
-  title: string;
-  subtitle?: string;
-  description: string;
-  backgroundColor?: string;
+    title: string;
+    subtitle?: string;
+    description: string;
+    backgroundColor?: string;
 }
 
 export interface CTAButton {
@@ -27,10 +27,12 @@ export interface CustomSection {
     props?: Record<string, any>;
     position: 'beforeHero' | 'afterHero' |
     'beforeCompanies' | 'afterCompanies' |
+    'beforeWhyChooseUs' | 'afterWhyChooseUs' |
     'beforeServices' | 'afterServices' |
-    'beforeStats' | 'afterStats' |
-    'beforeTestimonials' | 'afterTestimonials' |
-    'beforeCTA' | 'afterCTA' | 'afterAll';
+    'beforeStats' | 'afterStats' | 'beforeFAQ' |
+    'afterFAQ' | 'beforeTestimonials' |
+    'afterTestimonials' | 'beforeCTA' |
+    'afterCTA' | 'afterAll';
     order?: number;
 }
 
@@ -43,9 +45,11 @@ export interface BusinessData {
     // Section visibility controls
     showSections?: {
         hero?: boolean;
-        companies?: boolean;
-        services?: boolean;
         stats?: boolean;
+        companies?: boolean;
+        whychoseus?: boolean;
+        services?: boolean;
+        faq?: boolean;
         testimonials?: boolean;
         cta?: boolean;
     };

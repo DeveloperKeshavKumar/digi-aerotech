@@ -45,13 +45,7 @@ export const fashionBrands: BusinessData = {
       'Brand Awareness Strategies',
       'E-commerce Sales Growth'
     ],
-    brandLine: [
-      {
-        text: 'Get 6X More Sales & Build a Loyal Fashion Community',
-        gradient: true,
-        gradientClass: 'from-orange-500 via-pink-500 to-red-500'
-      }
-    ],
+    brandLine:'Get 6X More Sales & Build a Loyal Fashion Community',
     subheadline: 'Our proven fashion marketing strategies help clothing brands, designers, and fashion retailers in India increase online sales by 450%, build brand awareness, and create viral social media presence through targeted digital campaigns.',
     ctaButtons: [
       {

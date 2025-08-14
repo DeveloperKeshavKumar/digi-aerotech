@@ -6,7 +6,6 @@ import { BusinessData } from '@/types/business.types';
 
 type BusinessServicesProps = BusinessData['services'];
 
-
 export function BusinessServices({
   title,
   subtitle,
@@ -14,7 +13,7 @@ export function BusinessServices({
   items
 }: BusinessServicesProps) {
   return (
-    <section className="py-20 bg-white border-b border-gray-200">
+    <section className="py-20 bg-gray-50 dark:bg-gray-950 border-b border-border dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -30,7 +29,7 @@ export function BusinessServices({
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-lg text-gray-600 font-medium mb-4"
+              className="text-md text-pink-600 dark:text-pink-400 font-medium mb-4"
             >
               {subtitle}
             </motion.p>
@@ -42,9 +41,9 @@ export function BusinessServices({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-3xl md:text-5xl font-bold mb-6"
+              className="text-3xl md:text-4xl font-bold mb-6"
             >
-              <span className="text-black">{title.split(' ').slice(0, 3).join(' ')} </span>
+              <span className="text-black dark:text-white">{title.split(' ').slice(0, 3).join(' ')} </span>
               <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
                 {title.split(' ').slice(3).join(' ')}
               </span>
@@ -56,7 +55,7 @@ export function BusinessServices({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
@@ -73,7 +72,7 @@ export function BusinessServices({
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               whileHover={{ y: -5 }}
-              className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 hover:shadow-xl dark:hover:shadow-lg dark:hover:shadow-gray-800/50 transition-all duration-300 cursor-pointer"
             >
               {/* Icon */}
               <div className="mb-6">
@@ -89,18 +88,18 @@ export function BusinessServices({
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-black mb-4 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-4 transition-all duration-300">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                 {service.description}
               </p>
 
               {service.link && (
                 <motion.div
                   whileHover={{ x: 5 }}
-                  className="inline-flex items-center gap-2 text-black font-semibold hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-red-500 hover:bg-clip-text hover:text-transparent transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-black dark:text-white font-semibold hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-red-500 hover:bg-clip-text hover:text-transparent transition-all duration-300"
                 >
                   Learn More
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
