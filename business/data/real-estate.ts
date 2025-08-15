@@ -1,4 +1,4 @@
-import { BusinessData } from '@/types/business.types';
+import { BusinessData } from '@/business/business.types';
 import { IconAd, IconBrandGoogle, IconBrandInstagram, IconBrandMeta, IconChartArea, IconCode, IconDeviceMobile, IconEyeBolt, IconMapPin, IconMapSearch, IconPlanet, IconPlayerPlay, IconRobot, IconSeo, IconSettings, IconShoppingCart, IconTrophy, IconUsers, IconUsersGroup, IconMail, IconCamera, IconVideo, IconBrain, IconTarget } from '@tabler/icons-react';
 import React from 'react';
 

@@ -2,7 +2,7 @@ import React from "react"
 import { Companies } from "@/components/homepage/companies"
 import { FaqSection } from "@/components/services/faq-section"
 import { ProvideServicesTo } from "@/components/services/provide-services-to"
-import { ServiceData } from "@/types/service.types"
+import { ServiceData } from "@/services/service.types"
 import { ServiceIcons } from "@/constants/service-icons"
 import { TechDiff } from "@/components/services/web-dev-design/tech-diff"
 

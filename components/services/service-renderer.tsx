@@ -9,7 +9,7 @@ import { TechStack } from '@/components/services/tech-stack';
 import { Testimonials } from '@/components/homepage/testimonials';
 import { CTA } from '@/components/services/cta-section';
 import { Hero } from '@/components/homepage/hero';
-import { ServiceData } from '@/types/service.types';
+import { ServiceData } from '@/services/service.types';
 
 interface ServiceRendererProps {
     serviceData: ServiceData;

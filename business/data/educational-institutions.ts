@@ -1,4 +1,4 @@
-import { BusinessData } from '@/types/business.types';
+import { BusinessData } from '@/business/business.types';
 import {
     IconBrandMeta,
     IconBrandGoogle,

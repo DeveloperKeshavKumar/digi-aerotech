@@ -1,4 +1,4 @@
-import { ServiceData } from '@/types/service.types';
+import { ServiceData } from '@/services/service.types';
 import { digitalMarketingService } from './data/digital-marketing.service';
 import { metaAdsService } from './data/meta-ads.service';
 import { googleAdsService } from './data/google-ads.service';

@@ -21,7 +21,7 @@ import {
     IconX
 } from '@tabler/icons-react';
 
-import { BlogPost } from '@/types/blogs.types';
+import { BlogPost } from '@/app/api/blogs/blogs.types';
 import TagsInput from './tag-input';
 
 export default function BlogEditor({ isNew = false }: { isNew?: boolean }) {

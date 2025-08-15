@@ -4,7 +4,7 @@ import { inView, motion, useReducedMotion } from 'framer-motion';
 import { BusinessHero } from './hero';
 import { BusinessServices } from './services';
 import { BusinessStats } from './stats';
-import { BusinessData } from '@/types/business.types';
+import { BusinessData } from '@/business/business.types';
 import { CTA } from '../services/cta-section';
 import { Testimonials } from '../homepage/testimonials';
 import { Companies } from '../homepage/companies';

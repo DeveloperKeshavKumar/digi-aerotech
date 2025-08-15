@@ -2,7 +2,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BusinessData } from '@/types/business.types';
+import { BusinessData } from '@/business/business.types';
 
 type BusinessServicesProps = BusinessData['services'];
 

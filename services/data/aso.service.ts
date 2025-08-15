@@ -1,5 +1,5 @@
 import React from 'react';
-import { ServiceData } from "@/types/service.types";
+import { ServiceData } from "@/services/service.types";
 import { Companies } from '@/components/homepage/companies';
 import { ProvideServicesTo } from '@/components/services/provide-services-to';
 import { FaqSection } from '@/components/services/faq-section';

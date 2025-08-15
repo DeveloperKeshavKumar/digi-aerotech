@@ -2,7 +2,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { StatsProps } from '@/types/business.types';
+import { StatsProps } from '@/business/business.types';
 
 interface BusinessStatsProps {
   stats: StatsProps[];

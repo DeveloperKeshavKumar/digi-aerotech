@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Layout from '@/components/blogs/layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconEdit, IconSearch, IconTrash, IconCalendar, IconEye, IconFileText } from '@tabler/icons-react';
-import { BlogPost } from '@/types/blogs.types';
+import { BlogPost } from '@/app/api/blogs/blogs.types';
 
 export default function BlogList() {
     const [blogs, setBlogs] = useState<BlogPost[]>([]);

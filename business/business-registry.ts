@@ -14,7 +14,7 @@ import { startupsEntrepreneurs } from './data/startups-entrepreneurs';
 import { b2cServices } from './data/b2c-services';
 import { educationalInstitutions } from './data/educational-institutions';
 import { ecommerceBrands } from './data/e-commerce-brands';
-import { BusinessData } from '@/types/business.types';
+import { BusinessData } from '@/business/business.types';
 
 // Business Registry with typed data
 export const businessRegistry: Record<string, BusinessData> = {

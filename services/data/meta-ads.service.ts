@@ -1,6 +1,6 @@
 // services/meta-ads.service.ts
 import React from 'react';
-import { ServiceData } from '../../types/service.types';
+import { ServiceData } from '../service.types';
 import { ServiceIcons } from '../../constants/service-icons';
 import { Companies } from '@/components/homepage/companies';
 import { ProvideServicesTo } from '@/components/services/provide-services-to';

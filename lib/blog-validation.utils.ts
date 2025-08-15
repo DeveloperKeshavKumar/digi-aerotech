@@ -1,5 +1,5 @@
 // lib/blog-validation.utils.ts
-import { BlogPost } from "@/types/blogs.types";
+import { BlogPost } from "@/app/api/blogs/blogs.types";
 
 export function validateBlogPost(data: any): data is BlogPost {
     console.log('Validating blog post data:', JSON.stringify(data, null, 2));

@@ -3,7 +3,7 @@
 import { motion, inView } from 'motion/react';
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { BusinessData } from '@/types/business.types';
+import { BusinessData } from '@/business/business.types';
 import { IconChartArea, IconTrophy } from '@tabler/icons-react';
 
 type CTAButton = {
