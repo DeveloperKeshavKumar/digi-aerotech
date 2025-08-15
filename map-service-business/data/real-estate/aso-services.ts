@@ -1,24 +1,17 @@
-// src/map-service-business/data/real-estate/aso-services.ts
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { Companies } from '@/components/homepage/companies';
-import { ProvideServicesTo } from '@/components/services/provide-services-to';
-import { FaqSection } from '@/components/services/faq-section';
-import { WhoWeWorkWith } from '@/components/homepage/who-we-work-with';
-import { Struggles } from '@/components/homepage/struggles';
 import { ServiceIcons } from '@/constants/service-icons';
-import { ArrowRight } from 'lucide-react';
 
-const { IconDeviceMobile, IconStar, IconTrendingUp, IconUsers, IconTarget, IconStarsFilled, IconPhone, IconFreeRights, IconEdit, IconClockHour8, Briefcase, IconPackage, BarChart4, Settings2, IconRocket, IconChartBar, IconBrandApple, IconBrandGoogle, IconSearch, IconDownload } = ServiceIcons;
+const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
 export const map: ServiceBusinessMap = {
   service: 'aso-services',
   business: 'real-estate',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: 'variant1',
+    whyChooseUs: 'variant2',
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
     slug: 'aso-services',
@@ -31,229 +24,175 @@ export const map: ServiceBusinessMap = {
       testimonials: true,
       cta: true
     },
-    customSections: [
-      {
-        component: Companies,
-        position: 'beforeWhyChooseUs'
-      },
-      {
-        component: ProvideServicesTo,
-        position: "afterWhyChooseUs",
-        props: {
-          heading: 'We provide ASO Services for Real Estate Apps',
-          subheading: 'Real estate developers and property portals seeking maximum app downloads and user engagement'
-        }
-      },
-      {
-        component: FaqSection,
-        position: 'afterTestimonials',
-        props: {
-          faqs: [
-            {
-              id: '1',
-              question: 'How does ASO help real estate apps get more property inquiries?',
-              answer: 'ASO for real estate apps targets keywords like "property search", "flats near me", and "real estate apps" to ensure your app appears when users search for property-related solutions. This drives qualified leads directly to your listings.',
-              icon: React.createElement(IconSearch, { size: 24 })
-            },
-            {
-              id: '2',
-              question: 'Which keywords work best for real estate app optimization?',
-              answer: 'High-converting keywords include "property app", "real estate search", "apartments for rent", "buy property", location-specific terms like "Mumbai flats", and competitor brand names in your market.',
-              icon: React.createElement(IconTarget, { size: 24 })
-            },
-            // Add more real estate specific FAQs...
-          ],
-          heading: {
-            part1: 'Real Estate ASO ',
-            part2: 'FAQs'
-          }
-        }
-      },
-      {
-        component: Struggles,
-        props: {
-          title: [
-            { text: "Your Real Estate App is " },
-            { text: 'Lost Among Competitors?', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-            { text: " We Get You " },
-            { text: "Found & Downloaded!", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-          ],
-          subheadline: "Stop losing potential property buyers to competitors. Our real estate ASO gets your app discovered and downloaded by serious property seekers.",
-          painPoints: [
-            "Your property app doesn't show up for local searches",
-            "Low downloads despite having great listings",
-            "High customer acquisition costs for property leads",
-            "Competitors' apps always rank higher",
-            "Missing out on mobile property search traffic"
-          ],
-          solutionPoints: [
-            "Top 5 rankings for 'property app [city]' searches",
-            "300-500% increase in qualified property app downloads",
-            "Reduced cost per property lead acquisition",
-            "Beat property portal competitors in app rankings",
-            "Capture mobile-first property search traffic"
-          ],
-          cta: { icon: React.createElement(ArrowRight), text: "Get Real Estate ASO Audit", link: "/contact" }
-        },
-        position: 'beforeWhyChooseUs'
-      }
-    ],
+    customSections: [],
     hero: {
-      initial: "Need More ",
+      initial: "Need ",
       headlineKeywords: [
-        "Property Downloads?",
-        "Real Estate Visibility?",
-        "Property App Rankings?",
-        "Real Estate Growth?",
-        "Property Leads?",
-        "Real Estate Success?"
+        "Aso Services for Real Estate?",
+        "Better Results?",
+        "More Growth?",
+        "Success?",
+        "ROI?"
       ],
       brandLine: [
-        { text: "Real Estate App Store Optimization", gradient: false }
+        { text: "Aso Services for Real Estate", gradient: false }
       ],
-      subheadline: "Dominate property app searches and get your real estate app discovered by serious property buyers. Our specialized ASO for real estate increases downloads and drives qualified property inquiries.",
+      subheadline: "Specialized aso services strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Free Real Estate ASO Audit", link: "/contact" },
+        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
         { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconDownload, { size: 34 }),
-          title: "5x More",
-          description: "Property app downloads"
+          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          title: "300%+ Growth",
+          description: "Average improvement"
         },
         {
-          icon: React.createElement(IconTarget, { size: 34 }),
-          title: "Top 3 Rank",
-          description: "For property keywords"
-        },
-        {
-          icon: React.createElement(IconDeviceMobile, { size: 34 }),
-          title: "200+ Apps",
-          description: "Real estate apps optimized"
+          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          title: "500+ Clients",
+          description: "Real Estate served"
         },
         {
           icon: React.createElement(IconStarsFilled, { size: 34 }),
           title: "4.9/5 Rating",
-          description: "Real estate client satisfaction"
+          description: "Client satisfaction"
+        },
+        {
+          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          title: "24/7 Support",
+          description: "Always available"
         }
       ]
     },
     whyChooseUs: {
       title: [
         { text: 'Why Choose Our ', gradient: false },
-        { text: 'Real Estate ASO Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: '?', gradient: false }
+        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+        { text: ' for Real Estate?', gradient: false }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconSearch, { size: 24 }),
-          title: 'Property-Focused Keyword Research',
-          description: 'We target high-intent real estate keywords like "property near me", "flats for sale", and location-specific searches that property buyers actually use.'
+          icon: React.createElement(IconStarsFilled, { size: 24 }),
+          title: 'Industry Expertise',
+          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
         },
         {
-          icon: React.createElement(IconTarget, { size: 24 }),
-          title: 'Local Market Expertise',
-          description: 'Deep understanding of Indian real estate markets, local search patterns, and property buyer behavior across tier-1 and tier-2 cities.'
+          icon: React.createElement(IconStarsFilled, { size: 24 }),
+          title: 'Proven Results',
+          description: 'Track record of delivering measurable results for real estate businesses.'
         },
         {
-          icon: React.createElement(IconEdit, { size: 24 }),
-          title: 'Real Estate App Optimization',
-          description: 'Specialized optimization for property listing features, search filters, location-based functionality, and real estate-specific user journeys.'
+          icon: React.createElement(IconStarsFilled, { size: 24 }),
+          title: 'Customized Approach',
+          description: 'Tailored aso services strategies designed specifically for your business needs.'
         },
         {
-          icon: React.createElement(IconUsers, { size: 24 }),
-          title: 'Lead Quality Enhancement',
-          description: 'Focus on attracting serious property buyers and investors, not just downloads. Our ASO strategies improve lead quality and conversion rates.'
+          icon: React.createElement(IconStarsFilled, { size: 24 }),
+          title: 'Ongoing Support',
+          description: 'Continuous optimization and support to ensure long-term success and growth.'
         }
       ],
       cta: {
-        text: 'Optimize My Property App',
+        text: 'Get Started Today',
         link: '#contact',
         icon: React.createElement(IconRocket, { size: 24 })
       }
     },
     typesOfServices: {
-      title: 'Our Real Estate ASO Services',
-      subtitle: 'PROPERTY APP OPTIMIZATION',
-      description: 'Specialized App Store Optimization services designed specifically for real estate apps, property portals, and proptech solutions.',
+      title: 'Our Aso Services for Real Estate',
+      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
+      description: 'Comprehensive aso services solutions designed specifically for real estate businesses.',
       services: [
         {
           id: 1,
-          title: 'Property Keyword Research',
-          description: 'Target high-value real estate keywords like "property app", "real estate search", location-based terms, and buyer intent keywords.',
-          icon: React.createElement(IconSearch, { size: 24 })
+          title: 'Strategy & Planning',
+          description: 'Custom aso services strategy development tailored for real estate market requirements.',
+          icon: React.createElement(IconStarsFilled, { size: 24 })
         },
         {
           id: 2,
-          title: 'Real Estate App Metadata',
-          description: 'Optimize app titles, descriptions with property-focused keywords while highlighting key features like virtual tours, EMI calculators, etc.',
-          icon: React.createElement(IconEdit, { size: 24 })
+          title: 'Implementation & Execution',
+          description: 'Expert implementation of aso services campaigns optimized for real estate audience.',
+          icon: React.createElement(IconStarsFilled, { size: 24 })
+        },
+        {
+          id: 3,
+          title: 'Monitoring & Optimization',
+          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
+          icon: React.createElement(IconStarsFilled, { size: 24 })
         }
-        // Add more real estate specific services...
       ]
     },
     process: {
-      title: 'Our Real Estate ASO Process',
-      subtitle: 'PROPERTY APP GROWTH STRATEGY',
+      title: 'Our Aso Services Process for Real Estate',
+      subtitle: 'PROVEN METHODOLOGY',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A specialized approach to optimizing real estate apps for maximum visibility and property lead generation.',
+      description: 'A systematic approach to aso services that delivers measurable results for real estate businesses.',
       steps: [
         {
           id: 1,
-          title: 'Real Estate Market Analysis',
-          description: 'Analyze your local property market, competitor apps, and identify high-value real estate keywords and search opportunities.'
+          title: 'Discovery & Analysis',
+          description: 'Comprehensive analysis of your real estate business and market landscape.'
         },
         {
           id: 2,
-          title: 'Property Keyword Strategy',
-          description: 'Research location-specific, property-type, and buyer-intent keywords that your target property audience searches for.'
+          title: 'Strategy Development',
+          description: 'Custom aso services strategy tailored for your specific real estate goals.'
+        },
+        {
+          id: 3,
+          title: 'Implementation',
+          description: 'Expert execution of aso services campaigns with real estate focus.'
+        },
+        {
+          id: 4,
+          title: 'Optimization',
+          description: 'Continuous refinement and optimization based on real estate market feedback.'
         }
-        // Add more real estate specific steps...
       ]
     },
     techStack: {
-      title: 'Our Real Estate ASO Tools',
-      subtitle: 'PROPERTY APP OPTIMIZATION STACK',
-      description: 'Specialized tools and platforms for optimizing real estate apps and tracking property market performance.',
-      categories: ['ASO Tools', 'Real Estate Analytics', 'Property Research'],
+      title: 'Our Aso Services Technology Stack',
+      subtitle: 'ADVANCED TOOLS & PLATFORMS',
+      description: 'Industry-leading tools and platforms for aso services success.',
+      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
       technologies: [
-        { id: 1, name: 'App Annie', logo: '/tech/icons8-app-annie-96.png', category: 'ASO Tools' },
-        { id: 2, name: 'Property Analytics', logo: '/tech/property-analytics.png', category: 'Real Estate Analytics' }
-        // Add more real estate focused tools...
+        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
+        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Real Estate ASO ', gradient: false },
+        { text: 'Aso Services ', gradient: false },
         { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
-      description: 'Real estate apps achieving top rankings and explosive download growth through specialized property ASO',
+      description: 'Real results from real estate businesses that achieved remarkable growth.',
       testimonials: [
         {
           id: '1',
-          message: 'Our property portal app went from 5,000 to 80,000 downloads after their real estate ASO. We now rank #1 for "flats in Mumbai" and similar property searches. Property inquiries increased 400%!',
-          highlight: 'went from 5,000 to 80,000 downloads and 400% more inquiries',
+          message: 'The aso services services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
+          highlight: 'incredible growth and results beyond expectations',
           stars: 5,
-          name: 'Rahul Sharma',
-          designation: 'Founder',
-          company: 'PropertyHub India'
+          name: 'John Smith',
+          designation: 'CEO',
+          company: 'Real Estate Company'
         },
         {
           id: '2',
-          message: 'The ASO strategy transformed our real estate app visibility. We now get 10x more qualified property leads directly from app store searches. ROI has been phenomenal.',
-          highlight: '10x more qualified property leads',
+          message: 'Outstanding aso services expertise specifically for real estate. Highly recommend their services.',
+          highlight: 'outstanding expertise specifically for real estate',
           stars: 5,
-          name: 'Priya Patel',
-          designation: 'Marketing Head',
-          company: 'RealtyTech Solutions'
+          name: 'Jane Doe',
+          designation: 'Marketing Director',
+          company: 'Real Estate Solutions'
         }
       ]
     },
     cta: {
-      title: 'Ready to Dominate Real Estate App Rankings?',
-      subtitle: 'START YOUR PROPERTY ASO JOURNEY',
-      description: 'Get a comprehensive real estate ASO audit and custom strategy to skyrocket your property app downloads and generate quality real estate leads.'
+      title: 'Ready to Transform Your Real Estate Business?',
+      subtitle: 'START YOUR ASO SERVICES JOURNEY',
+      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your real estate business.'
     }
   }
 };
