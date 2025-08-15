@@ -115,6 +115,15 @@ const getOfficeEmailTemplate = (data: InquiryData): string => `
         <p style="margin: 5px 0 0; font-size: 0.9em; color: #333;">A new potential client has submitted an inquiry. Please follow up promptly.</p>
       </div>
       <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
+        <span style="font-weight: bold; color: #555;">Name:</span> ${data.name}
+      </div>
+      <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
+        <span style="font-weight: bold; color: #555;">Email:</span> ${data.email}
+      </div>
+      <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
+        <span style="font-weight: bold; color: #555;">Phone:</span> ${data.phone}
+      </div>
+      <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
         <span style="font-weight: bold; color: #555;">Service:</span> ${data.service}
       </div>
       <div style="margin: 15px 0; padding: 10px 15px; background: white; border-radius: 5px; border: 1px solid #eee;">
