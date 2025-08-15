@@ -11,11 +11,11 @@ const businesses = [
 ];
 
 const services = [
-    'aso-services', 'digital-marketing', 'ecommerce-marketing',
+    'aso-services', '360-digital-marketing', 'ecommerce-marketing',
     'gmb-services', 'google-ads', 'leads-generation', 'local-seo',
-    'marketing-automation', 'meta-ads', 'mobile-development',
+    'marketing-automation', 'meta-ads', 'mobile-apps-development',
     'other-ads', 'seo-services', 'social-media-marketing',
-    'web-development', 'website-maintenance'
+    'web-design-development', 'website-maintenance'
 ];
 
 // Base directory where your business folders exist

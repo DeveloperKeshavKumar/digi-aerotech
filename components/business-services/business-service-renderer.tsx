@@ -6,15 +6,17 @@ import { ServiceData } from '@/services/service.types';
 import { SectionVariants } from '@/map-service-business/map-service-business.types';
 import { pickVariant } from './variant-resolver';
 import { CTA } from '@/components/services/cta-section';
+import { Companies } from '../homepage/companies';
+import { FaqSection } from '../services/faq-section';
 
 interface BusinessServiceRendererProps {
   service: ServiceData;
   variants?: SectionVariants;
 }
 
-export default function BusinessServiceRenderer({ 
-  service, 
-  variants = {} 
+export default function BusinessServiceRenderer({
+  service,
+  variants = {}
 }: BusinessServiceRendererProps) {
   const { showSections = {}, customSections = [] } = service;
 
@@ -44,6 +46,7 @@ export default function BusinessServiceRenderer({
         <HeroComponent {...service.hero} />
       )}
 
+      <Companies />
       {renderCustomSections('afterHero')}
       {renderCustomSections('beforeWhyChooseUs')}
 
@@ -68,6 +71,7 @@ export default function BusinessServiceRenderer({
         <TestimonialsComponent {...service.testimonials} />
       )}
 
+      <FaqSection />
       {renderCustomSections('afterTestimonials')}
       {renderCustomSections('beforeCTA')}
 
