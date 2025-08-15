@@ -163,7 +163,7 @@ export function FaqSection({
     const rightColumnFaqs = faqs.filter((_, index) => index % 2 === 1);
 
     return (
-        <section className="py-16 sm:py-20 bg-gray-50 dark:bg-black border-b border-border dark:border-gray-700">
+        <section className="py-16 sm:py-20 w-full bg-gray-50 dark:bg-black border-b border-border dark:border-gray-700">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}

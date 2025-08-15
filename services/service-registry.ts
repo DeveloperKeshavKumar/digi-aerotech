@@ -1,19 +1,19 @@
 import { ServiceData } from '@/types/service.types';
-import { digitalMarketingService } from './digital-marketing.service';
-import { metaAdsService } from './meta-ads.service';
-import { googleAdsService } from './google-ads.service';
-import { otherAdsService } from './other-ads.service';
-import { localSeoService } from './local-seo.service';
-import { ecommerceMarketingService } from './ecommerce-marketing.service';
-import { webDevelopmentService } from './web-development.service';
-import { socialMediaMarketingService } from './social-media-marketing.service';
-import { seoService } from './seo.service';
-import { gmbService } from './gmb.service';
-import { asoService } from './aso.service';
-import { mobileDevelopmentService } from './mobile-development.service';
-import { websiteMaintenanceService } from './website-maintenance.service';
-import { leadGenerationService } from './lead-generation.service';
-import { marketingAutomationService } from './marketing-automation.service';
+import { digitalMarketingService } from './data/digital-marketing.service';
+import { metaAdsService } from './data/meta-ads.service';
+import { googleAdsService } from './data/google-ads.service';
+import { otherAdsService } from './data/other-ads.service';
+import { localSeoService } from './data/local-seo.service';
+import { ecommerceMarketingService } from './data/ecommerce-marketing.service';
+import { webDevelopmentService } from './data/web-development.service';
+import { socialMediaMarketingService } from './data/social-media-marketing.service';
+import { seoService } from './data/seo.service';
+import { gmbService } from './data/gmb.service';
+import { asoService } from './data/aso.service';
+import { mobileDevelopmentService } from './data/mobile-development.service';
+import { websiteMaintenanceService } from './data/website-maintenance.service';
+import { leadGenerationService } from './data/lead-generation.service';
+import { marketingAutomationService } from './data/marketing-automation.service';
 
 export const serviceRegistry: Record<string, ServiceData> = {
     '360-digital-marketing': digitalMarketingService,
