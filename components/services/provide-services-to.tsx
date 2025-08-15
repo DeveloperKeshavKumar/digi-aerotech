@@ -214,7 +214,7 @@ function ServiceCard({ service, index, parent, setIsPaused }: ServiceCardProps) 
         setIsPaused(false);
       }}
     >
-      <Link href={`/services/${parent}/for-${service.slug}`}>
+      <Link href={`/services/${parent}/${service.slug}`}>
         <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border border-gray-200 dark:border-gray-700">
           {/* Background Image */}
           <div
