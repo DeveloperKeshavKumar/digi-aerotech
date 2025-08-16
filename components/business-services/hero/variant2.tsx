@@ -1,6 +1,7 @@
 // src/components/business-services/hero/HeroVariant2.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Globe } from 'lucide-react';
 
 interface HeroProps {
   initial: string;
@@ -24,139 +25,117 @@ export default function HeroVariant2(props: HeroProps) {
   const renderBrandLine = () => {
     if (typeof props.brandLine === 'string') {
       return (
-        <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+        <div className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full mb-8">
+          <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full" />
           {props.brandLine}
-        </span>
+        </div>
       );
     }
-
-    return props.brandLine.map((part, idx) => (
-      <span 
-        key={idx}
-        className={part.gradient 
-          ? "bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent"
-          : ""
-        }
-      >
-        {part.text}
-      </span>
-    ));
+    return (
+      <div className="mb-8">
+        {props.brandLine.map((part, idx) => (
+          <span
+            key={idx}
+            className={`text-sm font-medium ${part.gradient
+              ? 'bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent'
+              : 'text-gray-700 dark:text-gray-300'
+              }`}
+          >
+            {part.text}
+          </span>
+        ))}
+      </div>
+    );
   };
 
   return (
-    <section className="bg-white dark:bg-black py-16 sm:py-20 lg:py-24 xl:py-32 border-b border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center max-w-7xl mx-auto">
-          
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-left"
-          >
-            {/* Brand Line */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-sm sm:text-base font-medium uppercase tracking-wider mb-4 sm:mb-6"
-            >
-              {renderBrandLine()}
-            </motion.div>
-            
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black dark:text-white leading-tight mb-6 sm:mb-8">
-              {props.initial}
-              <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
-                {props.headlineKeywords[0]}
-              </span>
-            </h1>
-            
-            {/* Subheadline */}
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 sm:mb-10 max-w-xl"
-            >
-              {props.subheadline}
-            </motion.p>
-            
-            {/* CTA Buttons */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6"
-            >
-              {props.ctaButtons.map((btn, idx) => (
-                <a
-                  key={idx}
-                  href={btn.link}
-                  className={`
-                    px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg
-                    transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95
-                    flex items-center justify-center gap-2
-                    ${btn.variant === 'secondary'
-                      ? 'bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-600'
-                      : 'bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white hover:shadow-xl hover:shadow-orange-500/25'
-                    }
-                  `}
-                >
-                  {btn.icon && <span className="text-lg">{btn.icon}</span>}
-                  {btn.text}
-                </a>
-              ))}
-            </motion.div>
-          </motion.div>
-          
-          {/* Right Stats */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 gap-6 sm:gap-8"
-          >
-            {props.stats.map((stat, idx) => (
-              <motion.div 
+    <section className="min-h-screen mt-12 bg-white dark:bg-black border-b border-border dark:border-gray-700">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-16">
+
+        {/* Main Content - Centered */}
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          {renderBrandLine()}
+
+          <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-gray-900 dark:text-white mb-8">
+            {props.initial}{' '}
+            <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+              {props.headlineKeywords[0]}
+            </span>
+          </h1>
+
+          <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-3xl mx-auto">
+            {props.subheadline}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {props.ctaButtons.map((btn, idx) => (
+              <a
                 key={idx}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.7 + (idx * 0.1) }}
-                className="relative group"
+                href={btn.link}
+                className={`inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 ${btn.variant === 'secondary'
+                  ? 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
+                  : 'bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white hover:shadow-lg hover:scale-105'
+                  }`}
               >
-                {/* Background Card */}
-                <div className="bg-white dark:bg-gray-900 border-2 border-gray-100 dark:border-gray-800 rounded-2xl p-6 sm:p-8 text-center h-full
-                             transition-all duration-300 group-hover:border-orange-200 dark:group-hover:border-orange-800
-                             group-hover:shadow-lg group-hover:shadow-orange-500/10">
-                  
-                  {/* Icon */}
-                  <div className="mb-4 text-3xl sm:text-4xl text-gray-700 dark:text-gray-300 
-                               transition-colors duration-300 group-hover:text-orange-500">
-                    {stat.icon}
-                  </div>
-                  
-                  {/* Title */}
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-2">
-                    {stat.title}
-                  </div>
-                  
-                  {/* Description */}
-                  <div className="text-sm sm:text-base text-gray-500 dark:text-gray-400 leading-relaxed">
-                    {stat.description}
-                  </div>
-                </div>
-                
-                {/* Hover Gradient Border Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 rounded-2xl opacity-0 
-                             group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm scale-105"></div>
+                {btn.icon && <span>{btn.icon}</span>}
+                {btn.text}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Stats Bar */}
+        <div className="border-t border-gray-200 dark:border-gray-800 pt-16">
+          {/* Mobile 2×2 Grid (shown on small screens) */}
+          <div className="grid grid-cols-2 gap-4 md:hidden">
+            {props.stats.slice(0, 4).map((stat, idx) => (
+              <motion.div
+                key={`mobile-${idx}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * idx }}
+                className="p-6 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
+              >
+                <StatBlock stat={stat} />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
+
+          {/* Desktop 1×4 Grid (shown on medium screens and up) */}
+          <div className="hidden md:grid grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {props.stats.map((stat, idx) => (
+              <motion.div
+                key={`desktop-${idx}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * idx }}
+                className="text-center border dark:border-gray-700 p-4 rounded-lg"
+              >
+                <StatBlock stat={stat} />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function StatBlock({ stat }: { stat: { title: string; description: string; icon?: React.ReactNode } }) {
+  return (
+    <div className="h-full flex flex-col">
+      {stat.icon ? <div className="mb-2">{stat.icon}</div> : <div className="mb-2">
+        <Globe />
+      </div>}
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+        {stat.title}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-400 mt-2">
+        {stat.description}
+      </p>
+      <div className="mt-auto pt-4 border-gray-100 dark:border-gray-800">
+        <div className="w-15 h-0.5 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 rounded-full animate-pulse" />
+      </div>
+    </div>
   );
 }

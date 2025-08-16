@@ -1,155 +1,155 @@
-// src/components/business-services/hero/HeroVariant3.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Globe, Icon } from 'lucide-react';
+import { IconStar } from '@tabler/icons-react';
 
 interface HeroProps {
   initial: string;
   headlineKeywords: string[];
-  brandLine: string | Array<{ text: string; gradient?: boolean; gradientClass?: string }>;
+  brandLine: string | Array<{ text: string; gradient?: boolean }>;
   subheadline: string;
-  ctaButtons: Array<{
-    icon?: React.ReactNode;
-    text: string;
-    link: string;
-    variant?: 'primary' | 'secondary';
-  }>;
-  stats: Array<{
-    icon?: React.ReactNode;
-    title: string;
-    description: string;
-  }>;
+  ctaButtons: Array<{ text: string; link: string; variant?: 'primary' | 'secondary', icon?: React.ReactNode }>;
+  stats: Array<{ title: string; description: string; icon?: React.ReactNode }>;
 }
 
 export default function HeroVariant3(props: HeroProps) {
-  const renderBrandLine = () => {
-    if (typeof props.brandLine === 'string') {
-      return (
-        <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
-          {props.brandLine}
-        </span>
-      );
-    }
-
-    return props.brandLine.map((part, idx) => (
-      <span 
-        key={idx}
-        className={part.gradient 
-          ? "bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent"
-          : ""
-        }
-      >
-        {part.text}
-      </span>
-    ));
-  };
+  // Your specified grid structure (Row ↓ | Col 0 | Col 1)
+  const statsLayout = [
+    { id: 0, row: 0, col: 1, rowSpan: 2 }, // Stat 1 (right, spans rows 0-1)
+    { id: 1, row: 1, col: 0, rowSpan: 2 }, // Stat 2 (left, spans rows 1-2)
+    { id: 2, row: 2, col: 1, rowSpan: 2 }, // Stat 3 (right, spans rows 2-3)
+    { id: 3, row: 3, col: 0, rowSpan: 2 }  // Stat 4 (left, spans rows 3-4)
+  ];
 
   return (
-    <section className="bg-white dark:bg-black min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24 border-b border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex flex-col justify-center">
-        
-        {/* Main Content Area */}
-        <div className="text-center max-w-5xl mx-auto mb-16 sm:mb-20 lg:mb-24">
-          
-          {/* Brand Line - Small at top */}
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-sm sm:text-base font-medium uppercase tracking-widest mb-8 sm:mb-12"
-          >
-            {renderBrandLine()}
-          </motion.div>
-          
-          {/* Large Centered Headline */}
-          <motion.h1 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-black dark:text-white leading-tight mb-8 sm:mb-12"
-          >
-            {props.initial}
-            <br />
-            <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent inline-block mt-2 sm:mt-4">
-              {props.headlineKeywords[0]}
-            </span>
-          </motion.h1>
-          
-          {/* Subheadline */}
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10 sm:mb-16"
-          >
-            {props.subheadline}
-          </motion.p>
-          
-          {/* CTA Buttons - Larger and centered */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8"
-          >
-            {props.ctaButtons.map((btn, idx) => (
-              <a
-                key={idx}
-                href={btn.link}
-                className={`
-                  w-full sm:w-auto px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl font-bold text-lg sm:text-xl
-                  transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95
-                  flex items-center justify-center gap-3
-                  ${btn.variant === 'secondary'
-                    ? 'bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
-                    : 'bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white hover:shadow-2xl hover:shadow-orange-500/30 border-2 border-transparent'
-                  }
-                `}
-              >
-                {btn.icon && <span className="text-xl sm:text-2xl">{btn.icon}</span>}
-                {btn.text}
-              </a>
-            ))}
-          </motion.div>
-        </div>
-        
-        {/* Bottom Stats Bar */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="border-t-2 border-gray-100 dark:border-gray-800 pt-12 sm:pt-16"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto">
-            {props.stats.map((stat, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 + (idx * 0.1) }}
-                className="text-center group"
-              >
-                {/* Icon with hover effect */}
-                <div className="mb-4 sm:mb-6 text-3xl sm:text-4xl lg:text-5xl text-gray-400 dark:text-gray-500 
-                             transition-all duration-300 group-hover:text-orange-500 group-hover:scale-110">
-                  {stat.icon}
-                </div>
-                
-                {/* Large stat number */}
-                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-black dark:text-white mb-2 sm:mb-3
-                             transition-colors duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r 
-                             group-hover:from-orange-500 group-hover:via-pink-500 group-hover:to-red-500 group-hover:bg-clip-text">
-                  {stat.title}
-                </div>
-                
-                {/* Description */}
-                <div className="text-sm sm:text-base text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
-                  {stat.description}
-                </div>
-              </motion.div>
-            ))}
+    <section className="bg-white min-h-screen dark:bg-black mt-12 border-b border-border dark:border-gray-700">
+      <div className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid lg:grid-cols-5 gap-12">
+          {/* Left Column (Text Content) - 3/5 width */}
+          <div className="lg:col-span-3 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-sm font-semibold leading-tight tracking-wider uppercase text-pink-600"
+            >
+              {typeof props.brandLine === 'string' ? (
+                props.brandLine
+              ) : (
+                <>
+                  {props.brandLine.map((part, i) => (
+                    <span
+                      key={i}
+                      className={part.gradient ? "bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent" : ""}
+                    >
+                      {part.text}
+                    </span>
+                  ))}
+                </>
+              )}
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white"
+            >
+              {props.initial}
+              <span className="block bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+                {props.headlineKeywords[0]}
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-gray-600 dark:text-gray-200"
+            >
+              {props.subheadline}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex gap-4 flex-col sm:flex-row"
+            >
+              {props.ctaButtons.map((btn, i) => (
+                <a
+                  key={i}
+                  href={btn.link}
+                  className={`px-6 py-4 rounded-lg font-medium transition-all flex items-center gap-3 ${btn.variant === 'secondary'
+                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
+                    : 'bg-gradient-to-r from-orange-600 to-pink-600 text-white hover:shadow-lg'
+                    }`}
+                >
+                  {btn.icon && <span className="mr-2">{btn.icon}</span>}
+                  {btn.text}
+                </a>
+              ))}
+            </motion.div>
           </div>
-        </motion.div>
+
+          {/* Right Column (Bento Grid) */}
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-2 gap-4 h-auto lg:grid-rows-5 lg:h-[550px] relative">
+              {/* Stats - Mobile 2x2 grid */}
+              {props.stats.slice(0, 4).map((stat, id) => (
+                <motion.div
+                  key={id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * id }}
+                  className={`p-6 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 md:hidden`}
+                >
+                  <StatBlock stat={stat} />
+                </motion.div>
+              ))}
+
+              {/* Stats - Desktop bento grid (hidden on mobile) */}
+              {statsLayout.map(({ id, row, col, rowSpan }) => (
+                <motion.div
+                  key={`desktop-${id}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * id }}
+                  className={` p-6 rounded-xl bg-white dark:bg-gray-950  border border-gray-200 dark:border-gray-800 hidden md:block col-start-${col + 1} row-start-${row + 1} row-span-${rowSpan} `}
+                >
+                  <StatBlock stat={props.stats[id]} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+  );
+}
+
+function StatBlock({ stat }: { stat: { title: string; description: string; icon?: React.ReactNode } }) {
+  return (
+    <div className="h-full flex flex-col">
+      <div className="flex items-center gap-3 mb-3">
+        {stat.icon ? (
+          <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+            {stat.icon}
+          </div>
+        ) : (
+          <div className="flex-shrink-0 w-8 h-8 flex items-center justify-cente">
+            <Globe className="w-5 h-5" />
+          </div>
+        )}
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+          {stat.title}
+        </h3>
+      </div>
+      <p className="text-gray-600 dark:text-gray-400 mt-2">
+        {stat.description}
+      </p>
+      <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+        <div className="w-15 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500" />
+      </div>
+    </div>
   );
 }
