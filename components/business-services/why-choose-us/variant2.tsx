@@ -1,9 +1,18 @@
-// src/components/business-services/why-choose-us/WhyChooseUsVariant3.tsx
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { IconLoader } from '@tabler/icons-react';
+
+const ContactForm = dynamic(
+  () => import('@/components/contact-form').then(mod => mod.ContactForm),
+  {
+    loading: () => <IconLoader className='text-4xl' />,
+    ssr: false
+  }
+);
 
 interface WhyChooseUsProps {
-  title: string | Array<{ text: string; gradient?: boolean; gradientClass?: string }>;
+  title: string | Array<{ text: string; gradient?: boolean }>;
   trustPoints: Array<{
     icon: React.ReactNode;
     title: string;
@@ -11,190 +20,192 @@ interface WhyChooseUsProps {
   }>;
   cta: {
     text: string;
-    link: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
   };
 }
 
-export default function WhyChooseUsVariant3(props: WhyChooseUsProps) {
-  const renderTitle = () => {
-    if (typeof props.title === 'string') {
-      return props.title;
-    }
-
-    return props.title.map((part, idx) => (
-      <span 
-        key={idx}
-        className={part.gradient 
-          ? "bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent"
-          : ""
-        }
-      >
-        {part.text}
-      </span>
-    ));
-  };
+export default function WhyChooseUsVariant2({ title, trustPoints, cta }: WhyChooseUsProps) {
+  const [showContact, setShowContact] = React.useState(false);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gray-50 dark:bg-gray-950 relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-black relative overflow-hidden transition-colors duration-300 border-b border-border dark:border-gray-700">
+      {/* Background Decorations */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full opacity-10 blur-3xl dark:opacity-5" />
+      <div className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full opacity-5 blur-3xl dark:opacity-3" />
       
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30 dark:opacity-20">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-br from-orange-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-pink-500/10 to-red-500/10 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          
-          {/* Section Header with Side Title */}
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 mb-16 sm:mb-20 lg:mb-24 items-start">
-            
-            {/* Side Title */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="lg:col-span-2"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-black dark:text-white leading-tight">
-                {renderTitle()}
-              </h2>
-            </motion.div>
-            
-            {/* Intro Text */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="lg:col-span-3 lg:pt-4"
-            >
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                Discover what sets us apart and why thousands of businesses trust us with their success.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Timeline Layout */}
-          <div className="relative">
-            
-            {/* Central Timeline Line (Hidden on mobile) */}
-            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 via-pink-500 to-red-500 rounded-full"></div>
-            
-            {/* Trust Points */}
-            <div className="space-y-12 sm:space-y-16 lg:space-y-20">
-              {props.trustPoints.map((point, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: idx * 0.2,
-                    ease: "easeOut" 
-                  }}
-                  viewport={{ once: true }}
-                  className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                    idx % 2 === 1 ? 'lg:text-right' : ''
-                  }`}
-                >
-                  
-                  {/* Timeline Node (Hidden on mobile) */}
-                  <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                    <div className="w-6 h-6 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 rounded-full shadow-lg">
-                      <div className="w-full h-full bg-white dark:bg-gray-950 rounded-full scale-50 flex items-center justify-center">
-                        <div className="w-2 h-2 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content Card */}
-                  <div className={`${idx % 2 === 1 ? 'lg:col-start-2' : 'lg:col-start-1'} 
-                                ${idx % 2 === 1 ? 'lg:pl-8' : 'lg:pr-8'}`}>
-                    
-                    <div className="group bg-white dark:bg-gray-900 rounded-3xl p-6 sm:p-8 lg:p-10 
-                                 shadow-lg border border-gray-200 dark:border-gray-800
-                                 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-300/20 
-                                 dark:hover:shadow-gray-800/40 hover:-translate-y-2
-                                 hover:border-orange-200 dark:hover:border-orange-800">
-                      
-                      {/* Number Badge */}
-                      <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 
-                                    bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 
-                                    rounded-2xl text-white font-bold text-lg sm:text-xl mb-6 
-                                    ${idx % 2 === 1 ? 'lg:ml-auto' : ''}`}>
-                        {String(idx + 1).padStart(2, '0')}
-                      </div>
-                      
-                      {/* Icon */}
-                      <div className={`text-4xl sm:text-5xl lg:text-6xl text-gray-400 dark:text-gray-500 mb-6
-                                    transition-all duration-300 group-hover:text-orange-500 group-hover:scale-110
-                                    ${idx % 2 === 1 ? 'lg:text-right' : ''}`}>
-                        {point.icon}
-                      </div>
-                      
-                      {/* Title */}
-                      <h3 className={`text-xl sm:text-2xl lg:text-3xl font-bold text-black dark:text-white mb-4 
-                                    transition-colors duration-300 group-hover:text-transparent 
-                                    group-hover:bg-gradient-to-r group-hover:from-orange-500 
-                                    group-hover:via-pink-500 group-hover:to-red-500 group-hover:bg-clip-text
-                                    ${idx % 2 === 1 ? 'lg:text-right' : ''}`}>
-                        {point.title}
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className={`text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed
-                                   ${idx % 2 === 1 ? 'lg:text-right' : ''}`}>
-                        {point.description}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Icon (Hidden on mobile) */}
-                  <div className={`hidden lg:block ${idx % 2 === 1 ? 'lg:col-start-1' : 'lg:col-start-2'}`}>
-                    <div className={`flex ${idx % 2 === 1 ? 'justify-end' : 'justify-start'}`}>
-                      <div className="text-8xl sm:text-9xl lg:text-[10rem] text-gray-100 dark:text-gray-800 opacity-50 
-                                   group-hover:opacity-100 transition-opacity duration-300">
-                        {point.icon}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom CTA */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+      <div className="container px-4 mx-auto max-w-6xl relative z-10">
+        {/* Split Title Animation */}
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mt-20 sm:mt-24 lg:mt-32"
+            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
           >
-            <div className="relative inline-block">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 rounded-3xl blur-2xl opacity-20 scale-110"></div>
-              
-              {/* CTA Button */}
-              <a
-                href={props.cta.link}
-                className="relative inline-flex items-center gap-4 px-12 sm:px-16 py-6 sm:py-8 
-                         bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 
-                         text-white font-bold text-xl sm:text-2xl rounded-3xl 
-                         transition-all duration-300 hover:scale-105 hover:shadow-2xl 
-                         hover:shadow-orange-500/40 active:scale-95
-                         border-2 border-transparent hover:border-white/20"
-              >
-                {props.cta.icon && <span className="text-2xl sm:text-3xl">{props.cta.icon}</span>}
-                {props.cta.text}
-              </a>
-            </div>
-          </motion.div>
+            {typeof title === 'string' ? (
+              title.split(' ').map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 50, rotateX: -90 }}
+                  whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="inline-block mr-4"
+                >
+                  {word}
+                </motion.span>
+              ))
+            ) : (
+              title.map((part, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: i * 0.2 }}
+                  viewport={{ once: true }}
+                  className={part.gradient ? "bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent" : "text-gray-900 dark:text-white"}
+                >
+                  {part.text}
+                </motion.span>
+              ))
+            )}
+          </motion.h2>
         </div>
+
+        {/* Equal Height Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          {trustPoints.map((point, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 100, rotate: 5 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 0.8, delay: i * 0.15, type: "spring", damping: 20 }}
+              viewport={{ once: true }}
+              className={`relative group ${i === 1 ? 'md:mt-12' : ''} ${i === 2 ? 'lg:mt-24' : ''}`}
+            >
+              <motion.div
+                whileHover={{ y: -10, rotateY: 5 }}
+                transition={{ duration: 0.3 }}
+                className="relative p-8 bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col"
+              >
+                {/* Floating Background Element */}
+                <motion.div
+                  animate={{ 
+                    rotate: [0, 180, 360],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 20, 
+                    repeat: Infinity, 
+                    ease: "linear" 
+                  }}
+                  className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full opacity-5 dark:opacity-3"
+                />
+                
+                <div className="relative z-10 flex-1 flex flex-col">
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.8, delay: i * 0.15 + 0.3, type: "spring" }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.1, rotate: 10 }}
+                    className="inline-flex items-center justify-center w-20 h-20 mb-6 text-3xl text-white bg-gradient-to-tr from-orange-500 via-pink-500 to-red-500 rounded-2xl shadow-lg"
+                  >
+                    {point.icon}
+                  </motion.div>
+                  
+                  <motion.h3
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: i * 0.15 + 0.5 }}
+                    viewport={{ once: true }}
+                    className="text-2xl font-bold mb-4 text-gray-900 dark:text-white"
+                  >
+                    {point.title}
+                  </motion.h3>
+                  
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: i * 0.15 + 0.7 }}
+                    viewport={{ once: true }}
+                    className="text-gray-700 dark:text-gray-200 leading-relaxed flex-1"
+                  >
+                    {point.description}
+                  </motion.p>
+                </div>
+
+                {/* Hover Glow Effect */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 rounded-3xl opacity-0 blur-xl -z-10 group-hover:opacity-5 transition-opacity duration-300"
+                />
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Magnetic CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <motion.button
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 25px 50px rgba(251, 146, 60, 0.4)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setShowContact(true)}
+            className="relative group inline-flex items-center px-8 py-4 text-xl font-bold text-white bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 rounded-lg shadow-2xl overflow-hidden"
+          >
+            <motion.div
+              animate={{ x: [-5, 5, -5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 bg-gradient-to-r from-red-500 via-pink-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <span className="relative z-10 flex items-center">
+              {cta.icon && (
+                <motion.span
+                  animate={{ rotate: [0, -45] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="mr-4 text-3xl"
+                >
+                  {cta.icon}
+                </motion.span>
+              )}
+              {cta.text}
+            </span>
+          </motion.button>
+        </motion.div>
       </div>
+
+      <AnimatePresence>
+        {showContact && (
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(8px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 dark:bg-opacity-70 z-50"
+            onClick={() => setShowContact(false)}
+          >
+            <motion.div
+              initial={{ scale: 0, rotate: -180, opacity: 0 }}
+              animate={{ scale: 1, rotate: 0, opacity: 1 }}
+              exit={{ scale: 0, rotate: 180, opacity: 0 }}
+              transition={{ type: "spring", damping: 15, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ContactForm />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

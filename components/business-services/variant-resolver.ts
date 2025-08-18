@@ -10,8 +10,8 @@ const Hero = {
 
 const WhyChooseUs = {
   variant1: dynamic(() => import('./why-choose-us/variant1')),
-  variant2: dynamic(() => import('./why-choose-us/variant1')), // fallback to variant1 for now
-  variant3: dynamic(() => import('./why-choose-us/variant1'))  // fallback to variant1 for now
+  variant2: dynamic(() => import('./why-choose-us/variant2')),
+  variant3: dynamic(() => import('./why-choose-us/variant3'))
 };
 
 const Process = {
