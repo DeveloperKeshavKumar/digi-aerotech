@@ -15,9 +15,9 @@ const WhyChooseUs = {
 };
 
 const Process = {
-  variant1: dynamic(() => import('./process/variant2')),
-  variant2: dynamic(() => import('./process/variant2')), // fallback to variant1 for now
-  variant3: dynamic(() => import('./process/variant2'))  // fallback to variant1 for now
+  variant1: dynamic(() => import('./process/variant1')),
+  variant2: dynamic(() => import('./process/variant2')),
+  variant3: dynamic(() => import('./process/variant3'))
 };
 
 const Testimonials = {
