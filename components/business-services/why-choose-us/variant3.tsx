@@ -29,7 +29,7 @@ export default function WhyChooseUsVariant3({ title, trustPoints, cta }: WhyChoo
 
   // Remove fixed height calculation and let content determine card height
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-950 overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-black overflow-hidden border-b border-border dark:border-gray-700">
       <div className="container px-4 mx-auto max-w-7xl">
         {/* Animated Title */}
         <motion.div

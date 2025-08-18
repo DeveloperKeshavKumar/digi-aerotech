@@ -28,7 +28,7 @@ export default function WhyChooseUsVariant1({ title, trustPoints, cta }: WhyChoo
   const [showContact, setShowContact] = React.useState(false);
 
   return (
-    <section className="py-20 bg-white dark:bg-black">
+    <section className="py-20 bg-white dark:bg-black border-b border-border dark:border-gray-700">
       <div className="container px-4 mx-auto max-w-6xl">
         {/* Header Section */}
         <motion.div
