@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import { IconArrowRight } from '@tabler/icons-react';
 
 interface ServiceItem {
     id: number;
@@ -57,7 +58,7 @@ export const ServiceList: React.FC<ServiceListProps> = ({
                                     <motion.img
                                         src={point.image}
                                         alt={point.title}
-                                        className="w-full h-40 object-cover rounded-lg bg-white outline"
+                                        className="w-full h-40 object-contain rounded-lg bg-gray-50 outline"
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ duration: 0.5, delay: 0.1 }}
@@ -69,8 +70,9 @@ export const ServiceList: React.FC<ServiceListProps> = ({
                                 {point.title}
                             </h3>
                             <p className="text-black dark:text-white">{point.description}</p>
-                            <a href={point.href || (point.url ? `/services/${point.url}` : '#')} className='mt-4 inline-block bg-gradient-to-r from-orange-400 via-pink-500 to-red-500 text-white py-2 px-4 rounded '>
+                            <a href={point.href || (point.url ? `/services/${point.url}` : '#')} className=' group mt-4 inline-flex font-semibold bg-gradient-to-r from-red-500 via-pink-500 to-orange-500 text-white py-3 px-5 rounded-lg '>
                                 Know More
+                                <span className='group-hover:translate-x-1 transition-transform'><IconArrowRight /></span>
                             </a>
                         </div>
                     ))}

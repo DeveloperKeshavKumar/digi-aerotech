@@ -26,105 +26,105 @@ export default function ServicesPage() {
       id: 1,
       title: "360 Digital Marketing",
       description: "End-to-end digital marketing solutions covering all channels for holistic brand growth and maximum ROI.",
-      image: "/services/digital-marketing.png",
+      image: "/services/1.png",
       url: "360-digital-marketing"
     },
     {
       id: 2,
       title: "Meta Ads",
       description: "Targeted advertising campaigns across Facebook, Instagram, and WhatsApp to reach your ideal audience.",
-      image: "/services/meta-ads.png",
+      image: "/services/2.png",
       url: "meta-ads"
     },
     {
       id: 3,
       title: "Google Ads",
       description: "Performance-driven Google Search, Display, and YouTube ads that convert visitors into customers.",
-      image: "/services/google-ads.png",
+      image: "/services/3.png",
       url: "google-ads"
     },
     {
       id: 4,
       title: "Other Ads",
       description: "Specialized advertising on LinkedIn, Twitter, Snapchat, and emerging platforms to diversify your reach.",
-      image: "/services/social-ads.webp",
+      image: "/services/4.png",
       url: "other-ads"
     },
     {
       id: 5,
       title: "Local SEO",
       description: "Dominate local search results and Google Maps to drive foot traffic and local online visibility.",
-      image: "/services/local-seo.png",
+      image: "/services/5.png",
       url: "local-seo"
     },
     {
       id: 6,
       title: "Ecommerce Marketing",
       description: "Boost online store sales with conversion-optimized product listings, ads, and remarketing strategies.",
-      image: "/services/ecommerce.jpeg",
+      image: "/services/6.png",
       url: "ecommerce-marketing"
     },
     {
       id: 7,
       title: "Web Design & Development",
       description: "Custom, high-performance websites that blend stunning design with seamless functionality.",
-      image: "/services/web-dev.png",
+      image: "/services/7.png",
       url: "web-design-development"
     },
     {
       id: 8,
       title: "Social Media Marketing",
       description: "Strategic content and engagement plans to build brand loyalty and organic growth across platforms.",
-      image: "/services/social-media.jpeg",
+      image: "/services/8.png",
       url: "social-media-marketing"
     },
     {
       id: 9,
       title: "SEO Services",
       description: "Sustainable organic growth through technical optimization, content strategy, and authoritative backlinks.",
-      image: "/services/seo.png",
+      image: "/services/9.png",
       url: "seo-services"
     },
     {
       id: 10,
       title: "GMB Services",
       description: "Optimize and manage your Google Business Profile to enhance local discoverability and credibility.",
-      image: "/services/gmb.webp",
+      image: "/services/1.png",
       url: "gmb-services"
     },
     {
       id: 11,
       title: "ASO Services",
       description: "Increase app store visibility and downloads through keyword optimization and conversion-focused listings.",
-      image: "/services/aso.jpeg",
+      image: "/services/2.png",
       url: "aso-services"
     },
     {
       id: 12,
       title: "Mobile App Development",
       description: "Build intuitive, scalable mobile applications for iOS and Android with cutting-edge technologies.",
-      image: "/services/mobile-app.jpg",
+      image: "/services/3.png",
       url: "mobile-apps-development"
     },
     {
       id: 13,
       title: "Website Maintenance",
       description: "Ongoing updates, security patches, and performance tuning to keep your site running flawlessly.",
-      image: "/services/maintenance.jpg",
+      image: "/services/4.png",
       url: "website-maintenance"
     },
     {
       id: 14,
       title: "Leads Generation",
       description: "Data-driven campaigns to capture high-quality leads and fill your sales pipeline consistently.",
-      image: "/services/leads.jpg",
+      image: "/services/5.png",
       url: "leads-generation"
     },
     {
       id: 15,
       title: "Marketing Automation",
       description: "Streamline workflows with automated email sequences, chatbots, and CRM integrations for scalable growth.",
-      image: "/services/automation.jpg",
+      image: "/services/6.png",
       url: "marketing-automation"
     }
   ];

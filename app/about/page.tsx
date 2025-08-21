@@ -243,7 +243,7 @@ export default function AboutPage() {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-lg mx-auto"
         >
-          <ContactForm className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800" />
+          <ContactForm />
         </motion.div>
       </section>
     </main>
