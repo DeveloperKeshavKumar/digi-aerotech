@@ -37,7 +37,7 @@ export const ecommerceBrands: BusinessData = {
   image: '/business/ecommerce-brands-digital-marketing.webp',
   slug: 'ecommerce-brands-digital-marketing',
   name: 'E-commerce Brands Digital Marketing Agency',
-  
+
   hero: {
     name: 'E-commerce Marketing Experts',
     initial: 'Scale Your Online Store with',
@@ -68,6 +68,7 @@ export const ecommerceBrands: BusinessData = {
   services: {
     title: 'Complete E-commerce Digital Marketing Services',
     subtitle: 'Everything Your Online Store Needs to Maximize Sales & Growth',
+    businessName: 'e-commerce-brands',
     description: 'Comprehensive digital marketing solutions designed specifically for e-commerce brands, online retailers, D2C companies, and digital marketplaces. Our conversion-focused strategies help e-commerce businesses increase online sales, optimize customer acquisition costs, and build profitable brand communities.',
     items: [
       {

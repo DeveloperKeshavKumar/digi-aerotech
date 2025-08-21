@@ -74,6 +74,7 @@ export const interiorDesigners: BusinessData = {
     services: {
         title: 'Complete Interior Design Digital Marketing Services',
         subtitle: 'Everything Your Design Business Needs to Attract Premium Clients',
+        businessName: 'interior-designers',
         description: 'Comprehensive digital marketing solutions designed specifically for interior designers, architects, home decor specialists, and design studios. Our visual-focused strategies help design professionals showcase their creativity, attract high-end clients, and build prestigious design brands.',
         items: [
             {

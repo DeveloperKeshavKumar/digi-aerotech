@@ -36,7 +36,7 @@ export const fashionBrands: BusinessData = {
   image: '/business/fashion-brand-digital-marketing.webp',
   slug: 'fashion-brand-digital-marketing',
   name: 'Fashion Brand Digital Marketing Agency',
-  
+
   hero: {
     name: 'Fashion Brand Marketing Experts',
     initial: 'Grow Your Fashion Brand with',
@@ -45,7 +45,7 @@ export const fashionBrands: BusinessData = {
       'Brand Awareness Strategies',
       'E-commerce Sales Growth'
     ],
-    brandLine:'Get 6X More Sales & Build a Loyal Fashion Community',
+    brandLine: 'Get 6X More Sales & Build a Loyal Fashion Community',
     subheadline: 'Our proven fashion marketing strategies help clothing brands, designers, and fashion retailers in India increase online sales by 450%, build brand awareness, and create viral social media presence through targeted digital campaigns.',
     ctaButtons: [
       {
@@ -67,6 +67,7 @@ export const fashionBrands: BusinessData = {
   services: {
     title: 'Complete Fashion Brand Digital Marketing Services',
     subtitle: 'Everything Your Fashion Business Needs to Dominate the Style Industry',
+    businessName: 'fashion-brands',
     description: 'Comprehensive digital marketing solutions designed specifically for fashion brands, clothing designers, apparel retailers, and style influencers. Our data-driven strategies help fashion businesses increase brand visibility, drive e-commerce sales, and build passionate communities of fashion enthusiasts.',
     items: [
       {

@@ -64,6 +64,7 @@ export const hotelResorts: BusinessData = {
   services: {
     title: 'Complete Hotel & Resort Digital Marketing Services',
     subtitle: 'Everything Your Hospitality Business Needs to Maximize Direct Bookings',
+    businessName: "hotel-resorts",
     description: 'Comprehensive digital marketing solutions designed specifically for hotels, resorts, boutique properties, and hospitality brands.',
     items: [
       {

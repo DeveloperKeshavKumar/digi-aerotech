@@ -37,7 +37,7 @@ export const startupsEntrepreneurs: BusinessData = {
   image: '/business/startups-entrepreneurs-digital-marketing.webp',
   slug: 'startups-entrepreneurs-digital-marketing',
   name: 'Startups & Entrepreneurs Digital Marketing Agency',
-  
+
   hero: {
     name: 'Startup & Entrepreneur Marketing Experts',
     initial: 'Launch & Scale Your Startup with',
@@ -68,6 +68,7 @@ export const startupsEntrepreneurs: BusinessData = {
   services: {
     title: 'Complete Startup & Entrepreneur Digital Marketing Services',
     subtitle: 'Everything Your Startup Needs to Disrupt Markets & Scale Fast',
+    businessName: 'startups-entrepreneurs',
     description: 'Comprehensive digital marketing solutions designed specifically for startups, entrepreneurs, tech companies, and innovative businesses. Our growth-hacking strategies help startups build brand awareness, attract investors, acquire customers, and scale rapidly in competitive markets.',
     items: [
       {

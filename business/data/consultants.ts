@@ -68,6 +68,7 @@ export const consultants: BusinessData = {
     services: {
         title: 'Complete Consultant & Coach Digital Marketing Services',
         subtitle: 'Everything Your Consulting Practice Needs to Attract Premium Clients',
+        businessName: 'consultants',
         description: 'Comprehensive digital marketing solutions designed specifically for consultants, coaches, advisors, and thought leaders. Our data-driven strategies help consulting professionals build authority, generate high-value leads, and scale their expertise into profitable businesses.',
         items: [
             {

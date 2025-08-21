@@ -12,5 +12,5 @@ export default function BusinessPage() {
         notFound();
     }
 
-    return <BusinessRenderer businessData={businessData} />;
+    return <BusinessRenderer businessData={{ ...businessData, }} />;
 }

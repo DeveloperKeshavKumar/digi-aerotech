@@ -10,7 +10,8 @@ export function BusinessServices({
   title,
   subtitle,
   description,
-  items
+  items,
+  businessName
 }: BusinessServicesProps) {
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-950 border-b border-border dark:border-gray-800">
@@ -65,7 +66,7 @@ export function BusinessServices({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((service, index) => (
             <motion.a
-              href={`/services${service.url || service.link || '#'}`}
+              href={`/services${service.url || service.link || '#'}/${businessName || ''}`}
               key={service.id || index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

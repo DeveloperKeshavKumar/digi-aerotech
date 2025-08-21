@@ -74,6 +74,7 @@ export const pharmaCompanies: BusinessData = {
     services: {
         title: 'Complete Pharmaceutical Digital Marketing Services',
         subtitle: 'Everything Your Pharma Company Needs for Compliant Growth',
+        businessName: 'pharma-companies',
         description: 'Comprehensive digital marketing solutions designed specifically for pharmaceutical companies, medical device manufacturers, healthcare brands, and life sciences organizations. Our compliant strategies help pharma businesses reach healthcare professionals, build patient awareness, and drive prescription growth.',
         items: [
             {

@@ -16,7 +16,7 @@ export const realEstate: BusinessData = {
       'Proven Lead Generation Strategies',
       'Premium Property Promotion'
     ],
-    brandLine:'Get 3-5X More Qualified Buyer Leads for Your Listings',
+    brandLine: 'Get 3-5X More Qualified Buyer Leads for Your Listings',
     subheadline: 'Our data-driven real estate marketing solutions help agents, brokers, and developers in India sell properties 47% faster at 12-18% higher prices through targeted digital campaigns.',
     ctaButtons: [
       {
@@ -38,6 +38,7 @@ export const realEstate: BusinessData = {
   services: {
     title: 'Complete Real Estate Digital Marketing Services',
     subtitle: 'Everything Your Real Estate Business Needs to Dominate Online',
+    businessName: 'real-estate',
     description: 'Comprehensive digital marketing solutions designed specifically for real estate professionals. Our proven strategies help realtors, property developers, and brokers generate 300% more qualified leads and sell properties faster in today\'s competitive market.',
     items: [
       {

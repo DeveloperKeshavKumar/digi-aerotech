@@ -82,6 +82,7 @@ export interface BusinessData {
             link?: string;
             url?: string;
         }[];
+        businessName?: string;
     };
 
     // Stats section

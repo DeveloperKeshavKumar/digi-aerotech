@@ -68,6 +68,7 @@ export const travelTourism: BusinessData = {
   services: {
     title: 'Complete Travel & Tourism Digital Marketing Services',
     subtitle: 'Everything Your Travel Business Needs to Inspire More Travelers',
+    businessName: 'travel-tourism',
     description: 'Comprehensive digital marketing solutions designed specifically for travel agencies, tour operators, hotels, destination marketers, and tourism boards. Our wanderlust-inspiring strategies help travel businesses attract adventure seekers, build travel communities, and drive bookings worldwide.',
     items: [
       {

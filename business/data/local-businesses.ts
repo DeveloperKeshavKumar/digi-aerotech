@@ -74,6 +74,7 @@ export const localBusinesses: BusinessData = {
     services: {
         title: 'Complete Local Business Digital Marketing Services',
         subtitle: 'Everything Your Community Business Needs to Attract More Local Customers',
+        businessName: 'local-businesses',
         description: 'Comprehensive digital marketing solutions designed specifically for local businesses, neighborhood shops, service providers, and community-focused enterprises. Our data-driven strategies help local businesses increase visibility, attract nearby customers, and build strong community presence.',
         items: [
             {

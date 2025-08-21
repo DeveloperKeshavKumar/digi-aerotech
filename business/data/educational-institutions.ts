@@ -68,6 +68,7 @@ export const educationalInstitutions: BusinessData = {
     services: {
         title: 'Complete Educational Institution Digital Marketing Services',
         subtitle: 'Everything Your Educational Institution Needs to Attract More Students',
+        businessName: 'educational-institutions',
         description: 'Comprehensive digital marketing solutions designed specifically for schools, colleges, universities, coaching centers, and educational institutes. Our enrollment-focused strategies help educational institutions increase student admissions, build academic reputation, and create thriving learning communities.',
         items: [
             {

@@ -66,6 +66,7 @@ export const restaurantsCafes: BusinessData = {
   services: {
     title: 'Complete Restaurant & Cafe Digital Marketing Services',
     subtitle: 'Everything Your Food Business Needs to Attract More Customers',
+    businessName: "restaurants-cafes",
     description: 'Comprehensive digital marketing solutions designed specifically for restaurants, cafes, food trucks, and culinary businesses. Our data-driven strategies help food service businesses increase dine-in customers, boost delivery orders, and build lasting customer relationships.',
     items: [
       {

@@ -36,7 +36,7 @@ export const b2bServices: BusinessData = {
   image: '/business/b2b-services-digital-marketing.webp',
   slug: 'b2b-services-digital-marketing',
   name: 'B2B Services Digital Marketing Agency',
-  
+
   hero: {
     name: 'B2B Services Marketing Experts',
     initial: 'Scale Your B2B Business with',
@@ -67,6 +67,7 @@ export const b2bServices: BusinessData = {
   services: {
     title: 'Complete B2B Services Digital Marketing Solutions',
     subtitle: 'Everything Your Business Services Company Needs to Dominate Your Industry',
+    businessName: 'b2b-services',
     description: 'Comprehensive digital marketing solutions designed specifically for B2B service providers, consultancies, agencies, and professional services. Our data-driven strategies help B2B businesses generate high-quality leads, establish thought leadership, and accelerate business growth.',
     items: [
       {
@@ -288,5 +289,5 @@ export const b2bServices: BusinessData = {
     cta: true,
   },
 
- 
+
 };

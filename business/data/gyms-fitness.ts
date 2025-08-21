@@ -63,6 +63,7 @@ export const gymsFitness: BusinessData = {
   services: {
     title: 'Complete Gym & Fitness Digital Marketing Services',
     subtitle: 'Everything Your Fitness Business Needs to Dominate Locally',
+    businessName: "gyms-fitness",
     description: 'Comprehensive digital marketing solutions designed specifically for gyms, fitness studios, personal trainers, and wellness centers. Our data-driven strategies help fitness businesses acquire more members, fill classes, and build lasting customer relationships.',
     items: [
       {

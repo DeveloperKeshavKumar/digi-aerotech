@@ -37,7 +37,7 @@ export const b2cServices: BusinessData = {
   image: '/business/b2c-services-digital-marketing.webp',
   slug: 'b2c-services-digital-marketing',
   name: 'B2C Services Digital Marketing Agency',
-  
+
   hero: {
     name: 'B2C Services Marketing Experts',
     initial: 'Grow Your Consumer Service Business with',
@@ -68,6 +68,7 @@ export const b2cServices: BusinessData = {
   services: {
     title: 'Complete B2C Services Digital Marketing Solutions',
     subtitle: 'Everything Your Consumer Service Business Needs to Attract More Customers',
+    businessName: 'b2c-services',
     description: 'Comprehensive digital marketing solutions designed specifically for B2C service providers, home services, personal care businesses, and consumer-focused enterprises. Our customer-centric strategies help B2C businesses attract quality customers, build brand trust, and create loyal customer communities.',
     items: [
       {

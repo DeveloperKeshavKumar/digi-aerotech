@@ -37,7 +37,7 @@ export const doctorsClinics: BusinessData = {
   image: '/business/doctors-clinics-digital-marketing.webp',
   slug: 'doctors-clinics-digital-marketing',
   name: 'Doctors & Clinics Digital Marketing Agency',
-  
+
   hero: {
     name: 'Healthcare Marketing Experts',
     initial: 'Grow Your Medical Practice with',
@@ -68,6 +68,7 @@ export const doctorsClinics: BusinessData = {
   services: {
     title: 'Complete Medical & Healthcare Digital Marketing Services',
     subtitle: 'Everything Your Medical Practice Needs to Attract More Patients',
+    businessName: 'doctors-clinics',
     description: 'Comprehensive digital marketing solutions designed specifically for doctors, clinics, hospitals, and healthcare professionals. Our patient-focused strategies help medical practices increase visibility, attract quality patients, build trust, and grow their practice through ethical and compliant healthcare marketing[1][2].',
     items: [
       {
