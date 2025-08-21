@@ -16,7 +16,7 @@ export const digitalMarketingService: ServiceData = {
         whyChooseUs: true,
         typesOfServices: true,
         process: true,
-        techStack: true,
+        techStack: false,
         testimonials: true,
         cta: true
     },
@@ -98,7 +98,6 @@ export const digitalMarketingService: ServiceData = {
             props: {
                 title: "Who we work for",
                 description: "",
-                className: "relative -skew-y-3 hover:scale-112 transition-all duration-500 ease-in-out shadow-lg rounded-2xl border-t border-border dark:border-gray-800",
             },
             position: 'beforeProcess'
         },

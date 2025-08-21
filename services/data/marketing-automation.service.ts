@@ -18,7 +18,7 @@ export const marketingAutomationService: ServiceData = {
         whyChooseUs: true,
         typesOfServices: true,
         process: true,
-        techStack: true,
+        techStack: false,
         testimonials: true,
         cta: true
     },

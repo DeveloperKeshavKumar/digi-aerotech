@@ -50,10 +50,10 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
             <div className="mx-auto">
                 {/* Hero Section */}
                 {showSections.hero !== false && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }} 
-                        whileInView={{ opacity: 1, y: 0 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
                         <Hero {...serviceData.hero} />
@@ -65,10 +65,10 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
 
                 {/* Why Choose Us Section */}
                 {showSections.whyChooseUs !== false && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }} 
-                        whileInView={{ opacity: 1, y: 0 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         <WhyChooseUs {...serviceData.whyChooseUs} />
@@ -80,10 +80,10 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
 
                 {/* Types of Services Section */}
                 {showSections.typesOfServices !== false && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }} 
-                        whileInView={{ opacity: 1, y: 0 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <TypesOfServices {...serviceData.typesOfServices} />
@@ -95,10 +95,10 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
 
                 {/* Process Section */}
                 {showSections.process !== false && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }} 
-                        whileInView={{ opacity: 1, y: 0 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
                         <Process {...serviceData.process} />
@@ -110,10 +110,10 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
 
                 {/* Tech Stack Section */}
                 {showSections.techStack !== false && serviceData.techStack && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }} 
-                        whileInView={{ opacity: 1, y: 0 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         <TechStack {...serviceData.techStack} />
@@ -125,11 +125,12 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
 
                 {/* Testimonials Section */}
                 {showSections.testimonials !== false && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }} 
-                        whileInView={{ opacity: 1, y: 0 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.5 }}
+                        className='border-t border-border dark:border-gray-700'
                     >
                         <Testimonials {...serviceData.testimonials} />
                     </motion.div>
@@ -140,10 +141,10 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
 
                 {/* CTA Section */}
                 {showSections.cta !== false && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }} 
-                        whileInView={{ opacity: 1, y: 0 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
                         <CTA {...serviceData.cta} />

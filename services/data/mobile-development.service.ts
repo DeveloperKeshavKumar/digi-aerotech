@@ -172,7 +172,7 @@ export const mobileDevelopmentService: ServiceData = {
         title: 'Our Mobile Tech Stack',
         subtitle: 'TOOLS & FRAMEWORKS',
         description: 'Industry-leading technologies for robust app development.',
-        categories: ['Native', 'Cross-Platform', 'Tools'],
+        categories: ['Native', 'Cross-Platform'],
         technologies: [
             { id: 1, name: 'Swift', logo: '/tech/icons8-swift-96.png', category: 'Native' },
             { id: 2, name: 'Kotlin', logo: '/tech/icons8-kotlin-96.png', category: 'Native' },
