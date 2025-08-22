@@ -1,6 +1,9 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
+import { IconAdjustments, IconAdjustmentsAlt, IconArrowRight, IconBrain, IconBriefcase, IconBulb, IconChartBar, IconClock, IconEyeCog, IconGenderAgender, IconRefresh, IconStar, IconTarget, IconTrendingUp } from '@tabler/icons-react';
+import { Struggles } from '@/components/homepage/struggles';
+import { Cog } from 'lucide-react';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -9,8 +12,8 @@ export const map: ServiceBusinessMap = {
   business: 'b2b-services',
   variants: {
     hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
+    whyChooseUs: 'variant1',
+    process: 'variant3',
     testimonials: 'variant2'
   },
   data: {
@@ -24,85 +27,121 @@ export const map: ServiceBusinessMap = {
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "The B2B Growth ", gradient: false },
+            { text: "Pain Points We Solve", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+          ],
+          subheadline: "Marketing for B2B services can be challenging without the right approach.",
+          painPoints: [
+            "B2B website that looks like a brochure, not a sales funnel",
+            "Competitors capturing your clients with smarter digital systems",
+            "Spending on ads but getting zero decision-maker leads",
+            "Cold calling & LinkedIn spam with no conversions",
+            "Long sales cycles with leads dropping off midway"
+          ],
+          solutionPoints: [
+            "Conversion-focused websites designed as effective sales funnels",
+            "Digital systems that outsmart competitors and retain clients",
+            "Targeted ad campaigns focused on decision-makers for quality lead generation",
+            "Strategic outreach replacing spam with meaningful LinkedIn engagement",
+            "Lead nurturing workflows that shorten sales cycles and improve conversions"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Fix My B2B Growth Now"
+          }
+        }
+      }
+    ],
     hero: {
       initial: "Need ",
       headlineKeywords: [
-        "360 Digital Marketing for B2b Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "360 Digital Marketing for B2B Services?"
       ],
       brandLine: [
-        { text: "360 Digital Marketing for B2b Services", gradient: false }
+        { text: "🚀 B2B is Our Cup of Tea – Let’s Generate High-Quality Leads", gradient: false }
       ],
-      subheadline: "Specialized 360 digital marketing strategies designed specifically for b2b services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "Specialized 360 digital marketing strategies designed specifically for B2B services. Drive growth and achieve measurable results with our targeted approach.",
       ctaButtons: [
         { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
         { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          icon: React.createElement(IconTrendingUp, { size: 34 }),
           title: "300%+ Growth",
-          description: "Average improvement"
+          description: "Average leads generated"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2b Services served"
+          icon: React.createElement(IconBriefcase, { size: 34 }),
+          title: "15+ Clients",
+          description: "B2B Services served"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          icon: React.createElement(IconStar, { size: 34 }),
           title: "4.9/5 Rating",
           description: "Client satisfaction"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          icon: React.createElement(IconClock, { size: 34 }),
           title: "24/7 Support",
           description: "Always available"
         }
       ]
+
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: '360 Digital Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2b Services?', gradient: false }
+        { text: 'Why Digi Aerotech is the ', gradient: false },
+        { text: '#1 Choice for B2B Companies', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2b services market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrain, { size: 24 }),
+          title: 'Deep B2B Expertise',
+          description: 'We understand B2B buying psychology and create campaigns that speak directly to decision-makers.'
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2b services businesses.'
+          icon: React.createElement(IconTarget, { size: 24 }),
+          title: 'Quality Leads Over Vanity Metrics',
+          description: 'Focus on leads with intent and budget, shortening sales cycles and maximizing conversions.'
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored 360 digital marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBriefcase, { size: 24 }),
+          title: 'Proven Industry Results',
+          description: 'Successful campaigns across manufacturing, SaaS, healthcare, real estate, and more.'
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconChartBar, { size: 24 }),
+          title: 'Transparent Reporting',
+          description: 'Clear ROI reports so you know exactly where your budget goes and the value it generates.'
+        },
+        {
+          icon: React.createElement(Cog, { size: 24 }),
+          title: 'Cutting-Edge Technology',
+          description: 'We leverage the latest marketing tools and automation to maximize efficiency and results.'
+        },
+        {
+          icon: React.createElement(IconAdjustments, { size: 24 }),
+          title: 'Flexible, Scalable Plans',
+          description: 'Custom strategies that grow with your business — from startups to enterprise level.'
         }
       ],
       cta: {
-        text: 'Get Started Today',
+        text: 'Partner with Us Today',
         link: '#contact',
         icon: React.createElement(IconRocket, { size: 24 })
       }
     },
     typesOfServices: {
-      title: 'Our 360 Digital Marketing for B2b Services',
+      title: 'Our 360 Digital Marketing for B2B Services',
       subtitle: 'B2B SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive 360 digital marketing solutions designed specifically for b2b services businesses.',
+      description: 'Comprehensive 360 digital marketing solutions designed specifically for B2B services businesses.',
       services: [
         {
           id: 1,
@@ -125,41 +164,41 @@ export const map: ServiceBusinessMap = {
       ]
     },
     process: {
-      title: 'Our 360 Digital Marketing Process for B2b Services',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our B2B Growth Workflow',
+      subtitle: 'STEP-BY-STEP VISUAL PROCESS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to 360 digital marketing that delivers measurable results for b2b services businesses.',
+      description: 'A clear, proven workflow designed to drive consistent growth for B2B businesses.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2b services business and market landscape.'
+          title: 'Market Research',
+          description: 'In-depth analysis of your industry, competitors, and target audience to identify opportunities.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom 360 digital marketing strategy tailored for your specific b2b services goals.'
+          title: 'Strategy Design',
+          description: 'Develop tailored marketing strategies that align with your business goals and customer needs.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of 360 digital marketing campaigns with b2b services focus.'
+          title: 'Funnel Creation',
+          description: 'Build optimized sales funnels that guide prospects smoothly from awareness to conversion.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2b services market feedback.'
+          title: 'Campaign Execution',
+          description: 'Launch targeted campaigns across channels to attract qualified leads.'
+        },
+        {
+          id: 5,
+          title: 'Lead Qualification',
+          description: 'Evaluate and score leads to focus sales efforts on the most promising prospects.'
+        },
+        {
+          id: 6,
+          title: 'Sales-Ready Delivery',
+          description: 'Deliver well-qualified leads to your sales team, ready to close deals efficiently.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our 360 Digital Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for 360 digital marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {

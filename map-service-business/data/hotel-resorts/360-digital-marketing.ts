@@ -1,6 +1,8 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
+import { IconAd, IconArrowRight, IconBrandFacebook, IconClock, IconCurrencyDollar, IconDeviceLaptop, IconEyeDollar, IconHotelService, IconLifebuoy, IconMapPin, IconSearch, IconSocial, IconUsers } from '@tabler/icons-react';
+import { Struggles } from '@/components/homepage/struggles';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -24,33 +26,59 @@ export const map: ServiceBusinessMap = {
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        props: {
+          title: [
+            { text: "The Pain Points ", gradient: false },
+            { text: "Hotels Face", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+          ],
+          subheadline: "Running a hotel or resort is tough. Digital marketing makes it even harder.",
+          painPoints: [
+            "Empty rooms even in peak season",
+            "Social media with no engagement or conversions",
+            "Ads draining budget without direct bookings",
+            "No visibility on Google Maps when search \"resorts near me\"",
+            "Dependence on OTAs like Booking.com & MakeMyTrip (losing 20–30% commissions)",
+          ],
+          solutionPoints: [
+            " Higher visibility on Google & Maps",
+            " Increase in direct website bookings (reduce OTA dependency)",
+            " Social media that actually drives reservations",
+            " Ads that convert lookers into bookers",
+            " Brand presence that builds trust with travelers"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Grow My Bookings Now"
+          }
+        },
+        position: 'beforeWhyChooseUs'
+      }
+    ],
     hero: {
       initial: "Need ",
       headlineKeywords: [
-        "360 Digital Marketing for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "360° Digital Marketing for Hotels & Resorts?",
       ],
       brandLine: [
-        { text: "360 Digital Marketing for Hotel Resorts", gradient: false }
+        { text: "🚀 Fill Your Rooms, Not Just Your Website", gradient: false }
       ],
-      subheadline: "Specialized 360 digital marketing strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "From Google to Instagram – we put your resort in front of travelers searching right now. More visibility, more bookings, more revenue.",
       ctaButtons: [
         { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
         { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconCurrencyDollar, { size: 34 }),
+          title: "300%+ Average",
+          description: "Leads generated"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
+          icon: React.createElement(IconHotelService, { size: 34 }),
+          title: "40+ Clients",
           description: "Hotel Resorts served"
         },
         {
@@ -59,7 +87,7 @@ export const map: ServiceBusinessMap = {
           description: "Client satisfaction"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          icon: React.createElement(IconLifebuoy, { size: 34 }),
           title: "24/7 Support",
           description: "Always available"
         }
@@ -67,37 +95,47 @@ export const map: ServiceBusinessMap = {
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: '360 Digital Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
-      ],
-      trustPoints: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored 360 digital marketing strategies designed specifically for your business needs.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
-      ],
-      cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
+    { text: "Our ", gradient: false },
+    { text: "360° Digital Marketing Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+    { text: " for Hotels & Resorts", gradient: false }
+  ],
+  trustPoints: [
+    {
+      icon: React.createElement(IconMapPin, { size: 32 }),
+      title: "Google My Business (GMB) Optimization",
+      description: "Rank higher on Google Maps for “Hotels near [Location]”. Drive direct calls & directions from guests. Weekly posting & review management."
+    },
+    {
+      icon: React.createElement(IconAd, { size: 32 }),
+      title: "Google Ads (Search + Display + Hotel Ads)",
+      description: "Capture travelers actively searching. Target seasonal travelers & high-value guests. Optimize campaigns for maximum ROI."
+    },
+    {
+      icon: React.createElement(IconBrandFacebook, { size: 32 }),
+      title: "Meta Ads (Facebook + Instagram)",
+      description: "Showcase your resort with stunning visuals & reels. Target couples, families, and group travelers. Retarget website visitors for more bookings."
+    },
+    {
+      icon: React.createElement(IconSearch, { size: 32 }),
+      title: "SEO for Hotels & Resorts",
+      description: "Rank for “Best Resorts in [City]” & “Luxury Hotels near me”. Content marketing (blogs, destination guides). Long-term organic traffic growth."
+    },
+    {
+      icon: React.createElement(IconSocial, { size: 32 }),
+      title: "Social Media Management",
+      description: "Engaging posts, reels & campaigns tailored for hotels. Seasonal offers & festive campaigns. Build a loyal online community."
+    },
+    {
+      icon: React.createElement(IconDeviceLaptop, { size: 32 }),
+      title: "Website Development & Optimization",
+      description: "High-converting, mobile-friendly websites. Direct booking integration (save OTA commission). SEO-optimized for travel keywords."
+    },
+  ],
+  cta: {
+    text: "Get a Free Strategy Session",
+    link: "#contact",
+    icon: React.createElement(IconArrowRight, { size: 20 })
+  }
     },
     typesOfServices: {
       title: 'Our 360 Digital Marketing for Hotel Resorts',
@@ -190,9 +228,9 @@ export const map: ServiceBusinessMap = {
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR 360 DIGITAL MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our 360 digital marketing can drive growth for your hotel resorts business.'
+      title: 'Ready to Transform Your Hotel & Resorts Business?',
+      subtitle: 'Stop depending on OTAs. Start filling rooms directly.',
+      description: 'With Digi Aerotech’s 360° Digital Marketing for Hotels & Resorts, you get a proven growth system that works.'
     }
   }
 };

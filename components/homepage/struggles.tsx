@@ -151,7 +151,7 @@ export const Struggles: React.FC<StrugglesProps> = ({
           className="" 
           onClick={(e) => e.stopPropagation()}
               >
-          <ContactForm />
+          <ContactForm className='bg-background rounded-2xl' />
               </div>
             </div>
           )}

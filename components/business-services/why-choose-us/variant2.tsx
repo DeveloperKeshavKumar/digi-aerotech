@@ -73,7 +73,7 @@ export default function WhyChooseUsVariant2({ title, trustPoints, cta }: WhyChoo
           </motion.h2>
         </div>
 
-        {/* Equal Height Grid */}
+        {/* Equal Height Grid with Step Layout for 6 Items */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {trustPoints.map((point, i) => (
             <motion.div
@@ -82,7 +82,14 @@ export default function WhyChooseUsVariant2({ title, trustPoints, cta }: WhyChoo
               whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               transition={{ duration: 0.8, delay: i * 0.15, type: "spring", damping: 20 }}
               viewport={{ once: true }}
-              className={`relative group ${i === 1 ? 'md:mt-12' : ''} ${i === 2 ? 'lg:mt-24' : ''}`}
+              // Step pattern for 6 items (2 rows of 3)
+              className={`relative group ${
+                i === 1 ? 'md:mt-12' : ''} ${
+                i === 2 ? 'lg:mt-24' : ''} ${
+                i === 3 ? 'md:mt-0 lg:mt-12' : ''} ${
+                i === 4 ? 'md:mt-12 lg:mt-24' : ''} ${
+                i === 5 ? 'lg:mt-36' : ''}`
+              }
             >
               <motion.div
                 whileHover={{ y: -10, rotateY: 5 }}
@@ -191,7 +198,7 @@ export default function WhyChooseUsVariant2({ title, trustPoints, cta }: WhyChoo
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
             animate={{ opacity: 1, backdropFilter: "blur(8px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 dark:bg-opacity-70 z-50"
+            className="fixed inset-0 flex items-center justify-center bg-opacity-60 dark:bg-opacity-70 z-50"
             onClick={() => setShowContact(false)}
           >
             <motion.div
@@ -201,7 +208,7 @@ export default function WhyChooseUsVariant2({ title, trustPoints, cta }: WhyChoo
               transition={{ type: "spring", damping: 15, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <ContactForm />
+              <ContactForm className='bg-background rounded-2xl' />
             </motion.div>
           </motion.div>
         )}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
+import { Struggles } from '@/components/homepage/struggles';
+import { IconAd2, IconArrowRight, IconBrandMeta, IconDeviceLaptop, IconMapPin2, IconSearch, IconSocial } from '@tabler/icons-react';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -24,20 +26,51 @@ export const map: ServiceBusinessMap = {
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        props: {
+          title: [
+            { text: "The Problems ", gradient: false },
+            { text: "Gym Owners Face", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+            { text: " with Marketing", gradient: false }
+          ],
+          subheadline: "Running a gym is hard. Growing it online is even harder.",
+          painPoints: [
+            "Competing with bigger gyms & fitness chains",
+            "Losing members to local competitors",
+            "Dependence on word-of-mouth referrals only",
+            "Ads with zero ROI & wasted budget",
+            "Social media with followers but no new members"
+          ],
+          solutionPoints: [
+            " Dominate Google & Maps searches",
+            " Run ads that actually bring leads, not just clicks",
+            " Social media content that drives gym signups",
+            " High-converting websites & landing pages",
+            " Maximize ROI from every marketing rupee spent"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Grow My Membership Now"
+          }
+        },
+        position: 'beforeWhyChooseUs'
+      }
+    ],
     hero: {
       initial: "Need ",
       headlineKeywords: [
-        "360 Digital Marketing for Gyms Fitness?",
+        "360 Digital Marketing for Gyms & Fitness?",
         "Better Results?",
         "More Growth?",
         "Success?",
         "ROI?"
       ],
       brandLine: [
-        { text: "360 Digital Marketing for Gyms Fitness", gradient: false }
+        { text: "🔥 More Members. More Revenue. Less Empty Treadmills.", gradient: false }
       ],
-      subheadline: "Specialized 360 digital marketing strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "With Digi Aerotech’s 360° Digital Marketing for Gyms & Fitness Studios, you’ll dominate local searches, fill your classes, and turn your gym into the #1 choice in town.",
       ctaButtons: [
         { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
         { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
@@ -67,36 +100,46 @@ export const map: ServiceBusinessMap = {
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: '360 Digital Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Our ", gradient: false },
+        { text: "360° Digital Marketing Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+        { text: " for Gyms & Fitness Studios", gradient: false }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin2, { size: 32 }),
+          title: "Google My Business (GMB) Optimization",
+          description: "Rank for “Gym near me” in your city. Showcase reviews, class schedules, and offers. Weekly posting and review management to boost local trust."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(IconAd2, { size: 32 }),
+          title: "Google Ads (Search + Display + Local Ads)",
+          description: "Target people searching for gyms in your area. Use geo-targeting to reach nearby neighborhoods. Drive real leads with calls, directions, and memberships."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored 360 digital marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBrandMeta, { size: 32 }),
+          title: "Meta Ads (Facebook + Instagram)",
+          description: "Promote membership offers and transformation stories. Reach fitness-focused audiences. Retarget website visitors for better conversion rates."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconSocial, { size: 32 }),
+          title: "Social Media Management",
+          description: "Engaging daily/weekly content – workout tips, reels, offers. Build authority in your niche. Seasonal and festival-based campaigns to drive engagement."
+        },
+        {
+          icon: React.createElement(IconDeviceLaptop, { size: 32 }),
+          title: "Website & Landing Page Development",
+          description: "Mobile-first websites with lead forms and membership integration. Built for conversions, optimized for speed and user experience."
+        },
+        {
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "SEO for Gyms & Fitness Centers",
+          description: "Rank for local fitness terms like “Best gym in [city]”. Blog content on nutrition, workouts, and success stories to drive long-term organic growth."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get a Free Strategy Session",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
     typesOfServices: {
@@ -152,16 +195,6 @@ export const map: ServiceBusinessMap = {
         }
       ]
     },
-    techStack: {
-      title: 'Our 360 Digital Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for 360 digital marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
-    },
     testimonials: {
       title: [
         { text: '360 Digital Marketing ', gradient: false },
@@ -190,9 +223,9 @@ export const map: ServiceBusinessMap = {
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR 360 DIGITAL MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our 360 digital marketing can drive growth for your gyms fitness business.'
+      title: 'Ready to Transform Your Gyms & Fitness Business?',
+      subtitle: 'Stop Competing. Start Leading.',
+      description: 'With Digi Aerotech’s 360° Digital Marketing for Gyms & Fitness Studios, you get a proven growth system that fills your gym with paying members.'
     }
   }
 };

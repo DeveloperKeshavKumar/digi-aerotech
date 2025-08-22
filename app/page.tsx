@@ -194,33 +194,33 @@ export default function Homepage() {
         trustPoints={[
           {
             icon: <IconChartLine size={40} />,
-            title: "Proven ROI Focus",
-            description: "We track revenue-impacting metrics, not just vanity numbers"
+            title: "Proven Results",
+            description: "We don’t just promise, we deliver. From startups to established brands, Digi Aerotech has helped businesses achieve higher visibility, more leads, and measurable growth."
           },
           {
             icon: <IconWorld size={40} />,
-            title: "Global Expertise",
-            description: "International experience with local market understanding"
+            title: "Tailored Digital Strategies",
+            description: "Every business is unique. Our team creates customized digital marketing solutions that match your goals, industry, and target audience for maximum ROI."
           },
           {
             icon: <IconReportAnalytics size={40} />,
-            title: "Transparent Reporting",
-            description: "Real-time dashboards showing exactly how your budget performs"
+            title: "End-to-End Services",
+            description: "From Google Ads, Meta Ads, SEO, and Social Media Management to Website Development and GMB Optimization — we cover it all under one roof."
           },
           {
             icon: <IconUsers size={40} />,
-            title: "Dedicated Team",
-            description: "In-house experts (no freelancers) working on your account"
+            title: "Trusted by Brands & SMEs",
+            description: "Whether it’s a top brand or a local business, clients trust us for consistency, transparency, and result-driven campaigns that scale with their growth."
           },
           {
             icon: <IconPuzzle size={40} />,
-            title: "Custom Strategies",
-            description: "Tailored solutions matching your unique business goals"
+            title: "Data-Driven Marketing",
+            description: "Our strategies are powered by in-depth analytics and performance tracking, ensuring your business gets the best value for every marketing investment."
           },
           {
             icon: <IconTool size={40} />,
-            title: "Full-Service Approach",
-            description: "All digital marketing services under one roof"
+            title: "Expert Team & Support",
+            description: "With a skilled team of marketers, designers, and strategists, Digi Aerotech provides 24/7 support and expertise that businesses rely on for long-term success."
           }
         ]}
         cta={{

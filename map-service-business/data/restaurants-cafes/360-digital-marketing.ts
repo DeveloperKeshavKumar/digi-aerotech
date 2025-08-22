@@ -1,6 +1,9 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
+import { Struggles } from '@/components/homepage/struggles';
+import { IconAdCircle, IconArrowRight, IconBrandInstagram, IconDeviceDesktop, IconMapPinBolt, IconSocial } from '@tabler/icons-react';
+import { SearchCheckIcon } from 'lucide-react';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -24,20 +27,51 @@ export const map: ServiceBusinessMap = {
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "The Pain Points ", gradient: false },
+            { text: "Restaurant Owners Face", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+          ],
+          subheadline: "Running a restaurant is tough. Marketing it online is even harder.",
+          painPoints: [
+            "Empty tables during peak hours",
+            "Poor visibility on Google for 'Best restaurant near me'",
+            "Social media with no engagement or new orders",
+            "Ads that drain money without driving reservations",
+            "No system to retain and bring back loyal customers",
+          ],
+          solutionPoints: [
+            " Dominate Google & Maps for restaurant/café searches",
+            " Run ads that actually bring in orders and bookings",
+            " Social media content that foodies love and engage with",
+            " Reduce reliance on delivery apps with direct order systems",
+            " Build a strong brand presence that creates loyal diners"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Grow My Restaurant Now"
+          }
+        }
+
+      }
+    ],
     hero: {
       initial: "Need ",
       headlineKeywords: [
-        "360 Digital Marketing for Restaurants Cafes?",
+        "360 Digital Marketing for Restaurants & Cafes?",
         "Better Results?",
         "More Growth?",
         "Success?",
         "ROI?"
       ],
       brandLine: [
-        { text: "360 Digital Marketing for Restaurants Cafes", gradient: false }
+        { text: "🔥 More Tables Booked. More Online Orders. More Loyal Customers.", gradient: false }
       ],
-      subheadline: "Specialized 360 digital marketing strategies designed specifically for restaurants cafes. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "With Digi Aerotech’s 360° Digital Marketing for Restaurants & Cafes, you’ll dominate Google, Instagram & Maps — and turn foodies into loyal customers.",
       ctaButtons: [
         { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
         { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
@@ -67,36 +101,46 @@ export const map: ServiceBusinessMap = {
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: '360 Digital Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Restaurants Cafes?', gradient: false }
+        { text: "Our ", gradient: false },
+        { text: "360° Digital Marketing Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+        { text: " for Restaurants & Cafes", gradient: false }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of restaurants cafes market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPinBolt, { size: 32 }),
+          title: "Google My Business (GMB) Optimization",
+          description: "Rank higher when people search “Restaurants near me”. Showcase your menu, reviews, photos, and offers. Weekly posts and reputation management."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for restaurants cafes businesses.'
+          icon: React.createElement(IconAdCircle, { size: 32 }),
+          title: "Google Ads (Search + Display + Local)",
+          description: "Target people actively searching for places to eat nearby. Drive table reservations and takeaway orders with geo-targeted ad campaigns."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored 360 digital marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBrandInstagram, { size: 32 }),
+          title: "Meta Ads (Facebook + Instagram)",
+          description: "Promote food festivals, seasonal menus, and offers using eye-catching reels and stories. Retarget past visitors to increase repeat orders."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconSocial, { size: 32 }),
+          title: "Social Media Management",
+          description: "Showcase your food, chefs, ambience, and happy customers. Daily/weekly content and weekend or festival campaigns to boost footfall and orders."
+        },
+        {
+          icon: React.createElement(IconDeviceDesktop, { size: 32 }),
+          title: "Website & Landing Page Development",
+          description: "Mobile-optimized websites with online menus, direct ordering, reservations, and payment gateway integration. Built to convert visitors into diners."
+        },
+        {
+          icon: React.createElement(SearchCheckIcon, { size: 32 }),
+          title: "SEO for Restaurants & Cafes",
+          description: "Rank for location-based searches like “Italian restaurant in [city]” or “Café near [location]”. Blog content and food guides build long-term organic traffic."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get a Free Strategy Session",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
     typesOfServices: {
@@ -152,16 +196,6 @@ export const map: ServiceBusinessMap = {
         }
       ]
     },
-    techStack: {
-      title: 'Our 360 Digital Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for 360 digital marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
-    },
     testimonials: {
       title: [
         { text: '360 Digital Marketing ', gradient: false },
@@ -191,8 +225,8 @@ export const map: ServiceBusinessMap = {
     },
     cta: {
       title: 'Ready to Transform Your Restaurants Cafes Business?',
-      subtitle: 'START YOUR 360 DIGITAL MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our 360 digital marketing can drive growth for your restaurants cafes business.'
+      subtitle: 'Stop Paying Commissions to Apps. Start Building Direct Customers.',
+      description: 'With Digi Aerotech’s 360° Digital Marketing for Restaurants & Cafes, your tables stay full and your orders keep rolling in.'
     }
   }
 };

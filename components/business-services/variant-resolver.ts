@@ -21,8 +21,8 @@ const Process = {
 };
 
 const Testimonials = {
-  variant1: dynamic(() => import('./testimonials/variant3')),
-  variant2: dynamic(() => import('./testimonials/variant3')),
+  variant1: dynamic(() => import('./testimonials/variant1')),
+  variant2: dynamic(() => import('./testimonials/variant2')),
   variant3: dynamic(() => import('./testimonials/variant3'))
 };
 
