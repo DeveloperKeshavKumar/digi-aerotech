@@ -26,27 +26,27 @@ export const WhoWeWorkWith = ({
   industries = [
     {
       name: "Restaurants & Cafes",
-      url: "/restaurants",
+      url: "/restaurants-cafes",
       icon: <Utensils className="w-5 h-5" />
     },
     {
       name: "Hotels & Resorts",
-      url: "/hotels",
+      url: "/hotel-resorts",
       icon: <Hotel className="w-5 h-5" />
     },
     {
       name: "Doctors & Clinics",
-      url: "/clinics",
+      url: "/doctors-clinics",
       icon: <Stethoscope className="w-5 h-5" />
     },
     {
       name: "Gyms & Fitness",
-      url: "/gyms",
+      url: "/gyms-fitness",
       icon: <Dumbbell className="w-5 h-5" />
     },
     {
       name: "Fashion Brands",
-      url: "/brands",
+      url: "/fashion-brands",
       icon: <Shirt className="w-5 h-5" />
     },
     {
@@ -56,7 +56,7 @@ export const WhoWeWorkWith = ({
     },
     {
       name: "B2C Brands",
-      url: "/b2c",
+      url: "/b2c-services",
       icon: <IconBuilding className="w-5 h-5" />
     },
     {
@@ -66,37 +66,37 @@ export const WhoWeWorkWith = ({
     },
     {
       name: "Local Shops",
-      url: "/locals",
+      url: "/local-businesses",
       icon: <Store className="w-5 h-5" />
     },
     {
       name: "eCommerce",
-      url: "/ecommerce",
+      url: "/e-commerce-brands",
       icon: <ShoppingCart className="w-5 h-5" />
     },
     {
       name: "Startups",
-      url: "/startups",
+      url: "/startups-entrepreneurs",
       icon: <Phone className="w-5 h-5" />
     },
     {
       name: "B2B Businesses",
-      url: "/b2b",
+      url: "/b2b-services",
       icon: <IconBuildingFactory2 className="w-5 h-5" />
     },
     {
       name: "Travel & Tourism",
-      url: "/travel",
+      url: "/travel-tourism",
       icon: <Plane className="w-5 h-5" />
     },
     {
       name: "Interior Designers",
-      url: "/interior-design",
+      url: "/interior-designers",
       icon: <IconPalette className="w-5 h-5" />
     },
     {
       name: "Pharma Companies",
-      url: '/pharma',
+      url: '/pharma-companies',
       icon: <Ambulance className="w-5 h-5" />
     }
   ],
@@ -161,7 +161,7 @@ export const WhoWeWorkWith = ({
         >
           {duplicatedItems.map((item, index) => (
             <Link
-              href={`/services${item.url}`}
+              href={`/business${item.url}`}
               key={`${index}`}
               className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 flex items-center gap-3 hover:shadow-md transition-all duration-300 group flex-shrink-0"
             >
