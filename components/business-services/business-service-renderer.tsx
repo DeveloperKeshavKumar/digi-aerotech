@@ -70,8 +70,6 @@ export default function BusinessServiceRenderer({
       {showSections.testimonials !== false && (
         <TestimonialsComponent {...service.testimonials} />
       )}
-
-      <FaqSection />
       {renderCustomSections('afterTestimonials')}
       {renderCustomSections('beforeCTA')}
 

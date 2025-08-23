@@ -2,8 +2,9 @@ import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
 import { Struggles } from '@/components/homepage/struggles';
-import { IconAdCircle, IconArrowRight, IconBrandInstagram, IconDeviceDesktop, IconMapPinBolt, IconSocial } from '@tabler/icons-react';
+import { IconAdCircle, IconArrowRight, IconBrandInstagram, IconCalendarEvent, IconCamera, IconChartBar, IconDeviceDesktop, IconGift, IconMapPin, IconMapPinBolt, IconShoppingCart, IconSocial } from '@tabler/icons-react';
 import { SearchCheckIcon } from 'lucide-react';
+import { FaqSection } from '@/components/services/faq-section';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -56,7 +57,50 @@ export const map: ServiceBusinessMap = {
             text: "Grow My Restaurant Now"
           }
         }
-
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'rest-1',
+              question: 'How can Digi Aerotech help increase foot traffic to my restaurant or cafe?',
+              answer: 'We run geo-targeted ads, optimize your Google Business Profile, and manage reviews to bring more walk-ins and reservations.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'rest-2',
+              question: 'Do you also help with food delivery app visibility?',
+              answer: 'Yes, we optimize your listings on Swiggy, Zomato, UberEats, and others to increase orders and customer ratings.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'rest-3',
+              question: 'Will you manage my restaurant’s social media?',
+              answer: 'Absolutely. We create mouth-watering visuals, reels, and campaigns that attract foodies and boost online engagement.',
+              icon: React.createElement(IconCamera, { size: 22 })
+            },
+            {
+              id: 'rest-4',
+              question: 'Can digital marketing really increase table bookings?',
+              answer: 'Yes, we build conversion-focused booking funnels, run retargeting ads, and streamline reservation systems for maximum bookings.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            },
+            {
+              id: 'rest-5',
+              question: 'How do you track ROI for restaurants?',
+              answer: 'We track online orders, table reservations, and customer lifetime value so you can see how every rupee is working for you.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'rest-6',
+              question: 'Do you offer seasonal promotions support?',
+              answer: 'Yes, we design campaigns around festivals, holidays, and events to keep your restaurant always trending.',
+              icon: React.createElement(IconGift, { size: 22 })
+            }
+          ]
+        }
       }
     ],
     hero: {

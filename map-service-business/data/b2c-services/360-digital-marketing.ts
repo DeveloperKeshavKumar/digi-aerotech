@@ -1,12 +1,13 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
-import { 
-  IconAdjustments, IconArrowRight, IconBrain, IconBriefcase, IconBulb, 
-  IconChartBar, IconClock, IconEyeCog, IconStar, IconTarget, IconTrendingUp 
+import {
+  IconAdjustments, IconArrowRight, IconBrain, IconBriefcase, IconBulb,
+  IconChartBar, IconClock, IconEyeCog, IconHeart, IconShoppingCart, IconStar, IconTarget, IconTrendingUp
 } from '@tabler/icons-react';
 import { Struggles } from '@/components/homepage/struggles';
 import { Cog } from 'lucide-react';
+import { FaqSection } from '@/components/services/faq-section';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -26,7 +27,7 @@ export const map: ServiceBusinessMap = {
       whyChooseUs: true,
       typesOfServices: true,
       process: true,
-      techStack: true,
+      techStack: false,
       testimonials: true,
       cta: true
     },
@@ -59,6 +60,49 @@ export const map: ServiceBusinessMap = {
             text: "Boost My B2C Sales Now"
           }
         }
+      }, {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'b2c-1',
+              question: 'How can you help increase my B2C sales?',
+              answer: 'We design conversion-driven campaigns, optimized landing pages, and retention strategies to maximize purchases and repeat sales.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'b2c-2',
+              question: 'Do you only focus on ads?',
+              answer: 'No. Our approach covers the full funnel — SEO, social media, influencers, remarketing, and loyalty programs for holistic growth.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'b2c-3',
+              question: 'How do you build customer loyalty?',
+              answer: 'We create retention strategies with remarketing ads, email flows, and reward programs that keep customers coming back.',
+              icon: React.createElement(IconHeart, { size: 22 })
+            },
+            {
+              id: 'b2c-4',
+              question: 'Will my brand stand out in a crowded B2C market?',
+              answer: 'Yes. We use influencer partnerships, social proof marketing, and value-based storytelling to make your brand unforgettable.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'b2c-5',
+              question: 'Do you offer growth plans for small D2C startups?',
+              answer: 'Absolutely. Whether you’re a startup or an established retail chain, we create scalable B2C marketing strategies tailored to you.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'b2c-6',
+              question: 'How do you measure B2C campaign success?',
+              answer: 'We track ROI with metrics like conversion rate, repeat purchase rate, and customer lifetime value — not just likes or clicks.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
       }
     ],
     hero: {
@@ -69,7 +113,7 @@ export const map: ServiceBusinessMap = {
       brandLine: [
         { text: "✨ Sell More. Build Loyalty. Grow Faster with Digi Aerotech", gradient: false }
       ],
-      subheadline: "Tailored 360° digital marketing strategies for B2C brands to attract, convert, and retain customers across every channel.",
+      subheadline: "We help B2C brands connect with their audience, increase visibility, and generate consistent sales through data-driven marketing strategies.",
       ctaButtons: [
         { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
         { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }

@@ -1,198 +1,259 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconRocket, IconBulb, IconChartLine, IconUsers, IconWorld,
+  IconShieldCheck, IconPhone, IconTrendingUp, IconTarget, IconBriefcase,
+  IconStar, IconCoins, IconArrowRight
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: '360-digital-marketing',
   business: 'startups-entrepreneurs',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
+    hero: 'variant2',
+    whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
+    testimonials: 'variant2'
   },
   data: {
-    slug: '360-digital-marketing',
+    slug: '360-digital-marketing-startups',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "The Startup ", gradient: false },
+            { text: "Struggles ", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+            { text: "Entrepreneurs Face Online", gradient: false }
+          ],
+          subheadline: "Launching a startup is tough. Getting traction, visibility, and funding trust is even harder without a proven digital growth system.",
+          painPoints: [
+            "Lack of visibility in crowded markets",
+            "Difficulty acquiring first 1000 paying users",
+            "Low trust among investors & customers",
+            "Limited budget with high burn rate",
+            "Scattered, inconsistent marketing efforts"
+          ],
+          solutionPoints: [
+            "Brand positioning that cuts through the noise",
+            "Rapid growth campaigns with performance ads",
+            "Investor-friendly authority building",
+            "Affordable & scalable digital strategies",
+            "End-to-end funnel for customer acquisition"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get Your Startup Growth Plan"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Can digital marketing really help early-stage startups?',
+              answer: 'Yes. With limited budgets, our data-driven campaigns bring maximum ROI and help you acquire early adopters fast.',
+              icon: React.createElement(IconBulb, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you help startups raise brand credibility for investors?',
+              answer: 'Absolutely. We build authority via PR, thought-leadership content, and social proof that impresses both investors and clients.',
+              icon: React.createElement(IconShieldCheck, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you keep costs optimized for bootstrapped startups?',
+              answer: 'We prioritize channels that deliver the highest ROI first, then scale as your funding or revenue grows.',
+              icon: React.createElement(IconCoins, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you help a startup with global customer reach?',
+              answer: 'Yes. From global SEO to international ad targeting, we scale your brand across countries and customer bases.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you provide startup-specific growth playbooks?',
+              answer: 'Yes. We customize 90-day traction roadmaps tailored to your product stage, market, and funding goals.',
+              icon: React.createElement(IconBriefcase, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can I see results for my startup?',
+              answer: 'You’ll start seeing traction in weeks through ads & campaigns, while organic branding compounds in 3–6 months.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Launching ",
       headlineKeywords: [
-        "360 Digital Marketing for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Your Startup?",
+        "Need Investor Trust?",
+        "Struggling for First 1000 Customers?",
+        "Want Global Traction?",
+        "360° Digital Marketing for Entrepreneurs?"
       ],
       brandLine: [
-        { text: "360 Digital Marketing for Startups Entrepreneurs", gradient: false }
+        { text: "🚀 Accelerate Your Startup Growth with 360 Digital Marketing", gradient: false }
       ],
-      subheadline: "Specialized 360 digital marketing strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "From zero to market leader — we help startups & entrepreneurs acquire users, attract investors, and scale globally.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book Free Growth Call", link: "/contact" },
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "1000+ Users Acquired",
+          description: "For startup campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "50+ Startup Launches",
+          description: "Scaled from scratch"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconChartLine, { size: 32 }),
+          title: "5X Faster Growth",
+          description: "Than DIY marketing"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global Scaling",
+          description: "Across 20+ states"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: '360 Digital Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Growth Partner for Startups", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBulb, { size: 28 }),
+          title: "Startup DNA in Our Team",
+          description: "We’ve worked with early-stage founders and understand startup challenges deeply."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Fast Traction Systems",
+          description: "Proven 90-day systems to get your first 1000 customers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored 360 digital marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Investor-Ready Branding",
+          description: "We build authority that boosts investor confidence & funding chances."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Laser-Focused Marketing",
+          description: "We target the right audience with zero wasted ad spend."
+        },
+        {
+          icon: React.createElement(IconCoins, { size: 28 }),
+          title: "ROI-Centric Growth",
+          description: "We maximize every rupee/dollar you spend to give maximum impact."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Scale Without Limits",
+          description: "From local launches to global expansion, we scale startups everywhere."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Scale Your Startup Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our 360 Digital Marketing for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive 360 digital marketing solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom 360 digital marketing strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of 360 digital marketing campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our 360 Digital Marketing Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven Growth Process for Startups',
+      subtitle: 'A STEP-BY-STEP DIGITAL GROWTH ENGINE',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to 360 digital marketing that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We use a structured, repeatable process that helps startups scale user acquisition, funding trust, and global growth.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'Discovery & Positioning',
+          description: 'Define USP, market positioning & startup story that connects.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom 360 digital marketing strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'Branding & Credibility',
+          description: 'Design branding & PR that wins investor and customer trust.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of 360 digital marketing campaigns with startups entrepreneurs focus.'
+          title: 'Launch Growth Campaigns',
+          description: 'Run targeted ads, SEO & growth hacks to acquire first 1000 users.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'Conversion Funnel Setup',
+          description: 'Create landing pages, funnels & nurturing workflows for signups.'
+        },
+        {
+          id: 5,
+          title: 'Retention & Community',
+          description: 'Engage users with content, loyalty campaigns & community growth.'
+        },
+        {
+          id: 6,
+          title: 'Scaling & Investor Visibility',
+          description: 'Scale campaigns globally & enhance credibility with investors.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our 360 Digital Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for 360 digital marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: '360 Digital Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups & Founders Who ", gradient: false },
+        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped startups acquire users, attract investors, and scale globally.',
       testimonials: [
         {
           id: '1',
-          message: 'The 360 digital marketing services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'As a first-time founder, Digi Aerotech helped me position my brand and acquire 5,000+ users within 6 months.',
+          highlight: '5,000+ users within 6 months',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Rohit Verma',
+          designation: 'Founder & CEO',
+          company: 'TechHive'
         },
         {
           id: '2',
-          message: 'Outstanding 360 digital marketing expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'Their digital campaigns not only brought customers but also boosted my credibility for investors. We closed our seed round confidently.',
+          highlight: 'boosted my credibility for investors',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Ananya Gupta',
+          designation: 'Co-Founder',
+          company: 'HealthBridge'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR 360 DIGITAL MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our 360 digital marketing can drive growth for your startups entrepreneurs business.'
+      title: 'Ready to Launch & Scale Your Startup?',
+      subtitle: 'FROM IDEA TO GLOBAL BRAND',
+      description: 'Book a free growth strategy call with Digi Aerotech and see how our 360° digital marketing can accelerate your startup journey.'
     }
   }
 };

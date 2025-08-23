@@ -2,7 +2,9 @@ import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
 import { Struggles } from '@/components/homepage/struggles';
-import { IconAd2, IconArrowRight, IconBrandMeta, IconDeviceLaptop, IconMapPin2, IconSearch, IconSocial } from '@tabler/icons-react';
+import { IconAd2, IconArrowRight, IconBrandMeta, IconCamera, IconChartBar, IconDeviceLaptop, IconHeart, IconMapPin2, IconSearch, IconSocial, IconUser } from '@tabler/icons-react';
+import { FaqSection } from '@/components/services/faq-section';
+import { Dumbbell } from 'lucide-react';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -20,9 +22,9 @@ export const map: ServiceBusinessMap = {
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
+      typesOfServices: false,
       process: true,
-      techStack: true,
+      techStack: false,
       testimonials: true,
       cta: true
     },
@@ -56,6 +58,50 @@ export const map: ServiceBusinessMap = {
           }
         },
         position: 'beforeWhyChooseUs'
+      }, {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'gym-1',
+              question: 'How do you help gyms get more memberships?',
+              answer: 'We run hyper-local ads, create irresistible offers, and optimize Google Maps to bring walk-ins and sign-ups.',
+              icon: React.createElement(Dumbbell, { size: 22 })
+            },
+            {
+              id: 'gym-2',
+              question: 'Do you also promote personal trainers and classes?',
+              answer: 'Yes. We build funnels for PT sessions, yoga classes, and fitness programs to increase enrollment.',
+              icon: React.createElement(IconUser, { size: 22 })
+            },
+            {
+              id: 'gym-3',
+              question: 'How can digital marketing reduce member dropouts?',
+              answer: 'We set up loyalty programs, reminders, and engagement campaigns to retain members longer.',
+              icon: React.createElement(IconHeart, { size: 22 })
+            },
+            {
+              id: 'gym-4',
+              question: 'Will you manage my gym’s social media presence?',
+              answer: 'Absolutely. We design reels, transformation stories, and fitness content that inspires and attracts new clients.',
+              icon: React.createElement(IconCamera, { size: 22 })
+            },
+            {
+              id: 'gym-5',
+              question: 'Can you promote online classes or hybrid training?',
+              answer: 'Yes. We build online funnels for Zoom/Hybrid classes so you can expand beyond physical members.',
+              icon: React.createElement(IconDeviceLaptop, { size: 22 })
+            },
+            {
+              id: 'gym-6',
+              question: 'How do you prove ROI for gyms & fitness studios?',
+              answer: 'We track memberships, PT sessions sold, class bookings, and retention rates to show measurable growth.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+
       }
     ],
     hero: {

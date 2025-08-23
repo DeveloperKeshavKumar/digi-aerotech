@@ -1,198 +1,259 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconHome, IconBuildingSkyscraper, IconKey, IconTrendingUp,
+  IconPhone, IconRocket, IconUsers, IconMapPin, IconArrowRight,
+  IconChartBar, IconCertificate, IconWorld, IconShieldCheck
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: '360-digital-marketing',
   business: 'real-estate',
   variants: {
-    hero: 'variant2',
+    hero: 'variant1',
     whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    process: 'variant2',
+    testimonials: 'variant1'
   },
   data: {
-    slug: '360-digital-marketing',
+    slug: '360-digital-marketing-real-estate',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "The Real Estate ", gradient: false },
+            { text: "Challenges ", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+            { text: "Builders Face Online", gradient: false }
+          ],
+          subheadline: "High-value sales like real estate require precision marketing, trust-building, and consistent quality leads.",
+          painPoints: [
+            "High competition in local & metro markets",
+            "Difficulty generating qualified property leads",
+            "Low trust & credibility online",
+            "Wasted ad spend with poor targeting",
+            "Long decision-making cycles"
+          ],
+          solutionPoints: [
+            "Geo-targeted ads & hyper-local SEO",
+            "Landing pages optimized for conversions",
+            "Virtual tours & lifestyle storytelling",
+            "Data-driven lead nurturing & CRM integration",
+            "Brand authority through PR & social media"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get Qualified Real Estate Leads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does digital marketing help real estate companies?',
+              answer: 'We generate quality property leads through targeted ads, SEO, and conversion-optimized campaigns that bring ready-to-buy clients.',
+              icon: React.createElement(IconKey, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you offer geo-targeted campaigns for specific locations?',
+              answer: 'Yes. We run hyper-local SEO & ad campaigns focused on cities, neighborhoods, or even specific pin codes.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you help sell luxury or high-ticket properties?',
+              answer: 'Absolutely. We design premium campaigns with virtual tours, video marketing, and lifestyle storytelling to attract serious buyers.',
+              icon: React.createElement(IconHome, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How soon can I start seeing leads?',
+              answer: 'Paid campaigns start generating leads within weeks, while SEO builds organic visibility in 3–6 months.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you help real estate firms with brand reputation?',
+              answer: 'Yes. We manage PR, reviews, and social proof so buyers trust your brand before making big investments.',
+              icon: React.createElement(IconShieldCheck, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Can digital marketing reduce my cost per lead?',
+              answer: 'Yes. With data-driven campaigns & retargeting, we reduce ad waste and ensure high ROI.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "360 Digital Marketing for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Property Buyers?",
+        "Luxury Project Sales?",
+        "Qualified Real Estate Leads?",
+        "Faster Closures?",
+        "360° Digital Marketing for Real Estate?"
       ],
       brandLine: [
-        { text: "360 Digital Marketing for Real Estate", gradient: false }
+        { text: "🏠 Turning Real Estate Clicks into Bookings & Closures", gradient: false }
       ],
-      subheadline: "Specialized 360 digital marketing strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help real estate developers, brokers, and builders generate high-quality leads, close deals faster, and build trust with buyers.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book Free Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconHome, { size: 32 }),
+          title: "50k+ Leads",
+          description: "Generated for builders"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "120+ Projects Marketed",
+          description: "Across metros & tier-2 cities"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "4X Faster Closures",
+          description: "Through funnel optimization"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global NRI Reach",
+          description: "Campaigns across 15+ countries"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: '360 Digital Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Choice for Real Estate Companies", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Geo-Targeted Campaigns",
+          description: "Laser-focused targeting by city, location & neighborhood."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconKey, { size: 28 }),
+          title: "High-Intent Lead Generation",
+          description: "We bring only ready-to-buy clients to your projects."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored 360 digital marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconHome, { size: 28 }),
+          title: "Luxury Property Expertise",
+          description: "Specialized campaigns for high-ticket luxury projects."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconCertificate, { size: 28 }),
+          title: "Trust & Credibility Building",
+          description: "Strong PR, reviews, and online reputation management."
+        },
+        {
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "ROI-Optimized Marketing",
+          description: "Data-driven strategies that reduce cost per lead."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Faster Deal Closures",
+          description: "Optimized funnels & nurturing to shorten sales cycles."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start Selling Properties Faster",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our 360 Digital Marketing for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive 360 digital marketing solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom 360 digital marketing strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of 360 digital marketing campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our 360 Digital Marketing Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven Process for Real Estate Growth',
+      subtitle: 'STEP-BY-STEP DIGITAL BLUEPRINT',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to 360 digital marketing that delivers measurable results for real estate businesses.',
+      description: 'A structured marketing system designed to bring consistent, high-quality real estate leads.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: 'Market Research & Positioning',
+          description: 'Understand your project, buyer persona, and market competition.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom 360 digital marketing strategy tailored for your specific real estate goals.'
+          title: 'Project Branding',
+          description: 'Create compelling visuals, videos & storytelling for your properties.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of 360 digital marketing campaigns with real estate focus.'
+          title: 'Lead Generation Campaigns',
+          description: 'Run targeted ads & SEO campaigns for qualified leads.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
+          title: 'Conversion-Focused Landing Pages',
+          description: 'Design funnels optimized for maximum lead capture.'
+        },
+        {
+          id: 5,
+          title: 'Retargeting & CRM Nurturing',
+          description: 'Stay in touch with warm leads until they close.'
+        },
+        {
+          id: 6,
+          title: 'Performance Tracking & Scaling',
+          description: 'Measure ROI, optimize campaigns & scale lead volume.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our 360 Digital Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for 360 digital marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: '360 Digital Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Builders & Realtors Who ", gradient: false },
+        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped real estate firms attract buyers, close deals, and scale revenue.',
       testimonials: [
         {
           id: '1',
-          message: 'The 360 digital marketing services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our project struggled to attract buyers. Digi Aerotech generated 1,200+ leads in 3 months with highly targeted campaigns.',
+          highlight: '1,200+ leads in 3 months',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: 'Amit Sharma',
+          designation: 'Director',
+          company: 'Skyline Builders'
         },
         {
           id: '2',
-          message: 'Outstanding 360 digital marketing expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          message: 'Their team helped us sell out our luxury villas faster than ever before. The quality of leads was top-notch.',
+          highlight: 'sold out our luxury villas',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
+          name: 'Priya Mehta',
+          designation: 'CEO',
+          company: 'Elite Estates'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR 360 DIGITAL MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our 360 digital marketing can drive growth for your real estate business.'
+      title: 'Ready to Sell Properties Faster?',
+      subtitle: 'TURN REAL ESTATE MARKETING INTO SALES',
+      description: 'Book a free strategy session with Digi Aerotech and discover how our 360° real estate marketing system can fill your pipeline with serious buyers.'
     }
   }
 };

@@ -1,198 +1,264 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import { 
+  IconBook, IconUsers, IconTrendingUp, IconWorld, IconCertificate, IconChartBar, 
+  IconSchool, IconSearch, IconDeviceLaptop, IconAd2, IconBrandMeta, IconSocial,
+  IconPhone, IconArrowRight, IconShieldCheck, IconRocket, IconCalendar, IconHeadphones 
+} from '@tabler/icons-react';
 
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+const { IconFreeRights, IconStarsFilled } = ServiceIcons;
 
 export const map: ServiceBusinessMap = {
   service: '360-digital-marketing',
   business: 'educational-institutions',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: 'variant2',
+    whyChooseUs: 'variant3',
+    process: 'variant1',
+    testimonials: 'variant2'
   },
   data: {
-    slug: '360-digital-marketing',
+    slug: '360-digital-marketing-educational-institutions',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
+      typesOfServices: false,
       process: true,
-      techStack: true,
+      techStack: false,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        props: {
+          title: [
+            { text: "The Struggles ", gradient: false },
+            { text: "Educational Institutions ", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
+            { text: "Face in Marketing", gradient: false }
+          ],
+          subheadline: "In a digital-first world, attracting students goes beyond word-of-mouth.",
+          painPoints: [
+            "Falling behind modern online marketing trends",
+            "Difficulty in getting enough enrollments each year",
+            "Dependence on traditional advertising only (print, banners)",
+            "Low visibility on Google & Maps searches",
+            "Struggling to build trust among parents and students"
+          ],
+          solutionPoints: [
+            "Dominate Google search results for courses & institutions",
+            "Run targeted campaigns that bring actual admissions",
+            "Leverage social media to showcase success stories & culture",
+            "High-converting landing pages for admissions campaigns",
+            "Transparent ROI tracking & marketing performance"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Admissions Now"
+          }
+        },
+        position: 'beforeWhyChooseUs'
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'edu-1',
+              question: 'How do you help schools & colleges increase admissions?',
+              answer: 'We use SEO, Google Ads, and social media funnels to drive student inquiries and convert them into confirmed admissions.',
+              icon: React.createElement(IconSchool, { size: 22 })
+            },
+            {
+              id: 'edu-2',
+              question: 'Do you also market coaching centers and edtech platforms?',
+              answer: 'Yes. We specialize in promoting offline & online institutions — from local coaching centers to global edtech brands.',
+              icon: React.createElement(IconDeviceLaptop, { size: 22 })
+            },
+            {
+              id: 'edu-3',
+              question: 'Can you help us attract international students?',
+              answer: 'Absolutely. We run targeted global campaigns to boost your institution’s international visibility and attract foreign students.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'edu-4',
+              question: 'How do you build trust with parents and guardians?',
+              answer: 'We create reputation campaigns showcasing alumni success, testimonials, faculty expertise, and accreditation highlights.',
+              icon: React.createElement(IconShieldCheck, { size: 22 })
+            },
+            {
+              id: 'edu-5',
+              question: 'Do you provide ongoing marketing support?',
+              answer: 'Yes. From admission campaigns to year-round engagement, we handle complete 360° digital marketing for institutions.',
+              icon: React.createElement(IconHeadphones, { size: 22 })
+            },
+            {
+              id: 'edu-6',
+              question: 'How do you measure ROI for educational institutions?',
+              answer: 'We track leads, confirmed admissions, inquiries, and engagement metrics to deliver crystal-clear ROI reports.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Looking for ",
       headlineKeywords: [
         "360 Digital Marketing for Educational Institutions?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Admissions?",
+        "Better Visibility?",
+        "Global Reach?",
+        "Trusted Growth?"
       ],
       brandLine: [
-        { text: "360 Digital Marketing for Educational Institutions", gradient: false }
+        { text: "🎓 More Students. More Trust. More Global Recognition.", gradient: false }
       ],
-      subheadline: "Specialized 360 digital marketing strategies designed specifically for educational institutions. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "With Digi Aerotech’s 360° Digital Marketing for Educational Institutions, your school, college, or coaching center won’t just get visibility — it will get enrollments.",
       ctaButtons: [
         { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
         { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 34 }),
+          title: "250% Growth",
+          description: "Average admission inquiries boost"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Educational Institutions served"
+          icon: React.createElement(IconUsers, { size: 34 }),
+          title: "10+ Institutions",
+          description: "Schools & Colleges served"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCertificate, { size: 34 }),
+          title: "95% Conversion",
+          description: "For admission campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconCalendar, { size: 34 }),
+          title: "Year-Round Support",
+          description: "Seamless execution"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: '360 Digital Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Educational Institutions?', gradient: false }
+        { text: "Why ", gradient: false },
+        { text: "Educational Institutions Trust Digi Aerotech", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of educational institutions market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "SEO & Maps Dominance",
+          description: "We make your institution appear on top for key searches like ‘best college in [city]’ or ‘coaching near me’."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for educational institutions businesses.'
+          icon: React.createElement(IconAd2, { size: 32 }),
+          title: "Targeted Admission Campaigns",
+          description: "Hyper-focused Google & Meta Ads ensure parents and students see your courses and apply quickly."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored 360 digital marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBrandMeta, { size: 32 }),
+          title: "Engaging Social Media Presence",
+          description: "From student achievements to cultural events — we create posts & reels that attract and convert."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconDeviceLaptop, { size: 32 }),
+          title: "High-Converting Websites",
+          description: "Custom landing pages & websites designed for inquiries, applications, and virtual tours."
+        },
+        {
+          icon: React.createElement(IconBook, { size: 32 }),
+          title: "Content Marketing Excellence",
+          description: "Blogs, articles, and video campaigns to build authority and attract students organically."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "End-to-End Growth Partner",
+          description: "From admissions to alumni branding — we’re your 360° marketing partner in education."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get a Free Strategy Session",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our 360 Digital Marketing for Educational Institutions',
-      subtitle: 'EDUCATIONAL INSTITUTIONS SPECIALIZED SERVICES',
-      description: 'Comprehensive 360 digital marketing solutions designed specifically for educational institutions businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom 360 digital marketing strategy development tailored for educational institutions market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of 360 digital marketing campaigns optimized for educational institutions audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for educational institutions businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our 360 Digital Marketing Process for Educational Institutions',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our 360° Marketing Process for Educational Institutions',
+      subtitle: 'STEP-BY-STEP ENROLLMENT GROWTH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to 360 digital marketing that delivers measurable results for educational institutions businesses.',
+      description: 'A proven methodology that ensures your school, college, or coaching center achieves measurable results.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your educational institutions business and market landscape.'
+          title: 'Institution Audit & Market Research',
+          description: 'We analyze your institution’s current presence, competition, and student demographics.'
         },
         {
           id: 2,
           title: 'Strategy Development',
-          description: 'Custom 360 digital marketing strategy tailored for your specific educational institutions goals.'
+          description: 'A tailored 360° marketing strategy designed to boost admissions and brand authority.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of 360 digital marketing campaigns with educational institutions focus.'
+          title: 'Campaign Setup',
+          description: 'Implementation of SEO, Ads, Social Media, and Web funnels for targeted lead generation.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on educational institutions market feedback.'
+          title: 'Lead Nurturing',
+          description: 'We build automated systems to engage parents and students until they enroll.'
+        },
+        {
+          id: 5,
+          title: 'Performance Optimization',
+          description: 'Continuous monitoring and optimization to maximize conversions and reduce cost per lead.'
+        },
+        {
+          id: 6,
+          title: 'ROI Reporting',
+          description: 'Transparent dashboards showing inquiries, admissions, and actual ROI.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our 360 Digital Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for 360 digital marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: '360 Digital Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: '360° Digital Marketing ', gradient: false },
+        { text: 'Success Stories in Education', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
       ],
-      description: 'Real results from educational institutions businesses that achieved remarkable growth.',
+      description: 'Institutions that partnered with Digi Aerotech achieved record-breaking admissions and stronger brand recognition.',
       testimonials: [
         {
           id: '1',
-          message: 'The 360 digital marketing services transformed our educational institutions business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'We struggled with admissions every year. After partnering with Digi Aerotech, we saw a 300% increase in applications within just 6 months.',
+          highlight: '300% increase in applications',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Educational Institutions Company'
+          name: 'Dr. Arjun Mehta',
+          designation: 'Director',
+          company: 'Sunrise International School'
         },
         {
           id: '2',
-          message: 'Outstanding 360 digital marketing expertise specifically for educational institutions. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for educational institutions',
+          message: 'The campaigns were laser-focused. Parents started finding us on Google, and we filled all our MBA seats before the deadline.',
+          highlight: 'filled all MBA seats before deadline',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Educational Institutions Solutions'
+          name: 'Prof. Neha Sharma',
+          designation: 'Dean',
+          company: 'Global Business College'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Educational Institutions Business?',
-      subtitle: 'START YOUR 360 DIGITAL MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our 360 digital marketing can drive growth for your educational institutions business.'
+      title: 'Ready to Enroll More Students & Build Trust?',
+      subtitle: 'Stop depending on outdated methods. Start attracting students digitally.',
+      description: 'With Digi Aerotech’s 360° Digital Marketing for Educational Institutions, you’ll turn inquiries into admissions and build long-lasting trust with parents & students.'
     }
   }
 };

@@ -1,9 +1,10 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
 import { ServiceIcons } from '@/constants/service-icons';
-import { IconAdjustments, IconAdjustmentsAlt, IconArrowRight, IconBrain, IconBriefcase, IconBulb, IconChartBar, IconClock, IconEyeCog, IconGenderAgender, IconRefresh, IconStar, IconTarget, IconTrendingUp } from '@tabler/icons-react';
+import { IconAdjustments, IconAdjustmentsAlt, IconArrowRight, IconBrain, IconBriefcase, IconBulb, IconChartBar, IconClock, IconEyeCog, IconGenderAgender, IconHelp, IconRefresh, IconSettings, IconStar, IconTarget, IconTrendingUp, IconUsers } from '@tabler/icons-react';
 import { Struggles } from '@/components/homepage/struggles';
 import { Cog } from 'lucide-react';
+import { FaqSection } from '@/components/services/faq-section';
 
 const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
 
@@ -55,6 +56,49 @@ export const map: ServiceBusinessMap = {
             icon: React.createElement(IconArrowRight, { size: 20 }),
             text: "Fix My B2B Growth Now"
           }
+        }
+      }, {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'b2b-1',
+              question: 'How does Digi Aerotech generate quality B2B leads?',
+              answer: 'We use a mix of LinkedIn outreach, intent-based ads, SEO, and content marketing to attract decision-makers who are actively seeking your solutions.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'b2b-2',
+              question: 'Do you focus on lead quantity or lead quality?',
+              answer: 'Our priority is quality — generating high-intent leads that convert into long-term business relationships, not just vanity numbers.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'b2b-3',
+              question: 'Can you help scale an enterprise B2B company?',
+              answer: 'Yes. We have experience in scaling enterprise-level B2B businesses with account-based marketing, demand generation, and multi-channel funnels.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'b2b-4',
+              question: 'How transparent is your reporting?',
+              answer: 'We provide crystal-clear dashboards, campaign reports, and ROI tracking so you always know the exact value of your marketing investment.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'b2b-5',
+              question: 'Are your plans customizable for startups vs enterprises?',
+              answer: 'Absolutely. We offer flexible plans tailored to early-stage startups, SMBs, and enterprise B2B organizations.',
+              icon: React.createElement(IconSettings, { size: 22 })
+            },
+            {
+              id: 'b2b-6',
+              question: 'What industries do you specialize in for B2B?',
+              answer: 'We have delivered results across SaaS, manufacturing, consulting, IT services, and other B2B verticals.',
+              icon: React.createElement(IconHelp, { size: 22 })
+            }
+          ]
         }
       }
     ],
