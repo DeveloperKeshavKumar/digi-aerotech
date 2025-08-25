@@ -60,15 +60,15 @@ export default function MegaMenuExample() {
                     },
                 ],
                 featured: {
-                    title: "Free Digital Audit",
+                    title: "Want business growth?",
                     description: "Get a comprehensive analysis of your digital presence, marketing strategies, and growth opportunities.",
-                    link: "/free-audit",
+                    link: "/contact",
                 },
             },
         },
         {
             name: "Business",
-            link: "/business",
+            link: "/",
             megaMenu: {
                 categories: [
                     {
@@ -78,6 +78,8 @@ export default function MegaMenuExample() {
                             { name: "Local Businesses", link: "/business/local-businesses" },
                             { name: "Pharma Companies", link: "/business/pharma-companies" },
                             { name: "B2C Services", link: "/business/b2c-services" },
+                            { name: "Jewellery", link: "/business/jewellery" },
+                            { name: "Furniture", link: "/business/furniture" },
                         ],
                     },
                     {
@@ -88,6 +90,7 @@ export default function MegaMenuExample() {
                             { name: "Consultants", link: "/business/consultants" },
                             { name: "Doctors & Clinics", link: "/business/doctors-clinics" },
                             { name: "Interior Designers", link: "/business/interior-designers" },
+                            { name: "Matrimonial Services", link: "/business/matrimonial-services" },
                         ],
                     },
                     {
@@ -98,6 +101,7 @@ export default function MegaMenuExample() {
                             { name: "Gyms & Fitness", link: "/business/gyms-fitness" },
                             { name: "Travel & Tourism", link: "/business/travel-tourism" },
                             { name: "Fashion Brands", link: "/business/fashion-brands" },
+                            { name: "Ayurveda", link: "/business/ayurveda" },
                         ],
                     },
                     {
@@ -107,11 +111,18 @@ export default function MegaMenuExample() {
                             { name: "Startups & Entrepreneurs", link: "/business/startups-entrepreneurs" },
                         ],
                     },
+                    {
+                        title: "Industrial & Logistics",
+                        items: [
+                            { name: "Logistics", link: "/business/logistics" },
+                            { name: "Manufacturing", link: "/business/manufacturing" },
+                        ],
+                    },
                 ],
                 featured: {
-                    title: "Industry-Specific Marketing",
+                    title: "Want to know all services?",
                     description: "Specialized digital marketing strategies tailored for your industry's unique challenges and opportunities.",
-                    link: "/business-solutions",
+                    link: "/services",
                 },
             },
         },

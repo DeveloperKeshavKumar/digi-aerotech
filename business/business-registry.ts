@@ -15,6 +15,12 @@ import { b2cServices } from './data/b2c-services';
 import { educationalInstitutions } from './data/educational-institutions';
 import { ecommerceBrands } from './data/e-commerce-brands';
 import { BusinessData } from '@/business/business.types';
+import { ayurveda } from './data/ayurveda';
+import { furniture } from './data/furniture';
+import { jewellery } from './data/jewellery';
+import { logistics } from './data/logistics';
+import { manufacturing } from './data/manufacturing';
+import { matrimonial } from './data/matrimonial-services';
 
 // Business Registry with typed data
 export const businessRegistry: Record<string, BusinessData> = {
@@ -34,6 +40,12 @@ export const businessRegistry: Record<string, BusinessData> = {
   'b2c-services': b2cServices,
   'educational-institutions': educationalInstitutions,
   'e-commerce-brands': ecommerceBrands,
+  'ayurveda': ayurveda,
+  'furniture': furniture,
+  'jewellery': jewellery,
+  'logistics': logistics,
+  'manufacturing': manufacturing,
+  'matrimonial-services': matrimonial
 };
 
 // Get business data by slug with type safety
@@ -71,7 +83,7 @@ export const getBusinessWithMetadata = (slug: string) => {
 export const searchBusinesses = (query: string): BusinessData[] => {
   const lowercaseQuery = query.toLowerCase();
   return Object.entries(businessRegistry)
-    .filter(([slug, business]) => 
+    .filter(([slug, business]) =>
       business.name.toLowerCase().includes(lowercaseQuery) ||
       slug.toLowerCase().includes(lowercaseQuery)
     )
