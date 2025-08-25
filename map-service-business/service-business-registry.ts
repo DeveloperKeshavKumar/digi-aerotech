@@ -236,7 +236,7 @@ import * as travelTourismgmbServices from './data/travel-tourism/gmb-services';
 import * as travelTourismgoogleAds from './data/travel-tourism/google-ads';
 import * as travelTourismleadsGeneration from './data/travel-tourism/leads-generation';
 import * as travelTourismlocalSeo from './data/travel-tourism/local-seo';
-import * as travelTourismmarketingAutomation from './data/travel-tourism/marketing-automation';
+// import * as travelTourismmarketingAutomation from './data/travel-tourism/marketing-automation';
 import * as travelTourismmetaAds from './data/travel-tourism/meta-ads';
 import * as travelTourismmobileAppsDevelopment from './data/travel-tourism/mobile-apps-development';
 import * as travelTourismotherAds from './data/travel-tourism/other-ads';
@@ -478,7 +478,7 @@ const maps: ServiceBusinessMap[] = [
   travelTourismgoogleAds.map,
   travelTourismleadsGeneration.map,
   travelTourismlocalSeo.map,
-  travelTourismmarketingAutomation.map,
+  // travelTourismmarketingAutomation.map,
   travelTourismmetaAds.map,
   travelTourismmobileAppsDevelopment.map,
   travelTourismotherAds.map,
