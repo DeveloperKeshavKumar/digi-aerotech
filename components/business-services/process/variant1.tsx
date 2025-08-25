@@ -12,16 +12,17 @@ const ContactForm = dynamic(
 );
 
 interface ProcessProps {
-  title?: string | Array<{ text: string; gradient?: boolean }>;
-  subtitle?: string;
-  description?: string;
+  title: string | Array<{ text: string; gradient?: boolean }>;
+  subtitle: string;
+  description: string;
   className?: string;
   steps: Array<{ id: number; title: string; description: string }>;
 }
 
 export default function ProcessVariant1({
-  title = 'Our Process',
+  title,
   subtitle,
+  description,
   className = "",
   steps,
 }: ProcessProps) {

@@ -10,15 +10,15 @@ interface ProcessStep {
 }
 
 interface ProcessProps {
-  title?: string;
-  subtitle?: string;
-  description?: string;
+  title: string;
+  subtitle: string;
+  description: string;
   steps: ProcessStep[];
   className?: string;
 }
 
 export default function ProcessVariant3({
-  title='Our Process',
+  title,
   subtitle,
   description,
   steps,

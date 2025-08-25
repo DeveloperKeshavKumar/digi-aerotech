@@ -66,8 +66,8 @@ const testimonials = [
 ];
 
 interface TestimonialsProps {
-  title?: string | Array<{ text: string; gradient?: boolean; gradientClass?: string }>;
-  description?: string;
+  title: string | Array<{ text: string; gradient?: boolean; gradientClass?: string }>;
+  description: string;
   testimonials: Array<{
     id: string;
     image?: string;
