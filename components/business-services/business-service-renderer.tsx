@@ -2,12 +2,10 @@
 "use client";
 
 import React from 'react';
-import { ServiceData } from '@/services/service.types';
-import { SectionVariants } from '@/map-service-business/map-service-business.types';
+import { SectionVariants, ServiceData } from '@/map-service-business/map-service-business.types';
 import { pickVariant } from './variant-resolver';
 import { CTA } from '@/components/services/cta-section';
 import { Companies } from '../homepage/companies';
-import { FaqSection } from '../services/faq-section';
 
 interface BusinessServiceRendererProps {
   service: ServiceData;

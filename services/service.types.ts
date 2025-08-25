@@ -39,7 +39,7 @@ export interface ServiceData {
         cta?: boolean;
     };
     customSections?: CustomSection[];
-    hero?: {
+    hero: {
         initial: string;
         headlineKeywords: string[];
         brandLine: string | { text: string; gradient?: boolean; gradientClass?: string }[];
@@ -47,7 +47,7 @@ export interface ServiceData {
         ctaButtons: CTAButton[];
         stats: StatsProps[];
     };
-    whyChooseUs?: {
+    whyChooseUs: {
         title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
         trustPoints: {
             icon: React.ReactNode;
@@ -60,7 +60,7 @@ export interface ServiceData {
             icon: React.ReactNode;
         };
     };
-    typesOfServices?: {
+    typesOfServices: {
         title: string;
         subtitle: string;
         description: string;
@@ -71,7 +71,7 @@ export interface ServiceData {
             icon?: React.ReactNode;
         }[];
     };
-    process?: {
+    process: {
         title: string;
         subtitle: string;
         description: string;
@@ -94,7 +94,7 @@ export interface ServiceData {
             category: string;
         }[];
     };
-    testimonials?: {
+    testimonials: {
         title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
         description: string;
         testimonials: {
@@ -108,7 +108,7 @@ export interface ServiceData {
             company?: string;
         }[];
     };
-    cta?: {
+    cta: {
         title: string;
         subtitle?: string;
         description: string;
