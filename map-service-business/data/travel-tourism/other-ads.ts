@@ -1,8 +1,12 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandTwitter, IconBrandSnapchat, IconBrandYoutube, IconBrandTiktok, IconBrandLinkedin,
+  IconChartBar, IconVideo, IconUserStar, IconTarget, IconHeart, IconTrendingUp,
+  IconRocket, IconShieldCheck, IconMap, IconUsers, IconArrowRight, IconPhoneCall
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'other-ads',
@@ -11,188 +15,180 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'other-ads',
+    slug: 'other-ads-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Ad Challenges Travel Brands Face on ", gradient: false },
+            { text: "Twitter, TikTok, YouTube & More", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Without creative and platform-specific ads, travel brands miss millions of potential travelers scrolling through social media daily.",
+          painPoints: [
+            "Low engagement on ads due to generic creatives",
+            "Struggling to keep up with short-form video trends",
+            "Difficulty building trust with younger audiences",
+            "Poor targeting on niche platforms like Snapchat or TikTok",
+            "Limited professional branding on LinkedIn"
+          ],
+          solutionPoints: [
+            "Tailored ad creatives for each platform",
+            "Short-form TikTok & Snapchat videos with viral hooks",
+            "Influencer collabs for authentic audience trust",
+            "Precise targeting for travel niches across all platforms",
+            "Professional LinkedIn ad strategies for B2B travel"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Supercharge Your Ads Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Do you run ads on TikTok and Snapchat for travel?',
+              answer: 'Yes. We create engaging short-form travel videos that inspire instant wanderlust and drive bookings.',
+              icon: React.createElement(IconBrandTiktok, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you run YouTube video ads for tour promotions?',
+              answer: 'Absolutely. We craft cinematic YouTube ads showcasing destinations, packages, and brand stories.',
+              icon: React.createElement(IconBrandYoutube, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How effective are Twitter ads for travel agencies?',
+              answer: 'Twitter ads work well for trending campaigns, real-time offers, and engaging travel communities.',
+              icon: React.createElement(IconBrandTwitter, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you also handle LinkedIn travel ads?',
+              answer: 'Yes. LinkedIn is excellent for B2B travel businesses, corporate bookings, and partnerships.',
+              icon: React.createElement(IconBrandLinkedin, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'What’s the advantage of Snapchat ads for tourism?',
+              answer: 'Snapchat ads reach younger audiences with interactive filters, AR experiences, and stories.',
+              icon: React.createElement(IconBrandSnapchat, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can we see results from these ads?',
+              answer: 'Platforms like TikTok & Snapchat bring instant traffic, while YouTube & LinkedIn build long-term brand authority.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Looking for ",
       headlineKeywords: [
-        "Other Ads for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "TikTok Travel Ads?",
+        "YouTube Destination Campaigns?",
+        "Viral Snapchat Stories?",
+        "LinkedIn Branding?",
+        "Multi-Platform Travel Ads?"
       ],
       brandLine: [
-        { text: "Other Ads for Travel Tourism", gradient: false }
+        { text: "🎥 Unlock the Power of TikTok, YouTube, Twitter & More for Travel Growth", gradient: false }
       ],
-      subheadline: "Specialized other ads strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We run high-converting ad campaigns across TikTok, Snapchat, YouTube, Twitter & LinkedIn to bring your travel brand closer to global audiences.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Launch Multi-Platform Ads", link: "/contact" },
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
+        { icon: React.createElement(IconUsers, { size: 32 }), title: "5M+ Travelers Reached", description: "Across TikTok, YouTube & more" },
+        { icon: React.createElement(IconVideo, { size: 32 }), title: "2,000+ Ad Videos", description: "Created for travel brands" },
+        { icon: React.createElement(IconHeart, { size: 32 }), title: "4.9/5 Ad Engagement", description: "Loved by global audiences" },
+        { icon: React.createElement(IconChartBar, { size: 32 }), title: "7X ROI", description: "On multi-platform campaigns" }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Ad Partner for Travel Brands on Social Platforms", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+        { icon: React.createElement(IconBrandTiktok, { size: 28 }), title: "Viral TikTok Ads", description: "Engaging content designed to trend & convert." },
+        { icon: React.createElement(IconBrandYoutube, { size: 28 }), title: "YouTube Travel Films", description: "Cinematic ads that inspire travel decisions." },
+        { icon: React.createElement(IconBrandSnapchat, { size: 28 }), title: "Snapchat AR & Filters", description: "Interactive ads targeting younger travelers." },
+        { icon: React.createElement(IconBrandTwitter, { size: 28 }), title: "Twitter Trend Campaigns", description: "Real-time promotions & trending offers." },
+        { icon: React.createElement(IconBrandLinkedin, { size: 28 }), title: "Professional LinkedIn Ads", description: "Corporate & B2B travel marketing expertise." },
+        { icon: React.createElement(IconUserStar, { size: 28 }), title: "Influencer Partnerships", description: "Collabs with travel creators for authentic reach." }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Run Multi-Platform Ads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Other Ads for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Other Ads Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Process for Multi-Platform Travel Ads',
+      subtitle: 'STEP-BY-STEP SOCIAL SUCCESS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for travel tourism businesses.',
+      description: 'From short-form TikTok ads to professional LinkedIn campaigns, our process ensures your travel brand shines across every platform.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific travel tourism goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with travel tourism focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Audience Research', description: 'Identify ideal travelers for each ad platform.' },
+        { id: 2, title: 'Creative Strategy', description: 'Craft platform-specific ad concepts & scripts.' },
+        { id: 3, title: 'Ad Production', description: 'Shoot, edit & design creatives for multiple channels.' },
+        { id: 4, title: 'Campaign Launch', description: 'Run tailored ads across TikTok, YouTube, Twitter & more.' },
+        { id: 5, title: 'Engagement & Optimization', description: 'Boost conversions with A/B testing & retargeting.' },
+        { id: 6, title: 'Scaling Success', description: 'Scale winning campaigns across regions & platforms.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Travel Brands That ", gradient: false },
+        { text: "Went Viral with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped travel agencies and tourism operators reach millions through TikTok, YouTube, Twitter, and Snapchat ads.',
       testimonials: [
         {
           id: '1',
-          message: 'The other ads services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our TikTok travel reels went viral, generating 5,000+ bookings in one season.',
+          highlight: '5,000+ bookings',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Travel Tourism Company'
+          name: 'Priya Malhotra',
+          designation: 'Founder',
+          company: 'DreamScape Tours'
         },
         {
           id: '2',
-          message: 'Outstanding other ads expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'The YouTube video ad Digi Aerotech produced became our #1 driver of international inquiries.',
+          highlight: '#1 driver of inquiries',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Rohit Desai',
+          designation: 'CEO',
+          company: 'WanderWorld'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your travel tourism business.'
+      title: 'Ready to Go Viral with Multi-Platform Ads?',
+      subtitle: 'TURN SCROLLS INTO BOOKINGS',
+      description: 'Book a free consultation with Digi Aerotech and discover how TikTok, YouTube, Twitter, Snapchat & LinkedIn ads can transform your travel business.'
     }
   }
 };

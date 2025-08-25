@@ -1,198 +1,234 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconMapPin, IconBuilding, IconStar, IconCompass, IconPhoneCall,
+  IconUsers, IconTarget, IconChartHistogram, IconCalendarEvent, IconTrendingUp,
+  IconShieldCheck, IconArrowRight, IconSearch, IconMessageCircle2, IconWorld
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'local-seo',
   business: 'travel-tourism',
   variants: {
-    hero: 'variant1',
+    hero: 'variant3',
     whyChooseUs: 'variant2',
-    process: 'variant3',
+    process: 'variant1',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'local-seo',
+    slug: 'local-seo-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Local SEO Challenges for ", gradient: false },
+            { text: "Travel & Tourism Businesses", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Travel agencies, tour operators, and local tourism brands often struggle to appear in local searches, costing them potential bookings.",
+          painPoints: [
+            "Low visibility in Google Maps & local search results",
+            "Competitors dominating 'near me' searches",
+            "Few or no reviews hurting trustworthiness",
+            "Poor optimization for local traveler intent",
+            "Missed seasonal & location-based opportunities"
+          ],
+          solutionPoints: [
+            "Boost rankings with optimized Google Business Profile",
+            "Dominate 'near me' searches with geo-targeted SEO",
+            "Build credibility through 5-star reviews & reputation management",
+            "Create local content that matches traveler intent",
+            "Seasonal & event-based local SEO campaigns"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Rank Higher in Local Searches"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does Local SEO help my travel agency?',
+              answer: 'Local SEO boosts your visibility on Google Maps and local searches, helping nearby travelers find and book your services faster.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you get us into Google’s 3-Pack?',
+              answer: 'Yes. We optimize your Google Business Profile and listings to increase your chances of appearing in the top 3 local results.',
+              icon: React.createElement(IconChartHistogram, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do reviews impact local rankings?',
+              answer: 'Absolutely. Positive reviews boost credibility and improve your chances of ranking higher in local SEO results.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can Local SEO attract international tourists too?',
+              answer: 'Yes. Many tourists search for agencies, hotels, and guides locally while traveling. Optimized local SEO ensures they find you.',
+              icon: React.createElement(IconCompass, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How long does it take to see results?',
+              answer: 'With proper optimization, you may see local search improvements within 4-8 weeks, with consistent growth over time.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'What if my agency is small and local?',
+              answer: 'Local SEO is perfect for small travel businesses—it levels the playing field, making you more discoverable than big OTAs in local searches.',
+              icon: React.createElement(IconBuilding, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Local Seo for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Local Bookings?",
+        "Higher Google Map Rankings?",
+        "Tourists Finding You First?",
+        "Dominate 'Near Me' Searches?",
+        "360° Local SEO for Travel Agencies?"
       ],
       brandLine: [
-        { text: "Local Seo for Travel Tourism", gradient: false }
+        { text: "📍 Attract More Travelers Nearby with Local SEO That Works", gradient: false }
       ],
-      subheadline: "Specialized local seo strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help travel agencies, tour operators, and local tourism brands rank higher in Google Maps and local search results, boosting walk-ins, calls, and bookings.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconSearch, { size: 28 }), text: "Get Free Local SEO Audit", link: "/contact" },
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "40,000+ Local Travelers",
+          description: "Driven via optimized local SEO"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "1,000+ Reviews Boosted",
+          description: "Reputation management success"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Multi-City Rankings",
+          description: "Optimized for 50+ destinations"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "High Conversion Rate",
+          description: "Travelers booking from local searches"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Local Seo', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Local SEO Partner for Travel Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Google Maps Optimization",
+          description: "Rank higher on Google Maps & get discovered by nearby travelers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
+          icon: React.createElement(IconMessageCircle2, { size: 28 }),
+          title: "Review & Reputation Building",
+          description: "We build trust with 5-star reviews & response strategies."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored local seo strategies designed specifically for your business needs.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Geo-Targeted SEO Campaigns",
+          description: "Attract travelers searching for tours & agencies 'near me'."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Trust & Credibility",
+          description: "Your agency becomes the most reliable option locally."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Domestic & International Reach",
+          description: "Help both local travelers & international tourists find you."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Sustainable Growth",
+          description: "Consistent leads & bookings with long-term SEO results."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Rank Higher Locally Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Local Seo for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive local seo solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom local seo strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of local seo campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Local Seo Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Local SEO Process for Travel & Tourism',
+      subtitle: 'STEP-BY-STEP MAPS VISIBILITY SYSTEM',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to local seo that delivers measurable results for travel tourism businesses.',
+      description: 'From optimizing your Google Business Profile to review strategies, we ensure your agency is found first in local searches.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom local seo strategy tailored for your specific travel tourism goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of local seo campaigns with travel tourism focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Local Seo Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for local seo success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Google Business Profile Setup', description: 'Optimize listings with photos, services, & booking links.' },
+        { id: 2, title: 'Local Keyword Research', description: 'Target "near me" & city-specific travel search terms.' },
+        { id: 3, title: 'On-Page & Local Content SEO', description: 'Blogs & landing pages optimized for local searches.' },
+        { id: 4, title: 'Review & Reputation Building', description: 'Gather 5-star reviews and manage responses.' },
+        { id: 5, title: 'Citations & Local Backlinks', description: 'Boost local authority with directory & media listings.' },
+        { id: 6, title: 'Tracking & Optimization', description: 'Monitor maps rankings and optimize continuously.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Local Seo ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Travel Brands That ", gradient: false },
+        { text: "Won with Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped travel agencies & local tourism brands boost local visibility, reviews, and bookings.',
       testimonials: [
         {
           id: '1',
-          message: 'The local seo services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'We went from being invisible to ranking in the top 3 on Google Maps. Walk-ins and calls increased immediately.',
+          highlight: 'top 3 on Google Maps',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Travel Tourism Company'
+          name: 'Ananya Gupta',
+          designation: 'Founder',
+          company: 'ExploreCity Tours'
         },
         {
           id: '2',
-          message: 'Outstanding local seo expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'Our local bookings doubled thanks to Digi Aerotech’s local SEO strategy and review management.',
+          highlight: 'local bookings doubled',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Ravi Sharma',
+          designation: 'CEO',
+          company: 'Heritage Holidays'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR LOCAL SEO JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our local seo can drive growth for your travel tourism business.'
+      title: 'Ready to Dominate Local Searches for Your Travel Brand?',
+      subtitle: 'BE FOUND FIRST LOCALLY',
+      description: 'Book a free consultation with Digi Aerotech and discover how Local SEO can drive walk-ins, calls, and bookings for your travel & tourism business.'
     }
   }
 };

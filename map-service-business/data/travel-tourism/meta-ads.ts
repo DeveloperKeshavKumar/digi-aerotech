@@ -1,198 +1,234 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandFacebook, IconBrandInstagram, IconVideo, IconWorld, IconUsers,
+  IconTarget, IconPhoto, IconPhoneCall, IconChartHistogram, IconHeart,
+  IconTrendingUp, IconArrowRight, IconStar, IconCalendarEvent, IconRocket
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'meta-ads',
   business: 'travel-tourism',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'meta-ads',
+    slug: 'meta-ads-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Meta Ads Challenges for ", gradient: false },
+            { text: "Travel & Tourism Businesses", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Tour operators, travel agencies, and destination brands struggle to maximize ROI from Facebook & Instagram ads without expert strategies.",
+          painPoints: [
+            "Wasted ad spend on untargeted campaigns",
+            "Low engagement on travel ads & reels",
+            "Struggling to retarget past inquiries",
+            "Seasonal campaigns failing to convert",
+            "Difficulty scaling ads globally"
+          ],
+          solutionPoints: [
+            "Hyper-targeted campaigns for travelers & tourists",
+            "Visually stunning ads, reels & carousels",
+            "Retargeting campaigns for abandoned leads",
+            "Seasonal & festival-based ad funnels",
+            "Scalable campaigns for local & international reach"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Travel Bookings"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How do Meta Ads help travel agencies?',
+              answer: 'Meta Ads attract travelers through highly targeted Facebook & Instagram campaigns with visuals, reels, and booking-focused creatives.',
+              icon: React.createElement(IconBrandFacebook, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you run international campaigns?',
+              answer: 'Yes. We run global Meta Ads campaigns targeting tourists from specific countries, interests, and demographics.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do reels and videos work better than static ads?',
+              answer: 'Absolutely. Reels, videos, and carousels capture attention faster and drive more engagement compared to static ads.',
+              icon: React.createElement(IconVideo, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How do you improve ad conversions?',
+              answer: 'We build retargeting funnels, optimize creatives, and design ad journeys that take travelers from interest to booking.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'What’s the ROI timeline for Meta Ads?',
+              answer: 'Agencies usually start seeing inquiries within 1–2 weeks, with long-term growth scaling month by month.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you handle seasonal campaigns?',
+              answer: 'Yes. We create custom seasonal ad campaigns for holidays, festivals, and vacation peaks to maximize bookings.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Meta Ads for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Travel Bookings?",
+        "Tourists from Meta Ads?",
+        "Higher ROI Campaigns?",
+        "Seasonal Ad Conversions?",
+        "360° Meta Ads for Travel Brands?"
       ],
       brandLine: [
-        { text: "Meta Ads for Travel Tourism", gradient: false }
+        { text: "📲 Scale Your Travel Business with High-Impact Facebook & Instagram Ads", gradient: false }
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help travel agencies, tour operators, and tourism brands drive bookings through data-driven Meta Ads campaigns designed to engage and convert.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Launch Meta Ads Campaign", link: "/contact" },
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "70,000+ Travelers Reached",
+          description: "Through Facebook & Instagram Ads"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
+          icon: React.createElement(IconHeart, { size: 32 }),
+          title: "2,500+ Travel Leads",
+          description: "Generated via retargeting funnels"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconPhoto, { size: 32 }),
+          title: "500+ Campaign Creatives",
+          description: "Engaging ads, reels & videos"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 ROI Rating",
+          description: "Proven ad campaign performance"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Meta Ads Partner for Travel Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandInstagram, { size: 28 }),
+          title: "Instagram Reels & Story Ads",
+          description: "We create viral reels & story ads that spark traveler curiosity."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
+          icon: React.createElement(IconBrandFacebook, { size: 28 }),
+          title: "Facebook Ad Funnels",
+          description: "Conversion-focused funnels that turn travelers into bookings."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "High-Impact Video Ads",
+          description: "Stunning video ads that showcase destinations & packages."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Precision Targeting",
+          description: "Reach exact traveler segments with data-driven targeting."
+        },
+        {
+          icon: React.createElement(IconChartHistogram, { size: 28 }),
+          title: "ROI-Driven Campaigns",
+          description: "We optimize every campaign to deliver maximum ROI."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Scalable Ad Strategies",
+          description: "From small agencies to global brands — we scale campaigns seamlessly."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start Getting More Bookings Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Meta Ads for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Meta Ads Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Meta Ads Process for Travel & Tourism',
+      subtitle: 'STEP-BY-STEP AD GROWTH SYSTEM',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for travel tourism businesses.',
+      description: 'From creative storytelling to retargeting funnels, our process ensures travelers engage, trust, and book through Meta Ads.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific travel tourism goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with travel tourism focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Audience Research', description: 'Identify ideal traveler demographics & behaviors.' },
+        { id: 2, title: 'Ad Creative Development', description: 'Design engaging reels, videos & carousel ads.' },
+        { id: 3, title: 'Campaign Setup & Targeting', description: 'Precise targeting for local & global audiences.' },
+        { id: 4, title: 'Retargeting Funnels', description: 'Recover abandoned inquiries & convert warm leads.' },
+        { id: 5, title: 'Seasonal Campaigns', description: 'Custom ad strategies for holidays, festivals & events.' },
+        { id: 6, title: 'Scaling & Optimization', description: 'Monitor results & scale winning campaigns for maximum ROI.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Travel Brands Who ", gradient: false },
+        { text: "Scaled with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped travel agencies & tourism brands generate bookings and global reach through Meta Ads.',
       testimonials: [
         {
           id: '1',
-          message: 'The meta ads services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Digi Aerotech’s Instagram reels & retargeting ads doubled our inquiries in just 3 weeks.',
+          highlight: 'doubled our inquiries',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Travel Tourism Company'
+          name: 'Pooja Nair',
+          designation: 'Founder',
+          company: 'OceanVista Holidays'
         },
         {
           id: '2',
-          message: 'Outstanding meta ads expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'Our Facebook ads went from random clicks to a 5X ROI, thanks to their precise targeting and seasonal campaigns.',
+          highlight: '5X ROI',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Rahul Verma',
+          designation: 'CEO',
+          company: 'AdventureQuest Tours'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your travel tourism business.'
+      title: 'Ready to Maximize Bookings with Meta Ads?',
+      subtitle: 'TURN VIEWS INTO BOOKINGS',
+      description: 'Book a free Meta Ads strategy session with Digi Aerotech and learn how to turn Facebook & Instagram into your biggest travel booking engines.'
     }
   }
 };

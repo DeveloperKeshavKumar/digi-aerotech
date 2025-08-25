@@ -1,8 +1,12 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconDeviceDesktop, IconWorld, IconRocket, IconStar, IconHeart,
+  IconTrendingUp, IconShieldCheck, IconCalendarEvent, IconRefresh,
+  IconTools, IconServer, IconLock, IconUsers, IconArrowRight, IconDatabase
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'website-maintenance',
@@ -11,188 +15,244 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'website-maintenance',
+    slug: 'website-maintenance-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Maintenance Challenges Travel ", gradient: false },
+            { text: "Websites Face Daily", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Travel websites need constant monitoring, updates, and optimization. A small error or downtime can cost bookings and customer trust.",
+          painPoints: [
+            "Frequent website downtime affecting online bookings",
+            "Slow loading speeds during peak travel seasons",
+            "Broken links & outdated itineraries",
+            "Security risks & unpatched vulnerabilities",
+            "Lack of regular updates & data backups"
+          ],
+          solutionPoints: [
+            "24/7 uptime monitoring & performance optimization",
+            "Fast load speeds for seasonal booking spikes",
+            "Content & itinerary updates handled regularly",
+            "Proactive security patches & firewall setup",
+            "Automated backups & disaster recovery"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Maintain My Travel Website"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is website maintenance important for travel businesses?',
+              answer: 'Travel websites must stay fast, secure, and updated. Without maintenance, you risk losing bookings due to downtime, errors, or poor user experience.',
+              icon: React.createElement(IconDeviceDesktop, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you provide 24/7 monitoring?',
+              answer: 'Yes, our team ensures real-time monitoring for uptime, performance, and security threats, minimizing risks during peak booking hours.',
+              icon: React.createElement(IconServer, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you handle seasonal travel updates?',
+              answer: 'Absolutely. We update itineraries, seasonal offers, and travel packages regularly so your website always reflects the latest services.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide backups & disaster recovery?',
+              answer: 'Yes, we set up automated daily backups and offer quick disaster recovery plans to safeguard your travel business data.',
+              icon: React.createElement(IconDatabase, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'What about website security?',
+              answer: 'We implement SSL, firewalls, malware scans, and proactive security patches to protect traveler data and transactions.',
+              icon: React.createElement(IconLock, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Can you optimize speed for high traffic?',
+              answer: 'Yes, we optimize caching, CDN, and server performance to handle peak-season surges in travel website traffic.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Is Your Travel Website ",
       headlineKeywords: [
-        "Website Maintenance for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Slow?",
+        "Down Frequently?",
+        "Vulnerable to Hacks?",
+        "Outdated?",
+        "Losing Bookings?"
       ],
       brandLine: [
-        { text: "Website Maintenance for Travel Tourism", gradient: false }
+        { text: "🛠 Reliable Website Maintenance for Travel & Tourism", gradient: false }
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We keep your travel website updated, secure, and optimized — so you never miss a booking.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Get Maintenance Plan", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "Talk to Expert", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "99.9% Uptime",
+          description: "Ensured for travel websites"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
+          icon: React.createElement(IconHeart, { size: 32 }),
+          title: "300+ Sites",
+          description: "Maintained & monitored"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "Top Security",
+          description: "SSL, firewalls & patches"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRefresh, { size: 32 }),
+          title: "Regular Updates",
+          description: "Itineraries & seasonal offers"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Choose Digi Aerotech for ", gradient: false },
+        { text: "Travel Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "24/7 Monitoring",
+          description: "Round-the-clock security & uptime checks."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
+          icon: React.createElement(IconTools, { size: 28 }),
+          title: "Technical Expertise",
+          description: "Experienced in handling travel-specific sites."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Performance Optimization",
+          description: "Keep your site fast during peak booking seasons."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconCalendarEvent, { size: 28 }),
+          title: "Content Updates",
+          description: "Seasonal packages & travel deals updated on time."
+        },
+        {
+          icon: React.createElement(IconLock, { size: 28 }),
+          title: "Data Security",
+          description: "SSL, firewalls & proactive patching."
+        },
+        {
+          icon: React.createElement(IconDatabase, { size: 28 }),
+          title: "Backups & Recovery",
+          description: "Daily backups with quick disaster recovery."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Secure My Travel Website",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Website Maintenance for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Website Maintenance Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Travel Website Maintenance Process',
+      subtitle: 'SEAMLESS UPDATES & PROTECTION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for travel tourism businesses.',
+      description: 'We provide proactive website care to keep your travel business running without interruptions.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
+          title: 'Website Audit',
+          description: 'We start with a full audit of speed, security, content, and errors to identify immediate fixes for your travel site.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific travel tourism goals.'
+          title: 'Performance Optimization',
+          description: 'We optimize caching, images, hosting, and CDN to ensure fast loading during high-traffic booking seasons.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with travel tourism focus.'
+          title: 'Security Updates',
+          description: 'Regular updates, SSL renewals, and firewall patches keep your site secure from hackers and data breaches.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
+          title: 'Content & Seasonal Updates',
+          description: 'We manage updates for itineraries, seasonal offers, and destination guides so your site stays fresh and relevant.'
+        },
+        {
+          id: 5,
+          title: '24/7 Monitoring & Support',
+          description: 'We continuously track uptime, errors, and performance. Our team provides instant support for emergencies.'
+        },
+        {
+          id: 6,
+          title: 'Backups & Recovery',
+          description: 'Automated backups and quick recovery solutions ensure your data is always safe and your website stays live.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Trusted Website Maintenance for ", gradient: false },
+        { text: "Travel & Tourism Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'Our website maintenance has helped travel agencies, tour operators, and booking platforms achieve uptime, speed, and reliability.',
       testimonials: [
         {
           id: '1',
-          message: 'The website maintenance services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our travel website used to crash during peak season. Digi Aerotech now maintains it, and uptime has been flawless.',
+          highlight: 'uptime has been flawless',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Travel Tourism Company'
+          name: 'Ankit Mehta',
+          designation: 'Founder',
+          company: 'Skyline Holidays'
         },
         {
           id: '2',
-          message: 'Outstanding website maintenance expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'They handle all our seasonal updates and backups. We focus on tours, while they keep our site secure and fast.',
+          highlight: 'secure and fast',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Nisha Verma',
+          designation: 'CEO',
+          company: 'GoExplore Tours'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your travel tourism business.'
+      title: 'Keep Your Travel Website Fast, Secure & Reliable',
+      subtitle: 'STAY ONLINE, STAY BOOKED',
+      description: 'Get a custom maintenance plan from Digi Aerotech to protect your travel website and maximize bookings year-round.'
     }
   }
 };

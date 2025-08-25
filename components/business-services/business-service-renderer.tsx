@@ -6,6 +6,7 @@ import { SectionVariants, ServiceData } from '@/map-service-business/map-service
 import { pickVariant } from './variant-resolver';
 import { CTA } from '@/components/services/cta-section';
 import { Companies } from '../homepage/companies';
+import { Testimonials } from '../homepage/testimonials';
 
 interface BusinessServiceRendererProps {
   service: ServiceData;
@@ -66,7 +67,7 @@ export default function BusinessServiceRenderer({
 
       {/* Testimonials Section with Variant */}
       {showSections.testimonials !== false && (
-        <TestimonialsComponent {...service.testimonials} />
+        <Testimonials {...service.testimonials} />
       )}
       {renderCustomSections('afterTestimonials')}
       {renderCustomSections('beforeCTA')}

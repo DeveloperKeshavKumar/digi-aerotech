@@ -1,8 +1,13 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconWorld, IconPlane, IconCalendarEvent, IconShieldCheck,
+  IconUsers, IconTrendingUp, IconPhone, IconRocket, IconMap,
+  IconStar, IconArrowRight, IconDeviceMobile, IconSearch,
+  IconDownload, IconChartBar
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'aso-services',
@@ -14,185 +19,217 @@ export const map: ServiceBusinessMap = {
     testimonials: 'variant1'
   },
   data: {
-    slug: 'aso-services',
+    slug: 'aso-services-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "ASO Challenges Travel Apps ", gradient: false },
+            { text: "Face in App Stores", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "From flight booking apps to local tour apps, competition is fierce. Without proper ASO, your app gets lost among global travel giants.",
+          painPoints: [
+            "Low visibility in App Store & Google Play search results",
+            "Generic keywords failing to attract targeted travelers",
+            "Poor ratings & reviews affecting trust and installs",
+            "Low conversion from app visits to downloads",
+            "Struggling to retain users after initial installs"
+          ],
+          solutionPoints: [
+            "Keyword-rich titles & descriptions tailored for travel searches",
+            "Localized ASO targeting global & regional travelers",
+            "Review & rating optimization strategies to build trust",
+            "High-converting creatives: app icons, screenshots, & videos",
+            "Retention campaigns with push notifications & in-app engagement"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Travel App Downloads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does ASO help my travel app grow?',
+              answer: 'ASO improves your app’s visibility on App Store & Google Play, helping travelers easily find and download your app instead of competitors.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you target international travelers with ASO?',
+              answer: 'Yes. We optimize your app for multiple languages and regions so global tourists find your travel app when searching in their native language.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you improve app creatives like screenshots & videos?',
+              answer: 'Absolutely. We design engaging visuals, icons, and demo videos that increase app downloads and build traveler trust instantly.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How do you boost my app’s reviews & ratings?',
+              answer: 'We implement review generation strategies, push in-app prompts at the right time, and manage reputation to increase positive ratings.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can ASO also increase in-app bookings?',
+              answer: 'Yes. By attracting the right users and optimizing conversion funnels, ASO not only boosts installs but also drives real bookings.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can we see results with ASO?',
+              answer: 'With optimized titles, keywords, and creatives, you’ll start seeing improved rankings and downloads within 4-6 weeks.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Aso Services for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Travel App Downloads?",
+        "Higher Traveler Engagement?",
+        "Global Tourist Reach?",
+        "Better Ratings & Reviews?",
+        "ASO Services for Travel Apps?"
       ],
       brandLine: [
-        { text: "Aso Services for Travel Tourism", gradient: false }
+        { text: "📱 Scale Your Travel & Tourism App with Proven ASO Strategies", gradient: false }
       ],
-      subheadline: "Specialized aso services strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help travel apps rank higher, attract global users, and convert installs into real bookings.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconDownload, { size: 28 }), text: "Get Free ASO Audit", link: "/contact" },
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconDownload, { size: 32 }),
+          title: "1M+ Downloads",
+          description: "Driven for travel apps"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global Reach",
+          description: "Localized ASO in 25+ states"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.8★ Avg Rating",
+          description: "Reputation management success"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "High Retention",
+          description: "Boosted user loyalty with engagement"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 ASO Partner for Travel Apps", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Keyword Mastery",
+          description: "We rank your app for top travel search queries."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Creative Optimization",
+          description: "Optimized icons, screenshots & videos boost downloads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Localized Growth",
+          description: "Target global travelers in their own language."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Reputation Management",
+          description: "Boost ratings & reviews to build user trust."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Conversion-Driven ASO",
+          description: "We focus on installs that turn into bookings."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Proven Growth",
+          description: "Scaled 100+ travel apps across the globe."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Your Travel App Installs",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Aso Services for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Aso Services Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our ASO Process for Travel Apps',
+      subtitle: 'STEP-BY-STEP OPTIMIZATION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for travel tourism businesses.',
+      description: 'We refine your app store presence, optimize creatives, and run continuous iterations to ensure top rankings and user engagement.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific travel tourism goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with travel tourism focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Market & Competitor Research', description: 'Analyze competing travel apps & identify keyword gaps.' },
+        { id: 2, title: 'Keyword Optimization', description: 'Optimize titles, descriptions & metadata with high-intent travel keywords.' },
+        { id: 3, title: 'Creative Optimization', description: 'Design compelling icons, screenshots, and videos to boost CTR.' },
+        { id: 4, title: 'Ratings & Review Strategy', description: 'Boost positive reviews & handle feedback smartly.' },
+        { id: 5, title: 'Localization for Global Reach', description: 'Translate & optimize app listings for international travelers.' },
+        { id: 6, title: 'Performance Tracking & Scaling', description: 'Monitor rankings, downloads & iterate for maximum growth.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Travel Apps That ", gradient: false },
+        { text: "Scaled with Our ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped travel & tourism apps boost downloads, ratings, and global visibility.',
       testimonials: [
         {
           id: '1',
-          message: 'The aso services services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our flight booking app went from invisible to top 5 results for “cheap flights” in 3 months. Downloads skyrocketed.',
+          highlight: 'Top 5 keyword ranking',
           stars: 5,
-          name: 'John Smith',
+          name: 'Rahul Joshi',
           designation: 'CEO',
-          company: 'Travel Tourism Company'
+          company: 'FlyNow'
         },
         {
           id: '2',
-          message: 'Outstanding aso services expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'Thanks to their ASO strategies, our local tours app got featured on Play Store and doubled monthly bookings.',
+          highlight: 'Featured on Play Store',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Sanya Kapoor',
+          designation: 'Founder',
+          company: 'GoExplore'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your travel tourism business.'
+      title: 'Ready to Scale Your Travel App with ASO?',
+      subtitle: 'TURN INSTALLS INTO BOOKINGS',
+      description: 'Book a free ASO audit with Digi Aerotech and discover how to rank higher, get more downloads, and boost travel bookings.'
     }
   }
 };

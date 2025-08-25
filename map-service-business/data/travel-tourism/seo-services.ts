@@ -1,198 +1,263 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconSearch, IconGlobe, IconPlane, IconStar, IconHeart,
+  IconTrendingUp, IconWorldSearch, IconMapPin, IconRocket,
+  IconDeviceAnalytics, IconArrowRight, IconLink, IconChartArrows
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'seo-services',
   business: 'travel-tourism',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: 'variant2',
+    whyChooseUs: 'variant3',
+    process: 'variant1',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'seo-services',
+    slug: 'seo-services-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "SEO Challenges Travel ", gradient: false },
+            { text: "Websites Face Online", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Ranking a travel website is tougher than ever. High competition, seasonal demand, and Google algorithm updates make visibility difficult without expert SEO.",
+          painPoints: [
+            "Not ranking for top travel keywords",
+            "Seasonal drops in organic traffic",
+            "High competition from OTAs & big brands",
+            "Low visibility on Google Maps & local SEO",
+            "Weak backlinks & poor domain authority"
+          ],
+          solutionPoints: [
+            "Advanced keyword research for travel intent",
+            "On-page & technical SEO optimization",
+            "Content strategy aligned with travel seasons",
+            "Google Maps & local SEO dominance",
+            "High-quality link building & authority growth"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Travel SEO"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is SEO important for travel businesses?',
+              answer: 'SEO ensures your travel agency, tours, or packages appear on Google when travelers search. It drives consistent bookings without heavy ad spend.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you optimize for seasonal travel keywords?',
+              answer: 'Yes. We align SEO with travel trends, seasonal destinations, and peak booking months to maximize organic visibility year-round.',
+              icon: React.createElement(IconPlane, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you help rank on Google Maps?',
+              answer: 'Absolutely. We optimize your Google Business Profile and implement local SEO strategies to attract travelers searching nearby.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide link-building services?',
+              answer: 'Yes, we acquire quality backlinks from travel blogs, guides, and directories to boost domain authority and rankings.',
+              icon: React.createElement(IconLink, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you track SEO performance?',
+              answer: 'We provide detailed reports on keyword rankings, traffic, leads, and ROI so you can measure growth clearly.',
+              icon: React.createElement(IconDeviceAnalytics, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How long until results show?',
+              answer: 'SEO is long-term, but most travel clients see measurable improvements in 3–6 months depending on competition and niche.',
+              icon: React.createElement(IconChartArrows, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Struggling to Rank Your ",
       headlineKeywords: [
-        "Seo Services for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Travel Agency?",
+        "Tour Packages?",
+        "Holiday Deals?",
+        "Adventure Trips?",
+        "Luxury Stays?"
       ],
       brandLine: [
-        { text: "Seo Services for Travel Tourism", gradient: false }
+        { text: "🌍 Travel SEO That Drives Bookings", gradient: false }
       ],
-      subheadline: "Specialized seo services strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We optimize your travel website for Google, Maps, and beyond — bringing more traffic, leads, and confirmed bookings.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Get SEO Strategy", link: "/contact" },
+        { icon: React.createElement(IconHeart, { size: 28 }), text: "Free SEO Audit", link: "/seo-audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconWorldSearch, { size: 32 }),
+          title: "1M+ Searches",
+          description: "optimized for travel keywords"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Top Rankings",
+          description: "achieved for travel agencies"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "85% Organic Leads",
+          description: "generated for clients"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconGlobe, { size: 32 }),
+          title: "Global Reach",
+          description: "SEO for international travelers"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Choose Digi Aerotech for ", gradient: false },
+        { text: "Travel SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Travel-Specific Keywords",
+          description: "Targeting seasonal & high-intent travel terms."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Local SEO Mastery",
+          description: "Rank higher on Google Maps & location searches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconWorldSearch, { size: 28 }),
+          title: "On-Page SEO",
+          description: "Meta tags, schema & content for higher rankings."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconLink, { size: 28 }),
+          title: "Authority Backlinks",
+          description: "Building strong links from travel portals & blogs."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Analytics & Reporting",
+          description: "Transparent SEO reports with measurable results."
+        },
+        {
+          icon: React.createElement(IconGlobe, { size: 28 }),
+          title: "Global + Local Reach",
+          description: "Optimizing for international and domestic travelers."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Rank My Travel Website",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Seo Services for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Seo Services Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Travel SEO Process',
+      subtitle: 'TURN SEARCHES INTO BOOKINGS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for travel tourism businesses.',
+      description: 'Our SEO strategies are built to capture travel intent, dominate search engines, and maximize conversions.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
+          title: 'Keyword Research',
+          description: 'We analyze global, local, and seasonal travel searches to target the right keywords that drive booking intent.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific travel tourism goals.'
+          title: 'On-Page Optimization',
+          description: 'Optimizing meta tags, content, headings, and schema markup for higher relevance and rankings.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with travel tourism focus.'
+          title: 'Content Strategy',
+          description: 'We create blogs, destination guides, and itineraries optimized for SEO while engaging travelers.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
+          title: 'Technical SEO',
+          description: 'Fixing speed, crawlability, mobile usability, and site structure to improve visibility.'
+        },
+        {
+          id: 5,
+          title: 'Local SEO',
+          description: 'Google Business Profile optimization, reviews, and citations for more local bookings.'
+        },
+        {
+          id: 6,
+          title: 'Link Building',
+          description: 'Acquiring high-authority backlinks from travel blogs, directories, and news sites.'
+        },
+        {
+          id: 7,
+          title: 'Tracking & Reporting',
+          description: 'Detailed reports with keyword rankings, traffic growth, and conversion insights.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "SEO Success Stories from ", gradient: false },
+        { text: "Travel Businesses", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'Our SEO campaigns helped travel agencies, tour operators, and booking platforms dominate search results and drive organic bookings.',
       testimonials: [
         {
           id: '1',
-          message: 'The seo services services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Within 6 months, our website ranked for top travel keywords. We now get 60% more organic bookings.',
+          highlight: '60% more organic bookings',
           stars: 5,
-          name: 'John Smith',
+          name: 'Priya Nair',
           designation: 'CEO',
-          company: 'Travel Tourism Company'
+          company: 'Dreamscape Travels'
         },
         {
           id: '2',
-          message: 'Outstanding seo services expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'They helped us rank locally on Google Maps and attract international travelers searching our destination.',
+          highlight: 'rank locally on Google Maps',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Amit Kapoor',
+          designation: 'Founder',
+          company: 'Global Horizon Tours'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your travel tourism business.'
+      title: 'Boost Your Travel Website Rankings & Bookings',
+      subtitle: 'SEO THAT DRIVES RESULTS',
+      description: 'Get a tailored travel SEO plan from Digi Aerotech and start ranking higher on Google, Maps, and beyond.'
     }
   }
 };

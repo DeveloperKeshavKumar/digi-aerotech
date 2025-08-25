@@ -1,198 +1,234 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconDeviceMobile, IconWorld, IconCalendarEvent, IconRoute, IconUserCheck,
+  IconPhoneCall, IconRocket, IconShieldCheck, IconMap, IconUsers,
+  IconChartArrows, IconArrowRight, IconHeart, IconTrendingUp, IconStar
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'mobile-apps-development',
   business: 'travel-tourism',
   variants: {
-    hero: 'variant1',
+    hero: 'variant3',
     whyChooseUs: 'variant2',
-    process: 'variant3',
+    process: 'variant1',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: 'mobile-apps-development-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Mobile App Challenges for ", gradient: false },
+            { text: "Travel & Tourism Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Travel agencies, tour operators, and destination brands struggle to retain customers and simplify bookings without robust mobile apps.",
+          painPoints: [
+            "Manual booking & inquiry handling",
+            "No mobile-friendly traveler experience",
+            "Difficulty managing itineraries & packages",
+            "Low customer retention without loyalty features",
+            "Missing global reach with localized apps"
+          ],
+          solutionPoints: [
+            "Seamless booking apps with payment gateways",
+            "User-friendly mobile design for travelers",
+            "Smart itinerary planners & package management",
+            "Loyalty programs & personalized push notifications",
+            "Multilingual, scalable apps for global users"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Build Your Travel App Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do travel businesses need a mobile app?',
+              answer: 'A mobile app streamlines bookings, itineraries, and customer engagement, boosting traveler trust and loyalty.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you build apps with integrated booking systems?',
+              answer: 'Yes. We develop apps with booking, payments, and itinerary management tailored to your travel business.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you create apps for international travelers?',
+              answer: 'Absolutely. We design multilingual, multi-currency apps for global travelers and tourism operators.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How do you increase traveler retention?',
+              answer: 'Through loyalty programs, push notifications, and AI-based recommendations inside the app.',
+              icon: React.createElement(IconHeart, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you provide security for payment systems?',
+              answer: 'Yes. We integrate secure payment gateways with encryption, fraud protection, and compliance checks.',
+              icon: React.createElement(IconShieldCheck, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How long does it take to launch a travel app?',
+              answer: 'Depending on features, most travel apps are developed and deployed within 8–12 weeks.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Mobile Apps Development for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Seamless Bookings?",
+        "Loyal Travelers?",
+        "Smart Itinerary Apps?",
+        "Higher Retention?",
+        "360° Mobile Apps for Travel Brands?"
       ],
       brandLine: [
-        { text: "Mobile Apps Development for Travel Tourism", gradient: false }
+        { text: "📱 Build Next-Gen Travel Apps that Convert Travelers into Loyal Customers", gradient: false }
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We design & develop powerful mobile apps for travel agencies, tour operators, and tourism brands to increase bookings, engagement, and loyalty.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Get Free App Consultation", link: "/contact" },
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "100,000+ Travelers",
+          description: "Engaged via custom travel apps"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
+          icon: React.createElement(IconRoute, { size: 32 }),
+          title: "500+ Travel Packages",
+          description: "Digitally managed & booked"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconChartArrows, { size: 32 }),
+          title: "5X Customer Retention",
+          description: "Through loyalty-driven apps"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 User Rating",
+          description: "Across client mobile apps"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Mobile App Partner for Travel Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Custom Travel Apps",
+          description: "We build tailor-made apps for agencies, operators & tourism boards."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
+          icon: React.createElement(IconMap, { size: 28 }),
+          title: "Smart Itinerary Planners",
+          description: "Interactive maps, schedules, and trip planners built-in."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUserCheck, { size: 28 }),
+          title: "Seamless Booking Systems",
+          description: "Integrated booking engines with secure payments."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Boost Retention & Loyalty",
+          description: "Push notifications & loyalty rewards keep travelers engaged."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Global Ready",
+          description: "Multilingual apps with multi-currency support for global users."
+        },
+        {
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "High Security Standards",
+          description: "Data encryption, fraud detection & compliance built-in."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Launch Your Travel App Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Mobile Apps Development Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Mobile App Development Process for Travel & Tourism',
+      subtitle: 'STEP-BY-STEP APP CREATION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for travel tourism businesses.',
+      description: 'From ideation to global launch, our app development process ensures smooth traveler experiences and long-term business scalability.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific travel tourism goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with travel tourism focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Discovery & Research', description: 'Understand business needs & traveler expectations.' },
+        { id: 2, title: 'UI/UX Design', description: 'Craft intuitive, travel-focused mobile interfaces.' },
+        { id: 3, title: 'App Development', description: 'Develop apps with booking, itineraries & payments.' },
+        { id: 4, title: 'Integration & Security', description: 'Integrate APIs, payments, and secure traveler data.' },
+        { id: 5, title: 'Testing & QA', description: 'Ensure seamless performance & bug-free experience.' },
+        { id: 6, title: 'Launch & Scaling', description: 'Deploy apps and optimize for long-term traveler engagement.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Travel Brands Who ", gradient: false },
+        { text: "Transformed with Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped travel brands build engaging mobile apps that drive bookings, retention, and global reach.',
       testimonials: [
         {
           id: '1',
-          message: 'The mobile apps development services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our custom app streamlined bookings and boosted traveler engagement by 5X.',
+          highlight: 'boosted engagement by 5X',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Travel Tourism Company'
+          name: 'Anita Kapoor',
+          designation: 'Founder',
+          company: 'Skyline Journeys'
         },
         {
           id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'From itineraries to secure payments, Digi Aerotech built an app that became our biggest growth driver.',
+          highlight: 'our biggest growth driver',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Vikram Joshi',
+          designation: 'CEO',
+          company: 'Nomad Treks'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your travel tourism business.'
+      title: 'Ready to Build Your Travel Mobile App?',
+      subtitle: 'TURN IDEAS INTO TRAVEL EXPERIENCES',
+      description: 'Book a free app consultation with Digi Aerotech and discover how custom travel apps can increase bookings, retention, and global reach.'
     }
   }
 };

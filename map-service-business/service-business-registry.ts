@@ -231,7 +231,7 @@ import * as startupsEntrepreneurswebDesignDevelopment from './data/startups-entr
 import * as startupsEntrepreneurswebsiteMaintenance from './data/startups-entrepreneurs/website-maintenance';
 import * as travelTourismasoServices from './data/travel-tourism/aso-services';
 import * as travelTourism360DigitalMarketing from './data/travel-tourism/360-digital-marketing';
-import * as travelTourismecommerceMarketing from './data/travel-tourism/ecommerce-marketing';
+// import * as travelTourismecommerceMarketing from './data/travel-tourism/ecommerce-marketing';
 import * as travelTourismgmbServices from './data/travel-tourism/gmb-services';
 import * as travelTourismgoogleAds from './data/travel-tourism/google-ads';
 import * as travelTourismleadsGeneration from './data/travel-tourism/leads-generation';
@@ -473,7 +473,7 @@ const maps: ServiceBusinessMap[] = [
   startupsEntrepreneurswebsiteMaintenance.map,
   travelTourismasoServices.map,
   travelTourism360DigitalMarketing.map,
-  travelTourismecommerceMarketing.map,
+  // travelTourismecommerceMarketing.map,
   travelTourismgmbServices.map,
   travelTourismgoogleAds.map,
   travelTourismleadsGeneration.map,

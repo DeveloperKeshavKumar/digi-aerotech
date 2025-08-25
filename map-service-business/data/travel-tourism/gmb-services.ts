@@ -1,198 +1,234 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconWorld, IconMap, IconTrendingUp, IconShieldCheck,
+  IconUsers, IconPhone, IconStar, IconRocket,
+  IconCalendarEvent, IconArrowRight, IconBuildingStore, IconSearch
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'gmb-services',
   business: 'travel-tourism',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
+    hero: 'variant2',
+    whyChooseUs: 'variant1',
     process: 'variant3',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'gmb-services',
+    slug: 'gmb-services-travel-tourism',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "GMB Challenges Travel & Tourism ", gradient: false },
+            { text: "Businesses Face", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Travel agencies, hotels, and tour operators often struggle to stand out locally on Google Maps and Search without strong GMB optimization.",
+          painPoints: [
+            "Low visibility in Google Maps & Local 3-Pack",
+            "Incomplete or outdated Google Business Profiles",
+            "Few reviews lowering traveler trust",
+            "Incorrect business info confusing customers",
+            "Missed bookings due to weak local presence"
+          ],
+          solutionPoints: [
+            "Optimized GMB listings with accurate business details",
+            "Local keyword targeting for better map rankings",
+            "Review generation & reputation management",
+            "High-quality photos & posts to attract travelers",
+            "Regular updates to maximize local visibility"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Optimize My GMB Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does GMB help travel agencies & tour operators?',
+              answer: 'Google My Business boosts your visibility on Google Maps and local search, helping travelers find and book with you instantly.',
+              icon: React.createElement(IconBuildingStore, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you help my travel business rank in Google’s Local 3-Pack?',
+              answer: 'Yes. We optimize your GMB profile with targeted keywords, reviews, and posts so you rank higher in the local 3-pack results.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you manage reviews and ratings for travel businesses?',
+              answer: 'Absolutely. We implement review strategies and reputation management to build trust and increase bookings.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can GMB optimization bring international tourists too?',
+              answer: 'Yes. Many global travelers search “near me” when they arrive, and optimized GMB helps you capture them instantly.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you also optimize photos and posts on GMB?',
+              answer: 'Yes. High-quality images, videos, and regular posts improve engagement and drive more bookings for your travel brand.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can I see results from GMB optimization?',
+              answer: 'You can expect increased local visibility and inquiries within 4–6 weeks of optimization.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Gmb Services for Travel Tourism?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Local Bookings?",
+        "Rank in Google Maps?",
+        "Trusted Travel Brand?",
+        "Higher Walk-in Customers?",
+        "GMB Services for Travel Agencies?"
       ],
       brandLine: [
-        { text: "Gmb Services for Travel Tourism", gradient: false }
+        { text: "📍 Boost Your Travel & Tourism Business with GMB Optimization", gradient: false }
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for travel tourism. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help travel brands rank higher on Google Maps & local search, attract more travelers, and increase bookings.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconMap, { size: 28 }), text: "Get Free GMB Audit", link: "/contact" },
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "25,000+ Local Leads",
+          description: "Generated via GMB optimization"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Travel Tourism served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global Travelers Captured",
+          description: "Optimized for ‘near me’ searches"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9★ Avg Rating",
+          description: "Through review & trust building"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "Fast Results",
+          description: "Local visibility boosted in weeks"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Travel Tourism?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 GMB Partner for Travel & Tourism", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of travel tourism market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBuildingStore, { size: 28 }),
+          title: "Complete GMB Management",
+          description: "We handle your GMB from setup to growth."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for travel tourism businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Local SEO Boost",
+          description: "Optimized keywords to rank on Google Maps."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review & Reputation Building",
+          description: "Positive reviews that increase traveler trust."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconMap, { size: 28 }),
+          title: "Capture ‘Near Me’ Searches",
+          description: "Rank for travelers searching on the go."
+        },
+        {
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Accurate Business Details",
+          description: "We ensure your info is always correct & updated."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Quick Local Growth",
+          description: "Get more walk-ins, calls, and bookings fast."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start Optimizing My GMB",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Gmb Services for Travel Tourism',
-      subtitle: 'TRAVEL TOURISM SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for travel tourism businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for travel tourism market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for travel tourism audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for travel tourism businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Gmb Services Process for Travel Tourism',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our GMB Optimization Process for Travel & Tourism',
+      subtitle: 'STEP-BY-STEP LOCAL VISIBILITY GROWTH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for travel tourism businesses.',
+      description: 'We optimize your GMB profile to appear in Google’s Local 3-Pack and Maps results, attracting more travelers near you.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your travel tourism business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific travel tourism goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with travel tourism focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on travel tourism market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Profile Audit & Setup', description: 'Fix incomplete or inaccurate GMB details.' },
+        { id: 2, title: 'Keyword & Category Optimization', description: 'Target keywords travelers use to book tours & hotels.' },
+        { id: 3, title: 'Review & Rating Strategy', description: 'Boost traveler trust with reputation management.' },
+        { id: 4, title: 'Photo & Post Optimization', description: 'Engaging photos & posts for higher click-throughs.' },
+        { id: 5, title: 'Local SEO Integration', description: 'Strengthen visibility with backlinks & citations.' },
+        { id: 6, title: 'Monitoring & Reporting', description: 'Track insights, calls, and bookings from GMB.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Travel Businesses That ", gradient: false },
+        { text: "Won with GMB", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from travel tourism businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped travel brands dominate Google Maps and grow local bookings.',
       testimonials: [
         {
           id: '1',
-          message: 'The gmb services services transformed our travel tourism business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our tour agency started ranking in the Google 3-Pack for “Jaipur city tours” and bookings doubled within 2 months.',
+          highlight: 'Google 3-Pack',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Travel Tourism Company'
+          name: 'Meera Kapoor',
+          designation: 'Founder',
+          company: 'Jaipur Explore'
         },
         {
           id: '2',
-          message: 'Outstanding gmb services expertise specifically for travel tourism. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for travel tourism',
+          message: 'With Digi Aerotech’s GMB optimization, our hotel stays fully booked during peak season.',
+          highlight: 'Fully booked hotel',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Travel Tourism Solutions'
+          name: 'Rohit Malhotra',
+          designation: 'Manager',
+          company: 'Himalaya Retreats'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Travel Tourism Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your travel tourism business.'
+      title: 'Ready to Boost Your Local Bookings with GMB?',
+      subtitle: 'TURN SEARCHES INTO BOOKINGS',
+      description: 'Get a free GMB audit with Digi Aerotech and start ranking higher on Google Maps and Local 3-Pack.'
     }
   }
 };
