@@ -35,6 +35,8 @@ import {
   IconStarsFilled,
   IconUsersGroup,
   IconSchool,
+  IconDeviceMobileX,
+  IconDeviceMobileCode,
 } from '@tabler/icons-react';
 import { Companies } from '@/components/homepage/companies';
 export default function Homepage() {
@@ -264,7 +266,7 @@ export default function Homepage() {
             icon: <Monitor size={24} />,
             gridClass: "md:col-span-6 lg:col-span-4",
             description: "Custom websites that convert visitors into customers.",
-            url:"/web-design-development"
+            url: "/web-design-development"
           },
           {
             name: "Local SEO & Google Business",
@@ -277,7 +279,7 @@ export default function Homepage() {
             name: "Social Media Marketing",
             icon: <IconSocial size={24} />,
             gridClass: "md:col-span-2 lg:col-span-6",
-            description: "Build brand awareness and engage with your audience across platforms.",
+            description: "Build brand awareness and engage with your audience across platforms. Our comprehensive social media services include content creation, community management, paid advertising, and analytics reporting. We help you establish a strong social presence on platforms to drive engagement and conversions.",
             tag: {
               icon: <TrendingUp size={14} />,
               text: "Fastest Growing",
@@ -292,11 +294,11 @@ export default function Homepage() {
             description: "High-converting landing pages designed for maximum results."
           },
           {
-            name: "Marketing Automation",
-            icon: <Bot size={24} />,
+            name: "Mobile App Development",
+            icon: <IconDeviceMobileCode size={24} />,
             gridClass: "md:col-span-3 lg:col-span-6",
-            description: "Streamline your sales process with intelligent automation.",
-            url: "/marketing-automation"
+            description: "Build powerful mobile apps that engage users. From native iOS and Android apps to cross-platform solutions, we deliver scalable, user-friendly applications that drive business growth. Expert in React Native and Flutter development.",
+            url: "/mobile-apps-development"
           },
           {
             name: "Branding & Design",
@@ -314,7 +316,7 @@ export default function Homepage() {
               icon: <IconFlame size={24} />,
               text: "Fastest Growing",
             },
-            url:"/ecommerce-marketing"
+            url: "/ecommerce-marketing"
           }
         ]}
         cta={{ text: "View All Services", link: "/services" }}
