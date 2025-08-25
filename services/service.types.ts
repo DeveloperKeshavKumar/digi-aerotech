@@ -40,31 +40,31 @@ export interface ServiceData {
     };
     customSections?: CustomSection[];
     hero?: {
-        initial: string;
-        headlineKeywords: string[];
-        brandLine: string | { text: string; gradient?: boolean; gradientClass?: string }[];
-        subheadline: string;
-        ctaButtons: CTAButton[];
-        stats: StatsProps[];
+        initial?: string;
+        headlineKeywords?: string[];
+        brandLine?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
+        subheadline?: string;
+        ctaButtons?: CTAButton[];
+        stats?: StatsProps[];
     };
     whyChooseUs?: {
-        title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
-        trustPoints: {
+        title?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
+        trustPoints?: {
             icon: React.ReactNode;
             title: string;
             description: string;
         }[];
-        cta: {
+        cta?: {
             text: string;
             link: string;
             icon: React.ReactNode;
         };
     };
     typesOfServices?: {
-        title: string;
-        subtitle: string;
-        description: string;
-        services: {
+        title?: string;
+        subtitle?: string;
+        description?: string;
+        services?: {
             id: number;
             title: string;
             description: string;
@@ -72,22 +72,22 @@ export interface ServiceData {
         }[];
     };
     process?: {
-        title: string;
-        subtitle: string;
-        description: string;
+        title?: string;
+        subtitle?: string;
+        description?: string;
         className?: string;
-        steps: {
+        steps?: {
             id: number;
             title: string;
             description: string;
         }[];
     };
     techStack?: {
-        title: string;
-        subtitle: string;
-        description: string;
-        categories: string[];
-        technologies: {
+        title?: string;
+        subtitle?: string;
+        description?: string;
+        categories?: string[];
+        technologies?: {
             id: number;
             name: string;
             logo: string;
@@ -95,9 +95,9 @@ export interface ServiceData {
         }[];
     };
     testimonials?: {
-        title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
-        description: string;
-        testimonials: {
+        title?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
+        description?: string;
+        testimonials?: {
             id: string;
             image?: string;
             message: string;
@@ -109,9 +109,9 @@ export interface ServiceData {
         }[];
     };
     cta?: {
-        title: string;
+        title?: string;
         subtitle?: string;
-        description: string;
+        description?: string;
         backgroundColor?: string;
     };
 }
