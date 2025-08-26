@@ -1,8 +1,13 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconRocket, IconTarget, IconCoin, IconChartBar, IconTrendingUp,
+  IconUsers, IconBriefcase, IconBulb,
+  IconStars, IconArrowRight,
+  IconMouse
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'google-ads',
@@ -14,185 +19,234 @@ export const map: ServiceBusinessMap = {
     testimonials: 'variant1'
   },
   data: {
-    slug: 'google-ads',
+    slug: 'google-ads-startups-entrepreneurs',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Most Startups Struggle with ", gradient: false },
+            { text: "Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Running ads without strategy can drain budgets fast. Startups need precision, not guesswork.",
+          painPoints: [
+            "High ad spend with little ROI",
+            "Wrong targeting leading to irrelevant clicks",
+            "Low Quality Scores increasing CPC",
+            "No conversion tracking setup",
+            "Struggling to compete with bigger brands"
+          ],
+          solutionPoints: [
+            "Startup-focused ad strategy to maximize ROI",
+            "Laser-sharp audience targeting & keywords",
+            "Conversion tracking & performance reporting",
+            "Ad creatives designed to sell, not just click",
+            "Continuous A/B testing to reduce costs & scale"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Run Profitable Google Ads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Are Google Ads effective for startups?',
+              answer: 'Yes. With precise targeting, startups can reach ready-to-buy customers and generate qualified leads from day one.',
+              icon: React.createElement(IconMouse, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'What is the minimum budget required?',
+              answer: 'We work with startup-friendly budgets and scale campaigns once we achieve positive ROI. Many see results starting at $500/month.',
+              icon: React.createElement(IconCoin, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How fast can we see results?',
+              answer: 'Google Ads can deliver leads within days of campaign launch, making it one of the fastest growth channels for startups.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide conversion tracking?',
+              answer: 'Absolutely. We set up tracking for calls, forms, signups, and purchases so every dollar spent is measurable.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can you help us scale campaigns?',
+              answer: 'Yes. Once ads are profitable, we scale campaigns across Google Search, Display, YouTube, and Retargeting for exponential growth.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Smart Ads for ",
       headlineKeywords: [
-        "Google Ads for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Startup Growth",
+        "Entrepreneurs",
+        "Early-Stage Ventures",
+        "New Businesses"
       ],
       brandLine: [
-        { text: "Google Ads for Startups Entrepreneurs", gradient: false }
+        { text: "🚀 Google Ads That Drive Conversions", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized google ads strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We create and manage high-performing Google Ads campaigns designed to generate leads, boost sales, and scale startups faster.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconTarget, { size: 28 }), text: "Launch My Ads", link: "/contact" },
+        { icon: React.createElement(IconBulb, { size: 28 }), text: "Get Free Audit", link: "/google-ads-audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconCoin, { size: 32 }),
+          title: "2X ROI",
+          description: "achieved for startups"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconMouse, { size: 32 }),
+          title: "50% Lower CPC",
+          description: "through optimization"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Qualified Leads",
+          description: "driven every month"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "Faster Growth",
+          description: "from Day 1 campaigns"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Startups Trust Us for ", gradient: false },
+        { text: "Google Ads Management", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Data-Driven Targeting",
+          description: "We target only high-intent customers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconBriefcase, { size: 28 }),
+          title: "Startup-Friendly Pricing",
+          description: "Flexible plans that fit early budgets."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored google ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Every dollar spent is measurable."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Faster Conversions",
+          description: "Campaigns optimized for instant results."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Scalable Growth",
+          description: "From launch to aggressive scaling."
+        },
+        {
+          icon: React.createElement(IconStars, { size: 28 }),
+          title: "Proven Expertise",
+          description: "We’ve grown 100+ startups with ads."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My Google Ads Campaign",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Google Ads for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive google ads solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom google ads strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of google ads campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Google Ads Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Google Ads Process for Startups',
+      subtitle: 'FROM STRATEGY TO SCALE',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to google ads that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We design campaigns that convert clicks into paying customers with a proven, startup-focused framework.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'Research & Strategy',
+          description: 'We analyze your market, competitors, and audience to craft a data-backed strategy that aligns with your startup’s growth goals.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom google ads strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'Campaign Setup',
+          description: 'From keyword selection to ad group structuring, we set up campaigns for maximum visibility and lowest cost per click.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of google ads campaigns with startups entrepreneurs focus.'
+          title: 'Ad Creatives',
+          description: 'Compelling ad copy, visuals, and extensions designed to attract attention and drive high-quality clicks that convert.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'Conversion Tracking',
+          description: 'We implement tracking for leads, calls, and purchases to ensure every click is measurable and ROI-driven.'
+        },
+        {
+          id: 5,
+          title: 'Optimization & A/B Testing',
+          description: 'We continuously refine targeting, bidding, and creatives with A/B testing to lower CPCs and increase conversions.'
+        },
+        {
+          id: 6,
+          title: 'Scaling & Expansion',
+          description: 'Once profitable, we expand campaigns across Search, Display, YouTube, and Retargeting for maximum startup growth.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Google Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for google ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Google Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups Scaling Fast with ", gradient: false },
+        { text: "Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'See how entrepreneurs used our Google Ads services to generate leads, increase ROI, and scale confidently.',
       testimonials: [
         {
           id: '1',
-          message: 'The google ads services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Within 3 weeks, our SaaS startup generated 200+ qualified leads at half the cost we used to spend. The ROI has been phenomenal.',
+          highlight: '200+ Leads in 3 Weeks',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Rohan Gupta',
+          designation: 'Co-Founder',
+          company: 'CloudScale AI'
         },
         {
           id: '2',
-          message: 'Outstanding google ads expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'We were burning cash with no results until Digi Aerotech restructured our Google Ads. Now we get steady conversions at a predictable cost.',
+          highlight: 'Consistent Conversions',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Neha Sharma',
+          designation: 'Founder',
+          company: 'FinTech Hive'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR GOOGLE ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our google ads can drive growth for your startups entrepreneurs business.'
+      title: 'Run High-ROI Google Ads for Your Startup',
+      subtitle: 'FROM LAUNCH TO SCALE',
+      description: 'Stop wasting money on ineffective ads. Our Google Ads management ensures every click counts towards startup growth.',
     }
   }
 };

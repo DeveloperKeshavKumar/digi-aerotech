@@ -1,198 +1,251 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTarget, IconRocket, IconChartBar, IconArrowRight,
+  IconUsers, IconTrendingUp, IconDeviceMobile, IconBrandFacebook,
+  IconBrandInstagram, IconAd, IconCurrencyDollar, IconSparkles
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'meta-ads',
   business: 'startups-entrepreneurs',
   variants: {
-    hero: 'variant2',
+    hero: 'variant1',
     whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    process: 'variant2',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'meta-ads',
+    slug: 'meta-ads-startups-entrepreneurs',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Startups Struggle with ", gradient: false },
+            { text: "Paid Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Running ads without a strategy wastes budget and fails to generate quality leads for startups.",
+          painPoints: [
+            "Wasting ad spend on broad targeting",
+            "Low click-through rates & poor creatives",
+            "Struggling to generate qualified leads",
+            "No proper tracking or conversions setup",
+            "Difficulty scaling campaigns profitably"
+          ],
+          solutionPoints: [
+            "Laser-focused audience targeting",
+            "High-converting ad creatives & copy",
+            "Pixel tracking & retargeting campaigns",
+            "Affordable startup-friendly ad strategies",
+            "Continuous A/B testing & scaling"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch My Meta Ads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why are Meta Ads important for startups?',
+              answer: 'Meta Ads (Facebook & Instagram Ads) help startups build awareness, generate leads, and drive sales quickly without waiting for long-term SEO results.',
+              icon: React.createElement(IconBrandFacebook, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How do Meta Ads generate leads for entrepreneurs?',
+              answer: 'By targeting the right audience with precise interests, demographics, and behaviors, we ensure startups attract high-quality leads ready to convert.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you manage ad creatives as well?',
+              answer: 'Yes, we design scroll-stopping creatives, engaging videos, and persuasive ad copy tailored for startups and small businesses.',
+              icon: React.createElement(IconAd, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'What’s the minimum budget for Meta Ads?',
+              answer: 'We craft startup-friendly campaigns, starting with budgets as low as $200–$300, then scale based on ROI.',
+              icon: React.createElement(IconCurrencyDollar, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How soon can I see results?',
+              answer: 'Most startups begin to see leads and inquiries within the first 2–3 weeks, depending on targeting and ad spend.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Boost Your Startup with ",
       headlineKeywords: [
-        "Meta Ads for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Meta Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "Lead Generation"
       ],
       brandLine: [
-        { text: "Meta Ads for Startups Entrepreneurs", gradient: false }
+        { text: "🚀 Drive Growth with Smart Paid Social Campaigns", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help startups and entrepreneurs scale faster with ROI-driven Meta Ads campaigns that generate leads, boost sales, and build brand awareness.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconBrandFacebook, { size: 28 }), text: "Run My Facebook Ads", link: "/contact" },
+        { icon: React.createElement(IconBrandInstagram, { size: 28 }), text: "Boost My Instagram", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "5x More Leads",
+          description: "with laser-focused targeting"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "High ROI Campaigns",
+          description: "optimized for startups"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconDeviceMobile, { size: 32 }),
+          title: "Mobile-First Ads",
+          description: "engage audiences instantly"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconSparkles, { size: 32 }),
+          title: "Creative Excellence",
+          description: "ads that convert clicks to customers"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Entrepreneurs Choose Us for ", gradient: false },
+        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Precise Targeting",
+          description: "We reach your ideal customers with laser accuracy."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconAd, { size: 28 }),
+          title: "Scroll-Stopping Creatives",
+          description: "High-quality visuals and copy that drive action."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Data-Driven Scaling",
+          description: "We optimize ads based on real metrics & ROI."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconCurrencyDollar, { size: 28 }),
+          title: "Startup-Friendly Budgets",
+          description: "Affordable campaigns with maximum impact."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Faster Growth",
+          description: "Generate leads & sales within weeks, not months."
+        },
+        {
+          icon: React.createElement(IconSparkles, { size: 28 }),
+          title: "Conversion-Focused",
+          description: "Every ad is designed to deliver measurable results."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Launch My Meta Campaign",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Meta Ads for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Meta Ads Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Meta Ads Process for Startups',
+      subtitle: 'FROM TESTING TO SCALING',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We help startups turn limited budgets into maximum results with a proven Meta Ads framework that drives leads and revenue.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'Market & Competitor Research',
+          description: 'We analyze your target audience, competitors, and industry to craft a winning Meta Ads strategy.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'Audience Targeting',
+          description: 'We define and segment audiences by demographics, interests, and behaviors for precise targeting.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with startups entrepreneurs focus.'
+          title: 'Creative Design & Copywriting',
+          description: 'Our team builds eye-catching visuals, videos, and persuasive copy tailored for your startup.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'Campaign Setup & Launch',
+          description: 'We structure campaigns with ad sets, pixels, and objectives to maximize lead generation and conversions.'
+        },
+        {
+          id: 5,
+          title: 'Optimization & Retargeting',
+          description: 'We continuously A/B test, optimize, and run retargeting ads to convert interested prospects into paying customers.'
+        },
+        {
+          id: 6,
+          title: 'Scaling & Reporting',
+          description: 'Once winning campaigns are identified, we scale budgets strategically while providing transparent performance reports.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups Growing with ", gradient: false },
+        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'See how our Meta Ads campaigns have transformed startups into fast-growing businesses with more leads and sales.',
       testimonials: [
         {
           id: '1',
-          message: 'The meta ads services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our lead flow increased 400% within the first month of running Facebook Ads. They know exactly how to target the right audience.',
+          highlight: '400% More Leads',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Ankit Mehra',
+          designation: 'Founder',
+          company: 'QuickLaunch'
         },
         {
           id: '2',
-          message: 'Outstanding meta ads expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'We went from struggling with organic reach to generating consistent sales via Instagram Ads. Perfect for startups like ours!',
+          highlight: 'Consistent Sales via Ads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Pooja Sharma',
+          designation: 'Co-Founder',
+          company: 'StyleNest'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your startups entrepreneurs business.'
+      title: 'Supercharge Your Startup with Meta Ads',
+      subtitle: 'FROM CLICKS TO CUSTOMERS',
+      description: 'Turn your startup vision into a fast-growing reality with our ROI-driven Meta Ads campaigns.',
     }
   }
 };

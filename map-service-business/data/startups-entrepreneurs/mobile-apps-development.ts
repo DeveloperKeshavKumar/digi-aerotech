@@ -1,198 +1,251 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconRocket, IconDeviceMobile, IconUsers, IconLayersDifference,
+  IconArrowRight, IconCode, IconBulb, IconChartLine, IconSettings,
+  IconCloud, IconAppWindow, IconSparkles, IconTrendingUp
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'mobile-apps-development',
   business: 'startups-entrepreneurs',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    process: 'variant3',
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: 'mobile-apps-development-startups-entrepreneurs',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Startups Struggle with ", gradient: false },
+            { text: "Mobile App Development", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Launching an app is expensive and complex — most startups burn time and money on poor development choices.",
+          painPoints: [
+            "High app development costs draining funds",
+            "Poor UI/UX leading to low user adoption",
+            "Delayed launches missing market timing",
+            "Lack of scalability as users grow",
+            "Technical debt due to rushed coding"
+          ],
+          solutionPoints: [
+            "Startup-friendly MVP-first approach",
+            "User-centric design & smooth experiences",
+            "Agile development for faster time-to-market",
+            "Scalable, future-proof app architecture",
+            "Expert guidance to avoid costly mistakes"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Build My Startup App"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why should startups invest in mobile apps?',
+              answer: 'Mobile apps help startups acquire users, raise funding, and build brand loyalty by providing seamless digital experiences.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you build MVP apps for startups?',
+              answer: 'Yes, we specialize in MVP (Minimum Viable Product) development so startups can validate their idea quickly and affordably.',
+              icon: React.createElement(IconBulb, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Which platforms do you support?',
+              answer: 'We develop cross-platform apps for iOS and Android with React Native or Flutter, ensuring faster delivery and cost savings.',
+              icon: React.createElement(IconAppWindow, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Will my app be scalable as my startup grows?',
+              answer: 'Absolutely. We build cloud-integrated, scalable solutions so your app grows smoothly with your user base.',
+              icon: React.createElement(IconCloud, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you handle UI/UX as well?',
+              answer: 'Yes, our team designs user-friendly, conversion-focused app experiences tailored to startup audiences.',
+              icon: React.createElement(IconSparkles, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Power Your Startup with ",
       headlineKeywords: [
-        "Mobile Apps Development for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Mobile Apps",
+        "Scalable MVPs",
+        "iOS & Android",
+        "Digital Growth"
       ],
       brandLine: [
-        { text: "Mobile Apps Development for Startups Entrepreneurs", gradient: false }
+        { text: "📱 Build Startup Apps That Scale With Your Vision", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help startups and entrepreneurs bring their app ideas to life with scalable, user-friendly, and market-ready mobile solutions.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconDeviceMobile, { size: 28 }), text: "Start My App Project", link: "/contact" },
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Launch MVP Faster", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "10K+ Users Onboarded",
+          description: "via startup-focused apps"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconLayersDifference, { size: 32 }),
+          title: "MVP-First Approach",
+          description: "validate ideas quickly"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Investor-Ready Apps",
+          description: "built for scaling & funding"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconChartLine, { size: 32 }),
+          title: "Agile Development",
+          description: "fast, flexible, affordable"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Entrepreneurs Trust Us for ", gradient: false },
+        { text: "Mobile App Development", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBulb, { size: 28 }),
+          title: "MVP-Focused",
+          description: "We prioritize MVPs to save time and money."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Cross-Platform Apps",
+          description: "iOS + Android apps built efficiently with one codebase."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconSparkles, { size: 28 }),
+          title: "Stunning UI/UX",
+          description: "Apps that delight users and drive retention."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconSettings, { size: 28 }),
+          title: "Agile & Scalable",
+          description: "Future-proof tech to grow as your startup grows."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Fast Time-to-Market",
+          description: "Launch your app idea in weeks, not months."
+        },
+        {
+          icon: React.createElement(IconCode, { size: 28 }),
+          title: "Expert Developers",
+          description: "Skilled in React Native, Flutter, and native tech."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Build My Startup App",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Mobile Apps Development Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Mobile App Development Process for Startups',
+      subtitle: 'FROM IDEA TO LAUNCH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We follow a lean, agile, and startup-focused app development process that reduces risks, validates ideas, and ensures scalability.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'Discovery & Strategy',
+          description: 'We understand your vision, define the target audience, and align app features with startup goals.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'MVP Roadmap',
+          description: 'We identify the must-have features for your MVP, helping you launch faster and attract early adopters or investors.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with startups entrepreneurs focus.'
+          title: 'UI/UX Design',
+          description: 'Our designers craft user-friendly, intuitive, and visually appealing app experiences that drive adoption.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'Agile Development',
+          description: 'We build your app using iterative sprints, ensuring speed, flexibility, and reduced risk of delays.'
+        },
+        {
+          id: 5,
+          title: 'Testing & QA',
+          description: 'We test across devices and platforms, ensuring your app is bug-free, secure, and ready to launch.'
+        },
+        {
+          id: 6,
+          title: 'Launch & Scale',
+          description: 'We publish your app on App Store & Google Play, with ongoing support, scaling, and updates.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups Scaling with ", gradient: false },
+        { text: "Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'See how our mobile app development services helped startups launch faster, attract investors, and scale successfully.',
       testimonials: [
         {
           id: '1',
-          message: 'The mobile apps development services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our MVP was built in just 6 weeks and helped us secure seed funding. Their startup-first approach is brilliant.',
+          highlight: 'Secured Seed Funding',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Rohit Agarwal',
+          designation: 'Founder',
+          company: 'HealthGo'
         },
         {
           id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'They transformed our app idea into a sleek, scalable product. Within 3 months, we onboarded 5,000+ users.',
+          highlight: '5,000+ Users in 3 Months',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Sneha Kapoor',
+          designation: 'Co-Founder',
+          company: 'EduNest'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your startups entrepreneurs business.'
+      title: 'Turn Your Startup Idea into a Mobile App',
+      subtitle: 'MVP TO SCALING',
+      description: 'We design, develop, and scale mobile apps for startups that attract users, investors, and growth opportunities.'
     }
   }
 };

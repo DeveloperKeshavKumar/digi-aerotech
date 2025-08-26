@@ -1,198 +1,250 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconCode, IconDeviceMobile, IconWorld, IconRocket, IconLayout, IconSettings,
+  IconChartBar, IconBulb, IconCheck, IconTrendingUp, IconBuildingStore
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'web-design-development',
   business: 'startups-entrepreneurs',
   variants: {
     hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
+    whyChooseUs: 'variant3',
+    process: 'variant2',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'web-design-development',
+    slug: 'web-design-development-startups-entrepreneurs',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Most Startup Websites Fail ", gradient: false },
+            { text: "to Convert Visitors", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Many startups treat their website as just a digital brochure. But in reality, it should be your growth engine for customers, investors, and partnerships.",
+          painPoints: [
+            "Outdated designs that don’t inspire trust",
+            "Slow loading speeds that repel visitors",
+            "No clear CTAs or lead funnels",
+            "Non-responsive layouts losing mobile users",
+            "Unscalable structure not ready for growth"
+          ],
+          solutionPoints: [
+            "Modern, investor-ready web designs",
+            "Blazing fast, mobile-first performance",
+            "Conversion-focused CTAs and funnels",
+            "Responsive, SEO-friendly layouts",
+            "Scalable frameworks that grow with you"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Build My Startup Website"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Do you build MVP websites for startups?',
+              answer: 'Yes! We specialize in building MVP websites and SaaS platforms that help startups validate quickly.',
+              icon: React.createElement(IconBulb, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Are your websites SEO-ready?',
+              answer: 'Absolutely. Every site we build follows SEO best practices to ensure visibility from day one.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can my website scale as my startup grows?',
+              answer: 'Yes. We design with scalability in mind, so your site can handle future traffic, features, and expansions.',
+              icon: React.createElement(IconSettings, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you integrate CRMs and lead capture?',
+              answer: 'Of course! We integrate lead forms, CRMs, and marketing automation tools to turn your website into a sales funnel.',
+              icon: React.createElement(IconCheck, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How fast will my site load?',
+              answer: 'We ensure optimized performance with best coding practices, CDN, caching, and lightweight frameworks.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Startup Websites That ",
       headlineKeywords: [
-        "Web Design Development for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Win Investors",
+        "Generate Leads",
+        "Convert Customers",
+        "Scale with You"
       ],
       brandLine: [
-        { text: "Web Design Development for Startups Entrepreneurs", gradient: false }
+        { text: "🚀 Web Design & Development for Startups & Entrepreneurs", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized web design development strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We design websites that not only look great but also build credibility, capture leads, and scale as your startup grows.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Build My Startup Website", link: "/contact" },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), text: "Get Free Website Audit", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconLayout, { size: 32 }),
+          title: "100+ Startup Sites",
+          description: "designed & deployed successfully"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global Reach",
+          description: "optimized for worldwide users"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconDeviceMobile, { size: 32 }),
+          title: "Mobile-First",
+          description: "responsive across all devices"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconBuildingStore, { size: 32 }),
+          title: "MVP Ready",
+          description: "fast prototyping for validation"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Web Design Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Choose Us for ", gradient: false },
+        { text: "Startup Web Development", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Investor-Ready Designs",
+          description: "Professional, modern layouts that impress VCs and clients."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconCode, { size: 28 }),
+          title: "Custom Development",
+          description: "Tailored solutions with clean, scalable codebases."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored web design development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "SEO Optimized",
+          description: "Every build is optimized for search visibility and ranking."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconSettings, { size: 28 }),
+          title: "Scalable Infrastructure",
+          description: "Websites that grow as your startup expands."
+        },
+        {
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Mobile First",
+          description: "Smooth experiences across smartphones, tablets, and desktops."
+        },
+        {
+          icon: React.createElement(IconBulb, { size: 28 }),
+          title: "Growth-Focused",
+          description: "Conversion funnels built to generate leads & sales."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Launch My Startup Website",
+        link: "#contact",
+        icon: React.createElement(IconRocket, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Web Design Development for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive web design development solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom web design development strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of web design development campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Web Design Development Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Website Design & Development Process for Startups',
+      subtitle: 'FROM IDEA TO INVESTOR-READY LAUNCH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to web design development that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We combine creativity, strategy, and technology to build startup websites that attract investors, generate leads, and scale.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'Discovery & Strategy',
+          description: 'We understand your startup vision, business model, and goals to create a web strategy that aligns with growth.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom web design development strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'Wireframes & Prototypes',
+          description: 'We design UX wireframes and clickable prototypes for validation before development starts.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of web design development campaigns with startups entrepreneurs focus.'
+          title: 'UI/UX Design',
+          description: 'Modern, sleek, and user-centric designs that align with your brand and audience expectations.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'Custom Development',
+          description: 'We build websites using scalable frameworks, ensuring fast, secure, and optimized performance.'
+        },
+        {
+          id: 5,
+          title: 'Integrations & Lead Funnels',
+          description: 'From CRMs to payment gateways, we integrate essential tools to turn your site into a lead-gen machine.'
+        },
+        {
+          id: 6,
+          title: 'Testing & Launch',
+          description: 'Rigorous testing ensures flawless performance before your startup goes live with investor-ready confidence.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Web Design Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for web design development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Web Design Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups Scaling with ", gradient: false },
+        { text: "High-Impact Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'Here’s how entrepreneurs transformed their ideas into powerful digital brands with our web design & development services.',
       testimonials: [
         {
           id: '1',
-          message: 'The web design development services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our new website helped us close our seed funding round with an investor-ready presence.',
+          highlight: 'Investor-Ready Website',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Neha Sharma',
+          designation: 'Founder',
+          company: 'FinTechPro'
         },
         {
           id: '2',
-          message: 'Outstanding web design development expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'The website they built not only looks great but also generates consistent inbound leads.',
+          highlight: '50+ Leads / Month',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Rahul Verma',
+          designation: 'CEO',
+          company: 'EduSpark'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR WEB DESIGN DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our web design development can drive growth for your startups entrepreneurs business.'
+      title: 'Build Your Startup Website That Converts',
+      subtitle: 'FROM IDEA TO SCALE',
+      description: 'Whether it’s MVP validation, investor pitch, or full-scale platform, we build startup websites designed for growth and funding.',
     }
   }
 };

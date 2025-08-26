@@ -26,7 +26,10 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.png" },
     ],
-  }
+  },
+  alternates: {
+    canonical: "https://www.digiaerotech.com",
+  },
 };
 
 export default function RootLayout({

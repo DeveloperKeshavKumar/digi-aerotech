@@ -1,198 +1,251 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconMapPin, IconSearch, IconRocket, IconTrendingUp,
+  IconBuildingStore, IconWorld, IconChartBar, IconStars,
+  IconPhoneCall, IconArrowRight, IconUsers
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'local-seo',
   business: 'startups-entrepreneurs',
   variants: {
     hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
+    whyChooseUs: 'variant2',
+    process: 'variant1',
     testimonials: 'variant3'
   },
   data: {
-    slug: 'local-seo',
+    slug: 'local-seo-startups-entrepreneurs',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Most Startups Struggle with ", gradient: false },
+            { text: "Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Without local visibility, startups lose out on nearby customers searching for their products or services.",
+          painPoints: [
+            "Low visibility in Google Maps & local search",
+            "Incomplete or outdated business listings",
+            "Struggling to compete with established local players",
+            "Poor reviews damaging trust",
+            "Difficulty driving calls, visits, or inquiries"
+          ],
+          solutionPoints: [
+            "Complete Google My Business setup & optimization",
+            "Local keyword targeting for maximum reach",
+            "NAP (Name, Address, Phone) consistency across directories",
+            "Review generation & reputation management",
+            "Hyperlocal content strategy & geo-targeted SEO"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Local Rankings"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'What is Local SEO for startups?',
+              answer: 'Local SEO helps your startup appear in Google Maps, “near me” searches, and local business listings to attract nearby customers.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How does Local SEO generate leads for entrepreneurs?',
+              answer: 'By ranking higher in local searches, your startup gets more calls, store visits, and website inquiries from nearby customers actively looking for your services.',
+              icon: React.createElement(IconPhoneCall, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you also optimize Google My Business?',
+              answer: 'Yes. We optimize and manage your GMB profile with posts, images, reviews, and accurate business details to maximize visibility.',
+              icon: React.createElement(IconBuildingStore, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can startups compete with established local businesses?',
+              answer: 'Absolutely. With the right keywords, reviews, and consistent citations, even new startups can outrank larger competitors locally.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How soon can I see results from Local SEO?',
+              answer: 'You can see visibility improvements in 4–6 weeks, with steady growth in calls, inquiries, and store visits within 2–3 months.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Grow Your Startup with ",
       headlineKeywords: [
-        "Local Seo for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Local SEO",
+        "Google Maps Rankings",
+        "Nearby Customers",
+        "Trusted Visibility"
       ],
       brandLine: [
-        { text: "Local Seo for Startups Entrepreneurs", gradient: false }
+        { text: "📍 Attract Local Customers & Build Startup Credibility", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized local seo strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help startups and entrepreneurs dominate local search results, attract nearby customers, and build trust through powerful Local SEO strategies.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconMapPin, { size: 28 }), text: "Rank My Business Locally", link: "/contact" },
+        { icon: React.createElement(IconChartBar, { size: 28 }), text: "Free Local SEO Audit", link: "/local-seo-audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "300% More Visibility",
+          description: "in local Google searches"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconPhoneCall, { size: 32 }),
+          title: "Increase Calls",
+          description: "directly from Google Maps"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Higher Local CTR",
+          description: "boosts inquiries & visits"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStars, { size: 32 }),
+          title: "Stronger Reputation",
+          description: "with more positive reviews"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Local Seo', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Entrepreneurs Trust Us for ", gradient: false },
+        { text: "Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Google Maps Domination",
+          description: "Appear in the top 3 Google Maps listings."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Local Keyword Mastery",
+          description: "Rank for 'near me' and city-based searches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored local seo strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBuildingStore, { size: 28 }),
+          title: "GMB Optimization",
+          description: "Fully optimized Google My Business profile."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconStars, { size: 28 }),
+          title: "Review Management",
+          description: "Generate positive reviews & manage reputation."
+        },
+        {
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Data-Driven SEO",
+          description: "Track calls, clicks, and conversions."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Startup-Friendly Pricing",
+          description: "Affordable Local SEO plans for new businesses."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Dominate My Local Market",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Local Seo for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive local seo solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom local seo strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of local seo campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Local Seo Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Local SEO Process for Startups',
+      subtitle: 'FROM SEARCH TO SALES',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to local seo that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We build your startup’s presence across Google Maps, directories, and local searches so nearby customers can easily find & trust you.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'Local SEO Audit',
+          description: 'We evaluate your startup’s current visibility, competition, and GMB presence to identify gaps and quick-win opportunities.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom local seo strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'Google My Business Optimization',
+          description: 'We fully optimize your GMB profile with categories, descriptions, images, posts, and Q&A for maximum local visibility.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of local seo campaigns with startups entrepreneurs focus.'
+          title: 'Local Keyword Strategy',
+          description: 'We target high-intent, location-based keywords like “best startup services near me” or “[city] entrepreneur solutions.”'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'Citations & Listings',
+          description: 'We ensure your Name, Address, and Phone (NAP) details are consistent across 50+ directories to boost search engine trust.'
+        },
+        {
+          id: 5,
+          title: 'Reviews & Reputation',
+          description: 'We implement systems to get more positive customer reviews and manage feedback, building credibility for your startup.'
+        },
+        {
+          id: 6,
+          title: 'Tracking & Scaling',
+          description: 'We monitor calls, directions, and website clicks to measure ROI, then scale strategies for exponential local growth.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Local Seo Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for local seo success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Local Seo ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups Winning with ", gradient: false },
+        { text: "Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'See how entrepreneurs dominate their local markets and attract customers directly through Google Maps and search.',
       testimonials: [
         {
           id: '1',
-          message: 'The local seo services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'We went from invisible online to ranking #1 in Google Maps in just 8 weeks. Local calls have doubled!',
+          highlight: 'Ranked #1 in 8 Weeks',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Neha Sharma',
+          designation: 'Founder',
+          company: 'EcoStart Solutions'
         },
         {
           id: '2',
-          message: 'Outstanding local seo expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'Thanks to their Local SEO strategy, we get 60% of our leads directly from “near me” searches. Game changer for our startup.',
+          highlight: '60% Leads from Local Search',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Ravi Malhotra',
+          designation: 'Co-Founder',
+          company: 'UrbanX Technologies'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR LOCAL SEO JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our local seo can drive growth for your startups entrepreneurs business.'
+      title: 'Win Customers with Local SEO',
+      subtitle: 'FROM VISIBILITY TO TRUST',
+      description: 'Our Local SEO services put your startup on the map — literally. Get discovered by nearby customers ready to buy.',
     }
   }
 };

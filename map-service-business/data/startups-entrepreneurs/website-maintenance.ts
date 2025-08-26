@@ -1,198 +1,250 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconShieldCheck, IconBug, IconWorld, IconRocket, IconClock, IconServer,
+  IconTools, IconTrendingUp, IconSettings, IconCheck, IconChartBar, IconDatabase
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'website-maintenance',
   business: 'startups-entrepreneurs',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
+    hero: 'variant3',
+    whyChooseUs: 'variant1',
+    process: 'variant2',
     testimonials: 'variant2'
   },
   data: {
-    slug: 'website-maintenance',
+    slug: 'website-maintenance-startups-entrepreneurs',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Startup Websites ", gradient: false },
+            { text: "Break Without Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Most startups launch their website with great enthusiasm but forget about ongoing maintenance. This leads to security risks, downtime, and lost opportunities.",
+          painPoints: [
+            "Unpatched security vulnerabilities",
+            "Downtime during critical funding rounds",
+            "Slow website speed losing leads",
+            "Broken forms or payment failures",
+            "No backups in case of crashes"
+          ],
+          solutionPoints: [
+            "24/7 uptime & performance monitoring",
+            "Regular security patches & updates",
+            "Lightning-fast load speed optimization",
+            "Error-free forms, payments & integrations",
+            "Daily backups & quick disaster recovery"
+          ],
+          cta: {
+            icon: React.createElement(IconShieldCheck, { size: 20 }),
+            text: "Protect My Startup Website"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Do you provide 24/7 monitoring?',
+              answer: 'Yes! We monitor uptime, performance, and vulnerabilities around the clock to keep your startup website safe and reliable.',
+              icon: React.createElement(IconClock, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you handle scaling when my traffic grows?',
+              answer: 'Absolutely. We optimize servers, databases, and caching to ensure your site handles growth seamlessly.',
+              icon: React.createElement(IconServer, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you take regular backups?',
+              answer: 'Yes, we run daily backups with quick restore options so your startup never loses critical data.',
+              icon: React.createElement(IconDatabase, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'What about bug fixes?',
+              answer: 'Our team resolves bugs quickly and ensures smooth functionality across devices and browsers.',
+              icon: React.createElement(IconBug, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Is maintenance costly for startups?',
+              answer: 'Not at all. We provide flexible, startup-friendly maintenance plans that grow with your business.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Keep Your Startup Website ",
       headlineKeywords: [
-        "Website Maintenance for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Secure",
+        "Fast",
+        "Scalable",
+        "Investor-Ready"
       ],
       brandLine: [
-        { text: "Website Maintenance for Startups Entrepreneurs", gradient: false }
+        { text: "🛠️ Website Maintenance for Startups & Entrepreneurs", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We don’t just build startup websites — we keep them secure, updated, fast, and reliable so you can focus on growth.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconShieldCheck, { size: 28 }), text: "Get Maintenance Plan", link: "/contact" },
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Free Website Audit", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTools, { size: 32 }),
+          title: "99.9% Uptime",
+          description: "ensuring trust & reliability"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global Monitoring",
+          description: "performance across regions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "100+ Patches",
+          description: "applied monthly for security"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "Boosted SEO",
+          description: "via speed & uptime optimization"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Choose Us for ", gradient: false },
+        { text: "Startup Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Security First",
+          description: "We ensure startup sites stay safe from hacks and vulnerabilities."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconTools, { size: 28 }),
+          title: "Proactive Fixes",
+          description: "We don’t wait for failures — we prevent them before they happen."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(IconClock, { size: 28 }),
+          title: "24/7 Support",
+          description: "Our experts are always available when your startup needs help."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Growth-Ready",
+          description: "Optimized for scalability and future expansion."
+        },
+        {
+          icon: React.createElement(IconSettings, { size: 28 }),
+          title: "Custom Plans",
+          description: "Flexible maintenance tailored to your startup stage."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Focus on Growth",
+          description: "We handle your site so you can focus on funding & scaling."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Secure My Startup Website",
+        link: "#contact",
+        icon: React.createElement(IconShieldCheck, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Website Maintenance for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Website Maintenance Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Website Maintenance Process for Startups',
+      subtitle: 'KEEPING YOUR SITE INVESTOR & CUSTOMER READY',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We ensure your startup website runs smoothly, loads fast, and stays secure — while being fully optimized for growth.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'Initial Audit',
+          description: 'We run a full audit of speed, SEO, and security to identify risks before onboarding.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'Security Patches',
+          description: 'Regular updates and patching of plugins, frameworks, and servers to keep your site protected.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with startups entrepreneurs focus.'
+          title: 'Performance Optimization',
+          description: 'We boost site loading speeds, mobile performance, and Core Web Vitals for SEO.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'Uptime & Monitoring',
+          description: 'Real-time monitoring ensures your startup site never goes down during critical investor or customer visits.'
+        },
+        {
+          id: 5,
+          title: 'Bug Fixes & Updates',
+          description: 'We fix errors, update features, and ensure seamless user experiences on all devices.'
+        },
+        {
+          id: 6,
+          title: 'Backup & Recovery',
+          description: 'Daily backups and disaster recovery plans ensure your data is always safe.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups Scaling with ", gradient: false },
+        { text: "Reliable Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'See how entrepreneurs protected their startup websites and built investor confidence with our maintenance services.',
       testimonials: [
         {
           id: '1',
-          message: 'The website maintenance services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Their maintenance saved us from a major downtime during our investor pitch week. Truly lifesaving!',
+          highlight: 'Zero Downtime',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Aarav Malhotra',
+          designation: 'Co-founder',
+          company: 'SaaSly'
         },
         {
           id: '2',
-          message: 'Outstanding website maintenance expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'We used to face constant bugs and slow load speeds. Now our site runs faster than ever and our leads doubled.',
+          highlight: '2X Faster Website',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Ishita Kapoor',
+          designation: 'Founder',
+          company: 'HealthStart'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your startups entrepreneurs business.'
+      title: 'Keep Your Startup Website Secure, Fast & Reliable',
+      subtitle: '24/7 MAINTENANCE. ZERO RISKS.',
+      description: 'From security patches to speed optimization, we maintain your startup website so you never lose trust, traffic, or funding opportunities.',
     }
   }
 };

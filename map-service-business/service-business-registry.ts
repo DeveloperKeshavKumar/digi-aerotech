@@ -11,7 +11,7 @@ import * as b2bServicesgmbServices from './data/b2b-services/gmb-services';
 import * as b2bServicesgoogleAds from './data/b2b-services/google-ads';
 import * as b2bServicesleadsGeneration from './data/b2b-services/leads-generation';
 import * as b2bServiceslocalSeo from './data/b2b-services/local-seo';
-import * as b2bServicesmarketingAutomation from './data/b2b-services/marketing-automation';
+// import * as b2bServicesmarketingAutomation from './data/b2b-services/marketing-automation';
 import * as b2bServicesmetaAds from './data/b2b-services/meta-ads';
 import * as b2bServicesmobileAppsDevelopment from './data/b2b-services/mobile-apps-development';
 import * as b2bServicesotherAds from './data/b2b-services/other-ads';
@@ -26,7 +26,7 @@ import * as b2cServicesgmbServices from './data/b2c-services/gmb-services';
 import * as b2cServicesgoogleAds from './data/b2c-services/google-ads';
 import * as b2cServicesleadsGeneration from './data/b2c-services/leads-generation';
 import * as b2cServiceslocalSeo from './data/b2c-services/local-seo';
-import * as b2cServicesmarketingAutomation from './data/b2c-services/marketing-automation';
+// import * as b2cServicesmarketingAutomation from './data/b2c-services/marketing-automation';
 import * as b2cServicesmetaAds from './data/b2c-services/meta-ads';
 import * as b2cServicesmobileAppsDevelopment from './data/b2c-services/mobile-apps-development';
 import * as b2cServicesotherAds from './data/b2c-services/other-ads';
@@ -41,7 +41,7 @@ import * as consultantsgmbServices from './data/consultants/gmb-services';
 import * as consultantsgoogleAds from './data/consultants/google-ads';
 import * as consultantsleadsGeneration from './data/consultants/leads-generation';
 import * as consultantslocalSeo from './data/consultants/local-seo';
-import * as consultantsmarketingAutomation from './data/consultants/marketing-automation';
+// import * as consultantsmarketingAutomation from './data/consultants/marketing-automation';
 import * as consultantsmetaAds from './data/consultants/meta-ads';
 import * as consultantsmobileAppsDevelopment from './data/consultants/mobile-apps-development';
 import * as consultantsotherAds from './data/consultants/other-ads';
@@ -56,7 +56,7 @@ import * as doctorsClinicsgmbServices from './data/doctors-clinics/gmb-services'
 import * as doctorsClinicsgoogleAds from './data/doctors-clinics/google-ads';
 import * as doctorsClinicsleadsGeneration from './data/doctors-clinics/leads-generation';
 import * as doctorsClinicslocalSeo from './data/doctors-clinics/local-seo';
-import * as doctorsClinicsmarketingAutomation from './data/doctors-clinics/marketing-automation';
+// import * as doctorsClinicsmarketingAutomation from './data/doctors-clinics/marketing-automation';
 import * as doctorsClinicsmetaAds from './data/doctors-clinics/meta-ads';
 import * as doctorsClinicsmobileAppsDevelopment from './data/doctors-clinics/mobile-apps-development';
 import * as doctorsClinicsotherAds from './data/doctors-clinics/other-ads';
@@ -71,7 +71,7 @@ import * as eCommerceBrandsgmbServices from './data/e-commerce-brands/gmb-servic
 import * as eCommerceBrandsgoogleAds from './data/e-commerce-brands/google-ads';
 import * as eCommerceBrandsleadsGeneration from './data/e-commerce-brands/leads-generation';
 import * as eCommerceBrandslocalSeo from './data/e-commerce-brands/local-seo';
-import * as eCommerceBrandsmarketingAutomation from './data/e-commerce-brands/marketing-automation';
+// import * as eCommerceBrandsmarketingAutomation from './data/e-commerce-brands/marketing-automation';
 import * as eCommerceBrandsmetaAds from './data/e-commerce-brands/meta-ads';
 import * as eCommerceBrandsmobileAppsDevelopment from './data/e-commerce-brands/mobile-apps-development';
 import * as eCommerceBrandsotherAds from './data/e-commerce-brands/other-ads';
@@ -86,7 +86,7 @@ import * as educationalInstitutionsgmbServices from './data/educational-institut
 import * as educationalInstitutionsgoogleAds from './data/educational-institutions/google-ads';
 import * as educationalInstitutionsleadsGeneration from './data/educational-institutions/leads-generation';
 import * as educationalInstitutionslocalSeo from './data/educational-institutions/local-seo';
-import * as educationalInstitutionsmarketingAutomation from './data/educational-institutions/marketing-automation';
+// import * as educationalInstitutionsmarketingAutomation from './data/educational-institutions/marketing-automation';
 import * as educationalInstitutionsmetaAds from './data/educational-institutions/meta-ads';
 import * as educationalInstitutionsmobileAppsDevelopment from './data/educational-institutions/mobile-apps-development';
 import * as educationalInstitutionsotherAds from './data/educational-institutions/other-ads';
@@ -101,7 +101,7 @@ import * as fashionBrandsgmbServices from './data/fashion-brands/gmb-services';
 import * as fashionBrandsgoogleAds from './data/fashion-brands/google-ads';
 import * as fashionBrandsleadsGeneration from './data/fashion-brands/leads-generation';
 import * as fashionBrandslocalSeo from './data/fashion-brands/local-seo';
-import * as fashionBrandsmarketingAutomation from './data/fashion-brands/marketing-automation';
+// import * as fashionBrandsmarketingAutomation from './data/fashion-brands/marketing-automation';
 import * as fashionBrandsmetaAds from './data/fashion-brands/meta-ads';
 import * as fashionBrandsmobileAppsDevelopment from './data/fashion-brands/mobile-apps-development';
 import * as fashionBrandsotherAds from './data/fashion-brands/other-ads';
@@ -116,7 +116,7 @@ import * as gymsFitnessgmbServices from './data/gyms-fitness/gmb-services';
 import * as gymsFitnessgoogleAds from './data/gyms-fitness/google-ads';
 import * as gymsFitnessleadsGeneration from './data/gyms-fitness/leads-generation';
 import * as gymsFitnesslocalSeo from './data/gyms-fitness/local-seo';
-import * as gymsFitnessmarketingAutomation from './data/gyms-fitness/marketing-automation';
+// import * as gymsFitnessmarketingAutomation from './data/gyms-fitness/marketing-automation';
 import * as gymsFitnessmetaAds from './data/gyms-fitness/meta-ads';
 import * as gymsFitnessmobileAppsDevelopment from './data/gyms-fitness/mobile-apps-development';
 import * as gymsFitnessotherAds from './data/gyms-fitness/other-ads';
@@ -146,7 +146,7 @@ import * as interiorDesignersgmbServices from './data/interior-designers/gmb-ser
 import * as interiorDesignersgoogleAds from './data/interior-designers/google-ads';
 import * as interiorDesignersleadsGeneration from './data/interior-designers/leads-generation';
 import * as interiorDesignerslocalSeo from './data/interior-designers/local-seo';
-import * as interiorDesignersmarketingAutomation from './data/interior-designers/marketing-automation';
+// import * as interiorDesignersmarketingAutomation from './data/interior-designers/marketing-automation';
 import * as interiorDesignersmetaAds from './data/interior-designers/meta-ads';
 import * as interiorDesignersmobileAppsDevelopment from './data/interior-designers/mobile-apps-development';
 import * as interiorDesignersotherAds from './data/interior-designers/other-ads';
@@ -176,7 +176,7 @@ import * as pharmaCompaniesgmbServices from './data/pharma-companies/gmb-service
 import * as pharmaCompaniesgoogleAds from './data/pharma-companies/google-ads';
 import * as pharmaCompaniesleadsGeneration from './data/pharma-companies/leads-generation';
 import * as pharmaCompanieslocalSeo from './data/pharma-companies/local-seo';
-import * as pharmaCompaniesmarketingAutomation from './data/pharma-companies/marketing-automation';
+// import * as pharmaCompaniesmarketingAutomation from './data/pharma-companies/marketing-automation';
 import * as pharmaCompaniesmetaAds from './data/pharma-companies/meta-ads';
 import * as pharmaCompaniesmobileAppsDevelopment from './data/pharma-companies/mobile-apps-development';
 import * as pharmaCompaniesotherAds from './data/pharma-companies/other-ads';
@@ -191,7 +191,7 @@ import * as realEstategmbServices from './data/real-estate/gmb-services';
 import * as realEstategoogleAds from './data/real-estate/google-ads';
 import * as realEstateleadsGeneration from './data/real-estate/leads-generation';
 import * as realEstatelocalSeo from './data/real-estate/local-seo';
-import * as realEstatemarketingAutomation from './data/real-estate/marketing-automation';
+// import * as realEstatemarketingAutomation from './data/real-estate/marketing-automation';
 import * as realEstatemetaAds from './data/real-estate/meta-ads';
 import * as realEstatemobileAppsDevelopment from './data/real-estate/mobile-apps-development';
 import * as realEstateotherAds from './data/real-estate/other-ads';
@@ -206,7 +206,7 @@ import * as restaurantsCafesgmbServices from './data/restaurants-cafes/gmb-servi
 import * as restaurantsCafesgoogleAds from './data/restaurants-cafes/google-ads';
 import * as restaurantsCafesleadsGeneration from './data/restaurants-cafes/leads-generation';
 import * as restaurantsCafeslocalSeo from './data/restaurants-cafes/local-seo';
-import * as restaurantsCafesmarketingAutomation from './data/restaurants-cafes/marketing-automation';
+// import * as restaurantsCafesmarketingAutomation from './data/restaurants-cafes/marketing-automation';
 import * as restaurantsCafesmetaAds from './data/restaurants-cafes/meta-ads';
 import * as restaurantsCafesmobileAppsDevelopment from './data/restaurants-cafes/mobile-apps-development';
 import * as restaurantsCafesotherAds from './data/restaurants-cafes/other-ads';
@@ -216,12 +216,12 @@ import * as restaurantsCafeswebDesignDevelopment from './data/restaurants-cafes/
 import * as restaurantsCafeswebsiteMaintenance from './data/restaurants-cafes/website-maintenance';
 import * as startupsEntrepreneursasoServices from './data/startups-entrepreneurs/aso-services';
 import * as startupsEntrepreneurs360DigitalMarketing from './data/startups-entrepreneurs/360-digital-marketing';
-import * as startupsEntrepreneursecommerceMarketing from './data/startups-entrepreneurs/ecommerce-marketing';
+// import * as startupsEntrepreneursecommerceMarketing from './data/startups-entrepreneurs/ecommerce-marketing';
 import * as startupsEntrepreneursgmbServices from './data/startups-entrepreneurs/gmb-services';
 import * as startupsEntrepreneursgoogleAds from './data/startups-entrepreneurs/google-ads';
 import * as startupsEntrepreneursleadsGeneration from './data/startups-entrepreneurs/leads-generation';
 import * as startupsEntrepreneurslocalSeo from './data/startups-entrepreneurs/local-seo';
-import * as startupsEntrepreneursmarketingAutomation from './data/startups-entrepreneurs/marketing-automation';
+// import * as startupsEntrepreneursmarketingAutomation from './data/startups-entrepreneurs/marketing-automation';
 import * as startupsEntrepreneursmetaAds from './data/startups-entrepreneurs/meta-ads';
 import * as startupsEntrepreneursmobileAppsDevelopment from './data/startups-entrepreneurs/mobile-apps-development';
 import * as startupsEntrepreneursotherAds from './data/startups-entrepreneurs/other-ads';
@@ -253,7 +253,7 @@ const maps: ServiceBusinessMap[] = [
   b2bServicesgoogleAds.map,
   b2bServicesleadsGeneration.map,
   b2bServiceslocalSeo.map,
-  b2bServicesmarketingAutomation.map,
+  // b2bServicesmarketingAutomation.map,
   b2bServicesmetaAds.map,
   b2bServicesmobileAppsDevelopment.map,
   b2bServicesotherAds.map,
@@ -268,7 +268,7 @@ const maps: ServiceBusinessMap[] = [
   b2cServicesgoogleAds.map,
   b2cServicesleadsGeneration.map,
   b2cServiceslocalSeo.map,
-  b2cServicesmarketingAutomation.map,
+  // b2cServicesmarketingAutomation.map,
   b2cServicesmetaAds.map,
   b2cServicesmobileAppsDevelopment.map,
   b2cServicesotherAds.map,
@@ -283,7 +283,7 @@ const maps: ServiceBusinessMap[] = [
   consultantsgoogleAds.map,
   consultantsleadsGeneration.map,
   consultantslocalSeo.map,
-  consultantsmarketingAutomation.map,
+  // consultantsmarketingAutomation.map,
   consultantsmetaAds.map,
   consultantsmobileAppsDevelopment.map,
   consultantsotherAds.map,
@@ -298,7 +298,7 @@ const maps: ServiceBusinessMap[] = [
   doctorsClinicsgoogleAds.map,
   doctorsClinicsleadsGeneration.map,
   doctorsClinicslocalSeo.map,
-  doctorsClinicsmarketingAutomation.map,
+  // doctorsClinicsmarketingAutomation.map,
   doctorsClinicsmetaAds.map,
   doctorsClinicsmobileAppsDevelopment.map,
   doctorsClinicsotherAds.map,
@@ -313,7 +313,7 @@ const maps: ServiceBusinessMap[] = [
   eCommerceBrandsgoogleAds.map,
   eCommerceBrandsleadsGeneration.map,
   eCommerceBrandslocalSeo.map,
-  eCommerceBrandsmarketingAutomation.map,
+  // eCommerceBrandsmarketingAutomation.map,
   eCommerceBrandsmetaAds.map,
   eCommerceBrandsmobileAppsDevelopment.map,
   eCommerceBrandsotherAds.map,
@@ -328,7 +328,7 @@ const maps: ServiceBusinessMap[] = [
   educationalInstitutionsgoogleAds.map,
   educationalInstitutionsleadsGeneration.map,
   educationalInstitutionslocalSeo.map,
-  educationalInstitutionsmarketingAutomation.map,
+  // educationalInstitutionsmarketingAutomation.map,
   educationalInstitutionsmetaAds.map,
   educationalInstitutionsmobileAppsDevelopment.map,
   educationalInstitutionsotherAds.map,
@@ -343,7 +343,7 @@ const maps: ServiceBusinessMap[] = [
   fashionBrandsgoogleAds.map,
   fashionBrandsleadsGeneration.map,
   fashionBrandslocalSeo.map,
-  fashionBrandsmarketingAutomation.map,
+  // fashionBrandsmarketingAutomation.map,
   fashionBrandsmetaAds.map,
   fashionBrandsmobileAppsDevelopment.map,
   fashionBrandsotherAds.map,
@@ -358,7 +358,7 @@ const maps: ServiceBusinessMap[] = [
   gymsFitnessgoogleAds.map,
   gymsFitnessleadsGeneration.map,
   gymsFitnesslocalSeo.map,
-  gymsFitnessmarketingAutomation.map,
+  // gymsFitnessmarketingAutomation.map,
   gymsFitnessmetaAds.map,
   gymsFitnessmobileAppsDevelopment.map,
   gymsFitnessotherAds.map,
@@ -373,7 +373,7 @@ const maps: ServiceBusinessMap[] = [
   hotelResortsgoogleAds.map,
   hotelResortsleadsGeneration.map,
   hotelResortslocalSeo.map,
-  hotelResortsmarketingAutomation.map,
+  // hotelResortsmarketingAutomation.map,
   hotelResortsmetaAds.map,
   hotelResortsmobileAppsDevelopment.map,
   hotelResortsotherAds.map,
@@ -388,7 +388,7 @@ const maps: ServiceBusinessMap[] = [
   interiorDesignersgoogleAds.map,
   interiorDesignersleadsGeneration.map,
   interiorDesignerslocalSeo.map,
-  interiorDesignersmarketingAutomation.map,
+  // interiorDesignersmarketingAutomation.map,
   interiorDesignersmetaAds.map,
   interiorDesignersmobileAppsDevelopment.map,
   interiorDesignersotherAds.map,
@@ -403,7 +403,7 @@ const maps: ServiceBusinessMap[] = [
   localBusinessesgoogleAds.map,
   localBusinessesleadsGeneration.map,
   localBusinesseslocalSeo.map,
-  localBusinessesmarketingAutomation.map,
+  // localBusinessesmarketingAutomation.map,
   localBusinessesmetaAds.map,
   localBusinessesmobileAppsDevelopment.map,
   localBusinessesotherAds.map,
@@ -418,7 +418,7 @@ const maps: ServiceBusinessMap[] = [
   pharmaCompaniesgoogleAds.map,
   pharmaCompaniesleadsGeneration.map,
   pharmaCompanieslocalSeo.map,
-  pharmaCompaniesmarketingAutomation.map,
+  // pharmaCompaniesmarketingAutomation.map,
   pharmaCompaniesmetaAds.map,
   pharmaCompaniesmobileAppsDevelopment.map,
   pharmaCompaniesotherAds.map,
@@ -433,7 +433,7 @@ const maps: ServiceBusinessMap[] = [
   realEstategoogleAds.map,
   realEstateleadsGeneration.map,
   realEstatelocalSeo.map,
-  realEstatemarketingAutomation.map,
+  // realEstatemarketingAutomation.map,
   realEstatemetaAds.map,
   realEstatemobileAppsDevelopment.map,
   realEstateotherAds.map,
@@ -448,7 +448,7 @@ const maps: ServiceBusinessMap[] = [
   restaurantsCafesgoogleAds.map,
   restaurantsCafesleadsGeneration.map,
   restaurantsCafeslocalSeo.map,
-  restaurantsCafesmarketingAutomation.map,
+  // restaurantsCafesmarketingAutomation.map,
   restaurantsCafesmetaAds.map,
   restaurantsCafesmobileAppsDevelopment.map,
   restaurantsCafesotherAds.map,
@@ -458,12 +458,12 @@ const maps: ServiceBusinessMap[] = [
   restaurantsCafeswebsiteMaintenance.map,
   startupsEntrepreneursasoServices.map,
   startupsEntrepreneurs360DigitalMarketing.map,
-  startupsEntrepreneursecommerceMarketing.map,
+  // startupsEntrepreneursecommerceMarketing.map,
   startupsEntrepreneursgmbServices.map,
   startupsEntrepreneursgoogleAds.map,
   startupsEntrepreneursleadsGeneration.map,
   startupsEntrepreneurslocalSeo.map,
-  startupsEntrepreneursmarketingAutomation.map,
+  // startupsEntrepreneursmarketingAutomation.map,
   startupsEntrepreneursmetaAds.map,
   startupsEntrepreneursmobileAppsDevelopment.map,
   startupsEntrepreneursotherAds.map,

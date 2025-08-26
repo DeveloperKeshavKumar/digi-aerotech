@@ -1,198 +1,245 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTrendingUp, IconWorld, IconChartLine, IconSearch, IconRocket,
+  IconTarget, IconChartBar, IconShieldCheck, IconClock, IconUsers
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'seo-services',
   business: 'startups-entrepreneurs',
   variants: {
-    hero: 'variant2',
+    hero: 'variant1',
     whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    process: 'variant2',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'seo-services',
+    slug: 'seo-services-startups-entrepreneurs',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Most Startups ", gradient: false },
+            { text: "Fail Without SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Launching a startup is exciting, but without SEO, your dream project remains invisible to your customers, investors, and even search engines.",
+          painPoints: [
+            "Zero visibility on Google search",
+            "High customer acquisition costs from paid ads",
+            "Competitors outranking on every keyword",
+            "No consistent organic lead flow",
+            "Poor credibility with investors & users"
+          ],
+          solutionPoints: [
+            "Top Google rankings for high-intent keywords",
+            "Organic traffic that lowers CAC (Customer Acquisition Cost)",
+            "SEO strategies designed for startups & entrepreneurs",
+            "Consistent flow of organic leads & signups",
+            "Improved authority and investor trust"
+          ],
+          cta: {
+            icon: React.createElement(IconSearch, { size: 20 }),
+            text: "Boost My Startup SEO"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is SEO important for startups?',
+              answer: 'SEO ensures long-term growth by driving organic traffic, reducing dependency on ads, and building credibility with investors and customers.',
+              icon: React.createElement(IconChartLine, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How fast can we see results?',
+              answer: 'Startups usually start seeing visible improvements within 3-4 months of consistent SEO strategy implementation.',
+              icon: React.createElement(IconClock, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can SEO reduce our marketing costs?',
+              answer: 'Yes! By ranking organically, you lower paid ad spending while still attracting qualified leads at scale.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide SEO for early-stage startups?',
+              answer: 'Absolutely. We create tailored SEO strategies depending on your funding stage, audience, and goals.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Will SEO help us attract investors?',
+              answer: 'Yes. A strong SEO presence signals market demand and traction, making your startup more attractive to VCs and angels.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "SEO That Makes Your Startup ",
       headlineKeywords: [
-        "Seo Services for Startups Entrepreneurs?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Visible",
+        "Scalable",
+        "Investor-Ready",
+        "Profitable"
       ],
       brandLine: [
-        { text: "Seo Services for Startups Entrepreneurs", gradient: false }
+        { text: "🚀 SEO Services for Startups & Entrepreneurs", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized seo services strategies designed specifically for startups entrepreneurs. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help startups dominate search rankings, generate organic leads, and build investor trust with powerful SEO strategies.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconSearch, { size: 28 }), text: "Get SEO Strategy", link: "/contact" },
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Free SEO Audit", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "100+ Startups",
+          description: "scaled with SEO strategies"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Startups Entrepreneurs served"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "300% Growth",
+          description: "average organic traffic increase"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "50+ Keywords",
+          description: "ranked on Page 1 for startups"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "Lower CAC",
+          description: "through sustainable organic traffic"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Startups Entrepreneurs?', gradient: false }
+        { text: "Why Choose Us for ", gradient: false },
+        { text: "Startup SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of startups entrepreneurs market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconChartLine, { size: 28 }),
+          title: "Startup-Specific SEO",
+          description: "We tailor strategies for early-stage and growth-stage startups."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for startups entrepreneurs businesses.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Fast & Scalable",
+          description: "Our SEO approach scales with your funding stage and business model."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Keyword Domination",
+          description: "We identify & rank you on high-intent startup keywords."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Lower Acquisition Costs",
+          description: "Reduce reliance on expensive ads with organic lead flow."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Global Reach",
+          description: "Expand visibility in local and international markets."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Investor Trust",
+          description: "SEO signals traction and demand, attracting funding."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My SEO Growth",
+        link: "#contact",
+        icon: React.createElement(IconChartLine, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Seo Services for Startups Entrepreneurs',
-      subtitle: 'STARTUPS ENTREPRENEURS SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for startups entrepreneurs businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for startups entrepreneurs market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for startups entrepreneurs audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for startups entrepreneurs businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Seo Services Process for Startups Entrepreneurs',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our SEO Process for Startups',
+      subtitle: 'FROM LAUNCH TO GROWTH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for startups entrepreneurs businesses.',
+      description: 'We design a startup-focused SEO roadmap to make your brand visible, scalable, and investor-ready.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your startups entrepreneurs business and market landscape.'
+          title: 'SEO Audit & Market Research',
+          description: 'We analyze your industry, competitors, and keywords to build a roadmap tailored for your startup growth stage.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific startups entrepreneurs goals.'
+          title: 'Technical SEO Setup',
+          description: 'Fixing site speed, mobile optimization, indexing issues, and Core Web Vitals to build a strong foundation.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with startups entrepreneurs focus.'
+          title: 'Content Strategy',
+          description: 'We create SEO-driven content that attracts users, answers investor questions, and ranks on Google.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on startups entrepreneurs market feedback.'
+          title: 'On-Page & Off-Page SEO',
+          description: 'From metadata optimization to link-building, we ensure your site ranks higher and gains authority.'
+        },
+        {
+          id: 5,
+          title: 'Growth & Analytics',
+          description: 'Tracking keyword rankings, conversions, and investor interest to refine and scale SEO campaigns.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Startups Growing with ", gradient: false },
+        { text: "Our SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from startups entrepreneurs businesses that achieved remarkable growth.',
+      description: 'See how startups like yours scaled visibility, traffic, and funding with our SEO expertise.',
       testimonials: [
         {
           id: '1',
-          message: 'The seo services services transformed our startups entrepreneurs business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our organic traffic grew 4X in 6 months, reducing ad spend drastically and boosting investor confidence.',
+          highlight: '4X Organic Traffic',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Startups Entrepreneurs Company'
+          name: 'Rohan Sharma',
+          designation: 'Founder',
+          company: 'FinTechUp'
         },
         {
           id: '2',
-          message: 'Outstanding seo services expertise specifically for startups entrepreneurs. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for startups entrepreneurs',
+          message: 'We went from zero visibility to ranking for 50+ keywords in less than a year. The ROI was game-changing.',
+          highlight: '50+ Keywords Ranked',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Startups Entrepreneurs Solutions'
+          name: 'Ananya Verma',
+          designation: 'Co-Founder',
+          company: 'EduStart'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Startups Entrepreneurs Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your startups entrepreneurs business.'
+      title: 'Dominate Google & Build Investor Trust with SEO',
+      subtitle: 'SMART SEO FOR STARTUP SUCCESS',
+      description: 'From launch to scaling, our SEO services help startups grow visibility, attract leads, and impress investors.',
     }
   }
 };
