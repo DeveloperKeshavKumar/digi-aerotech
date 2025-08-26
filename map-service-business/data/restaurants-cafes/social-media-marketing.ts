@@ -1,198 +1,246 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandInstagram, IconBrandTiktok, IconBrandFacebook,
+  IconUsersGroup, IconSparkles, IconChartArrows, IconChefHat, IconVideo, IconStars,
+  IconGraph
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'social-media-marketing',
   business: 'restaurants-cafes',
   variants: {
     hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    whyChooseUs: 'variant1',
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: 'social-media-marketing-restaurants-cafes',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Restaurants & Cafés Struggle on ", gradient: false },
+            { text: "Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Food businesses thrive visually, but most restaurants and cafés fail to convert likes into loyal customers and real orders.",
+          painPoints: [
+            "Low engagement despite posting daily",
+            "No consistent brand voice across platforms",
+            "Difficulty keeping up with trends (Reels, TikTok, Shorts)",
+            "Not leveraging influencers and UGC",
+            "No strategy for customer reviews and feedback"
+          ],
+          solutionPoints: [
+            "Create scroll-stopping Instagram & TikTok reels",
+            "Develop a strong food brand identity",
+            "Collaborate with local food influencers",
+            "Run geo-targeted ad campaigns",
+            "Engage with followers through reviews, stories & contests"
+          ],
+          cta: {
+            icon: React.createElement(IconSparkles, { size: 20 }),
+            text: "Boost My Social Media"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Which social platforms work best for restaurants?',
+              answer: 'Instagram, TikTok, and Facebook drive B2C traffic with reels and stories, while LinkedIn can help cafés expand catering partnerships.',
+              icon: React.createElement(IconBrandInstagram, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How can social media increase footfall?',
+              answer: 'We use viral reels, geotagged posts, and ad campaigns to attract local diners directly to your restaurant or café.',
+              icon: React.createElement(IconUsersGroup, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you work with food influencers?',
+              answer: 'Yes, we connect you with micro and macro food influencers to create authentic content that drives visibility and trust.',
+              icon: React.createElement(IconStars, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How do you measure ROI from social media?',
+              answer: 'We track KPIs like engagement, follower growth, reservations, and online orders tied directly to campaigns.',
+              icon: React.createElement(IconGraph, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'What kind of content works best for cafés?',
+              answer: 'Reels showcasing coffee art, behind-the-scenes kitchen videos, and customer testimonials work amazingly well.',
+              icon: React.createElement(IconChefHat, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Social Media Marketing for Restaurants & Cafés",
       headlineKeywords: [
-        "Social Media Marketing for Restaurants Cafes?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Instagram Marketing for Restaurants",
+        "TikTok Reels for Cafés",
+        "Food Influencer Campaigns",
+        "Engagement-Driven Ads"
       ],
       brandLine: [
-        { text: "Social Media Marketing for Restaurants Cafes", gradient: false }
+        { text: "🍽️ Transforming Food Brands into Social Media Icons", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for restaurants cafes. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help restaurants & cafés grow their digital presence with high-converting Instagram, TikTok, and Facebook campaigns designed to drive bookings, orders, and loyal customers.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconBrandInstagram, { size: 28 }), text: "Start Social Media Growth", link: "/contact" },
+        { icon: React.createElement(IconSparkles, { size: 28 }), text: "Free Social Audit", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandTiktok, { size: 32 }),
+          title: "Viral Reels",
+          description: "food videos that trend"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Restaurants Cafes served"
+          icon: React.createElement(IconBrandFacebook, { size: 32 }),
+          title: "Community Growth",
+          description: "loyal diners & repeat visits"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconUsersGroup, { size: 32 }),
+          title: "Influencer Collabs",
+          description: "boost trust & visibility"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconGraph, { size: 32 }),
+          title: "Measurable ROI",
+          description: "orders, bookings, and growth"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Restaurants Cafes?', gradient: false }
+        { text: "Why Restaurants Choose Our ", gradient: false },
+        { text: "Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of restaurants cafes market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "Content That Sells",
+          description: "From reels to food stories, we create viral-worthy content."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for restaurants cafes businesses.'
+          icon: React.createElement(IconUsersGroup, { size: 28 }),
+          title: "Community Engagement",
+          description: "We build trust through consistent interaction & review management."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChefHat, { size: 28 }),
+          title: "Food-Centric Branding",
+          description: "Highlight your unique flavors & café vibes across social channels."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconStars, { size: 28 }),
+          title: "Influencer Partnerships",
+          description: "Collaborations with foodies & travel influencers to amplify reach."
+        },
+        {
+          icon: React.createElement(IconChartArrows, { size: 28 }),
+          title: "Data-Driven Growth",
+          description: "We optimize campaigns for maximum ROI and engagement."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Grow My Restaurant Social Media",
+        link: "#contact",
+        icon: React.createElement(IconSparkles, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Restaurants Cafes',
-      subtitle: 'RESTAURANTS CAFES SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for restaurants cafes businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for restaurants cafes market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for restaurants cafes audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for restaurants cafes businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Social Media Marketing Process for Restaurants Cafes',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Social Media Marketing Process for Restaurants & Cafés',
+      subtitle: 'FROM POSTS TO RESERVATIONS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for restaurants cafes businesses.',
+      description: 'We follow a structured process to grow your restaurant’s online presence and convert social media engagement into real customers.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your restaurants cafes business and market landscape.'
+          title: 'Profile Optimization',
+          description: 'We set up your social media profiles with SEO-friendly bios, menu links, and consistent branding to attract and convert visitors.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific restaurants cafes goals.'
+          title: 'Content Calendar',
+          description: 'We design a strategic posting calendar with reels, stories, promotions, and behind-the-scenes content tailored for your audience.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with restaurants cafes focus.'
+          title: 'Creative Production',
+          description: 'Our team produces mouth-watering food photography, chef highlights, and short-form videos that engage and inspire.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on restaurants cafes market feedback.'
+          title: 'Community Building',
+          description: 'We engage with your audience through reviews, polls, contests, and UGC campaigns, building loyalty and word-of-mouth buzz.'
+        },
+        {
+          id: 5,
+          title: 'Influencer & Paid Boost',
+          description: 'We partner with local influencers and run geo-targeted ads to expand reach and drive direct footfall to your restaurant.'
+        },
+        {
+          id: 6,
+          title: 'Analytics & Scaling',
+          description: 'We track follower growth, engagement, and ROI — scaling what works best for continuous growth and bookings.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Restaurants Winning with ", gradient: false },
+        { text: "Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from restaurants cafes businesses that achieved remarkable growth.',
+      description: 'Restaurants & cafés are seeing massive growth in online orders, walk-ins, and brand visibility with our social media strategies.',
       testimonials: [
         {
           id: '1',
-          message: 'The social media marketing services transformed our restaurants cafes business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our Instagram reels went viral, and we had customers saying they came after watching them!',
+          highlight: 'Reels Success',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Restaurants Cafes Company'
+          name: 'Aarav Kapoor',
+          designation: 'Owner',
+          company: 'Brew & Bite Café'
         },
         {
           id: '2',
-          message: 'Outstanding social media marketing expertise specifically for restaurants cafes. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for restaurants cafes',
+          message: 'We built a strong online brand presence with their strategies, and our catering business grew via LinkedIn campaigns.',
+          highlight: 'B2B & B2C Growth',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Restaurants Cafes Solutions'
+          name: 'Priya Mehta',
+          designation: 'Founder',
+          company: 'TasteHub Restaurant'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Restaurants Cafes Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your restaurants cafes business.'
+      title: 'Turn Social Media into Bookings & Orders',
+      subtitle: 'FROM VIRAL CONTENT TO LOYAL CUSTOMERS',
+      description: 'We help restaurants and cafés dominate Instagram, TikTok, and Facebook with strategies that drive both visibility and conversions.',
     }
   }
 };

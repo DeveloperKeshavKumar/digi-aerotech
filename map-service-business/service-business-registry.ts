@@ -201,7 +201,7 @@ import * as realEstatewebDesignDevelopment from './data/real-estate/web-design-d
 import * as realEstatewebsiteMaintenance from './data/real-estate/website-maintenance';
 import * as restaurantsCafesasoServices from './data/restaurants-cafes/aso-services';
 import * as restaurantsCafes360DigitalMarketing from './data/restaurants-cafes/360-digital-marketing';
-import * as restaurantsCafesecommerceMarketing from './data/restaurants-cafes/ecommerce-marketing';
+// import * as restaurantsCafesecommerceMarketing from './data/restaurants-cafes/ecommerce-marketing';
 import * as restaurantsCafesgmbServices from './data/restaurants-cafes/gmb-services';
 import * as restaurantsCafesgoogleAds from './data/restaurants-cafes/google-ads';
 import * as restaurantsCafesleadsGeneration from './data/restaurants-cafes/leads-generation';
@@ -443,7 +443,7 @@ const maps: ServiceBusinessMap[] = [
   realEstatewebsiteMaintenance.map,
   restaurantsCafesasoServices.map,
   restaurantsCafes360DigitalMarketing.map,
-  restaurantsCafesecommerceMarketing.map,
+  // restaurantsCafesecommerceMarketing.map,
   restaurantsCafesgmbServices.map,
   restaurantsCafesgoogleAds.map,
   restaurantsCafesleadsGeneration.map,

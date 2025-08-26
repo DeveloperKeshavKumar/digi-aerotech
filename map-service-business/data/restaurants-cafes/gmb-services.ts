@@ -1,198 +1,245 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconMapPin, IconCoffee, IconPizza, IconChartBar, IconStar,
+  IconTrendingUp, IconUsers, IconPhoneCall, IconCalendarEvent, IconWorld
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'gmb-services',
   business: 'restaurants-cafes',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
+    hero: 'variant3',
+    whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant2'
+    testimonials: 'variant3'
   },
   data: {
-    slug: 'gmb-services',
+    slug: 'gmb-services-restaurants-cafes',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Restaurants & Cafés ", gradient: false },
+            { text: "Struggle Without GMB", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Hungry customers often search for restaurants, cafés, and food outlets nearby. Without an optimized GMB listing, you’re invisible to local diners.",
+          painPoints: [
+            "Not showing up in 'restaurants near me' searches",
+            "Outdated menu & photos on Google",
+            "Negative reviews without response",
+            "Low calls, reservations & walk-ins",
+            "Competitors outranking in local maps"
+          ],
+          solutionPoints: [
+            "Google My Business optimization for restaurants & cafés",
+            "Fresh menus, photos, and offers updated regularly",
+            "Review management & reputation building",
+            "Boost local search visibility & rankings",
+            "Drive more calls, orders, and foot traffic"
+          ],
+          cta: {
+            icon: React.createElement(IconMapPin, { size: 20 }),
+            text: "Optimize My GMB Profile"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is GMB important for restaurants & cafés?',
+              answer: 'Over 60% of food & beverage searches happen on Google Maps. GMB ensures you appear when locals search for nearby dining.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can GMB optimization increase footfall?',
+              answer: 'Yes, optimized GMB listings bring more walk-in customers by improving local rankings and showcasing your food better.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do reviews affect my restaurant’s GMB ranking?',
+              answer: 'Absolutely! Positive reviews boost trust and ranking. We also manage negative feedback to protect your reputation.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you update menus and offers on GMB?',
+              answer: 'Yes, we regularly update menus, specials, and event promotions on your GMB to attract food lovers.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How soon can restaurants see results?',
+              answer: 'Most restaurants see an increase in calls, directions, and visits within 4–6 weeks of GMB optimization.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Turn Google Searches Into ",
       headlineKeywords: [
-        "Gmb Services for Restaurants Cafes?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Dine-in Customers",
+        "Online Orders",
+        "Table Bookings",
+        "Regular Foodies"
       ],
       brandLine: [
-        { text: "Gmb Services for Restaurants Cafes", gradient: false }
+        { text: "📍 GMB Services for Restaurants & Cafés", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for restaurants cafes. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We optimize your restaurant’s Google My Business profile to appear in top local searches, attract more diners, and boost reservations.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "Get More Calls", link: "/contact" },
+        { icon: React.createElement(IconMapPin, { size: 28 }), text: "Free GMB Audit", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "2X More Footfall",
+          description: "for restaurants after GMB optimization"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Restaurants Cafes served"
+          icon: React.createElement(IconPizza, { size: 32 }),
+          title: "Menu Click Boost",
+          description: "customers check menus before visiting"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCoffee, { size: 32 }),
+          title: "Higher Calls",
+          description: "from diners searching nearby"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Better Reputation",
+          description: "via review management & responses"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Restaurants Cafes?', gradient: false }
+        { text: "Why Choose Us for ", gradient: false },
+        { text: "Restaurant & Café GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of restaurants cafes market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Local SEO Experts",
+          description: "We specialize in optimizing GMB listings for maximum local visibility."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for restaurants cafes businesses.'
+          icon: React.createElement(IconCoffee, { size: 28 }),
+          title: "Restaurant-Centric Strategy",
+          description: "Our approach is tailored to food businesses, menus, and dining offers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review & Reputation Boost",
+          description: "We improve your ratings and manage responses to build trust."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconCalendarEvent, { size: 28 }),
+          title: "Promotions & Events",
+          description: "Highlight seasonal offers, events, and new dishes to attract customers."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Increased Reservations",
+          description: "Optimized profiles encourage bookings directly through Google."
+        },
+        {
+          icon: React.createElement(IconPhoneCall, { size: 28 }),
+          title: "More Calls & Directions",
+          description: "We help you get discovered by foodies searching in your area."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Optimize My Restaurant’s GMB",
+        link: "#contact",
+        icon: React.createElement(IconMapPin, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Gmb Services for Restaurants Cafes',
-      subtitle: 'RESTAURANTS CAFES SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for restaurants cafes businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for restaurants cafes market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for restaurants cafes audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for restaurants cafes businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Gmb Services Process for Restaurants Cafes',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our GMB Optimization Process for Restaurants & Cafés',
+      subtitle: 'FROM SEARCH TO SEATING',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for restaurants cafes businesses.',
+      description: 'We follow a step-by-step GMB optimization process to help restaurants and cafés dominate local searches and attract more hungry customers.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your restaurants cafes business and market landscape.'
+          title: 'GMB Profile Audit',
+          description: 'We analyze your existing Google My Business profile, visibility, reviews, and competitor listings.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific restaurants cafes goals.'
+          title: 'Profile Optimization',
+          description: 'We optimize categories, descriptions, business hours, menus, and photos for maximum local search reach.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with restaurants cafes focus.'
+          title: 'Review Management',
+          description: 'We boost positive reviews and manage responses to strengthen your online reputation.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on restaurants cafes market feedback.'
+          title: 'Content & Offers Update',
+          description: 'We add regular updates about new dishes, events, and promotions to keep your listing engaging.'
+        },
+        {
+          id: 5,
+          title: 'Performance Tracking',
+          description: 'We track calls, direction requests, and bookings to refine your GMB strategy for more growth.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Restaurants & Cafés Winning with ", gradient: false },
+        { text: "Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from restaurants cafes businesses that achieved remarkable growth.',
+      description: 'See how restaurants and cafés boosted reservations, walk-ins, and online orders with our GMB optimization.',
       testimonials: [
         {
           id: '1',
-          message: 'The gmb services services transformed our restaurants cafes business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'After GMB optimization, our café started getting 3x more calls daily. Foot traffic has increased massively.',
+          highlight: '3X More Calls',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Restaurants Cafes Company'
+          name: 'Aman Sharma',
+          designation: 'Owner',
+          company: 'Brew & Bite Café'
         },
         {
           id: '2',
-          message: 'Outstanding gmb services expertise specifically for restaurants cafes. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for restaurants cafes',
+          message: 'Our restaurant appears in “best restaurants near me” searches consistently now. Bookings went up by 70%.',
+          highlight: '70% More Bookings',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Restaurants Cafes Solutions'
+          name: 'Ritika Malhotra',
+          designation: 'Manager',
+          company: 'Urban Spice'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Restaurants Cafes Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your restaurants cafes business.'
+      title: 'Turn Your Restaurant’s GMB Into a Customer Magnet',
+      subtitle: 'RANK. ATTRACT. SERVE.',
+      description: 'With our GMB services, your restaurant or café can dominate local searches, attract more diners, and grow bookings.',
     }
   }
 };

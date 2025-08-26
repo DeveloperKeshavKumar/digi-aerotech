@@ -1,198 +1,241 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandFacebook, IconBrandInstagram,
+  IconTrendingUp, IconDeviceMobile, IconTarget, IconUsers, IconAd2, IconPhoto, IconChartBar
+} from '@tabler/icons-react';
+import { Utensils } from 'lucide-react';
 
 export const map: ServiceBusinessMap = {
   service: 'meta-ads',
   business: 'restaurants-cafes',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: 'variant2',
+    whyChooseUs: 'variant3',
+    process: 'variant1',
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'meta-ads',
+    slug: 'meta-ads-restaurants-cafes',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Restaurants & Cafés ", gradient: false },
+            { text: "Struggle with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Running food ads without strategy wastes money. Restaurants often boost random posts without targeting the right hungry audience, leading to poor results.",
+          painPoints: [
+            "Boosting posts without ROI tracking",
+            "Poor audience targeting (wrong age, wrong city)",
+            "Low-quality creatives not optimized for food lovers",
+            "Not retargeting people who viewed menu or engaged",
+            "Competitors dominating Instagram reels & stories"
+          ],
+          solutionPoints: [
+            "Laser-targeted campaigns to local diners",
+            "Data-driven ad creatives (reels, carousel, stories)",
+            "High-converting ads for dine-in + delivery",
+            "Retargeting warm audiences for repeat orders",
+            "Tracking ROI with conversion-focused campaigns"
+          ],
+          cta: {
+            icon: React.createElement(IconBrandFacebook, { size: 20 }),
+            text: "Run Winning Meta Ads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why are Meta Ads important for restaurants?',
+              answer: 'Meta Ads let restaurants target hungry customers near them with irresistible food ads. They drive direct table bookings, walk-ins, and delivery orders.',
+              icon: React.createElement(IconAd2, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you run ads for dine-in and delivery both?',
+              answer: 'Yes! We design separate campaigns for dine-in promotions, delivery offers, seasonal menus, and happy hours to maximize ROI.',
+              icon: React.createElement(Utensils, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you make ads stand out?',
+              answer: 'We use mouth-watering creatives, reels, carousel menus, and food videos that instantly grab attention and drive cravings.',
+              icon: React.createElement(IconPhoto, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How do you track ad success?',
+              answer: 'We track clicks, bookings, orders, and ROI using Meta Ads Manager + analytics to ensure your money is spent effectively.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can small restaurants run ads effectively?',
+              answer: 'Absolutely. Even small cafés can run hyper-local ads targeting just their neighborhood, bringing in daily customers at low cost.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Fill More Tables & Boost Delivery Orders ",
       headlineKeywords: [
-        "Meta Ads for Restaurants Cafes?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Facebook Ads for Restaurants",
+        "Instagram Ads for Cafés",
+        "Meta Ads for Food Brands",
+        "Restaurant Promotions Online"
       ],
       brandLine: [
-        { text: "Meta Ads for Restaurants Cafes", gradient: false }
+        { text: "🔥 Meta Ads for Restaurants & Cafés", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for restaurants cafes. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We run irresistible Facebook & Instagram ads that showcase your food, attract local diners, and turn cravings into bookings & orders.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconBrandInstagram, { size: 28 }), text: "Launch Food Ads Now", link: "/contact" },
+        { icon: React.createElement(IconBrandFacebook, { size: 28 }), text: "Free Meta Ads Consultation", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X ROI on Ads",
+          description: "maximize dine-in & delivery conversions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Restaurants Cafes served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Targeted Diners",
+          description: "ads shown to food lovers near you"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconDeviceMobile, { size: 32 }),
+          title: "Instagram Growth",
+          description: "reels + stories that go viral locally"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(Utensils, { size: 32 }),
+          title: "More Orders",
+          description: "drive walk-ins, bookings, and food delivery"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Restaurants Cafes?', gradient: false }
+        { text: "Why Choose Us for ", gradient: false },
+        { text: "Meta Ads Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of restaurants cafes market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Hyperlocal Targeting",
+          description: "We reach food lovers within a few kms of your restaurant."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for restaurants cafes businesses.'
+          icon: React.createElement(IconPhoto, { size: 28 }),
+          title: "Irresistible Creatives",
+          description: "Reels, carousel menus & food photos that convert cravings."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBrandFacebook, { size: 28 }),
+          title: "Full Ad Funnel",
+          description: "From awareness to retargeting, we run end-to-end ads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Mobile-First Strategy",
+          description: "Optimized ads for Instagram & Facebook mobile users."
+        },
+        {
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Data-Driven ROI",
+          description: "Every ad spend tracked, optimized, and scaled."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My Restaurant Ads",
+        link: "#contact",
+        icon: React.createElement(IconAd2, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Meta Ads for Restaurants Cafes',
-      subtitle: 'RESTAURANTS CAFES SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for restaurants cafes businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for restaurants cafes market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for restaurants cafes audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for restaurants cafes businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Meta Ads Process for Restaurants Cafes',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Meta Ads Process for Restaurants & Cafés',
+      subtitle: 'FROM CRAVINGS TO BOOKINGS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for restaurants cafes businesses.',
+      description: 'Our ad strategy is built to attract local customers, show them delicious visuals, and convert them into walk-ins or delivery orders.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your restaurants cafes business and market landscape.'
+          title: 'Market Research & Targeting',
+          description: 'We identify your ideal diners — foodies, office goers, families — and target them by location, interests, and behaviors.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific restaurants cafes goals.'
+          title: 'Creative Ad Design',
+          description: 'We design scroll-stopping reels, food carousels, and Instagram stories that highlight your signature dishes & offers.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with restaurants cafes focus.'
+          title: 'Campaign Setup',
+          description: 'We launch campaigns with A/B tested creatives, optimized ad copy, and custom CTAs for dine-in, bookings, or delivery.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on restaurants cafes market feedback.'
+          title: 'Retargeting Campaigns',
+          description: 'We re-engage people who clicked, visited, or engaged but didn’t convert — turning warm leads into paying customers.'
+        },
+        {
+          id: 5,
+          title: 'Performance Tracking',
+          description: 'We monitor ad spend, ROI, bookings, and delivery orders with transparent weekly reports and ongoing optimization.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Restaurants Growing with ", gradient: false },
+        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from restaurants cafes businesses that achieved remarkable growth.',
+      description: 'See how cafés and restaurants are filling tables and doubling food orders using our targeted Meta Ads campaigns.',
       testimonials: [
         {
           id: '1',
-          message: 'The meta ads services transformed our restaurants cafes business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our Instagram ads brought 60+ new walk-ins in just 10 days. The ROI was insane compared to random boosting we used to do.',
+          highlight: 'High ROI',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Restaurants Cafes Company'
+          name: 'Rohit Verma',
+          designation: 'Owner',
+          company: 'Brew & Bite Café'
         },
         {
           id: '2',
-          message: 'Outstanding meta ads expertise specifically for restaurants cafes. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for restaurants cafes',
+          message: 'We doubled our Swiggy orders by running local ads that targeted nearby office employees. Huge impact on delivery sales!',
+          highlight: 'Delivery Growth',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Restaurants Cafes Solutions'
+          name: 'Simran Kaur',
+          designation: 'Owner',
+          company: 'Tandoori Tales'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Restaurants Cafes Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your restaurants cafes business.'
+      title: 'Run Food Ads That Convert Cravings into Sales',
+      subtitle: 'FACEBOOK + INSTAGRAM = FULL HOUSE',
+      description: 'From creative reels to conversion-focused ad funnels, we make your restaurant or café the talk of the town.',
     }
   }
 };

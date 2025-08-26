@@ -1,198 +1,242 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconDeviceMobile, IconCoffee, IconCreditCard,
+  IconBell, IconUsers, IconShoppingCart, IconHeartHandshake, IconTrendingUp,
+  IconChartArrows
+} from '@tabler/icons-react';
+import { Utensils } from 'lucide-react';
 
 export const map: ServiceBusinessMap = {
   service: 'mobile-apps-development',
   business: 'restaurants-cafes',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
+    hero: 'variant3',
+    whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant2'
+    testimonials: 'variant3'
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: 'mobile-apps-development-restaurants-cafes',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Restaurants & Cafés ", gradient: false },
+            { text: "Need Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Relying only on walk-ins or aggregator platforms limits growth. A custom restaurant app puts your brand directly in your customers’ pockets.",
+          painPoints: [
+            "High commissions on Swiggy/Zomato eating into profits",
+            "No direct channel to send offers & updates",
+            "Difficulty building loyal customer base",
+            "No online table reservation system",
+            "Dependency on third-party apps for deliveries"
+          ],
+          solutionPoints: [
+            "Custom-branded mobile app for your restaurant",
+            "Online ordering with in-app payments",
+            "Loyalty & reward programs to retain customers",
+            "Push notifications for offers & events",
+            "Direct control over customer relationships"
+          ],
+          cta: {
+            icon: React.createElement(IconDeviceMobile, { size: 20 }),
+            text: "Build My Restaurant App"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do restaurants need a mobile app?',
+              answer: 'A mobile app gives you direct access to customers, boosts repeat orders, enables loyalty programs, and reduces dependency on third-party delivery apps.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can customers order food directly from the app?',
+              answer: 'Yes! We integrate full online ordering, menu browsing, customization, and in-app payments for a seamless experience.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you support table reservations?',
+              answer: 'Absolutely. Customers can book tables in advance with real-time availability updates to reduce waiting time.',
+              icon: React.createElement(Utensils, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can I send offers through the app?',
+              answer: 'Yes, push notifications allow you to instantly share discounts, happy hour deals, or new menu launches with your customers.',
+              icon: React.createElement(IconBell, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Will my restaurant app support loyalty programs?',
+              answer: 'We build loyalty and reward features that encourage repeat visits and long-term customer retention.',
+              icon: React.createElement(IconHeartHandshake, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Bring Your Restaurant to Customers’ Pockets ",
       headlineKeywords: [
-        "Mobile Apps Development for Restaurants Cafes?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Restaurant Mobile App Development",
+        "Food Ordering Apps for Cafés",
+        "Custom Apps for Restaurants",
+        "Loyalty & Reservation Apps"
       ],
       brandLine: [
-        { text: "Mobile Apps Development for Restaurants Cafes", gradient: false }
+        { text: "📱 Restaurant & Café Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for restaurants cafes. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "From online ordering to loyalty programs, we build mobile apps that help restaurants increase sales, reduce commission costs, and build stronger customer connections.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconDeviceMobile, { size: 28 }), text: "Get My Restaurant App", link: "/contact" },
+        { icon: React.createElement(IconChartArrows, { size: 28 }), text: "Free App Consultation", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "40% Higher Sales",
+          description: "with direct app-based orders"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Restaurants Cafes served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Customer Loyalty",
+          description: "reward & retention programs built-in"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCreditCard, { size: 32 }),
+          title: "Seamless Payments",
+          description: "multiple options for quick checkout"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconBell, { size: 32 }),
+          title: "Direct Engagement",
+          description: "push offers & promotions instantly"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Restaurants Cafes?', gradient: false }
+        { text: "Why Choose Us for ", gradient: false },
+        { text: "Restaurant App Development", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of restaurants cafes market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconShoppingCart, { size: 28 }),
+          title: "Online Ordering & Payments",
+          description: "Built-in ordering, cart, and checkout for faster sales."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for restaurants cafes businesses.'
+          icon: React.createElement(Utensils, { size: 28 }),
+          title: "Table Reservations",
+          description: "Real-time reservations with reduced waiting times."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconHeartHandshake, { size: 28 }),
+          title: "Loyalty Programs",
+          description: "Points, discounts, and rewards to keep customers hooked."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconBell, { size: 28 }),
+          title: "Push Notifications",
+          description: "Instantly notify customers about offers, events & deals."
+        },
+        {
+          icon: React.createElement(IconChartArrows, { size: 28 }),
+          title: "Scalable & Secure",
+          description: "Future-ready apps optimized for speed and safety."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My Restaurant App Project",
+        link: "#contact",
+        icon: React.createElement(IconDeviceMobile, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Restaurants Cafes',
-      subtitle: 'RESTAURANTS CAFES SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for restaurants cafes businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for restaurants cafes market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for restaurants cafes audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for restaurants cafes businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Mobile Apps Development Process for Restaurants Cafes',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Mobile App Development Process for Restaurants & Cafés',
+      subtitle: 'FROM IDEA TO ORDERS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for restaurants cafes businesses.',
+      description: 'We craft restaurant apps that enhance ordering, reservations, loyalty, and engagement — built for growth and customer satisfaction.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your restaurants cafes business and market landscape.'
+          title: 'Requirement Analysis',
+          description: 'We understand your restaurant’s needs — whether you want online ordering, loyalty programs, or reservations — and plan accordingly.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific restaurants cafes goals.'
+          title: 'UI/UX Design',
+          description: 'We design a user-friendly interface with beautiful food menus, easy navigation, and seamless ordering experience.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with restaurants cafes focus.'
+          title: 'App Development',
+          description: 'Our developers build a robust mobile app with secure payments, fast performance, and complete backend integration.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on restaurants cafes market feedback.'
+          title: 'Testing & Deployment',
+          description: 'We rigorously test the app for performance, security, and user experience before launching on iOS & Android.'
+        },
+        {
+          id: 5,
+          title: 'Ongoing Support',
+          description: 'We provide updates, maintenance, and new feature integrations to ensure long-term success of your restaurant app.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Restaurants Growing with ", gradient: false },
+        { text: "Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from restaurants cafes businesses that achieved remarkable growth.',
+      description: 'Restaurants and cafés are seeing higher sales, stronger customer loyalty, and reduced dependency on third-party apps through custom apps.',
       testimonials: [
         {
           id: '1',
-          message: 'The mobile apps development services transformed our restaurants cafes business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our app now drives 45% of our orders directly, cutting down delivery platform commissions. Huge boost for margins!',
+          highlight: 'Direct Orders',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Restaurants Cafes Company'
+          name: 'Ramesh Gupta',
+          designation: 'Owner',
+          company: 'Spice & Sizzle Restaurant'
         },
         {
           id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for restaurants cafes. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for restaurants cafes',
+          message: 'The loyalty feature is brilliant. Customers love earning rewards, and it’s driving repeat business consistently.',
+          highlight: 'Customer Loyalty',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Restaurants Cafes Solutions'
+          name: 'Anjali Mehta',
+          designation: 'Founder',
+          company: 'Café Aroma'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Restaurants Cafes Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your restaurants cafes business.'
+      title: 'Launch Your Restaurant App Today',
+      subtitle: 'ONLINE ORDERS, LOYALTY & BOOKINGS IN ONE APP',
+      description: 'From ordering to reservations, we build apps that make restaurants future-ready and more profitable.',
     }
   }
 };

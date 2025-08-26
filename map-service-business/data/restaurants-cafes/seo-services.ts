@@ -1,198 +1,247 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconSearch, IconMapPin, IconTrendingUp, IconWorldWww, IconUsers, 
+  IconStar, IconBuildingStore, IconChartArrowsVertical, IconRocket, 
+  IconBrandGoogle, IconCoffee, IconChefHat,
+  IconShoppingCart
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'seo-services',
   business: 'restaurants-cafes',
   variants: {
     hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    whyChooseUs: 'variant3',
+    process: 'variant2',
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'seo-services',
+    slug: 'seo-services-restaurants-cafes',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Restaurants & Cafés Struggle with ", gradient: false },
+            { text: "SEO Rankings", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Without strong SEO, restaurants miss out on foot traffic and online orders. Competitors dominate search results, leaving potential diners unaware of your restaurant or café.",
+          painPoints: [
+            "Not ranking for 'restaurants near me'",
+            "Menus not showing up in Google search",
+            "Weak local visibility in maps & directories",
+            "Competitors outranking for best cafés in city",
+            "Missed opportunities for high-intent keywords"
+          ],
+          solutionPoints: [
+            "Boost rankings for 'near me' and city-specific searches",
+            "Menu & schema optimization for Google visibility",
+            "Local SEO strategies for maps & directories",
+            "Content marketing for food-related keywords",
+            "Reputation management to grow online reviews"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Boost My Restaurant SEO"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does SEO help restaurants & cafés?',
+              answer: 'SEO makes your restaurant visible in searches like “restaurants near me” or “best café in [city],” bringing more walk-ins and online reservations.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Will my menu appear in Google search?',
+              answer: 'Yes! We optimize your menu with structured data so dishes show up directly in search results.',
+              icon: React.createElement(IconChefHat, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do reviews affect SEO?',
+              answer: 'Yes, Google considers reviews as ranking signals. We help improve and manage your online reputation.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can SEO increase my online orders?',
+              answer: 'Absolutely. Ranking higher for “order food online” and similar queries directly increases online sales.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How long does restaurant SEO take?',
+              answer: 'Local SEO improvements can show results in 2–3 months, with long-term growth continuing over time.',
+              icon: React.createElement(IconChartArrowsVertical, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "SEO Services for Restaurants & Cafés",
       headlineKeywords: [
-        "Seo Services for Restaurants Cafes?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Restaurant SEO",
+        "Café Local SEO",
+        "Food Business Rankings",
+        "Near Me Searches"
       ],
       brandLine: [
-        { text: "Seo Services for Restaurants Cafes", gradient: false }
+        { text: "📍 Get Found When Hungry Customers Search for You Online", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized seo services strategies designed specifically for restaurants cafes. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help restaurants & cafés dominate Google search with local SEO, menu optimization, and review management to attract more diners and online orders.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconSearch, { size: 28 }), text: "Rank My Restaurant", link: "/contact" },
+        { icon: React.createElement(IconBrandGoogle, { size: 28 }), text: "Free SEO Audit", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "300% More Traffic",
+          description: "boosted restaurant visibility"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Restaurants Cafes served"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "Local Rankings",
+          description: "appear in Google Maps & search"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Customer Reach",
+          description: "drive more walk-ins & orders"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconWorldWww, { size: 32 }),
+          title: "Menu Optimization",
+          description: "get dishes found in Google"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Restaurants Cafes?', gradient: false }
+        { text: "Why Restaurants Choose Our ", gradient: false },
+        { text: "SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of restaurants cafes market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Dominate Local Search",
+          description: "Rank for ‘restaurants near me’ and local café searches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for restaurants cafes businesses.'
+          icon: React.createElement(IconChefHat, { size: 28 }),
+          title: "Menu Optimization",
+          description: "Get your dishes visible in Google search results."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBuildingStore, { size: 28 }),
+          title: "Google Business Boost",
+          description: "Optimize GMB for reviews, photos, and discovery."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review Management",
+          description: "Grow 5-star reviews that build trust & rankings."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Long-Term Visibility",
+          description: "Sustainable SEO strategies that keep diners coming."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost My Restaurant SEO",
+        link: "#contact",
+        icon: React.createElement(IconRocket, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Seo Services for Restaurants Cafes',
-      subtitle: 'RESTAURANTS CAFES SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for restaurants cafes businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for restaurants cafes market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for restaurants cafes audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for restaurants cafes businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Seo Services Process for Restaurants Cafes',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our SEO Process for Restaurants & Cafés',
+      subtitle: 'FROM KEYWORDS TO CUSTOMERS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for restaurants cafes businesses.',
+      description: 'Our SEO services help restaurants and cafés dominate local search, attract more diners, and grow online orders.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your restaurants cafes business and market landscape.'
+          title: 'SEO Audit & Research',
+          description: 'We analyze your current visibility, competitor rankings, and discover high-intent food-related keywords.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific restaurants cafes goals.'
+          title: 'On-Page Optimization',
+          description: 'We optimize your menu pages, titles, meta descriptions, and images for maximum visibility.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with restaurants cafes focus.'
+          title: 'Local SEO Setup',
+          description: 'We optimize your Google Business Profile, maps listing, and directories for local searches.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on restaurants cafes market feedback.'
+          title: 'Content Marketing',
+          description: 'We create blogs, food guides, and event promotions to drive organic visibility.'
+        },
+        {
+          id: 5,
+          title: 'Reputation Management',
+          description: 'We help you gather positive reviews and manage your online ratings to boost trust.'
+        },
+        {
+          id: 6,
+          title: 'Tracking & Growth',
+          description: 'We monitor results and continuously improve rankings for consistent diner growth.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Restaurants Thriving with ", gradient: false },
+        { text: "Our SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from restaurants cafes businesses that achieved remarkable growth.',
+      description: 'Our SEO strategies help restaurants & cafés dominate local search, attract more customers, and grow online orders consistently.',
       testimonials: [
         {
           id: '1',
-          message: 'The seo services services transformed our restaurants cafes business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'We now appear for “best café near me” searches and our walk-ins have doubled.',
+          highlight: 'Local SEO Success',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Restaurants Cafes Company'
+          name: 'Arjun Khanna',
+          designation: 'Owner',
+          company: 'Urban Grind Café'
         },
         {
           id: '2',
-          message: 'Outstanding seo services expertise specifically for restaurants cafes. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for restaurants cafes',
+          message: 'Our restaurant menu now shows directly in Google search—online orders have grown massively.',
+          highlight: 'Menu Optimization Win',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Restaurants Cafes Solutions'
+          name: 'Simran Bhatia',
+          designation: 'Founder',
+          company: 'Flavors & Spices'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Restaurants Cafes Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your restaurants cafes business.'
+      title: 'Boost Your Restaurant SEO & Attract More Diners',
+      subtitle: 'FROM SEARCH TO BOOKINGS',
+      description: 'We help restaurants & cafés rank higher, attract local diners, and grow online visibility with proven SEO strategies.',
     }
   }
 };

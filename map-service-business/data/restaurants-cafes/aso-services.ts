@@ -1,198 +1,245 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconPizza, IconCoffee, IconChartLine, IconTrendingUp, IconWorld,
+  IconSearch, IconUsers, IconRocket, IconChartBar, IconDeviceMobile
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'aso-services',
   business: 'restaurants-cafes',
   variants: {
     hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
+    whyChooseUs: 'variant1',
+    process: 'variant3',
     testimonials: 'variant2'
   },
   data: {
-    slug: 'aso-services',
+    slug: 'aso-services-restaurants-cafes',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Food Apps ", gradient: false },
+            { text: "Struggle Without ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Your restaurant or café may serve the best dishes in town, but if your app doesn’t appear in App Store & Play Store searches, hungry customers won’t find you.",
+          painPoints: [
+            "Restaurant apps buried under competitors",
+            "Low downloads due to poor visibility",
+            "Generic keywords missing local intent",
+            "Poor ratings and reviews hurting rankings",
+            "Limited footfall & online orders"
+          ],
+          solutionPoints: [
+            "App Store Optimization tailored for F&B industry",
+            "High-intent keyword targeting (local + cuisine based)",
+            "Improved rankings on Play Store & App Store",
+            "Boost downloads & repeat orders organically",
+            "More online orders, reservations, and foot traffic"
+          ],
+          cta: {
+            icon: React.createElement(IconDeviceMobile, { size: 20 }),
+            text: "Optimize My Restaurant App"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do restaurants need ASO?',
+              answer: 'ASO ensures your restaurant app ranks higher in app store searches, helping customers find and order from you instead of competitors.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can ASO help increase foot traffic?',
+              answer: 'Yes, by improving visibility, more people discover your app and visit your restaurant or café through loyalty programs and offers.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Does ASO improve online food delivery orders?',
+              answer: 'Absolutely! A higher-ranking app with optimized keywords and reviews means more people download and use your app to order food.',
+              icon: React.createElement(IconPizza, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How fast can restaurants see results from ASO?',
+              answer: 'Most restaurants and cafés notice an increase in downloads and visibility within 6–8 weeks of consistent optimization.',
+              icon: React.createElement(IconChartLine, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you manage app reviews & ratings?',
+              answer: 'Yes, we implement review generation strategies and reputation management to boost positive ratings and improve rankings.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Turn Your Food App Into a ",
       headlineKeywords: [
-        "Aso Services for Restaurants Cafes?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Top-Ranked App",
+        "Customer Magnet",
+        "Revenue Driver",
+        "Local Favorite"
       ],
       brandLine: [
-        { text: "Aso Services for Restaurants Cafes", gradient: false }
+        { text: "🍕 ASO Services for Restaurants & Cafés", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      subheadline: "Specialized aso services strategies designed specifically for restaurants cafes. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We optimize your restaurant & café apps to rank higher, attract more downloads, and drive consistent online orders & reservations.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPizza, { size: 28 }), text: "Get ASO Plan", link: "/contact" },
+        { icon: React.createElement(IconCoffee, { size: 28 }), text: "Free App Audit", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "200% More Downloads",
+          description: "on restaurant apps after ASO"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Restaurants Cafes served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Local Keyword Wins",
+          description: "for cuisines & food niches"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "Boost Orders",
+          description: "from app users & foodies"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Higher Retention",
+          description: "through review optimization"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Restaurants Cafes?', gradient: false }
+        { text: "Why Choose Us for ", gradient: false },
+        { text: "Restaurant & Café ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of restaurants cafes market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconPizza, { size: 28 }),
+          title: "F&B Industry Focus",
+          description: "We specialize in ASO strategies designed for restaurants, cafés, and food delivery apps."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for restaurants cafes businesses.'
+          icon: React.createElement(IconChartLine, { size: 28 }),
+          title: "Keyword Targeting",
+          description: "We optimize with cuisine-specific and local-intent keywords for maximum reach."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "More Downloads",
+          description: "Increase organic downloads and reduce dependency on ads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Boost Orders & Reservations",
+          description: "Optimized apps lead to more food delivery orders and table bookings."
+        },
+        {
+          icon: React.createElement(IconCoffee, { size: 28 }),
+          title: "Reputation Management",
+          description: "We drive positive reviews and ratings to improve your brand credibility."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Local + Global Reach",
+          description: "From local foodies to tourists, we make your app visible everywhere."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Optimize My Food App",
+        link: "#contact",
+        icon: React.createElement(IconDeviceMobile, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Aso Services for Restaurants Cafes',
-      subtitle: 'RESTAURANTS CAFES SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for restaurants cafes businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for restaurants cafes market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for restaurants cafes audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for restaurants cafes businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Aso Services Process for Restaurants Cafes',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our ASO Process for Restaurants & Cafés',
+      subtitle: 'FROM APP LISTING TO FOOD ORDERS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for restaurants cafes businesses.',
+      description: 'We follow a proven ASO strategy that helps restaurants & cafés dominate app store rankings and drive organic downloads.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your restaurants cafes business and market landscape.'
+          title: 'ASO Audit',
+          description: 'We review your app store presence, keywords, reviews, and competitors to identify growth opportunities.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific restaurants cafes goals.'
+          title: 'Keyword Optimization',
+          description: 'We target cuisine-specific, local, and high-intent food-related keywords to boost app discoverability.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with restaurants cafes focus.'
+          title: 'Creative Optimization',
+          description: 'We optimize app titles, descriptions, screenshots, and promo videos to maximize downloads.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on restaurants cafes market feedback.'
+          title: 'Review & Rating Boost',
+          description: 'We implement strategies to generate more positive reviews and maintain higher app ratings.'
+        },
+        {
+          id: 5,
+          title: 'Tracking & Scaling',
+          description: 'We continuously monitor rankings, downloads, and conversions to refine and scale your ASO strategy.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Restaurants & Cafés Growing with ", gradient: false },
+        { text: "Our ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from restaurants cafes businesses that achieved remarkable growth.',
+      description: 'See how restaurants and cafés boosted downloads, orders, and footfall with our ASO strategies.',
       testimonials: [
         {
           id: '1',
-          message: 'The aso services services transformed our restaurants cafes business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our restaurant app downloads tripled after ASO optimization. Online orders have never been this high!',
+          highlight: '3X More Downloads',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Restaurants Cafes Company'
+          name: 'Chef Arjun Mehta',
+          designation: 'Owner',
+          company: 'Urban Tandoor'
         },
         {
           id: '2',
-          message: 'Outstanding aso services expertise specifically for restaurants cafes. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for restaurants cafes',
+          message: 'We saw a huge boost in table reservations and delivery orders thanks to better app visibility.',
+          highlight: 'Increased Orders',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Restaurants Cafes Solutions'
+          name: 'Sonal Kapoor',
+          designation: 'Founder',
+          company: 'Bean & Bite Café'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Restaurants Cafes Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your restaurants cafes business.'
+      title: 'Turn Your Restaurant App Into a Top-Ranked Food Destination',
+      subtitle: 'ASO THAT DRIVES ORDERS & BOOKINGS',
+      description: 'We help restaurants & cafés rank higher, get more downloads, and turn app users into loyal customers.',
     }
   }
 };
