@@ -1,198 +1,248 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconDeviceLaptop,
+  IconSettings,
+  IconCode,
+  IconUsers,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconStar,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'web-design-development',
-  business: 'hotel-resorts',
+  service: "web-design-development",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'web-design-development',
+    slug: "web-design-development-maintenance-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Challenges Hotels & Resorts Face with", gradient: false },
+            { text: "Web Presence & Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Many hotels and resorts struggle with outdated websites, poor user experience, slow loading speeds, and lack of ongoing maintenance, resulting in lost bookings and lower brand trust.",
+          painPoints: [
+            "Outdated design that doesn’t convert visitors",
+            "Slow website speed affecting bookings",
+            "Lack of mobile responsiveness",
+            "Inefficient CMS and content management",
+            "Security vulnerabilities and downtime",
+          ],
+          solutionPoints: [
+            "Modern, conversion-focused web design tailored to hospitality",
+            "Mobile-friendly, responsive websites for all devices",
+            "Optimized booking systems and UX for higher reservations",
+            "Regular website maintenance and updates for smooth operation",
+            "Security monitoring and fast-loading pages to protect guests’ data",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Enhance Your Hotel’s Web Experience",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Can a new website increase bookings?",
+              answer:
+                "Yes! A modern, fast, and mobile-friendly website improves user experience, builds trust, and significantly boosts online reservations.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you handle ongoing website maintenance?",
+              answer:
+                "Absolutely. We provide regular updates, backups, security checks, and performance optimization to ensure your website runs flawlessly.",
+              icon: React.createElement(IconSettings, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Will the website be optimized for mobile devices?",
+              answer:
+                "Yes. All our websites are fully responsive, ensuring smooth user experience on smartphones, tablets, and desktops.",
+              icon: React.createElement(IconDeviceLaptop, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Do you provide SEO-friendly websites?",
+              answer:
+                "Every website is designed with SEO best practices, fast loading speed, and structured data to rank higher in search engines.",
+              icon: React.createElement(IconShieldCheck, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Stunning Websites & Seamless Maintenance for",
       headlineKeywords: [
-        "Web Design Development for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Hotels & Resorts",
+        "Luxury Hospitality Websites",
+        "Booking-Optimized Web Design",
+        "Mobile-Responsive Resort Sites",
+        "Secure & Fast Hotel Websites",
       ],
       brandLine: [
-        { text: "Web Design Development for Hotel Resorts", gradient: false }
+        {
+          text: "💻 Elevate Your Hotel & Resort’s Online Presence with Expert Web Design & Maintenance",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized web design development strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We craft visually appealing, fast, and secure websites for hotels and resorts, while providing continuous maintenance to maximize bookings and guest trust.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconCode, { size: 28 }),
+          text: "Get Free Website Audit",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "500+ Hotels Served",
+          description: "Web solutions optimized for hospitality",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X More Online Bookings",
+          description: "Conversion-focused design & UX",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Guest Satisfaction",
+          description: "Smooth booking experiences for visitors",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Web Design Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Hotels & Resorts Choose Us for", gradient: false },
+        { text: "Web Design & Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconDeviceLaptop, { size: 28 }),
+          title: "Modern & Conversion-Optimized Design",
+          description: "Websites built to increase engagement and online bookings.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconSettings, { size: 28 }),
+          title: "Reliable Maintenance & Security",
+          description: "Regular updates, backups, and security monitoring for uninterrupted operations.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored web design development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconCode, { size: 28 }),
+          title: "SEO-Friendly & Mobile Responsive",
+          description: "Optimized websites for Google rankings and seamless mobile browsing.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Web Design Development for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive web design development solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom web design development strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of web design development campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Upgrade Your Hotel Website Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Web Design Development Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to web design development that delivers measurable results for hotel resorts businesses.',
+      title: "Our Web Design & Maintenance Process for Hotels & Resorts",
+      subtitle: "PLAN • DESIGN • DEVELOP • MAINTAIN",
+      description:
+        "From initial research to long-term maintenance, we ensure your hotel or resort website drives bookings, engages visitors, and reflects your brand perfectly.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "Research & Strategy",
+          description: "Understand your target audience, competitors, and brand positioning for a tailored web solution.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom web design development strategy tailored for your specific hotel resorts goals.'
+          title: "Design & UX Planning",
+          description: "Craft visually stunning layouts and intuitive navigation to maximize user engagement and conversion.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of web design development campaigns with hotel resorts focus.'
+          title: "Development & Integration",
+          description: "Build fast, responsive, and secure websites integrated with booking engines, CMS, and analytics tools.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Web Design Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for web design development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "SEO & Performance Optimization",
+          description: "Ensure fast loading speeds, mobile optimization, structured data, and on-page SEO for higher search visibility.",
+        },
+        {
+          id: 5,
+          title: "Launch & Testing",
+          description: "Thorough testing across devices, browsers, and user scenarios to guarantee smooth launch.",
+        },
+        {
+          id: 6,
+          title: "Ongoing Maintenance & Support",
+          description: "Regular updates, backups, security patches, and performance monitoring to ensure uninterrupted website operation.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Web Design Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts Who ", gradient: false },
+        { text: "Loved Our Web Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "Hear from hotel and resort owners who transformed their online presence and boosted bookings with our web design and maintenance services.",
       testimonials: [
         {
-          id: '1',
-          message: 'The web design development services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our resort’s website now loads instantly, looks stunning on mobile, and our bookings have doubled! The maintenance support is top-notch.",
+          highlight: "bookings have doubled",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Anjali Mehta",
+          designation: "Manager",
+          company: "SeaView Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding web design development expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "They redesigned our hotel website with a modern look, integrated our booking system flawlessly, and handle all updates seamlessly.",
+          highlight: "modern look & seamless updates",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Rohit Kapoor",
+          designation: "Owner",
+          company: "MountainTop Hotel",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR WEB DESIGN DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our web design development can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Get a High-Converting Hotel & Resort Website Today",
+      subtitle: "MODERN DESIGN • MOBILE OPTIMIZED • SECURE & MAINTAINED",
+      description:
+        "Schedule a free consultation with our web experts to enhance your online presence, boost bookings, and ensure your website always performs flawlessly.",
+    },
+  },
 };

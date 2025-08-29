@@ -1,198 +1,262 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBuildingSkyscraper,
+  IconHome,
+  IconUsers,
+  IconMessageCircle,
+  IconVideo,
+  IconTrendingUp,
+  IconCamera,
+  IconArrowRight,
+  IconMapPin,
+  IconCalendarEvent,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'social-media-marketing',
-  business: 'real-estate',
+  service: "social-media-marketing",
+  business: "real-estate",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: "social-media-marketing-real-estate",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Real Estate Businesses", gradient: false },
+            { text: "Struggle on Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Property businesses often fail on social media because they rely only on listings instead of creating engaging, lifestyle-driven content.",
+          painPoints: [
+            "Posting just property pictures with no engagement strategy",
+            "Not leveraging Instagram Reels, YouTube Shorts & TikTok",
+            "Low community trust due to lack of interaction",
+            "Inconsistent posting leading to poor visibility",
+            "Not running targeted campaigns for property seekers",
+          ],
+          solutionPoints: [
+            "High-quality reels & walkthrough videos that inspire buyers",
+            "Engagement campaigns to build trust & community",
+            "Targeted ad campaigns for buyers, renters & investors",
+            "Content calendars aligned with property launches",
+            "Data-driven approach to maximize inquiries & site visits",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Real Estate Brand on Social Media",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Which social media platform works best for real estate?",
+              answer:
+                "Instagram, Facebook, and YouTube are the most effective for property promotions, while LinkedIn works well for attracting investors & B2B buyers.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can social media generate real property leads?",
+              answer:
+                "Yes. Social media campaigns drive site visit bookings, property inquiries, and investor interest with the right targeting & creatives.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do reels and videos really help sell properties?",
+              answer:
+                "Absolutely. Video walkthroughs & lifestyle-focused reels build trust and give buyers a virtual property experience before visiting.",
+              icon: React.createElement(IconVideo, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Is organic posting enough for real estate marketing?",
+              answer:
+                "Organic posting builds credibility, but combining it with paid social ads accelerates visibility, lead generation & sales.",
+              icon: React.createElement(IconCamera, { size: 22 }),
+            },
+            {
+              id: "faq-5",
+              question: "How do you track ROI from social media campaigns?",
+              answer:
+                "We measure metrics like inquiries, leads, engagement, CTR, and actual site visits/bookings to ensure campaigns deliver results.",
+              icon: React.createElement(IconMessageCircle, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want",
       headlineKeywords: [
-        "Social Media Marketing for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Property Inquiries?",
+        "Investor Engagement?",
+        "Qualified Buyer Leads?",
+        "Higher Brand Visibility?",
+        "Social Media That Converts?",
       ],
       brandLine: [
-        { text: "Social Media Marketing for Real Estate", gradient: false }
+        {
+          text: "📲 Turn Social Media into a Property Selling Machine",
+          gradient: false,
+        },
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help real estate businesses dominate Instagram, Facebook, YouTube & LinkedIn with engaging content, community engagement, and high-converting ad campaigns.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Social Media Growth",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "50K+ Followers",
+          description: "Built across multiple real estate brands",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconHome, { size: 32 }),
+          title: "1,200+ Inquiries",
+          description: "Generated from social media campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "5X ROI",
+          description: "On paid property ad campaigns",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Real Estate Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconCamera, { size: 28 }),
+          title: "Creative Property Storytelling",
+          description: "We turn property features into lifestyle-driven content that resonates with buyers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "Video-First Strategy",
+          description: "Reels, walkthroughs & virtual tours build trust & boost inquiries.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Community Engagement",
+          description: "We interact with prospects daily, building a trusted real estate brand voice.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Lead Conversion Focus",
+          description: "Our strategies drive actual property visits, not just likes & follows.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get Started with Social Media Marketing",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Social Media Marketing Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for real estate businesses.',
+      title: "Our Social Media Process for Real Estate",
+      subtitle: "FROM CONTENT TO CONVERSIONS",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We transform your property listings into engaging campaigns that build trust, generate inquiries, and close deals faster.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: "Audit & Market Research",
+          description: "We analyze your existing profiles, competitors & property market trends to craft a winning content strategy.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific real estate goals.'
+          title: "Content Calendar & Planning",
+          description: "We build a monthly calendar with property posts, reels & seasonal campaigns aligned with launches.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with real estate focus.'
+          title: "Creative Production",
+          description: "Our team produces walkthrough videos, lifestyle reels & graphics that attract buyers & investors.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Community Engagement",
+          description: "We manage DMs, comments & group activity, building credibility & nurturing prospects.",
+        },
+        {
+          id: 5,
+          title: "Paid Social Campaigns",
+          description: "We run geo-targeted ads for buyers & investors, amplifying reach & inquiries.",
+        },
+        {
+          id: 6,
+          title: "Analytics & ROI Tracking",
+          description: "We measure inquiries, leads, CTR & conversions to optimize and scale campaigns.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Brands That", gradient: false },
+        { text: "Grew with Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description:
+        "Our social media campaigns have turned property brands into trusted leaders, generating consistent inquiries & site visits.",
       testimonials: [
         {
-          id: '1',
-          message: 'The social media marketing services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Digi Aerotech turned our real estate Instagram into a lead machine. We generated 300+ inquiries in 2 months.",
+          highlight: "300+ inquiries",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: "Ananya Sharma",
+          designation: "Marketing Head",
+          company: "DreamNest Realty",
         },
         {
-          id: '2',
-          message: 'Outstanding social media marketing expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          id: "2",
+          message:
+            "From property reels to investor campaigns, their strategies helped us sell 70% of inventory within launch week.",
+          highlight: "sold 70% of inventory",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
-        }
-      ]
+          name: "Vikram Malhotra",
+          designation: "Director",
+          company: "UrbanSky Builders",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your real estate business.'
-    }
-  }
+      title: "Want to Sell More Properties with Social Media?",
+      subtitle: "ENGAGE. INSPIRE. CONVERT.",
+      description:
+        "We help real estate brands turn likes into leads and followers into buyers with powerful social media strategies.",
+    },
+  },
 };

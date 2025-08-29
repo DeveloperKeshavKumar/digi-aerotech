@@ -1,198 +1,238 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBuildingSkyscraper,
+  IconHome,
+  IconUsers,
+  IconAd,
+  IconTarget,
+  IconDeviceMobile,
+  IconTrendingUp,
+  IconPhoneCall,
+  IconArrowRight,
+  IconMapPin,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'meta-ads',
-  business: 'real-estate',
+  service: "meta-ads",
+  business: "real-estate",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'meta-ads',
+    slug: "meta-ads-real-estate",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Real Estate Businesses", gradient: false },
+            { text: "Fail with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline: "Many real estate agencies spend on Facebook & Instagram Ads but fail to generate actual leads because campaigns aren’t structured for conversions.",
+          painPoints: [
+            "Boosting posts without strategy",
+            "Targeting too broad or wrong audience",
+            "No lead capture landing pages",
+            "High ad spend but low ROI",
+            "Ignoring retargeting opportunities",
+          ],
+          solutionPoints: [
+            "Laser-focused geo & lifestyle targeting",
+            "High-converting landing pages for property inquiries",
+            "Compelling creatives & video ads",
+            "Smart retargeting of website visitors",
+            "Data-driven ad scaling for maximum ROI",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Run High-ROI Meta Ads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Do Meta Ads work for real estate?",
+              answer: "Yes! With precise geo-targeting and lifestyle filters, Meta Ads bring in qualified buyers & renters directly to your property listings.",
+              icon: React.createElement(IconAd, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "What type of ads work best?",
+              answer: "Carousel ads for multiple properties, video tours for high engagement, and lead ads for direct inquiries perform best.",
+              icon: React.createElement(IconDeviceMobile, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can you guarantee leads?",
+              answer: "We create campaigns optimized for conversions. While results vary, our strategies consistently deliver high-quality property inquiries.",
+              icon: React.createElement(IconTarget, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How much should I spend on ads?",
+              answer: "Even with a small budget, targeted Meta Ads can generate quality leads. Scaling is done once ROI is proven.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Convert Clicks into Property Inquiries",
       headlineKeywords: [
-        "Meta Ads for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Real Estate Meta Ads",
+        "Facebook Lead Campaigns",
+        "Instagram Ads",
+        "Property Buyer Targeting",
+        "Lead Generation Ads",
       ],
       brandLine: [
-        { text: "Meta Ads for Real Estate", gradient: false }
+        { text: "🏡 More Views, More Site Visits, More Sales", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We design high-converting Facebook & Instagram Ads for real estate agencies that attract buyers, sellers, and renters while maximizing ROI.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "Launch Meta Ads Today", link: "/contact" },
+        { icon: React.createElement(IconMapPin, { size: 28 }), text: "Book Free Consultation", link: "tel:+918607119872", variant: "secondary" },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "5X More Inquiries",
+          description: "From Facebook & Insta campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "200+ Projects",
+          description: "Marketed with Meta Ads",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconHome, { size: 32 }),
+          title: "3X Faster Sales",
+          description: "Compared to traditional ads",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Digi Aerotech for", gradient: false },
+        { text: "Real Estate Meta Ads?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconAd, { size: 28 }),
+          title: "Conversion-Focused Ads",
+          description: "We build campaigns designed to capture leads, not just clicks.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Advanced Audience Targeting",
+          description: "Reach only serious buyers & renters in your city with precise targeting.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "High-Impact Creatives",
+          description: "Eye-catching property images, reels & video ads that drive engagement.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Proven ROI Growth",
+          description: "Our ad campaigns consistently deliver 3–5x ROI for real estate agencies.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Meta Ads for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start Generating Property Leads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Meta Ads Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for real estate businesses.',
+      title: "Our Meta Ads Process for Real Estate",
+      subtitle: "TURN AD SPEND INTO PROPERTY SALES",
+      className: "border-t border-border dark:border-gray-700",
+      description: "We follow a structured Meta Ads process to generate consistent real estate leads while maximizing ad ROI.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: "Market Research & Audience Setup",
+          description: "We analyze local property demand, demographics, and competitor ads to identify the right audience.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific real estate goals.'
+          title: "Creative Ad Design",
+          description: "We craft ad creatives including carousels, reels, and video walkthroughs that highlight property features.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with real estate focus.'
+          title: "Lead-Capturing Landing Pages",
+          description: "Dedicated, mobile-optimized landing pages with inquiry forms boost lead capture by 40%+.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Geo & Lifestyle Targeting",
+          description: "We target high-intent audiences based on income, location, and interests like property investment & relocation.",
+        },
+        {
+          id: 5,
+          title: "Retargeting & Scaling",
+          description: "We retarget website visitors & ad engagers, then scale winning campaigns for maximum ROI.",
+        },
+        {
+          id: 6,
+          title: "Tracking & Reporting",
+          description: "We provide transparent reports on cost per lead, ad performance, and booked site visits.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Agencies Winning With", gradient: false },
+        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description: "See how property brands generated high-quality inquiries with our Facebook & Instagram campaigns.",
       testimonials: [
         {
-          id: '1',
-          message: 'The meta ads services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message: "Our apartments started selling 3X faster with Digi Aerotech’s Meta Ads campaigns. Inquiries flooded in within weeks.",
+          highlight: "3X Faster Sales",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: "Karan Malhotra",
+          designation: "Realtor",
+          company: "Sunrise Properties",
         },
         {
-          id: '2',
-          message: 'Outstanding meta ads expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          id: "2",
+          message: "We closed 40+ property deals last quarter thanks to high-quality leads from their Facebook & Instagram Ads.",
+          highlight: "40+ Deals Closed",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
-        }
-      ]
+          name: "Priya Nair",
+          designation: "Developer",
+          company: "Elite Constructions",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your real estate business.'
-    }
-  }
+      title: "Want to Sell More Properties with Meta Ads?",
+      subtitle: "FACEBOOK & INSTAGRAM CAMPAIGNS BUILT FOR REAL ESTATE SUCCESS",
+      description: "Let us run high-converting Meta Ads that bring you qualified property buyers & renters instantly.",
+    },
+  },
 };

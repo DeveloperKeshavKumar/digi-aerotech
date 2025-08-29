@@ -1,198 +1,267 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconSchool,
+  IconUsers,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconRocket,
+  IconCalendarEvent,
+  IconArrowRight,
+  IconPhone,
+  IconTarget,
+  IconStar,
+  IconGlobe,
+  IconCircleCheck
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'leads-generation',
   business: 'educational-institutions',
   variants: {
-    hero: 'variant2',
+    hero: 'variant1',
     whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    process: 'variant2',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'leads-generation',
+    slug: 'leads-generation-educational-institutions',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Educational Institutions Face", gradient: false },
+            { text: "In Generating Quality Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Schools, colleges, coaching centers, and e-learning platforms struggle to consistently attract and convert high-quality leads for enrollment.",
+          painPoints: [
+            "Attracting inquiries from genuinely interested students",
+            "Difficulty converting inquiries into enrollments",
+            "Wasted ad spend on irrelevant leads",
+            "Limited tools to track lead quality and ROI",
+            "Low engagement with campaigns across channels"
+          ],
+          solutionPoints: [
+            "Targeted lead generation campaigns tailored to each program",
+            "Optimized landing pages and forms for higher conversions",
+            "Multi-channel strategies including social & email campaigns",
+            "Advanced tracking and reporting for lead quality",
+            "Personalized follow-up strategies to nurture leads"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start Generating Quality Leads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How can we get more student inquiries?',
+              answer: 'By designing highly-targeted campaigns and landing pages that attract parents and students actively seeking courses.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you track lead quality?',
+              answer: 'Yes, we provide detailed analytics on lead source, engagement, and conversion potential to ensure high ROI.',
+              icon: React.createElement(IconCircleCheck, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you generate leads for multiple programs simultaneously?',
+              answer: 'Absolutely. Each program or grade level can have its own dedicated lead generation campaign.',
+              icon: React.createElement(IconSchool, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How soon will we see new leads?',
+              answer: 'High-quality inquiries usually start flowing within days to weeks, depending on campaign scale and targeting.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you handle follow-ups for leads?',
+              answer: 'Yes, we can integrate automated or manual follow-up strategies to increase lead-to-enrollment conversion.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Which channels do you use for lead generation?',
+              answer: 'We leverage Google Ads, social media, email campaigns, and SEO-driven content to attract qualified leads.',
+              icon: React.createElement(IconGlobe, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Leads Generation for Educational Institutions?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Student Inquiries?",
+        "Higher Enrollment Rates?",
+        "Qualified Leads for Your Programs?",
+        "Targeted Lead Generation for Schools?",
+        "Boost Admissions with Expert Strategies?"
       ],
       brandLine: [
-        { text: "Leads Generation for Educational Institutions", gradient: false }
+        { text: "🎯 Leads Generation Services for Educational Institutions", gradient: false }
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for educational institutions. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help educational institutions attract qualified student inquiries, increasing enrollments and maximizing ROI.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free Lead Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Start Generating Leads", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "20,000+ Student Leads",
+          description: "Generated across institutions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Educational Institutions served"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "250+ Programs Promoted",
+          description: "Schools, colleges, and coaching centers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Client Satisfaction",
+          description: "Trusted by educational institutions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconGlobe, { size: 32 }),
+          title: "Local & Nationwide Reach",
+          description: "Targeted lead generation campaigns"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Educational Institutions?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Lead Generation Partner for Educational Institutions", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of educational institutions market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "High-Quality Leads",
+          description: "We focus on leads with genuine enrollment intent."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for educational institutions businesses.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Conversion-Focused Strategies",
+          description: "Every campaign is optimized to maximize student registrations."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Rapid Lead Flow",
+          description: "Start receiving qualified inquiries quickly."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Precise Audience Targeting",
+          description: "Reach parents and students actively searching for educational programs."
+        },
+        {
+          icon: React.createElement(IconCalendarEvent, { size: 28 }),
+          title: "Continuous Optimization",
+          description: "Campaigns are monitored and refined for best results."
+        },
+        {
+          icon: React.createElement(IconGlobe, { size: 28 }),
+          title: "Comprehensive Reporting",
+          description: "Transparent insights on leads, conversions, and ROI."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start Generating Leads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Leads Generation for Educational Institutions',
-      subtitle: 'EDUCATIONAL INSTITUTIONS SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for educational institutions businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for educational institutions market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for educational institutions audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for educational institutions businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Leads Generation Process for Educational Institutions',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Lead Generation Process for Educational Institutions',
+      subtitle: 'STEP-BY-STEP INQUIRY BOOST',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for educational institutions businesses.',
+      description: 'From targeting the right audience to optimizing conversion paths, our lead generation ensures consistent student inquiries and enrollments.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your educational institutions business and market landscape.'
+          title: 'Audience & Program Research',
+          description: 'Identify target students, parents, and the programs they are most interested in.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific educational institutions goals.'
+          title: 'Campaign Strategy & Planning',
+          description: 'Design multi-channel campaigns optimized for high-quality lead acquisition.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with educational institutions focus.'
+          title: 'Ad Creative & Messaging',
+          description: 'Develop compelling creatives and copy that attract clicks and interest.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on educational institutions market feedback.'
+          title: 'Landing Page & Form Optimization',
+          description: 'Ensure all leads are captured efficiently with user-friendly forms.'
+        },
+        {
+          id: 5,
+          title: 'Lead Tracking & Nurturing',
+          description: 'Monitor lead behavior and implement follow-ups for higher conversions.'
+        },
+        {
+          id: 6,
+          title: 'Continuous Improvement & Reporting',
+          description: 'Refine campaigns based on data and provide detailed reports on lead quality and ROI.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Institutions Who ", gradient: false },
+        { text: "Generated Leads with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from educational institutions businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers consistently attract qualified student inquiries and boost enrollments.',
       testimonials: [
         {
           id: '1',
-          message: 'The leads generation services transformed our educational institutions business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our student inquiries increased by 250% after implementing Digi Aerotech’s lead generation strategies.',
+          highlight: 'increased by 250%',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Educational Institutions Company'
+          name: 'Anjali Verma',
+          designation: 'Principal',
+          company: 'Sunrise Academy'
         },
         {
           id: '2',
-          message: 'Outstanding leads generation expertise specifically for educational institutions. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for educational institutions',
+          message: 'We now receive highly relevant leads that actually convert into enrollments, saving us time and ad spend.',
+          highlight: 'highly relevant leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Educational Institutions Solutions'
+          name: 'Rohit Malhotra',
+          designation: 'Director',
+          company: 'Excel Coaching Center'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Educational Institutions Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your educational institutions business.'
+      title: 'Ready to Generate High-Quality Student Leads?',
+      subtitle: 'Turn Inquiries into Enrollments Today',
+      description: 'Book a free consultation with Digi Aerotech and start attracting high-converting leads for your educational programs.'
     }
   }
 };

@@ -1,198 +1,261 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHome,
+  IconSearch,
+  IconBuildingSkyscraper,
+  IconMapPin,
+  IconTrendingUp,
+  IconUsers,
+  IconFileAnalytics,
+  IconArrowRight,
+  IconGlobe,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'seo-services',
-  business: 'real-estate',
+  service: "seo-services",
+  business: "real-estate",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant1",
+    whyChooseUs: "variant3",
+    process: "variant2",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'seo-services',
+    slug: "seo-services-real-estate",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Real Estate Brands", gradient: false },
+            { text: "Struggle with SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Without proper SEO, your real estate website becomes invisible to buyers & renters searching online.",
+          painPoints: [
+            "Low rankings on Google for competitive property keywords",
+            "Poor local visibility in Google Maps & Search",
+            "Outdated property pages with no SEO optimization",
+            "Not leveraging long-tail searches like '2BHK apartments in [city]'",
+            "High bounce rates due to poor site performance",
+          ],
+          solutionPoints: [
+            "Targeted keyword strategy for competitive property searches",
+            "Local SEO optimization for real estate listings",
+            "High-quality content creation with SEO-rich property descriptions",
+            "Technical SEO & mobile optimization for faster performance",
+            "Backlink building to increase authority & trust",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Rank Higher & Generate More Property Leads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why is SEO important for real estate?",
+              answer:
+                "SEO ensures your properties appear on top when buyers search for homes, apartments, or commercial spaces in your area.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "How long does real estate SEO take?",
+              answer:
+                "It usually takes 3–6 months to see strong results, but local SEO optimizations can generate quicker leads within weeks.",
+              icon: React.createElement(IconFileAnalytics, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you optimize property listing pages?",
+              answer:
+                "Yes, we optimize every property listing with SEO-rich descriptions, meta tags, and schema to improve visibility.",
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Can SEO generate actual property buyers?",
+              answer:
+                "Yes, SEO targets high-intent searches like 'buy flat in [city]' and 'luxury villa for sale', leading to qualified buyer inquiries.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-5",
+              question: "Do you handle local SEO for multiple projects?",
+              answer:
+                "We optimize for multiple properties, projects, and localities so that each project ranks in its respective city/area.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Rank",
       headlineKeywords: [
-        "Seo Services for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher on Google",
+        "For Property Searches",
+        "In Your Local Market",
+        "For Apartments & Villas",
+        "For Real Buyers",
       ],
       brandLine: [
-        { text: "Seo Services for Real Estate", gradient: false }
+        {
+          text: "📈 Turn Google Searches into Property Leads",
+          gradient: false,
+        },
       ],
-      subheadline: "Specialized seo services strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help real estate businesses rank higher on Google & Maps for competitive keywords, ensuring you capture buyers at the moment they search.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Boost Your Real Estate SEO",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "500+ Keywords",
+          description: "Ranked for real estate clients",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "300% More Traffic",
+          description: "Driven to real estate websites",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconHome, { size: 32 }),
+          title: "1,000+ Buyer Leads",
+          description: "Generated through SEO campaigns",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Real Estate SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Local SEO Experts",
+          description: "We optimize for location-based searches like 'apartments near me' to capture hyper-local leads.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconGlobe, { size: 28 }),
+          title: "National & Global Reach",
+          description: "For luxury and NRI properties, we target international searches to attract overseas buyers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconFileAnalytics, { size: 28 }),
+          title: "Data-Driven SEO",
+          description: "Every strategy is backed by keyword research, competitor analysis & analytics tracking.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "ROI-Focused Results",
+          description: "We don’t just rank you higher, we drive inquiries, site visits, and property sales.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Seo Services for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get Your Properties Ranked on Google",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Seo Services Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for real estate businesses.',
+      title: "Our SEO Process for Real Estate",
+      subtitle: "FROM VISIBILITY TO LEAD GENERATION",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "Our SEO process is designed to make your real estate projects discoverable, engaging, and conversion-focused.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: "Keyword Research",
+          description: "We identify high-intent real estate keywords like 'buy flat in [city]' & 'commercial space for rent'.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific real estate goals.'
+          title: "On-Page SEO",
+          description: "Optimizing property pages with meta tags, SEO-friendly URLs, images & schema markup.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with real estate focus.'
+          title: "Local SEO Optimization",
+          description: "Improving Google Maps ranking & local project visibility through NAP consistency & GMB enhancements.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Content Marketing",
+          description: "Publishing blogs, guides & property insights that rank for long-tail queries and build authority.",
+        },
+        {
+          id: 5,
+          title: "Technical SEO",
+          description: "Ensuring fast-loading, mobile-optimized websites with proper indexing & crawlability.",
+        },
+        {
+          id: 6,
+          title: "Reporting & Scaling",
+          description: "We track rankings, leads, and conversions, scaling campaigns for maximum ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Brands That", gradient: false },
+        { text: "Ranked Higher with SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description:
+        "Our SEO strategies have helped real estate developers, brokers & agencies dominate Google, generating consistent property inquiries.",
       testimonials: [
         {
-          id: '1',
-          message: 'The seo services services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "With Digi Aerotech’s SEO, our property listings started ranking in the top 3 for ‘luxury apartments in Gurgaon’. Inquiries doubled in 3 months.",
+          highlight: "Inquiries doubled",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: "Rahul Mehta",
+          designation: "Managing Director",
+          company: "Skyline Developers",
         },
         {
-          id: '2',
-          message: 'Outstanding seo services expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          id: "2",
+          message:
+            "Their local SEO strategy helped our projects rank for multiple locations. Site visits went up by 70% within 4 months.",
+          highlight: "70% more site visits",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
-        }
-      ]
+          name: "Pooja Sinha",
+          designation: "Marketing Head",
+          company: "DreamHome Realty",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your real estate business.'
-    }
-  }
+      title: "Want More Buyer Leads from Google?",
+      subtitle: "RANK HIGHER. ATTRACT BUYERS. SELL FASTER.",
+      description:
+        "We help real estate brands dominate Google rankings, bringing you closer to property buyers when they search.",
+    },
+  },
 };

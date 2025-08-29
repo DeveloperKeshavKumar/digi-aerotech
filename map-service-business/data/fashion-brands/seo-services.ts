@@ -1,198 +1,265 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTrendingUp,
+  IconUsers,
+  IconStar,
+  IconShieldCheck,
+  IconRocket,
+  IconShoppingBag,
+  IconGlobe,
+  IconArrowRight,
+  IconPhone,
+  IconChartArcs
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'seo-services',
   business: 'fashion-brands',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant1',
+    whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'seo-services',
+    slug: 'seo-services-fashion-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "SEO Challenges Fashion Brands ", gradient: false },
+            { text: "Face in 2025", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Fashion brands struggle to get organic visibility, attract buyers, and stand out online.",
+          painPoints: [
+            "Low Google search ranking for brand and product keywords",
+            "Difficulty in driving traffic to online stores or catalog pages",
+            "Poor website performance affecting SEO",
+            "Lack of structured content and optimized metadata",
+            "Inconsistent backlinking and authority building"
+          ],
+          solutionPoints: [
+            "Comprehensive on-page and off-page SEO strategies",
+            "Keyword-optimized content for fashion product and brand searches",
+            "Technical SEO including speed, schema, and mobile optimization",
+            "High-quality backlink building and authority growth",
+            "Regular SEO audits and reporting for continuous growth"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Fashion Brand SEO"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Can SEO help increase online fashion sales?',
+              answer: 'Yes. Targeted SEO drives organic traffic, bringing high-intent buyers to your fashion store.',
+              icon: React.createElement(IconShoppingBag, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you optimize fashion product pages for Google?',
+              answer: 'Absolutely. We create keyword-optimized, user-friendly product pages for maximum visibility.',
+              icon: React.createElement(IconChartArcs, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How long does it take to see SEO results?',
+              answer: 'Typically, 3–6 months for noticeable improvements in organic rankings and traffic.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide SEO reporting?',
+              answer: 'Yes. We deliver detailed reports with actionable insights to track growth.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can you optimize for local fashion searches?',
+              answer: 'Yes. Local SEO strategies ensure nearby customers discover your fashion brand.',
+              icon: React.createElement(IconGlobe, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you handle technical SEO?',
+              answer: 'Absolutely. We optimize speed, mobile, schema, and other technical aspects for better ranking.',
+              icon: React.createElement(IconShieldCheck, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Seo Services for Fashion Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher Fashion Brand Visibility?",
+        "Rank Top on Google?",
+        "Drive Organic Traffic?",
+        "Get More Online Buyers?",
+        "Dominate Fashion Search Results?"
       ],
       brandLine: [
-        { text: "Seo Services for Fashion Brands", gradient: false }
+        { text: "✨ SEO Services for Fashion Brands That Drive Organic Growth", gradient: false }
       ],
-      subheadline: "Specialized seo services strategies designed specifically for fashion brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help fashion brands rank higher on Google, attract more buyers, and increase online sales through strategic SEO.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free SEO Consultation", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Start Improving SEO Today", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "100,000+ Organic Visitors",
+          description: "Driven through SEO campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Fashion Brands served"
+          icon: React.createElement(IconShoppingBag, { size: 32 }),
+          title: "200+ Fashion Brands",
+          description: "Scaled with our SEO strategies"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Client Satisfaction",
+          description: "Brands love our SEO services"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconGlobe, { size: 32 }),
+          title: "Global Reach",
+          description: "Fashion brands ranking worldwide"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Fashion Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 SEO Partner for Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of fashion brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconChartArcs, { size: 28 }),
+          title: "Data-Driven SEO",
+          description: "Every strategy backed by analytics for maximum results."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for fashion brands businesses.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Proven Track Record",
+          description: "We’ve helped hundreds of fashion brands increase traffic & sales."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Keyword Mastery",
+          description: "Targeted keywords for fashion products & brands."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Technical SEO Excellence",
+          description: "Speed, mobile, and schema optimization for better ranking."
+        },
+        {
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Content Optimization",
+          description: "Engaging, SEO-optimized content that converts."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Client-Focused Support",
+          description: "Dedicated team to help your brand grow organically."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Your Fashion Brand SEO Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Seo Services for Fashion Brands',
-      subtitle: 'FASHION BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for fashion brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for fashion brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for fashion brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for fashion brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Seo Services Process for Fashion Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our SEO Process for Fashion Brands',
+      subtitle: 'STEP-BY-STEP ORGANIC GROWTH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for fashion brands businesses.',
+      description: 'From website audit to link-building, our process ensures sustainable traffic, higher ranking, and more sales.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your fashion brands business and market landscape.'
+          title: 'SEO Audit & Analysis',
+          description: 'Analyze website performance, competitors, and opportunities for growth.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific fashion brands goals.'
+          title: 'Keyword Research',
+          description: 'Identify high-value keywords for products, collections, and brand searches.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with fashion brands focus.'
+          title: 'On-Page Optimization',
+          description: 'Optimize meta tags, headings, content, images, and internal linking.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on fashion brands market feedback.'
+          title: 'Technical SEO',
+          description: 'Improve site speed, mobile responsiveness, schema, and crawlability.'
+        },
+        {
+          id: 5,
+          title: 'Content Strategy & Creation',
+          description: 'Develop engaging blog posts, product descriptions, and landing pages.'
+        },
+        {
+          id: 6,
+          title: 'Link Building & Authority',
+          description: 'High-quality backlinks and influencer collaborations to boost domain authority.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fashion Brands Who ", gradient: false },
+        { text: "Grew Organically with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from fashion brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped fashion brands achieve top Google rankings, drive traffic, and increase sales.',
       testimonials: [
         {
           id: '1',
-          message: 'The seo services services transformed our fashion brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our organic traffic doubled within 4 months thanks to their SEO strategy!',
+          highlight: 'traffic doubled',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Fashion Brands Company'
+          name: 'Anika Sharma',
+          designation: 'Founder',
+          company: 'VogueLine'
         },
         {
           id: '2',
-          message: 'Outstanding seo services expertise specifically for fashion brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for fashion brands',
+          message: 'We now rank on the first page for our top products. SEO really works!',
+          highlight: 'first page rankings',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Fashion Brands Solutions'
+          name: 'Rahul Kapoor',
+          designation: 'CEO',
+          company: 'Chic Street'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Fashion Brands Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your fashion brands business.'
+      title: 'Ready to Boost Your Fashion Brand with SEO?',
+      subtitle: 'Increase Traffic, Sales, and Online Visibility',
+      description: 'Book a free SEO consultation and let Digi Aerotech help your fashion brand dominate search results.'
     }
   }
 };

@@ -1,198 +1,246 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconMedicineSyrup,
+  IconHeartbeat,
+  IconVaccine,
+  IconBrowserCheck,
+  IconServerBolt,
+  IconUsers,
+  IconArrowRight,
+  IconShieldCheck,
+  IconStethoscope,
+  IconBuildingHospital,
+  IconDeviceDesktop,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'web-design-development',
-  business: 'pharma-companies',
+  service: "web-design-development",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'web-design-development',
+    slug: "web-design-development-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Companies", gradient: false },
+            { text: "Need Professional Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "A pharma website is not just about online presence – it’s about trust, compliance, patient education, and lead generation. A professionally designed website helps your pharma business stand out in a regulated industry.",
+          painPoints: [
+            "Outdated websites that fail to build trust",
+            "Lack of HIPAA/GDPR compliance risking penalties",
+            "No dedicated sections for doctors & patients",
+            "Difficult navigation across complex medical data",
+            "Low visibility on search engines & digital platforms",
+          ],
+          solutionPoints: [
+            "Modern, mobile-responsive pharma websites",
+            "Secure, compliant platforms for patient data",
+            "Doctor & patient-focused portals for easy access",
+            "SEO-friendly structure with pharma keywords",
+            "Engaging UI/UX to increase trust & conversions",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get Your Pharma Website",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do pharma companies need specialized websites?",
+              answer:
+                "Because pharma requires compliance, patient trust, and professional design to meet industry standards while building authority online.",
+              icon: React.createElement(IconStethoscope, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you ensure compliance in pharma websites?",
+              answer:
+                "Yes, we follow HIPAA, GDPR, and pharma marketing regulations to create safe, secure, and compliant websites.",
+              icon: React.createElement(IconShieldCheck, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can you design websites for pharma startups and large enterprises?",
+              answer:
+                "Absolutely. From pharma startups to multinational corporations, we build scalable, custom web solutions.",
+              icon: React.createElement(IconBuildingHospital, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Will my pharma website be SEO-friendly?",
+              answer:
+                "Yes, every website is built with SEO best practices and optimized for pharma-related keywords to rank higher.",
+              icon: React.createElement(IconBrowserCheck, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Web Design Development for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Build",
+      headlineKeywords: ["Pharma Websites", "Medical Web Development", "Healthcare Portals"],
       brandLine: [
-        { text: "Web Design Development for Pharma Companies", gradient: false }
+        {
+          text: "💻 Professional, Secure & SEO-Optimized Websites for Pharma Companies",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized web design development strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We design & develop pharma websites that comply with regulations, build patient trust, and generate quality leads for your business.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Get Pharma Web Design",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconMedicineSyrup, { size: 32 }),
+          title: "Compliance-Ready",
+          description: "HIPAA & GDPR secure websites",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconDeviceDesktop, { size: 32 }),
+          title: "Modern UI/UX",
+          description: "User-friendly medical web design",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconVaccine, { size: 32 }),
+          title: "SEO-Optimized",
+          description: "Rank for pharma keywords",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Web Design Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Website Development?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconServerBolt, { size: 28 }),
+          title: "Secure Platforms",
+          description: "We develop HIPAA & GDPR compliant pharma websites.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconHeartbeat, { size: 28 }),
+          title: "Healthcare-Focused Design",
+          description: "We create portals for patients, doctors, and distributors.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored web design development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Conversion-Oriented",
+          description: "We design for trust, engagement, and lead generation.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Web Design Development for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive web design development solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom web design development strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of web design development campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get a Pharma Website Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Web Design Development Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to web design development that delivers measurable results for pharma companies businesses.',
+      title: "Our Pharma Web Design & Development Process",
+      subtitle: "SECURE • COMPLIANT • TRUST-BUILDING",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "From compliance to conversions, we design pharma websites that engage patients, attract doctors, and meet strict regulations.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Requirement Analysis",
+          description: "We study your pharma business model, compliance needs, and audience to build a strategic blueprint.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom web design development strategy tailored for your specific pharma companies goals.'
+          title: "Wireframe & Design",
+          description: "User-friendly layouts with modern, trust-focused designs tailored for pharma companies.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of web design development campaigns with pharma companies focus.'
+          title: "Development & Compliance",
+          description: "We code secure websites with HIPAA, GDPR, and medical advertising compliance built-in.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Web Design Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for web design development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Content & SEO Setup",
+          description: "We add pharma-focused content, optimize keywords, and structure pages for better ranking.",
+        },
+        {
+          id: 5,
+          title: "Testing & Launch",
+          description: "Rigorous QA testing for performance, security, and compliance before go-live.",
+        },
+        {
+          id: 6,
+          title: "Ongoing Support",
+          description: "We provide maintenance, security, and SEO support to keep your pharma site thriving.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Web Design Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Companies", gradient: false },
+        { text: "Who Trust Our Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "Our pharma websites have helped companies boost trust, stay compliant, and achieve higher lead generation with SEO-friendly design.",
       testimonials: [
         {
-          id: '1',
-          message: 'The web design development services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our pharma site redesign boosted inquiries by 150% while ensuring HIPAA compliance. Excellent work!",
+          highlight: "150% More Leads",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Anil Sharma",
+          designation: "CEO",
+          company: "MedCare Labs",
         },
         {
-          id: '2',
-          message: 'Outstanding web design development expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "They built a secure and professional website that positioned us as a trusted pharma brand online.",
+          highlight: "Trusted Branding",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Dr. Priya Nair",
+          designation: "Director",
+          company: "BioTrust Pharma",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR WEB DESIGN DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our web design development can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Let’s Build Your Pharma Website",
+      subtitle: "SECURE • COMPLIANT • LEAD-GENERATING",
+      description:
+        "Get a professional, SEO-optimized, and compliance-friendly website that positions your pharma brand as a trusted leader.",
+    },
+  },
 };

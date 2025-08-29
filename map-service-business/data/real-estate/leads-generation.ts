@@ -1,198 +1,230 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconHome, IconUserCheck, IconPhoneCall, IconBuildingSkyscraper,
+  IconTarget, IconUsers, IconTrendingUp, IconArrowRight
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'leads-generation',
   business: 'real-estate',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant1',
+    whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'leads-generation',
+    slug: 'lead-generation-real-estate',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Real Estate Businesses", gradient: false },
+            { text: "Struggle to Generate Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Getting property inquiries is easy. Getting *qualified leads* who are ready to buy, rent, or invest is the real challenge.",
+          painPoints: [
+            "Lots of unqualified inquiries wasting time",
+            "No system for capturing and nurturing leads",
+            "Low visibility in local property searches",
+            "Poor ROI from ads & campaigns",
+            "No call tracking or CRM integration"
+          ],
+          solutionPoints: [
+            "Lead funnels tailored for property buyers & sellers",
+            "Multi-channel strategies (Google, Meta, LinkedIn)",
+            "Smart lead forms, CTAs & call tracking",
+            "Automated lead nurturing via email/SMS",
+            "CRM integration for seamless sales management"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start Getting Qualified Property Leads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'What type of leads can I expect?',
+              answer: 'We generate verified buyer, seller, and renter leads specific to your property type and location.',
+              icon: React.createElement(IconUserCheck, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you filter out junk inquiries?',
+              answer: 'Yes. We use intent-based targeting, call validation, and forms to ensure only qualified leads reach you.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can I integrate leads into my CRM?',
+              answer: 'Absolutely. We connect your campaigns directly to CRMs like Zoho, Salesforce, or HubSpot for smooth tracking.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How quickly can I see results?',
+              answer: 'Most real estate campaigns start generating property leads within 7–10 days of launch.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Need More ",
       headlineKeywords: [
-        "Leads Generation for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Property Buyer Leads?",
+        "Qualified Seller Inquiries?",
+        "High-Intent Real Estate Clients?",
+        "Local Property Investors?",
+        "Consistent Real Estate Leads?"
       ],
       brandLine: [
-        { text: "Leads Generation for Real Estate", gradient: false }
+        { text: "🎯 Turn Clicks into Property Closures", gradient: false }
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help real estate agents, brokers, and developers generate *high-quality, verified property leads* that close faster.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "Start Lead Generation Now", link: "/contact" },
+        { icon: React.createElement(IconUserCheck, { size: 28 }), text: "Get Free Lead Audit", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "250+ Projects",
+          description: "Boosted with lead funnels"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "15,000+ Leads",
+          description: "Generated for real estate"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "4.5X ROI",
+          description: "Average across campaigns"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Digi Aerotech for", gradient: false },
+        { text: "Real Estate Lead Generation?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Hyper-Targeted Campaigns",
+          description: "We only target people actively looking to buy, rent, or invest in properties."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Qualified & Verified Leads",
+          description: "Every lead is intent-driven, reducing time wasted on junk inquiries."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconHome, { size: 28 }),
+          title: "Property-Specific Funnels",
+          description: "Custom lead pages for apartments, plots, villas, or commercial spaces."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "ROI-First Approach",
+          description: "We focus on leads that convert into site visits and closures."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get Qualified Real Estate Leads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Leads Generation for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Leads Generation Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Lead Generation Process for Real Estate',
+      subtitle: 'QUALITY LEADS THAT CONVERT',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for real estate businesses.',
+      description: 'We combine smart targeting, automation, and nurturing to generate *qualified property leads* that drive real sales.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: 'Market Research',
+          description: 'We study your target city, buyer demographics, and property types to align campaigns with real demand.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific real estate goals.'
+          title: 'Multi-Channel Ads',
+          description: 'We run Google, Meta, and LinkedIn campaigns targeting high-intent property seekers.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with real estate focus.'
+          title: 'Landing Pages & CTAs',
+          description: 'Property-specific pages optimized with inquiry forms, offers, and strong CTAs to capture leads instantly.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
+          title: 'Lead Capture & Validation',
+          description: 'Automated systems filter junk data, validate phone/email, and capture only qualified prospects.'
+        },
+        {
+          id: 5,
+          title: 'CRM & Follow-Ups',
+          description: 'We integrate leads into your CRM or spreadsheets and set up follow-up automation for better conversions.'
+        },
+        {
+          id: 6,
+          title: 'Optimization & Scaling',
+          description: 'Campaigns are continuously monitored, optimized, and scaled to maximize ROI.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Brands That", gradient: false },
+        { text: "Boosted Closures with Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description: 'See how our lead funnels turned property inquiries into real sales.',
       testimonials: [
         {
           id: '1',
-          message: 'The leads generation services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Within 3 months, we got 250+ high-quality property leads and closed 12 site visits.',
+          highlight: '250+ leads in 3 months',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: 'Karan Mehta',
+          designation: 'Broker',
+          company: 'Cityline Realty'
         },
         {
           id: '2',
-          message: 'Outstanding leads generation expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          message: 'From struggling with junk calls to verified buyers — Digi Aerotech transformed our sales pipeline.',
+          highlight: 'Verified buyer leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
+          name: 'Priya Sharma',
+          designation: 'Founder',
+          company: 'Elite Homes Realty'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your real estate business.'
+      title: 'Need More Property Buyer & Seller Leads?',
+      subtitle: 'SMART LEAD GENERATION THAT CLOSES DEALS',
+      description: 'Stop chasing junk inquiries. Get verified real estate leads that convert into site visits & closures.',
     }
   }
 };

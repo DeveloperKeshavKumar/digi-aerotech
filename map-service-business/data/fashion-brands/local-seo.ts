@@ -1,198 +1,268 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconMapPin,
+  IconUsers,
+  IconStar,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconRocket,
+  IconShoppingBag,
+  IconSearch,
+  IconGlobe,
+  IconTag,
+  IconArrowRight,
+  IconPhone,
+  IconChartLine
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'local-seo',
   business: 'fashion-brands',
   variants: {
     hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
+    whyChooseUs: 'variant3',
+    process: 'variant2',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'local-seo',
+    slug: 'local-seo-fashion-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Local SEO Challenges for ", gradient: false },
+            { text: "Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Boost your local visibility and attract nearby customers to your fashion store or boutique.",
+          painPoints: [
+            "Low local search visibility on Google Maps & Search",
+            "Difficulty ranking for city or neighborhood-specific keywords",
+            "Missing out on local foot traffic and sales",
+            "Negative reviews affecting local reputation",
+            "Inconsistent business listings across platforms"
+          ],
+          solutionPoints: [
+            "Optimize Google Business Profile for maximum exposure",
+            "Target neighborhood & city-specific keywords",
+            "Local citations & directory submissions",
+            "Review management and reputation building",
+            "Consistent NAP (Name, Address, Phone) across platforms"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Local Visibility Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is local SEO important for fashion boutiques?',
+              answer: 'Local SEO ensures your store appears for people searching nearby, driving foot traffic and sales.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you optimize my Google Business Profile?',
+              answer: 'Yes. We fully optimize your profile with images, services, hours, and posts to attract local customers.',
+              icon: React.createElement(IconGlobe, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you handle reviews?',
+              answer: 'We implement review generation strategies and manage responses to maintain a positive reputation.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you target neighborhood-specific keywords?',
+              answer: 'Absolutely. We focus on geo-specific keywords to capture nearby shoppers actively searching for fashion products.',
+              icon: React.createElement(IconTag, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Will my boutique appear on Google Maps?',
+              answer: 'Yes. With optimized local SEO, your store ranks higher on Google Maps and local searches.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you provide reporting on local SEO performance?',
+              answer: 'Yes. You get detailed insights on rankings, traffic, map visibility, and local leads generated.',
+              icon: React.createElement(IconChartLine, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Local Seo for Fashion Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Local Customers?",
+        "Top Rank in Your City?",
+        "Increase Foot Traffic?",
+        "Get Found Locally Fast?",
+        "Boost Your Fashion Boutique’s Local Sales?"
       ],
       brandLine: [
-        { text: "Local Seo for Fashion Brands", gradient: false }
+        { text: "📍 Attract Nearby Customers with Expert Local SEO for Fashion Brands", gradient: false }
       ],
-      subheadline: "Specialized local seo strategies designed specifically for fashion brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help fashion boutiques and stores rank locally, attract foot traffic, and convert nearby shoppers into loyal customers.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free Local SEO Strategy", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Get Local Visibility", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "10,000+ Local Customers",
+          description: "Attracted via local SEO"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Fashion Brands served"
+          icon: React.createElement(IconShoppingBag, { size: 32 }),
+          title: "500+ Fashion Stores Optimized",
+          description: "Across multiple cities"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Client Rating",
+          description: "Satisfied local store owners"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "30%+ Increase in Local Foot Traffic",
+          description: "Stores ranking higher locally"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Local Seo', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Fashion Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Local SEO Partner for Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of fashion brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Optimized Google Business Profile",
+          description: "Maximize visibility on Google Search & Maps."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for fashion brands businesses.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Reputation & Review Management",
+          description: "Enhance credibility with customer reviews."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored local seo strategies designed specifically for your business needs.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Targeted Local Keywords",
+          description: "Geo-specific SEO for better local reach."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShoppingBag, { size: 28 }),
+          title: "Local Citations & Directory Listings",
+          description: "Consistency across platforms ensures trust."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Foot Traffic & Sales Growth",
+          description: "Drive customers directly to your store."
+        },
+        {
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Track rankings, leads, and local performance."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Your Local Visibility Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Local Seo for Fashion Brands',
-      subtitle: 'FASHION BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive local seo solutions designed specifically for fashion brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom local seo strategy development tailored for fashion brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of local seo campaigns optimized for fashion brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for fashion brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Local Seo Process for Fashion Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven Local SEO Process for Fashion Brands',
+      subtitle: 'STEP-BY-STEP LOCAL RANKING',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to local seo that delivers measurable results for fashion brands businesses.',
+      description: 'From research to optimization, our local SEO process ensures your boutique gets noticed by nearby customers ready to buy.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your fashion brands business and market landscape.'
+          title: 'Local Market & Keyword Research',
+          description: 'Identify geo-specific keywords and competitors in your city or neighborhood.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom local seo strategy tailored for your specific fashion brands goals.'
+          title: 'Google Business Profile Optimization',
+          description: 'Create and optimize profile with photos, services, and accurate business info.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of local seo campaigns with fashion brands focus.'
+          title: 'On-Page Local SEO',
+          description: 'Optimize website content for city and neighborhood-based searches.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on fashion brands market feedback.'
+          title: 'Citations & Directory Listings',
+          description: 'Ensure consistent NAP info across all local directories and platforms.'
+        },
+        {
+          id: 5,
+          title: 'Review Management',
+          description: 'Encourage positive reviews and respond to maintain credibility.'
+        },
+        {
+          id: 6,
+          title: 'Tracking & Continuous Optimization',
+          description: 'Monitor rankings, traffic, and adjust strategies to maximize local visibility and foot traffic.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Local Seo Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for local seo success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Local Seo ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fashion Stores That ", gradient: false },
+        { text: "Ranked Locally & Grew with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from fashion brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped fashion boutiques increase local search visibility, attract nearby customers, and grow sales.',
       testimonials: [
         {
           id: '1',
-          message: 'The local seo services transformed our fashion brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our boutique now appears at the top of local searches, and foot traffic has doubled in 3 months!',
+          highlight: 'doubled in 3 months',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Fashion Brands Company'
+          name: 'Sana Kapoor',
+          designation: 'Owner',
+          company: 'Style Avenue'
         },
         {
           id: '2',
-          message: 'Outstanding local seo expertise specifically for fashion brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for fashion brands',
+          message: 'Digi Aerotech’s local SEO strategy made our brand visible to nearby shoppers and boosted our in-store sales significantly.',
+          highlight: 'boosted our in-store sales',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Fashion Brands Solutions'
+          name: 'Rohan Mehra',
+          designation: 'Founder',
+          company: 'Urban Threads'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Fashion Brands Business?',
-      subtitle: 'START YOUR LOCAL SEO JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our local seo can drive growth for your fashion brands business.'
+      title: 'Ready to Get Your Fashion Boutique Found Locally?',
+      subtitle: 'Rank Higher, Attract Nearby Customers, Boost Sales',
+      description: 'Book a free strategy session and let Digi Aerotech optimize your local SEO to drive foot traffic and sales.'
     }
   }
 };

@@ -1,198 +1,267 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconMapPin,
+  IconUsers,
+  IconStar,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconRocket,
+  IconShoppingBag,
+  IconPhone,
+  IconArrowRight,
+  IconPackage,
+  IconClock,
+  IconTag
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'gmb-services',
   business: 'fashion-brands',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
+    hero: 'variant2',
+    whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'gmb-services',
+    slug: 'gmb-services-fashion-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "GMB Challenges for ", gradient: false },
+            { text: "Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Fashion stores often miss out on local customers due to poorly optimized Google Business Profiles.",
+          painPoints: [
+            "Low visibility in local search results",
+            "Incomplete or inconsistent business information",
+            "Difficulty attracting footfall to physical stores",
+            "Negative or unverified reviews affecting credibility",
+            "Limited engagement with local shoppers online"
+          ],
+          solutionPoints: [
+            "Fully optimized Google Business Profiles with correct info and images",
+            "Reputation management & verified reviews to build trust",
+            "Targeted posts & offers for local audiences",
+            "Enhanced local SEO to appear in “near me” searches",
+            "Tracking insights to improve store visits & conversions"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Local Fashion Visibility"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does GMB help my fashion store?',
+              answer: 'Optimizing your Google Business Profile increases visibility, attracts local shoppers, and drives in-store visits.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you manage my reviews?',
+              answer: 'Yes, we help generate verified reviews, respond professionally, and improve your overall rating.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you update posts and offers?',
+              answer: 'Absolutely. Regular posts, events, and offers keep your profile engaging for local customers.',
+              icon: React.createElement(IconTag, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Will GMB improve my local SEO?',
+              answer: 'Yes, we optimize listings with keywords, categories, and local signals to rank higher in nearby searches.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you track performance?',
+              answer: 'We monitor insights like search queries, direction requests, calls, and clicks to optimize results.',
+              icon: React.createElement(IconClock, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Is GMB suitable for online fashion stores?',
+              answer: 'Even online stores with showrooms or pickup points benefit from local visibility and trust signals.',
+              icon: React.createElement(IconShoppingBag, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Gmb Services for Fashion Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Local Customers?",
+        "Better Store Visibility?",
+        "Higher Footfall?",
+        "Optimized GMB Profile?",
+        "Boost Your Fashion Brand Locally?"
       ],
       brandLine: [
-        { text: "Gmb Services for Fashion Brands", gradient: false }
+        { text: "🏬 Increase Footfall & Local Reach with GMB Services for Fashion Stores", gradient: false }
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for fashion brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help fashion brands appear in local searches, attract nearby customers, and increase in-store conversions.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free GMB Audit", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Improve Local Presence", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "10,000+ Local Shoppers",
+          description: "Reached via optimized GMB"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Fashion Brands served"
+          icon: React.createElement(IconShoppingBag, { size: 32 }),
+          title: "200+ Fashion Stores",
+          description: "Scaled locally with our GMB services"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Client Rating",
+          description: "Trust & credibility"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "Local Reach Boost",
+          description: "Appearing in top 3 local results"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Fashion Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Local Marketing Partner for Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of fashion brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Expert GMB Optimization",
+          description: "Complete setup, verification, and local SEO enhancement."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for fashion brands businesses.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Reputation & Review Management",
+          description: "Builds trust with local shoppers and improves credibility."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Local SEO Boost",
+          description: "Rank higher in “near me” and location-based searches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Consistent Business Info",
+          description: "Ensure accurate NAP, hours, and categories across platforms."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Engaging Posts & Offers",
+          description: "Attract attention with events, promotions, and updates."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Actionable Insights",
+          description: "Track calls, clicks, and store visits for performance improvement."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Your Local Fashion Visibility Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Gmb Services for Fashion Brands',
-      subtitle: 'FASHION BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for fashion brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for fashion brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for fashion brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for fashion brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Gmb Services Process for Fashion Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our GMB Optimization Process for Fashion Stores',
+      subtitle: 'STEP-BY-STEP LOCAL SUCCESS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for fashion brands businesses.',
+      description: 'From profile optimization to local engagement, we ensure your fashion brand attracts nearby customers efficiently.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your fashion brands business and market landscape.'
+          title: 'Audit & Profile Setup',
+          description: 'Check current GMB status, verify listings, and complete essential info.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific fashion brands goals.'
+          title: 'Keyword & Category Optimization',
+          description: 'Select relevant categories and keywords to rank in local searches.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with fashion brands focus.'
+          title: 'Visual & Content Enhancement',
+          description: 'Add high-quality photos, videos, and posts to engage local users.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on fashion brands market feedback.'
+          title: 'Review Management',
+          description: 'Generate, verify, and respond to reviews to build credibility.'
+        },
+        {
+          id: 5,
+          title: 'Insights Tracking',
+          description: 'Monitor clicks, calls, and direction requests to optimize results.'
+        },
+        {
+          id: 6,
+          title: 'Continuous Updates & Scaling',
+          description: 'Regularly update profile, add offers, and scale visibility to more locations.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fashion Stores That ", gradient: false },
+        { text: "Grew Locally with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from fashion brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped fashion brands increase local visibility and store visits.',
       testimonials: [
         {
           id: '1',
-          message: 'The gmb services services transformed our fashion brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our local boutique saw a 200% increase in footfall after GMB optimization by Digi Aerotech.',
+          highlight: '200% increase in footfall',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Fashion Brands Company'
+          name: 'Meera Kapoor',
+          designation: 'Owner',
+          company: 'Chic Boutique'
         },
         {
           id: '2',
-          message: 'Outstanding gmb services expertise specifically for fashion brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for fashion brands',
+          message: 'They managed reviews, updated posts, and our store ranking improved in local searches!',
+          highlight: 'store ranking improved',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Fashion Brands Solutions'
+          name: 'Rohan Singh',
+          designation: 'Founder',
+          company: 'Urban Threads'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Fashion Brands Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your fashion brands business.'
+      title: 'Ready to Boost Your Fashion Store Locally?',
+      subtitle: 'Get More Footfall, Visibility, and Engagement',
+      description: 'Book a free local marketing session and watch your fashion brand dominate local searches!'
     }
   }
 };

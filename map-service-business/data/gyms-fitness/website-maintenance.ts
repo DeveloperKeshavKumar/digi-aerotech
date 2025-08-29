@@ -1,198 +1,233 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  Monitor,
+  Code,
+  Settings,
+  RefreshCcw,
+  BarChart,
+  Users,
+  ArrowRight,
+  Layout,
+  Activity,
+} from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'website-maintenance',
-  business: 'gyms-fitness',
+  service: "web-design-development",
+  business: "gyms-fitness",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant3",
+    process: "variant1",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'website-maintenance',
+    slug: "web-design-development-gyms-fitness",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Is Your Gym Website Failing to Convert?", gradient: false },
+            { text: "Attract Members with Modern, Responsive Design", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Many gyms lose potential members due to outdated websites, slow loading, or poor user experience. A modern site is critical to converting visitors into members.",
+          painPoints: [
+            "Outdated or unresponsive website",
+            "Low lead capture and booking conversion",
+            "Poor UX causing visitors to leave",
+            "No mobile-optimized experience",
+            "Difficulty integrating class schedules or memberships",
+          ],
+          solutionPoints: [
+            "Responsive, mobile-first website design for all devices",
+            "Conversion-focused layouts with lead forms and booking buttons",
+            "Optimized speed and performance for quick load times",
+            "Custom gym features like class schedules, memberships & virtual tours",
+            "Ongoing maintenance to keep your site secure and up-to-date",
+          ],
+          cta: {
+            icon: React.createElement(ArrowRight, { size: 20 }),
+            text: "Upgrade Your Gym Website Today",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Will my gym website work on mobile devices?",
+              answer: "Yes. All our websites are fully responsive and optimized for mobile, tablet, and desktop users.",
+              icon: React.createElement(Monitor, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you offer website maintenance services?",
+              answer: "Absolutely. We provide regular updates, security checks, content management, and performance optimizations.",
+              icon: React.createElement(Settings, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can you integrate booking systems and class schedules?",
+              answer: "Yes. We implement seamless integrations for memberships, class schedules, online payments, and appointment bookings.",
+              icon: React.createElement(Code, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How fast will my website load?",
+              answer: "Our websites are optimized for speed, using caching, optimized images, and modern code to ensure lightning-fast load times.",
+              icon: React.createElement(RefreshCcw, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Need a High-Converting Gym Website?",
       headlineKeywords: [
-        "Website Maintenance for Gyms Fitness?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Responsive Design",
+        "Custom Gym Features",
+        "Fast Loading & Secure",
+        "Conversion-Optimized Layouts",
       ],
       brandLine: [
-        { text: "Website Maintenance for Gyms Fitness", gradient: false }
+        { text: "💪 Elevate Your Gym’s Online Presence with Expert Web Design & Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We build and maintain websites for gyms & fitness studios that attract visitors, convert leads, and enhance brand authority online.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(Layout, { size: 28 }),
+          text: "Book Free Website Consultation",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(Users, { size: 32 }),
+          title: "3X Leads",
+          description: "Increased inquiries via optimized website design",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Gyms Fitness served"
+          icon: React.createElement(BarChart, { size: 32 }),
+          title: "5X Engagement",
+          description: "More visitors interact with your classes, membership, and services",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(Activity, { size: 32 }),
+          title: "100% Mobile-Friendly",
+          description: "Seamless experience across devices, boosting conversion",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Why Choose Our Web Design & Maintenance for Gyms?", gradient: false },
+        { text: "Modern, Fast, & Conversion-Optimized", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(Monitor, { size: 28 }),
+          title: "Responsive Design",
+          description: "Websites that look great on any device, providing the best UX.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(Code, { size: 28 }),
+          title: "Custom Gym Features",
+          description: "Integrations for class schedules, memberships, bookings, and online payments.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(Settings, { size: 28 }),
+          title: "Continuous Maintenance",
+          description: "Regular updates, security monitoring, backups, and performance optimization.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Website Maintenance for Gyms Fitness',
-      subtitle: 'GYMS FITNESS SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for gyms fitness businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for gyms fitness market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for gyms fitness audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for gyms fitness businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Upgrade Your Gym Website Now",
+        link: "#contact",
+        icon: React.createElement(ArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Website Maintenance Process for Gyms Fitness',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for gyms fitness businesses.',
+      title: "Our Web Design, Development & Maintenance Process",
+      subtitle: "PLAN • DESIGN • DEVELOP • OPTIMIZE • MAINTAIN",
+      description:
+        "From initial strategy to ongoing website care, our process ensures your gym website consistently converts visitors into members.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your gyms fitness business and market landscape.'
+          title: "Discovery & Strategy",
+          description: "Understand your gym goals, target audience, and competitors to plan a website that converts.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific gyms fitness goals.'
+          title: "Design & UX",
+          description: "Create visually appealing, intuitive designs that highlight your classes, trainers, and membership offers.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with gyms fitness focus.'
+          title: "Development & Integrations",
+          description: "Build fast, responsive websites with booking systems, payments, and interactive features.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "SEO & Performance Optimization",
+          description: "Ensure your website ranks on Google, loads quickly, and delivers a seamless experience.",
+        },
+        {
+          id: 5,
+          title: "Ongoing Maintenance & Updates",
+          description: "Regularly update content, plugins, security patches, and performance enhancements for consistent results.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Gyms Who ", gradient: false },
+        { text: "Transformed Their Online Presence", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
+      description:
+        "See how our web design and maintenance strategies helped gyms attract more members, streamline bookings, and enhance their brand online.",
       testimonials: [
         {
-          id: '1',
-          message: 'The website maintenance services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message: "Our new website is visually stunning and converts more visitors into members than ever before!",
+          highlight: "converts more visitors",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
+          name: "Rahul Mehta",
+          designation: "Owner",
+          company: "PowerGym Fitness",
         },
         {
-          id: '2',
-          message: 'Outstanding website maintenance expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
+          id: "2",
+          message: "The ongoing maintenance ensures our site is always fast, secure, and up-to-date.",
+          highlight: "fast, secure, and up-to-date",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
-        }
-      ]
+          name: "Sneha Kapoor",
+          designation: "Founder",
+          company: "FitZone Studio",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your gyms fitness business.'
-    }
-  }
+      title: "Ready to Upgrade Your Gym Website & Maintenance?",
+      subtitle: "ATTRACT • ENGAGE • CONVERT • RETAIN",
+      description:
+        "Book a free consultation today and let our experts build and maintain a gym website that drives memberships and strengthens your brand online.",
+    },
+  },
 };

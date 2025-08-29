@@ -1,198 +1,236 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  Users,
+  Activity,
+  Heart,
+  Target,
+  TrendingUp,
+  MessageCircle,
+  Calendar,
+  ArrowRight,
+  BarChart,
+  Video,
+} from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'social-media-marketing',
-  business: 'gyms-fitness',
+  service: "social-media-marketing",
+  business: "gyms-fitness",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant3",
+    whyChooseUs: "variant1",
+    process: "variant2",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: "social-media-marketing-gyms-fitness",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Struggling to Engage Fitness Enthusiasts Online?", gradient: false },
+            { text: "Grow Your Gym Memberships with Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Most gyms fail to convert social media followers into members. Without an optimized strategy, potential clients scroll past your posts.",
+          painPoints: [
+            "Low engagement on Instagram, Facebook, TikTok",
+            "Difficulty building brand authority online",
+            "Few leads generated from social campaigns",
+            "Content not converting followers into members",
+            "Lack of consistent posting & community building",
+          ],
+          solutionPoints: [
+            "High-quality visual content for Instagram, TikTok, and Facebook",
+            "Targeted paid campaigns to attract local fitness enthusiasts",
+            "Content calendar and scheduling for consistency",
+            "Lead funnels integrated with social media campaigns",
+            "Community building via engagement, contests, and testimonials",
+          ],
+          cta: {
+            icon: React.createElement(ArrowRight, { size: 20 }),
+            text: "Boost Your Gym Social Media Today",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Which social media platforms work best for gyms?",
+              answer: "Instagram, Facebook, TikTok, and YouTube are ideal for showcasing workouts, client transformations, and fitness tips.",
+              icon: React.createElement(Users, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can social media campaigns drive membership signups?",
+              answer: "Yes, our strategies target local fitness enthusiasts, running lead-generating campaigns and promotions to convert followers into members.",
+              icon: React.createElement(Target, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you provide content creation services?",
+              answer: "Absolutely. We create engaging images, videos, reels, and stories tailored to your gym brand to maximize engagement and reach.",
+              icon: React.createElement(Video, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How do you measure social media ROI?",
+              answer: "We track engagement, leads, clicks, and conversions, optimizing campaigns continuously to ensure maximum return on investment.",
+              icon: React.createElement(BarChart, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want More Members from Social Media?",
       headlineKeywords: [
-        "Social Media Marketing for Gyms Fitness?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Grow Your Gym Following",
+        "Boost Memberships",
+        "Engage Fitness Enthusiasts",
+        "Social Media Marketing That Converts",
       ],
       brandLine: [
-        { text: "Social Media Marketing for Gyms Fitness", gradient: false }
+        { text: "💪 Turn Followers into Paying Gym Members with Expert Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help gyms & fitness studios increase followers, drive engagement, and generate leads through data-driven social media strategies.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(Calendar, { size: 28 }),
+          text: "Book Free Social Media Consultation",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(Heart, { size: 32 }),
+          title: "5X Engagement",
+          description: "Average increase in social media interactions for gyms after our campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Gyms Fitness served"
+          icon: React.createElement(Users, { size: 32 }),
+          title: "3X Leads",
+          description: "Leads generated from optimized social campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(TrendingUp, { size: 32 }),
+          title: "Brand Authority Boost",
+          description: "Gyms gain credibility and recognition in their local area",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Why Choose Our", gradient: false },
+        { text: "Social Media Marketing for Gyms?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(Activity, { size: 28 }),
+          title: "Fitness Industry Experts",
+          description: "We understand the gym & fitness market, creating campaigns that resonate with members.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(Users, { size: 28 }),
+          title: "Engaging Content Creation",
+          description: "Professional visuals, reels, and stories that capture attention and drive interaction.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(Target, { size: 28 }),
+          title: "Lead-Focused Strategies",
+          description: "We design campaigns to convert followers into paying members efficiently.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Gyms Fitness',
-      subtitle: 'GYMS FITNESS SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for gyms fitness businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for gyms fitness market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for gyms fitness audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for gyms fitness businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Boost Your Gym Social Media Now",
+        link: "#contact",
+        icon: React.createElement(ArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Social Media Marketing Process for Gyms Fitness',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for gyms fitness businesses.',
+      title: "Our Social Media Marketing Process for Gyms",
+      subtitle: "PLAN • ENGAGE • CONVERT • SCALE",
+      description:
+        "We implement end-to-end social media strategies that attract, engage, and convert fitness enthusiasts into loyal members.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your gyms fitness business and market landscape.'
+          title: "Social Media Audit",
+          description: "Analyze your current presence, competitors, and audience behavior to identify opportunities.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific gyms fitness goals.'
+          title: "Content Strategy & Calendar",
+          description: "Plan posts, reels, and campaigns to ensure consistent engagement and brand voice.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with gyms fitness focus.'
+          title: "Engagement & Community Building",
+          description: "Respond to messages, comments, and build a loyal fitness community around your brand.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Paid Campaigns & Lead Funnels",
+          description: "Target local fitness enthusiasts with ad campaigns designed to convert followers into memberships.",
+        },
+        {
+          id: 5,
+          title: "Analytics & Optimization",
+          description: "Track metrics, test creatives, and refine campaigns for maximum ROI and lead generation.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Gyms Who ", gradient: false },
+        { text: "Grew Their Social Media & Memberships", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
+      description:
+        "Discover how our social media marketing strategies helped gyms increase followers, engagement, and memberships consistently.",
       testimonials: [
         {
-          id: '1',
-          message: 'The social media marketing services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our Instagram and TikTok engagement skyrocketed, bringing 200+ new members within 3 months!",
+          highlight: "200+ new members",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
+          name: "Amit Verma",
+          designation: "Owner",
+          company: "FitLife Gym",
         },
         {
-          id: '2',
-          message: 'Outstanding social media marketing expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
+          id: "2",
+          message:
+            "The social media campaigns increased class bookings and brand visibility tremendously.",
+          highlight: "increased class bookings",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
-        }
-      ]
+          name: "Priya Sharma",
+          designation: "Founder",
+          company: "Strong Body Studio",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your gyms fitness business.'
-    }
-  }
+      title: "Ready to Transform Your Gym’s Social Media?",
+      subtitle: "ENGAGE • ATTRACT • CONVERT • SCALE",
+      description:
+        "Book a free consultation and see how our expert social media strategies can grow your gym memberships and online presence.",
+    },
+  },
 };

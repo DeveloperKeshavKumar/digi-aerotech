@@ -1,198 +1,268 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconUsers,
+  IconBook,
+  IconCamera,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconArrowRight,
+  IconRocket,
+  IconCalendarEvent,
+  IconVideo,
+  IconMessageCircle,
+  IconCircleCheck,
+  IconStar,
+  IconTarget
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'social-media-marketing',
   business: 'educational-institutions',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: 'variant1',
+    whyChooseUs: 'variant2',
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: 'social-media-marketing-educational-institutions',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Educational Institutions Face", gradient: false },
+            { text: "With Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Schools, colleges, coaching centers, and e-learning platforms struggle to engage and attract students effectively on social media.",
+          painPoints: [
+            "Low engagement and interaction on posts",
+            "Difficulty attracting prospective students via social channels",
+            "Weak brand presence and recognition online",
+            "Limited reach for course announcements and events",
+            "Poor conversion from social media traffic to enrollments"
+          ],
+          solutionPoints: [
+            "Targeted campaigns across Facebook, Instagram, LinkedIn, and YouTube",
+            "High-quality visuals, videos, and reels that engage students",
+            "Content calendars for consistent posting and engagement",
+            "Paid ad campaigns to attract high-intent student leads",
+            "Influencer and alumni collaborations to boost credibility"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Social Engagement"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How can social media marketing increase student enrollment?',
+              answer: 'Through targeted campaigns, engaging content, and paid ads, we attract high-intent student leads and convert them into enrollments.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Which platforms are best for educational institutions?',
+              answer: 'Facebook, Instagram, LinkedIn, and YouTube are highly effective for engaging students, parents, and alumni.',
+              icon: React.createElement(IconVideo, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you provide content creation?',
+              answer: 'Yes, we create posts, reels, videos, carousels, and banners optimized for engagement and conversions.',
+              icon: React.createElement(IconCamera, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you manage our social media accounts end-to-end?',
+              answer: 'Absolutely. We handle content strategy, posting, community management, and analytics to maximize ROI.',
+              icon: React.createElement(IconMessageCircle, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you run paid ad campaigns?',
+              answer: 'Yes, we run highly targeted paid campaigns to reach prospective students and drive enrollment.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon will we see engagement improvements?',
+              answer: 'Initial engagement improvements can be seen within weeks, with lead generation and conversions increasing over 1–3 months.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Social Media Marketing for Educational Institutions?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher Engagement?",
+        "More Student Leads?",
+        "Stronger Online Presence?",
+        "Social Media That Converts?",
+        "360° Social Media Marketing for Education?"
       ],
       brandLine: [
-        { text: "Social Media Marketing for Educational Institutions", gradient: false }
+        { text: "📚 Engage More Students & Boost Enrollments with Social Media Marketing", gradient: false }
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for educational institutions. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help educational institutions build authority, reach prospective students, and drive enrollment through strategic social media campaigns.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book Free Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconShieldCheck, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "80+ Institutions",
+          description: "Engaged successfully on social media"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Educational Institutions served"
+          icon: React.createElement(IconVideo, { size: 32 }),
+          title: "10,000+ Reels & Posts",
+          description: "Created for high engagement"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "50,000+ Leads Generated",
+          description: "Through social campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "High Engagement & Conversions",
+          description: "Content that attracts and converts students"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Educational Institutions?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Social Media Partner for Educational Institutions", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of educational institutions market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconCamera, { size: 28 }),
+          title: "Visual Content Expertise",
+          description: "We create reels, posts, and videos that captivate students."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for educational institutions businesses.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Lead-Focused Campaigns",
+          description: "Every post and ad drives engagement and potential student leads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Community Building",
+          description: "We grow your social following and active student community."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Trusted Strategies",
+          description: "Proven methods to convert social interactions into enrollments."
+        },
+        {
+          icon: React.createElement(IconCircleCheck, { size: 28 }),
+          title: "Cross-Platform Management",
+          description: "We manage Facebook, Instagram, LinkedIn, and YouTube accounts seamlessly."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Data-Driven Optimization",
+          description: "We analyze performance and continuously optimize campaigns for maximum results."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Your Social Presence & Enrollments",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
-    },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Educational Institutions',
-      subtitle: 'EDUCATIONAL INSTITUTIONS SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for educational institutions businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for educational institutions market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for educational institutions audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for educational institutions businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
     },
     process: {
       title: 'Our Social Media Marketing Process for Educational Institutions',
-      subtitle: 'PROVEN METHODOLOGY',
+      subtitle: 'STEP-BY-STEP ENGAGEMENT & LEAD GENERATION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for educational institutions businesses.',
+      description: 'We follow a structured social media process to increase engagement, attract prospective students, and drive enrollments consistently.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your educational institutions business and market landscape.'
+          title: 'Social Media Audit',
+          description: 'Analyze existing social presence, engagement metrics, and content performance.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific educational institutions goals.'
+          title: 'Content Strategy & Calendar',
+          description: 'Plan posts, reels, videos, and stories targeting prospective students.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with educational institutions focus.'
+          title: 'Creative Content Production',
+          description: 'Design high-quality visuals, banners, reels, and videos tailored for each platform.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on educational institutions market feedback.'
+          title: 'Targeted Paid Campaigns',
+          description: 'Run ads for student acquisition, course announcements, and events.'
+        },
+        {
+          id: 5,
+          title: 'Community Engagement & Monitoring',
+          description: 'Engage with followers, respond to queries, and manage online reputation.'
+        },
+        {
+          id: 6,
+          title: 'Performance Analysis & Optimization',
+          description: 'Track KPIs, adjust strategies, and improve campaigns for maximum ROI.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Educational Institutions Who ", gradient: false },
+        { text: "Grew Socially with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from educational institutions businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped schools, colleges, and e-learning platforms engage students and drive enrollments through social media.',
       testimonials: [
         {
           id: '1',
-          message: 'The social media marketing services transformed our educational institutions business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our social media channels now attract hundreds of prospective students every month, driving inquiries and applications!',
+          highlight: 'hundreds of prospective students every month',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Educational Institutions Company'
+          name: 'Dr. Anjali Rao',
+          designation: 'Principal',
+          company: 'Sunrise College'
         },
         {
           id: '2',
-          message: 'Outstanding social media marketing expertise specifically for educational institutions. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for educational institutions',
+          message: 'Thanks to Digi Aerotech, our coaching center built an active online community and saw enrollment rise by 40%.',
+          highlight: 'enrollment rise by 40%',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Educational Institutions Solutions'
+          name: 'Rohit Singh',
+          designation: 'Director',
+          company: 'Bright Minds Academy'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Educational Institutions Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your educational institutions business.'
+      title: 'Ready to Engage Students & Boost Enrollments?',
+      subtitle: 'Build Authority, Reach Students, Drive Conversions',
+      description: 'Book a free social media strategy session with Digi Aerotech and grow your educational institution’s online presence effectively.'
     }
   }
 };

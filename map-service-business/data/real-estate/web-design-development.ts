@@ -1,198 +1,263 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHome,
+  IconBuildingSkyscraper,
+  IconDeviceDesktop,
+  IconPhoneCall,
+  IconSearch,
+  IconMapPin,
+  IconUsers,
+  IconTrendingUp,
+  IconArrowRight,
+  IconLayoutDashboard,
+  IconCamera,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'web-design-development',
-  business: 'real-estate',
+  service: "web-design-development",
+  business: "real-estate",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'web-design-development',
+    slug: "web-design-development-real-estate",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Real Estate Businesses", gradient: false },
+            { text: "Need Modern Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Your website is the first impression for property buyers & investors. If it’s outdated, slow, or hard to navigate, you lose leads instantly.",
+          painPoints: [
+            "Outdated property websites with poor user experience",
+            "No property filters or advanced search options",
+            "Missing Google Maps integration for projects",
+            "No virtual tours or high-quality galleries",
+            "Websites not optimized for mobile or SEO",
+          ],
+          solutionPoints: [
+            "Modern, mobile-friendly property websites",
+            "Advanced search filters & property management systems",
+            "Google Maps integration for easy location discovery",
+            "Virtual tours, image galleries & video showcases",
+            "SEO-friendly design for higher visibility",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get a Real Estate Website That Sells",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do real estate businesses need custom websites?",
+              answer:
+                "A modern real estate website acts as your digital showroom, attracting buyers, showcasing properties, and capturing leads 24/7.",
+              icon: React.createElement(IconDeviceDesktop, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you build property listing websites?",
+              answer:
+                "Yes, we design advanced property listing platforms with search filters, maps, and detailed property pages optimized for conversions.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can you integrate virtual tours & video walkthroughs?",
+              answer:
+                "Absolutely. We integrate 360° virtual tours, drone videos, and high-quality galleries for immersive property experiences.",
+              icon: React.createElement(IconCamera, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Are your websites mobile-friendly?",
+              answer:
+                "Yes, all our websites are fully responsive, ensuring smooth browsing across desktops, tablets, and smartphones.",
+              icon: React.createElement(IconDeviceDesktop, { size: 22 }),
+            },
+            {
+              id: "faq-5",
+              question: "Do you also optimize websites for SEO?",
+              answer:
+                "Yes, we design websites with SEO-first architecture so your properties rank higher on Google & Maps.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Build",
       headlineKeywords: [
-        "Web Design Development for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Property Websites",
+        "That Sell Faster",
+        "With Virtual Tours",
+        "With Smart Filters",
+        "Optimized for SEO",
       ],
       brandLine: [
-        { text: "Web Design Development for Real Estate", gradient: false }
+        {
+          text: "🏡 Your Digital Showroom for Properties",
+          gradient: false,
+        },
       ],
-      subheadline: "Specialized web design development strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We design & develop high-converting real estate websites with property listings, maps, virtual tours & SEO optimization to drive sales and inquiries.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Get Your Real Estate Website",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconHome, { size: 32 }),
+          title: "500+ Properties",
+          description: "Showcased online",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "10,000+ Leads",
+          description: "Generated via real estate websites",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "300% More Inquiries",
+          description: "With modern design & SEO",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Web Design Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Real Estate Website Development", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconLayoutDashboard, { size: 28 }),
+          title: "Custom Property Platforms",
+          description: "We build websites with property management systems tailored for brokers, builders & agencies.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Location-Focused Design",
+          description: "Google Maps integration & geo-targeting for better property discovery.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored web design development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconCamera, { size: 28 }),
+          title: "Virtual Tours Integration",
+          description: "Immersive 360° property tours & media galleries that drive buyer trust.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "SEO-Ready Architecture",
+          description: "Every website we build is designed with SEO-first principles for maximum visibility.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Web Design Development for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive web design development solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom web design development strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of web design development campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Launch Your Property Website Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Web Design Development Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to web design development that delivers measurable results for real estate businesses.',
+      title: "Our Real Estate Website Development Process",
+      subtitle: "FROM DESIGN TO LEAD GENERATION",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We design websites that do more than look great – they generate leads, showcase properties, and help close sales.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: "Discovery & Strategy",
+          description: "Understanding your business, property types, and buyer personas to plan the perfect site.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom web design development strategy tailored for your specific real estate goals.'
+          title: "Design & Prototyping",
+          description: "Creating UI/UX wireframes with property-focused layouts, intuitive navigation & lead capture elements.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of web design development campaigns with real estate focus.'
+          title: "Development",
+          description: "Building robust real estate websites with listings, filters, maps, and mobile optimization.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Web Design Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for web design development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Content & Media",
+          description: "Adding SEO-rich property descriptions, videos, images & 360° tours for better engagement.",
+        },
+        {
+          id: 5,
+          title: "SEO & Testing",
+          description: "Optimizing the site for Google rankings, speed, and mobile performance.",
+        },
+        {
+          id: 6,
+          title: "Launch & Support",
+          description: "Deploying your site with ongoing support, maintenance, and lead-tracking setup.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Web Design Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Brands", gradient: false },
+        { text: "That Trust Our Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description:
+        "From property listing portals to agency websites, we’ve built digital platforms that drive visibility & sales.",
       testimonials: [
         {
-          id: '1',
-          message: 'The web design development services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our new website with smart filters and virtual tours helped us close 3x more deals in 6 months.",
+          highlight: "3x more deals",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: "Amit Sharma",
+          designation: "CEO",
+          company: "Dream Homes Realty",
         },
         {
-          id: '2',
-          message: 'Outstanding web design development expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          id: "2",
+          message:
+            "The property website they built was fast, SEO-friendly, and generated high-quality leads from Day 1.",
+          highlight: "High-quality leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
-        }
-      ]
+          name: "Sonal Mehra",
+          designation: "Marketing Head",
+          company: "Skyline Developers",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR WEB DESIGN DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our web design development can drive growth for your real estate business.'
-    }
-  }
+      title: "Ready to Sell More Properties Online?",
+      subtitle: "BUILD A REAL ESTATE WEBSITE THAT CONVERTS",
+      description:
+        "We design high-performing websites with property listings, maps & SEO to bring in real buyers & renters.",
+    },
+  },
 };

@@ -1,8 +1,11 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBuildingCommunity, IconMapPin, IconPhoneCall, IconTrendingUp,
+  IconHome2, IconUsers, IconShieldCheck, IconArrowRight
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'gmb-services',
@@ -14,185 +17,214 @@ export const map: ServiceBusinessMap = {
     testimonials: 'variant1'
   },
   data: {
-    slug: 'gmb-services',
+    slug: 'gmb-services-real-estate',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Real Estate Businesses", gradient: false },
+            { text: "Struggle on Google Maps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Even with great listings, many real estate agencies miss out on clients because their Google Business Profile isn’t optimized.",
+          painPoints: [
+            "Not ranking in 'near me' property searches",
+            "Incomplete or outdated Google listings",
+            "Poor review ratings hurting credibility",
+            "Low call & inquiry conversions",
+            "High competition from local agencies"
+          ],
+          solutionPoints: [
+            "GMB profile optimization with complete details",
+            "Local SEO strategies to boost map rankings",
+            "Review & rating management for trust",
+            "Geo-tagged posts, photos & property updates",
+            "Call tracking & inquiry optimization"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Dominate Local Property Searches"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does GMB help in real estate?',
+              answer: 'When people search for “real estate agents near me” or “houses for sale in [city]”, an optimized GMB profile ensures your business shows up first.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can GMB generate real estate leads?',
+              answer: 'Yes. An optimized profile brings direct calls, website visits, and in-person inquiries — the highest quality leads for property sales and rentals.',
+              icon: React.createElement(IconPhoneCall, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do reviews impact ranking?',
+              answer: 'Absolutely. Positive reviews not only boost rankings but also increase trust, making property seekers more likely to contact you.',
+              icon: React.createElement(IconShieldCheck, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How fast can I see results?',
+              answer: 'Most real estate businesses see improved visibility within 30-45 days, with lead growth continuing as optimization builds up.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Gmb Services for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Property Leads?",
+        "Calls Directly from Google?",
+        "Top Ranking on Maps?",
+        "Higher Trust & Reviews?",
+        "Local Real Estate Visibility?"
       ],
       brandLine: [
-        { text: "Gmb Services for Real Estate", gradient: false }
+        { text: "📍 Get Found on Google Maps & Drive Property Leads", gradient: false }
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We optimize Google Business Profiles for real estate agencies, brokers, and consultants to generate high-intent property leads directly from Google Search & Maps.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "Get Free GMB Audit", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "Talk to GMB Experts", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBuildingCommunity, { size: 32 }),
+          title: "500+ Agencies Optimized",
+          description: "Improved map rankings & leads"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconHome2, { size: 32 }),
+          title: "5,000+ Property Inquiries",
+          description: "Generated via Google Maps optimization"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "4.7★ Avg Ratings",
+          description: "Boosted trust & visibility"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Digi Aerotech for ", gradient: false },
+        { text: "Real Estate GMB Optimization?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Local SEO Expertise",
+          description: "Rank your real estate office in top map results."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconPhoneCall, { size: 28 }),
+          title: "Direct Call Leads",
+          description: "Convert Google searches into property inquiries."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Review Growth Strategy",
+          description: "Generate positive reviews to build buyer trust."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Custom Optimization",
+          description: "Tailored strategies for agencies, brokers & consultants."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Local Real Estate Leads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Gmb Services for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Gmb Services Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our GMB Optimization Process for Real Estate',
+      subtitle: 'STEP-BY-STEP LOCAL GROWTH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for real estate businesses.',
+      description: 'We implement proven GMB strategies to get your real estate agency discovered faster by buyers, sellers, and tenants.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: 'Profile Audit & Setup',
+          description: 'We audit your GMB profile, complete missing info, and set up NAP (Name, Address, Phone) consistency for local SEO trust.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific real estate goals.'
+          title: 'Category & Keyword Optimization',
+          description: 'Optimizing categories like “Real Estate Agency” and targeting keywords like “property brokers near me” for map rankings.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with real estate focus.'
+          title: 'Photos & Geo-Tagging',
+          description: 'Uploading property photos, office images & geo-tagged visuals to boost map visibility.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
+          title: 'Review Management',
+          description: 'We help you gain and respond to positive reviews to improve ranking & trust.'
+        },
+        {
+          id: 5,
+          title: 'Posts & Property Updates',
+          description: 'Regular updates with property listings, offers, and posts to keep your GMB active and engaging.'
+        },
+        {
+          id: 6,
+          title: 'Tracking & Growth',
+          description: 'We monitor calls, clicks, and inquiries to measure ROI and scale results.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Agencies That", gradient: false },
+        { text: "Won with Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description: 'See how our GMB optimization helped brokers and agencies generate more walk-ins and property inquiries.',
       testimonials: [
         {
           id: '1',
-          message: 'The gmb services services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'We started getting daily calls for property inquiries just from Google Maps after optimization!',
+          highlight: 'daily property calls',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: 'Vikas Sharma',
+          designation: 'Broker',
+          company: 'Sharma Realty'
         },
         {
           id: '2',
-          message: 'Outstanding gmb services expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          message: 'Our agency jumped to the top 3 listings on Google Maps and leads grew by 3X in 2 months.',
+          highlight: '3X more leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
+          name: 'Neha Gupta',
+          designation: 'Director',
+          company: 'DreamHome Realtors'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your real estate business.'
+      title: 'Ready to Generate Daily Real Estate Leads?',
+      subtitle: 'GET DISCOVERED ON GOOGLE MAPS',
+      description: 'Partner with Digi Aerotech for GMB optimization and start converting local property searches into real inquiries.',
     }
   }
 };

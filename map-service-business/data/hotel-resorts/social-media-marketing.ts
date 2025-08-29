@@ -1,198 +1,248 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconCamera,
+  IconHeart,
+  IconTrendingUp,
+  IconUsers,
+  IconStar,
+  IconArrowRight,
+  IconShieldCheck,
+  IconWorld,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'social-media-marketing',
-  business: 'hotel-resorts',
+  service: "social-media-marketing",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: "social-media-marketing-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Challenges Hotels & Resorts Face with", gradient: false },
+            { text: "Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Hotels and resorts often struggle to engage travelers online, showcase property features, and drive bookings through social channels.",
+          painPoints: [
+            "Low engagement on Instagram, Facebook, and TikTok",
+            "Difficulty creating visually appealing content",
+            "Missing seasonal promotions & campaigns",
+            "Inconsistent brand messaging across platforms",
+            "Limited follower growth & reach"
+          ],
+          solutionPoints: [
+            "Creative campaigns tailored to travelers and luxury seekers",
+            "Professional photography & video reels showcasing property highlights",
+            "Seasonal, festival, and event-based social media content",
+            "Engagement-driven strategies for follower growth and bookings",
+            "Targeted ads and retargeting campaigns for conversions"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Hotel’s Social Reach",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Can social media increase direct bookings?",
+              answer:
+                "Yes! Engaging campaigns, reels, and ads attract travelers directly to your booking pages, reducing dependency on OTAs.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Which platforms are best for hotels and resorts?",
+              answer:
+                "Instagram, Facebook, TikTok, and Pinterest are highly effective for showcasing visuals, offers, and guest experiences.",
+              icon: React.createElement(IconCamera, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you create seasonal campaigns?",
+              answer:
+                "Absolutely. We plan promotions for peak seasons, holidays, festivals, and events to maximize bookings.",
+              icon: React.createElement(IconStar, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How do you grow our social media audience?",
+              answer:
+                "Through a mix of targeted ads, engaging content, contests, influencer collaborations, and consistent posting.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Engage & Attract Travelers with",
       headlineKeywords: [
-        "Social Media Marketing for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Hotel Social Media Marketing",
+        "Resort Instagram & TikTok",
+        "Boost Direct Bookings Online",
+        "Luxury Hospitality Campaigns",
+        "Visual Storytelling for Hotels",
       ],
       brandLine: [
-        { text: "Social Media Marketing for Hotel Resorts", gradient: false }
+        {
+          text: "📸 Transform Your Hotel & Resort Social Presence into Bookings",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help hotels and resorts leverage Instagram, Facebook, TikTok, and Pinterest to increase engagement, followers, and direct bookings.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconHeart, { size: 28 }),
+          text: "Get Free Social Media Audit",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "50K+ Social Followers",
+          description: "Engaged audience across multiple platforms",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X More Direct Bookings",
+          description: "Conversion-focused social campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Guest Satisfaction",
+          description: "Feedback driven and visually engaging content",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Hotels & Resorts Choose Us for", gradient: false },
+        { text: "Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconCamera, { size: 28 }),
+          title: "Visual Storytelling Experts",
+          description: "Showcase your property with stunning images, reels, and videos.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Follower Growth & Engagement",
+          description: "We implement strategies to grow followers and encourage engagement.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Conversion-Driven Campaigns",
+          description: "Social campaigns designed to increase direct bookings and ROI.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Boost Your Hotel's Social Presence",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Social Media Marketing Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for hotel resorts businesses.',
+      title: "Our Proven Social Media Process for Hotels & Resorts",
+      subtitle: "PLAN • CREATE • ENGAGE • CONVERT",
+      description:
+        "We implement a comprehensive strategy that increases followers, engages audiences, and converts them into guests and bookings.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "Market & Audience Research",
+          description: "Identify traveler demographics, preferences, and trends to target content effectively.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific hotel resorts goals.'
+          title: "Content Planning & Creation",
+          description: "Create high-quality photos, videos, reels, and stories that resonate with travelers.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with hotel resorts focus.'
+          title: "Platform Optimization & Posting",
+          description: "Optimize profiles, hashtags, captions, and posting schedules for maximum reach.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Engagement & Community Management",
+          description: "Respond to comments, messages, and engage with followers to build trust and loyalty.",
+        },
+        {
+          id: 5,
+          title: "Paid Campaigns & Retargeting",
+          description: "Run targeted social ads and retargeting campaigns to drive direct bookings.",
+        },
+        {
+          id: 6,
+          title: "Analysis & Continuous Improvement",
+          description: "Track KPIs, engagement, and conversions to refine the strategy for ongoing success.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts Who ", gradient: false },
+        { text: "Thrived on Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "See how our social media strategies helped hotels and resorts increase followers, engagement, and direct bookings.",
       testimonials: [
         {
-          id: '1',
-          message: 'The social media marketing services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our resort’s Instagram engagement skyrocketed! We get daily inquiries and bookings thanks to their social media campaigns.",
+          highlight: "Instagram engagement skyrocketed",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Priya Nair",
+          designation: "Manager",
+          company: "Lakeside Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding social media marketing expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "They helped us run seasonal TikTok campaigns that brought in young travelers and boosted off-season bookings.",
+          highlight: "Boosted off-season bookings",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Vikram Singh",
+          designation: "Owner",
+          company: "Hilltop Boutique Hotel",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Grow Your Hotel & Resort Social Media Presence",
+      subtitle: "INCREASE FOLLOWERS • BOOST BOOKINGS • ENGAGE GLOBALLY",
+      description:
+        "Schedule your free consultation to discover how our social media strategies can make your hotel or resort the top choice for travelers online.",
+    },
+  },
 };

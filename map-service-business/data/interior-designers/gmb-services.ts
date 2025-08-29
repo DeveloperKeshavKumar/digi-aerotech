@@ -1,198 +1,232 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHome,
+  IconMapPin,
+  IconPaint,
+  IconUsers,
+  IconTrendingUp,
+  IconArrowRight,
+  IconBrush,
+  IconStar,
+  IconBuildingSkyscraper,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'gmb-services',
-  business: 'interior-designers',
+  service: "gmb-services",
+  business: "interior-designers",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant1",
+    whyChooseUs: "variant3",
+    process: "variant2",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'gmb-services',
+    slug: "gmb-services-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Interior Designers", gradient: false },
+            { text: "Struggle Without GMB", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Homeowners and businesses search Google Maps for interior designers daily. Without an optimized GMB profile, your design studio loses calls, inquiries, and valuable projects to competitors.",
+          painPoints: [
+            "Not appearing on Google Maps for local design searches",
+            "Low visibility in ‘interior designer near me’ searches",
+            "Incomplete or outdated GMB profile reducing trust",
+            "Poor ratings lowering client confidence",
+            "Missed local leads due to weak profile optimization",
+          ],
+          solutionPoints: [
+            "Top ranking in Google Maps & local packs",
+            "Optimized GMB profile with photos, services, and keywords",
+            "Review generation for better trust & reputation",
+            "Geo-targeted visibility for homeowners & offices",
+            "Direct increase in client calls and project inquiries",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Optimize My GMB",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do interior designers need GMB optimization?",
+              answer:
+                "GMB helps your business show up in local searches like ‘interior designer near me,’ bringing clients directly to your studio.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can GMB increase my design project inquiries?",
+              answer:
+                "Yes. A fully optimized GMB profile generates more calls, website visits, and direct inquiries from local homeowners and offices.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you handle review management too?",
+              answer:
+                "Absolutely. We help you gain 5-star reviews, manage feedback, and build a strong reputation that wins client trust.",
+              icon: React.createElement(IconStar, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Gmb Services for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Rank Higher",
+      headlineKeywords: ["Google Maps", "Interior Designers", "Local Clients"],
       brandLine: [
-        { text: "Gmb Services for Interior Designers", gradient: false }
+        {
+          text: "📍 GMB Services for Interior Designers",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Get discovered instantly by homeowners & businesses searching for interior design services near them. Our GMB optimization ensures you rank higher, gain trust, and attract premium clients.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Boost My Google Maps Ranking",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "3X More Calls",
+          description: "From local homeowners looking for designers nearby.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconBrush, { size: 32 }),
+          title: "Better Visibility",
+          description: "Appear in Google’s local 3-pack for design searches.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "High-Value Projects",
+          description: "Win office, home, and luxury design projects via Maps.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us For", gradient: false },
+        { text: "Interior Design GMB Services?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconPaint, { size: 28 }),
+          title: "Design-Centric Optimization",
+          description: "We highlight your design services & portfolios in GMB listings.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Reputation Building",
+          description: "We help you earn more 5-star reviews to build trust fast.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Local Lead Growth",
+          description: "Turn Google Maps searches into real design project leads.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Gmb Services for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get My GMB Optimized",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Gmb Services Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for interior designers businesses.',
+      title: "Our GMB Optimization Process for Interior Designers",
+      subtitle: "ANALYZE • OPTIMIZE • ENHANCE • MANAGE • GROW",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We focus on complete GMB optimization for interior designers—ensuring your business shines on Google Maps, wins trust with reviews, and generates consistent project inquiries.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Audit & Analysis",
+          description: "We analyze your current GMB profile, competition, and gaps in local rankings.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific interior designers goals.'
+          title: "Profile Optimization",
+          description: "We optimize name, services, categories, photos, and keywords for maximum visibility.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with interior designers focus.'
+          title: "Geo-Targeted Optimization",
+          description: "We focus on ranking in your city & local service areas where clients are searching.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Review Management",
+          description: "We generate and manage 5-star reviews to build credibility and trust.",
+        },
+        {
+          id: 5,
+          title: "Tracking & Growth",
+          description: "We monitor insights, calls, and conversions to ensure consistent results.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Interior Designers Trust", gradient: false },
+        { text: "Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "We’ve helped design studios dominate local Google searches, resulting in more walk-ins, calls, and premium project opportunities.",
       testimonials: [
         {
-          id: '1',
-          message: 'The gmb services services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Before optimization, I barely got 2 calls a week. Now my GMB profile ranks in the top 3, and I receive 10+ inquiries weekly.",
+          highlight: "10+ Weekly Leads",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Sanya Verma",
+          designation: "Founder",
+          company: "CreativeNest Interiors",
         },
         {
-          id: '2',
-          message: 'Outstanding gmb services expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "Our Google Maps profile now looks professional, with client reviews and high rankings. Project bookings have increased drastically.",
+          highlight: "Higher Conversions",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Amit Sharma",
+          designation: "Interior Designer",
+          company: "SpaceRevamp",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your interior designers business.'
-    }
-  }
+      title: "Make Your Interior Design Studio Visible on Google Maps",
+      subtitle: "GMB • VISIBILITY • TRUST • PROJECTS",
+      description:
+        "Don’t let potential clients miss your design services. With our GMB optimization, your studio can dominate Google Maps and win premium interior design projects consistently.",
+    },
+  },
 };

@@ -1,198 +1,231 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHome,
+  IconRulerMeasure,
+  IconTrendingUp,
+  IconPalette,
+  IconUsers,
+  IconStar,
+  IconArrowRight,
+  IconBuildingSkyscraper,
+  IconTarget,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'google-ads',
-  business: 'interior-designers',
+  service: "google-ads",
+  business: "interior-designers",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'google-ads',
+    slug: "google-ads-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Struggling to Get", gradient: false },
+            { text: "High-Value Clients?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Many interior designers rely only on word-of-mouth or offline networks, but in today’s digital world, Google Ads is the fastest way to get premium projects.",
+          painPoints: [
+            "Projects going to competitors appearing first on Google",
+            "Wasting money on ads without results",
+            "No visibility when clients search ‘interior designers near me’",
+            "Irregular client inquiries and unpredictable revenue",
+            "Struggling to attract luxury or corporate clients",
+          ],
+          solutionPoints: [
+            "Appear instantly on top of Google search results",
+            "Target homeowners, offices, and businesses with high intent",
+            "Pay only for real clicks from potential clients",
+            "Get regular inquiries & consultation calls",
+            "Win high-ticket projects with optimized campaigns",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Leads Now",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Do Google Ads actually work for interior designers?",
+              answer:
+                "Yes. Google Ads places your business at the top of search results when clients are actively looking for designers in your area.",
+              icon: React.createElement(IconTarget, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "How do I avoid wasting money on ads?",
+              answer:
+                "We run highly targeted ads with optimized keywords, geo-location targeting, and continuous monitoring to ensure maximum ROI.",
+              icon: React.createElement(IconRulerMeasure, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can I target luxury and corporate clients?",
+              answer:
+                "Absolutely. We design campaigns that highlight premium services, ensuring you attract high-value projects and clients.",
+              icon: React.createElement(IconPalette, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Google Ads for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Instant Visibility",
+      headlineKeywords: ["Google Ads", "Interior Designers", "Premium Leads"],
       brandLine: [
-        { text: "Google Ads for Interior Designers", gradient: false }
+        {
+          text: "🚀 Google Ads for Interior Designers & Firms",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized google ads strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Get premium clients looking for interior design services right now. With Google Ads, your business appears at the top instantly, driving consultation calls, inquiries, and high-value projects.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start My Ads Campaign",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "300% ROI",
+          description: "Proven strategies that bring high returns on ad spend.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "Targeted Reach",
+          description: "Attract clients in your city actively searching for designers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Premium Leads",
+          description: "Get inquiries from homeowners & corporate clients.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Our", gradient: false },
+        { text: "Google Ads Services?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Interior Industry Experts",
+          description: "We understand what clients look for in design projects.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "High ROI Campaigns",
+          description: "Our optimized strategies ensure every click matters.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored google ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconPalette, { size: 28 }),
+          title: "Tailored Ad Copies",
+          description: "We create persuasive ad copies that attract serious clients.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Google Ads for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive google ads solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom google ads strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of google ads campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Launch My Ads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Google Ads Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to google ads that delivers measurable results for interior designers businesses.',
+      title: "How We Run Google Ads for Interior Designers",
+      subtitle: "PLAN • EXECUTE • OPTIMIZE • SCALE",
+      description:
+        "Our structured process ensures your ads deliver premium leads, consistent inquiries, and better ROI than traditional marketing.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Audience & Keyword Research",
+          description: "We analyze high-intent searches like ‘interior designer near me’ and set the foundation.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom google ads strategy tailored for your specific interior designers goals.'
+          title: "Ad Copy & Campaign Setup",
+          description: "We write compelling ad copies and set up campaigns for maximum click-through rates.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of google ads campaigns with interior designers focus.'
+          title: "Geo-Targeted Ads",
+          description: "Target only specific cities, neighborhoods, or luxury markets.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Google Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for google ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Continuous Optimization",
+          description: "We adjust bids, keywords, and ad creatives for better performance.",
+        },
+        {
+          id: 5,
+          title: "Scaling Campaigns",
+          description: "Once ROI is proven, we scale campaigns to capture more premium leads.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Google Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "What Interior Designers", gradient: false },
+        { text: "Say About Our Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "From independent designers to full-fledged studios, our Google Ads services have transformed how interior businesses get clients.",
       testimonials: [
         {
-          id: '1',
-          message: 'The google ads services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "I was struggling to get clients. Within weeks of launching ads, I started receiving daily inquiries. It changed my business completely.",
+          highlight: "Daily Inquiries",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Rohit Verma",
+          designation: "Founder",
+          company: "SpaceCraft Interiors",
         },
         {
-          id: '2',
-          message: 'Outstanding google ads expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "Thanks to Google Ads, I now get luxury project leads regularly. My ROI has more than doubled compared to traditional marketing.",
+          highlight: "Luxury Leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Amit Khanna",
+          designation: "Principal Designer",
+          company: "EliteSpaces",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR GOOGLE ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our google ads can drive growth for your interior designers business.'
-    }
-  }
+      title: "Get High-Value Interior Projects with Google Ads",
+      subtitle: "VISIBILITY • LEADS • CLIENTS",
+      description:
+        "Stop losing clients to competitors. With our Google Ads services, your business will appear first when clients search for interior designers—bringing you premium leads and high-ticket projects.",
+    },
+  },
 };

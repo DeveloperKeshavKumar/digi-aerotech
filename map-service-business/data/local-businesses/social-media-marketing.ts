@@ -1,198 +1,244 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandTiktok,
+  IconBrandYoutube,
+  IconUsers,
+  IconMessageCircle,
+  IconTrendingUp,
+  IconMapPin,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'social-media-marketing',
-  business: 'local-businesses',
+  service: "social-media-marketing",
+  business: "local-business",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant3",
+    whyChooseUs: "variant2",
+    process: "variant1",
+    testimonials: "variant3",
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: "social-media-marketing-local-business",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Local Businesses Struggle", gradient: false },
+            { text: "On Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Social media is where your customers spend most of their time. Without the right strategy, your local business risks being invisible to them.",
+          painPoints: [
+            "No consistent posting & poor engagement",
+            "Not reaching the right local audience",
+            "Competitors running viral campaigns",
+            "Low followers but high inactive users",
+            "No conversion strategy from social to sales",
+          ],
+          solutionPoints: [
+            "Engage local customers with attractive content",
+            "Geo-targeted campaigns for nearby customers",
+            "Creative reels, posts & stories that drive traffic",
+            "Build a community & repeat customer base",
+            "Convert social media followers into paying clients",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Grow My Local Business on Social Media",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How does social media help local businesses?",
+              answer:
+                "Social media connects you directly with nearby customers. By running geo-targeted campaigns and engaging content, we convert followers into daily walk-ins and calls.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Which platforms are best for local businesses?",
+              answer:
+                "Facebook, Instagram, WhatsApp, and Google Business updates are most effective. For restaurants & gyms, TikTok and YouTube Shorts also work wonders.",
+              icon: React.createElement(IconBrandInstagram, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can social media marketing increase walk-ins?",
+              answer:
+                "Yes. By promoting offers, events, and reviews, we create urgency that drives local customers to your store, clinic, or restaurant.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Do I need ads or just organic posts?",
+              answer:
+                "Both. Organic posts build community trust, while ads amplify reach. We balance both to maximize ROI and ensure growth.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Social Media Marketing for Local Businesses?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Grow",
+      headlineKeywords: ["Engage Locals", "Boost Walk-Ins", "Build Community"],
       brandLine: [
-        { text: "Social Media Marketing for Local Businesses", gradient: false }
+        {
+          text: "📢 Social Media Marketing for Local Businesses",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for local businesses. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help local businesses like shops, gyms, restaurants & clinics attract nearby customers through Facebook, Instagram, WhatsApp & TikTok marketing.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start My Social Media Growth",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandFacebook, { size: 32 }),
+          title: "95% Users",
+          description: "Local customers are active on Facebook & Instagram daily.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Local Businesses served"
+          icon: React.createElement(IconBrandTiktok, { size: 32 }),
+          title: "Viral Reach",
+          description: "Short videos create instant buzz for local offers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrandYoutube, { size: 32 }),
+          title: "Trust Factor",
+          description: "Strong social presence builds credibility & loyalty.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Local Businesses?', gradient: false }
+        { text: "Why Choose Us For", gradient: false },
+        { text: "Social Media Marketing?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of local businesses market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMessageCircle, { size: 28 }),
+          title: "Engaging Content",
+          description: "We design posts, reels & stories that grab attention.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for local businesses businesses.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Geo-Targeted Ads",
+          description: "Reach customers in your city, street, or locality.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Sales-Driven Strategy",
+          description: "We focus on converting likes & shares into real sales.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Local Businesses',
-      subtitle: 'LOCAL BUSINESSES SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for local businesses businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for local businesses market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for local businesses audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for local businesses businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Boost My Local Presence",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Social Media Marketing Process for Local Businesses',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for local businesses businesses.',
+      title: "Our Social Media Marketing Process",
+      subtitle: "CREATE • ENGAGE • CONVERT • SCALE",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a proven process to grow your local business through powerful social media strategies.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your local businesses business and market landscape.'
+          title: "Profile Optimization",
+          description: "We optimize your Facebook, Instagram & WhatsApp profiles for local visibility.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific local businesses goals.'
+          title: "Content Calendar",
+          description: "We plan posts, reels, offers & events tailored to your business niche & seasonality.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with local businesses focus.'
+          title: "Creative Production",
+          description: "Our designers create scroll-stopping graphics, reels & ads that grab attention instantly.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on local businesses market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Community Engagement",
+          description: "We manage comments, DMs & reviews to build trust with your local audience.",
+        },
+        {
+          id: 5,
+          title: "Targeted Campaigns",
+          description: "Running geo-targeted ads to reach customers near your shop, clinic, or restaurant.",
+        },
+        {
+          id: 6,
+          title: "Analytics & Scaling",
+          description: "We track growth, optimize campaigns, and scale what brings maximum ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Local Businesses Winning", gradient: false },
+        { text: "With Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from local businesses businesses that achieved remarkable growth.',
+      description:
+        "From salons to gyms to local restaurants, our social media campaigns bring walk-ins, calls & loyal customers every day.",
       testimonials: [
         {
-          id: '1',
-          message: 'The social media marketing services transformed our local businesses business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our restaurant went viral locally with their Instagram reels campaign! We see 30% more table bookings now.",
+          highlight: "30% More Bookings",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Local Businesses Company'
+          name: "Rohit Mehra",
+          designation: "Owner",
+          company: "TasteHub Café",
         },
         {
-          id: '2',
-          message: 'Outstanding social media marketing expertise specifically for local businesses. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for local businesses',
+          id: "2",
+          message:
+            "My gym’s membership doubled in 3 months thanks to their geo-targeted Facebook ads. Highly recommend!",
+          highlight: "2x Membership Growth",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Local Businesses Solutions'
-        }
-      ]
+          name: "Simran Kaur",
+          designation: "Founder",
+          company: "Pulse Fitness",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Local Businesses Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your local businesses business.'
-    }
-  }
+      title: "Turn Social Media Into Customers",
+      subtitle: "ENGAGE LOCALS • DRIVE SALES • BUILD LOYALTY",
+      description:
+        "Stop just posting for likes—start converting social media followers into real customers. Let’s grow your local business together.",
+    },
+  },
 };

@@ -1,198 +1,244 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconUsers,
+  IconVaccine,
+  IconHeartbeat,
+  IconChartLine,
+  IconArrowRight,
+  IconStethoscope,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'social-media-marketing',
-  business: 'pharma-companies',
+  service: "social-media-marketing",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant2",
+    whyChooseUs: "variant3",
+    process: "variant1",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: "social-media-marketing-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Companies", gradient: false },
+            { text: "Need Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "In the digital age, patients and doctors look for reliable health information online. Social Media Marketing (SMM) helps pharma brands build trust, engage audiences, and increase visibility while staying compliant.",
+          painPoints: [
+            "Low patient engagement due to complex medical content",
+            "Pharma companies struggle with brand trust & awareness",
+            "Regulatory compliance limits marketing creativity",
+            "Competitors are already leveraging social channels",
+            "Difficulty in reaching doctors, healthcare providers & patients simultaneously",
+          ],
+          solutionPoints: [
+            "Compliance-friendly social content strategies for pharma",
+            "Educational & awareness campaigns that build trust",
+            "Targeted campaigns for doctors, hospitals & patients",
+            "Platform-specific content (Facebook, LinkedIn, Instagram)",
+            "Community engagement that builds authority & trust",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start Pharma SMM Today",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Is social media marketing allowed for pharma companies?",
+              answer:
+                "Yes, with compliance-focused strategies. We create content that educates, builds trust, and follows all medical advertising regulations.",
+              icon: React.createElement(IconStethoscope, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Which social platforms work best for pharma?",
+              answer:
+                "LinkedIn for B2B (doctors, hospitals), Instagram & Facebook for patient awareness, and YouTube for educational content.",
+              icon: React.createElement(IconBrandLinkedin, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can SMM generate leads for pharma?",
+              answer:
+                "Yes, social media helps pharma brands get patient inquiries, doctor connections, and distributor leads through campaigns and engagement.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How do you measure pharma SMM success?",
+              answer:
+                "We track engagement, reach, follower growth, and lead conversions, ensuring measurable ROI for every campaign.",
+              icon: React.createElement(IconChartLine, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Social Media Marketing for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Engage",
+      headlineKeywords: ["Pharma Social Media Marketing", "Healthcare SMM", "Patient Engagement"],
       brandLine: [
-        { text: "Social Media Marketing for Pharma Companies", gradient: false }
+        {
+          text: "📲 Build Trust & Visibility for Your Pharma Brand with Compliance-Friendly Social Media Marketing",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help pharma companies use social media to educate patients, engage doctors, and grow brand trust while ensuring compliance with healthcare regulations.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Get Pharma SMM Strategy",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandFacebook, { size: 32 }),
+          title: "Patient Engagement",
+          description: "Build loyal communities & trust",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconBrandLinkedin, { size: 32 }),
+          title: "Doctor Outreach",
+          description: "Target doctors & healthcare leaders",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconVaccine, { size: 32 }),
+          title: "Compliance-Friendly",
+          description: "Regulation-safe campaigns",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Social Media?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconHeartbeat, { size: 28 }),
+          title: "Patient-Centric Approach",
+          description: "We humanize your pharma brand with content patients trust.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconBrandInstagram, { size: 28 }),
+          title: "Creative Pharma Storytelling",
+          description: "Visual campaigns designed to educate & inspire trust.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChartLine, { size: 28 }),
+          title: "Data-Driven Strategies",
+          description: "We track engagement, clicks, and leads to ensure ROI.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Boost Pharma Engagement",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Social Media Marketing Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for pharma companies businesses.',
+      title: "Our Pharma Social Media Marketing Process",
+      subtitle: "EDUCATE • ENGAGE • CONVERT",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We combine compliance-focused content with engagement strategies to help pharma brands connect with patients, doctors, and healthcare providers effectively.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Strategy & Compliance Check",
+          description: "We craft a custom SMM plan aligned with pharma regulations to ensure trust & credibility.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific pharma companies goals.'
+          title: "Content Creation",
+          description: "Educational posts, doctor Q&As, awareness campaigns, and compliance-friendly creatives.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with pharma companies focus.'
+          title: "Community Engagement",
+          description: "We interact with patients, answer queries, and engage doctors for brand trust.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Paid Campaigns",
+          description: "Targeted ad campaigns on Facebook, LinkedIn & Instagram for patients and professionals.",
+        },
+        {
+          id: 5,
+          title: "Influencer Collaboration",
+          description: "Partnering with medical experts and healthcare influencers for credibility.",
+        },
+        {
+          id: 6,
+          title: "Analytics & Scaling",
+          description: "Tracking performance, optimizing strategies, and scaling high-ROI campaigns.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Companies", gradient: false },
+        { text: "Winning on Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "Our social media campaigns have helped pharma companies build stronger trust, engage doctors & patients, and generate consistent brand visibility.",
       testimonials: [
         {
-          id: '1',
-          message: 'The social media marketing services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our pharma brand saw a 3x increase in patient engagement and trust after launching educational campaigns with this team.",
+          highlight: "3x Engagement",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Suresh Menon",
+          designation: "Marketing Head",
+          company: "BioCare Pharma",
         },
         {
-          id: '2',
-          message: 'Outstanding social media marketing expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "LinkedIn campaigns helped us connect with doctors & hospitals, positioning us as a trusted healthcare partner.",
+          highlight: "Doctor Outreach Success",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Dr. Kavita Rao",
+          designation: "Director",
+          company: "MedTrust Pharma",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Grow Your Pharma Brand on Social Media",
+      subtitle: "TRUST • ENGAGEMENT • VISIBILITY",
+      description:
+        "Let’s build your pharma company’s digital trust with compliance-friendly, high-engagement social media strategies that attract patients and healthcare professionals.",
+    },
+  },
 };

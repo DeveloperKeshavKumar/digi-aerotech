@@ -1,198 +1,265 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconSchool,
+  IconMapPin,
+  IconUsers,
+  IconShieldCheck,
+  IconCalendarEvent,
+  IconRocket,
+  IconArrowRight,
+  IconPhone,
+  IconGlobe,
+  IconStar
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'gmb-services',
   business: 'educational-institutions',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant1',
+    whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'gmb-services',
+    slug: 'gmb-services-educational-institutions',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Educational Institutions Face", gradient: false },
+            { text: "with Google Business Profile", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Schools, colleges, coaching centers, and e-learning platforms often struggle to attract local students and parents through online presence.",
+          painPoints: [
+            "Low visibility on Google Maps and Search results",
+            "Inaccurate or incomplete business listings",
+            "Difficulty collecting and showcasing positive reviews",
+            "Competition from other local educational institutions",
+            "Poor engagement from local students and parents"
+          ],
+          solutionPoints: [
+            "Optimized Google Business Profiles for better local search visibility",
+            "Accurate listings with up-to-date information",
+            "Review management strategies to boost trust and credibility",
+            "Local SEO integration to outrank competitors",
+            "Ongoing profile monitoring and optimization to maintain top rankings"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Enhance Your Local Visibility Now"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How can GMB increase student inquiries?',
+              answer: 'A fully optimized Google Business Profile ensures parents and students find you easily, leading to more inquiries and registrations.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you manage reviews for our institution?',
+              answer: 'Yes, we help you collect, respond, and showcase reviews to build trust and credibility.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you optimize for local search?',
+              answer: 'Absolutely. We implement local SEO strategies to ensure your institution ranks higher in your city or area.',
+              icon: React.createElement(IconGlobe, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Will GMB help if we are a new institution?',
+              answer: 'Yes. New institutions can gain instant visibility through accurate listings, optimized keywords, and review management.',
+              icon: React.createElement(IconSchool, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you track profile performance?',
+              answer: 'We provide monthly insights on profile views, clicks, calls, and directions to measure growth.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How long to see results from GMB optimization?',
+              answer: 'Most educational institutions see improved local visibility within 3–6 weeks, depending on competition.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Gmb Services for Educational Institutions?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Local Students?",
+        "Higher Parent Engagement?",
+        "Top-Ranking on Google Maps?",
+        "Better Visibility in Your Area?",
+        "GMB Optimization for Schools & Colleges?"
       ],
       brandLine: [
-        { text: "Gmb Services for Educational Institutions", gradient: false }
+        { text: "🏫 Google Business Profile Services for Educational Institutions", gradient: false }
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for educational institutions. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help schools, colleges, coaching centers, and e-learning platforms attract more local students and parents through optimized Google Business Profiles.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free GMB Consultation", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Boost My Local Visibility", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "30,000+ Local Students",
+          description: "Reached through optimized GMB listings"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Educational Institutions served"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "200+ Institutions",
+          description: "Profile optimized successfully"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Satisfaction",
+          description: "Loved by educational institutions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconGlobe, { size: 32 }),
+          title: "Enhanced Local Visibility",
+          description: "Ranked top in city & area searches"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Educational Institutions?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 GMB Partner for Educational Institutions", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of educational institutions market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Local Search Expertise",
+          description: "Ensure your institution appears in top local searches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for educational institutions businesses.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review Management",
+          description: "Collect and showcase positive reviews to build trust."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Parent & Student Engagement",
+          description: "Improve engagement through calls, messages, and directions."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Accurate Listings",
+          description: "Keep all details updated for credibility and ranking."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Continuous Monitoring",
+          description: "Track performance and adjust strategies for best results."
+        },
+        {
+          icon: React.createElement(IconGlobe, { size: 28 }),
+          title: "Competitive Advantage",
+          description: "Outrank nearby institutions and attract more students."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get Discovered Locally Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Gmb Services for Educational Institutions',
-      subtitle: 'EDUCATIONAL INSTITUTIONS SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for educational institutions businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for educational institutions market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for educational institutions audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for educational institutions businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Gmb Services Process for Educational Institutions',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven GMB Optimization Process for Educational Institutions',
+      subtitle: 'STEP-BY-STEP LOCAL VISIBILITY BOOST',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for educational institutions businesses.',
+      description: 'From accurate listings to review management, our process ensures your institution stands out locally and attracts more students and parents.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your educational institutions business and market landscape.'
+          title: 'Profile Audit & Competitor Analysis',
+          description: 'Analyze your current profile and compare with local competitors.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific educational institutions goals.'
+          title: 'Accurate Business Listing',
+          description: 'Update all essential information including address, phone, and website.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with educational institutions focus.'
+          title: 'Review Collection & Management',
+          description: 'Encourage positive reviews and respond to feedback promptly.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on educational institutions market feedback.'
+          title: 'Local SEO Integration',
+          description: 'Optimize profile for location-specific keywords and searches.'
+        },
+        {
+          id: 5,
+          title: 'Performance Tracking',
+          description: 'Monitor clicks, calls, and direction requests to measure engagement.'
+        },
+        {
+          id: 6,
+          title: 'Continuous Optimization',
+          description: 'Regular updates and improvements to maintain top local visibility.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Institutions Who ", gradient: false },
+        { text: "Boosted Local Visibility with GMB", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from educational institutions businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers attract more local students through optimized Google Business Profiles.',
       testimonials: [
         {
           id: '1',
-          message: 'The gmb services services transformed our educational institutions business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our college inquiries increased by 40% after GMB optimization by Digi Aerotech.',
+          highlight: 'inquiries increased by 40%',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Educational Institutions Company'
+          name: 'Dr. Anjali Mehra',
+          designation: 'Principal',
+          company: 'Sunrise College'
         },
         {
           id: '2',
-          message: 'Outstanding gmb services expertise specifically for educational institutions. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for educational institutions',
+          message: 'Parents find our school easily now, thanks to professional GMB management.',
+          highlight: 'parents find our school easily',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Educational Institutions Solutions'
+          name: 'Rohit Verma',
+          designation: 'Director',
+          company: 'Bright Minds Academy'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Educational Institutions Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your educational institutions business.'
+      title: 'Ready to Attract More Local Students?',
+      subtitle: 'Optimize Your GMB and Boost Visibility',
+      description: 'Book a free consultation with Digi Aerotech and see how your institution can dominate local searches.'
     }
   }
 };

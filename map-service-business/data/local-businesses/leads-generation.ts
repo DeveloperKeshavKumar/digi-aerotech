@@ -1,198 +1,238 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconUsers,
+  IconPhoneCall,
+  IconArrowRight,
+  IconTarget,
+  IconTrendingUp,
+  IconBuildingStore,
+  IconMapPin,
+  IconMessage,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'leads-generation',
-  business: 'local-businesses',
+  service: "leads-generation",
+  business: "local-business",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant3",
+    whyChooseUs: "variant2",
+    process: "variant1",
+    testimonials: "variant3",
   },
   data: {
-    slug: 'leads-generation',
+    slug: "leads-generation-local-business",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Local Businesses", gradient: false },
+            { text: "Struggle With Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Without a consistent lead generation system, local businesses lose daily opportunities to competitors who dominate digital marketing.",
+          painPoints: [
+            "Relying only on word of mouth for new customers",
+            "Irregular inquiries and inconsistent monthly revenue",
+            "Competitors capturing leads through ads & SEO",
+            "Difficulty converting online traffic into calls & visits",
+            "Lack of proper lead tracking and follow-ups",
+          ],
+          solutionPoints: [
+            "Multi-channel lead generation across Google, Facebook, and local platforms",
+            "High-intent leads from customers actively searching near you",
+            "Automated systems for tracking calls, inquiries, and visits",
+            "Conversion-focused campaigns for real ROI",
+            "Consistent flow of new customers every month",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start Generating Leads Today",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How do you generate leads for local businesses?",
+              answer:
+                "We use a mix of Google Ads, Local SEO, Meta Ads, and social media campaigns to generate high-quality leads ready to buy from you.",
+              icon: React.createElement(IconTarget, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can you bring more walk-ins to my shop?",
+              answer:
+                "Yes, our campaigns target customers searching ‘near me’ and encourage direct store visits with call-to-action ads.",
+              icon: React.createElement(IconBuildingStore, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you track and measure leads?",
+              answer:
+                "We integrate advanced tracking to record every inquiry, call, and store visit so you can see ROI clearly.",
+              icon: React.createElement(IconPhoneCall, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "What type of businesses can benefit?",
+              answer:
+                "Any local business—from restaurants and gyms to salons and service providers—can generate more sales with our lead generation system.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Leads Generation for Local Businesses?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Get",
+      headlineKeywords: ["More Calls", "Inquiries", "Walk-ins"],
       brandLine: [
-        { text: "Leads Generation for Local Businesses", gradient: false }
+        {
+          text: "📞 Lead Generation Services for Local Businesses",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for local businesses. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help local businesses build a steady flow of leads and sales using digital campaigns that turn online searches into real customers.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Generate My Leads Now",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X More Leads",
+          description: "Local businesses see rapid growth in weekly inquiries",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Local Businesses served"
+          icon: React.createElement(IconPhoneCall, { size: 32 }),
+          title: "20+ Daily Calls",
+          description: "Turn online searches into phone calls & customer visits",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "Hyperlocal Reach",
+          description: "Capture high-intent customers searching ‘near me’",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Local Businesses?', gradient: false }
+        { text: "Why Choose Us For", gradient: false },
+        { text: "Lead Generation?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of local businesses market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Multi-Channel Approach",
+          description: "We combine SEO, PPC, and ads to maximize lead flow.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for local businesses businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Quality Over Quantity",
+          description: "We focus on real customers, not just random clicks.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconMessage, { size: 28 }),
+          title: "Faster Conversions",
+          description: "Our strategies drive instant calls, messages, and visits.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Leads Generation for Local Businesses',
-      subtitle: 'LOCAL BUSINESSES SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for local businesses businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for local businesses market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for local businesses audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for local businesses businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start My Lead Campaign",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Leads Generation Process for Local Businesses',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for local businesses businesses.',
+      title: "Our Proven Lead Generation Process",
+      subtitle: "ATTRACT • ENGAGE • CONVERT • SCALE",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We design a customer acquisition funnel that captures interest, engages with local customers, and converts them into paying clients.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your local businesses business and market landscape.'
+          title: "Audience Research",
+          description: "We identify your local target audience, their needs, and the platforms they use most.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific local businesses goals.'
+          title: "Lead Capture Setup",
+          description: "We create landing pages, forms, and call buttons that make it easy for customers to reach you instantly.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with local businesses focus.'
+          title: "Campaign Launch",
+          description: "We run ads and SEO campaigns designed to capture high-intent leads searching for your services.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on local businesses market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Lead Nurturing",
+          description: "We set up remarketing and automated responses to convert interested prospects into paying customers.",
+        },
+        {
+          id: 5,
+          title: "Tracking & Scaling",
+          description: "We monitor conversions, optimize campaigns, and scale the best-performing strategies for maximum ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Local Businesses Winning", gradient: false },
+        { text: "With Our Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from local businesses businesses that achieved remarkable growth.',
+      description:
+        "Our lead generation services have helped countless local businesses generate consistent inquiries, calls, and sales.",
       testimonials: [
         {
-          id: '1',
-          message: 'The leads generation services transformed our local businesses business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Before working with this team, we barely had 2-3 calls a day. Now we receive 25+ leads every day, and our salon is fully booked most weeks.",
+          highlight: "25+ Daily Leads",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Local Businesses Company'
+          name: "Pooja Mehta",
+          designation: "Owner",
+          company: "Glam Studio Salon",
         },
         {
-          id: '2',
-          message: 'Outstanding leads generation expertise specifically for local businesses. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for local businesses',
+          id: "2",
+          message:
+            "As a gym owner, I struggled to get new members. After their campaigns, my membership grew by 60% in just 3 months.",
+          highlight: "60% Growth",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Local Businesses Solutions'
-        }
-      ]
+          name: "Ravi Kumar",
+          designation: "Founder",
+          company: "IronCore Gym",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Local Businesses Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your local businesses business.'
-    }
-  }
+      title: "Turn Local Searches Into Paying Customers",
+      subtitle: "CALLS • INQUIRIES • SALES",
+      description:
+        "Stop losing leads to competitors. With our proven strategies, your business will enjoy a steady stream of high-quality leads every day.",
+    },
+  },
 };

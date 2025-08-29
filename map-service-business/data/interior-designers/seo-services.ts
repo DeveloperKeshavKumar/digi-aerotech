@@ -1,198 +1,236 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconSearch,
+  IconBrush,
+  IconBuildingSkyscraper,
+  IconHome,
+  IconTrendingUp,
+  IconUsers,
+  IconArrowRight,
+  IconChecklist,
+  IconDeviceDesktop,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'seo-services',
-  business: 'interior-designers',
+  service: "seo-services",
+  business: "interior-designers",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant2",
+    whyChooseUs: "variant3",
+    process: "variant1",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'seo-services',
+    slug: "seo-services-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Interior Designers", gradient: false },
+            { text: "Need SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Interior design is highly competitive — if you’re not ranking on Google when people search 'interior designers near me' or 'home renovation experts', you’re losing clients to competitors.",
+          painPoints: [
+            "Low ranking on Google search results",
+            "Relying only on word-of-mouth for projects",
+            "Struggling to attract high-value clients online",
+            "Competitors dominating map & organic results",
+            "Website traffic not converting into consultations",
+          ],
+          solutionPoints: [
+            "Local SEO that ranks you for 'interior designers near me'",
+            "Keyword targeting for premium home & office design services",
+            "On-page optimization for better visibility & credibility",
+            "Content marketing that builds authority in design space",
+            "Conversion-focused SEO to turn visitors into clients",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Google Ranking",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How can SEO help interior designers?",
+              answer:
+                "SEO increases your visibility on Google, helps you rank for design-related searches, and ensures clients find your services before competitors.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do I need local SEO as an interior designer?",
+              answer:
+                "Yes. Most clients look for designers within their city or region. Local SEO ensures you appear in Google Maps & nearby searches.",
+              icon: React.createElement(IconHome, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How long does it take to see results?",
+              answer:
+                "SEO results typically take 3–6 months, but the leads generated are organic, consistent, and long-term compared to paid ads.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Seo Services for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Rank Higher. Get More Clients.",
+      headlineKeywords: ["Interior Design SEO", "Local SEO", "Content Marketing"],
       brandLine: [
-        { text: "Seo Services for Interior Designers", gradient: false }
+        {
+          text: "📈 More Visibility. More Leads. More Projects.",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized seo services strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Our tailored SEO services help interior designers dominate Google rankings, attract homeowners & businesses, and grow a strong pipeline of design projects.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Boost My SEO",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Local Visibility",
+          description: "Rank on top when clients search 'interior designers near me'.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Organic Traffic",
+          description: "Drive consistent inquiries without ad spending.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconChecklist, { size: 32 }),
+          title: "Qualified Leads",
+          description: "Get clients ready to book design consultations.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Interior Design SEO?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconDeviceDesktop, { size: 28 }),
+          title: "Design Industry Keywords",
+          description: "We optimize for terms that matter — home interiors, luxury design, modern renovation, and more.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Proven SEO Framework",
+          description: "On-page + Local SEO + Content strategies designed to rank fast.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Long-Term Growth",
+          description: "Unlike ads, SEO delivers compounding results with time.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Seo Services for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start My SEO Growth",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Seo Services Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for interior designers businesses.',
+      title: "Our SEO Process for Interior Designers",
+      subtitle: "RESEARCH • OPTIMIZE • RANK",
+      description:
+        "We follow a step-by-step approach to boost visibility, attract clients, and build authority for your design business.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "SEO Audit",
+          description: "Analyze your website’s current performance, rankings, and competitors.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific interior designers goals.'
+          title: "Keyword Research",
+          description: "Find profitable design-related keywords potential clients search for.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with interior designers focus.'
+          title: "On-Page Optimization",
+          description: "Optimize site structure, content, and meta-tags to improve rankings.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Local SEO",
+          description: "Rank higher on Google Maps & local pack searches for your city.",
+        },
+        {
+          id: 5,
+          title: "Content & Backlinks",
+          description: "Create blogs, case studies & earn authority backlinks to grow domain trust.",
+        },
+        {
+          id: 6,
+          title: "Reporting & Growth",
+          description: "Track keyword improvements, organic traffic, and lead conversions monthly.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Interior Designers Who", gradient: false },
+        { text: "Grew With SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "Our SEO strategies have helped interior designers gain consistent leads, rank higher, and secure premium design projects.",
       testimonials: [
         {
-          id: '1',
-          message: 'The seo services services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Thanks to their SEO, we now rank #1 for 'luxury interior designers in Mumbai'. Our leads have doubled!",
+          highlight: "SEO Success",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Ritika Malhotra",
+          designation: "Founder",
+          company: "Ritika Designs",
         },
         {
-          id: '2',
-          message: 'Outstanding seo services expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "Local SEO gave us more inquiries from homeowners in our city than we ever got from ads. A total game-changer!",
+          highlight: "Local SEO Growth",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Nikhil Gupta",
+          designation: "Creative Director",
+          company: "Elite Spaces",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your interior designers business.'
-    }
-  }
+      title: "Rank Higher & Win More Interior Projects",
+      subtitle: "OPTIMIZE • RANK • GROW",
+      description:
+        "Stop losing clients to competitors who rank above you. Let’s optimize your website for SEO and secure your place at the top of Google.",
+    },
+  },
 };

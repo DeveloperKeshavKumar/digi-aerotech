@@ -1,198 +1,240 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconShoppingCart,
+  IconMapPin,
+  IconUsers,
+  IconArrowRight,
+  IconDeviceMobile,
+  IconTrendingUp,
+  IconSearch,
+  IconStar,
+  IconBuildingStore,
+  IconPhoneCall,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'aso-services',
-  business: 'local-businesses',
+  service: "aso-services",
+  business: "local-business",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant3",
+    whyChooseUs: "variant1",
+    process: "variant2",
+    testimonials: "variant3",
   },
   data: {
-    slug: 'aso-services',
+    slug: "aso-services-local-business",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Local Businesses", gradient: false },
+            { text: "Need ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "From restaurants to salons, gyms to retail shops—local businesses are launching apps to connect with nearby customers. But without proper ASO, your app will stay hidden in crowded app stores.",
+          painPoints: [
+            "Low app visibility on Play Store & App Store",
+            "Struggling to get new downloads from local customers",
+            "Poor keyword optimization for ‘near me’ searches",
+            "Negative or few reviews affecting trust",
+            "Competitors outranking your business app",
+          ],
+          solutionPoints: [
+            "Boost app rankings for location-based searches",
+            "Attract new local customers through optimized keywords",
+            "Increase downloads with compelling visuals & descriptions",
+            "Improve ratings & reputation with review strategies",
+            "Stay ahead of local competitors with smart ASO tactics",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Optimize My Local Business App",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do local businesses need ASO?",
+              answer:
+                "Because ASO improves app visibility in Play Store & App Store, helping local businesses attract more nearby customers.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can ASO increase app downloads for small businesses?",
+              answer:
+                "Yes, by optimizing titles, descriptions, keywords, and visuals, we drive more organic downloads from local searches.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you optimize for ‘near me’ searches?",
+              answer:
+                "Absolutely. We focus on local intent keywords like ‘salon near me’ or ‘best café app’ to maximize reach.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Can you improve app reviews & ratings?",
+              answer:
+                "Yes, we help build trust by generating more positive reviews, managing feedback, and boosting app credibility.",
+              icon: React.createElement(IconStar, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Aso Services for Local Businesses?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Boost",
+      headlineKeywords: ["App Visibility", "Downloads", "Local Growth"],
       brandLine: [
-        { text: "Aso Services for Local Businesses", gradient: false }
+        {
+          text: "📱 Powerful ASO Services for Local Businesses",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized aso services strategies designed specifically for local businesses. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help local businesses optimize their apps for Play Store & App Store to increase visibility, downloads, and customer engagement.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start My ASO Campaign",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "50% More Installs",
+          description: "Boost app downloads for local stores & services",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Local Businesses served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Local Reach",
+          description: "Target nearby customers searching for your business",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconDeviceMobile, { size: 32 }),
+          title: "Better Visibility",
+          description: "Rank higher for app store & location-based keywords",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Local Businesses?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Local Business ASO?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of local businesses market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBuildingStore, { size: 28 }),
+          title: "Local Business Experts",
+          description: "We specialize in helping small & medium local businesses grow through ASO.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for local businesses businesses.'
+          icon: React.createElement(IconPhoneCall, { size: 28 }),
+          title: "Customer Engagement",
+          description: "Our strategies improve app engagement & retention for local users.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Growth-Oriented",
+          description: "We focus on long-term growth by optimizing downloads, ratings & conversions.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Aso Services for Local Businesses',
-      subtitle: 'LOCAL BUSINESSES SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for local businesses businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for local businesses market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for local businesses audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for local businesses businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get My App Optimized",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Aso Services Process for Local Businesses',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for local businesses businesses.',
+      title: "Our ASO Process for Local Businesses",
+      subtitle: "OPTIMIZED • DISCOVERED • DOWNLOADED",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a structured ASO strategy designed for local businesses to increase app discoverability, installs, and customer loyalty.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your local businesses business and market landscape.'
+          title: "App Store Audit",
+          description: "We review your app title, description, keywords, and ratings to find improvement opportunities.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific local businesses goals.'
+          title: "Keyword Research",
+          description: "We identify high-intent local keywords like ‘near me’ searches to optimize your app listing.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with local businesses focus.'
+          title: "Creative Optimization",
+          description: "We optimize app icons, screenshots, and videos to make your listing stand out and attract clicks.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on local businesses market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Review & Reputation Boost",
+          description: "We implement strategies to generate positive reviews and build customer trust.",
+        },
+        {
+          id: 5,
+          title: "Monitoring & Reporting",
+          description: "We track rankings, downloads, and reviews to continuously improve ASO performance.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Local Businesses", gradient: false },
+        { text: "Who Succeeded with Our ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from local businesses businesses that achieved remarkable growth.',
+      description:
+        "From cafes to gyms, salons to service providers—our ASO strategies have helped local businesses increase app visibility, downloads, and loyal customers.",
       testimonials: [
         {
-          id: '1',
-          message: 'The aso services services transformed our local businesses business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our salon app downloads doubled after their ASO strategy. We now get new walk-ins daily from local searches.",
+          highlight: "2X More Installs",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Local Businesses Company'
+          name: "Anjali Verma",
+          designation: "Owner",
+          company: "Glow Salon & Spa",
         },
         {
-          id: '2',
-          message: 'Outstanding aso services expertise specifically for local businesses. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for local businesses',
+          id: "2",
+          message:
+            "Their ASO optimization helped our restaurant app rank for ‘food delivery near me’. Our orders increased by 60%.",
+          highlight: "Increased Orders",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Local Businesses Solutions'
-        }
-      ]
+          name: "Rohit Mehra",
+          designation: "Founder",
+          company: "CityBites Café",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Local Businesses Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your local businesses business.'
-    }
-  }
+      title: "Make Your Local Business App Stand Out",
+      subtitle: "OPTIMIZED • DISCOVERED • DOWNLOADED",
+      description:
+        "Don’t let your app stay hidden in crowded app stores. Partner with us for ASO services that bring your local business app in front of the right audience.",
+    },
+  },
 };

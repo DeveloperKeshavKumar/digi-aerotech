@@ -1,198 +1,232 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHome,
+  IconRulerMeasure,
+  IconUsers,
+  IconBuildingSkyscraper,
+  IconCalendarEvent,
+  IconPhoneCall,
+  IconTarget,
+  IconArrowRight,
+  IconTrendingUp,
+  IconStar,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'leads-generation',
-  business: 'interior-designers',
+  service: "leads-generation",
+  business: "interior-designers",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'leads-generation',
+    slug: "leads-generation-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Interior Designers Need", gradient: false },
+            { text: "Consistent Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Relying only on referrals or offline marketing is risky. Without a strong lead generation system, interior designers lose projects to competitors who show up first.",
+          painPoints: [
+            "No regular client inquiries coming in",
+            "Too dependent on referrals & word-of-mouth",
+            "Losing luxury projects to competitors",
+            "Inconsistent pipeline of leads and projects",
+            "Wasting time on low-quality prospects",
+          ],
+          solutionPoints: [
+            "Get daily qualified inquiries from homeowners & businesses",
+            "Reach premium clients searching for design projects",
+            "Filter out low-value prospects with targeted campaigns",
+            "Build a consistent sales pipeline",
+            "Boost revenue with high-ticket project leads",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get More Client Leads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How do you generate leads for interior designers?",
+              answer:
+                "We use a mix of Google Ads, Meta Ads, SEO, and landing pages designed to capture homeowners, offices, and commercial property clients looking for interior services.",
+              icon: React.createElement(IconTarget, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Will the leads be high-quality?",
+              answer:
+                "Yes. We qualify leads using targeted ads, location filters, and optimized landing pages so you only get serious inquiries.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can you bring luxury project leads?",
+              answer:
+                "Absolutely. Our campaigns are designed to attract premium clients who are actively searching for high-end design services.",
+              icon: React.createElement(IconStar, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Leads Generation for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "High-Value Inquiries",
+      headlineKeywords: ["Leads Generation", "Interior Designers", "Premium Projects"],
       brandLine: [
-        { text: "Leads Generation for Interior Designers", gradient: false }
+        {
+          text: "🎯 Consistent Leads for Interior Designers & Studios",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We generate qualified leads for interior designers by targeting homeowners, corporates, and businesses actively looking for design services. Get more inquiries, book consultations, and close premium projects.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Getting Leads",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "10X Leads",
+          description: "Interior designers see up to 10x more client inquiries.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "Qualified Clients",
+          description: "Get leads that convert into real high-ticket projects.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCalendarEvent, { size: 32 }),
+          title: "Consistent Pipeline",
+          description: "Never worry about empty calendars again.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Lead Generation?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconHome, { size: 28 }),
+          title: "Industry-Specific Campaigns",
+          description: "We design campaigns exclusively for interior businesses.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconPhoneCall, { size: 28 }),
+          title: "Verified Leads",
+          description: "Only real inquiries from potential clients, no junk leads.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconRulerMeasure, { size: 28 }),
+          title: "High Conversion",
+          description: "Landing pages built to convert prospects into clients.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Leads Generation for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get My Leads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Leads Generation Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for interior designers businesses.',
+      title: "Our Lead Generation Process for Interior Designers",
+      subtitle: "ATTRACT • CAPTURE • NURTURE • CONVERT",
+      description:
+        "We use data-driven strategies and creative campaigns to deliver a steady flow of high-quality leads for interior design studios and freelancers.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Market & Audience Research",
+          description: "We identify homeowners, corporates, and businesses searching for design services.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific interior designers goals.'
+          title: "Ad Campaigns Setup",
+          description: "We run Google Ads, Meta Ads, and targeted campaigns designed to attract high-value clients.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with interior designers focus.'
+          title: "Landing Page Optimization",
+          description: "Custom-built landing pages convert clicks into actual inquiries.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Lead Qualification",
+          description: "We filter out low-value inquiries and focus on serious clients ready to invest.",
+        },
+        {
+          id: 5,
+          title: "Lead Delivery & Nurturing",
+          description: "We deliver leads directly to you and guide nurturing strategies for maximum conversions.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "What Interior Designers", gradient: false },
+        { text: "Say About Our Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "From freelancers to full interior firms, our lead generation strategies have helped designers grow their client base consistently.",
       testimonials: [
         {
-          id: '1',
-          message: 'The leads generation services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Before this, I was only getting 1-2 inquiries a month. Now I get daily leads, many of which convert into big-ticket projects.",
+          highlight: "Daily Leads",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Kunal Sharma",
+          designation: "Interior Designer",
+          company: "DesignCraft Studio",
         },
         {
-          id: '2',
-          message: 'Outstanding leads generation expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "Their system delivers serious clients only. I no longer waste time on casual inquiries. My business revenue has doubled in 6 months.",
+          highlight: "Serious Clients",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Ankit Malhotra",
+          designation: "Founder",
+          company: "ModernSpaces",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your interior designers business.'
-    }
-  }
+      title: "Get Daily Qualified Leads for Your Interior Business",
+      subtitle: "MORE INQUIRIES • MORE CLIENTS • MORE REVENUE",
+      description:
+        "We specialize in generating premium, high-converting leads for interior designers. Stop waiting for clients—let us bring them to you with proven lead generation strategies.",
+    },
+  },
 };

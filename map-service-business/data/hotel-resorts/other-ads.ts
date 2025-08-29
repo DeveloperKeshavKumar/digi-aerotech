@@ -1,198 +1,242 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandYoutube,
+  IconBrandTiktok,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+  IconBrandSnapchat,
+  IconTrendingUp,
+  IconUsers,
+  IconHeart,
+  IconShieldCheck,
+  IconArrowRight
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'other-ads',
-  business: 'hotel-resorts',
+  service: "other-ads",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'other-ads',
+    slug: "other-ads-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Challenges Hotels & Resorts Face with", gradient: false },
+            { text: "Multi-Platform Advertising", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline:
+            "Without leveraging multiple social & video platforms, hotels and resorts miss direct bookings, brand awareness, and repeat customers.",
+          painPoints: [
+            "Limited reach across social & video platforms",
+            "Low engagement on Instagram, TikTok, or YouTube",
+            "Difficulty creating targeted campaigns for different audiences",
+            "Missing opportunities for direct bookings & promotions"
+          ],
+          solutionPoints: [
+            "Platform-specific campaigns on TikTok, YouTube, Snapchat, Twitter, LinkedIn",
+            "Engaging ad creatives, reels, and stories to attract guests",
+            "Targeted campaigns for domestic & international travelers",
+            "Conversion-focused strategies to maximize bookings"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Hotel Ads Across Platforms",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Which platforms should hotels advertise on?",
+              answer:
+                "We run campaigns on TikTok, YouTube, Snapchat, Twitter, and LinkedIn depending on your target audience for maximum bookings.",
+              icon: React.createElement(IconBrandTiktok, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can you target international travelers?",
+              answer:
+                "Yes. We create multi-country ad campaigns with language and culture-specific creatives to attract global guests.",
+              icon: React.createElement(IconBrandLinkedin, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How do these ads increase direct bookings?",
+              answer:
+                "Through conversion-focused creatives, call-to-action links, and retargeting strategies, ads drive guests directly to your booking portal.",
+              icon: React.createElement(IconBrandYoutube, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Are these campaigns suitable for small resorts?",
+              answer:
+                "Absolutely. We design scalable campaigns so even boutique hotels and resorts gain maximum visibility and bookings.",
+              icon: React.createElement(IconBrandSnapchat, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Reach More Guests with",
       headlineKeywords: [
-        "Other Ads for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "YouTube Hotel Ads",
+        "TikTok Resort Campaigns",
+        "Snapchat Promotions",
+        "LinkedIn Hotel Marketing",
+        "Twitter Engagement Ads"
       ],
       brandLine: [
-        { text: "Other Ads for Hotel Resorts", gradient: false }
+        {
+          text: "📢 Multi-Platform Ads to Increase Bookings & Brand Awareness for Hotels & Resorts",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized other ads strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help hotels & resorts advertise on TikTok, YouTube, Snapchat, Twitter, and LinkedIn to reach targeted travelers, increase bookings, and build brand visibility.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Multi-Platform Ads Today",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "500,000+ Ad Views",
+          description: "Potential guests reached through multi-platform campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconHeart, { size: 32 }),
+          title: "High Engagement",
+          description: "Increased clicks, interactions, and bookings",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Boost Bookings",
+          description: "Direct conversions from ad campaigns",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Choose Our Multi-Platform Ads for", gradient: false },
+        { text: "Hotels & Resorts", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandYoutube, { size: 28 }),
+          title: "Platform-Specific Strategies",
+          description: "Custom campaigns designed for each social & video platform.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconBrandTiktok, { size: 28 }),
+          title: "Engaging Visual Content",
+          description: "Ads, reels, and videos that capture the traveler’s attention.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBrandSnapchat, { size: 28 }),
+          title: "Targeted Audience Reach",
+          description: "We precisely target domestic & international travelers.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Other Ads for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Advertise on Multiple Platforms Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Other Ads Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for hotel resorts businesses.',
+      title: "Our Multi-Platform Advertising Process",
+      subtitle: "PLAN • CREATE • LAUNCH • OPTIMIZE",
+      description:
+        "We plan and launch high-performing ad campaigns across multiple platforms to maximize bookings, engagement, and brand awareness.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "Audience & Platform Research",
+          description:
+            "Identify your ideal guests and the platforms they engage with most.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific hotel resorts goals.'
+          title: "Creative Concept & Design",
+          description:
+            "Craft visually stunning ads, videos, and reels tailored for each platform.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with hotel resorts focus.'
+          title: "Campaign Setup & Launch",
+          description:
+            "Configure ad campaigns with precise targeting, budgeting, and scheduling for maximum ROI.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Monitoring & Optimization",
+          description:
+            "Continuously track performance and optimize creatives, targeting, and bidding to improve results.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts That ", gradient: false },
+        { text: "Increased Bookings with Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "Discover how our social & video ad campaigns helped hotels and resorts reach more guests, boost bookings, and increase brand visibility.",
       testimonials: [
         {
-          id: '1',
-          message: 'The other ads services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our resort's TikTok & YouTube campaigns increased direct bookings by 40% within 3 months!",
+          highlight: "40% increase in direct bookings",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Rohit Mehra",
+          designation: "Owner",
+          company: "Oceanview Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding other ads expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "We reached thousands of potential guests via Snapchat & Twitter ads, and our weekend occupancy soared.",
+          highlight: "High engagement & occupancy",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Priya Nair",
+          designation: "Manager",
+          company: "Mountainview Hotel",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Launch Multi-Platform Ads for Your Hotel or Resort Today",
+      subtitle: "INCREASE BOOKINGS • BOOST ENGAGEMENT • BUILD BRAND VISIBILITY",
+      description:
+        "Book a free consultation and let our experts design a multi-platform ad strategy that drives direct bookings, engages guests, and grows your hotel brand.",
+    },
+  },
 };

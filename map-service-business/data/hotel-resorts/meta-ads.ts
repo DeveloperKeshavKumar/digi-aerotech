@@ -1,198 +1,243 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandMeta,
+  IconCamera,
+  IconTrendingUp,
+  IconArrowRight,
+  IconUsers,
+  IconHeart,
+  IconPhoneCall,
+  IconCalendarEvent,
+  IconWorld
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'meta-ads',
-  business: 'hotel-resorts',
+  service: "meta-ads",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'meta-ads',
+    slug: "meta-ads-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Hotels & Resorts Face Challenges with", gradient: false },
+            { text: "Meta Ads Campaigns", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Without optimized Meta campaigns, your property loses visibility on Facebook and Instagram, missing out on travelers ready to book.",
+          painPoints: [
+            "Low engagement on social media ads",
+            "Targeting the wrong audience segments",
+            "High ad costs without conversions",
+            "Poor ad creatives and copy",
+            "Limited direct booking leads"
+          ],
+          solutionPoints: [
+            "Strategic audience targeting including local & international travelers",
+            "High-converting ad creatives optimized for Instagram & Facebook",
+            "Seasonal campaigns highlighting special offers & packages",
+            "Lead generation funnels integrated with booking systems",
+            "Continuous A/B testing and optimization for ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch High-Converting Meta Ads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How can Meta Ads increase hotel bookings?",
+              answer:
+                "By targeting the right travelers with attractive offers and visuals, we drive inquiries and direct bookings from Facebook and Instagram.",
+              icon: React.createElement(IconBrandMeta, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you create ad creatives for hotels and resorts?",
+              answer:
+                "Yes, we craft high-quality visuals, reels, and videos highlighting your property’s best features to maximize engagement.",
+              icon: React.createElement(IconCamera, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can I target international travelers?",
+              answer:
+                "Absolutely. We run location-based and interest-based campaigns to attract travelers from your target markets.",
+              icon: React.createElement(IconWorld, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How do you ensure ROI on Meta Ads?",
+              answer:
+                "We continuously analyze campaign performance, optimize targeting, creatives, and bidding to ensure bookings and inquiries increase.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Meta Ads for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Attract More Travelers",
+      headlineKeywords: ["Hotel Meta Ads", "Resort Instagram Ads", "Facebook Booking Campaigns"],
       brandLine: [
-        { text: "Meta Ads for Hotel Resorts", gradient: false }
+        {
+          text: "🚀 Boost Your Hotel & Resort Bookings with Meta Ads",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Our Meta Ads strategies help hotels and resorts attract travelers, increase direct bookings, and maximize ROI from Facebook & Instagram campaigns.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Your Meta Campaign",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "50,000+ Targeted Travelers",
+          description: "Reached with precise Meta Ads campaigns.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconHeart, { size: 32 }),
+          title: "High Engagement Ads",
+          description: "Eye-catching visuals and compelling copy drive results.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCalendarEvent, { size: 32 }),
+          title: "Seasonal Campaign Success",
+          description: "Increase bookings during peak periods with timely campaigns.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Our Meta Ads Work for", gradient: false },
+        { text: "Hotels & Resorts", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconCamera, { size: 28 }),
+          title: "Creative & Engaging Ads",
+          description: "We design visuals that make travelers stop scrolling and book instantly.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Precision Audience Targeting",
+          description: "Reach travelers based on location, interests, behaviors, and booking intent.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Optimized for Conversions",
+          description: "Every ad is tested, analyzed, and improved to maximize bookings and ROI.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Meta Ads for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Launch Meta Ads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Meta Ads Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for hotel resorts businesses.',
+      title: "Our Meta Ads Process for Hotels & Resorts",
+      subtitle: "TARGET • ENGAGE • CONVERT",
+      description:
+        "We create data-driven campaigns that target the right audience, engage travelers with high-quality visuals, and convert them into direct bookings.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "Audience Research & Segmentation",
+          description:
+            "Identify ideal travelers using demographics, interests, behaviors, and location targeting.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific hotel resorts goals.'
+          title: "Ad Creative Development",
+          description:
+            "Produce stunning visuals, videos, and reels highlighting rooms, amenities, packages, and experiences.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with hotel resorts focus.'
+          title: "Campaign Setup & Launch",
+          description:
+            "Configure campaigns, ad sets, and creative placements for maximum reach and engagement.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "A/B Testing & Optimization",
+          description:
+            "Continuously monitor ad performance, test variations, and refine to increase CTR and bookings.",
+        },
+        {
+          id: 5,
+          title: "Conversion Tracking & Reporting",
+          description:
+            "Track clicks, leads, bookings, and ROI to ensure every ad dollar drives measurable results.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts That", gradient: false },
+        { text: "Boosted Bookings with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "See how our Meta Ads campaigns helped hotels and resorts attract travelers, increase inquiries, and maximize ROI.",
       testimonials: [
         {
-          id: '1',
-          message: 'The meta ads services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Meta Ads brought us over 300 inquiries in the first month, resulting in a 40% increase in direct bookings.",
+          highlight: "40% increase in direct bookings",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Rohit Gupta",
+          designation: "Owner",
+          company: "Beachside Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding meta ads expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "Instagram & Facebook campaigns created by the team helped us fill rooms during the off-season.",
+          highlight: "Off-season bookings increased",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Priya Sharma",
+          designation: "Manager",
+          company: "Mountain View Hotel",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Start Your Hotel & Resort Meta Ads Today",
+      subtitle: "ATTRACT TRAVELERS • DRIVE BOOKINGS • MAXIMIZE ROI",
+      description:
+        "Book a free consultation now and let our experts design high-performing Meta Ads campaigns for your hotel or resort.",
+    },
+  },
 };

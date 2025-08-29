@@ -1,198 +1,232 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBuildingSkyscraper,
+  IconBrandBooking,
+  IconMapPin,
+  IconBed,
+  IconStars,
+  IconWorld,
+  IconTrendingUp,
+  IconUsers,
+  IconArrowRight,
+  IconDeviceMobile,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'aso-services',
-  business: 'hotel-resorts',
+  service: "aso-services",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'aso-services',
+    slug: "aso-services-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Hotels & Resorts", gradient: false },
+            { text: "Need ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "The hospitality industry is now mobile-first. Guests search, compare, and book hotels & resorts through apps. Without ASO, your hotel app risks staying invisible in crowded app stores.",
+          painPoints: [
+            "Low visibility on Play Store and App Store",
+            "Fewer bookings through hotel apps",
+            "Generic app titles and descriptions hurting discoverability",
+            "Poor reviews lowering app credibility",
+            "High competition from OTAs like Booking.com & Airbnb",
+          ],
+          solutionPoints: [
+            "Optimized app titles, descriptions & keywords for maximum visibility",
+            "Showcase amenities & unique experiences in metadata",
+            "Boost installs, reviews, and user engagement organically",
+            "Higher rankings in travel & hospitality app categories",
+            "Increased direct bookings, reducing dependency on OTAs",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Hotel App Visibility",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How does ASO help hotels & resorts?",
+              answer:
+                "ASO helps your hotel or resort app rank higher in app stores, making it easier for travelers to discover your property and book directly.",
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can ASO reduce my dependency on OTAs?",
+              answer:
+                "Yes, by driving more direct bookings through your app, ASO reduces reliance on third-party OTAs and saves commission fees.",
+              icon: React.createElement(IconBrandBooking, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How long does it take to see results from ASO?",
+              answer:
+                "Most hotels & resorts see a noticeable boost in app ranking and downloads within 4–8 weeks of consistent ASO efforts.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Aso Services for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Get More Direct Bookings",
+      headlineKeywords: ["ASO Services", "Hotels", "Resorts"],
       brandLine: [
-        { text: "Aso Services for Hotel Resorts", gradient: false }
+        {
+          text: "📱 Turn Your Hotel App Into a Direct Booking Engine",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized aso services strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Our ASO services for hotels & resorts optimize your app to rank higher, attract more travelers, and drive direct bookings — reducing reliance on OTAs.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start My ASO Strategy",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconDeviceMobile, { size: 32 }),
+          title: "50% More Visibility",
+          description: "Hotels gain higher rankings in App Store & Play Store searches.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "Direct Bookings",
+          description: "Encourage users to book directly via your hotel app.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStars, { size: 32 }),
+          title: "Better Ratings",
+          description: "Boost reviews and ratings to win traveler trust instantly.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Hotel & Resort ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Travel-Focused Strategy",
+          description: "We specialize in ASO strategies tailored for the hospitality industry.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "User Engagement Boost",
+          description: "We optimize to not only get downloads but also retain loyal guests.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Proven ROI",
+          description: "Hotels & resorts see more bookings and revenue through direct app installs.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Aso Services for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Optimize My Hotel App",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Aso Services Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for hotel resorts businesses.',
+      title: "Our ASO Process for Hotels & Resorts",
+      subtitle: "RESEARCH • OPTIMIZE • BOOST BOOKINGS",
+      description:
+        "We follow a proven ASO process to ensure your hotel or resort app dominates search results and drives direct bookings.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "App Audit & Keyword Research",
+          description: "We analyze your hotel app and competitors to identify powerful keywords travelers are searching for.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific hotel resorts goals.'
+          title: "Metadata Optimization",
+          description: "Titles, descriptions, and tags are optimized to highlight your property, amenities, and unique experiences.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with hotel resorts focus.'
+          title: "Visual Enhancement",
+          description: "We create high-converting app icons, screenshots, and videos to attract more downloads.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Review & Ratings Boost",
+          description: "We implement strategies to get more positive reviews, building trust among travelers.",
+        },
+        {
+          id: 5,
+          title: "Ongoing Tracking & Updates",
+          description: "We track rankings, analyze data, and update strategies to keep your app growing long-term.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts That", gradient: false },
+        { text: "Increased Bookings via ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "From boutique hotels to luxury resorts, our ASO services have helped hospitality brands reduce OTA dependency and increase direct bookings.",
       testimonials: [
         {
-          id: '1',
-          message: 'The aso services services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our hotel app downloads grew by 60% in three months. Now, 40% of our bookings come directly through our app.",
+          highlight: "Direct Bookings",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Rakesh Patel",
+          designation: "Owner",
+          company: "Seaside Luxury Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding aso services expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "Thanks to ASO, our app ranks higher than competitors in our city. We now get consistent new bookings every week.",
+          highlight: "App Store Ranking",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Ananya Gupta",
+          designation: "Manager",
+          company: "Urban Stay Hotels",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Make Your Hotel App the #1 Choice for Travelers",
+      subtitle: "VISIBILITY • BOOKINGS • GROWTH",
+      description:
+        "Don’t let your hotel or resort app stay hidden. With our ASO services, you’ll rank higher, get more downloads, and drive more direct bookings — all while saving on OTA fees.",
+    },
+  },
 };

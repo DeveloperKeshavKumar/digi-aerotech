@@ -1,198 +1,248 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconMapPin,
+  IconSearch,
+  IconPill,
+  IconBuildingSkyscraper,
+  IconTrendingUp,
+  IconUsers,
+  IconChartBar,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'local-seo',
-  business: 'pharma-companies',
+  service: "local-seo",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant1",
+    whyChooseUs: "variant3",
+    process: "variant2",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'local-seo',
+    slug: "local-seo-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Companies", gradient: false },
+            { text: "Need Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "With healthcare and medicine purchases often being location-based, ranking locally is critical for pharma growth. Yet, many pharma companies struggle to appear in local searches, losing out to competitors.",
+          painPoints: [
+            "Pharma distributors not ranking for local searches",
+            "Retail pharmacies invisible on Google Maps",
+            "Missed opportunities for ‘near me’ searches",
+            "Low visibility for wholesale medicine suppliers",
+            "Competitors dominating local directories",
+          ],
+          solutionPoints: [
+            "Dominate local Google search results",
+            "Appear in top 3 positions of Google Maps Pack",
+            "Boost visibility for distributors & retailers",
+            "Optimize for ‘near me’ and city-based keywords",
+            "Build trust with local patients & healthcare providers",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Pharma Visibility Locally",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How does Local SEO help pharma companies?",
+              answer:
+                "Local SEO helps your pharmacy, distributor, or wholesale business appear in Google’s local searches and Maps, driving footfall and B2B inquiries.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can pharma manufacturers also benefit?",
+              answer:
+                "Yes, manufacturers targeting hospitals, clinics, and distributors in specific regions see higher leads and stronger visibility.",
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you optimize Google Business Profile?",
+              answer:
+                "Absolutely. We optimize and manage your pharma company’s Google Business Profile for maximum local visibility.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How fast can I see results with Local SEO?",
+              answer:
+                "Most pharma businesses notice improvements in 4–8 weeks, with stronger rankings and more local inquiries over time.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Rank",
       headlineKeywords: [
-        "Local Seo for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Pharma Distributors Near Me",
+        "Local Pharma Companies",
+        "Retail Pharmacy SEO",
+        "Medicine Suppliers",
       ],
       brandLine: [
-        { text: "Local Seo for Pharma Companies", gradient: false }
+        {
+          text: "📍 Local SEO for Pharma Companies That Drives Real Patients & Distributors",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized local seo strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help pharma companies, distributors, and pharmacies dominate local searches, Google Maps, and ‘near me’ results to generate high-quality local leads.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Local SEO for Pharma",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "3X Footfall",
+          description: "Increase in local pharmacy visits",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "70% More Leads",
+          description: "From ‘near me’ Google searches",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Top 3 Rankings",
+          description: "In Google Maps for pharma queries",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Local Seo', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Local SEO?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Maps Pack Domination",
+          description: "We place your pharmacy or distributor in the top 3 of Google Maps, driving instant trust & visibility.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "‘Near Me’ Optimization",
+          description: "We optimize keywords like ‘pharmacy near me’ or ‘medicine distributor in [city]’ for better local reach.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored local seo strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Proven Pharma SEO",
+          description: "Our strategies are tailored to the unique compliance and visibility needs of the pharma industry.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconPill, { size: 28 }),
+          title: "Trust & Authority",
+          description: "By improving reviews, citations, and listings, we help pharma companies build local credibility.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Local Seo for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive local seo solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom local seo strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of local seo campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Boost Pharma SEO Locally",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Local Seo Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to local seo that delivers measurable results for pharma companies businesses.',
+      title: "Our Pharma Local SEO Process",
+      subtitle: "FROM MAPS TO LEADS",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a structured approach to improve local rankings for pharma companies, ensuring better visibility and stronger local lead generation.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Local Market Research",
+          description: "We analyze local demand, competitor pharmacies, and keyword trends to map opportunities for your pharma business.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom local seo strategy tailored for your specific pharma companies goals.'
+          title: "Google Business Optimization",
+          description: "We fully optimize your Google Business Profile with NAP consistency, keywords, images, and service updates.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of local seo campaigns with pharma companies focus.'
+          title: "Local Content & Citations",
+          description: "We create localized content and build strong citations across directories, healthcare portals, and pharma listings.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Local Seo Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for local seo success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Review & Reputation Management",
+          description: "We encourage authentic patient reviews and manage responses to build trust and attract more local customers.",
+        },
+        {
+          id: 5,
+          title: "Performance Tracking",
+          description: "We monitor local rankings, CTRs, and leads while continuously optimizing for maximum ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Local Seo ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Businesses", gradient: false },
+        { text: "Winning with Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "Pharma companies and pharmacies that invested in local SEO with us now enjoy consistent walk-ins, distributor leads, and local partnerships.",
       testimonials: [
         {
-          id: '1',
-          message: 'The local seo services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our pharmacy was invisible on Google Maps. Within 6 weeks, we ranked in the top 3 for ‘pharmacy near me’ searches and saw a 2.5X increase in walk-ins.",
+          highlight: "2.5X More Walk-ins",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Dr. Meera Patel",
+          designation: "Owner",
+          company: "LifeCare Pharmacy",
         },
         {
-          id: '2',
-          message: 'Outstanding local seo expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "As a wholesale pharma distributor, local SEO helped us get more hospital inquiries and retail pharmacy partnerships. Highly recommend their strategies!",
+          highlight: "3.1X Growth in Distributor Leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Sandeep Verma",
+          designation: "Director",
+          company: "MediTrade Pharma",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR LOCAL SEO JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our local seo can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Dominate Local Searches for Pharma Today",
+      subtitle: "BE THE FIRST CHOICE FOR PATIENTS & DISTRIBUTORS",
+      description:
+        "From pharmacies to large distributors, we help every pharma business rank locally, drive qualified leads, and grow faster.",
+    },
+  },
 };

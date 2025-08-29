@@ -1,198 +1,233 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrush,
+  IconLayoutGrid,
+  IconArrowRight,
+  IconTrendingUp,
+  IconPalette,
+  IconBuilding,
+  IconHome,
+  IconUsers,
+  IconCalendarEvent,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'meta-ads',
-  business: 'interior-designers',
+  service: "meta-ads",
+  business: "interior-designers",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant1",
+    whyChooseUs: "variant3",
+    process: "variant2",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'meta-ads',
+    slug: "meta-ads-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Interior Designers", gradient: false },
+            { text: "Struggle with Clients Online", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Interior design is a visual business. But if you’re not showcasing your designs to the right audience on Facebook & Instagram, you’re missing out on high-paying clients.",
+          painPoints: [
+            "Relying only on word-of-mouth referrals",
+            "Posting randomly without strategy or reach",
+            "Low visibility among luxury homeowners",
+            "No clear targeting for dream clients",
+            "Ads that don’t generate qualified leads",
+          ],
+          solutionPoints: [
+            "Target homeowners, offices & luxury property buyers",
+            "Run high-converting visual campaigns",
+            "Leverage Instagram & Facebook Ads for brand awareness",
+            "Retarget website visitors & interested leads",
+            "Get steady design project inquiries every month",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch My Interior Ads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Do Meta Ads work for interior designers?",
+              answer:
+                "Yes. Facebook & Instagram Ads allow you to visually showcase your portfolio, target homeowners, and drive qualified leads straight to your inbox.",
+              icon: React.createElement(IconBrandInstagram, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can I target high-budget clients?",
+              answer:
+                "Absolutely. With precise targeting, you can reach audiences in premium localities, luxury homeowners, architects, and businesses needing interior services.",
+              icon: React.createElement(IconBuilding, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How soon can I see results?",
+              answer:
+                "Most interior designers start seeing inquiries within weeks of running optimized Meta Ads campaigns.",
+              icon: React.createElement(IconCalendarEvent, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Meta Ads for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Attract Premium Clients",
+      headlineKeywords: ["Meta Ads", "Interior Designers", "Facebook & Instagram"],
       brandLine: [
-        { text: "Meta Ads for Interior Designers", gradient: false }
+        {
+          text: "🎨 Show Your Designs. Attract Clients. Grow Your Interior Business.",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We create highly targeted Meta Ads campaigns that showcase your interior designs to homeowners & businesses, helping you secure high-value projects with consistent leads.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Run My Ads Now",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "4X ROI",
+          description: "Clients see 4x return on ad spend from Meta Ads.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Premium Leads",
+          description: "Reach luxury homeowners, architects & business clients.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrush, { size: 32 }),
+          title: "Visual Storytelling",
+          description: "Ads designed to showcase your interiors beautifully.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Meta Ads?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconPalette, { size: 28 }),
+          title: "Design-Focused Creatives",
+          description: "We design ad creatives that highlight your interiors perfectly.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconBrandFacebook, { size: 28 }),
+          title: "Precision Targeting",
+          description: "Ads are targeted to clients most likely to hire interior designers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconLayoutGrid, { size: 28 }),
+          title: "High-Conversion Funnels",
+          description: "We create conversion-focused landing pages for maximum results.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Meta Ads for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start My Ads Campaign",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Meta Ads Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for interior designers businesses.',
+      title: "Our Meta Ads Process for Interior Designers",
+      subtitle: "CREATE • TARGET • ENGAGE • CONVERT",
+      description:
+        "We don’t just run ads; we build campaigns designed to attract premium clients who value design excellence.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Audience Targeting",
+          description: "Identify & target luxury homeowners, offices, and businesses in your city.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific interior designers goals.'
+          title: "Creative Design",
+          description: "Craft engaging, visually stunning ad creatives showcasing your interiors.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with interior designers focus.'
+          title: "Ad Campaign Setup",
+          description: "Set up optimized campaigns with A/B tested ad copies, visuals, and CTAs.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Retargeting",
+          description: "Re-engage visitors & past leads who showed interest in your services.",
+        },
+        {
+          id: 5,
+          title: "Reporting & Optimization",
+          description: "Monitor performance & scale the best ads for maximum ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Interior Designers", gradient: false },
+        { text: "Winning Clients with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "Our Meta Ads campaigns help interior designers showcase their creativity, attract premium clients, and build a consistent flow of projects.",
       testimonials: [
         {
-          id: '1',
-          message: 'The meta ads services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Facebook & Instagram Ads helped me connect with homeowners looking for luxury interiors. Within weeks, I closed 2 big projects.",
+          highlight: "High-Value Projects",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Ritika Sharma",
+          designation: "Founder",
+          company: "ArtSpace Interiors",
         },
         {
-          id: '2',
-          message: 'Outstanding meta ads expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "Before Meta Ads, I relied only on referrals. Now, I get daily inquiries directly from my ads, and clients love the way my designs are showcased.",
+          highlight: "Consistent Leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Aditya Kapoor",
+          designation: "Creative Director",
+          company: "Aura Interiors",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your interior designers business.'
-    }
-  }
+      title: "Attract Premium Interior Projects with Meta Ads",
+      subtitle: "VISUALIZE • ENGAGE • CONVERT",
+      description:
+        "Don’t let your designs go unseen. With our Meta Ads expertise, your interior business will reach the right audience and convert them into paying clients.",
+    },
+  },
 };

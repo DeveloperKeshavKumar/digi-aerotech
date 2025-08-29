@@ -1,198 +1,266 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconShoppingBag,
+  IconStar,
+  IconRocket,
+  IconUsers,
+  IconShieldCheck,
+  IconCode,
+  IconDeviceDesktop,
+  IconSettings,
+  IconArrowRight,
+  IconPhone,
+  IconGlobe
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
-  service: 'website-maintenance',
+  service: 'web-design-development',
   business: 'fashion-brands',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant1',
+    whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'website-maintenance',
+    slug: 'web-design-development-maintenance-fashion-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Web Challenges Fashion Brands Face", gradient: false },
+            { text: "and How to Overcome Them", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Many fashion brands struggle with websites that fail to convert, look outdated, or lack proper maintenance.",
+          painPoints: [
+            "Outdated, non-responsive websites on mobile and desktop",
+            "Low website conversion and slow page loading times",
+            "Poor SEO performance leading to low organic traffic",
+            "Difficulty managing content updates and inventory",
+            "Frequent website downtime and technical issues"
+          ],
+          solutionPoints: [
+            "Custom responsive web design with modern UI/UX",
+            "Conversion-focused landing pages & e-commerce design",
+            "SEO-friendly development for higher Google rankings",
+            "Content and inventory management systems integration",
+            "Ongoing website maintenance and performance monitoring"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get Your Fashion Website Optimized"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Can you redesign our existing fashion website?',
+              answer: 'Yes. We revamp websites with modern design, better UX, and improved conversion rates.',
+              icon: React.createElement(IconDeviceDesktop, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you build e-commerce websites?',
+              answer: 'Absolutely. We design and develop fashion e-commerce sites optimized for sales.',
+              icon: React.createElement(IconShoppingBag, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you provide website maintenance?',
+              answer: 'Yes. We offer ongoing updates, backups, security patches, and technical support.',
+              icon: React.createElement(IconSettings, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Is your development SEO-friendly?',
+              answer: 'Our websites follow best SEO practices, ensuring higher visibility and organic traffic.',
+              icon: React.createElement(IconGlobe, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How long does a website project take?',
+              answer: 'Typically 4–8 weeks depending on complexity, design, and functionality requirements.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you integrate CMS for easy content updates?',
+              answer: 'Yes. We integrate user-friendly CMS systems to manage products, blogs, and pages efficiently.',
+              icon: React.createElement(IconCode, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Website Maintenance for Fashion Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "A Stunning Fashion Website?",
+        "High Conversion Landing Pages?",
+        "Mobile-Optimized Design?",
+        "Fast, Secure, SEO-Friendly Sites?",
+        "Professional Web Design & Maintenance?"
       ],
       brandLine: [
-        { text: "Website Maintenance for Fashion Brands", gradient: false }
+        { text: "💻 Web Design, Development & Maintenance for Fashion Brands", gradient: false }
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for fashion brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We craft visually striking, conversion-focused, and SEO-optimized websites, while providing continuous maintenance to ensure peak performance.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free Website Audit", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Start Your Website Project", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "300+ Fashion Websites",
+          description: "Designed & maintained successfully"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Fashion Brands served"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "4.9/5 Client Satisfaction",
+          description: "Loved by fashion entrepreneurs"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "SEO Optimized",
+          description: "Sites ranking high on Google"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconGlobe, { size: 32 }),
+          title: "Global Reach",
+          description: "Websites serving customers worldwide"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Fashion Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Web Partner for Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of fashion brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconCode, { size: 28 }),
+          title: "Custom Development",
+          description: "Websites tailored to your brand’s needs."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for fashion brands businesses.'
+          icon: React.createElement(IconDeviceDesktop, { size: 28 }),
+          title: "Responsive & Mobile-First Design",
+          description: "Perfectly optimized for desktop, mobile, and tablets."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "SEO & Performance Optimization",
+          description: "Fast, SEO-friendly websites that rank and convert."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Secure & Reliable",
+          description: "Safe websites with regular security updates."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Conversion-Oriented Design",
+          description: "Designs focused on increasing leads and sales."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Continuous Maintenance & Support",
+          description: "Keep your site updated, fast, and secure at all times."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get Your Fashion Website Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Website Maintenance for Fashion Brands',
-      subtitle: 'FASHION BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for fashion brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for fashion brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for fashion brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for fashion brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Website Maintenance Process for Fashion Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Web Design, Development & Maintenance Process',
+      subtitle: 'STEP-BY-STEP WEBSITE SUCCESS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for fashion brands businesses.',
+      description: 'From planning to launch and ongoing maintenance, our process ensures a modern, high-performing website for fashion brands.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your fashion brands business and market landscape.'
+          title: 'Discovery & Research',
+          description: 'Understand brand, target audience, and competitor landscape for an effective web strategy.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific fashion brands goals.'
+          title: 'Design & Wireframes',
+          description: 'Create visually compelling wireframes and design prototypes reflecting your brand identity.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with fashion brands focus.'
+          title: 'Web Development',
+          description: 'Develop responsive, fast, and SEO-optimized websites using latest technologies.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on fashion brands market feedback.'
+          title: 'Content & SEO Integration',
+          description: 'Integrate content, product listings, and optimize SEO elements for search engine visibility.'
+        },
+        {
+          id: 5,
+          title: 'Testing & Launch',
+          description: 'Comprehensive testing for performance, responsiveness, and security before going live.'
+        },
+        {
+          id: 6,
+          title: 'Ongoing Maintenance',
+          description: 'Regular updates, backups, security patches, and optimizations to keep your site performing at its best.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fashion Brands Who ", gradient: false },
+        { text: "Loved Their New Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from fashion brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped fashion brands launch stunning, high-performing websites that convert visitors into customers.',
       testimonials: [
         {
           id: '1',
-          message: 'The website maintenance services transformed our fashion brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our website now perfectly reflects our brand identity, and our sales increased by 40% after launch!',
+          highlight: 'sales increased by 40%',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Fashion Brands Company'
+          name: 'Sneha Kapoor',
+          designation: 'Founder',
+          company: 'VogueTrend'
         },
         {
           id: '2',
-          message: 'Outstanding website maintenance expertise specifically for fashion brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for fashion brands',
+          message: 'The maintenance and support have been exceptional. No downtime and our site always runs smoothly.',
+          highlight: 'always runs smoothly',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Fashion Brands Solutions'
+          name: 'Rahul Sharma',
+          designation: 'CEO',
+          company: 'Urban Chic Fashion'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Fashion Brands Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your fashion brands business.'
+      title: 'Ready to Launch a High-Performing Fashion Website?',
+      subtitle: 'Design. Develop. Maintain.',
+      description: 'Book a free consultation and let Digi Aerotech build, optimize, and maintain a website that converts and impresses your audience.'
     }
   }
 };

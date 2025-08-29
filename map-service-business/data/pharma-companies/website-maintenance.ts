@@ -1,198 +1,245 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHeartbeat,
+  IconShieldCheck,
+  IconRefresh,
+  IconDatabaseCog,
+  IconArrowRight,
+  IconServerBolt,
+  IconBug,
+  IconBrowserCheck,
+  IconBuildingHospital,
+  IconActivityHeartbeat,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'website-maintenance',
-  business: 'pharma-companies',
+  service: "website-maintenance",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant3",
+    process: "variant1",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'website-maintenance',
+    slug: "website-maintenance-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Companies", gradient: false },
+            { text: "Need Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "A pharma website isn’t just an online presence—it’s a trust-building platform for patients, doctors, and distributors. Regular maintenance ensures compliance, security, and smooth functionality.",
+          painPoints: [
+            "Website downtime affecting reputation & trust",
+            "Outdated drug, research, or medical content",
+            "Non-compliance with HIPAA/GDPR regulations",
+            "Broken links, bugs, or poor user experience",
+            "Security vulnerabilities risking sensitive data",
+          ],
+          solutionPoints: [
+            "24/7 monitoring & uptime support",
+            "Regular content, product, and medical updates",
+            "Strict HIPAA/GDPR compliance maintenance",
+            "Bug fixing & feature upgrades",
+            "Advanced security patches & backups",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Secure My Pharma Website",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why is website maintenance critical for pharma companies?",
+              answer:
+                "Because downtime, outdated content, or non-compliance can damage patient trust and result in regulatory penalties.",
+              icon: React.createElement(IconActivityHeartbeat, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you provide 24/7 monitoring?",
+              answer:
+                "Yes, we ensure your pharma website is monitored, secure, and operational round the clock.",
+              icon: React.createElement(IconServerBolt, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can you update medical products & research regularly?",
+              answer:
+                "Absolutely. We handle real-time updates for drug information, research papers, and regulatory news.",
+              icon: React.createElement(IconDatabaseCog, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Will my pharma website remain compliant?",
+              answer:
+                "Yes. We apply continuous HIPAA/GDPR checks and updates to ensure full compliance with regulations.",
+              icon: React.createElement(IconShieldCheck, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Website Maintenance for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Maintain",
+      headlineKeywords: ["Pharma Websites", "Secure Platforms", "Compliance-Ready"],
       brandLine: [
-        { text: "Website Maintenance for Pharma Companies", gradient: false }
+        {
+          text: "🛡️ Reliable Website Maintenance for Pharma Companies",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We provide 24/7 website monitoring, security updates, and compliance checks to keep your pharma website reliable and trustworthy.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Get Pharma Website Maintenance",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconHeartbeat, { size: 32 }),
+          title: "99.9% Uptime",
+          description: "Reliable site availability for patients & doctors",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconBug, { size: 32 }),
+          title: "Bug-Free Performance",
+          description: "Regular updates & error fixing",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "Secure & Compliant",
+          description: "HIPAA & GDPR checks in every update",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Website Maintenance?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconRefresh, { size: 28 }),
+          title: "Regular Updates",
+          description: "We keep your pharma content & data fresh and accurate.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconBrowserCheck, { size: 28 }),
+          title: "Compliance Guaranteed",
+          description: "Your site stays aligned with HIPAA & GDPR standards.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(IconServerBolt, { size: 28 }),
+          title: "24/7 Monitoring",
+          description: "We ensure constant uptime, security, and backups.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Website Maintenance for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Keep My Pharma Website Secure",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Website Maintenance Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for pharma companies businesses.',
+      title: "Our Pharma Website Maintenance Process",
+      subtitle: "SECURE • COMPLIANT • ALWAYS ONLINE",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a proactive, structured maintenance approach to keep your pharma website secure, fast, and compliant.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Site Audit & Monitoring Setup",
+          description: "We set up 24/7 monitoring tools, identify vulnerabilities, and track uptime performance.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific pharma companies goals.'
+          title: "Security Patches & Compliance Checks",
+          description: "HIPAA, GDPR, and pharma marketing compliance applied in every update.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with pharma companies focus.'
+          title: "Content & Product Updates",
+          description: "We update drugs, research, and announcements to keep information fresh & accurate.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Performance Optimization",
+          description: "We speed up your site, fix bugs, and ensure smooth user experience across all devices.",
+        },
+        {
+          id: 5,
+          title: "Backup & Recovery",
+          description: "Automated daily backups with quick disaster recovery solutions.",
+        },
+        {
+          id: 6,
+          title: "Reporting & Support",
+          description: "We provide monthly reports on uptime, security, SEO performance, and maintenance activities.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Companies", gradient: false },
+        { text: "Who Trust Our Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "We’ve helped pharma companies maintain compliance, security, and trust by ensuring their websites run flawlessly 24/7.",
       testimonials: [
         {
-          id: '1',
-          message: 'The website maintenance services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Their maintenance support is top-notch. We never worry about downtime or compliance issues anymore.",
+          highlight: "Zero Downtime",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Ravi Mehta",
+          designation: "CTO",
+          company: "GlobalPharma Ltd.",
         },
         {
-          id: '2',
-          message: 'Outstanding website maintenance expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "Our website is always updated, secure, and optimized. Their proactive monitoring saved us from a major security breach.",
+          highlight: "100% Secure",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Dr. Sneha Kapoor",
+          designation: "Director",
+          company: "HealthCare Pharma",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Keep Your Pharma Website Running 24/7",
+      subtitle: "SECURE • COMPLIANT • MAINTAINED",
+      description:
+        "Partner with us for professional pharma website maintenance that ensures compliance, builds trust, and prevents costly downtime.",
+    },
+  },
 };

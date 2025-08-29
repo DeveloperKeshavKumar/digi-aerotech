@@ -1,198 +1,232 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconMapPin,
+  IconBed,
+  IconBuildingSkyscraper,
+  IconStars,
+  IconUsers,
+  IconTrendingUp,
+  IconArrowRight,
+  IconWorld,
+  IconPhoneCall,
+  IconCalendarEvent,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'gmb-services',
-  business: 'hotel-resorts',
+  service: "gmb-services",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant2",
+    whyChooseUs: "variant3",
+    process: "variant1",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'gmb-services',
+    slug: "gmb-services-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Hotels & Resorts", gradient: false },
+            { text: "Need GMB Optimization", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "More than 80% of travelers search for hotels & resorts directly on Google Maps before booking. If your property isn’t optimized, you’re losing direct guests to competitors.",
+          painPoints: [
+            "Not appearing in 'Hotels near me' searches",
+            "Few Google reviews reducing trust",
+            "Incomplete or outdated business profile",
+            "Low ranking in Google Maps results",
+            "Relying too much on OTAs instead of direct guests",
+          ],
+          solutionPoints: [
+            "Optimize hotel profiles with complete, attractive information",
+            "Boost rankings in Google Maps local search",
+            "Encourage and manage positive guest reviews",
+            "Highlight amenities, pricing, and booking options",
+            "Drive direct calls, bookings, and reservations via GMB",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Optimize My GMB Profile",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why is GMB important for hotels & resorts?",
+              answer:
+                "Most travelers search on Google Maps for hotels and book the ones ranking at the top. GMB optimization ensures your hotel shows up first in these searches.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can GMB help reduce OTA dependency?",
+              answer:
+                "Yes. With a strong GMB profile, guests can directly call, message, or book through your listing, reducing reliance on commission-based OTAs.",
+              icon: React.createElement(IconPhoneCall, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How long does it take to rank in Google Maps?",
+              answer:
+                "Hotels & resorts usually start seeing improved visibility and calls within 4–6 weeks of optimization.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Gmb Services for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Rank Higher on Google Maps",
+      headlineKeywords: ["GMB Services", "Hotels", "Resorts"],
       brandLine: [
-        { text: "Gmb Services for Hotel Resorts", gradient: false }
+        {
+          text: "📍 Turn Local Searches Into Direct Hotel Bookings",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Our GMB services for hotels & resorts ensure you rank at the top of Google Maps, attract more direct guests, and build trust with positive reviews.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Boost My GMB Ranking",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "70% More Visibility",
+          description: "Hotels with optimized GMB rank higher in Google Maps searches.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconStars, { size: 32 }),
+          title: "Better Reviews",
+          description: "We help generate more positive reviews to win traveler trust.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCalendarEvent, { size: 32 }),
+          title: "Direct Bookings",
+          description: "Guests can call, book, or reserve directly from your profile.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Choose Our", gradient: false },
+        { text: "GMB Services for Hotels", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBuildingSkyscraper, { size: 28 }),
+          title: "Hospitality Expertise",
+          description: "We specialize in ranking hotels & resorts higher in local search.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Guest-Centric Optimization",
+          description: "We make your profile attractive and informative to travelers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Proven Results",
+          description: "Hotels consistently gain more direct bookings after optimization.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Gmb Services for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Optimize My Hotel Profile",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Gmb Services Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for hotel resorts businesses.',
+      title: "Our GMB Process for Hotels & Resorts",
+      subtitle: "LIST • OPTIMIZE • RANK HIGHER",
+      description:
+        "We use a step-by-step approach to rank your hotel or resort at the top of Google Maps search results.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "Profile Audit",
+          description: "We analyze your existing GMB profile for completeness and accuracy.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific hotel resorts goals.'
+          title: "Optimization",
+          description: "We optimize descriptions, categories, amenities, photos, and booking links.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with hotel resorts focus.'
+          title: "Review Management",
+          description: "We implement strategies to gain positive reviews and handle feedback professionally.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Local Ranking Boost",
+          description: "Through keyword & map optimization, we ensure you appear in 'Hotels near me' searches.",
+        },
+        {
+          id: 5,
+          title: "Ongoing Monitoring",
+          description: "We track rankings, calls, and bookings to ensure long-term success.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts That", gradient: false },
+        { text: "Rank #1 on Google Maps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "Our GMB optimization has helped boutique hotels, luxury resorts, and budget stays attract more direct bookings from Google Maps.",
       testimonials: [
         {
-          id: '1',
-          message: 'The gmb services services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Within 2 months, our hotel ranked in the top 3 on Google Maps. Direct bookings increased by 45%.",
+          highlight: "Top 3 Ranking",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Rajesh Sharma",
+          designation: "Owner",
+          company: "Blue Lagoon Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding gmb services expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "We stopped depending on OTAs for most bookings. Now, 60% of our guests come directly through Google Maps.",
+          highlight: "Direct Guests",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Pooja Mehra",
+          designation: "Manager",
+          company: "Urban Escape Hotel",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Turn Google Maps Into Your #1 Booking Channel",
+      subtitle: "RANK HIGHER • ATTRACT GUESTS • GROW BOOKINGS",
+      description:
+        "With our GMB optimization services for hotels & resorts, you’ll dominate local search, attract more travelers, and reduce OTA commission costs.",
+    },
+  },
 };

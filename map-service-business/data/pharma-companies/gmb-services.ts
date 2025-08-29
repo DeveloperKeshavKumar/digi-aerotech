@@ -1,198 +1,255 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconPill,
+  IconMapPin,
+  IconBuildingSkyscraper,
+  IconSearch,
+  IconUsers,
+  IconStar,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'gmb-services',
-  business: 'pharma-companies',
+  service: "gmb-services",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'gmb-services',
+    slug: "gmb-services-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Companies", gradient: false },
+            { text: "Struggle on Google Maps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Doctors, patients, and distributors search for pharma stores & companies on Google daily, but many pharma brands remain invisible due to poor GMB optimization.",
+          painPoints: [
+            "Pharma store not appearing in Google Maps or Local Pack",
+            "Incomplete GMB profile with missing services & categories",
+            "Low visibility for 'near me' searches like pharmacy near me",
+            "Poor or no customer reviews reducing trust",
+            "Competitors ranking higher in local search results",
+          ],
+          solutionPoints: [
+            "Fully optimized GMB profile with accurate info & keywords",
+            "Category & service optimization for pharma industry",
+            "Review & rating management to build credibility",
+            "Local SEO integration for 'pharma near me' searches",
+            "Geo-targeted strategy to increase walk-ins & calls",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Rank Higher on Google Maps",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do pharma companies need GMB optimization?",
+              answer:
+                "Most patients and distributors search for local pharma companies on Google Maps. Without GMB optimization, your business risks losing daily leads, walk-ins, and calls.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can GMB services increase patients & distributors?",
+              answer:
+                "Yes, an optimized GMB profile drives more local calls, visits, and trust by ranking higher in 'near me' pharma searches.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you also handle reviews for pharma businesses?",
+              answer:
+                "Absolutely. We help collect positive reviews, manage negative feedback, and build trust for your pharma brand.",
+              icon: React.createElement(IconStar, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Will my pharma store rank above competitors?",
+              answer:
+                "Yes. We use local SEO + GMB optimization to ensure you appear in Google’s Local Pack and Maps ahead of competitors.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Dominate",
       headlineKeywords: [
-        "Gmb Services for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Google Maps Ranking",
+        "Local Search Visibility",
+        "Pharma Store Calls",
+        "Trust with Reviews",
+        "Nearby Patient Reach",
       ],
       brandLine: [
-        { text: "Gmb Services for Pharma Companies", gradient: false }
+        {
+          text: "📍 Get Found First by Patients & Distributors",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help pharma companies rank higher on Google Maps & Local Search, driving more calls, visits, and trust-building reviews every day.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Optimize My Pharma GMB",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "5X More Calls",
+          description: "From nearby patients & doctors",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.7+ Ratings",
+          description: "Trust-building reviews & feedback",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X Local Visibility",
+          description: "Rank in Google Local Pack",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma GMB Services?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBuildingSkyscraper, { size: 28 }),
+          title: "Pharma Industry Expertise",
+          description: "We specialize in optimizing GMB for pharma companies to target patients, doctors & distributors.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Local SEO Integration",
+          description: "We blend GMB optimization with local SEO for maximum visibility in pharma-related searches.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Reputation Building",
+          description: "Our strategies focus on reviews, ratings & trust signals that attract more patients & suppliers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Competitive Edge",
+          description: "We ensure your pharma business ranks above competitors in Google Maps & Local Pack results.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Gmb Services for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get My Pharma Business Ranked",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Gmb Services Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for pharma companies businesses.',
+      title: "Our Pharma GMB Optimization Process",
+      subtitle: "FROM SETUP TO RANKING",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "Our proven GMB process ensures that your pharma store, company, or distributor profile attracts maximum patients and partners.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "GMB Audit & Setup",
+          description: "We review your existing GMB profile, fix errors, and ensure pharma-specific details are correctly listed.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific pharma companies goals.'
+          title: "Category & Service Optimization",
+          description: "We optimize your GMB profile with the right pharma-related categories, services, and keywords.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with pharma companies focus.'
+          title: "Photo & Post Optimization",
+          description: "We add high-quality visuals, product photos, and regular posts to keep your profile active & engaging.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Review & Rating Boost",
+          description: "We encourage positive patient reviews, manage negative feedback, and improve overall star ratings.",
+        },
+        {
+          id: 5,
+          title: "Local Pack Ranking",
+          description: "We optimize location signals & keywords to get your pharma business ranked in the Google Local 3-Pack.",
+        },
+        {
+          id: 6,
+          title: "Performance Tracking",
+          description: "We track calls, visits, and rankings to measure results and fine-tune your GMB strategy for growth.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Businesses", gradient: false },
+        { text: "Winning with Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "From local pharma stores to nationwide distributors, we’ve helped pharma companies increase visibility, calls, and walk-in customers.",
       testimonials: [
         {
-          id: '1',
-          message: 'The gmb services services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our pharmacy now ranks #1 on Google Maps for 'pharmacy near me'. We get more local calls and daily footfall than ever before.",
+          highlight: "5X More Local Calls",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Ramesh Mehta",
+          designation: "Owner",
+          company: "MediCare Pharma",
         },
         {
-          id: '2',
-          message: 'Outstanding gmb services expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "Their GMB optimization doubled our distributor inquiries. Our pharma brand now dominates local search results in multiple cities.",
+          highlight: "3X Local Visibility",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Priya Sharma",
+          designation: "Marketing Head",
+          company: "PharmaLink",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Rank Your Pharma Business on Google Maps",
+      subtitle: "MORE VISIBILITY • MORE CALLS • MORE TRUST",
+      description:
+        "We help pharma companies dominate Google Maps & Local Search, driving patients, doctors, and distributors straight to your business.",
+    },
+  },
 };

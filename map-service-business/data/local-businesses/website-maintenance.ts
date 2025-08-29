@@ -1,198 +1,243 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconShieldCheck,
+  IconRefresh,
+  IconDeviceMobile,
+  IconWorld,
+  IconTrendingUp,
+  IconDatabase,
+  IconArrowRight,
+  IconBug,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'website-maintenance',
-  business: 'local-businesses',
+  service: "website-maintenance",
+  business: "local-business",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'website-maintenance',
+    slug: "website-maintenance-local-business",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Local Business Websites", gradient: false },
+            { text: "Fail Without Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Having a website is great—but if it’s outdated, slow, or unsecured, you’re losing customers and trust. Local businesses need reliable website maintenance to stay ahead.",
+          painPoints: [
+            "Broken links & outdated content drive customers away",
+            "Slow-loading websites reduce sales & inquiries",
+            "No backups means risk of data loss",
+            "Security vulnerabilities expose customer data",
+            "Google ranks poorly maintained websites lower",
+          ],
+          solutionPoints: [
+            "Regular updates & content refresh",
+            "Speed optimization for smooth performance",
+            "Automated backups & data protection",
+            "24/7 monitoring & quick issue resolution",
+            "SEO maintenance for consistent Google ranking",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Keep My Website Healthy",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do local businesses need website maintenance?",
+              answer:
+                "Websites need regular updates, security patches, and content refresh to remain fast, safe, and effective in converting visitors.",
+              icon: React.createElement(IconRefresh, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can website maintenance improve my local SEO?",
+              answer:
+                "Yes. Fresh content, regular updates, and technical fixes ensure Google sees your website as active, which helps with local ranking.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "What if my website gets hacked or crashes?",
+              answer:
+                "We set up monitoring, backups, and firewalls so your website can be restored quickly in case of hacks or server issues.",
+              icon: React.createElement(IconShieldCheck, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Do you handle content & product updates?",
+              answer:
+                "Absolutely. From updating menus to changing offers or posting events, we keep your website relevant & up to date.",
+              icon: React.createElement(IconWorld, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Website Maintenance for Local Businesses?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Maintain",
+      headlineKeywords: ["Secure Websites", "Fast Performance", "Steady Growth"],
       brandLine: [
-        { text: "Website Maintenance for Local Businesses", gradient: false }
+        {
+          text: "🛠️ Website Maintenance for Local Businesses",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for local businesses. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Your website is the digital storefront of your business. We keep it fast, secure, updated, and optimized so you never lose customers.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Protect My Website",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBug, { size: 32 }),
+          title: "70% Customers",
+          description: "Leave outdated or buggy websites instantly.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Local Businesses served"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "99.9% Uptime",
+          description: "With proactive monitoring & quick fixes.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconDatabase, { size: 32 }),
+          title: "Automatic Backups",
+          description: "Never lose your website or customer data.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Local Businesses?', gradient: false }
+        { text: "Why Choose Us For", gradient: false },
+        { text: "Website Maintenance?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of local businesses market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconRefresh, { size: 28 }),
+          title: "Regular Updates",
+          description: "We keep your plugins, themes, and content always fresh.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for local businesses businesses.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Full Security",
+          description: "Firewall, malware scans, and SSL upkeep for safety.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Mobile & SEO Optimization",
+          description: "Speed, responsiveness, and SEO maintained monthly.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Website Maintenance for Local Businesses',
-      subtitle: 'LOCAL BUSINESSES SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for local businesses businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for local businesses market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for local businesses audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for local businesses businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get Reliable Website Maintenance",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Website Maintenance Process for Local Businesses',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for local businesses businesses.',
+      title: "Our Website Maintenance Process for Local Businesses",
+      subtitle: "MONITOR • UPDATE • PROTECT • OPTIMIZE • SUPPORT",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We ensure your local business website is always running at peak performance, secure from threats, and updated to convert more customers.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your local businesses business and market landscape.'
+          title: "Website Audit",
+          description: "We analyze your website for issues, vulnerabilities, and outdated content before starting.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific local businesses goals.'
+          title: "Security & Backup Setup",
+          description: "We install firewalls, SSL, and automatic backup systems for safety.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with local businesses focus.'
+          title: "Content & Design Updates",
+          description: "Menus, offers, photos, events, and services are refreshed regularly to keep your site relevant.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on local businesses market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Speed Optimization",
+          description: "We enhance loading speed and mobile performance to reduce bounce rates.",
+        },
+        {
+          id: 5,
+          title: "SEO & Technical Fixes",
+          description: "We maintain SEO health, fix errors, and ensure your site ranks locally.",
+        },
+        {
+          id: 6,
+          title: "Ongoing Monitoring",
+          description: "Your website is monitored 24/7 for uptime, threats, and smooth customer experience.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Local Businesses Trust", gradient: false },
+        { text: "Our Website Care", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from local businesses businesses that achieved remarkable growth.',
+      description:
+        "From cafés to gyms to clinics, we ensure local business websites remain updated, secure, and always customer-ready.",
       testimonials: [
         {
-          id: '1',
-          message: 'The website maintenance services transformed our local businesses business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "My restaurant’s website is always updated with new menus & offers. Customers love it, and it boosted online reservations by 35%.",
+          highlight: "35% More Bookings",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Local Businesses Company'
+          name: "Amit Verma",
+          designation: "Owner",
+          company: "SpiceHub Restaurant",
         },
         {
-          id: '2',
-          message: 'Outstanding website maintenance expertise specifically for local businesses. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for local businesses',
+          id: "2",
+          message:
+            "Earlier, my website used to crash frequently. Now, it runs smoothly, loads fast, and even ranks higher on Google. Amazing service!",
+          highlight: "99.9% Uptime",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Local Businesses Solutions'
-        }
-      ]
+          name: "Ritika Singh",
+          designation: "Owner",
+          company: "FitZone Gym",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Local Businesses Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your local businesses business.'
-    }
-  }
+      title: "Keep Your Website Running Like New",
+      subtitle: "UPDATE • SECURE • OPTIMIZE • GROW",
+      description:
+        "Don’t let an outdated or broken website cost you customers. Get professional website maintenance tailored for local businesses.",
+    },
+  },
 };

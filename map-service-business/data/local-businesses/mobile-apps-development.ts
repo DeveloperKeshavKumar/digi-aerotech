@@ -1,198 +1,240 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconPhoneCall,
+  IconShoppingCart,
+  IconUsers,
+  IconGift,
+  IconTrendingUp,
+  IconDeviceMobile,
+  IconMapPin,
+  IconArrowRight,
+  IconCalendarEvent,
+  IconWallet,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'mobile-apps-development',
-  business: 'local-businesses',
+  service: "mobile-apps-development",
+  business: "local-business",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant1",
+    whyChooseUs: "variant3",
+    process: "variant2",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: "mobile-apps-development-local-business",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Local Businesses", gradient: false },
+            { text: "Need Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Local customers want convenience, loyalty rewards, and instant communication. Without a mobile app, you risk losing them to competitors who offer a digital-first experience.",
+          painPoints: [
+            "Customers forget about your business after one visit",
+            "No direct channel to send offers & promotions",
+            "Dependence on third-party apps & aggregators",
+            "Struggle to build repeat customers and loyalty",
+            "Difficulties in managing online bookings or payments",
+          ],
+          solutionPoints: [
+            "Custom mobile apps with your own branding",
+            "Push notifications for offers, updates, and deals",
+            "Integrated booking, ordering & payments",
+            "Customer loyalty & reward programs",
+            "Real-time engagement with your local audience",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Build My Local App",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How can mobile apps help my local business?",
+              answer:
+                "Mobile apps give you a direct channel to your customers. You can send offers, manage bookings, accept payments, and build loyalty without depending on third parties.",
+              icon: React.createElement(IconDeviceMobile, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can I offer loyalty rewards with the app?",
+              answer:
+                "Yes! We design apps with built-in loyalty programs, reward points, and special discounts to increase repeat customers.",
+              icon: React.createElement(IconGift, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Will my app support online payments?",
+              answer:
+                "Absolutely. We integrate secure payment gateways so your customers can pay directly through the app, hassle-free.",
+              icon: React.createElement(IconWallet, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How soon can I launch my app?",
+              answer:
+                "Depending on features, most local business apps go live within 4–6 weeks with full testing and optimization.",
+              icon: React.createElement(IconCalendarEvent, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Mobile Apps Development for Local Businesses?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Launch",
+      headlineKeywords: ["Your Own App", "Local Customers", "More Loyalty"],
       brandLine: [
-        { text: "Mobile Apps Development for Local Businesses", gradient: false }
+        {
+          text: "📱 Mobile Apps Development for Local Businesses",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for local businesses. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We build powerful, user-friendly mobile apps that help local businesses connect with customers, boost repeat sales, and create long-term loyalty.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Get My App",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "3x Repeat Customers",
+          description: "Loyalty programs and offers increase repeat visits",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Local Businesses served"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "Direct Sales",
+          description: "Sell without relying on aggregators or commissions",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Higher Growth",
+          description: "Stay ahead of competitors with digital presence",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Local Businesses?', gradient: false }
+        { text: "Why Choose Us For", gradient: false },
+        { text: "Mobile Apps Development?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of local businesses market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Custom-Built Apps",
+          description: "We design apps tailored to your business and customers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for local businesses businesses.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Location-Based Features",
+          description: "Enable local offers, delivery tracking, and directions.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconPhoneCall, { size: 28 }),
+          title: "Seamless Communication",
+          description: "Stay connected with customers through chat & push notifications.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Local Businesses',
-      subtitle: 'LOCAL BUSINESSES SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for local businesses businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for local businesses market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for local businesses audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for local businesses businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start My Mobile App Journey",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Mobile Apps Development Process for Local Businesses',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for local businesses businesses.',
+      title: "Our Mobile App Development Process",
+      subtitle: "DESIGN • BUILD • LAUNCH • GROW",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a structured process to build high-performance apps that help local businesses grow faster and engage customers directly.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your local businesses business and market landscape.'
+          title: "Business Analysis",
+          description: "We study your business model, customer base, and objectives to design the right app features.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific local businesses goals.'
+          title: "UI/UX Design",
+          description: "Our design team creates intuitive, user-friendly layouts that make customers love using your app.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with local businesses focus.'
+          title: "App Development",
+          description: "We build robust Android & iOS apps with seamless performance and scalable architecture.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on local businesses market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Integration",
+          description: "We integrate payments, booking systems, CRM, and push notifications tailored to your business.",
+        },
+        {
+          id: 5,
+          title: "Launch & Support",
+          description: "Your app is deployed to app stores with ongoing support, updates, and improvements.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Local Businesses Thriving", gradient: false },
+        { text: "With Our Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from local businesses businesses that achieved remarkable growth.',
+      description:
+        "From restaurants to gyms to boutiques, our apps have helped local businesses boost engagement, increase repeat customers, and grow sales.",
       testimonials: [
         {
-          id: '1',
-          message: 'The mobile apps development services transformed our local businesses business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our restaurant app transformed our business! Customers now order directly from us, and we don’t pay commissions to delivery apps anymore.",
+          highlight: "Saved 20% Commission",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Local Businesses Company'
+          name: "Rahul Mehta",
+          designation: "Owner",
+          company: "Mehta’s Kitchen",
         },
         {
-          id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for local businesses. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for local businesses',
+          id: "2",
+          message:
+            "We run a fitness studio and the app keeps our members engaged with class schedules, reminders, and loyalty rewards. Customer retention improved massively.",
+          highlight: "Stronger Customer Loyalty",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Local Businesses Solutions'
-        }
-      ]
+          name: "Anita Sharma",
+          designation: "Founder",
+          company: "FitLife Studio",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Local Businesses Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your local businesses business.'
-    }
-  }
+      title: "Build Your Own Mobile App Today",
+      subtitle: "LOYALTY • SALES • GROWTH",
+      description:
+        "Stop depending only on walk-ins or third-party apps. With your own branded mobile app, you’ll have direct access to customers, boost repeat sales, and grow your business.",
+    },
+  },
 };

@@ -1,198 +1,245 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandMeta,
+  IconHealthRecognition,
+  IconVaccine,
+  IconHeartbeat,
+  IconAdCircle,
+  IconUsersGroup,
+  IconChartHistogram,
+  IconArrowRight,
+  IconTarget,
+  IconBuildingHospital,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'meta-ads',
-  business: 'pharma-companies',
+  service: "meta-ads",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'meta-ads',
+    slug: "meta-ads-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Brands", gradient: false },
+            { text: "Struggle with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Running ads in the pharma industry isn’t as simple as boosting posts. With compliance restrictions, ad disapprovals, and targeting challenges, many pharma businesses waste money on ineffective campaigns.",
+          painPoints: [
+            "Ad disapprovals due to strict Meta policies",
+            "Low engagement from healthcare professionals",
+            "Difficulty targeting doctors, hospitals & patients",
+            "Wasted budget on irrelevant audiences",
+            "Poor ROI from generic ad campaigns",
+          ],
+          solutionPoints: [
+            "Compliance-friendly ad creatives that get approved",
+            "Precise targeting of doctors, hospitals & pharmacists",
+            "B2B lead generation for distributors & suppliers",
+            "Ad funnels optimized for ROI & conversions",
+            "Data-driven campaign scaling for maximum reach",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch Pharma Meta Ads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Can pharma ads run on Facebook & Instagram?",
+              answer:
+                "Yes, but they must follow Meta’s healthcare advertising guidelines. We create compliance-friendly ads that get approved and deliver results.",
+              icon: React.createElement(IconBrandMeta, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you generate B2B leads for pharma?",
+              answer:
+                "Absolutely. We run hyper-targeted ad campaigns that connect manufacturers, suppliers, and distributors with hospitals, clinics, and retailers.",
+              icon: React.createElement(IconBuildingHospital, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How do Meta Ads help pharma companies grow?",
+              answer:
+                "Meta Ads help pharma brands build awareness, generate distributor leads, and engage patients with trusted health campaigns.",
+              icon: React.createElement(IconHealthRecognition, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "What results can I expect?",
+              answer:
+                "Pharma clients typically see 2X–4X ROI with more qualified leads, stronger brand recall, and higher conversions within 6–12 weeks.",
+              icon: React.createElement(IconChartHistogram, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Meta Ads for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Boost",
+      headlineKeywords: ["Pharma Meta Ads", "Facebook Pharma Marketing", "Pharma Instagram Ads", "Healthcare Ad Campaigns"],
       brandLine: [
-        { text: "Meta Ads for Pharma Companies", gradient: false }
+        {
+          text: "💊 Compliance-Friendly Meta Ads for Pharma Companies That Drive Real Growth",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help pharma manufacturers, distributors, and pharmacies run approved, high-ROI ad campaigns across Facebook, Instagram, WhatsApp & Messenger.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Pharma Meta Ads",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "4X Better Targeting",
+          description: "Reach doctors, hospitals & patients",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconUsersGroup, { size: 32 }),
+          title: "3.2X More Leads",
+          description: "Qualified pharma B2B & B2C inquiries",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconHeartbeat, { size: 32 }),
+          title: "2X Brand Recall",
+          description: "Trusted pharma ads that resonate",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Meta Ads?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconAdCircle, { size: 28 }),
+          title: "Policy-Compliant Ads",
+          description: "We design pharma ads that meet Meta’s strict compliance rules and get approved faster.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Hyper-Specific Targeting",
+          description: "From doctors to hospitals, we ensure your ads reach the right audience at the right time.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconVaccine, { size: 28 }),
+          title: "Health-Focused Creatives",
+          description: "We build campaigns that educate, engage, and inspire trust in your pharma products & services.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconChartHistogram, { size: 28 }),
+          title: "ROI-Driven Campaigns",
+          description: "Our performance marketing ensures every dollar spent translates into measurable results.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Meta Ads for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Run Pharma Meta Ads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Meta Ads Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for pharma companies businesses.',
+      title: "Our Meta Ads Process for Pharma",
+      subtitle: "FROM STRATEGY TO ROI",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a compliance-first, data-driven process to ensure your pharma Meta Ads deliver consistent approvals, engagement, and conversions.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Ad Policy Audit",
+          description: "We review your offerings and ensure campaigns follow Meta’s healthcare advertising guidelines.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific pharma companies goals.'
+          title: "Audience Targeting",
+          description: "We segment audiences into doctors, hospitals, patients, and distributors for maximum relevance.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with pharma companies focus.'
+          title: "Creative Development",
+          description: "We design ad creatives with health-focused messaging, visuals, and CTA that get approved & convert.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Campaign Launch",
+          description: "We launch campaigns across Facebook, Instagram, Messenger & WhatsApp for full-funnel coverage.",
+        },
+        {
+          id: 5,
+          title: "Optimization & Scaling",
+          description: "We track performance, optimize bidding & creatives, and scale campaigns to achieve 3X–4X ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Brands", gradient: false },
+        { text: "Growing with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "From pharma manufacturers to retail pharmacies, our Meta Ads campaigns have delivered consistent approvals, higher engagement, and stronger lead pipelines.",
       testimonials: [
         {
-          id: '1',
-          message: 'The meta ads services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our pharma ads were constantly getting disapproved until we worked with this team. Now, our campaigns run smoothly and deliver consistent leads.",
+          highlight: "95% Ad Approval Rate",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Rohit Sharma",
+          designation: "Marketing Head",
+          company: "HealthWell Pharma",
         },
         {
-          id: '2',
-          message: 'Outstanding meta ads expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "We generated 3.5X more hospital inquiries in 2 months with their Meta Ads strategies. Truly experts in healthcare advertising.",
+          highlight: "3.5X More B2B Leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Dr. Anita Kapoor",
+          designation: "Director",
+          company: "Medicare Distributors",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Run High-ROI Meta Ads for Pharma",
+      subtitle: "GET APPROVED. GET LEADS. GROW CONSISTENTLY.",
+      description:
+        "We help pharma brands create compliance-friendly Meta Ad campaigns that generate trust, awareness, and sales without the fear of disapprovals.",
+    },
+  },
 };

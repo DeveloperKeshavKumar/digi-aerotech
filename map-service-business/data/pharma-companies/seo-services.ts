@@ -1,198 +1,243 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconSearch,
+  IconMicroscope,
+  IconHeartbeat,
+  IconArrowRight,
+  IconChartLine,
+  IconCheckupList,
+  IconBuildingHospital,
+  IconUsers,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'seo-services',
-  business: 'pharma-companies',
+  service: "seo-services",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'seo-services',
+    slug: "seo-services-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Brands", gradient: false },
+            { text: "Need SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "In an industry where trust, compliance, and visibility matter most, SEO is the key to ensuring your pharma company is discovered by patients, doctors, hospitals, and distributors.",
+          painPoints: [
+            "Paid ads deliver short-term results, but organic traffic builds long-term trust",
+            "Pharma websites often struggle with complex regulations in content marketing",
+            "Competition from large pharma giants makes ranking difficult",
+            "Lack of local visibility for pharmacies & distributors",
+            "Patients searching online often find competitors first",
+          ],
+          solutionPoints: [
+            "Comprehensive keyword research for medical, pharma & healthcare queries",
+            "On-page SEO optimization for compliance-friendly pharma websites",
+            "Content marketing (blogs, FAQs, medical resources) that rank & build authority",
+            "Local SEO for pharmacies & regional distributors",
+            "High-quality backlinks from medical, pharma, and healthcare directories",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Pharma SEO Now",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why is SEO important for pharma companies?",
+              answer:
+                "SEO builds trust, boosts visibility, and helps patients, doctors, and hospitals discover your brand organically instead of relying only on paid ads.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "How do we ensure pharma SEO compliance?",
+              answer:
+                "We craft content aligned with pharma advertising regulations while optimizing technical SEO and on-page strategies.",
+              icon: React.createElement(IconMicroscope, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can SEO generate pharma leads?",
+              answer:
+                "Yes. With targeted keywords, content marketing, and local optimization, SEO drives qualified patient inquiries, doctor connections, and B2B distributor leads.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How long does pharma SEO take?",
+              answer:
+                "SEO is long-term, but clients see significant ranking and traffic improvements within 3-6 months, with compounding ROI over time.",
+              icon: React.createElement(IconChartLine, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Seo Services for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Rank",
+      headlineKeywords: ["Pharma SEO Services", "Medical SEO", "Healthcare Visibility"],
       brandLine: [
-        { text: "Seo Services for Pharma Companies", gradient: false }
+        {
+          text: "🚀 Boost Your Pharma Brand’s Online Authority with SEO that Drives Patients, Doctors & Distributors to You",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized seo services strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We specialize in pharma SEO strategies that build trust, boost rankings, and generate consistent patient, doctor, and B2B distributor leads.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Pharma SEO Today",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconCheckupList, { size: 32 }),
+          title: "Compliance-First SEO",
+          description: "Regulation-friendly content strategies",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconBuildingHospital, { size: 32 }),
+          title: "Local Visibility",
+          description: "SEO for pharmacies & distributors",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconChartLine, { size: 32 }),
+          title: "Long-Term ROI",
+          description: "Sustainable organic growth",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma SEO?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMicroscope, { size: 28 }),
+          title: "Pharma-Specific Expertise",
+          description: "We understand pharma regulations & optimize content for compliance and trust.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconHeartbeat, { size: 28 }),
+          title: "Patient-Centric Approach",
+          description: "We target patient, doctor, and healthcare queries for higher visibility.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChartLine, { size: 28 }),
+          title: "Proven SEO Growth",
+          description: "Our pharma clients rank higher on Google and generate more organic leads.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Seo Services for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Rank Higher with SEO",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Seo Services Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for pharma companies businesses.',
+      title: "Our SEO Process for Pharma Companies",
+      subtitle: "TRUST. VISIBILITY. LEADS.",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We build a strong SEO foundation for pharma companies by combining compliance-friendly content, technical SEO, and authority building.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Keyword Research",
+          description: "We identify high-intent medical, healthcare, and pharma-specific keywords with lead potential.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific pharma companies goals.'
+          title: "On-Page Optimization",
+          description: "Meta tags, schema, content optimization, and site architecture improvements for SEO success.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with pharma companies focus.'
+          title: "Content Marketing",
+          description: "Educational blogs, FAQs, and pharma resources that rank & build trust with patients and professionals.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Local SEO",
+          description: "Optimizing pharma distributors, pharmacy locations, and hospital listings for better local reach.",
+        },
+        {
+          id: 5,
+          title: "Backlink Building",
+          description: "Building authority through backlinks from healthcare journals, directories, and trusted sites.",
+        },
+        {
+          id: 6,
+          title: "Analytics & Reporting",
+          description: "We track rankings, traffic, and lead conversions to measure SEO ROI for pharma businesses.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Brands", gradient: false },
+        { text: "Winning with SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "Our SEO campaigns have helped pharma companies dominate search engines, increase patient trust, and generate qualified B2B and B2C leads.",
       testimonials: [
         {
-          id: '1',
-          message: 'The seo services services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our pharma brand went from page 4 to page 1 on Google in just 6 months. The organic patient leads we now receive are invaluable.",
+          highlight: "Ranked on Page 1",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Dr. Meera Nair",
+          designation: "Director",
+          company: "HealthPlus Pharma",
         },
         {
-          id: '2',
-          message: 'Outstanding seo services expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "With local SEO, our pharmacy outlets started ranking for ‘near me’ searches, driving more walk-ins and inquiries.",
+          highlight: "Local SEO Success",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Rajesh Sharma",
+          designation: "Owner",
+          company: "PharmaCare Distributors",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Boost Your Pharma SEO",
+      subtitle: "TRUST • VISIBILITY • LEADS",
+      description:
+        "Let us help your pharma company rank higher on Google, attract more patients, doctors, and distributors, and build long-term trust with SEO.",
+    },
+  },
 };

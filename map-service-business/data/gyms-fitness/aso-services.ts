@@ -1,198 +1,246 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconDeviceMobile,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconUsers,
+  IconStar,
+  IconArrowRight,
+} from "@tabler/icons-react";
+import { Dumbbell } from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'aso-services',
-  business: 'gyms-fitness',
+  service: "aso-services",
+  business: "gyms-fitness",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'aso-services',
+    slug: "aso-services-gyms-fitness",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Challenges Gyms & Fitness Apps Face in", gradient: false },
+            { text: "App Visibility & Downloads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Fitness apps and gym platforms often struggle to rank in app stores, gain user trust, and convert downloads into active memberships without professional ASO strategies.",
+          painPoints: [
+            "Low visibility in Google Play & Apple App Store",
+            "Poor keyword optimization affecting downloads",
+            "Difficulty competing with popular fitness apps",
+            "Low user engagement & retention",
+            "Inadequate app store listings and visuals",
+          ],
+          solutionPoints: [
+            "Keyword-optimized app titles, descriptions & metadata",
+            "Attractive app icons, screenshots, and videos to boost conversion",
+            "App localization for multiple languages and regions",
+            "Regular updates & A/B testing to increase retention",
+            "Data-driven ASO strategy to rank higher than competitors",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Fitness App Downloads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Can ASO really increase my gym app downloads?",
+              answer:
+                "Yes! Optimized titles, keywords, descriptions, and visuals improve app store rankings and drive more targeted downloads.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you handle both Android and iOS stores?",
+              answer:
+                "Absolutely. Our ASO strategies cover Google Play Store and Apple App Store to maximize reach and downloads.",
+              icon: React.createElement(IconDeviceMobile, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can ASO improve app retention and engagement?",
+              answer:
+                "Yes. We optimize in-app messaging, screenshots, and update strategies to keep users engaged and subscribed.",
+              icon: React.createElement(IconShieldCheck, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Will ASO help me compete with big fitness apps?",
+              answer:
+                "Absolutely. With targeted keywords, appealing visuals, and data-driven strategies, we help your gym or fitness app stand out.",
+              icon: React.createElement(Dumbbell, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want More",
       headlineKeywords: [
-        "Aso Services for Gyms Fitness?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Gym App Downloads?",
+        "Fitness Memberships?",
+        "Active Users?",
+        "App Store Visibility?",
+        "360° ASO for Fitness Apps?",
       ],
       brandLine: [
-        { text: "Aso Services for Gyms Fitness", gradient: false }
+        {
+          text: "💪 Maximize Your Gym & Fitness App Growth with Expert ASO Services",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized aso services strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help gym owners, fitness trainers, and app developers increase app downloads, improve retention, and boost engagement with professional ASO strategies.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(Dumbbell, { size: 28 }),
+          text: "Get Free ASO Consultation",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "50,000+ App Downloads",
+          description: "Driven by optimized app store presence",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Gyms Fitness served"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.8/5 App Rating",
+          description: "Increased trust and engagement among users",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X More Active Users",
+          description: "Through keyword optimization and visuals",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Why Gyms & Fitness Brands Choose Us for", gradient: false },
+        { text: "ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Data-Driven ASO Strategies",
+          description: "Keyword research, competitor analysis, and optimization to maximize downloads.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Visual Optimization",
+          description: "Eye-catching app icons, screenshots, and videos to boost conversion rates.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Retention & Engagement Focus",
+          description: "We optimize app updates, in-app messaging, and listings to retain users.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Aso Services for Gyms Fitness',
-      subtitle: 'GYMS FITNESS SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for gyms fitness businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for gyms fitness market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for gyms fitness audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for gyms fitness businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Boost Your App Downloads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Aso Services Process for Gyms Fitness',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for gyms fitness businesses.',
+      title: "Our Proven ASO Process for Gyms & Fitness Apps",
+      subtitle: "RESEARCH • OPTIMIZE • TEST • GROW",
+      description:
+        "From keyword analysis to creative optimization and performance tracking, our ASO process ensures your fitness app reaches more users and drives measurable results.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your gyms fitness business and market landscape.'
+          title: "Market & Keyword Research",
+          description: "Identify high-intent keywords and analyze competitors in the fitness app market.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific gyms fitness goals.'
+          title: "App Store Optimization",
+          description:
+            "Optimize app title, description, keywords, visuals, and metadata to increase visibility and conversions.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with gyms fitness focus.'
+          title: "Visual & UI Enhancement",
+          description:
+            "Design attractive app icons, screenshots, and promotional videos that entice users to download.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "A/B Testing & Feedback",
+          description:
+            "Test different versions of app listings, visuals, and descriptions to maximize downloads and engagement.",
+        },
+        {
+          id: 5,
+          title: "Performance Monitoring & Updates",
+          description:
+            "Track ASO performance, implement improvements, and update app content regularly for sustained growth.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fitness Apps & Gyms Who ", gradient: false },
+        { text: "Boosted Downloads with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
+      description:
+        "Hear from gym owners and fitness app developers who increased app downloads and engagement through our ASO expertise.",
       testimonials: [
         {
-          id: '1',
-          message: 'The aso services services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our fitness app climbed to the top charts in Google Play and App Store, and user engagement has skyrocketed. Amazing ASO service!",
+          highlight: "top charts",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
+          name: "Rohit Singh",
+          designation: "Founder",
+          company: "FitTrack App",
         },
         {
-          id: '2',
-          message: 'Outstanding aso services expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
+          id: "2",
+          message:
+            "The team optimized our gym membership app’s keywords and visuals, leading to a 3X increase in downloads and higher active users.",
+          highlight: "3X increase in downloads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
-        }
-      ]
+          name: "Sneha Kapoor",
+          designation: "Owner",
+          company: "PowerZone Gym App",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your gyms fitness business.'
-    }
-  }
+      title: "Maximize Your Gym & Fitness App Downloads Today",
+      subtitle: "OPTIMIZE • ENGAGE • GROW",
+      description:
+        "Schedule a free ASO consultation with our experts to boost your app visibility, downloads, and active users, transforming your fitness business growth.",
+    },
+  },
 };

@@ -1,198 +1,237 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconSearch,
+  IconMapPin,
+  IconTrendingUp,
+  IconUsers,
+  IconTarget,
+  IconChartBar,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'seo-services',
-  business: 'local-businesses',
+  service: "seo-services",
+  business: "local-business",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'seo-services',
+    slug: "seo-services-local-business",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Local Businesses Fail", gradient: false },
+            { text: "Without SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "80% of local customers search online before visiting a business. Without SEO, your shop, clinic, or service risks being invisible to those ready-to-buy customers.",
+          painPoints: [
+            "Business not showing up in Google search or maps",
+            "Competitors ranking higher for local services",
+            "Few or no calls & walk-ins from online search",
+            "Low website traffic & poor visibility",
+            "Struggling to convert nearby customers",
+          ],
+          solutionPoints: [
+            "Rank higher on Google Maps & local searches",
+            "Dominate ‘near me’ searches for your services",
+            "Boost daily foot traffic & phone calls",
+            "Build trust with local customers searching online",
+            "Generate more leads without heavy ad spend",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get My Business Ranked",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How does SEO help my local business?",
+              answer:
+                "SEO ensures your business shows up when customers search for services near them—leading to more calls, visits, and conversions.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "How fast can I see SEO results?",
+              answer:
+                "Local SEO usually shows results within 3-4 months, and once rankings improve, the growth compounds over time.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can SEO work without a website?",
+              answer:
+                "Yes, we optimize your Google Business Profile and listings, but having a website increases long-term ranking and conversions.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Is SEO affordable for small businesses?",
+              answer:
+                "Absolutely! Local SEO is budget-friendly and gives long-term results, unlike ads where visibility stops when you stop spending.",
+              icon: React.createElement(IconChartBar, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Seo Services for Local Businesses?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Grow",
+      headlineKeywords: ["Rank Locally", "Get Found", "Drive Customers"],
       brandLine: [
-        { text: "Seo Services for Local Businesses", gradient: false }
+        {
+          text: "📍 SEO Services for Local Businesses",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized seo services strategies designed specifically for local businesses. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help shops, gyms, restaurants, clinics & service providers dominate local search results, drive walk-ins, and increase calls every day.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Boost My Local Ranking",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "80% Local Searches",
+          description: "Most customers search online before buying locally.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Local Businesses served"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "Top 3 Rankings",
+          description: "We help you appear in the top 3 Google local results.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Consistent Leads",
+          description: "Daily calls, visits & conversions for your business.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Local Businesses?', gradient: false }
+        { text: "Why Choose Us For", gradient: false },
+        { text: "Local SEO?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of local businesses market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Google Maps Ranking",
+          description: "We make your business visible in local map searches.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for local businesses businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Targeted Keywords",
+          description: "We optimize for ‘near me’ searches customers actually use.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Customer-Centric SEO",
+          description: "Our strategies bring customers ready to buy, not just traffic.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Seo Services for Local Businesses',
-      subtitle: 'LOCAL BUSINESSES SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for local businesses businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for local businesses market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for local businesses audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for local businesses businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Rank My Business Locally",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Seo Services Process for Local Businesses',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for local businesses businesses.',
+      title: "Our Local SEO Process",
+      subtitle: "RESEARCH • OPTIMIZE • RANK • GROW",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a proven SEO process to help local businesses dominate search results and generate consistent customers.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your local businesses business and market landscape.'
+          title: "Local Market Research",
+          description: "We analyze your competitors, customers & search trends.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific local businesses goals.'
+          title: "On-Page SEO",
+          description: "Optimizing your website, listings & business profile for local keywords.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with local businesses focus.'
+          title: "Google Maps Optimization",
+          description: "We optimize your Google Business Profile for maximum visibility.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on local businesses market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Content & Backlinks",
+          description: "Creating local-focused content & citations for authority.",
+        },
+        {
+          id: 5,
+          title: "Tracking & Reporting",
+          description: "Transparent SEO reports with ranking, calls & visits tracked.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Local Businesses Growing", gradient: false },
+        { text: "With Our SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from local businesses businesses that achieved remarkable growth.',
+      description:
+        "From salons to gyms to clinics, our SEO strategies help local businesses dominate search and bring more customers daily.",
       testimonials: [
         {
-          id: '1',
-          message: 'The seo services services transformed our local businesses business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our salon now shows up in the top 3 Google results! We get 20+ new customers every week thanks to their local SEO service.",
+          highlight: "20+ Weekly Customers",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Local Businesses Company'
+          name: "Ritu Malhotra",
+          designation: "Owner",
+          company: "Glow Beauty Salon",
         },
         {
-          id: '2',
-          message: 'Outstanding seo services expertise specifically for local businesses. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for local businesses',
+          id: "2",
+          message:
+            "Our gym membership inquiries tripled after our business started ranking for ‘gym near me’. Amazing SEO results!",
+          highlight: "3x More Leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Local Businesses Solutions'
-        }
-      ]
+          name: "Amit Sharma",
+          designation: "Founder",
+          company: "FitZone Gym",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Local Businesses Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your local businesses business.'
-    }
-  }
+      title: "Dominate Local Search With SEO",
+      subtitle: "GET FOUND • GET CUSTOMERS • GROW DAILY",
+      description:
+        "Don’t let competitors take your customers. Rank higher, attract more walk-ins, calls, and conversions with our local SEO services.",
+    },
+  },
 };

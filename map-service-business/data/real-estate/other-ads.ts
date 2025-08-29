@@ -1,198 +1,274 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBuildingSkyscraper,
+  IconVideo,
+  IconUsers,
+  IconTrendingUp,
+  IconPhoneCall,
+  IconArrowRight,
+  IconDeviceTv,
+  IconNetwork,
+  IconShare2,
+  IconMessage,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'other-ads',
-  business: 'real-estate',
+  service: "other-ads",
+  business: "real-estate",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant1",
+    whyChooseUs: "variant3",
+    process: "variant2",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'other-ads',
+    slug: "other-ads-real-estate",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Challenges Real Estate Brands", gradient: false },
+            { text: "Face on Emerging Ad Platforms", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Realtors, property developers, and brokers often miss huge opportunities by ignoring platforms like TikTok, YouTube, Snapchat, Twitter, and LinkedIn.",
+          painPoints: [
+            "Difficulty standing out with traditional ads",
+            "Younger buyers shifting to TikTok & Instagram Reels",
+            "Investors and B2B leads active on LinkedIn but underutilized",
+            "Expensive campaigns with poor targeting on old channels",
+            "Low trust without video-based storytelling",
+          ],
+          solutionPoints: [
+            "YouTube property walkthroughs that convert viewers into buyers",
+            "TikTok & Snapchat short-form property reels for millennials & Gen Z",
+            "LinkedIn ads that attract serious investors & B2B partners",
+            "Twitter/X ads for instant property updates & engagement",
+            "Cross-platform remarketing to nurture warm leads",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch High-Impact Ads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why should real estate invest in TikTok & Snapchat ads?",
+              answer:
+                "Because millennials & Gen Z are increasingly buying or renting homes. Short-form video ads are proven to influence their property decisions.",
+              icon: React.createElement(IconVideo, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can YouTube ads really help sell properties?",
+              answer:
+                "Yes! Video walkthroughs and targeted property ads on YouTube drive high-intent leads and boost trust with virtual home tours.",
+              icon: React.createElement(IconDeviceTv, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Is LinkedIn advertising relevant for real estate?",
+              answer:
+                "Absolutely. LinkedIn ads attract high-net-worth individuals, investors, and corporate clients looking for commercial or premium properties.",
+              icon: React.createElement(IconNetwork, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How does Twitter/X help in real estate marketing?",
+              answer:
+                "Twitter/X ads are perfect for real-time property updates, flash offers, and instant engagement with potential buyers.",
+              icon: React.createElement(IconShare2, { size: 22 }),
+            },
+            {
+              id: "faq-5",
+              question: "Can multiple ad platforms be used together?",
+              answer:
+                "Yes. Our cross-platform campaigns use retargeting across YouTube, TikTok, and LinkedIn to maximize conversions and ROI.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want",
       headlineKeywords: [
-        "Other Ads for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Property Walkthrough Ads?",
+        "More Investor Leads?",
+        "Gen Z Buyers on TikTok?",
+        "Engagement on YouTube & LinkedIn?",
+        "360° Multi-Platform Real Estate Ads?",
       ],
       brandLine: [
-        { text: "Other Ads for Real Estate", gradient: false }
+        {
+          text: "📢 Reach Homebuyers, Renters & Investors with Multi-Channel Ads",
+          gradient: false,
+        },
       ],
-      subheadline: "Specialized other ads strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help real estate agents, developers, and property businesses scale with ads on TikTok, YouTube, Snapchat, LinkedIn, and Twitter/X.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconPhoneCall, { size: 28 }),
+          text: "Book Free Ad Strategy Call",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "10,000+ Leads",
+          description: "Generated from TikTok, YouTube & LinkedIn Ads",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconVideo, { size: 32 }),
+          title: "500+ Property Videos",
+          description: "Created & promoted across platforms",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X ROI",
+          description: "On cross-platform advertising",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Digi Aerotech is the", gradient: false },
+        {
+          text: "Best Multi-Channel Ads Partner for Real Estate",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "Expert in Video Marketing",
+          description:
+            "We create stunning property walkthroughs that inspire trust & sales.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconNetwork, { size: 28 }),
+          title: "Cross-Platform Expertise",
+          description:
+            "From TikTok to LinkedIn, we optimize ads for every audience segment.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Targeted Audience Reach",
+          description:
+            "Connect with buyers, renters, and investors where they are most active.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Data-Driven Campaigns",
+          description:
+            "Every ad is tracked, optimized, and scaled for maximum ROI.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Other Ads for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start Multi-Platform Ads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Other Ads Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for real estate businesses.',
+      title: "Our Real Estate Multi-Channel Ads Process",
+      subtitle: "FROM CREATIVE TO CONVERSIONS",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We run property ad campaigns across TikTok, YouTube, LinkedIn, Twitter, and Snapchat to maximize visibility, leads, and conversions.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: "Market & Audience Research",
+          description:
+            "We identify property buyers, renters, and investors across platforms.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific real estate goals.'
+          title: "Content Creation & Video Production",
+          description:
+            "We create compelling property videos, ads, and creatives tailored for each platform.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with real estate focus.'
+          title: "Platform-Specific Ad Setup",
+          description:
+            "Ads are customized for TikTok, LinkedIn, YouTube, Twitter, and Snapchat to maximize impact.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Targeting & Optimization",
+          description:
+            "We refine targeting by demographics, interests, behavior, and retargeting data.",
+        },
+        {
+          id: 5,
+          title: "Scaling & ROI Growth",
+          description:
+            "Campaigns that perform well are scaled aggressively to maximize ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Brands Who", gradient: false },
+        {
+          text: "Grew with Multi-Platform Ads",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description:
+        "See how we helped real estate businesses generate more leads, buyers, and investors through emerging ad platforms.",
       testimonials: [
         {
-          id: '1',
-          message: 'The other ads services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Digi Aerotech ran TikTok & YouTube ads for our new property launch and we closed 40% of bookings in just 3 weeks.",
+          highlight: "closed 40% bookings",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: "Rohit Verma",
+          designation: "Director",
+          company: "Skyline Builders",
         },
         {
-          id: '2',
-          message: 'Outstanding other ads expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          id: "2",
+          message:
+            "Our LinkedIn ad campaigns generated serious investor leads for our commercial property project. Excellent ROI!",
+          highlight: "serious investor leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
-        }
-      ]
+          name: "Priya Malhotra",
+          designation: "CEO",
+          company: "UrbanSpaces Realty",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your real estate business.'
-    }
-  }
+      title: "Want to Sell More Properties with Multi-Channel Ads?",
+      subtitle: "REACH BUYERS & INVESTORS ANYWHERE",
+      description:
+        "From TikTok to LinkedIn, we run powerful real estate ad campaigns that deliver high-quality leads & conversions.",
+    },
+  },
 };

@@ -1,198 +1,231 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrush,
+  IconBuilding,
+  IconPaint,
+  IconColorSwatch,
+  IconArrowRight,
+  IconDeviceMobile,
+  IconTrendingUp,
+  IconHome,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'aso-services',
-  business: 'interior-designers',
+  service: "aso-services",
+  business: "interior-designers",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'aso-services',
+    slug: "aso-services-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Interior Design Apps", gradient: false },
+            { text: "Struggle Without ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Interior designers increasingly rely on mobile apps to showcase portfolios, 3D room models, and design consultations. Without ASO, these apps remain invisible to homeowners searching for design inspiration.",
+          painPoints: [
+            "App buried under competitors in app stores",
+            "Low installs despite strong design portfolio",
+            "Generic keywords not attracting right audience",
+            "Poor app store visuals reducing conversions",
+            "Low star ratings hurting brand credibility",
+          ],
+          solutionPoints: [
+            "Targeted keyword optimization for design niches",
+            "High-converting app titles & descriptions",
+            "Attractive visuals, screenshots & videos",
+            "Review management & reputation building",
+            "Consistent installs from local & global users",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Design App",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do interior design apps need ASO?",
+              answer:
+                "ASO ensures your app ranks higher for searches like ‘home makeover ideas’ or ‘3D interior design,’ attracting the right clients.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can ASO bring more clients to my design business?",
+              answer:
+                "Yes. By optimizing keywords, visuals, and reviews, ASO improves installs and leads from homeowners seeking interior services.",
+              icon: React.createElement(IconHome, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you handle both iOS and Android ASO?",
+              answer:
+                "Absolutely. We optimize your app for both App Store (iOS) and Play Store (Android) for maximum visibility.",
+              icon: React.createElement(IconDeviceMobile, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Aso Services for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Optimize",
+      headlineKeywords: ["Design Apps", "Creative Portfolios", "Client Visibility"],
       brandLine: [
-        { text: "Aso Services for Interior Designers", gradient: false }
+        {
+          text: "🎨 ASO Services for Interior Designers",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized aso services strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Turn your interior design app into a lead magnet. With ASO, we boost your app rankings, attract homeowners, and increase installs for real client growth.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Get My App Ranked",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrush, { size: 32 }),
+          title: "4X More Installs",
+          description: "For designers showcasing their portfolios via apps.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconBuilding, { size: 32 }),
+          title: "Higher Visibility",
+          description: "Rank top for searches like ‘home design ideas’.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconPaint, { size: 32 }),
+          title: "Boosted Credibility",
+          description: "Positive reviews & better star ratings attract more clients.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us For", gradient: false },
+        { text: "Interior Design App ASO?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconColorSwatch, { size: 28 }),
+          title: "Design-Specific Keywords",
+          description: "We target homeowners & businesses searching for design solutions.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconBrush, { size: 28 }),
+          title: "Portfolio Visibility",
+          description: "We ensure your creative portfolio shines in app listings.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Client Growth",
+          description: "Turn app installs into design consultations & contracts.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Aso Services for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Optimize My Design App Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Aso Services Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for interior designers businesses.',
+      title: "Our ASO Process for Interior Designers",
+      subtitle: "ANALYZE • OPTIMIZE • DESIGN • PUBLISH • GROW",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "Our ASO process is tailored for interior designers to showcase creativity, attract homeowners, and generate consistent project leads through app visibility.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Market & Competitor Analysis",
+          description: "We study competing design apps and identify opportunities for keyword dominance.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific interior designers goals.'
+          title: "Keyword Optimization",
+          description: "We research & integrate high-traffic keywords like ‘room design ideas,’ ‘modern interiors,’ and ‘home decor apps.’",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with interior designers focus.'
+          title: "Creative Store Listing",
+          description: "We design compelling app icons, screenshots, and demo videos showcasing your designs.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Review & Rating Management",
+          description: "We encourage positive client reviews and manage feedback to boost trust & installs.",
+        },
+        {
+          id: 5,
+          title: "Ongoing Monitoring & Updates",
+          description: "We keep optimizing your app for algorithm updates and seasonal search trends.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Interior Designers Love", gradient: false },
+        { text: "Our ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "We’ve helped interior design apps rank higher, attract homeowners, and generate real client projects consistently.",
       testimonials: [
         {
-          id: '1',
-          message: 'The aso services services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our app was almost invisible on the Play Store. After ASO, installs grew 5X, and I now get daily leads from homeowners!",
+          highlight: "5X More Installs",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Aarav Mehta",
+          designation: "Founder",
+          company: "DreamSpace Interiors",
         },
         {
-          id: '2',
-          message: 'Outstanding aso services expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "With optimized visuals and keywords, my design app ranks in the top 5 for ‘home decor ideas’. Clients contact me directly via the app.",
+          highlight: "Top 5 Ranking",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Rhea Kapoor",
+          designation: "Interior Designer",
+          company: "Rhea Interiors",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your interior designers business.'
-    }
-  }
+      title: "Make Your Design App a Client Magnet",
+      subtitle: "ASO • VISIBILITY • CLIENTS • GROWTH",
+      description:
+        "Don’t let your interior design app go unnoticed. With our ASO strategies, you can attract homeowners, boost installs, and win more design contracts.",
+    },
+  },
 };

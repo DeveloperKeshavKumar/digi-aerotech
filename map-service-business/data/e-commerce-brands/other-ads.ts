@@ -1,198 +1,176 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import { 
+  IconBrandYoutube, IconBrandTiktok, IconBrandSnapchat, IconBrandLinkedin, IconUsers, IconShoppingCart, IconRocket, IconStar, IconArrowRight, IconDeviceMobile
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'other-ads',
-  business: 'e-commerce-brands',
+  business: 'ecomm-brands',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant1',
+    whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'other-ads',
+    slug: 'other-ads-ecomm-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges E-commerce Brands Face with ", gradient: false },
+            { text: "Other Ad Platforms", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Platforms like YouTube, TikTok, Snapchat, and LinkedIn are powerful but complex. Without proper targeting, creatives, and strategy, brands struggle to get ROI.",
+          painPoints: [
+            "Wasted ad spend due to poor targeting",
+            "Low engagement on social media platforms",
+            "Difficulty creating platform-specific content",
+            "Tracking conversions and ROAS is challenging",
+            "Scaling campaigns without losing ROI"
+          ],
+          solutionPoints: [
+            "Tailored ad strategies for each platform (YT, TikTok, Snapchat, LinkedIn)",
+            "Creative, high-performing visuals & video ads",
+            "Precision audience targeting to maximize engagement",
+            "Real-time analytics & performance tracking",
+            "Optimized scaling techniques for sustained ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Maximize ROI Across Multiple Platforms"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Which platforms should I advertise on for my e-commerce store?',
+              answer: 'We evaluate your audience and recommend the best platforms, such as YouTube, TikTok, Snapchat, or LinkedIn, for maximum impact.',
+              icon: React.createElement(IconBrandYoutube, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you handle creative content for each platform?',
+              answer: 'Yes. We design videos, reels, and visuals tailored to each platform’s audience and ad format.',
+              icon: React.createElement(IconBrandTiktok, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you track conversions on multiple ad platforms?',
+              answer: 'We integrate advanced tracking tools to measure ROAS, clicks, engagement, and conversions across all platforms.',
+              icon: React.createElement(IconBrandSnapchat, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you help scale campaigns without losing ROI?',
+              answer: 'Absolutely. We implement optimized scaling strategies, adjust targeting, creatives, and bids to maintain profitability.',
+              icon: React.createElement(IconBrandLinkedin, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you provide reports and insights regularly?',
+              answer: 'Yes. We provide detailed dashboards and performance reports, so you can see exactly how your ads are performing.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Can these ads drive app installs for my e-commerce store?',
+              answer: 'Yes, we create campaigns specifically optimized for mobile app installs and engagement.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Other Ads for E Commerce Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "High ROI from TikTok & Snapchat?",
+        "Engaging Ads on YouTube & LinkedIn?",
+        "Drive Sales & App Installs?",
+        "Maximize Multi-Platform Ads?",
+        "360° Advertising Beyond Google & Meta?"
       ],
       brandLine: [
-        { text: "Other Ads for E Commerce Brands", gradient: false }
+        { text: "🚀 Boost Your E-commerce Sales with Expert Multi-Platform Ads", gradient: false }
       ],
-      subheadline: "Specialized other ads strategies designed specifically for e commerce brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help e-commerce brands run high-converting campaigns across YouTube, TikTok, Snapchat, LinkedIn, and other ad networks.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book Free Ad Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconShoppingCart, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "E Commerce Brands served"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
+        { icon: React.createElement(IconUsers, { size: 32 }), title: "100,000+ Ad Impressions", description: "Generated across platforms" },
+        { icon: React.createElement(IconRocket, { size: 32 }), title: "10X ROI", description: "Optimized multi-platform campaigns" },
+        { icon: React.createElement(IconStar, { size: 32 }), title: "500+ Conversions", description: "Driven through strategic ads" },
+        { icon: React.createElement(IconDeviceMobile, { size: 32 }), title: "App Installs Boosted", description: "Across Android & iOS devices" }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for E Commerce Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "Top Choice for Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of e commerce brands market dynamics and customer behavior patterns.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for e commerce brands businesses.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+        { icon: React.createElement(IconBrandYoutube, { size: 28 }), title: "Platform Expertise", description: "We understand unique nuances of YouTube, TikTok, Snapchat & LinkedIn to craft ads that convert." },
+        { icon: React.createElement(IconBrandTiktok, { size: 28 }), title: "Creative Excellence", description: "Our team produces high-quality, engaging video and visual content to grab attention instantly." },
+        { icon: React.createElement(IconBrandSnapchat, { size: 28 }), title: "Audience Precision", description: "Target the right audience with advanced demographic, interest, and behavioral targeting for maximum ROI." },
+        { icon: React.createElement(IconBrandLinkedin, { size: 28 }), title: "Performance Tracking", description: "Detailed analytics and reports help you make data-driven decisions and optimize campaigns continually." },
+        { icon: React.createElement(IconRocket, { size: 28 }), title: "ROI-Focused Strategy", description: "Every ad, creative, and campaign is optimized to deliver measurable ROI and conversions." },
+        { icon: React.createElement(IconStar, { size: 28 }), title: "Scalable Campaigns", description: "We design strategies that can grow with your business and expand across multiple platforms efficiently." }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start Multi-Platform Ads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Other Ads for E Commerce Brands',
-      subtitle: 'E COMMERCE BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for e commerce brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for e commerce brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for e commerce brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for e commerce brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Other Ads Process for E Commerce Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Multi-Platform Ads Process for E-commerce',
+      subtitle: 'STEP-BY-STEP AD STRATEGY',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for e commerce brands businesses.',
+      description: 'From research to scaling, our process ensures ads perform efficiently across all platforms while maximizing ROI and engagement.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your e commerce brands business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific e commerce brands goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with e commerce brands focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on e commerce brands market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Market & Platform Research', description: 'Analyze your target audience, competitors, and which platforms provide the highest ROI for your e-commerce niche.' },
+        { id: 2, title: 'Ad Strategy Planning', description: 'Define campaign objectives, ad formats, budgets, and KPIs tailored for each platform.' },
+        { id: 3, title: 'Creative Design & Production', description: 'Develop engaging visuals, short videos, and reels optimized for TikTok, Snapchat, YouTube, and LinkedIn.' },
+        { id: 4, title: 'Audience Targeting & Campaign Setup', description: 'Implement precise targeting with demographic, interest, lookalike, and retargeting strategies to reach the ideal customers.' },
+        { id: 5, title: 'Monitoring & Optimization', description: 'Track performance in real-time, A/B test creatives, adjust bids, and optimize campaigns for the best ROI.' },
+        { id: 6, title: 'Scaling & Reporting', description: 'Scale successful campaigns, expand to new audiences, and provide detailed performance reports to keep stakeholders informed.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "E-commerce Brands That ", gradient: false },
+        { text: "Succeed Across Platforms", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from e commerce brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped e-commerce brands maximize ROI and conversions across multiple ad networks.',
       testimonials: [
-        {
-          id: '1',
-          message: 'The other ads services transformed our e commerce brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'E Commerce Brands Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding other ads expertise specifically for e commerce brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for e commerce brands',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'E Commerce Brands Solutions'
-        }
+        { id: '1', message: 'Our campaigns on TikTok and YouTube now drive 3X the revenue. Exceptional targeting and creatives.', highlight: '3X the revenue', stars: 5, name: 'Ananya Singh', designation: 'Founder', company: 'StyleCart' },
+        { id: '2', message: 'We saw a significant lift in app installs and sales after Digi Aerotech managed our multi-platform ads.', highlight: 'significant lift in app installs', stars: 5, name: 'Vikram Rao', designation: 'CEO', company: 'TechWear' }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your E Commerce Brands Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your e commerce brands business.'
+      title: 'Ready to Run Multi-Platform Ads That Convert?',
+      subtitle: 'Drive Sales, Engagement, and App Installs Across Platforms',
+      description: 'Book a free consultation with Digi Aerotech and get a strategic roadmap for YouTube, TikTok, Snapchat, LinkedIn, and more.'
     }
   }
 };

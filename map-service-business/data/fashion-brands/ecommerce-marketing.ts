@@ -1,198 +1,266 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTrendingUp,
+  IconUsers,
+  IconShieldCheck,
+  IconStar,
+  IconRocket,
+  IconShoppingCart,
+  IconPhone,
+  IconArrowRight,
+  IconPackage,
+  IconBarcode,
+  IconTruck
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'ecommerce-marketing',
   business: 'fashion-brands',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: 'variant1',
+    whyChooseUs: 'variant2',
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'ecommerce-marketing',
+    slug: 'ecommerce-marketing-fashion-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Fashion E-commerce ", gradient: false },
+            { text: "Brands Face Online", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Fashion e-commerce brands often struggle to attract traffic, convert visitors, and retain loyal customers.",
+          painPoints: [
+            "Low website traffic despite quality products",
+            "High cart abandonment rates",
+            "Difficulty standing out among competitors",
+            "Limited customer retention and repeat purchases",
+            "Inefficient advertising spend on multiple platforms"
+          ],
+          solutionPoints: [
+            "Targeted ad campaigns on Google, Meta & other platforms",
+            "Conversion-optimized product pages & checkout funnels",
+            "SEO strategies tailored for fashion e-commerce",
+            "Email & retargeting campaigns for loyal customer retention",
+            "Data-driven advertising to maximize ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Fashion E-commerce Sales"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How can ecommerce marketing increase my sales?',
+              answer: 'We drive highly targeted traffic to your fashion store, optimize conversions, and implement retention strategies for repeat sales.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you manage advertising campaigns?',
+              answer: 'Yes, we create and optimize campaigns on Google, Meta, and other ad networks to maximize ROI for fashion brands.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you help reduce cart abandonment?',
+              answer: 'Absolutely. We improve UX, implement retargeting, and optimize checkout processes to minimize abandoned carts.',
+              icon: React.createElement(IconPackage, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide SEO for fashion e-commerce?',
+              answer: 'Yes, we optimize product pages, categories, and blog content to increase organic search traffic.',
+              icon: React.createElement(IconBarcode, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you help with customer retention?',
+              answer: 'We implement email marketing, push notifications, loyalty programs, and personalized campaigns to retain customers.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can I expect results?',
+              answer: 'Paid campaigns show immediate traffic, while SEO and retention strategies build sustainable growth over months.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Ecommerce Marketing for Fashion Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher Online Sales?",
+        "More Fashion Customers?",
+        "Better Conversion Rates?",
+        "Optimized Ad Campaigns?",
+        "360° E-commerce Marketing for Fashion Brands?"
       ],
       brandLine: [
-        { text: "Ecommerce Marketing for Fashion Brands", gradient: false }
+        { text: "🛍️ Scale Your Fashion E-commerce with Proven Digital Strategies", gradient: false }
       ],
-      subheadline: "Specialized ecommerce marketing strategies designed specifically for fashion brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help fashion brands attract traffic, convert visitors, and increase repeat sales with targeted e-commerce marketing strategies.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free Growth Call", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Increase Sales Now", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "50,000+ Orders",
+          description: "Generated via campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Fashion Brands served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "100+ Fashion Stores",
+          description: "Scaled with our strategies"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Client Rating",
+          description: "Satisfaction guaranteed"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "Global Reach",
+          description: "Campaigns across multiple countries"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Ecommerce Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Fashion Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 E-commerce Marketing Partner for Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of fashion brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Data-Driven Campaigns",
+          description: "We optimize ad spend and campaigns for maximum ROI."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for fashion brands businesses.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Conversion-Focused Design",
+          description: "Product pages and funnels designed to convert visitors into buyers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored ecommerce marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Customer Retention Experts",
+          description: "Email, push, and loyalty programs for repeat purchases."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Trusted by Fashion Brands",
+          description: "Proven results across multiple fashion e-commerce stores."
+        },
+        {
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "SEO & Paid Marketing Synergy",
+          description: "Combining organic and paid strategies for exponential growth."
+        },
+        {
+          icon: React.createElement(IconShoppingCart, { size: 28 }),
+          title: "Scalable Strategies",
+          description: "Whether boutique or large brand, campaigns scale with growth."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Grow Your Fashion E-commerce Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Ecommerce Marketing for Fashion Brands',
-      subtitle: 'FASHION BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive ecommerce marketing solutions designed specifically for fashion brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom ecommerce marketing strategy development tailored for fashion brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of ecommerce marketing campaigns optimized for fashion brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for fashion brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Ecommerce Marketing Process for Fashion Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven E-commerce Marketing Process',
+      subtitle: 'STEP-BY-STEP SALES BOOSTER',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to ecommerce marketing that delivers measurable results for fashion brands businesses.',
+      description: 'From traffic generation to conversions and repeat sales, we optimize every stage of your fashion e-commerce business.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your fashion brands business and market landscape.'
+          title: 'Market & Competitor Analysis',
+          description: 'Analyze competitors, trends, and customer behavior for fashion e-commerce.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom ecommerce marketing strategy tailored for your specific fashion brands goals.'
+          title: 'Traffic Acquisition Strategy',
+          description: 'Targeted ads, social media campaigns, and influencer collaborations.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of ecommerce marketing campaigns with fashion brands focus.'
+          title: 'Conversion Optimization',
+          description: 'Improve product pages, checkout flow, and call-to-actions for higher sales.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on fashion brands market feedback.'
+          title: 'Retention & Loyalty Programs',
+          description: 'Email, push notifications, and loyalty initiatives to retain customers.'
+        },
+        {
+          id: 5,
+          title: 'SEO for Product & Category Pages',
+          description: 'Optimize content for organic search visibility and long-term growth.'
+        },
+        {
+          id: 6,
+          title: 'Continuous Monitoring & Scaling',
+          description: 'Track performance, optimize campaigns, and scale for maximum ROI.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Ecommerce Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for ecommerce marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Ecommerce Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fashion Stores That ", gradient: false },
+        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from fashion brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped fashion brands boost sales, conversions, and customer loyalty.',
       testimonials: [
         {
           id: '1',
-          message: 'The ecommerce marketing services transformed our fashion brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our fashion e-commerce store saw a 300% increase in sales within 6 months thanks to Digi Aerotech.',
+          highlight: '300% increase in sales',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Fashion Brands Company'
+          name: 'Sana Kapoor',
+          designation: 'Founder',
+          company: 'StyleHaven'
         },
         {
           id: '2',
-          message: 'Outstanding ecommerce marketing expertise specifically for fashion brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for fashion brands',
+          message: 'They optimized our ads, checkout process, and retention campaigns. Revenue skyrocketed!',
+          highlight: 'Revenue skyrocketed',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Fashion Brands Solutions'
+          name: 'Aditya Sharma',
+          designation: 'CEO',
+          company: 'FashionFi Store'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Fashion Brands Business?',
-      subtitle: 'START YOUR ECOMMERCE MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our ecommerce marketing can drive growth for your fashion brands business.'
+      title: 'Ready to Scale Your Fashion E-commerce Store?',
+      subtitle: 'Drive Traffic, Boost Conversions, and Maximize Sales',
+      description: 'Book a free growth session and watch your fashion store dominate online sales!'
     }
   }
 };

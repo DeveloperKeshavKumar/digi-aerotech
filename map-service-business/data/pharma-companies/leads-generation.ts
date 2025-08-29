@@ -1,198 +1,249 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconPill,
+  IconUserPlus,
+  IconUsers,
+  IconTarget,
+  IconTrendingUp,
+  IconChartBar,
+  IconCurrencyDollar,
+  IconArrowRight,
+  IconBuildingSkyscraper,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'leads-generation',
-  business: 'pharma-companies',
+  service: "leads-generation",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'leads-generation',
+    slug: "leads-generation-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Companies", gradient: false },
+            { text: "Struggle With Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "In the fast-paced pharmaceutical industry, generating consistent and qualified leads is the key to success. Yet, many pharma businesses fail to connect with the right audience, losing opportunities to competitors.",
+          painPoints: [
+            "Low-quality or irrelevant pharma leads",
+            "Difficulty targeting doctors, hospitals, and distributors",
+            "No clear strategy for B2B & B2C lead generation",
+            "Dependence on outdated marketing channels",
+            "High competition with other pharma brands online",
+          ],
+          solutionPoints: [
+            "Proven lead generation strategies for pharma niche",
+            "Target doctors, hospitals, distributors & patients",
+            "Advanced digital campaigns across search & social",
+            "Data-driven approach for qualified, converting leads",
+            "Automation for capturing & nurturing pharma leads",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start Generating Pharma Leads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "What kind of leads can pharma companies generate?",
+              answer:
+                "We help pharma businesses generate B2B distributor leads, B2C patient inquiries, hospital partnerships, and doctor engagement opportunities.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "How do you ensure the leads are high quality?",
+              answer:
+                "We use intent-driven targeting, keyword optimization, and advanced audience segmentation to deliver pharma leads that convert into business.",
+              icon: React.createElement(IconTarget, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you provide leads for international pharma markets?",
+              answer:
+                "Yes, we generate both local and global pharma leads for manufacturers, exporters, and distributors.",
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How soon can pharma companies see results?",
+              answer:
+                "Most clients start seeing qualified pharma leads within 3–4 weeks of starting our campaigns.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Drive",
       headlineKeywords: [
-        "Leads Generation for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Qualified Pharma Leads",
+        "Doctor & Hospital Inquiries",
+        "Distributor Partnerships",
+        "Global Pharma Reach",
       ],
       brandLine: [
-        { text: "Leads Generation for Pharma Companies", gradient: false }
+        {
+          text: "💊 Lead Generation for Pharma Companies That Delivers Results",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help pharma manufacturers, exporters, and distributors generate high-quality B2B & B2C leads that fuel growth and increase revenue.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Get Pharma Leads Now",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "5,000+ Leads",
+          description: "Generated for pharma companies worldwide",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconCurrencyDollar, { size: 32 }),
+          title: "2.7X ROI",
+          description: "On pharma lead generation campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "Faster Results",
+          description: "Leads delivered in under 30 days",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Lead Generation?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconUserPlus, { size: 28 }),
+          title: "Qualified Pharma Leads",
+          description: "We focus on delivering high-intent leads that are more likely to convert into actual customers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Niche-Specific Targeting",
+          description: "Our lead gen strategies are tailored to doctors, hospitals, distributors, and B2B buyers.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Data-Driven Campaigns",
+          description: "We use advanced analytics and reporting to refine campaigns and maximize ROI.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "End-to-End Service",
+          description: "From lead capture to nurturing, we ensure your sales pipeline never runs dry.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Leads Generation for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start Generating Pharma Leads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Leads Generation Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for pharma companies businesses.',
+      title: "Our Pharma Lead Generation Process",
+      subtitle: "FROM TARGETING TO CONVERSIONS",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We design tailored pharma lead generation strategies to connect your business with the right audience at the right time.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Market Research",
+          description: "We analyze pharma trends, competitors, and audience segments to define an effective lead generation strategy.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific pharma companies goals.'
+          title: "Target Audience Mapping",
+          description: "We segment audiences such as doctors, hospitals, distributors, and patients to deliver hyper-relevant leads.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with pharma companies focus.'
+          title: "Multi-Channel Campaigns",
+          description: "We run campaigns across Google, LinkedIn, pharma forums, and social platforms for maximum visibility.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Lead Capture & Nurturing",
+          description: "We build optimized landing pages and automated nurturing workflows to engage and convert leads faster.",
+        },
+        {
+          id: 5,
+          title: "Conversion Optimization",
+          description: "We track KPIs like CPL (cost per lead), CTR, and conversions to refine and scale campaigns for higher ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Companies", gradient: false },
+        { text: "Growing with Our Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "Pharma manufacturers, exporters, and distributors trust us to deliver qualified leads that fuel long-term business growth.",
       testimonials: [
         {
-          id: '1',
-          message: 'The leads generation services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Within 2 months, we started getting consistent inquiries from international distributors. Their pharma lead generation expertise is unmatched.",
+          highlight: "3.1X Growth in Distributor Leads",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Rajesh Sharma",
+          designation: "Director",
+          company: "BioCare Pharma",
         },
         {
-          id: '2',
-          message: 'Outstanding leads generation expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "We struggled for years to generate quality B2B pharma leads. Their strategies gave us a pipeline full of doctors and hospitals in just weeks.",
+          highlight: "2.5X Increase in Qualified Leads",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Anita Desai",
+          designation: "Head of Marketing",
+          company: "MediLife Pharma",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Generate High-Quality Pharma Leads Consistently",
+      subtitle: "MORE DOCTORS • MORE DISTRIBUTORS • MORE GROWTH",
+      description:
+        "We help pharma companies build a predictable pipeline of patients, doctors, and distributors with targeted lead generation strategies.",
+    },
+  },
 };

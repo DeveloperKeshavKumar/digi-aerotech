@@ -1,198 +1,232 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconDeviceMobile,
+  IconHome,
+  IconBrush,
+  IconLayout2,
+  IconArrowRight,
+  IconCube,
+  IconCalendarEvent,
+  IconUsers,
+  IconBuilding,
+  IconTrendingUp,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'mobile-apps-development',
-  business: 'interior-designers',
+  service: "mobile-apps-development",
+  business: "interior-designers",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: "mobile-apps-development-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Interior Designers", gradient: false },
+            { text: "Need Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Clients today want quick access to design ideas, 3D previews, and easy ways to connect with designers. Without a mobile app, interior businesses lose engagement and premium projects.",
+          painPoints: [
+            "Clients unable to browse design portfolio easily",
+            "Missing out on modern 3D & AR experiences",
+            "Manual appointment scheduling issues",
+            "Low engagement with tech-savvy clients",
+            "Lack of branded mobile presence",
+          ],
+          solutionPoints: [
+            "Custom mobile apps with portfolio galleries",
+            "Virtual 3D walkthroughs & AR visualization",
+            "Integrated consultation booking systems",
+            "Push notifications for new projects & offers",
+            "Branded apps that build trust & authority",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Build My App",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How can a mobile app help my interior design business?",
+              answer:
+                "A custom app allows clients to explore your portfolio, preview designs in 3D/AR, and book consultations directly — boosting conversions.",
+              icon: React.createElement(IconDeviceMobile, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can I showcase my designs in 3D?",
+              answer:
+                "Yes. We integrate 3D modeling & AR visualization so clients can experience your designs before execution.",
+              icon: React.createElement(IconCube, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do apps work for small interior firms too?",
+              answer:
+                "Absolutely. Whether a solo designer or a full studio, an app gives you a modern, professional edge over competitors.",
+              icon: React.createElement(IconBuilding, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Mobile Apps Development for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Showcase Your Designs Digitally",
+      headlineKeywords: ["Mobile Apps", "Interior Designers", "3D & AR Previews"],
       brandLine: [
-        { text: "Mobile Apps Development for Interior Designers", gradient: false }
+        {
+          text: "📱 Build Trust. Impress Clients. Win More Projects.",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We design powerful mobile apps for interior designers that let clients explore portfolios, view 3D walkthroughs, and book consultations — boosting client confidence & project conversions.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Build My App Now",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "2X More Leads",
+          description: "Interior designers with apps generate twice the leads.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Client Engagement",
+          description: "Keep clients engaged with design updates & notifications.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrush, { size: 32 }),
+          title: "Visual Impact",
+          description: "Showcase your portfolio beautifully with 3D previews.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Mobile App Development?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconLayout2, { size: 28 }),
+          title: "Portfolio Showcase",
+          description: "Apps that beautifully present your designs & past projects.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconCube, { size: 28 }),
+          title: "3D & AR Features",
+          description: "Interactive design previews for client confidence.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconCalendarEvent, { size: 28 }),
+          title: "Booking Integration",
+          description: "Seamless consultation booking & scheduling.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Develop My App",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Mobile Apps Development Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for interior designers businesses.',
+      title: "Our Mobile App Development Process",
+      subtitle: "DESIGN • DEVELOP • ENGAGE • CONVERT",
+      description:
+        "We don’t just build apps; we create digital experiences that help interior designers impress clients and close projects faster.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Requirement Analysis",
+          description: "Understand your design portfolio, target clients, and business goals.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific interior designers goals.'
+          title: "UI/UX Design",
+          description: "Design intuitive, elegant, and visually stunning mobile app interfaces.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with interior designers focus.'
+          title: "3D & AR Integration",
+          description: "Enable virtual walkthroughs & AR previews for immersive experiences.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "App Development",
+          description: "Develop fast, secure, and scalable apps for iOS & Android.",
+        },
+        {
+          id: 5,
+          title: "Launch & Support",
+          description: "Publish apps and provide continuous updates & maintenance.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Interior Designers", gradient: false },
+        { text: "Growing with Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "Our mobile apps help interior designers stand out, impress clients with 3D previews, and grow their design business with digital presence.",
       testimonials: [
         {
-          id: '1',
-          message: 'The mobile apps development services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our new mobile app lets clients browse my portfolio and book consultations instantly. It has made client acquisition so much smoother.",
+          highlight: "Client-Friendly",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Priya Mehta",
+          designation: "Interior Designer",
+          company: "Urban Living Interiors",
         },
         {
-          id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "The 3D walkthrough feature wowed my clients. They could see exactly how their spaces would look before starting the project.",
+          highlight: "3D Previews",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Rohan Kapoor",
+          designation: "Creative Head",
+          company: "DreamSpace Interiors",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your interior designers business.'
-    }
-  }
+      title: "Transform Your Interior Business with a Custom Mobile App",
+      subtitle: "SHOWCASE • ENGAGE • WIN",
+      description:
+        "Don’t just design — let clients experience your vision digitally. Our mobile apps help you showcase your creativity, boost trust, and secure premium projects.",
+    },
+  },
 };

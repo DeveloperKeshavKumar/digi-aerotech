@@ -1,198 +1,266 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTrendingUp,
+  IconUsers,
+  IconShieldCheck,
+  IconStar,
+  IconRocket,
+  IconShoppingCart,
+  IconPhone,
+  IconArrowRight,
+  IconAppWindow,
+  IconCode,
+  IconDeviceMobile
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'aso-services',
   business: 'fashion-brands',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: 'variant2',
+    whyChooseUs: 'variant3',
+    process: 'variant1',
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'aso-services',
+    slug: 'aso-services-fashion-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Fashion Brands Face in ", gradient: false },
+            { text: "App Visibility & Downloads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Fashion apps face intense competition in app stores, making it hard to attract downloads and retain users.",
+          painPoints: [
+            "Low visibility among thousands of fashion apps",
+            "Poor keyword targeting and discoverability",
+            "Low conversion from app page views to downloads",
+            "Difficulty retaining users and building loyalty",
+            "Limited insights on competitor performance"
+          ],
+          solutionPoints: [
+            "App Store Optimization with targeted fashion keywords",
+            "Compelling app title, description, and visuals",
+            "Conversion-focused app icons & screenshots",
+            "User retention strategies with push notifications & in-app engagement",
+            "Competitor analysis to outperform similar fashion apps"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Fashion App Downloads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How does ASO help my fashion app?',
+              answer: 'Our ASO strategies increase your app visibility, attract targeted users, and boost organic downloads.',
+              icon: React.createElement(IconAppWindow, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you optimize both iOS and Android apps?',
+              answer: 'Yes, we implement platform-specific ASO strategies for App Store and Google Play to maximize results.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you handle app reviews and ratings?',
+              answer: 'Absolutely. We improve app credibility by managing reviews and encouraging positive user feedback.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Will ASO increase my revenue?',
+              answer: 'By increasing targeted downloads and improving retention, ASO helps boost in-app purchases and sales.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How long before I see results?',
+              answer: 'Initial improvements are visible in weeks, but significant growth occurs over 3-6 months of continuous optimization.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you provide ongoing ASO support?',
+              answer: 'Yes, we continuously monitor, analyze, and optimize your app to maintain top rankings and high conversions.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Aso Services for Fashion Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More App Downloads?",
+        "Higher Fashion App Visibility?",
+        "Top Rankings in App Stores?",
+        "Boost Fashion Engagement?",
+        "360° ASO for Fashion Brands?"
       ],
       brandLine: [
-        { text: "Aso Services for Fashion Brands", gradient: false }
+        { text: "🚀 Elevate Your Fashion App with Proven ASO Strategies", gradient: false }
       ],
-      subheadline: "Specialized aso services strategies designed specifically for fashion brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help fashion brands increase app downloads, visibility, and user engagement through tailored ASO strategies.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free ASO Consultation", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Get Your App Optimized", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "100,000+ Users",
+          description: "Organic app downloads driven"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Fashion Brands served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "250+ Fashion Apps Optimized",
+          description: "Proven ASO success"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "4.9/5 Trust Rating",
+          description: "Clients satisfied with results"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "Global Reach",
+          description: "Optimizations for worldwide app stores"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Fashion Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 ASO Partner for Fashion Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of fashion brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Expert Fashion ASO Team",
+          description: "Years of experience optimizing fashion apps for top rankings."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for fashion brands businesses.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Keyword & Market Research",
+          description: "We target high-intent fashion keywords to drive downloads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "User Retention Strategies",
+          description: "We ensure users stay engaged and return to your app."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShoppingCart, { size: 28 }),
+          title: "Conversion-Focused Optimization",
+          description: "Improved app page visuals, screenshots, and descriptions."
+        },
+        {
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Continuous Monitoring",
+          description: "We track performance and adjust strategies proactively."
+        },
+        {
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Proven Results",
+          description: "Fashion brands see tangible growth in downloads and engagement."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Optimize Your Fashion App Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Aso Services for Fashion Brands',
-      subtitle: 'FASHION BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for fashion brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for fashion brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for fashion brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for fashion brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Aso Services Process for Fashion Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven ASO Process for Fashion Apps',
+      subtitle: 'STEP-BY-STEP APP OPTIMIZATION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for fashion brands businesses.',
+      description: 'From keyword research to user retention, we optimize every aspect of your fashion app for maximum downloads and engagement.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your fashion brands business and market landscape.'
+          title: 'Market & Competitor Research',
+          description: 'Analyze top fashion apps, identify high-performing keywords, and uncover opportunities.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific fashion brands goals.'
+          title: 'Keyword Optimization',
+          description: 'Select the best app titles, subtitles, and keywords to improve app store rankings.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with fashion brands focus.'
+          title: 'App Page Optimization',
+          description: 'Enhance visuals, screenshots, descriptions, and videos to maximize conversions.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on fashion brands market feedback.'
+          title: 'Review & Rating Management',
+          description: 'Encourage positive reviews, handle feedback, and boost credibility.'
+        },
+        {
+          id: 5,
+          title: 'Retention & Engagement Strategies',
+          description: 'Push notifications, in-app messages, and loyalty programs to keep users active.'
+        },
+        {
+          id: 6,
+          title: 'Continuous Monitoring & Updates',
+          description: 'Track performance, A/B test visuals, and iterate for ongoing ASO success.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fashion Apps That ", gradient: false },
+        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from fashion brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped fashion brands achieve top app store rankings and massive downloads.',
       testimonials: [
         {
           id: '1',
-          message: 'The aso services services transformed our fashion brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our fashion app saw a 400% increase in organic downloads within 3 months thanks to Digi Aerotech.',
+          highlight: '400% increase in organic downloads',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Fashion Brands Company'
+          name: 'Priya Verma',
+          designation: 'Founder',
+          company: 'TrendyCloset App'
         },
         {
           id: '2',
-          message: 'Outstanding aso services expertise specifically for fashion brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for fashion brands',
+          message: 'They helped optimize our visuals and keywords. Downloads skyrocketed, and retention improved significantly.',
+          highlight: 'Downloads skyrocketed',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Fashion Brands Solutions'
+          name: 'Rohit Singh',
+          designation: 'CEO',
+          company: 'FashionFi App'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Fashion Brands Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your fashion brands business.'
+      title: 'Ready to Skyrocket Your Fashion App Downloads?',
+      subtitle: 'Boost Visibility, Downloads, and User Engagement Today',
+      description: 'Schedule a free ASO consultation and watch your fashion app climb the ranks in app stores!'
     }
   }
 };

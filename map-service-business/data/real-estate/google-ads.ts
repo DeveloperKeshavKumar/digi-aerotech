@@ -1,198 +1,230 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBuildingSkyscraper, IconHome, IconTrendingUp, IconTarget,
+  IconPhoneCall, IconChartLine, IconUsers, IconArrowRight
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'google-ads',
   business: 'real-estate',
   variants: {
     hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
+    whyChooseUs: 'variant1',
+    process: 'variant3',
     testimonials: 'variant2'
   },
   data: {
-    slug: 'google-ads',
+    slug: 'google-ads-real-estate',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Real Estate Businesses", gradient: false },
+            { text: "Struggle with Online Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Running ads without the right targeting wastes budget. Real estate requires precision-focused Google Ads for high-quality leads.",
+          painPoints: [
+            "Low-quality clicks that don’t convert",
+            "High ad spend with poor ROI",
+            "Not targeting property buyers & sellers correctly",
+            "Generic ads failing to build trust",
+            "Lack of call tracking & conversion setup"
+          ],
+          solutionPoints: [
+            "Laser-focused keyword targeting (Buy, Rent, Sell queries)",
+            "High-converting landing pages for property inquiries",
+            "Smart bidding & ad extensions for higher visibility",
+            "Call tracking & lead form integrations",
+            "Continuous campaign optimization for maximum ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get High-Intent Real Estate Leads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Do Google Ads really work for real estate?',
+              answer: 'Yes. People searching for properties on Google have strong purchase intent. Properly optimized ads bring calls, inquiries, and site visits.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'What types of real estate ads perform best?',
+              answer: 'Search ads, local service ads, and display remarketing campaigns drive the best results for property sales and rentals.',
+              icon: React.createElement(IconHome, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can Google Ads help with luxury property sales?',
+              answer: 'Yes, we create niche campaigns targeting HNI buyers, investors, and international clients searching for premium properties.',
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How soon can I expect leads?',
+              answer: 'Most campaigns start generating qualified property inquiries within the first 7–14 days.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Looking for ",
       headlineKeywords: [
-        "Google Ads for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Property Buyers?",
+        "High-Intent Real Estate Leads?",
+        "Faster Sales Closures?",
+        "Targeted Property Inquiries?",
+        "Better ROI from Ads?"
       ],
       brandLine: [
-        { text: "Google Ads for Real Estate", gradient: false }
+        { text: "📈 Run Google Ads That Actually Sell Properties", gradient: false }
       ],
-      subheadline: "Specialized google ads strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help real estate agencies, brokers, and property consultants generate quality buyer & seller leads with precision-targeted Google Ads campaigns.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "Start Google Ads Today", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "Get Free Campaign Audit", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "300+ Real Estate Projects",
+          description: "Scaled via Google Ads campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconChartLine, { size: 32 }),
+          title: "10,000+ Leads Generated",
+          description: "From property-focused ad targeting"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "4X ROI",
+          description: "Achieved with optimized campaigns"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Digi Aerotech for", gradient: false },
+        { text: "Real Estate Google Ads?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "High-Intent Targeting",
+          description: "Ads shown only to serious property buyers & sellers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconChartLine, { size: 28 }),
+          title: "Conversion-Focused Ads",
+          description: "Landing pages & CTAs built to capture leads instantly."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored google ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Call & Form Tracking",
+          description: "Measure real leads from every ad click."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "ROI-Driven Scaling",
+          description: "We double-down on campaigns that generate results."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Generate Property Leads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
-    },
-    typesOfServices: {
-      title: 'Our Google Ads for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive google ads solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom google ads strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of google ads campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
     },
     process: {
       title: 'Our Google Ads Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
+      subtitle: 'LEAD-FOCUSED CAMPAIGN EXECUTION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to google ads that delivers measurable results for real estate businesses.',
+      description: 'From keyword research to call tracking, we build and scale Google Ads campaigns that drive real property inquiries.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: 'Market & Keyword Research',
+          description: 'We analyze high-intent property keywords like “flats for sale in [city]” and competitor ads to identify profitable opportunities.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom google ads strategy tailored for your specific real estate goals.'
+          title: 'Ad Copy & Extensions',
+          description: 'We craft compelling ad copies with call, location, and lead form extensions to increase CTR and direct calls.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of google ads campaigns with real estate focus.'
+          title: 'Landing Page Optimization',
+          description: 'Custom property landing pages designed for conversions — highlighting listings, offers, and CTAs.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
+          title: 'Campaign Setup & Launch',
+          description: 'Targeting by city, pin code, and buyer intent to ensure your budget brings only serious property seekers.'
+        },
+        {
+          id: 5,
+          title: 'Tracking & Reporting',
+          description: 'We integrate call tracking, lead forms, and analytics to measure every click’s ROI.'
+        },
+        {
+          id: 6,
+          title: 'Scaling & Optimization',
+          description: 'We continuously optimize campaigns, A/B test creatives, and scale ads that generate maximum qualified leads.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Google Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for google ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Google Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Agencies That", gradient: false },
+        { text: "Scaled with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description: 'See how our campaigns turned ad clicks into high-ticket property sales and rentals.',
       testimonials: [
         {
           id: '1',
-          message: 'The google ads services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our brokerage closed 7 flats in just 2 months thanks to highly targeted Google Ads!',
+          highlight: '7 flats sold in 2 months',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: 'Rohit Verma',
+          designation: 'Broker',
+          company: 'Urban Nest Realty'
         },
         {
           id: '2',
-          message: 'Outstanding google ads expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          message: 'From struggling with low inquiries, we now get 20+ qualified leads weekly from Google Ads.',
+          highlight: '20+ weekly leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
+          name: 'Ananya Mehta',
+          designation: 'Director',
+          company: 'Prime Properties'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR GOOGLE ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our google ads can drive growth for your real estate business.'
+      title: 'Want More Qualified Property Leads?',
+      subtitle: 'GET BUYERS & SELLERS FROM GOOGLE ADS',
+      description: 'Stop wasting ad spend. Run targeted campaigns that bring real estate buyers & sellers straight to your phone.',
     }
   }
 };

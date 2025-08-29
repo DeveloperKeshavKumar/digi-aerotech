@@ -1,198 +1,231 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconMapPin, IconBuildingSkyscraper, IconSearch,
+  IconUsers, IconStar, IconPhoneCall, IconTrendingUp,
+  IconHome, IconArrowRight
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'local-seo',
-  business: 'real-estate',
+  service: "local-seo",
+  business: "real-estate",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'local-seo',
+    slug: "local-seo-real-estate",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Real Estate Businesses", gradient: false },
+            { text: "Struggle with Local Visibility", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline: "Property buyers and renters search locally first. If your agency isn’t ranking in local results, you’re losing high-intent clients daily.",
+          painPoints: [
+            "Not ranking on Google Maps for 'flats near me'",
+            "Inconsistent NAP (Name, Address, Phone) across listings",
+            "Weak local citations & directory presence",
+            "Low star ratings & poor online reviews",
+            "Competitors capturing all local searches",
+          ],
+          solutionPoints: [
+            "Optimize GMB & Maps for top local rankings",
+            "Build high-quality local citations & backlinks",
+            "NAP cleanup across directories",
+            "Reputation & reviews management",
+            "Geo-targeted SEO campaigns for real estate",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Local Real Estate Visibility",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why is Local SEO important for real estate?",
+              answer: "Most buyers and renters use Google Maps & local searches. Local SEO ensures your listings appear where clients are searching.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can Local SEO help me get property site visits?",
+              answer: "Yes, by ranking high for geo-specific terms like '3BHK in Andheri' or 'plots in Gurgaon', you attract real local buyers.",
+              icon: React.createElement(IconHome, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How do reviews affect local rankings?",
+              answer: "Positive reviews boost trust and significantly improve your Maps visibility, bringing more qualified inquiries.",
+              icon: React.createElement(IconStar, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How soon can I see Local SEO results?",
+              answer: "Typically within 6–8 weeks you’ll notice improved rankings, more calls, and higher walk-in site visits.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Dominate Local",
       headlineKeywords: [
-        "Local Seo for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Property Searches",
+        "Google Maps Rankings",
+        "City-Wide Visibility",
+        "Neighborhood SEO",
+        "Local Buyer Inquiries",
       ],
       brandLine: [
-        { text: "Local Seo for Real Estate", gradient: false }
+        { text: "📍 Turn Local Searches into Site Visits", gradient: false },
       ],
-      subheadline: "Specialized local seo strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help real estate agents, developers, and property consultants rank at the top of *Google Maps, local searches, and neighborhood-specific keywords* to capture high-intent leads.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhoneCall, { size: 28 }), text: "Boost Local SEO Now", link: "/contact" },
+        { icon: React.createElement(IconMapPin, { size: 28 }), text: "Get Free Local Audit", link: "tel:+918607119872", variant: "secondary" },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBuildingSkyscraper, { size: 32 }),
+          title: "500+ Properties",
+          description: "Ranked in Google Maps",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "3X More Calls",
+          description: "From local property buyers",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.8★ Avg Rating",
+          description: "Boosted through reviews",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Local Seo', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Digi Aerotech for", gradient: false },
+        { text: "Local SEO in Real Estate?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Google Maps Optimization",
+          description: "Rank higher for 'property near me' searches and attract walk-in clients.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Geo-Targeted Keywords",
+          description: "We target hyper-local keywords that bring in location-specific leads.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored local seo strategies designed specifically for your business needs.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review & Reputation Boost",
+          description: "Systematic strategies to increase positive reviews & brand trust.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Local Backlink Authority",
+          description: "Strong citations & local backlinks that push you ahead of competitors.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Local Seo for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive local seo solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom local seo strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of local seo campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Rank Your Real Estate Agency Locally",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Local Seo Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to local seo that delivers measurable results for real estate businesses.',
+      title: "Our Local SEO Process for Real Estate",
+      subtitle: "RANK HIGHER IN PROPERTY SEARCHES",
+      className: "border-t border-border dark:border-gray-700",
+      description: "We use proven *Local SEO frameworks* to help your real estate brand dominate Maps, directories, and neighborhood searches.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: "Local SEO Audit",
+          description: "We analyze your GMB profile, NAP consistency, and competitor rankings in your target location.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom local seo strategy tailored for your specific real estate goals.'
+          title: "Google My Business Optimization",
+          description: "Your GMB listing is optimized with categories, photos, service areas, and property-specific updates.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of local seo campaigns with real estate focus.'
+          title: "Geo-Keyword Targeting",
+          description: "We research & implement high-intent, location-specific keywords like 'luxury flats in Bandra' or 'plots in Noida'.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Local Seo Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for local seo success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Local Citations & Directories",
+          description: "We build high-quality citations and clean up duplicates to boost trust and rankings.",
+        },
+        {
+          id: 5,
+          title: "Review Management",
+          description: "We implement systems to collect, manage, and showcase positive reviews that increase trust & conversions.",
+        },
+        {
+          id: 6,
+          title: "Tracking & Reporting",
+          description: "Transparent reporting with call tracking, Maps visibility, and leads growth from local searches.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Local Seo ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Agencies That", gradient: false },
+        { text: "Ranked #1 Locally", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description: "See how local SEO boosted visibility and lead flow for property consultants.",
       testimonials: [
         {
-          id: '1',
-          message: 'The local seo services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message: "We went from not showing up in Maps to ranking #1 for '2BHK apartments in Pune'. Inquiries doubled within 2 months.",
+          highlight: "Doubled Local Inquiries",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: "Ravi Kapoor",
+          designation: "Realtor",
+          company: "Skyline Properties",
         },
         {
-          id: '2',
-          message: 'Outstanding local seo expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          id: "2",
+          message: "Digi Aerotech’s Local SEO strategies helped us dominate Google Maps across multiple neighborhoods.",
+          highlight: "Top 3 in Google Maps",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
-        }
-      ]
+          name: "Nidhi Sharma",
+          designation: "Developer",
+          company: "GreenLand Builders",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR LOCAL SEO JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our local seo can drive growth for your real estate business.'
-    }
-  }
+      title: "Want to Rank #1 in Local Property Searches?",
+      subtitle: "LOCAL SEO THAT BRINGS WALK-IN CLIENTS",
+      description: "Get found instantly when buyers search for flats, plots, or commercial properties in your city.",
+    },
+  },
 };

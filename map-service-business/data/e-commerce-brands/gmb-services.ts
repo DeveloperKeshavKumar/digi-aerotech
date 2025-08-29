@@ -1,198 +1,216 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import { 
+  IconMapPin, IconTrendingUp, IconUsers, IconStar, IconShieldCheck, IconShoppingCart, IconArrowRight 
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'gmb-services',
-  business: 'e-commerce-brands',
+  business: 'ecomm-brands',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: 'variant1',
+    whyChooseUs: 'variant2',
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'gmb-services',
+    slug: 'gmb-services-ecomm-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "E-commerce Brands Face ", gradient: false },
+            { text: "Local Visibility Challenges", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Even with a top-notch online store, e-commerce brands often struggle to appear in local search results and Google Maps, losing potential buyers nearby.",
+          painPoints: [
+            "Low visibility in Google Maps & local searches",
+            "Inaccurate or incomplete business listings",
+            "Difficulty managing multiple locations online",
+            "Negative reviews impacting brand trust",
+            "Limited local engagement and footfall (if hybrid business)"
+          ],
+          solutionPoints: [
+            "Optimized GMB listings for every location",
+            "Accurate NAP (Name, Address, Phone) data across platforms",
+            "Regular monitoring and responding to reviews",
+            "Geo-targeted local SEO campaigns",
+            "Boosting visibility to attract nearby customers"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Optimize Your GMB Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is Google My Business important for e-commerce brands?',
+              answer: 'GMB helps your brand appear in local searches and maps, increasing trust, visibility, and potential sales.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can GMB improve my online store traffic?',
+              answer: 'Yes, accurate listings and optimized GMB profiles drive both online clicks and offline engagement for hybrid stores.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you manage reviews and ratings?',
+              answer: 'Absolutely. We respond to customer reviews, resolve issues, and leverage positive feedback to boost brand trust.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you optimize GMB for multiple locations?',
+              answer: 'Yes. We ensure every store or warehouse location is properly listed and fully optimized for search visibility.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you track GMB performance?',
+              answer: 'We monitor profile views, clicks, calls, and direction requests to measure the impact of GMB optimization.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon will I see results?',
+              answer: 'With proper optimization and review management, clients often notice improved visibility and engagement within 3–4 weeks.',
+              icon: React.createElement(IconShieldCheck, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Gmb Services for E Commerce Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Local Visibility?",
+        "Boost Local Engagement?",
+        "Increase Nearby Conversions?",
+        "Optimize Your Brand on Google Maps?",
+        "GMB Services for E-commerce Brands?"
       ],
       brandLine: [
-        { text: "Gmb Services for E Commerce Brands", gradient: false }
+        { text: "📍 Enhance Your E-commerce Brand Visibility Locally with GMB Optimization", gradient: false }
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for e commerce brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help e-commerce brands optimize Google My Business profiles to appear in local searches, gain customer trust, and boost conversions.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconMapPin, { size: 28 }), text: "Get Free GMB Audit", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Customer Trust",
+          description: "Optimized GMB listings drive higher reviews and ratings"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "E Commerce Brands served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "100+ Brands",
+          description: "Enhanced visibility across local searches"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "50,000+ Local Clicks",
+          description: "Increased engagement for nearby customers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "High Local Conversions",
+          description: "More traffic and sales from Google Maps & searches"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for E Commerce Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Local Growth Partner for E-commerce Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of e commerce brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Accurate Local Listings",
+          description: "Ensure all your business locations are correctly displayed on Google Maps."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for e commerce brands businesses.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review & Reputation Management",
+          description: "Responding to reviews and improving customer trust."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShoppingCart, { size: 28 }),
+          title: "Local SEO Integration",
+          description: "Optimize your GMB profile for search terms that convert locally."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Performance Tracking",
+          description: "Monitor insights, clicks, calls, and driving directions from GMB."
+        },
+        {
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Compliance & Accuracy",
+          description: "Keep your brand listings consistent across all platforms."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Boost Nearby Engagement",
+          description: "Attract local customers and improve conversions for your e-commerce store."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Optimize Your GMB Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Gmb Services for E Commerce Brands',
-      subtitle: 'E COMMERCE BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for e commerce brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for e commerce brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for e commerce brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for e commerce brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Gmb Services Process for E Commerce Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven GMB Optimization Process for E-commerce Brands',
+      subtitle: 'STEP-BY-STEP LOCAL GROWTH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for e commerce brands businesses.',
+      description: 'From audit to optimization, our process ensures maximum visibility and engagement for your e-commerce business locally.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your e commerce brands business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific e commerce brands goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with e commerce brands focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on e commerce brands market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'GMB Audit', description: 'Analyze your current Google My Business profile for accuracy, completeness, and performance.' },
+        { id: 2, title: 'Listing Optimization', description: 'Update business name, address, phone, categories, and website links for each location.' },
+        { id: 3, title: 'Visual & Content Enhancement', description: 'Add high-quality images, videos, and optimized business descriptions to attract clicks.' },
+        { id: 4, title: 'Review & Reputation Management', description: 'Respond to reviews, encourage positive feedback, and resolve negative feedback professionally.' },
+        { id: 5, title: 'Local SEO Boost', description: 'Integrate relevant local keywords to rank higher in Google searches and Maps.' },
+        { id: 6, title: 'Performance Monitoring', description: 'Track views, clicks, calls, and direction requests to measure the impact and optimize further.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "E-commerce Brands Who ", gradient: false },
+        { text: "Grew Locally with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from e commerce brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped e-commerce brands enhance local visibility, gain reviews, and drive more sales.',
       testimonials: [
-        {
-          id: '1',
-          message: 'The gmb services services transformed our e commerce brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'E Commerce Brands Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding gmb services expertise specifically for e commerce brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for e commerce brands',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'E Commerce Brands Solutions'
-        }
+        { id: '1', message: 'Our online store now appears at the top for all local searches thanks to their GMB optimization.', highlight: 'top for all local searches', stars: 5, name: 'Anita Kapoor', designation: 'Founder', company: 'StyleKart' },
+        { id: '2', message: 'GMB services helped us get more local customers and improve our online credibility.', highlight: 'more local customers', stars: 5, name: 'Rohit Mehra', designation: 'CEO', company: 'ShopEase' }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your E Commerce Brands Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your e commerce brands business.'
+      title: 'Ready to Boost Your Local E-commerce Visibility?',
+      subtitle: 'Get More Clicks, Reviews, and Sales',
+      description: 'Schedule a free GMB consultation with our experts and watch your e-commerce brand dominate local searches.'
     }
   }
 };

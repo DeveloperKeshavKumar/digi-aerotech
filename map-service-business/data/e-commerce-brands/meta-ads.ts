@@ -1,198 +1,216 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import { 
+  IconBrandMeta, IconBrandInstagram, IconShoppingCart, IconUsers, IconTrendingUp, IconStar, IconRocket, IconArrowRight 
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'meta-ads',
-  business: 'e-commerce-brands',
+  business: 'ecomm-brands',
   variants: {
     hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
+    whyChooseUs: 'variant3',
+    process: 'variant2',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'meta-ads',
+    slug: 'meta-ads-ecomm-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "E-commerce Brands Face ", gradient: false },
+            { text: "Challenges with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Without optimized Meta Ads, your products may not reach the right audience, wasting ad spend and missing sales opportunities.",
+          painPoints: [
+            "Low ad ROI due to poor targeting",
+            "Difficulty scaling campaigns profitably",
+            "Ignoring remarketing & dynamic ads",
+            "Poor ad creative engagement",
+            "Unoptimized campaign structure & bidding"
+          ],
+          solutionPoints: [
+            "Precise audience targeting on Facebook & Instagram",
+            "High-converting ad creatives & formats",
+            "Remarketing campaigns to recover lost visitors",
+            "Dynamic product ads to boost sales",
+            "Continuous optimization for maximum ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Maximize Your Meta Ads ROI"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why should I invest in Meta Ads for my e-commerce store?',
+              answer: 'Meta Ads allow precise targeting, high engagement, and measurable ROI to attract ready-to-buy customers.',
+              icon: React.createElement(IconBrandMeta, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you manage both Facebook and Instagram campaigns?',
+              answer: 'Yes, we manage campaigns across all Meta platforms with optimal budget allocation.',
+              icon: React.createElement(IconBrandInstagram, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you improve ad ROI?',
+              answer: 'We A/B test creatives, optimize audiences, and adjust bidding strategies to maximize return.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you create ad creatives for my products?',
+              answer: 'Yes, we design compelling images, videos, and carousel ads to drive higher engagement and conversions.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can you help with remarketing campaigns?',
+              answer: 'Absolutely. We create dynamic and personalized remarketing campaigns to recover abandoned carts and increase sales.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can I expect results?',
+              answer: 'Well-optimized Meta campaigns start showing measurable results within days, with ongoing scaling for higher conversions.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Meta Ads for E Commerce Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher ROAS?",
+        "More E-commerce Sales?",
+        "Better Engagement?",
+        "Targeted Meta Ads?",
+        "360° Meta Advertising for Your Store?"
       ],
       brandLine: [
-        { text: "Meta Ads for E Commerce Brands", gradient: false }
+        { text: "📈 Scale Your E-commerce Sales with High-Impact Meta Ads", gradient: false }
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for e commerce brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help e-commerce brands run highly targeted and converting Meta Ads campaigns to maximize sales and ROI.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconBrandMeta, { size: 28 }), text: "Book Free Meta Ads Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconBrandInstagram, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "10,000+ Products Sold",
+          description: "Through Meta Ads campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "E Commerce Brands served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "5x ROI",
+          description: "On well-optimized ad campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "50+ Campaigns Managed",
+          description: "Across multiple e-commerce verticals"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "High-Quality Targeted Traffic",
+          description: "Engaged users ready to buy"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for E Commerce Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Meta Ads Partner for E-commerce Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of e commerce brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandMeta, { size: 28 }),
+          title: "Precise Audience Targeting",
+          description: "Reach the right customers at the right time."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for e commerce brands businesses.'
+          icon: React.createElement(IconBrandInstagram, { size: 28 }),
+          title: "High-Converting Ad Creatives",
+          description: "Engaging visuals that drive clicks & purchases."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "ROI-Focused Campaigns",
+          description: "Optimizing for maximum return on ad spend."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Remarketing & Dynamic Ads",
+          description: "Recover lost visitors and abandoned carts."
+        },
+        {
+          icon: React.createElement(IconShoppingCart, { size: 28 }),
+          title: "Budget Optimization",
+          description: "Smart allocation to ensure cost-effective campaigns."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Performance Tracking",
+          description: "Monitor KPIs and continuously improve campaigns."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Your Meta Ads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Meta Ads for E Commerce Brands',
-      subtitle: 'E COMMERCE BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for e commerce brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for e commerce brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for e commerce brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for e commerce brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Meta Ads Process for E Commerce Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Meta Ads Process for E-commerce Brands',
+      subtitle: 'STEP-BY-STEP META SUCCESS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for e commerce brands businesses.',
+      description: 'We implement a structured approach to create high-converting Meta Ads campaigns that drive sales and ROI.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your e commerce brands business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific e commerce brands goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with e commerce brands focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on e commerce brands market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Audience Research & Segmentation', description: 'Identify your target buyers and segment audiences for precise ad delivery.' },
+        { id: 2, title: 'Ad Creative Design', description: 'Craft compelling visuals, videos, and carousels that engage and convert.' },
+        { id: 3, title: 'Campaign Setup & Structure', description: 'Organize campaigns for optimal performance and budget utilization.' },
+        { id: 4, title: 'A/B Testing & Optimization', description: 'Test creatives, copy, and audiences to maximize ROI.' },
+        { id: 5, title: 'Remarketing Strategies', description: 'Recover abandoned carts and re-engage interested customers.' },
+        { id: 6, title: 'Reporting & Scaling', description: 'Track performance metrics, scale winning campaigns, and continually refine for better results.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "E-commerce Brands Who ", gradient: false },
+        { text: "Scaled Sales with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from e commerce brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped e-commerce brands run high-converting Meta Ads campaigns and generate massive sales.',
       testimonials: [
-        {
-          id: '1',
-          message: 'The meta ads services transformed our e commerce brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'E Commerce Brands Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding meta ads expertise specifically for e commerce brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for e commerce brands',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'E Commerce Brands Solutions'
-        }
+        { id: '1', message: 'Our Facebook & Instagram ads are now driving consistent sales. ROI has improved drastically.', highlight: 'consistent sales', stars: 5, name: 'Riya Kapoor', designation: 'Founder', company: 'TrendyCart' },
+        { id: '2', message: 'Meta Ads campaigns created by Digi Aerotech brought us more conversions than we expected.', highlight: 'more conversions', stars: 5, name: 'Amit Singh', designation: 'CEO', company: 'ShopSmart' }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your E Commerce Brands Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your e commerce brands business.'
+      title: 'Ready to Maximize Your Meta Ads ROI?',
+      subtitle: 'Turn Social Engagement into E-commerce Sales',
+      description: 'Book a free Meta Ads strategy session with Digi Aerotech and start generating high-converting campaigns.'
     }
   }
 };

@@ -1,198 +1,250 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandTwitter,
+  IconBrandSnapchat,
+  IconBrandYoutube,
+  IconBrandTiktok,
+  IconBrandLinkedin,
+  IconMicroscope,
+  IconHeartbeat,
+  IconArrowRight,
+  IconTarget,
+  IconUsers,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'other-ads',
-  business: 'pharma-companies',
+  service: "other-ads",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant3",
+    process: "variant1",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'other-ads',
+    slug: "other-ads-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Brands", gradient: false },
+            { text: "Need Ads Beyond Google & Meta", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Pharma companies often limit themselves to Google and Meta ads, missing huge opportunities on platforms like Twitter, YouTube, TikTok, Snapchat, and LinkedIn.",
+          painPoints: [
+            "Overcrowded competition in Google Ads & Meta Ads",
+            "Difficulty standing out in traditional pharma advertising",
+            "Missed opportunities to connect with younger, digital-native audiences",
+            "Lack of targeted B2B networking for distributors & hospitals",
+            "Regulatory ad restrictions limiting reach",
+          ],
+          solutionPoints: [
+            "Use LinkedIn Ads for B2B pharma distributor & hospital partnerships",
+            "Engage younger audiences via TikTok, YouTube Shorts & Snapchat ads",
+            "Leverage Twitter Ads for thought leadership & medical updates",
+            "Run awareness campaigns on YouTube for new product launches",
+            "Target niche segments with tailored multi-channel strategies",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Explore Pharma Ad Platforms",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Which ad platforms work best for pharma companies?",
+              answer:
+                "We recommend LinkedIn for B2B, YouTube & TikTok for awareness, Twitter for authority building, and Snapchat for younger audiences.",
+              icon: React.createElement(IconTarget, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Are pharma ads allowed on these platforms?",
+              answer:
+                "Yes, but with restrictions. We ensure all ad creatives follow regulatory guidelines while still being impactful and engaging.",
+              icon: React.createElement(IconMicroscope, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How do these ads generate pharma leads?",
+              answer:
+                "By targeting patients, doctors, hospitals, and distributors across multiple touchpoints, these ads increase visibility, build trust, and convert into qualified leads.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Can we track ROI on these campaigns?",
+              answer:
+                "Absolutely. We integrate analytics & reporting to measure engagement, lead generation, and conversion rates for every platform.",
+              icon: React.createElement(IconHeartbeat, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Other Ads for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Expand",
+      headlineKeywords: ["Pharma Ads Beyond Google & Meta", "LinkedIn Ads", "YouTube Campaigns", "TikTok & Snapchat Ads"],
       brandLine: [
-        { text: "Other Ads for Pharma Companies", gradient: false }
+        {
+          text: "📢 Unlock Multi-Channel Pharma Growth with Ads on Twitter, YouTube, TikTok, Snapchat & LinkedIn",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized other ads strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help pharma brands run compliant, targeted, and ROI-driven campaigns across multiple ad platforms beyond just Google & Meta.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Start Multi-Channel Pharma Ads",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandLinkedin, { size: 32 }),
+          title: "300% More B2B Leads",
+          description: "via LinkedIn Pharma Ads",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconBrandYoutube, { size: 32 }),
+          title: "2.5X Awareness",
+          description: "with YouTube Pharma Ads",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrandTiktok, { size: 32 }),
+          title: "New Gen Audience",
+          description: "via TikTok & Snapchat Ads",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Multi-Platform Ads?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandLinkedin, { size: 28 }),
+          title: "B2B Pharma Focus",
+          description: "We use LinkedIn Ads to connect you with hospitals, doctors & distributors.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconBrandTiktok, { size: 28 }),
+          title: "Engaging Gen Z & Millennials",
+          description: "We create impactful TikTok & Snapchat ads for younger health-conscious audiences.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBrandYoutube, { size: 28 }),
+          title: "Video-First Awareness",
+          description: "YouTube Ads bring your pharma brand to life with storytelling & education.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconBrandTwitter, { size: 28 }),
+          title: "Authority & Thought Leadership",
+          description: "Twitter Ads build trust by positioning your brand as a credible medical voice.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Other Ads for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Run Multi-Channel Ads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Other Ads Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for pharma companies businesses.',
+      title: "Our Process for Multi-Platform Pharma Ads",
+      subtitle: "REACH. ENGAGE. CONVERT.",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We design and execute pharma ad campaigns tailored to platform strengths, audience behavior, and compliance requirements.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Ad Platform Selection",
+          description: "We analyze your pharma niche and select the best mix of LinkedIn, YouTube, Twitter, TikTok & Snapchat.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific pharma companies goals.'
+          title: "Ad Creative Development",
+          description: "We design ad creatives that balance compliance with creativity, ensuring strong engagement.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with pharma companies focus.'
+          title: "Audience Targeting",
+          description: "We define custom pharma audiences: patients, doctors, hospitals, or distributors based on your goals.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Campaign Execution",
+          description: "Ads are launched with platform-specific strategies, optimized for reach & conversions.",
+        },
+        {
+          id: 5,
+          title: "Performance Tracking",
+          description: "We provide detailed analytics on reach, engagement, leads & conversion rate improvements.",
+        },
+        {
+          id: 6,
+          title: "Scaling & Optimization",
+          description: "Successful campaigns are scaled with budget optimization and audience retargeting.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Brands", gradient: false },
+        { text: "Scaling with Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "Our pharma clients have successfully tapped into new audiences, generated stronger leads, and improved brand authority through ads beyond Google & Meta.",
       testimonials: [
         {
-          id: '1',
-          message: 'The other ads services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "LinkedIn Ads connected us with hospital chains directly, cutting middlemen and boosting B2B orders significantly.",
+          highlight: "300% More B2B Orders",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Ramesh Khanna",
+          designation: "Director",
+          company: "MediCore Pharma",
         },
         {
-          id: '2',
-          message: 'Outstanding other ads expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "YouTube Ads positioned our new product launch in front of millions of doctors and patients. We saw instant trust building.",
+          highlight: "2.5M Views in 30 Days",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Anita Kapoor",
+          designation: "Marketing Head",
+          company: "BioHealth Labs",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Run Multi-Channel Pharma Ads",
+      subtitle: "TWITTER • YOUTUBE • LINKEDIN • SNAPCHAT • TIKTOK",
+      description:
+        "Don’t limit your pharma brand to just Google & Meta. Expand your reach with high-impact ads across platforms trusted by millions of patients, doctors & hospitals.",
+    },
+  },
 };

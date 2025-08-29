@@ -1,198 +1,238 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconLayout,
+  IconBrush,
+  IconTools,
+  IconHome,
+  IconPalette,
+  IconWorld,
+  IconUsers,
+  IconTrendingUp,
+  IconArrowRight,
+  IconDeviceDesktop,
+  IconShieldCheck,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'web-design-development',
-  business: 'interior-designers',
+  service: "web-design-development-maintenance",
+  business: "interior-designers",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant3",
+    process: "variant1",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'web-design-development',
+    slug: "web-design-development-maintenance-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Interior Designers", gradient: false },
+            { text: "Need Web Design & Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "In today’s competitive design industry, a stunning and functional website is not optional – it’s essential. Interior designers must showcase their work in a way that attracts, inspires, and converts visitors into clients.",
+          painPoints: [
+            "Outdated websites failing to showcase design expertise",
+            "Slow-loading pages driving potential clients away",
+            "No proper portfolio presentation",
+            "Security issues or broken links damaging credibility",
+            "Lack of regular updates and technical support",
+          ],
+          solutionPoints: [
+            "Modern, mobile-friendly websites that impress at first glance",
+            "Beautifully designed portfolio sections to showcase your projects",
+            "SEO-optimized layouts for more visibility on Google",
+            "Ongoing website maintenance to keep everything smooth & secure",
+            "Custom features like booking forms, 3D design galleries, and blogs",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Get My Website Upgraded",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why do interior designers need a professional website?",
+              answer:
+                "Your website is your digital showroom. A professional, visually appealing, and functional website helps build trust and showcase your design expertise to potential clients.",
+              icon: React.createElement(IconLayout, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "What’s included in your website maintenance service?",
+              answer:
+                "We handle security updates, backups, speed optimization, bug fixes, and ongoing support to ensure your website runs smoothly all the time.",
+              icon: React.createElement(IconShieldCheck, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can you redesign my existing website?",
+              answer:
+                "Absolutely. We specialize in revamping old websites into modern, visually stunning platforms that truly reflect your brand.",
+              icon: React.createElement(IconBrush, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Web Design Development for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Showcase Your Designs Online",
+      headlineKeywords: ["Web Design", "Development", "Maintenance"],
       brandLine: [
-        { text: "Web Design Development for Interior Designers", gradient: false }
+        {
+          text: "✨ A Website That Matches Your Interior Design Aesthetics",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized web design development strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We build and maintain visually stunning, fast, and SEO-optimized websites for interior designers to showcase portfolios, attract clients, and keep their digital presence strong.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Build My Interior Design Website",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconDeviceDesktop, { size: 32 }),
+          title: "Custom Design",
+          description: "Websites tailored to reflect your unique design style.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "SEO Optimized",
+          description: "Rank higher on Google and attract local clients easily.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTools, { size: 32 }),
+          title: "Maintenance & Support",
+          description: "Regular updates & fixes to keep your site running flawlessly.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Web Design Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Interior Design Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrush, { size: 28 }),
+          title: "Design That Inspires",
+          description: "We create visually stunning websites that showcase your creativity and portfolio.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Client-Focused Features",
+          description: "From booking forms to blogs, we add features that help you get more clients.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored web design development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Secure & Reliable",
+          description: "With regular maintenance, we ensure your site stays safe, fast, and up-to-date.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Web Design Development for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive web design development solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom web design development strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of web design development campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Upgrade My Website Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Web Design Development Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to web design development that delivers measurable results for interior designers businesses.',
+      title: "Our Web Design & Maintenance Process",
+      subtitle: "BUILD • SHOWCASE • MAINTAIN",
+      description:
+        "We design, develop, and maintain websites for interior designers with a focus on aesthetics, performance, and client conversion.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Consultation & Strategy",
+          description: "We understand your brand, style, and business goals to plan a website strategy.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom web design development strategy tailored for your specific interior designers goals.'
+          title: "Custom Design & Development",
+          description: "We design and develop a stunning, mobile-friendly website that showcases your portfolio beautifully.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of web design development campaigns with interior designers focus.'
+          title: "SEO Optimization",
+          description: "We structure your website for Google ranking to attract homeowners & businesses searching for interior design services.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Web Design Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for web design development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Launch & Training",
+          description: "Your new website goes live, and we train you to manage content easily if needed.",
+        },
+        {
+          id: 5,
+          title: "Ongoing Maintenance",
+          description: "We handle updates, security, backups, and bug fixes to keep your website running smoothly.",
+        },
+        {
+          id: 6,
+          title: "Performance Monitoring",
+          description: "We provide regular reports on traffic, performance, and improvements for long-term growth.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Web Design Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Interior Designers Who", gradient: false },
+        { text: "Upgraded Their Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "From stunning portfolio websites to ongoing maintenance, we’ve helped interior designers build their online presence and attract more clients.",
       testimonials: [
         {
-          id: '1',
-          message: 'The web design development services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our website redesign transformed our online presence. Clients love browsing our portfolio, and inquiries have doubled!",
+          highlight: "Website Redesign",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Ritu Sharma",
+          designation: "Founder",
+          company: "Elegant Spaces Studio",
         },
         {
-          id: '2',
-          message: 'Outstanding web design development expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "They don’t just build websites, they maintain them too. I can focus on design projects while my website runs perfectly.",
+          highlight: "Maintenance & Support",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Arjun Mehta",
+          designation: "Creative Head",
+          company: "Urban Nest Interiors",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR WEB DESIGN DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our web design development can drive growth for your interior designers business.'
-    }
-  }
+      title: "Your Website is Your Digital Showroom",
+      subtitle: "DESIGN • DEVELOP • MAINTAIN",
+      description:
+        "Don’t let an outdated or broken website hold your interior design business back. Let us build and maintain a stunning platform that attracts clients and grows your brand.",
+    },
+  },
 };

@@ -1,198 +1,232 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconBrandPinterest,
+  IconBrandYoutube,
+  IconBrandLinkedin,
+  IconBrandTiktok,
+  IconBrandSnapchat,
+  IconArrowRight,
+  IconBrush,
+  IconHome,
+  IconUsers,
+  IconTrendingUp,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'other-ads',
-  business: 'interior-designers',
+  service: "other-ads",
+  business: "interior-designers",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'other-ads',
+    slug: "other-ads-interior-designers",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Interior Designers", gradient: false },
+            { text: "Need Other Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Design inspiration is consumed daily on YouTube, Pinterest, LinkedIn, TikTok, and Snapchat. If your business isn’t advertising there, you’re missing premium clients and viral growth opportunities.",
+          painPoints: [
+            "Low online visibility beyond Facebook & Google",
+            "Struggling to attract high-value projects",
+            "Competitors gaining traction with video ads",
+            "No presence on Pinterest or TikTok where clients explore design ideas",
+            "Wasted budget on unoptimized ad campaigns",
+          ],
+          solutionPoints: [
+            "Run Pinterest Ads to showcase design boards & inspirations",
+            "Leverage YouTube Ads for immersive design walkthroughs",
+            "Use LinkedIn Ads for B2B interior design projects",
+            "Tap into TikTok & Snapchat for viral design content",
+            "Precise targeting that maximizes ROI & leads",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start My Ad Campaigns",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Which platforms work best for interior design ads?",
+              answer:
+                "Pinterest, YouTube, and TikTok are highly effective for showcasing visual design inspiration, while LinkedIn helps target corporate projects.",
+              icon: React.createElement(IconBrandPinterest, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can video ads really bring interior clients?",
+              answer:
+                "Yes! YouTube & TikTok ads showcasing transformations, 3D tours, or before-after projects drive strong engagement & client inquiries.",
+              icon: React.createElement(IconBrandYoutube, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do small studios benefit from these ads?",
+              answer:
+                "Absolutely. Even independent designers gain visibility, build trust, and win projects by running well-targeted campaigns on visual platforms.",
+              icon: React.createElement(IconBrandTiktok, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Other Ads for Interior Designers?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Expand Your Reach Beyond Google & Facebook",
+      headlineKeywords: ["YouTube Ads", "Pinterest Ads", "TikTok Ads"],
       brandLine: [
-        { text: "Other Ads for Interior Designers", gradient: false }
+        {
+          text: "🎥 Show Designs. Inspire Audiences. Win Projects.",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized other ads strategies designed specifically for interior designers. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help interior designers launch high-impact ad campaigns across YouTube, Pinterest, TikTok, LinkedIn & Snapchat — capturing attention, driving inquiries, and winning premium projects.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Launch My Ad Campaigns",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandPinterest, { size: 32 }),
+          title: "Pinterest Reach",
+          description: "65% of users search for home & office design inspiration.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Interior Designers served"
+          icon: React.createElement(IconBrandYoutube, { size: 32 }),
+          title: "Video Impact",
+          description: "Video ads double client engagement compared to static posts.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "High-Value Clients",
+          description: "Target homeowners, offices & builders actively seeking design.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Interior Designers?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Other Ads?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of interior designers market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandPinterest, { size: 28 }),
+          title: "Pinterest Ad Expertise",
+          description: "Drive inspiration-led inquiries with stunning ad creatives.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for interior designers businesses.'
+          icon: React.createElement(IconBrandYoutube, { size: 28 }),
+          title: "YouTube Walkthroughs",
+          description: "Engage clients with before-after projects & 3D tours.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBrandLinkedin, { size: 28 }),
+          title: "LinkedIn B2B Ads",
+          description: "Attract real estate builders, offices, and corporate projects.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Other Ads for Interior Designers',
-      subtitle: 'INTERIOR DESIGNERS SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for interior designers businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for interior designers market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for interior designers audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for interior designers businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Run My Campaigns",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Other Ads Process for Interior Designers',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for interior designers businesses.',
+      title: "Our Other Ads Process",
+      subtitle: "VISUAL • TARGET • CONVERT",
+      description:
+        "We create performance-driven ad campaigns across visual & professional platforms that inspire, engage, and convert into leads for interior designers.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your interior designers business and market landscape.'
+          title: "Market Research",
+          description: "Identify where your ideal design clients spend their time — Pinterest, YouTube, TikTok, or LinkedIn.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific interior designers goals.'
+          title: "Creative Production",
+          description: "Design stunning videos, graphics & story ads that showcase your interior expertise.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with interior designers focus.'
+          title: "Targeting & Setup",
+          description: "Run ads with precision targeting — homeowners, businesses, architects, and builders.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on interior designers market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Optimization",
+          description: "Track engagement, optimize budget, and scale ads that perform best.",
+        },
+        {
+          id: 5,
+          title: "Reporting",
+          description: "Deliver detailed insights into ad performance, leads, and ROI.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Interior Designers", gradient: false },
+        { text: "Winning with Other Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from interior designers businesses that achieved remarkable growth.',
+      description:
+        "From Pinterest boards to YouTube tours, our ad strategies help interior designers inspire audiences, build credibility, and attract more clients.",
       testimonials: [
         {
-          id: '1',
-          message: 'The other ads services transformed our interior designers business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our YouTube ad showcasing a living room transformation went viral and brought in 20+ new inquiries within a week!",
+          highlight: "Video Ads Success",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Interior Designers Company'
+          name: "Ananya Rao",
+          designation: "Founder",
+          company: "Studio Aura Interiors",
         },
         {
-          id: '2',
-          message: 'Outstanding other ads expertise specifically for interior designers. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for interior designers',
+          id: "2",
+          message:
+            "Pinterest ads helped us showcase our portfolio directly to homeowners searching for design inspiration. Highly recommended!",
+          highlight: "Pinterest Growth",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Interior Designers Solutions'
-        }
-      ]
+          name: "Kunal Sharma",
+          designation: "Creative Director",
+          company: "Elite Interiors",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Interior Designers Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your interior designers business.'
-    }
-  }
+      title: "Run High-Impact Ads Beyond Google & Facebook",
+      subtitle: "INSPIRE • ENGAGE • CONVERT",
+      description:
+        "Your next big project could come from a client scrolling Pinterest, YouTube, or TikTok. Let’s make sure they find and choose your interior design brand.",
+    },
+  },
 };

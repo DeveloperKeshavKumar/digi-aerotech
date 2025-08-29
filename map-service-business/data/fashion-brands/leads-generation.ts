@@ -1,198 +1,269 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconUsers,
+  IconStar,
+  IconTrendingUp,
+  IconShieldCheck,
+  IconRocket,
+  IconShoppingBag,
+  IconMail,
+  IconChartLine,
+  IconCreditCard,
+  IconTag,
+  IconArrowRight,
+  IconPhone,
+  IconCurrencyDollar,
+  IconCurrencyRupee
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'leads-generation',
   business: 'fashion-brands',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'leads-generation',
+    slug: 'leads-generation-fashion-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Fashion Brands Face in ", gradient: false },
+            { text: "Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Generating high-quality leads is crucial for fashion brands to drive sales and growth.",
+          painPoints: [
+            "Low-quality leads that don’t convert",
+            "High cost per lead without ROI",
+            "Difficulty targeting the right audience",
+            "Inconsistent lead flow",
+            "Lack of effective lead nurturing strategies"
+          ],
+          solutionPoints: [
+            "Targeted campaigns reaching buyers ready to shop",
+            "Optimized landing pages & lead forms",
+            "Email & SMS nurturing workflows to convert leads",
+            "Retargeting visitors who didn’t convert initially",
+            "Data-driven insights to improve lead quality continuously"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start Capturing High-Quality Leads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Can lead generation campaigns actually increase my fashion sales?',
+              answer: 'Yes. Our campaigns deliver targeted leads who are more likely to purchase, increasing revenue for your fashion brand.',
+              icon: React.createElement(IconShoppingBag, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you provide lead nurturing strategies?',
+              answer: 'Absolutely. We use email, SMS, and retargeting to turn leads into paying customers.',
+              icon: React.createElement(IconMail, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you ensure lead quality?',
+              answer: 'We target specific demographics, interests, and buyer behavior to generate high-intent leads.',
+              icon: React.createElement(IconChartLine, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you generate leads for both online and offline stores?',
+              answer: 'Yes. We create campaigns for e-commerce platforms as well as local boutiques and showrooms.',
+              icon: React.createElement(IconCurrencyRupee, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How soon will I see leads coming in?',
+              answer: 'Leads start flowing within days for paid campaigns, while organic strategies build consistent long-term leads.',
+              icon: React.createElement(IconCreditCard, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you provide reporting on lead performance?',
+              answer: 'Yes, you get detailed insights with lead metrics, quality scores, and conversion tracking.',
+              icon: React.createElement(IconTag, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Leads Generation for Fashion Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More High-Quality Leads?",
+        "Boost Fashion Sales Fast?",
+        "Targeted Leads for Your Brand?",
+        "Consistent Lead Flow?",
+        "Leads That Convert into Customers?"
       ],
       brandLine: [
-        { text: "Leads Generation for Fashion Brands", gradient: false }
+        { text: "🚀 Capture & Convert High-Quality Leads for Your Fashion Brand", gradient: false }
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for fashion brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We generate and nurture leads for fashion brands using data-driven campaigns, ensuring high conversion rates and ROI.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Book Free Lead Strategy", link: "/contact" },
+        { icon: React.createElement(IconArrowRight, { size: 28 }), text: "Start Generating Leads", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "15,000+ Leads",
+          description: "Generated for fashion brands"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Fashion Brands served"
+          icon: React.createElement(IconShoppingBag, { size: 32 }),
+          title: "500+ Campaigns",
+          description: "Optimized for high conversion"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "4.9/5 Client Rating",
+          description: "Satisfied fashion brand owners"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "Average Conversion 30%+",
+          description: "Leads turned into paying customers"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Fashion Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Lead Generation Partner for Fashion Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of fashion brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Targeted Lead Campaigns",
+          description: "Reach buyers who are most likely to purchase your products."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for fashion brands businesses.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Conversion-Optimized Funnels",
+          description: "Landing pages and forms designed to convert visitors into leads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Smart Audience Segmentation",
+          description: "Segmented targeting ensures high-intent leads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Lead Nurturing & Retargeting",
+          description: "We convert leads into loyal customers with follow-ups and remarketing."
+        },
+        {
+          icon: React.createElement(IconShoppingBag, { size: 28 }),
+          title: "Fashion Industry Expertise",
+          description: "Years of experience generating leads specifically for fashion brands."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Detailed reports showing lead quality, source, and conversion rates."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start Capturing High-Quality Leads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Leads Generation for Fashion Brands',
-      subtitle: 'FASHION BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for fashion brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for fashion brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for fashion brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for fashion brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Leads Generation Process for Fashion Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Lead Generation Process for Fashion Brands',
+      subtitle: 'STEP-BY-STEP LEAD ACQUISITION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for fashion brands businesses.',
+      description: 'From strategy to nurturing, we ensure your fashion brand consistently receives high-quality leads that convert.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your fashion brands business and market landscape.'
+          title: 'Audience Research & Targeting',
+          description: 'Analyze demographics, interests, and buying behavior to target the right audience.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific fashion brands goals.'
+          title: 'Landing Page & Form Optimization',
+          description: 'Create high-converting landing pages and lead capture forms.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with fashion brands focus.'
+          title: 'Ad Campaigns & Promotions',
+          description: 'Run paid campaigns across Google, Meta, and other platforms.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on fashion brands market feedback.'
+          title: 'Lead Nurturing & Follow-up',
+          description: 'Automated email/SMS sequences and retargeting to convert leads.'
+        },
+        {
+          id: 5,
+          title: 'Performance Tracking & Analytics',
+          description: 'Monitor lead quality, cost per lead, and conversions to optimize campaigns.'
+        },
+        {
+          id: 6,
+          title: 'Scaling Successful Campaigns',
+          description: 'Identify winning campaigns and scale them for maximum leads and revenue.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Fashion Brands That ", gradient: false },
+        { text: "Grew with Our Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from fashion brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped fashion brands generate high-quality leads and convert them into loyal customers.',
       testimonials: [
         {
           id: '1',
-          message: 'The leads generation services transformed our fashion brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our boutique now receives 200+ high-quality leads per month, all thanks to Digi Aerotech’s lead campaigns.',
+          highlight: '200+ high-quality leads',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Fashion Brands Company'
+          name: 'Ananya Kapoor',
+          designation: 'Owner',
+          company: 'Chic Vogue'
         },
         {
           id: '2',
-          message: 'Outstanding leads generation expertise specifically for fashion brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for fashion brands',
+          message: 'The leads generated were well-targeted, converting into real sales almost immediately.',
+          highlight: 'converting into real sales',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Fashion Brands Solutions'
+          name: 'Rishi Malhotra',
+          designation: 'Founder',
+          company: 'Urban Fashion Hub'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Fashion Brands Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your fashion brands business.'
+      title: 'Ready to Get High-Quality Leads for Your Fashion Brand?',
+      subtitle: 'Consistent Leads, More Sales, Better ROI',
+      description: 'Book a free strategy session and let Digi Aerotech generate targeted leads that convert for your fashion brand.'
     }
   }
 };

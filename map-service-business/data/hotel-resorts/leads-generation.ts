@@ -1,198 +1,245 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconUsers,
+  IconCalendarEvent,
+  IconTarget,
+  IconBuildingSkyscraper,
+  IconWorld,
+  IconArrowRight,
+  IconPhoneCall,
+  IconMessageCircle,
+  IconHotelService,
+  IconTrendingUp,
+  IconDeviceMobile
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'leads-generation',
-  business: 'hotel-resorts',
+  service: "leads-generation",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'leads-generation',
+    slug: "leads-generation-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Hotels & Resorts Face Challenges", gradient: false },
+            { text: "Generating Direct Leads Online", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Direct leads are the lifeblood of any hotel or resort. Without a strong online strategy, properties lose potential guests to OTAs or competitors.",
+          painPoints: [
+            "Low website conversion for room bookings",
+            "High reliance on OTAs with commission fees",
+            "Inconsistent inquiries from potential guests",
+            "Poor lead tracking and follow-ups",
+            "Inefficient targeting of high-value travelers",
+          ],
+          solutionPoints: [
+            "Lead capture forms optimized for mobile & desktop",
+            "Targeted campaigns to attract high-intent travelers",
+            "Retargeting campaigns for abandoned booking visitors",
+            "Multi-channel strategy including social, search & email",
+            "Data-driven tracking to maximize ROI per lead",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start Generating Direct Leads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How can lead generation improve my hotel bookings?",
+              answer:
+                "We capture potential guests through optimized forms, targeted ads, and follow-up automation, turning browsers into booked rooms.",
+              icon: React.createElement(IconUsers, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you handle follow-ups for hotel leads?",
+              answer:
+                "Yes. We implement automated email, WhatsApp, and call reminders to nurture leads until they confirm bookings.",
+              icon: React.createElement(IconPhoneCall, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can small boutique hotels benefit from lead generation?",
+              answer:
+                "Absolutely. Even small hotels and resorts can generate a steady stream of high-value leads with the right campaigns.",
+              icon: React.createElement(IconHotelService, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How quickly will I see results?",
+              answer:
+                "Most properties start receiving qualified inquiries within 2–4 weeks of optimized campaigns.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Leads Generation for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Turn Travelers Into Direct Guests",
+      headlineKeywords: ["Leads Generation", "Hotels & Resorts", "Direct Bookings"],
       brandLine: [
-        { text: "Leads Generation for Hotel Resorts", gradient: false }
+        {
+          text: "💼 Capture More Guest Inquiries & Boost Your Occupancy",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "Our leads generation strategies help hotels and resorts attract high-intent travelers, collect inquiries, and convert them into confirmed bookings.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Generate More Leads",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "50% Increase in Direct Inquiries",
+          description: "Hotels see a significant boost in direct bookings using our strategies.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Targeted Campaigns",
+          description: "Reach travelers searching for hotels & resorts in your location.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCalendarEvent, { size: 32 }),
+          title: "Retargeting Success",
+          description: "We convert abandoned bookings into confirmed guests.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Our Leads Generation", gradient: false },
+        { text: "Works for Hotels & Resorts", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "High-Intent Traveler Targeting",
+          description: "We attract users who are actively looking to book stays.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconBuildingSkyscraper, { size: 28 }),
+          title: "Direct Booking Focused",
+          description: "Maximize occupancy while reducing OTA dependency.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Multi-Channel Lead Capture",
+          description: "Website forms, chatbots, WhatsApp, and social ads all integrated.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Leads Generation for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start Capturing Leads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Leads Generation Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for hotel resorts businesses.',
+      title: "Our Leads Generation Process for Hotels & Resorts",
+      subtitle: "ATTRACT • CAPTURE • CONVERT",
+      description:
+        "We create a seamless funnel to capture high-value leads and turn them into confirmed bookings efficiently.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "Market & Guest Research",
+          description:
+            "We analyze traveler profiles, search intent, and competitor strategies to identify the most profitable audiences.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific hotel resorts goals.'
+          title: "Optimized Lead Capture",
+          description:
+            "We design intuitive forms, landing pages, and booking widgets to convert visitors into leads effortlessly.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with hotel resorts focus.'
+          title: "Targeted Campaigns",
+          description:
+            "Run paid ads on Google, social media, and display networks targeting high-intent travelers for maximum ROI.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Automated Follow-Ups",
+          description:
+            "Lead nurturing via email, SMS, WhatsApp, and call reminders to ensure no booking opportunity is lost.",
+        },
+        {
+          id: 5,
+          title: "Performance Tracking & Optimization",
+          description:
+            "Continuously analyze data to improve conversion rates, reduce cost-per-lead, and increase confirmed bookings.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts That", gradient: false },
+        { text: "Boosted Bookings With Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "From boutique stays to luxury resorts, our lead generation campaigns deliver consistent inquiries and higher occupancy rates.",
       testimonials: [
         {
-          id: '1',
-          message: 'The leads generation services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "After partnering with them, our inquiries doubled and direct bookings increased by 60%.",
+          highlight: "Direct bookings +60%",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Rajesh Sharma",
+          designation: "Owner",
+          company: "Seaside Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding leads generation expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "Their lead capture and retargeting strategies filled our off-season rooms within weeks.",
+          highlight: "Off-season rooms filled",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Priya Kapoor",
+          designation: "GM",
+          company: "Mountainview Luxury Stay",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Start Capturing High-Value Leads for Your Hotel",
+      subtitle: "INCREASE BOOKINGS • REDUCE OTA FEES • GROW REVENUE",
+      description:
+        "Book a free consultation today and see how our leads generation strategies can transform your hotel or resort’s revenue.",
+    },
+  },
 };

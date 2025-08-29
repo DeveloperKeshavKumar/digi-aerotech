@@ -1,198 +1,233 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHotelService,
+  IconWorld,
+  IconUsers,
+  IconCalendarEvent,
+  IconTarget,
+  IconTrendingUp,
+  IconCreditCard,
+  IconSearch,
+  IconArrowRight,
+  IconDeviceMobile,
+  IconBuildingSkyscraper,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'google-ads',
-  business: 'hotel-resorts',
+  service: "google-ads",
+  business: "hotel-resort",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'google-ads',
+    slug: "google-ads-hotel-resort",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Hotels & Resorts", gradient: false },
+            { text: "Need Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Travelers don’t just browse — they search with intent. Google Ads helps your hotel or resort appear at the exact moment travelers are ready to book.",
+          painPoints: [
+            "Relying heavily on OTAs with high commission fees",
+            "Not appearing in Google search results during peak booking times",
+            "Low direct bookings despite high demand",
+            "Competitors outranking you with paid ads",
+            "Wasted ad spend on untargeted campaigns",
+          ],
+          solutionPoints: [
+            "Target travelers searching for hotels & resorts in your area",
+            "Promote seasonal offers, weekend getaways, and last-minute deals",
+            "Run retargeting ads for abandoned visitors",
+            "Optimize ad budget for maximum ROI",
+            "Drive direct bookings without OTA commission",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Run Google Ads For My Hotel",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why use Google Ads for hotels & resorts?",
+              answer:
+                "Because travelers actively search for hotels on Google. Ads help your property appear first, driving immediate bookings.",
+              icon: React.createElement(IconSearch, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can Google Ads reduce OTA dependency?",
+              answer:
+                "Yes. By targeting direct bookings, you keep more revenue in-house instead of paying high OTA commissions.",
+              icon: React.createElement(IconCreditCard, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How quickly can results be seen?",
+              answer:
+                "Hotels & resorts usually see increased traffic and bookings within the first 2–3 weeks of optimized campaigns.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Google Ads for Hotel Resorts?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Turn Searches Into Bookings",
+      headlineKeywords: ["Google Ads", "Hotels", "Resorts"],
       brandLine: [
-        { text: "Google Ads for Hotel Resorts", gradient: false }
+        {
+          text: "📈 Drive Direct Guests, Reduce OTA Costs, Maximize ROI",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized google ads strategies designed specifically for hotel resorts. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "With our Google Ads services, your hotel or resort appears at the top of Google when travelers are ready to book — delivering more direct reservations and higher profits.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Boost My Hotel Bookings",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "2x More Direct Guests",
+          description: "Hotels running optimized ads double their direct bookings.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Hotel Resorts served"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Geo-Targeting",
+          description: "Attract travelers searching for stays near your property.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCalendarEvent, { size: 32 }),
+          title: "Seasonal Promotions",
+          description: "Fill rooms during peak and off-peak seasons with smart ads.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Hotel Resorts?', gradient: false }
+        { text: "Why Choose Our", gradient: false },
+        { text: "Google Ads for Hotels", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of hotel resorts market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconHotelService, { size: 28 }),
+          title: "Hospitality Specialists",
+          description: "We know hotel booking cycles and optimize ads for peak performance.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for hotel resorts businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "High Intent Targeting",
+          description: "We only target travelers actively searching for stays.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored google ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBuildingSkyscraper, { size: 28 }),
+          title: "Proven ROI",
+          description: "Our campaigns consistently lower cost-per-booking while increasing occupancy.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Google Ads for Hotel Resorts',
-      subtitle: 'HOTEL RESORTS SPECIALIZED SERVICES',
-      description: 'Comprehensive google ads solutions designed specifically for hotel resorts businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom google ads strategy development tailored for hotel resorts market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of google ads campaigns optimized for hotel resorts audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for hotel resorts businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Launch My Hotel Ads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Google Ads Process for Hotel Resorts',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to google ads that delivers measurable results for hotel resorts businesses.',
+      title: "Our Google Ads Process for Hotels & Resorts",
+      subtitle: "SEARCH • TARGET • BOOK",
+      description:
+        "We design laser-focused ad campaigns that bring in direct hotel bookings and maximize your ad spend.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your hotel resorts business and market landscape.'
+          title: "Market Research",
+          description: "We analyze traveler trends, competitor ads, and target keywords in your region.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom google ads strategy tailored for your specific hotel resorts goals.'
+          title: "Campaign Setup",
+          description: "We design ad creatives, headlines, and offers tailored to your hotel or resort.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of google ads campaigns with hotel resorts focus.'
+          title: "Smart Targeting",
+          description: "We run geo-targeted, seasonal, and retargeting ads for maximum conversion.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on hotel resorts market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Google Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for google ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Conversion Optimization",
+          description: "We track bookings, calls, and form submissions to lower cost-per-booking.",
+        },
+        {
+          id: 5,
+          title: "Ongoing Optimization",
+          description: "We continuously refine campaigns to keep you ahead of competitors.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Google Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Hotels & Resorts That", gradient: false },
+        { text: "Boosted Bookings With Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
+      description:
+        "From boutique resorts to luxury hotels, our ad campaigns have delivered a steady flow of direct bookings while reducing OTA commissions.",
       testimonials: [
         {
-          id: '1',
-          message: 'The google ads services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Within weeks, our bookings doubled. We spend less on OTAs and get more direct guests from ads.",
+          highlight: "2x Bookings",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
+          name: "Amit Verma",
+          designation: "Owner",
+          company: "Seaside Resort",
         },
         {
-          id: '2',
-          message: 'Outstanding google ads expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
+          id: "2",
+          message:
+            "Our seasonal offers now sell out quickly thanks to optimized campaigns. Truly amazing ROI!",
+          highlight: "High ROI",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
-      ]
+          name: "Neha Kapoor",
+          designation: "GM",
+          company: "Hillside Luxury Stay",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Hotel Resorts Business?',
-      subtitle: 'START YOUR GOOGLE ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our google ads can drive growth for your hotel resorts business.'
-    }
-  }
+      title: "Turn Google Searches Into Direct Hotel Bookings",
+      subtitle: "RANK • REACH • CONVERT",
+      description:
+        "With our expert Google Ads management, your hotel or resort dominates search, attracts travelers at the right time, and fills rooms faster.",
+    },
+  },
 };

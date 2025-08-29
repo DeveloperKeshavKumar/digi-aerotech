@@ -1,198 +1,250 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconDeviceMobile,
+  IconHeartbeat,
+  IconStethoscope,
+  IconPill,
+  IconBuildingHospital,
+  IconTruckDelivery,
+  IconArrowRight,
+  IconUsersGroup,
+  IconChartPie2,
+  IconPrescription,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'mobile-apps-development',
-  business: 'pharma-companies',
+  service: "mobile-apps-development",
+  business: "pharma-companies",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: "mobile-apps-development-pharma-companies",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Pharma Businesses", gradient: false },
+            { text: "Need Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Pharma companies today face challenges in reaching customers, managing distributors, and ensuring compliance. Without mobile apps, operations remain outdated and customer engagement suffers.",
+          painPoints: [
+            "Manual order management with delays & errors",
+            "Difficulty reaching patients & doctors directly",
+            "Limited visibility into distributor networks",
+            "Missed opportunities in digital health & telemedicine",
+            "Poor user engagement without digital touchpoints",
+          ],
+          solutionPoints: [
+            "Custom B2B & B2C pharma apps for full digital transformation",
+            "Direct doctor-patient engagement via mobile platforms",
+            "Real-time distributor & retailer management",
+            "E-prescription & medicine delivery apps",
+            "Seamless tracking of inventory & compliance",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Build Pharma Mobile Apps",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "What types of pharma apps do you build?",
+              answer:
+                "We build B2B distributor apps, patient health apps, doctor engagement apps, e-prescription platforms, and medicine delivery apps for pharma companies.",
+              icon: React.createElement(IconDeviceMobile, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can apps help pharma distributors & suppliers?",
+              answer:
+                "Yes. Our apps allow distributors to manage orders, inventory, payments, and communication with pharma manufacturers seamlessly.",
+              icon: React.createElement(IconTruckDelivery, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Are these apps compliance-friendly?",
+              answer:
+                "Absolutely. We design apps following pharma regulations, HIPAA (where applicable), and medical data security best practices.",
+              icon: React.createElement(IconPrescription, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Can apps help increase revenue?",
+              answer:
+                "Yes. Mobile apps streamline sales, improve engagement with patients & doctors, and open new revenue channels via telemedicine & e-commerce.",
+              icon: React.createElement(IconChartPie2, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Mobile Apps Development for Pharma Companies?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Transform",
+      headlineKeywords: ["Pharma Mobile Apps", "Medicine Delivery Apps", "E-Prescription Platforms", "B2B Pharma Apps"],
       brandLine: [
-        { text: "Mobile Apps Development for Pharma Companies", gradient: false }
+        {
+          text: "📱 Next-Gen Mobile Apps for Pharma Companies That Drive Digital Transformation",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for pharma companies. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We design and develop custom mobile apps for pharma companies to digitize operations, connect with doctors & patients, and scale distribution seamlessly.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Build My Pharma App",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsersGroup, { size: 32 }),
+          title: "5X Engagement",
+          description: "Stronger doctor & patient connections",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Pharma Companies served"
+          icon: React.createElement(IconTruckDelivery, { size: 32 }),
+          title: "3X Faster Operations",
+          description: "Real-time order & distributor management",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconHeartbeat, { size: 32 }),
+          title: "100% Compliance",
+          description: "HIPAA-ready & secure pharma apps",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Pharma Companies?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Pharma Mobile Apps?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of pharma companies market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconStethoscope, { size: 28 }),
+          title: "Healthcare Expertise",
+          description: "We understand pharma workflows, compliance, and digital health trends deeply.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for pharma companies businesses.'
+          icon: React.createElement(IconBuildingHospital, { size: 28 }),
+          title: "B2B & B2C Apps",
+          description: "From distributors to patients, we build solutions for the entire pharma ecosystem.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconPill, { size: 28 }),
+          title: "Custom Integrations",
+          description: "We integrate e-prescriptions, payment gateways, CRM & inventory tools into your apps.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconChartPie2, { size: 28 }),
+          title: "Scalable & Secure",
+          description: "Our apps are cloud-ready, scalable, and built with enterprise-grade security.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Pharma Companies',
-      subtitle: 'PHARMA COMPANIES SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for pharma companies businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for pharma companies market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for pharma companies audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for pharma companies businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Start Pharma App Development",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Mobile Apps Development Process for Pharma Companies',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for pharma companies businesses.',
+      title: "Our Mobile App Development Process for Pharma",
+      subtitle: "FROM IDEAS TO DIGITAL PHARMA SUCCESS",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We follow a compliance-first, innovation-driven approach to deliver mobile apps that empower pharma companies with digital growth.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your pharma companies business and market landscape.'
+          title: "Requirement Analysis",
+          description: "We understand your pharma business model, B2B/B2C needs, and compliance requirements.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific pharma companies goals.'
+          title: "UI/UX Design",
+          description: "We craft intuitive, healthcare-friendly designs focused on accessibility & ease of use.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with pharma companies focus.'
+          title: "App Development",
+          description: "We build Android, iOS, and cross-platform pharma apps with advanced functionality.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on pharma companies market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Integrations",
+          description: "We integrate e-prescriptions, telemedicine, CRM, payment & logistics modules.",
+        },
+        {
+          id: 5,
+          title: "Testing & Compliance",
+          description: "We rigorously test for HIPAA, GDPR, and pharma-specific compliance standards.",
+        },
+        {
+          id: 6,
+          title: "Launch & Support",
+          description: "We deploy apps on stores and provide ongoing updates, security & maintenance.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Pharma Leaders", gradient: false },
+        { text: "Trust Our Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from pharma companies businesses that achieved remarkable growth.',
+      description:
+        "From global manufacturers to local distributors, our pharma apps have transformed operations, boosted efficiency, and created new revenue channels.",
       testimonials: [
         {
-          id: '1',
-          message: 'The mobile apps development services transformed our pharma companies business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our mobile app streamlined distributor orders and reduced errors by 70%. Now, every retailer connects directly with us through the app.",
+          highlight: "70% Fewer Errors",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Pharma Companies Company'
+          name: "Rajesh Malhotra",
+          designation: "CEO",
+          company: "LifeCare Pharma",
         },
         {
-          id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for pharma companies. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for pharma companies',
+          id: "2",
+          message:
+            "The patient engagement app increased repeat medicine purchases and improved customer loyalty significantly. Truly a game-changer.",
+          highlight: "2.8X More Repeat Purchases",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Pharma Companies Solutions'
-        }
-      ]
+          name: "Dr. Neha Verma",
+          designation: "Director",
+          company: "MediHealth Labs",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Pharma Companies Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your pharma companies business.'
-    }
-  }
+      title: "Build Future-Ready Pharma Apps",
+      subtitle: "DIGITIZE OPERATIONS. ENGAGE CUSTOMERS. SCALE EASILY.",
+      description:
+        "We help pharma brands develop secure, scalable, and innovative mobile apps that connect businesses with patients, doctors, and distributors seamlessly.",
+    },
+  },
 };

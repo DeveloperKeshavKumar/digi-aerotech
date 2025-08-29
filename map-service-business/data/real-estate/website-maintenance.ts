@@ -1,198 +1,262 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconHome,
+  IconBuildingSkyscraper,
+  IconRefresh,
+  IconShieldCheck,
+  IconTrendingUp,
+  IconDeviceDesktop,
+  IconDatabase,
+  IconBug,
+  IconArrowRight,
+} from "@tabler/icons-react";
+import { Wrench } from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'website-maintenance',
-  business: 'real-estate',
+  service: "website-maintenance",
+  business: "real-estate",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant3",
+    whyChooseUs: "variant2",
+    process: "variant1",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'website-maintenance',
+    slug: "website-maintenance-real-estate",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Real Estate Websites", gradient: false },
+            { text: "Need Ongoing Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Property buyers expect updated listings, fast loading, and secure websites. Outdated or broken sites can make you lose valuable leads.",
+          painPoints: [
+            "Property listings not updated regularly",
+            "Slow-loading websites leading to high bounce rates",
+            "Broken links, forms, and lead capture tools",
+            "Security vulnerabilities & outdated plugins",
+            "Loss of SEO rankings due to poor maintenance",
+          ],
+          solutionPoints: [
+            "Regular listing & content updates",
+            "Performance optimization for faster load times",
+            "Bug fixes, error monitoring & form repairs",
+            "Strong website security & backup solutions",
+            "Continuous SEO monitoring & improvement",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Keep Your Property Website Healthy",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why is website maintenance important for real estate?",
+              answer:
+                "Real estate websites need constant updates—property listings change, market trends shift, and security threats evolve. Regular maintenance ensures your site remains trusted and visible.",
+              icon: React.createElement(Wrench, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you provide property listing updates?",
+              answer:
+                "Yes, we update property listings, galleries, and content to keep your site accurate and appealing to buyers.",
+              icon: React.createElement(IconHome, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Will website maintenance improve my SEO?",
+              answer:
+                "Absolutely. Regular fixes, updates, and optimizations improve site speed, security, and SEO rankings for real estate businesses.",
+              icon: React.createElement(IconTrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Do you provide 24/7 support for real estate websites?",
+              answer:
+                "Yes, our team monitors your site round-the-clock to ensure uptime, fix bugs, and secure your real estate website.",
+              icon: React.createElement(IconShieldCheck, { size: 22 }),
+            },
+            {
+              id: "faq-5",
+              question: "Can you maintain multi-location real estate portals?",
+              answer:
+                "Yes, we maintain small realtor websites to large real estate listing portals with thousands of properties.",
+              icon: React.createElement(IconDatabase, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Maintain",
       headlineKeywords: [
-        "Website Maintenance for Real Estate?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Property Websites",
+        "Without Downtime",
+        "With SEO Stability",
+        "That Build Buyer Trust",
+        "Updated & Secure",
       ],
       brandLine: [
-        { text: "Website Maintenance for Real Estate", gradient: false }
+        {
+          text: "🔧 Keep Your Real Estate Website Running Smoothly",
+          gradient: false,
+        },
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for real estate. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We provide ongoing website maintenance for real estate businesses to ensure fast performance, updated listings, and maximum lead conversions.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Secure My Real Estate Website",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconHome, { size: 32 }),
+          title: "1,000+ Properties",
+          description: "Updated monthly for clients",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Real Estate served"
+          icon: React.createElement(IconBug, { size: 32 }),
+          title: "Zero Downtime",
+          description: "With proactive monitoring & fixes",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "40% More Leads",
+          description: "With fast & well-maintained websites",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Real Estate?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Real Estate Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of real estate market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconRefresh, { size: 28 }),
+          title: "Regular Updates",
+          description: "We keep property listings, images, and content updated in real-time.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for real estate businesses.'
+          icon: React.createElement(IconDeviceDesktop, { size: 28 }),
+          title: "Faster Performance",
+          description: "We optimize site speed for smooth browsing & higher conversions.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Website Security",
+          description: "We ensure your real estate website is secure with backups & protection.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "SEO Stability",
+          description: "Regular fixes & monitoring help maintain Google rankings & visibility.",
+        },
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Website Maintenance for Real Estate',
-      subtitle: 'REAL ESTATE SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for real estate businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for real estate market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for real estate audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for real estate businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get 24/7 Real Estate Website Support",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Website Maintenance Process for Real Estate',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for real estate businesses.',
+      title: "Our Real Estate Website Maintenance Process",
+      subtitle: "KEEP YOUR WEBSITE SECURE, UPDATED & SEO-READY",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "We don’t just maintain your real estate website — we optimize it for leads, performance & SEO stability.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your real estate business and market landscape.'
+          title: "Website Audit",
+          description: "We analyze your website performance, bugs, broken links, and outdated listings.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific real estate goals.'
+          title: "Property Listing Updates",
+          description: "Regularly updating new properties, removing sold listings, and keeping details accurate.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with real estate focus.'
+          title: "Bug Fixing & Error Resolution",
+          description: "Fixing broken links, contact forms, and ensuring all lead capture works flawlessly.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on real estate market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Speed Optimization",
+          description: "Improving website loading time for better user experience & higher SEO rankings.",
+        },
+        {
+          id: 5,
+          title: "Security & Backups",
+          description: "Ensuring strong security protocols, malware protection & regular backups.",
+        },
+        {
+          id: 6,
+          title: "Ongoing Monitoring",
+          description: "Continuous support & monitoring to keep your website running smoothly 24/7.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Real Estate Agencies", gradient: false },
+        { text: "That Trust Our Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from real estate businesses that achieved remarkable growth.',
+      description:
+        "From independent brokers to large developers, we keep real estate websites secure, updated & optimized.",
       testimonials: [
         {
-          id: '1',
-          message: 'The website maintenance services transformed our real estate business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Their maintenance team keeps our property website updated and secure. We no longer worry about downtime.",
+          highlight: "No downtime",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Real Estate Company'
+          name: "Rohit Mehta",
+          designation: "Broker",
+          company: "Elite Realty",
         },
         {
-          id: '2',
-          message: 'Outstanding website maintenance expertise specifically for real estate. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for real estate',
+          id: "2",
+          message:
+            "Thanks to their continuous updates, our listings stay fresh and our SEO rankings improved significantly.",
+          highlight: "SEO rankings improved",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Real Estate Solutions'
-        }
-      ]
+          name: "Priya Kapoor",
+          designation: "Marketing Head",
+          company: "Skyline Properties",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Real Estate Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your real estate business.'
-    }
-  }
+      title: "Keep Your Real Estate Website Healthy & Updated",
+      subtitle: "24/7 MAINTENANCE & PERFORMANCE OPTIMIZATION",
+      description:
+        "We ensure your property website stays fast, secure & updated to attract buyers and maximize leads.",
+    },
+  },
 };

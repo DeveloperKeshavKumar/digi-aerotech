@@ -1,198 +1,269 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandTwitter,
+  IconBrandSnapchat,
+  IconBrandYoutube,
+  IconBrandTiktok,
+  IconBrandLinkedin,
+  IconUsers,
+  IconDeviceMobile,
+  IconShieldCheck,
+  IconTrendingUp,
+  IconRocket,
+  IconCalendarEvent,
+  IconArrowRight,
+  IconPhone,
+  IconCircleCheck,
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'other-ads',
   business: 'educational-institutions',
   variants: {
     hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
+    whyChooseUs: 'variant3',
+    process: 'variant2',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'other-ads',
+    slug: 'other-ads-educational-institutions',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Educational Institutions Face", gradient: false },
+            { text: "With Advertising on Social Platforms", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Schools, colleges, and coaching centers struggle to generate enrollments and engagement on platforms like Twitter, Snapchat, TikTok, YouTube & LinkedIn.",
+          painPoints: [
+            "Low brand visibility on emerging social platforms",
+            "Difficulty targeting prospective students effectively",
+            "High ad costs without measurable ROI",
+            "Limited engagement with videos & stories",
+            "Difficulty tracking leads and conversions"
+          ],
+          solutionPoints: [
+            "Custom ad campaigns on Twitter, Snapchat, TikTok, YouTube & LinkedIn",
+            "Audience targeting based on demographics & interests",
+            "Video and story creatives to increase engagement",
+            "Performance tracking to maximize ROI",
+            "Lead nurturing campaigns to convert ad viewers into students"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Enrollments Now"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Which platforms are most effective for education ads?',
+              answer: 'We specialize in Twitter, Snapchat, TikTok, YouTube & LinkedIn to reach students and parents effectively.',
+              icon: React.createElement(IconBrandTwitter, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can you track ad conversions?',
+              answer: 'Yes, all campaigns are tracked with analytics dashboards to measure leads, clicks, and ROI.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you create video ads for campaigns?',
+              answer: 'Absolutely. We produce engaging stories, reels, and video content optimized for each platform.',
+              icon: React.createElement(IconBrandYoutube, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can small institutions afford these campaigns?',
+              answer: 'Yes. We design scalable campaigns to fit any budget, maximizing results without overspending.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do we reach parents specifically?',
+              answer: 'We target parents through demographics, interest-based targeting, and LinkedIn professional ads for adult learners.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can we see enrollments increase?',
+              answer: 'With optimized ad campaigns, measurable leads are visible within weeks, and conversions grow steadily.',
+              icon: React.createElement(IconCircleCheck, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Other Ads for Educational Institutions?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher Enrollments?",
+        "More Student Engagement?",
+        "Effective Social Media Ads?",
+        "Targeted Ads on Emerging Platforms?",
+        "360° Social Advertising for Institutions?"
       ],
       brandLine: [
-        { text: "Other Ads for Educational Institutions", gradient: false }
+        { text: "🚀 Advertise Your Educational Institution on Twitter, Snapchat, TikTok, YouTube & LinkedIn", gradient: false }
       ],
-      subheadline: "Specialized other ads strategies designed specifically for educational institutions. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help schools, colleges, and coaching centers generate leads, boost enrollment, and increase engagement through high-converting ads on multiple platforms.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconDeviceMobile, { size: 28 }), text: "Schedule Free Consultation", link: "/contact" },
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "50,000+ Leads Generated",
+          description: "For institutions across India"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Educational Institutions served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "30% Average Enrollment Growth",
+          description: "Through targeted ads"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "4.9/5 Client Satisfaction",
+          description: "Trusted for measurable results"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconCalendarEvent, { size: 32 }),
+          title: "Quick Campaign Launch",
+          description: "Ads live within days with ongoing optimization"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Educational Institutions?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Choice for Social Platform Ads in Education", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of educational institutions market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandLinkedin, { size: 28 }),
+          title: "Expert Platform Targeting",
+          description: "Reach students and parents with precise targeting."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for educational institutions businesses.'
+          icon: React.createElement(IconBrandTiktok, { size: 28 }),
+          title: "Engaging Video & Story Ads",
+          description: "Create high-converting creatives optimized for each platform."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "ROI-Focused Campaigns",
+          description: "Maximize enrollments and minimize ad spend wastage."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Cross-Platform Campaigns",
+          description: "Simultaneously run ads on multiple social media channels."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Lead Nurturing & Follow-Up",
+          description: "Convert clicks into real student enrollments effectively."
+        },
+        {
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Track campaign performance with detailed analytics."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Launch Your Social Ads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
-    },
-    typesOfServices: {
-      title: 'Our Other Ads for Educational Institutions',
-      subtitle: 'EDUCATIONAL INSTITUTIONS SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for educational institutions businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for educational institutions market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for educational institutions audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for educational institutions businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
     },
     process: {
       title: 'Our Other Ads Process for Educational Institutions',
-      subtitle: 'PROVEN METHODOLOGY',
+      subtitle: 'STEP-BY-STEP STUDENT LEAD GENERATION',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for educational institutions businesses.',
+      description: 'From targeting to conversion, we run ads on emerging social platforms to increase engagement, leads, and enrollments.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your educational institutions business and market landscape.'
+          title: 'Target Audience Research',
+          description: 'Identify demographics, interests, and student personas for precise targeting.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific educational institutions goals.'
+          title: 'Platform Strategy',
+          description: 'Choose the most effective platforms: Twitter, TikTok, Snapchat, YouTube, LinkedIn.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with educational institutions focus.'
+          title: 'Ad Creative Development',
+          description: 'Design videos, stories, and banners that engage students and parents.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on educational institutions market feedback.'
+          title: 'Campaign Launch',
+          description: 'Run multi-platform campaigns with real-time monitoring and adjustments.'
+        },
+        {
+          id: 5,
+          title: 'Lead Tracking & Optimization',
+          description: 'Track clicks, form submissions, and conversions to maximize ROI.'
+        },
+        {
+          id: 6,
+          title: 'Reporting & Continuous Improvement',
+          description: 'Analyze results, tweak targeting, and improve ad performance continuously.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Educational Institutions Who ", gradient: false },
+        { text: "Grew with Our Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from educational institutions businesses that achieved remarkable growth.',
+      description: 'See how our targeted ads on social media platforms increased enrollments, engagement, and awareness.',
       testimonials: [
         {
           id: '1',
-          message: 'The other ads services transformed our educational institutions business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our coaching institute saw a 40% increase in enrollment after TikTok and LinkedIn campaigns.',
+          highlight: '40% increase in enrollment',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Educational Institutions Company'
+          name: 'Dr. Priya Verma',
+          designation: 'Director',
+          company: 'Excel Coaching Center'
         },
         {
           id: '2',
-          message: 'Outstanding other ads expertise specifically for educational institutions. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for educational institutions',
+          message: 'Twitter and Snapchat campaigns brought in highly engaged students within weeks.',
+          highlight: 'highly engaged students',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Educational Institutions Solutions'
+          name: 'Rajesh Gupta',
+          designation: 'Principal',
+          company: 'Sunrise School'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Educational Institutions Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your educational institutions business.'
+      title: 'Ready to Boost Enrollments with Social Ads?',
+      subtitle: 'Target Students & Parents Across Multiple Platforms',
+      description: 'Book a free consultation with Digi Aerotech and start converting ad viewers into students today.'
     }
   }
 };

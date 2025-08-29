@@ -1,198 +1,251 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  Users,
+  Smartphone,
+  Target,
+  TrendingUp,
+  Activity,
+  Star,
+  Calendar,
+  ArrowRight,
+  BellRing,
+  Heart,
+} from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'meta-ads',
-  business: 'gyms-fitness',
+  service: "meta-ads",
+  business: "gyms-fitness",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'meta-ads',
+    slug: "meta-ads-gyms-fitness",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Struggling to Get Gym Members Online?", gradient: false },
+            { text: "Meta Ads Can Skyrocket Your Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Many gyms, fitness studios, and personal trainers fail to reach their ideal audience on social media. Meta Ads allow you to target people ready to take action and become members.",
+          painPoints: [
+            "Low engagement on Facebook & Instagram pages",
+            "Difficulty reaching fitness enthusiasts nearby",
+            "High ad spend with poor ROI",
+            "Struggling to promote new classes, events, or memberships",
+            "Missing out on retargeting warm leads effectively",
+          ],
+          solutionPoints: [
+            "Targeted Facebook & Instagram campaigns for your ideal local audience",
+            "Custom ad creatives for engagement, sign-ups & membership drives",
+            "Retargeting campaigns to convert website visitors and social media engagers",
+            "Trackable campaigns optimized for high ROI",
+            "Seasonal & promotional campaigns to boost attendance",
+          ],
+          cta: {
+            icon: React.createElement(ArrowRight, { size: 20 }),
+            text: "Start Running High-Converting Meta Ads Today",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "How can Meta Ads increase my gym memberships?",
+              answer:
+                "Meta Ads target the right audience on Facebook & Instagram, engaging fitness enthusiasts with offers, events, and membership campaigns.",
+              icon: React.createElement(Target, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you manage ad creatives and campaigns?",
+              answer:
+                "Yes, we handle ad copy, visuals, videos, targeting, and campaign optimization to ensure maximum engagement and conversions.",
+              icon: React.createElement(Activity, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can small fitness studios benefit from Meta Ads?",
+              answer:
+                "Absolutely. Even smaller gyms can reach the right local audience efficiently, generating consistent leads at an affordable ad spend.",
+              icon: React.createElement(Users, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How soon will I see results from Meta Ads?",
+              answer:
+                "You can expect inquiries, sign-ups, and website clicks within days of launching campaigns, with performance improving over time through optimization.",
+              icon: React.createElement(TrendingUp, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want to Fill Your Gym Classes Fast?",
       headlineKeywords: [
-        "Meta Ads for Gyms Fitness?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "With Facebook & Instagram Ads?",
+        "Reach Local Fitness Enthusiasts?",
+        "Boost Memberships Rapidly?",
+        "360° Meta Ads for Gyms?",
       ],
       brandLine: [
-        { text: "Meta Ads for Gyms Fitness", gradient: false }
+        { text: "🚀 Run High-Converting Meta Ads for Your Gym & Fitness Studio", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We create engaging, results-driven Meta Ads campaigns to attract, convert, and retain local gym members and fitness enthusiasts.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(Smartphone, { size: 28 }),
+          text: "Book Free Meta Ads Consultation",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(Users, { size: 32 }),
+          title: "200+ Campaigns Run",
+          description: "For gyms, studios & fitness professionals",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Gyms Fitness served"
+          icon: React.createElement(Heart, { size: 32 }),
+          title: "3X Membership Growth",
+          description: "Increased client sign-ups within months",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(Star, { size: 32 }),
+          title: "4.9/5 Client Rating",
+          description: "High satisfaction & ROI-focused campaigns",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Why Gyms & Studios Choose Us for", gradient: false },
+        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(Target, { size: 28 }),
+          title: "Precise Audience Targeting",
+          description: "Reach people most likely to join your gym or studio.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(Activity, { size: 28 }),
+          title: "Engaging Creatives & Offers",
+          description: "Ads designed to grab attention and drive clicks & sign-ups.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(TrendingUp, { size: 28 }),
+          title: "ROI-Driven Campaigns",
+          description: "We optimize ads to maximize leads and memberships efficiently.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Meta Ads for Gyms Fitness',
-      subtitle: 'GYMS FITNESS SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for gyms fitness businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for gyms fitness market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for gyms fitness audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for gyms fitness businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Launch Your Meta Ads Now",
+        link: "#contact",
+        icon: React.createElement(ArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Meta Ads Process for Gyms Fitness',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for gyms fitness businesses.',
+      title: "Our Meta Ads Process for Gyms & Fitness",
+      subtitle: "TARGET • ENGAGE • CONVERT",
+      description:
+        "We run Meta Ads campaigns with a step-by-step approach, ensuring maximum visibility, engagement, and membership conversions for gyms and fitness studios.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your gyms fitness business and market landscape.'
+          title: "Audience Research & Targeting",
+          description:
+            "Identify local fitness enthusiasts and people interested in health, wellness, and gym memberships for highly-targeted campaigns.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific gyms fitness goals.'
+          title: "Creative Development",
+          description:
+            "Design eye-catching visuals, videos, and ad copy tailored to your gym's services, classes, and promotions.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with gyms fitness focus.'
+          title: "Campaign Setup & Launch",
+          description:
+            "Set up optimized campaigns on Facebook & Instagram with proper bidding, placements, and objectives for conversions.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Retargeting Warm Leads",
+          description:
+            "Re-engage website visitors, past members, and social media engagers to increase membership sign-ups.",
+        },
+        {
+          id: 5,
+          title: "Performance Tracking & Optimization",
+          description:
+            "Monitor campaign KPIs, adjust creatives & targeting, and maximize ROI continuously.",
+        },
+        {
+          id: 6,
+          title: "Reporting & Insights",
+          description:
+            "Provide detailed reports on leads generated, cost per lead, click-through rates, and membership growth.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Gyms & Fitness Studios Who ", gradient: false },
+        { text: "Scaled with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
+      description:
+        "See how gyms and fitness studios attracted local clients and boosted memberships with our Meta Ads campaigns.",
       testimonials: [
         {
-          id: '1',
-          message: 'The meta ads services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our membership inquiries tripled after launching Meta Ads. The campaigns targeted the right local audience perfectly.",
+          highlight: "membership inquiries tripled",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
+          name: "Sandeep Rao",
+          designation: "Owner",
+          company: "IronFlex Gym",
         },
         {
-          id: '2',
-          message: 'Outstanding meta ads expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
+          id: "2",
+          message:
+            "The Meta Ads campaign helped us fill classes faster and grow our community of fitness enthusiasts.",
+          highlight: "fill classes faster",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
-        }
-      ]
+          name: "Anita Singh",
+          designation: "Founder",
+          company: "FitZone Studio",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your gyms fitness business.'
-    }
-  }
+      title: "Ready to Grow Your Gym Memberships with Meta Ads?",
+      subtitle: "TARGET LOCAL FITNESS ENTHUSIASTS & BOOST SIGN-UPS",
+      description:
+        "Book a free Meta Ads consultation today and watch your gym or fitness studio attract highly-engaged members consistently.",
+    },
+  },
 };

@@ -1,198 +1,244 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  Search,
+  TrendingUp,
+  Users,
+  Target,
+  ShieldCheck,
+  Activity,
+  ArrowRight,
+  BarChart,
+  Compass,
+} from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'seo-services',
-  business: 'gyms-fitness',
+  service: "seo-services",
+  business: "gyms-fitness",
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'seo-services',
+    slug: "seo-services-gyms-fitness",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Struggling to Rank Your Gym Online?", gradient: false },
+            { text: "Get More Members with SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Most gyms fail to appear in top searches. Without a strong SEO strategy, potential members find competitors instead of your studio.",
+          painPoints: [
+            "Gym website not ranking on Google",
+            "Low organic traffic from local searches",
+            "Limited visibility for class-specific keywords",
+            "Competitors dominate local maps & search",
+            "Difficulty converting website visitors into members",
+          ],
+          solutionPoints: [
+            "Optimize your website for local & national gym keywords",
+            "Improve Google Maps visibility and local citations",
+            "Create content that attracts fitness enthusiasts and converts",
+            "Technical SEO to speed up site, enhance UX, and boost rankings",
+            "Monitor & refine campaigns for maximum leads and ROI",
+          ],
+          cta: {
+            icon: React.createElement(ArrowRight, { size: 20 }),
+            text: "Boost Your Gym Rankings Today",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Can SEO bring more local members to my gym?",
+              answer:
+                "Yes, we optimize your website and Google Maps listings to attract fitness enthusiasts in your area, driving foot traffic and memberships.",
+              icon: React.createElement(Compass, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you optimize for multiple gym locations?",
+              answer:
+                "Absolutely. We create location-specific pages and SEO strategies to rank each gym branch independently.",
+              icon: React.createElement(Target, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How long does it take to see results?",
+              answer:
+                "SEO is a long-term strategy; gyms typically see noticeable traffic and membership growth within 3–6 months.",
+              icon: React.createElement(TrendingUp, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Will my competitors outrank us?",
+              answer:
+                "We perform competitive analysis and implement strategies to help your gym outrank competitors in local and national searches.",
+              icon: React.createElement(ShieldCheck, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want to Rank Your Gym Higher on Google?",
       headlineKeywords: [
-        "Seo Services for Gyms Fitness?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Get More Members with SEO",
+        "Boost Your Fitness Studio Visibility",
+        "Local Gym SEO That Converts",
+        "Rank on Google Maps & Local Searches",
       ],
       brandLine: [
-        { text: "Seo Services for Gyms Fitness", gradient: false }
+        { text: "💪 Maximize Gym Memberships with Proven SEO Strategies", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      subheadline: "Specialized seo services strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help gyms & fitness studios rank higher, attract more local members, and increase revenue through data-driven SEO strategies tailored to the fitness industry.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(BarChart, { size: 28 }),
+          text: "Schedule Free SEO Audit",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(Users, { size: 32 }),
+          title: "3X More Leads",
+          description: "Gyms see an average 3X increase in membership inquiries after SEO optimization",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Gyms Fitness served"
+          icon: React.createElement(TrendingUp, { size: 32 }),
+          title: "Top Local Rankings",
+          description: "Get found on Google Maps and organic search for your gym location",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(Activity, { size: 32 }),
+          title: "4.9/5 Client Satisfaction",
+          description: "Fitness studios trust us to grow memberships via SEO",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Why Choose Our", gradient: false },
+        { text: "Gym SEO Services?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(Search, { size: 28 }),
+          title: "Expert Gym SEO Strategies",
+          description: "We specialize in fitness & gym industry SEO to target the right audience and increase conversions.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(TrendingUp, { size: 28 }),
+          title: "Local SEO Domination",
+          description: "Appear on top of local searches and Google Maps to attract nearby members.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(ShieldCheck, { size: 28 }),
+          title: "Data-Driven Optimization",
+          description: "We continuously monitor, optimize, and refine strategies for maximum results and ROI.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Seo Services for Gyms Fitness',
-      subtitle: 'GYMS FITNESS SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for gyms fitness businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for gyms fitness market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for gyms fitness audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for gyms fitness businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Grow Your Gym Memberships with SEO",
+        link: "#contact",
+        icon: React.createElement(ArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Seo Services Process for Gyms Fitness',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for gyms fitness businesses.',
+      title: "Our SEO Process for Gyms & Fitness Studios",
+      subtitle: "ANALYZE • OPTIMIZE • CONVERT • SCALE",
+      description:
+        "We implement a complete SEO strategy for gyms, ensuring higher rankings, increased local visibility, and more membership signups.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your gyms fitness business and market landscape.'
+          title: "Website & Competitor Audit",
+          description: "Analyze your current website, competitors, and keyword opportunities in the fitness niche.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific gyms fitness goals.'
+          title: "On-Page Optimization",
+          description: "Optimize your gym website, meta tags, headers, images, and internal linking for target keywords.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with gyms fitness focus.'
+          title: "Content Creation",
+          description: "Produce engaging blog posts, class schedules, fitness tips, and transformation stories that attract potential members.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Local SEO & Maps Optimization",
+          description: "Optimize Google My Business, local citations, and maps listings to dominate local search results.",
+        },
+        {
+          id: 5,
+          title: "Link Building & Authority",
+          description: "Acquire high-quality backlinks from fitness blogs, health websites, and local directories to boost domain authority.",
+        },
+        {
+          id: 6,
+          title: "Monitoring & Continuous Improvement",
+          description: "Track rankings, leads, and traffic; continuously refine strategies to maintain top positions.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Gyms Who ", gradient: false },
+        { text: "Ranked #1 with Our SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
+      description:
+        "See how gyms & fitness studios improved visibility, attracted members, and increased revenue with our SEO services.",
       testimonials: [
         {
-          id: '1',
-          message: 'The seo services services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "After optimizing our website and Google Maps listings, our local gym saw a 4X increase in new members within 4 months.",
+          highlight: "4X increase in new members",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
+          name: "Rohan Mehra",
+          designation: "Owner",
+          company: "PowerHouse Gym",
         },
         {
-          id: '2',
-          message: 'Outstanding seo services expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
+          id: "2",
+          message:
+            "The SEO strategy brought us top rankings for all our classes and boosted membership signups significantly.",
+          highlight: "top rankings for all classes",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
-        }
-      ]
+          name: "Simran Kaur",
+          designation: "Founder",
+          company: "Flex Fitness Studio",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your gyms fitness business.'
-    }
-  }
+      title: "Ready to Rank Your Gym #1 on Google?",
+      subtitle: "INCREASE TRAFFIC • GET MORE MEMBERS • BOOST REVENUE",
+      description:
+        "Book a free SEO consultation and see how our proven strategies can grow your fitness business and attract more local members.",
+    },
+  },
 };

@@ -1,198 +1,248 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  Activity,
+  Users,
+  BarChart2,
+  Target,
+  Calendar,
+  Star,
+  ArrowRight,
+  Megaphone,
+  TrendingUp,
+} from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'google-ads',
-  business: 'gyms-fitness',
+  service: "google-ads",
+  business: "gyms-fitness",
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'google-ads',
+    slug: "google-ads-gyms-fitness",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Struggling to Attract Local Members with", gradient: false },
+            { text: "Google Ads?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Gyms, fitness studios, and personal trainers often fail to reach potential members with generic Google Ads campaigns. Targeted campaigns are essential for growth.",
+          painPoints: [
+            "Ads not reaching local fitness enthusiasts",
+            "High cost per click without conversions",
+            "Poorly written ad copies & CTAs",
+            "Difficulty tracking membership leads",
+            "Limited ROI on ad spend",
+          ],
+          solutionPoints: [
+            "Target hyper-local audiences based on location, age, and interests",
+            "Craft persuasive ad copy & high-quality visuals",
+            "Optimize bidding to maximize ROI",
+            "Track leads from ad clicks to membership signups",
+            "Refine campaigns regularly for better performance",
+          ],
+          cta: {
+            icon: React.createElement(ArrowRight, { size: 20 }),
+            text: "Boost Gym Memberships with Google Ads",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Can Google Ads increase gym memberships quickly?",
+              answer:
+                "Yes! With highly targeted campaigns, gyms see more inquiries, trial sign-ups, and memberships within weeks.",
+              icon: React.createElement(Activity, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Do you handle ad creatives and copywriting?",
+              answer:
+                "Absolutely. We design compelling visuals, ad copies, and CTAs that convert clicks into members.",
+              icon: React.createElement(Star, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "How do you target the right audience?",
+              answer:
+                "We use location targeting, interest-based targeting, and demographic filters to reach potential gym members effectively.",
+              icon: React.createElement(Target, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Can you track ROI from ads?",
+              answer:
+                "Yes. We integrate tracking to measure clicks, leads, calls, and conversions to ensure maximum ROI.",
+              icon: React.createElement(BarChart2, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want More",
       headlineKeywords: [
-        "Google Ads for Gyms Fitness?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Gym Members?",
+        "Fitness Sign-ups?",
+        "High ROI Ads?",
+        "Local Fitness Traffic?",
       ],
       brandLine: [
-        { text: "Google Ads for Gyms Fitness", gradient: false }
+        {
+          text: "💪 Drive More Members & Maximize ROI with Google Ads for Gyms",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized google ads strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We run targeted Google Ads campaigns for gyms and fitness studios to attract local members, boost trial sign-ups, and grow your fitness business rapidly.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(Megaphone, { size: 28 }),
+          text: "Get Free Google Ads Strategy Call",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(Users, { size: 32 }),
+          title: "2,000+ New Members",
+          description: "Acquired via optimized Google Ads",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Gyms Fitness served"
+          icon: React.createElement(TrendingUp, { size: 32 }),
+          title: "5X ROI",
+          description: "From strategic ad campaigns",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(Calendar, { size: 32 }),
+          title: "50+ Gym Campaigns",
+          description: "Successfully managed across local cities",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Why Gyms & Fitness Studios Choose Us for", gradient: false },
+        { text: "Google Ads Management", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(Target, { size: 28 }),
+          title: "Hyper-Local Targeting",
+          description: "Reach people near your gym actively searching for fitness solutions.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(Activity, { size: 28 }),
+          title: "Optimized Ad Copies",
+          description: "Persuasive headlines and CTAs to maximize conversions.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored google ads strategies designed specifically for your business needs.'
+          icon: React.createElement(BarChart2, { size: 28 }),
+          title: "ROI-Focused Campaigns",
+          description: "Track and refine campaigns to ensure maximum returns.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Google Ads for Gyms Fitness',
-      subtitle: 'GYMS FITNESS SPECIALIZED SERVICES',
-      description: 'Comprehensive google ads solutions designed specifically for gyms fitness businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom google ads strategy development tailored for gyms fitness market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of google ads campaigns optimized for gyms fitness audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for gyms fitness businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Grow Your Gym Memberships Today",
+        link: "#contact",
+        icon: React.createElement(ArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Google Ads Process for Gyms Fitness',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to google ads that delivers measurable results for gyms fitness businesses.',
+      title: "Our Google Ads Process for Gyms & Fitness Studios",
+      subtitle: "TARGET • ENGAGE • CONVERT • SCALE",
+      description:
+        "We create high-performing campaigns tailored for local gyms and fitness studios, driving members and maximizing ad spend efficiency.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your gyms fitness business and market landscape.'
+          title: "Audience Research",
+          description:
+            "Identify the right demographic, location, and interests to target fitness enthusiasts effectively.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom google ads strategy tailored for your specific gyms fitness goals.'
+          title: "Ad Creative & Copy",
+          description:
+            "Design visually compelling ads and persuasive copies to grab attention and convert clicks into memberships.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of google ads campaigns with gyms fitness focus.'
+          title: "Campaign Setup & Bidding",
+          description:
+            "Strategically set up campaigns with optimized bids for maximum ROI and cost-efficiency.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Google Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for google ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Performance Tracking",
+          description:
+            "Monitor clicks, leads, calls, and conversions to measure campaign success and make data-driven adjustments.",
+        },
+        {
+          id: 5,
+          title: "Continuous Optimization",
+          description:
+            "Refine targeting, copy, visuals, and bids to increase conversions and reduce wasted ad spend.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Google Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Gyms Who ", gradient: false },
+        { text: "Scaled Memberships with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
+      description:
+        "See how our Google Ads campaigns helped fitness studios and gyms boost local visibility, sign-ups, and revenue.",
       testimonials: [
         {
-          id: '1',
-          message: 'The google ads services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "After running Google Ads with this team, our trial memberships tripled in just 2 months!",
+          highlight: "trial memberships tripled",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
+          name: "Rohit Verma",
+          designation: "Owner",
+          company: "Powerhouse Gym",
         },
         {
-          id: '2',
-          message: 'Outstanding google ads expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
+          id: "2",
+          message:
+            "The campaigns were targeted, cost-efficient, and converted clicks into loyal members seamlessly.",
+          highlight: "converted clicks into loyal members",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
-        }
-      ]
+          name: "Simran Kaur",
+          designation: "Founder",
+          company: "FitLife Studio",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR GOOGLE ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our google ads can drive growth for your gyms fitness business.'
-    }
-  }
+      title: "Ready to Boost Gym Memberships with Google Ads?",
+      subtitle: "TARGET LOCAL FITNESS ENTHUSIASTS",
+      description:
+        "Book a free consultation today and start running high-converting Google Ads campaigns for your gym or fitness studio.",
+    },
+  },
 };

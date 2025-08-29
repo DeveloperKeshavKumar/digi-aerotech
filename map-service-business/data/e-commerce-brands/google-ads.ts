@@ -1,198 +1,216 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import { 
+  IconShoppingCart, IconTrendingUp, IconCreditCard, IconUsers, IconStar, IconRocket, IconArrowRight 
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'google-ads',
-  business: 'e-commerce-brands',
+  business: 'ecomm-brands',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'google-ads',
+    slug: 'google-ads-ecomm-brands',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "E-commerce Brands Struggle With ", gradient: false },
+            { text: "Google Ads ROI", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Running Google Ads without proper targeting or strategy leads to wasted budget, low conversions, and poor sales growth.",
+          painPoints: [
+            "High ad spend with low ROI",
+            "Poor targeting for product categories",
+            "Low click-through rates and conversions",
+            "Difficulty managing multiple campaigns",
+            "Inadequate tracking and optimization"
+          ],
+          solutionPoints: [
+            "Advanced keyword & audience research",
+            "Conversion-focused campaign setup",
+            "Continuous A/B testing & optimization",
+            "Smart bidding & budget allocation",
+            "Performance tracking & actionable insights"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Google Ads ROI"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why should e-commerce brands use Google Ads?',
+              answer: 'Google Ads drives highly targeted traffic, boosting conversions and sales for online stores.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you manage product-specific campaigns?',
+              answer: 'Yes. We create campaigns tailored to your product categories for maximum relevance and ROI.',
+              icon: React.createElement(IconCreditCard, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you improve low-performing campaigns?',
+              answer: 'Through continuous A/B testing, bid adjustments, audience refinement, and creative optimization.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can Google Ads increase repeat customers?',
+              answer: 'Yes. We run remarketing campaigns targeting previous visitors to boost repeat purchases.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you track campaign ROI?',
+              answer: 'We integrate analytics and conversion tracking to monitor clicks, sales, and revenue per campaign.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'When will I see results from Google Ads?',
+              answer: 'E-commerce stores often see measurable traffic and conversion increases within weeks of campaign launch.',
+              icon: React.createElement(IconRocket, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Google Ads for E Commerce Brands?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher Conversions?",
+        "More Online Sales?",
+        "Better ROAS?",
+        "Google Ads That Work?",
+        "360° PPC Management for E-commerce?"
       ],
       brandLine: [
-        { text: "Google Ads for E Commerce Brands", gradient: false }
+        { text: "💰 Scale Your E-commerce Sales with Targeted Google Ads", gradient: false }
       ],
-      subheadline: "Specialized google ads strategies designed specifically for e commerce brands. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help e-commerce brands run high-ROI Google Ads campaigns that drive clicks, conversions, and revenue growth.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconCreditCard, { size: 28 }), text: "Book Free Ads Consultation", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "5,000+ Conversions",
+          description: "Generated for e-commerce clients"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "E Commerce Brands served"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "200+ Campaigns",
+          description: "Successfully managed and optimized"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconRocket, { size: 32 }),
+          title: "10x ROI Potential",
+          description: "Smart bidding and audience targeting"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Global Reach",
+          description: "Campaigns targeting worldwide customers"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for E Commerce Brands?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Google Ads Partner for E-commerce Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of e commerce brands market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconShoppingCart, { size: 28 }),
+          title: "Product-Specific Campaigns",
+          description: "We target the right products to the right audiences for maximum ROI."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for e commerce brands businesses.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Continuous Optimization",
+          description: "We constantly refine bids, keywords, and creatives to improve results."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored google ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconCreditCard, { size: 28 }),
+          title: "Conversion Tracking & Analytics",
+          description: "Track clicks, sales, and revenue per campaign for actionable insights."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Remarketing Expertise",
+          description: "Bring back previous visitors to boost repeat purchases and customer lifetime value."
+        },
+        {
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "ROI-Focused Strategy",
+          description: "Every campaign is designed to maximize return on ad spend."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Scalable Campaigns",
+          description: "From small startups to large e-commerce stores, we scale campaigns effectively."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start High-ROI Ads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Google Ads for E Commerce Brands',
-      subtitle: 'E COMMERCE BRANDS SPECIALIZED SERVICES',
-      description: 'Comprehensive google ads solutions designed specifically for e commerce brands businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom google ads strategy development tailored for e commerce brands market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of google ads campaigns optimized for e commerce brands audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for e commerce brands businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Google Ads Process for E Commerce Brands',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Proven Google Ads Process for E-commerce Brands',
+      subtitle: 'STEP-BY-STEP ROI-DRIVEN CAMPAIGNS',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to google ads that delivers measurable results for e commerce brands businesses.',
+      description: 'From research to optimization, our process ensures every Google Ads campaign delivers measurable results for your e-commerce business.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your e commerce brands business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom google ads strategy tailored for your specific e commerce brands goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of google ads campaigns with e commerce brands focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on e commerce brands market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Google Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for google ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Keyword & Audience Research', description: 'Identify high-intent keywords and target audiences that convert.' },
+        { id: 2, title: 'Campaign Structure Setup', description: 'Organize campaigns, ad groups, and product targeting for maximum relevance.' },
+        { id: 3, title: 'Ad Creatives & Copywriting', description: 'Design compelling ad creatives with persuasive copy to drive clicks.' },
+        { id: 4, title: 'Bidding & Budget Allocation', description: 'Optimize bids and budgets for cost-efficient conversions.' },
+        { id: 5, title: 'Performance Monitoring & A/B Testing', description: 'Continuously test and tweak campaigns to improve CTR and ROAS.' },
+        { id: 6, title: 'Reporting & Insights', description: 'Provide actionable reports to track revenue, conversions, and ROI.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Google Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "E-commerce Brands Who ", gradient: false },
+        { text: "Boosted Sales with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from e commerce brands businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped e-commerce brands maximize ROI, increase traffic, and generate more sales with Google Ads.',
       testimonials: [
-        {
-          id: '1',
-          message: 'The google ads services transformed our e commerce brands business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'E Commerce Brands Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding google ads expertise specifically for e commerce brands. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for e commerce brands',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'E Commerce Brands Solutions'
-        }
+        { id: '1', message: 'Our campaigns now deliver 5x ROI and a steady stream of new customers every month.', highlight: '5x ROI', stars: 5, name: 'Anjali Verma', designation: 'Founder', company: 'TrendyCart' },
+        { id: '2', message: 'Their Google Ads expertise increased our online sales by 300% within 2 months.', highlight: '300%', stars: 5, name: 'Siddharth Rao', designation: 'CEO', company: 'ShopMate' }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your E Commerce Brands Business?',
-      subtitle: 'START YOUR GOOGLE ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our google ads can drive growth for your e commerce brands business.'
+      title: 'Ready to Scale Your E-commerce Sales with Google Ads?',
+      subtitle: 'Drive Conversions, Increase ROI, Boost Revenue',
+      description: 'Book a free Google Ads consultation with Digi Aerotech and start running high-ROI campaigns for your e-commerce store.'
     }
   }
 };

@@ -1,198 +1,239 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  IconMapPin,
+  IconPhoneCall,
+  IconStar,
+  IconUsers,
+  IconArrowRight,
+  IconBuildingStore,
+  IconSearch,
+  IconChartBar,
+  IconWorld,
+} from "@tabler/icons-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'gmb-services',
-  business: 'local-businesses',
+  service: "gmb-services",
+  business: "local-business",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant1",
+    whyChooseUs: "variant2",
+    process: "variant3",
+    testimonials: "variant1",
   },
   data: {
-    slug: 'gmb-services',
+    slug: "gmb-services-local-business",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Why Local Businesses", gradient: false },
+            { text: "Need Google Business Profile Optimization", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "When customers search ‘near me’, the top results are Google Business Profiles. If your local business isn’t optimized, you’re losing daily walk-ins, calls, and online trust.",
+          painPoints: [
+            "Low visibility on Google Maps & local searches",
+            "Outdated or incomplete business profile",
+            "Negative reviews hurting brand reputation",
+            "No strategy for generating customer reviews",
+            "Missed opportunities for calls & direct bookings",
+          ],
+          solutionPoints: [
+            "Fully optimized GMB profile with correct details",
+            "Regular posting & updates to stay active",
+            "Reputation management & review generation",
+            "Category & keyword optimization for local reach",
+            "Call, direction & booking optimization",
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Optimize My Google Profile",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Why is GMB important for local businesses?",
+              answer:
+                "Because Google My Business is the first place customers look when searching nearby shops or services. A well-optimized profile increases calls, visits, and trust instantly.",
+              icon: React.createElement(IconMapPin, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Can GMB optimization improve walk-in customers?",
+              answer:
+                "Yes. Most local searches lead to physical store visits. With GMB optimization, your business ranks higher and attracts more walk-ins.",
+              icon: React.createElement(IconBuildingStore, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Do you help with reviews & ratings?",
+              answer:
+                "Absolutely. We build strategies to generate authentic positive reviews, respond to feedback, and improve your star rating.",
+              icon: React.createElement(IconStar, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "How fast can we see results?",
+              answer:
+                "You can see improvements in calls, clicks, and profile views within weeks as your GMB optimization takes effect.",
+              icon: React.createElement(IconChartBar, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
-      headlineKeywords: [
-        "Gmb Services for Local Businesses?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
-      ],
+      initial: "Rank",
+      headlineKeywords: ["Higher", "Local Searches", "Google Maps"],
       brandLine: [
-        { text: "Gmb Services for Local Businesses", gradient: false }
+        {
+          text: "📍 Google My Business Services for Local Businesses",
+          gradient: true,
+          gradientClass: "from-orange-500 via-pink-500 to-red-600",
+        },
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for local businesses. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We help local businesses dominate Google Maps and local search results with fully optimized GMB profiles that drive calls, directions, and real foot traffic.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(IconArrowRight, { size: 28 }),
+          text: "Boost My Local Visibility",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "5X More Calls",
+          description: "Optimized profiles attract more customers ready to buy",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Local Businesses served"
+          icon: React.createElement(IconPhoneCall, { size: 32 }),
+          title: "Increased Walk-ins",
+          description: "Local customers find your business first, not competitors",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "Top Search Rankings",
+          description: "Rank higher in 'near me' & local intent searches",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Local Businesses?', gradient: false }
+        { text: "Why Choose Us for", gradient: false },
+        { text: "Google My Business Optimization?", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of local businesses market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Complete Profile Setup",
+          description: "We ensure all your details are accurate, verified, and engaging.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for local businesses businesses.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review & Reputation Management",
+          description: "Boost your star rating with consistent reviews & responses.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Local Keyword Targeting",
+          description: "We optimize your profile with relevant local keywords for visibility.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Gmb Services for Local Businesses',
-      subtitle: 'LOCAL BUSINESSES SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for local businesses businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for local businesses market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for local businesses audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for local businesses businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Optimize My Local Business Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Gmb Services Process for Local Businesses',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for local businesses businesses.',
+      title: "Our Google Business Profile Optimization Process",
+      subtitle: "LOCAL VISIBILITY • TRUST • CONVERSIONS",
+      className: "border-t border-border dark:border-gray-700",
+      description:
+        "Our GMB process is designed to make your business rank higher, look more professional, and get more calls, visits, and leads from local customers.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your local businesses business and market landscape.'
+          title: "Profile Audit",
+          description: "We review your existing GMB profile, categories, reviews, and search presence.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific local businesses goals.'
+          title: "Optimization",
+          description: "We fix details, add keywords, photos, posts, and ensure your listing is complete.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with local businesses focus.'
+          title: "Reputation Boost",
+          description: "We build strategies to generate consistent positive reviews & manage responses.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on local businesses market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Local Ranking",
+          description: "We optimize for map pack rankings, increasing calls, visits, and search clicks.",
+        },
+        {
+          id: 5,
+          title: "Insights & Growth",
+          description: "We track profile insights, customer actions, and continuously improve visibility.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Local Businesses", gradient: false },
+        { text: "Winning with Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from local businesses businesses that achieved remarkable growth.',
+      description:
+        "From retail shops to local services, our GMB optimization services have helped businesses increase visibility, attract more calls, and grow consistently.",
       testimonials: [
         {
-          id: '1',
-          message: 'The gmb services services transformed our local businesses business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "My salon started getting 10+ new walk-ins every week after GMB optimization. We now show up #1 in local searches.",
+          highlight: "10+ New Clients Weekly",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Local Businesses Company'
+          name: "Meera Kapoor",
+          designation: "Owner",
+          company: "Glow Beauty Salon",
         },
         {
-          id: '2',
-          message: 'Outstanding gmb services expertise specifically for local businesses. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for local businesses',
+          id: "2",
+          message:
+            "Our café saw a huge increase in calls & map searches. Now we dominate the ‘coffee near me’ results in our area.",
+          highlight: "Top 3 Local Rankings",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Local Businesses Solutions'
-        }
-      ]
+          name: "Rajesh Nair",
+          designation: "Founder",
+          company: "Urban Brew Café",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Local Businesses Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your local businesses business.'
-    }
-  }
+      title: "Be the #1 Choice in Local Searches",
+      subtitle: "GET MORE CALLS • WALK-INS • REVIEWS",
+      description:
+        "Don’t let your competitors take your customers. With our GMB optimization, your local business will rank higher, look more trusted, and attract more customers every day.",
+    },
+  },
 };

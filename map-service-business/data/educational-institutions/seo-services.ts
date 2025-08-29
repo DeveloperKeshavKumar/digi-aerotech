@@ -1,198 +1,265 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTrendingUp,
+  IconSearch,
+  IconBook,
+  IconUsers,
+  IconShieldCheck,
+  IconArrowRight,
+  IconRocket,
+  IconCircleCheck,
+  IconCalendarEvent,
+  IconTarget
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'seo-services',
   business: 'educational-institutions',
   variants: {
     hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    whyChooseUs: 'variant1',
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'seo-services',
+    slug: 'seo-services-educational-institutions',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Educational Institutions Face", gradient: false },
+            { text: "With SEO & Organic Visibility", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
+          ],
+          subheadline: "Schools, colleges, coaching centers, and e-learning platforms struggle to attract students online without strong SEO.",
+          painPoints: [
+            "Low ranking on Google for course or program keywords",
+            "Difficulty attracting local students searching online",
+            "Limited organic visibility vs competitors",
+            "Poor engagement on educational content",
+            "Slow website traffic growth leading to low enrollments"
+          ],
+          solutionPoints: [
+            "Comprehensive keyword research & content strategy",
+            "On-page optimization for landing pages & course pages",
+            "High-quality backlinks & authority building",
+            "Technical SEO for fast, responsive websites",
+            "Continuous monitoring and growth-driven optimization"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Your Organic Visibility"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'How can SEO help my educational institution?',
+              answer: 'SEO improves your search visibility, attracts students searching online, and generates consistent organic leads for your programs.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you handle both local and national SEO?',
+              answer: 'Yes, we optimize for local searches for your city and broader regional or national visibility depending on your programs.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Will SEO increase enrollment?',
+              answer: 'With targeted keywords and optimized content, we attract high-intent prospective students to your website, increasing enrollments over time.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide ongoing SEO support?',
+              answer: 'Absolutely. We continuously monitor, optimize, and create new strategies to maintain and improve rankings and traffic.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can you optimize our course pages and blog content?',
+              answer: 'Yes, we optimize all website pages, blogs, and program landing pages for maximum visibility and engagement.',
+              icon: React.createElement(IconBook, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon will I see results?',
+              answer: 'SEO is a long-term strategy, but most institutions start seeing measurable improvements in traffic and leads within 2–3 months.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Seo Services for Educational Institutions?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Higher Google Rankings?",
+        "More Organic Student Leads?",
+        "Top Spots for Course Searches?",
+        "SEO That Converts Visitors into Students?",
+        "360° SEO Services for Educational Institutions?"
       ],
       brandLine: [
-        { text: "Seo Services for Educational Institutions", gradient: false }
+        { text: "📈 Maximize Your Educational Institution’s Organic Reach and Enrollments", gradient: false }
       ],
-      subheadline: "Specialized seo services strategies designed specifically for educational institutions. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help schools, colleges, coaching centers, and e-learning platforms attract more students through strategic, results-driven SEO campaigns.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book Free SEO Consultation", link: "/contact" },
+        { icon: React.createElement(IconShieldCheck, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "100+ Institutions Optimized",
+          description: "Boosted organic rankings and traffic"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Educational Institutions served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "50,000+ Prospective Students Reached",
+          description: "Through SEO-driven content and campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBook, { size: 32 }),
+          title: "High-Quality Content Created",
+          description: "Blog posts, landing pages, program content"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "Trusted & Proven Strategies",
+          description: "Results that convert traffic into enrollments"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Educational Institutions?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 SEO Partner for Educational Institutions", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of educational institutions market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Result-Oriented SEO",
+          description: "We focus on driving student leads and increasing enrollments."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for educational institutions businesses.'
+          icon: React.createElement(IconBook, { size: 28 }),
+          title: "Course & Program Optimization",
+          description: "Targeted SEO for each course and program page."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Local & Global Reach",
+          description: "Optimized for local students and national/global visibility."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Technical SEO & Speed",
+          description: "Fast, mobile-friendly, and fully optimized websites."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Content & Link Strategy",
+          description: "High-quality content and authority-building backlinks."
+        },
+        {
+          icon: React.createElement(IconCircleCheck, { size: 28 }),
+          title: "Continuous Monitoring & Reporting",
+          description: "Transparent analytics to track progress and conversions."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Your Rankings & Enrollments",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Seo Services for Educational Institutions',
-      subtitle: 'EDUCATIONAL INSTITUTIONS SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for educational institutions businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for educational institutions market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for educational institutions audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for educational institutions businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Seo Services Process for Educational Institutions',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our SEO Process for Educational Institutions',
+      subtitle: 'STEP-BY-STEP ORGANIC GROWTH',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for educational institutions businesses.',
+      description: 'We follow a comprehensive SEO process to improve visibility, attract prospective students, and increase enrollments consistently.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your educational institutions business and market landscape.'
+          title: 'Website & Keyword Audit',
+          description: 'Analyze website structure, speed, and perform keyword research targeting prospective students.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific educational institutions goals.'
+          title: 'On-Page Optimization',
+          description: 'Optimize meta tags, headings, content, and landing pages for search engines and users.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with educational institutions focus.'
+          title: 'Content Strategy & Creation',
+          description: 'Develop blog posts, course pages, and resources that attract students organically.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on educational institutions market feedback.'
+          title: 'Technical SEO Improvements',
+          description: 'Ensure mobile responsiveness, page speed, schema markup, and secure website setup.'
+        },
+        {
+          id: 5,
+          title: 'Backlink & Authority Building',
+          description: 'Acquire high-quality backlinks to improve domain authority and rankings.'
+        },
+        {
+          id: 6,
+          title: 'Monitoring & Continuous Optimization',
+          description: 'Track rankings, traffic, and conversions while continuously refining the SEO strategy.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Educational Institutions Who ", gradient: false },
+        { text: "Grew Organically with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
       ],
-      description: 'Real results from educational institutions businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers improve search visibility and attract more students.',
       testimonials: [
         {
           id: '1',
-          message: 'The seo services services transformed our educational institutions business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our college website now ranks on the first page for multiple programs. Organic student inquiries have doubled!',
+          highlight: 'Organic student inquiries have doubled',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Educational Institutions Company'
+          name: 'Dr. Anjali Rao',
+          designation: 'Principal',
+          company: 'Sunrise College'
         },
         {
           id: '2',
-          message: 'Outstanding seo services expertise specifically for educational institutions. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for educational institutions',
+          message: 'Thanks to Digi Aerotech’s SEO strategies, our coaching center saw a 50% increase in student enrollment organically.',
+          highlight: '50% increase in student enrollment',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Educational Institutions Solutions'
+          name: 'Rohit Singh',
+          designation: 'Director',
+          company: 'Bright Minds Academy'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Educational Institutions Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your educational institutions business.'
+      title: 'Ready to Increase Student Leads Organically?',
+      subtitle: 'Rank Higher, Attract More Students',
+      description: 'Book a free SEO consultation with Digi Aerotech and start generating consistent organic enrollments today.'
     }
   }
 };

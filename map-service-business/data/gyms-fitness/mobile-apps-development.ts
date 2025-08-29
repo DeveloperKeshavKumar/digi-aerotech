@@ -1,198 +1,250 @@
-import React from 'react';
-import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import React from "react";
+import { ServiceBusinessMap } from "@/map-service-business/map-service-business.types";
+import { Struggles } from "@/components/homepage/struggles";
+import { FaqSection } from "@/components/services/faq-section";
+import {
+  Smartphone,
+  Activity,
+  Users,
+  Target,
+  Calendar,
+  Heart,
+  Star,
+  ArrowRight,
+  Clock,
+  Dumbbell
+} from "lucide-react";
 
 export const map: ServiceBusinessMap = {
-  service: 'mobile-apps-development',
-  business: 'gyms-fitness',
+  service: "mobile-apps-development",
+  business: "gyms-fitness",
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: "variant2",
+    whyChooseUs: "variant1",
+    process: "variant3",
+    testimonials: "variant2",
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: "mobile-apps-development-gyms-fitness",
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
-      cta: true
+      cta: true,
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: "beforeWhyChooseUs",
+        props: {
+          title: [
+            { text: "Gym Owners Struggling to Engage Members?", gradient: false },
+            { text: "Custom Mobile Apps Can Transform Your Fitness Business", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
+          ],
+          subheadline:
+            "Many gyms and fitness studios lose clients due to poor engagement and limited digital presence. A mobile app keeps your members connected, motivated, and loyal.",
+          painPoints: [
+            "Difficulty managing memberships and bookings online",
+            "Low member engagement with classes and promotions",
+            "High churn due to lack of personalized experience",
+            "Limited ability to track progress and motivate members",
+            "Unable to upsell personal training or merchandise efficiently",
+          ],
+          solutionPoints: [
+            "Custom mobile apps for iOS and Android to manage memberships seamlessly",
+            "Class bookings, notifications, and promotions at members' fingertips",
+            "Personalized dashboards with fitness tracking and workout plans",
+            "Push notifications and reminders to boost engagement and retention",
+            "Integrated payment gateways for memberships, merchandise, and packages",
+          ],
+          cta: {
+            icon: React.createElement(ArrowRight, { size: 20 }),
+            text: "Build Your Fitness App Today",
+          },
+        },
+      },
+      {
+        component: FaqSection,
+        position: "afterTestimonials",
+        props: {
+          faqs: [
+            {
+              id: "faq-1",
+              question: "Can a mobile app increase gym member retention?",
+              answer:
+                "Yes, apps engage members with class schedules, progress tracking, promotions, and personalized content, boosting loyalty and reducing churn.",
+              icon: React.createElement(Target, { size: 22 }),
+            },
+            {
+              id: "faq-2",
+              question: "Will my gym app work on both iOS and Android?",
+              answer:
+                "Absolutely. We develop cross-platform mobile apps to ensure all members can access features regardless of their device.",
+              icon: React.createElement(Smartphone, { size: 22 }),
+            },
+            {
+              id: "faq-3",
+              question: "Can we integrate online payments and bookings?",
+              answer:
+                "Yes, the app supports secure payments, membership renewals, class bookings, and even merchandise purchases.",
+              icon: React.createElement(Heart, { size: 22 }),
+            },
+            {
+              id: "faq-4",
+              question: "Do you provide app maintenance and updates?",
+              answer:
+                "We offer ongoing support, bug fixes, updates, and feature enhancements to ensure your app runs smoothly and stays relevant.",
+              icon: React.createElement(Clock, { size: 22 }),
+            },
+          ],
+        },
+      },
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want to Engage & Retain Your Gym Members?",
       headlineKeywords: [
-        "Mobile Apps Development for Gyms Fitness?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "With a Custom Mobile App?",
+        "Boost Class Bookings & Memberships?",
+        "Track Fitness Progress Seamlessly?",
+        "360° Mobile Solutions for Gyms?",
       ],
       brandLine: [
-        { text: "Mobile Apps Development for Gyms Fitness", gradient: false }
+        { text: "📱 Elevate Your Gym & Fitness Studio with Custom Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for gyms fitness. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline:
+        "We develop feature-rich mobile apps for gyms, studios, and personal trainers to enhance member engagement, streamline operations, and increase revenue.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        {
+          icon: React.createElement(Smartphone, { size: 28 }),
+          text: "Book Your Free App Consultation",
+          link: "/contact",
+        },
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(Users, { size: 32 }),
+          title: "5000+ Active Users",
+          description: "Across gyms & fitness studios using our apps",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Gyms Fitness served"
+          icon: React.createElement(Dumbbell, { size: 32 }),
+          title: "200+ Gyms Served",
+          description: "From small studios to large fitness chains",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
+          icon: React.createElement(Star, { size: 32 }),
           title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          description: "Clients love our mobile app solutions",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
-        }
-      ]
+      ],
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Gyms Fitness?', gradient: false }
+        { text: "Why Fitness Studios Choose Us for", gradient: false },
+        { text: "Mobile App Development", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of gyms fitness market dynamics and customer behavior patterns.'
+          icon: React.createElement(Dumbbell, { size: 28 }),
+          title: "Custom Features for Gyms",
+          description: "Memberships, bookings, class schedules, and tracking dashboards.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for gyms fitness businesses.'
+          icon: React.createElement(Activity, { size: 28 }),
+          title: "Push Notifications & Engagement",
+          description: "Remind members of classes, promotions, and personal milestones.",
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(Target, { size: 28 }),
+          title: "Revenue-Boosting Integrations",
+          description: "Secure payments, merchandise, and personal training upsells.",
         },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
-      }
-    },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Gyms Fitness',
-      subtitle: 'GYMS FITNESS SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for gyms fitness businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for gyms fitness market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for gyms fitness audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for gyms fitness businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
+        text: "Get Your Gym App Today",
+        link: "#contact",
+        icon: React.createElement(ArrowRight, { size: 20 }),
+      },
     },
     process: {
-      title: 'Our Mobile Apps Development Process for Gyms Fitness',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for gyms fitness businesses.',
+      title: "Our Mobile App Development Process for Gyms",
+      subtitle: "PLAN • DESIGN • DEVELOP • ENGAGE",
+      description:
+        "We create custom mobile apps for gyms and fitness studios with a structured process to ensure seamless experience, engagement, and member growth.",
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your gyms fitness business and market landscape.'
+          title: "Requirement Analysis",
+          description: "Understand your gym, membership types, class schedules, and member engagement goals.",
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific gyms fitness goals.'
+          title: "UI/UX Design",
+          description:
+            "Design intuitive, visually appealing interfaces that make it easy for members to navigate and book classes.",
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with gyms fitness focus.'
+          title: "App Development",
+          description:
+            "Develop cross-platform apps with integrated membership management, bookings, notifications, and analytics dashboards.",
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
+          title: "Testing & Quality Assurance",
+          description:
+            "Thorough testing to ensure smooth functionality, speed, and bug-free member experience.",
+        },
+        {
+          id: 5,
+          title: "Launch & Deployment",
+          description:
+            "Deploy your app on iOS and Android stores with smooth onboarding and training for your staff.",
+        },
+        {
+          id: 6,
+          title: "Support & Optimization",
+          description:
+            "Continuous updates, new feature implementation, and performance monitoring to maximize app adoption and member retention.",
+        },
+      ],
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Gyms Who Scaled with", gradient: false },
+        { text: "Our Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
       ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
+      description:
+        "See how fitness studios enhanced member experience, retention, and revenue through our custom mobile app solutions.",
       testimonials: [
         {
-          id: '1',
-          message: 'The mobile apps development services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          id: "1",
+          message:
+            "Our members love the new app! Class bookings, progress tracking, and push notifications have increased engagement tremendously.",
+          highlight: "increased engagement tremendously",
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
+          name: "Rohit Mehta",
+          designation: "Owner",
+          company: "PowerFit Gym",
         },
         {
-          id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
+          id: "2",
+          message:
+            "The custom app helped us manage memberships efficiently and boost revenue from personal training packages.",
+          highlight: "boost revenue from personal training packages",
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
-        }
-      ]
+          name: "Priya Sharma",
+          designation: "Founder",
+          company: "Elite Fitness Studio",
+        },
+      ],
     },
     cta: {
-      title: 'Ready to Transform Your Gyms Fitness Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your gyms fitness business.'
-    }
-  }
+      title: "Ready to Launch Your Custom Gym App?",
+      subtitle: "ENGAGE MEMBERS • BOOST RETENTION • INCREASE REVENUE",
+      description:
+        "Book a free consultation today and see how a custom mobile app can transform your gym or fitness studio business.",
+    },
+  },
 };
