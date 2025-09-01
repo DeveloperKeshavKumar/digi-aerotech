@@ -1,198 +1,260 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandFacebook, IconBrandInstagram, IconUsers, IconTarget, IconArrowRight,
+  IconRocket, IconTrendingUp, IconChartBar, IconCreditCard, IconDeviceMobile,
+  IconHeart, IconCalendarEvent, IconAd
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'meta-ads',
-  business: 'doctors-clinics',
+  business: 'all-industries',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    process: 'variant3',
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'meta-ads',
+    slug: 'meta-ads-services',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Businesses Struggle with ", gradient: false },
+            { text: "Meta Ads (Facebook & Instagram)", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
+          ],
+          subheadline: "Running ads is easy. Running ads that convert and give ROI is where most businesses fail.",
+          painPoints: [
+            "High ad spend with very low returns",
+            "Wrong audience targeting leading to wasted budget",
+            "Creative fatigue – same ads stop working after weeks",
+            "Poor ad copy that doesn’t grab attention",
+            "Low CTR and high CPC due to weak strategies",
+            "No proper funnel or retargeting in place"
+          ],
+          solutionPoints: [
+            "Advanced audience targeting & lookalike audiences",
+            "High-converting creatives and ad copywriting",
+            "Retargeting ads to convert interested prospects",
+            "A/B testing to scale winning campaigns",
+            "Optimized budget allocation to reduce wasted spend",
+            "Conversion-focused ad funnels for higher ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch ROI-Driven Meta Ads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'What are Meta Ads?',
+              answer: 'Meta Ads are paid advertising campaigns on Facebook and Instagram that help businesses reach targeted audiences and drive sales.',
+              icon: React.createElement(IconAd, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How do Meta Ads help businesses?',
+              answer: 'They boost brand awareness, generate leads, and drive conversions by targeting the right audience with precision.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'What kind of ROI can I expect?',
+              answer: 'ROI depends on your industry, ad budget, and offer, but our campaigns are optimized to reduce costs and maximize conversions.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you create ad creatives and copies?',
+              answer: 'Yes, we handle everything from ad design, creatives, copywriting, audience research, to full campaign management.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can Meta Ads work for small businesses?',
+              answer: 'Absolutely! Meta Ads can be scaled for any budget, making them perfect for both startups and established brands.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How soon can I see results?',
+              answer: 'Most businesses start seeing results within the first 2-4 weeks of optimized campaigns.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Meta Ads for Doctors Clinics?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Sales with Facebook Ads?",
+        "Profitable Instagram Campaigns?",
+        "High-ROI Meta Ads?",
+        "Targeted Customers on Social Media?",
+        "Growth with Paid Ads?"
       ],
       brandLine: [
-        { text: "Meta Ads for Doctors Clinics", gradient: false }
+        { text: "📈 Scale Your Business with High-ROI Meta Ads (Facebook & Instagram)", gradient: false }
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for doctors clinics. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help businesses create powerful, ROI-focused Meta Ads campaigns that drive sales, leads, and growth.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Get Free Ads Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconBrandFacebook, { size: 28 }), text: "Run My Meta Ads", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3x ROAS",
+          description: "Average return on ad spend for our clients"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Doctors Clinics served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Precision Targeting",
+          description: "Reach only the most relevant audience"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconCreditCard, { size: 32 }),
+          title: "Reduced Ad Costs",
+          description: "Optimized budgets & cost-effective strategies"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconHeart, { size: 32 }),
+          title: "Engaged Customers",
+          description: "Campaigns designed for clicks, leads & sales"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Doctors Clinics?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Meta Ads Partner for Growth", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of doctors clinics market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Advanced Audience Targeting",
+          description: "Laser-focused targeting for maximum ROI."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for doctors clinics businesses.'
+          icon: React.createElement(IconBrandInstagram, { size: 28 }),
+          title: "High-Quality Creatives",
+          description: "Ad designs & videos that stop the scroll."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "ROI-Driven Strategy",
+          description: "We prioritize conversions, not just clicks."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Funnel Building & Retargeting",
+          description: "Turn cold audiences into paying customers."
+        },
+        {
+          icon: React.createElement(IconCreditCard, { size: 28 }),
+          title: "Budget Optimization",
+          description: "Get the most out of every rupee spent."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Scalable Campaigns",
+          description: "From startups to enterprises, we scale growth."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My Meta Ads Today",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Meta Ads for Doctors Clinics',
-      subtitle: 'DOCTORS CLINICS SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for doctors clinics businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for doctors clinics market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for doctors clinics audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for doctors clinics businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Meta Ads Process for Doctors Clinics',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our 6-Step Meta Ads Process',
+      subtitle: 'RESULT-DRIVEN CAMPAIGN BLUEPRINT',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for doctors clinics businesses.',
+      description: 'From research to execution, we follow a proven process to maximize your Meta Ads performance.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your doctors clinics business and market landscape.'
+          title: 'Market & Audience Research',
+          description: 'Identify high-value target audiences & competitor strategies.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific doctors clinics goals.'
+          title: 'Ad Creative & Copywriting',
+          description: 'Design stunning creatives & write persuasive ad copies.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with doctors clinics focus.'
+          title: 'Campaign Setup',
+          description: 'Launch ads with proper structure & optimized targeting.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on doctors clinics market feedback.'
+          title: 'A/B Testing & Optimization',
+          description: 'Test multiple creatives, audiences & placements.'
+        },
+        {
+          id: 5,
+          title: 'Funnel & Retargeting',
+          description: 'Convert cold leads into buyers using retargeting strategies.'
+        },
+        {
+          id: 6,
+          title: 'Reporting & Scaling',
+          description: 'Detailed ROI reports & scaling of winning campaigns.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Brands That ", gradient: false },
+        { text: "Scaled with Our Meta Ads", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
       ],
-      description: 'Real results from doctors clinics businesses that achieved remarkable growth.',
+      description: 'Hear from clients who experienced real growth and ROI through our Facebook & Instagram ad strategies.',
       testimonials: [
         {
           id: '1',
-          message: 'The meta ads services transformed our doctors clinics business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'We wasted money on Meta Ads before Digi Aerotech. Their strategy tripled our sales in just 2 months.',
+          highlight: '3x more sales',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Doctors Clinics Company'
+          name: 'Rohit Malhotra',
+          designation: 'Founder',
+          company: 'Urban Fitwear'
         },
         {
           id: '2',
-          message: 'Outstanding meta ads expertise specifically for doctors clinics. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for doctors clinics',
+          message: 'Our clinic campaigns on Facebook now bring us a steady stream of patient inquiries every week.',
+          highlight: 'Steady patient leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Doctors Clinics Solutions'
+          name: 'Dr. Neha Singh',
+          designation: 'Owner',
+          company: 'Wellness Clinic'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Doctors Clinics Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your doctors clinics business.'
+      title: 'Ready to Scale with Meta Ads?',
+      subtitle: 'BOOST SALES, LEADS & GROWTH WITH ROI-DRIVEN CAMPAIGNS',
+      description: 'Book a free Meta Ads strategy call with Digi Aerotech and let us build profitable Facebook & Instagram ad campaigns for your business.'
     }
   }
 };

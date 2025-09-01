@@ -1,198 +1,260 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconMapPin, IconSearch, IconStethoscope, IconUsers, IconArrowRight, IconRocket,
+  IconTrendingUp, IconShieldCheck, IconCalendarEvent, IconHeart, IconStar,
+  IconPhone
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'local-seo',
   business: 'doctors-clinics',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant1'
+    hero: 'variant2',
+    whyChooseUs: 'variant1',
+    process: 'variant2',
+    testimonials: 'variant3'
   },
   data: {
-    slug: 'local-seo',
+    slug: 'local-seo-doctors-clinics',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Clinics Struggle with ", gradient: false },
+            { text: "Local SEO Visibility", gradient: true, gradientClass: "from-green-500 via-emerald-500 to-teal-500" }
+          ],
+          subheadline: "Many doctors fail to appear in the top results when patients search for medical services nearby.",
+          painPoints: [
+            "Clinic not showing up in Google local searches",
+            "Weak or unoptimized Google Business Profile",
+            "Low visibility in Google Maps results",
+            "Negative or few patient reviews hurting reputation",
+            "Unoptimized local keywords & service pages",
+            "Competitors dominating local rankings"
+          ],
+          solutionPoints: [
+            "Full optimization of Google Business Profile (GMB)",
+            "Keyword-rich local SEO strategies for your specialties",
+            "Geo-targeted content and local citations",
+            "Reputation management & patient review strategies",
+            "Local backlink building for authority",
+            "Consistent tracking & optimization to maintain ranking"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost Local SEO Visibility"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'What is local SEO for doctors and clinics?',
+              answer: 'Local SEO helps your clinic appear at the top of Google searches and Maps when patients in your area search for your medical services.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How does Local SEO help attract patients?',
+              answer: 'By ranking high on local searches and Maps, your clinic gets discovered by patients actively looking for immediate medical help nearby.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How long does it take to see results?',
+              answer: 'Typically, clinics see improved visibility and patient inquiries within 2-3 months of consistent Local SEO optimization.',
+              icon: React.createElement(IconCalendarEvent, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you also optimize Google Business Profile?',
+              answer: 'Yes, we optimize every element of your GMB including services, reviews, images, and local content.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can Local SEO help multi-location clinics?',
+              answer: 'Absolutely. We build geo-targeted strategies that give visibility to each clinic location.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Will you help with patient reviews?',
+              answer: 'Yes, we implement patient review acquisition & reputation management to build trust and boost rankings.',
+              icon: React.createElement(IconHeart, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Local Seo for Doctors Clinics?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Your Clinic on Top of Google?",
+        "More Local Patient Inquiries?",
+        "Google Maps Rankings Boost?",
+        "Optimized GMB for Doctors?",
+        "Dominate Local Search Results?"
       ],
       brandLine: [
-        { text: "Local Seo for Doctors Clinics", gradient: false }
+        { text: "📍 Get Found by Patients Nearby with Local SEO for Clinics", gradient: false }
       ],
-      subheadline: "Specialized local seo strategies designed specifically for doctors clinics. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help doctors and clinics dominate local Google searches and Maps to attract high-intent patients from your area.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Get Free Local SEO Audit", link: "/contact" },
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "Top 3 Google Rankings",
+          description: "Clinics ranked on Maps & local search"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Doctors Clinics served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "2x More Patient Calls",
+          description: "High-intent local patients reaching clinics"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Improved Reputation",
+          description: "More positive reviews & patient trust"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Sustainable Growth",
+          description: "Long-term patient acquisition via local SEO"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Local Seo', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Doctors Clinics?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Local SEO Partner for Clinics", gradient: true, gradientClass: "from-green-500 via-emerald-500 to-teal-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of doctors clinics market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Google Maps Optimization",
+          description: "Rank higher in Maps and get more nearby patient calls."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for doctors clinics businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Local Keyword Domination",
+          description: "Rank for medical services patients are actively searching in your city."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored local seo strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Geo-Targeted Content",
+          description: "We create and optimize content targeting your service area."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconHeart, { size: 28 }),
+          title: "Reputation Management",
+          description: "Boost credibility with more positive patient reviews."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Local Backlink Building",
+          description: "Strengthen local SEO authority with niche citations."
+        },
+        {
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Data-Driven Reporting",
+          description: "Transparent insights on rankings, calls, and patient leads."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost Local Visibility",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Local Seo for Doctors Clinics',
-      subtitle: 'DOCTORS CLINICS SPECIALIZED SERVICES',
-      description: 'Comprehensive local seo solutions designed specifically for doctors clinics businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom local seo strategy development tailored for doctors clinics market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of local seo campaigns optimized for doctors clinics audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for doctors clinics businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Local Seo Process for Doctors Clinics',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our 6-Step Local SEO Process for Clinics',
+      subtitle: 'STEP-BY-STEP PATIENT VISIBILITY SYSTEM',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to local seo that delivers measurable results for doctors clinics businesses.',
+      description: 'We optimize your clinic to dominate Google search & Maps locally, ensuring more patients discover and contact you.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your doctors clinics business and market landscape.'
+          title: 'Local SEO Audit',
+          description: 'Analyze current visibility, competitor presence, and GMB performance.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom local seo strategy tailored for your specific doctors clinics goals.'
+          title: 'Google Business Profile Optimization',
+          description: 'Optimize your clinic’s profile with keywords, services, images, and local posts.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of local seo campaigns with doctors clinics focus.'
+          title: 'Local Keyword Targeting',
+          description: 'Identify and optimize for patient search terms specific to your city and services.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on doctors clinics market feedback.'
+          title: 'Content & Citation Building',
+          description: 'Publish geo-targeted content and acquire local citations to boost authority.'
+        },
+        {
+          id: 5,
+          title: 'Review & Reputation Growth',
+          description: 'Implement strategies to acquire more patient reviews and improve ratings.'
+        },
+        {
+          id: 6,
+          title: 'Tracking & Optimization',
+          description: 'Monitor rankings, calls, and inquiries, then refine strategies for growth.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Local Seo Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for local seo success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Local Seo ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Doctors Who ", gradient: false },
+        { text: "Dominate Local Search with Us", gradient: true, gradientClass: "from-green-500 via-emerald-500 to-teal-500" }
       ],
-      description: 'Real results from doctors clinics businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped doctors and clinics improve their local visibility and attract more patients.',
       testimonials: [
         {
           id: '1',
-          message: 'The local seo services transformed our doctors clinics business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our clinic started ranking in the top 3 of Google Maps within 2 months. Patient calls and inquiries doubled!',
+          highlight: '2x patient inquiries',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Doctors Clinics Company'
+          name: 'Dr. Ananya Sharma',
+          designation: 'Founder',
+          company: 'CareWell Clinic'
         },
         {
           id: '2',
-          message: 'Outstanding local seo expertise specifically for doctors clinics. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for doctors clinics',
+          message: 'Local SEO helped us gain more visibility and improve reputation with positive reviews. Our clinic is now the top choice in our city.',
+          highlight: 'Top clinic in our city',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Doctors Clinics Solutions'
+          name: 'Dr. Prakash Mehta',
+          designation: 'CEO',
+          company: 'Mehta Medical Center'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Doctors Clinics Business?',
-      subtitle: 'START YOUR LOCAL SEO JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our local seo can drive growth for your doctors clinics business.'
+      title: 'Want More Patients from Local Google Searches?',
+      subtitle: 'BOOST LOCAL RANKINGS, MAP VISIBILITY & PATIENT CALLS',
+      description: 'Book a free Local SEO audit with Digi Aerotech and start dominating Google Maps & local search results today.'
     }
   }
 };

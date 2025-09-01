@@ -1,198 +1,234 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconMapPin, IconUsers, IconSearch, IconStar, IconPhone, IconChartArcs,
+  IconWorld, IconArrowRight, IconBuildingStore, IconTrendingUp, IconRocket
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'gmb-services',
   business: 'b2c-services',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: 'variant3',
+    whyChooseUs: 'variant1',
+    process: 'variant2',
+    testimonials: 'variant3'
   },
   data: {
-    slug: 'gmb-services',
+    slug: 'gmb-services-b2c',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Local B2C Brands Struggle ", gradient: false },
+            { text: "Without GMB Optimization", gradient: true, gradientClass: "from-green-500 via-teal-500 to-blue-500" }
+          ],
+          subheadline: "Being invisible on Google Maps and Search means losing customers every single day. Most B2C businesses ignore their Google Business Profile, letting competitors take the spotlight.",
+          painPoints: [
+            "Not showing up in Google Maps or local searches",
+            "Incomplete or outdated business profiles",
+            "Low visibility in the Google 3-Pack",
+            "Few or negative customer reviews",
+            "Competitors ranking higher locally",
+            "Missed leads from calls, directions, and website visits"
+          ],
+          solutionPoints: [
+            "Complete GMB setup & optimization with keywords",
+            "Consistent business info across platforms",
+            "Boost rankings in Google 3-Pack & Maps",
+            "Review generation & reputation management",
+            "Engaging posts, photos & offers for higher engagement",
+            "Track calls, visits & leads from your GMB profile"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Optimize My GMB Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is Google My Business important for B2C businesses?',
+              answer: 'GMB ensures your business appears when people search for services near them, driving more walk-ins, calls, and leads.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can GMB optimization increase foot traffic?',
+              answer: 'Yes. An optimized profile helps more customers discover your store, call you directly, or get directions.',
+              icon: React.createElement(IconBuildingStore, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you manage reviews and ratings?',
+              answer: 'Absolutely. We help you get more positive reviews, respond to feedback, and build a trusted reputation.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Will I rank higher than competitors?',
+              answer: 'We use advanced local SEO strategies to improve your chances of appearing above competitors in local results.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can you track leads from GMB?',
+              answer: 'Yes. We provide reports on calls, clicks, and directions from your GMB profile so you see real ROI.',
+              icon: React.createElement(IconChartArcs, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you work with all B2C industries?',
+              answer: 'Yes. From salons, gyms, and spas to restaurants, retail, and healthcare, we help all B2C businesses grow locally.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Get Found. Get Customers.",
       headlineKeywords: [
-        "Gmb Services for B2c Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "GMB Services for B2C Businesses",
+        "Local SEO via Google Maps",
+        "Boost Walk-ins & Calls",
+        "Rank in Google 3-Pack",
+        "Attract Local Customers"
       ],
       brandLine: [
-        { text: "Gmb Services for B2c Services", gradient: false }
+        { text: "📍 Google My Business Optimization Experts", gradient: false }
       ],
-      subheadline: "Specialized gmb services strategies designed specifically for b2c services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "At Digi Aerotech, we help B2C businesses dominate local searches with optimized Google Business Profiles that attract more walk-ins, calls, and paying customers.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Boost My GMB", link: "/contact" },
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Get Free GMB Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "92% Local Searches",
+          description: "92% of local searches end in a visit or call"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2c Services served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "More Walk-ins",
+          description: "GMB drives direct foot traffic to your business"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Trusted Reputation",
+          description: "Positive reviews build instant customer trust"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconPhone, { size: 32 }),
+          title: "Direct Calls",
+          description: "Turn searches into calls & confirmed bookings"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Gmb Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2c Services?', gradient: false }
+        { text: "Why Top B2C Businesses Trust ", gradient: false },
+        { text: "Digi Aerotech for GMB Services", gradient: true, gradientClass: "from-green-500 via-teal-500 to-blue-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2c services market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Local SEO Experts",
+          description: "We specialize in helping B2C businesses rank higher on Google Maps & Search."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2c services businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Customer-Centric",
+          description: "Our strategies are built to drive real customers — not vanity numbers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored gmb services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Reputation Building",
+          description: "We generate authentic reviews to boost trust & credibility."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Proven ROI",
+          description: "Transparent reports show calls, visits, and real business impact."
+        },
+        {
+          icon: React.createElement(IconPhone, { size: 28 }),
+          title: "Lead Tracking",
+          description: "Track every call and inquiry directly from your GMB profile."
+        },
+        {
+          icon: React.createElement(IconBuildingStore, { size: 28 }),
+          title: "Industry-Wide Success",
+          description: "From gyms to restaurants, we’ve boosted visibility for multiple B2C industries."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Dominate Local Searches",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Gmb Services for B2c Services',
-      subtitle: 'B2C SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive gmb services solutions designed specifically for b2c services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom gmb services strategy development tailored for b2c services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of gmb services campaigns optimized for b2c services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2c services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Gmb Services Process for B2c Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to gmb services that delivers measurable results for b2c services businesses.',
+      title: 'Our Proven GMB Optimization Process',
+      subtitle: 'FROM INVISIBLE TO UNMISSABLE',
+      description: 'We transform your Google Business Profile into a lead-generating machine for your B2C business.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2c services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom gmb services strategy tailored for your specific b2c services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of gmb services campaigns with b2c services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2c services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Gmb Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for gmb services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Audit & Setup', description: 'We review your profile or create one from scratch with complete info.' },
+        { id: 2, title: 'Keyword Optimization', description: 'We optimize your profile with local keywords & categories.' },
+        { id: 3, title: 'Photos & Posts', description: 'We upload engaging photos, offers, and posts to attract customers.' },
+        { id: 4, title: 'Review Management', description: 'We help generate positive reviews & manage customer feedback.' },
+        { id: 5, title: 'Rank Boost', description: 'We apply advanced local SEO techniques to push you into the Google 3-Pack.' },
+        { id: 6, title: 'Reports & Tracking', description: 'Get transparent reports on calls, directions, and profile engagement.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Gmb Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2C Brands That ", gradient: false },
+        { text: "Won with GMB", gradient: true, gradientClass: "from-green-500 via-teal-500 to-blue-500" }
       ],
-      description: 'Real results from b2c services businesses that achieved remarkable growth.',
+      description: 'From local gyms and cafes to salons and clinics, Digi Aerotech has helped B2C businesses dominate local search and attract more customers.',
       testimonials: [
         {
           id: '1',
-          message: 'The gmb services services transformed our b2c services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our salon now gets 3x more walk-ins just from Google Maps. Digi Aerotech made us visible when it mattered most.',
+          highlight: '3x more walk-ins',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2c Services Company'
+          name: 'Pooja Verma',
+          designation: 'Owner',
+          company: 'Glow Beauty Salon'
         },
         {
           id: '2',
-          message: 'Outstanding gmb services expertise specifically for b2c services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2c services',
+          message: 'We used to struggle with low online presence. Now 40% of our new customers find us through GMB!',
+          highlight: '40% new customers via GMB',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2c Services Solutions'
+          name: 'Rahul Malhotra',
+          designation: 'Manager',
+          company: 'FitZone Gym'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2c Services Business?',
-      subtitle: 'START YOUR GMB SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our gmb services can drive growth for your b2c services business.'
+      title: 'Ready to Dominate Local Google Searches?',
+      subtitle: 'WALK-INS. CALLS. CUSTOMERS.',
+      description: 'Let Digi Aerotech optimize your Google My Business profile so your B2C brand becomes the first choice when customers search nearby.',
     }
   }
 };

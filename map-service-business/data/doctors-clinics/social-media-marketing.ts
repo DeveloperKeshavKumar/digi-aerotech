@@ -1,198 +1,260 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconStethoscope, IconUsers, IconArrowRight, IconBrandFacebook,
+  IconBrandInstagram, IconBrandLinkedin, IconTarget, IconHeart,
+  IconMessageCircle, IconTrendingUp, IconRocket, IconVideo,
+  IconReportAnalytics, IconStar, IconBuildingHospital
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'social-media-marketing',
   business: 'doctors-clinics',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
+    hero: 'variant2',
+    whyChooseUs: 'variant1',
+    process: 'variant2',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: 'social-media-marketing-doctors-clinics',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Social Media Marketing for Doctors & Clinics – ", gradient: false },
+            { text: "Build Trust & Attract More Patients", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
+          ],
+          subheadline: "Your patients are already on Instagram, Facebook, and YouTube. If your clinic isn’t there, you’re invisible to them.",
+          painPoints: [
+            "No professional presence on social media platforms",
+            "Low patient engagement on existing social accounts",
+            "Competitors getting more visibility with creative posts",
+            "No time to consistently create and post content",
+            "Poor-quality designs, reels, and patient awareness campaigns",
+            "No strategy to convert followers into patients"
+          ],
+          solutionPoints: [
+            "Professional branding for Facebook, Instagram & LinkedIn",
+            "Engaging reels, carousels, and awareness campaigns",
+            "Social media ads targeting your city & specialty",
+            "Content calendar with consistent posting strategy",
+            "Patient education campaigns that build authority",
+            "Analytics & reporting on reach, engagement, and ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Social Media"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do doctors need social media marketing?',
+              answer: 'Patients trust doctors who are active online. Social media builds credibility, visibility, and connects you with new patients.',
+              icon: React.createElement(IconHeart, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Which platforms are best for clinics?',
+              answer: 'Instagram, Facebook, and YouTube for awareness, LinkedIn for professional authority.',
+              icon: React.createElement(IconBrandInstagram, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Will social media bring me patients?',
+              answer: 'Yes. With the right content and ads, social media converts followers into bookings.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you run ads on social media?',
+              answer: 'Yes. We run city-specific ads for doctors and clinics to attract local patients.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can you create medical awareness content?',
+              answer: 'Yes. We design reels, infographics & posts that educate patients and build trust.',
+              icon: React.createElement(IconVideo, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'How will I measure results?',
+              answer: 'We share monthly reports covering reach, engagement, followers & leads.',
+              icon: React.createElement(IconReportAnalytics, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Social Media Marketing for ",
       headlineKeywords: [
-        "Social Media Marketing for Doctors Clinics?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Doctors",
+        "Clinics",
+        "Hospitals",
+        "Specialists",
+        "Healthcare Brands"
       ],
       brandLine: [
-        { text: "Social Media Marketing for Doctors Clinics", gradient: false }
+        { text: "📲 Build Trust, Grow Engagement & Book More Patients", gradient: false }
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for doctors clinics. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help doctors & clinics dominate Instagram, Facebook, and YouTube with patient-focused campaigns.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book Free Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), text: "Grow My Clinic Online", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandFacebook, { size: 32 }),
+          title: "3.6B+ Users",
+          description: "Facebook & Instagram patient reach"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Doctors Clinics served"
+          icon: React.createElement(IconBrandInstagram, { size: 32 }),
+          title: "High Engagement",
+          description: "Instagram reels & posts patients love"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrandLinkedin, { size: 32 }),
+          title: "Doctor Authority",
+          description: "Build trust with professionals"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconMessageCircle, { size: 32 }),
+          title: "Direct Connection",
+          description: "Answer patient queries instantly"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Doctors Clinics?', gradient: false }
+        { text: "Why Choose Digi Aerotech for ", gradient: false },
+        { text: "Medical Social Media Marketing?", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of doctors clinics market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandInstagram, { size: 28 }),
+          title: "Healthcare Niche Experts",
+          description: "We understand medical compliance & patient communication."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for doctors clinics businesses.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "Creative Reels & Ads",
+          description: "Engaging patient-friendly campaigns that convert."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Local Patient Targeting",
+          description: "We run ads that bring patients from your city."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconReportAnalytics, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Know your engagement, leads & ROI every month."
+        },
+        {
+          icon: React.createElement(IconHeart, { size: 28 }),
+          title: "Patient-Centric Content",
+          description: "Content that educates, informs & builds trust."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Growth Guaranteed",
+          description: "We scale your clinic’s presence month after month."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My Social Media Growth",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Doctors Clinics',
-      subtitle: 'DOCTORS CLINICS SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for doctors clinics businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for doctors clinics market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for doctors clinics audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for doctors clinics businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Social Media Marketing Process for Doctors Clinics',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for doctors clinics businesses.',
+      title: 'Our Social Media Growth Process for Clinics',
+      subtitle: 'CONNECT • ENGAGE • CONVERT',
+      description: 'We use a proven framework to turn social media into a patient acquisition machine.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your doctors clinics business and market landscape.'
+          title: 'Strategy & Branding',
+          description: 'Define your clinic’s voice, tone & unique positioning.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific doctors clinics goals.'
+          title: 'Content Calendar',
+          description: 'Plan & design posts, reels, and campaigns in advance.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with doctors clinics focus.'
+          title: 'Creative Content',
+          description: 'Patient awareness campaigns, reels & infographics.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on doctors clinics market feedback.'
+          title: 'Paid Social Ads',
+          description: 'Targeted ads to attract patients in your city.'
+        },
+        {
+          id: 5,
+          title: 'Engagement Boost',
+          description: 'Respond to queries, manage DMs & build trust.'
+        },
+        {
+          id: 6,
+          title: 'Analytics & Scaling',
+          description: 'Track results & scale campaigns that work best.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Doctors Who Grew with ", gradient: false },
+        { text: "Social Media Marketing", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
       ],
-      description: 'Real results from doctors clinics businesses that achieved remarkable growth.',
+      description: 'See how we transformed clinics with patient-focused campaigns.',
       testimonials: [
         {
           id: '1',
-          message: 'The social media marketing services transformed our doctors clinics business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our Instagram reels went viral and brought 3x more patient inquiries within 2 months.',
+          highlight: '3X patient inquiries',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Doctors Clinics Company'
+          name: 'Dr. Meera Kapoor',
+          designation: 'Dermatologist',
+          company: 'SkinGlow Clinic'
         },
         {
           id: '2',
-          message: 'Outstanding social media marketing expertise specifically for doctors clinics. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for doctors clinics',
+          message: 'Facebook ads helped us reach more patients in our city. We now get daily booking requests.',
+          highlight: '+Daily bookings',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Doctors Clinics Solutions'
+          name: 'Dr. Arjun Patel',
+          designation: 'Orthopedic Surgeon',
+          company: 'HealWell Ortho Care'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Doctors Clinics Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your doctors clinics business.'
+      title: 'Ready to Grow Your Clinic with Social Media?',
+      subtitle: 'INSTAGRAM • FACEBOOK • YOUTUBE • LINKEDIN',
+      description: 'Book a free social media strategy session with Digi Aerotech and start attracting more patients today.',
     }
   }
 };

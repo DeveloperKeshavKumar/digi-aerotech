@@ -1,198 +1,234 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandLinkedin, IconBrandInstagram, IconBrandFacebook, IconUsers, IconTrendingUp,
+  IconTarget, IconWorld, IconArrowRight, IconRocket, IconDeviceAnalytics, IconChartArcs, IconSpeakerphone
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'social-media-marketing',
-  business: 'consultants',
+  business: 'consultants-teachers',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
+    hero: 'variant2',
+    whyChooseUs: 'variant2',
+    process: 'variant1',
     testimonials: 'variant3'
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: 'social-media-marketing-consultants-teachers',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Consultants & Teachers ", gradient: false },
+            { text: "Struggle Without Social Media", gradient: true, gradientClass: "from-purple-500 via-pink-500 to-orange-500" }
+          ],
+          subheadline: "In today’s world, visibility = credibility. Without strong social media presence, consultants & teachers lose authority and miss out on clients/students.",
+          painPoints: [
+            "No personal brand recognition on LinkedIn, Instagram, or Facebook",
+            "Low engagement and weak audience trust",
+            "Difficulty generating leads from content",
+            "No consistency in posting or strategy",
+            "Competitors gaining attention with regular updates",
+            "No clear ROI from social presence"
+          ],
+          solutionPoints: [
+            "Personal brand building through optimized social profiles",
+            "Targeted content strategy that resonates with clients & students",
+            "Consistent posting with engaging visuals & storytelling",
+            "Lead generation campaigns using ads + organic",
+            "Analytics-driven growth & engagement tracking",
+            "Community building through interactions, Q&As, and authority posts"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Social Media Presence"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do consultants & teachers need social media?',
+              answer: 'Because decision-makers & students spend time online. Social media builds authority, trust, and visibility where your audience is active.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Which platforms are best?',
+              answer: 'For consultants: LinkedIn, Twitter, and YouTube. For teachers: Instagram, Facebook, and YouTube. We tailor based on your audience.',
+              icon: React.createElement(IconBrandLinkedin, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you also run paid campaigns?',
+              answer: 'Yes. We run Meta Ads, LinkedIn Ads, and Instagram promotions to generate quality leads and student enrollments.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you help with personal branding?',
+              answer: 'Absolutely. We craft a professional social identity that positions you as an expert in your field.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you measure results?',
+              answer: 'We track followers, engagement, lead flow, and ROI — providing monthly transparent reports.',
+              icon: React.createElement(IconDeviceAnalytics, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you provide content creation too?',
+              answer: 'Yes. Our team creates creatives, reels, posts, and articles tailored for consultants & teachers.',
+              icon: React.createElement(IconSpeakerphone, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Be Seen. Be Heard.",
       headlineKeywords: [
-        "Social Media Marketing for Consultants?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Build Authority Online",
+        "Generate Leads via Social Media",
+        "Grow Your Personal Brand",
+        "Attract Students & Clients",
+        "Stay Ahead of Competitors"
       ],
       brandLine: [
-        { text: "Social Media Marketing for Consultants", gradient: false }
+        { text: "📱 Social Media Marketing for Consultants & Teachers", gradient: false }
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for consultants. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "Digi Aerotech helps consultants & teachers grow visibility, authority, and leads with strategic social media marketing across LinkedIn, Instagram, Facebook & YouTube.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Start My Social Media Growth", link: "/contact" },
+        { icon: React.createElement(IconChartArcs, { size: 28 }), text: "Free Profile Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandLinkedin, { size: 32 }),
+          title: "LinkedIn Growth",
+          description: "Build authority & generate B2B leads"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Consultants served"
+          icon: React.createElement(IconBrandInstagram, { size: 32 }),
+          title: "Instagram Presence",
+          description: "Reach & engage younger student audiences"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrandFacebook, { size: 32 }),
+          title: "Facebook Visibility",
+          description: "Target communities & local student groups"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Lead Conversion",
+          description: "Turn social engagement into real clients"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Consultants?', gradient: false }
+        { text: "Why Consultants & Teachers Trust ", gradient: false },
+        { text: "Digi Aerotech for Social Media Marketing", gradient: true, gradientClass: "from-purple-500 via-pink-500 to-orange-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of consultants market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Niche Expertise",
+          description: "Tailored strategies for consultants & teachers."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for consultants businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Lead Focused",
+          description: "We don’t chase likes — we bring real clients & students."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Growth-Driven Campaigns",
+          description: "Data-driven strategies to boost visibility & enrollments."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Platform-Specific Approach",
+          description: "LinkedIn, Instagram, Facebook & YouTube optimization."
+        },
+        {
+          icon: React.createElement(IconDeviceAnalytics, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Track engagement, reach, leads, and ROI clearly."
+        },
+        {
+          icon: React.createElement(IconSpeakerphone, { size: 28 }),
+          title: "Content + Ads Combo",
+          description: "Organic reach + paid ads for maximum results."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Let’s Grow My Brand",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for Consultants',
-      subtitle: 'CONSULTANTS SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for consultants businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for consultants market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for consultants audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for consultants businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Social Media Marketing Process for Consultants',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for consultants businesses.',
+      title: 'Our Social Media Marketing Process',
+      subtitle: 'STEP-BY-STEP TO AUTHORITY & LEADS',
+      description: 'We follow a structured approach for consultants & teachers to maximize social ROI.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your consultants business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific consultants goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with consultants focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on consultants market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Profile Optimization', description: 'Setup & optimize your LinkedIn/Instagram/Facebook presence.' },
+        { id: 2, title: 'Content Strategy', description: 'Plan engaging posts, reels, and authority-building content.' },
+        { id: 3, title: 'Creative Design', description: 'High-quality graphics, reels & branded content.' },
+        { id: 4, title: 'Posting & Engagement', description: 'Consistent publishing & interaction with followers.' },
+        { id: 5, title: 'Ads & Campaigns', description: 'Run targeted paid ads for leads & visibility.' },
+        { id: 6, title: 'Analytics & Reporting', description: 'Monthly tracking of engagement, reach & ROI.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Consultants & Teachers Who ", gradient: false },
+        { text: "Grew with Our Social Media Marketing", gradient: true, gradientClass: "from-purple-500 via-pink-500 to-orange-500" }
       ],
-      description: 'Real results from consultants businesses that achieved remarkable growth.',
+      description: 'Real educators & consultants who boosted visibility and leads with Digi Aerotech SMM.',
       testimonials: [
         {
           id: '1',
-          message: 'The social media marketing services transformed our consultants business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'LinkedIn growth brought me 3x more inquiries for consulting services. My brand visibility skyrocketed.',
+          highlight: '3x more inquiries',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Consultants Company'
+          name: 'Amit Verma',
+          designation: 'Business Consultant',
+          company: 'AV Consulting'
         },
         {
           id: '2',
-          message: 'Outstanding social media marketing expertise specifically for consultants. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for consultants',
+          message: 'Instagram campaigns helped me enroll 50+ new students in my coaching program. Amazing ROI!',
+          highlight: '50+ student enrollments',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Consultants Solutions'
+          name: 'Pooja Sharma',
+          designation: 'IELTS Trainer',
+          company: 'Global English Academy'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Consultants Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your consultants business.'
+      title: 'Ready to Build Your Personal Brand & Attract Leads?',
+      subtitle: 'SOCIAL MEDIA MARKETING FOR CONSULTANTS & TEACHERS',
+      description: 'Book a free consultation with Digi Aerotech today. Let’s turn your social media into a powerful lead-generation machine.',
     }
   }
 };

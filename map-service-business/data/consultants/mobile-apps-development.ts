@@ -1,198 +1,234 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconDeviceMobile, IconSchool, IconUsers, IconTarget, IconArrowRight,
+  IconChartBar, IconTrendingUp, IconWorld, IconBrain, IconCode, IconCloud
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
-  service: 'mobile-apps-development',
-  business: 'consultants',
+  service: 'mobile-app-development',
+  business: 'teachers-consultants',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant1',
+    whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: 'mobile-app-development-teachers-consultants',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Teachers & Consultants Face ", gradient: false },
+            { text: "Without Mobile Apps", gradient: true, gradientClass: "from-indigo-500 via-purple-500 to-pink-500" }
+          ],
+          subheadline: "In today’s digital-first world, students and clients expect convenience, personalization, and mobile-first access.",
+          painPoints: [
+            "Difficulty engaging students or clients outside sessions",
+            "No central hub for classes, content, or bookings",
+            "Dependence on third-party apps with limited control",
+            "Lack of automation in scheduling, payments & reminders",
+            "Missed opportunities to scale reach beyond local areas",
+            "Low brand credibility without a professional app"
+          ],
+          solutionPoints: [
+            "Custom apps tailored for education & consulting needs",
+            "Seamless class booking, payments & reminders",
+            "Push notifications to engage users directly",
+            "Content library for lessons, notes, or resources",
+            "Analytics to track student/client engagement",
+            "Scalable apps that grow with your practice"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Build My Mobile App Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do teachers and consultants need mobile apps?',
+              answer: 'Apps provide direct engagement, automate tasks, and build brand authority, making it easier to retain students and clients.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can the app include class bookings and payments?',
+              answer: 'Yes. We integrate secure booking, payment, and scheduling features into your custom app.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you develop both Android and iOS apps?',
+              answer: 'Yes. We build apps for both platforms with responsive, user-friendly designs.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'What makes Digi Aerotech apps different?',
+              answer: 'We create niche-specific apps for education & consulting with features tailored to your workflow.',
+              icon: React.createElement(IconBrain, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can I scale my app later?',
+              answer: 'Absolutely. Our apps are built to scale with your growing audience & features.',
+              icon: React.createElement(IconCloud, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you provide app maintenance?',
+              answer: 'Yes. We offer complete development + maintenance services for smooth performance.',
+              icon: React.createElement(IconCode, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Your Expertise, ",
       headlineKeywords: [
-        "Mobile Apps Development for Consultants?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "In Every Pocket",
+        "Available Anytime",
+        "Student-Friendly",
+        "Future-Ready",
+        "Scalable & Smart"
       ],
       brandLine: [
-        { text: "Mobile Apps Development for Consultants", gradient: false }
+        { text: "📱 Mobile Apps for Teachers & Consultants", gradient: false }
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for consultants. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "Digi Aerotech builds powerful, user-friendly mobile apps for teachers & consultants to connect with students and clients anytime, anywhere.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconDeviceMobile, { size: 28 }), text: "Request Free App Demo", link: "/contact" },
+        { icon: React.createElement(IconChartBar, { size: 28 }), text: "See Features", link: "/features", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "15,000+ Users",
+          description: "Actively using apps developed by Digi Aerotech"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Consultants served"
+          icon: React.createElement(IconSchool, { size: 32 }),
+          title: "10,000+ Students",
+          description: "Learning via teacher-led custom apps"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "4X Engagement",
+          description: "Increase in student & client retention"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "Niche-Specific Apps",
+          description: "Tailored for consulting & education domains"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Consultants?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Choice for Mobile App Development", gradient: true, gradientClass: "from-indigo-500 via-purple-500 to-pink-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of consultants market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Custom App Solutions",
+          description: "We don’t use templates—every app is tailored to your teaching or consulting model."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for consultants businesses.'
+          icon: React.createElement(IconBrain, { size: 28 }),
+          title: "Niche Expertise",
+          description: "Deep understanding of education & consulting workflows."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "User-Centric Design",
+          description: "Apps built with students and clients in mind for smooth experiences."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Scalable Technology",
+          description: "Apps that grow with your audience and business."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Cross-Platform",
+          description: "Seamless apps for both Android & iOS."
+        },
+        {
+          icon: React.createElement(IconCode, { size: 28 }),
+          title: "Full Maintenance",
+          description: "Ongoing updates, bug fixes, and feature enhancements."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My App Project",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for Consultants',
-      subtitle: 'CONSULTANTS SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for consultants businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for consultants market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for consultants audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for consultants businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Mobile Apps Development Process for Consultants',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for consultants businesses.',
+      title: 'Our Mobile App Development Process',
+      subtitle: 'FROM IDEA TO LAUNCH',
+      description: 'We follow a structured, transparent process to deliver world-class apps.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your consultants business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific consultants goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with consultants focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on consultants market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Discovery & Strategy', description: 'Understand your teaching/consulting model & requirements.' },
+        { id: 2, title: 'Wireframing & Design', description: 'Craft intuitive, engaging UI/UX tailored for your users.' },
+        { id: 3, title: 'Development', description: 'Build robust apps with latest frameworks & technologies.' },
+        { id: 4, title: 'Testing & QA', description: 'Ensure flawless performance across devices.' },
+        { id: 5, title: 'Deployment', description: 'Launch apps on Play Store & App Store seamlessly.' },
+        { id: 6, title: 'Maintenance & Scaling', description: 'Continuous support, updates & new features as you grow.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Consultants & Teachers Who ", gradient: false },
+        { text: "Scaled with Digi Aerotech Apps", gradient: true, gradientClass: "from-indigo-500 via-purple-500 to-pink-500" }
       ],
-      description: 'Real results from consultants businesses that achieved remarkable growth.',
+      description: 'Real experiences from professionals who embraced mobile-first growth.',
       testimonials: [
         {
           id: '1',
-          message: 'The mobile apps development services transformed our consultants business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'My personal coaching app made me look more professional and helped me reach clients globally. Digi Aerotech nailed it!',
+          highlight: 'Global client reach',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Consultants Company'
+          name: 'Ravi Malhotra',
+          designation: 'Business Consultant',
+          company: 'RM Consulting'
         },
         {
           id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for consultants. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for consultants',
+          message: 'I wanted to keep students engaged beyond the classroom. With my custom app, they access lessons anytime and I see 2X retention.',
+          highlight: '2X student retention',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Consultants Solutions'
+          name: 'Dr. Neha Kapoor',
+          designation: 'Teacher & Educator',
+          company: 'EduBridge'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Consultants Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your consultants business.'
+      title: 'Ready to Build Your App?',
+      subtitle: 'MOBILE-FIRST GROWTH FOR TEACHERS & CONSULTANTS',
+      description: 'Book a free consultation with Digi Aerotech and discover how a custom app can scale your teaching or consulting practice.',
     }
   }
 };

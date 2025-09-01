@@ -1,12 +1,17 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+   IconSocial, IconUsers, IconTarget, IconArrowRight,
+  IconVideo, IconBrandLinkedin, IconBrandTwitter, IconBrandYoutube,
+  IconWorld, IconTrendingUp,
+  IconAd
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'other-ads',
-  business: 'consultants',
+  business: 'teachers-consultants',
   variants: {
     hero: 'variant1',
     whyChooseUs: 'variant2',
@@ -14,185 +19,218 @@ export const map: ServiceBusinessMap = {
     testimonials: 'variant1'
   },
   data: {
-    slug: 'other-ads',
+    slug: 'other-ads-teachers-consultants',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Google & Meta Ads Alone ", gradient: false },
+            { text: "Aren’t Enough", gradient: true, gradientClass: "from-blue-500 via-cyan-500 to-green-500" }
+          ],
+          subheadline: "Consultants and teachers often miss opportunities by only relying on Google or Meta Ads.",
+          painPoints: [
+            "Limited reach to niche audiences on just Google & Facebook",
+            "Difficulty targeting professionals and high-value clients",
+            "High ad competition with increasing CPCs",
+            "No visibility on platforms like YouTube or LinkedIn",
+            "Missed chance to build authority with native ads",
+            "Lack of omnichannel presence where students/clients spend time"
+          ],
+          solutionPoints: [
+            "LinkedIn Ads to target decision-makers & professionals",
+            "YouTube Ads for visual storytelling & learning promotion",
+            "Twitter/X Ads for thought leadership in real-time",
+            "Quora Ads to capture high-intent learners & clients",
+            "Native & Display Ads to build authority & trust",
+            "Multi-channel strategy to increase visibility & ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Expand My Ads Beyond Google & Meta"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Which ad platforms work best for consultants?',
+              answer: 'LinkedIn Ads are highly effective for B2B consultants, while YouTube and Quora ads work for both consultants and teachers.',
+              icon: React.createElement(IconBrandLinkedin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Why should teachers run ads beyond Facebook & Google?',
+              answer: 'Platforms like YouTube and Quora let teachers reach students where they actively search for learning resources.',
+              icon: React.createElement(IconBrandYoutube, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Are “other ads” more expensive?',
+              answer: 'Not necessarily. With proper targeting, LinkedIn or YouTube ads can deliver higher-quality leads at better ROI.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can we combine these ads with Google & Meta?',
+              answer: 'Yes. We create omnichannel campaigns where Google, Meta, and other ads complement each other for maximum impact.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you provide full ad management?',
+              answer: 'Yes. From strategy, copy, creatives, targeting, to optimization—we handle everything end-to-end.',
+              icon: React.createElement(IconAd, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Will this help in authority building?',
+              answer: 'Absolutely. Platforms like Quora, LinkedIn, and native ads are designed to establish thought leadership & trust.',
+              icon: React.createElement(IconSocial, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Reach Beyond Google & Meta Ads,",
       headlineKeywords: [
-        "Other Ads for Consultants?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Expand Visibility",
+        "Reach Professionals",
+        "Target Niche Audiences",
+        "Maximize ROI",
+        "Be Omnipresent"
       ],
       brandLine: [
-        { text: "Other Ads for Consultants", gradient: false }
+        { text: "🎯 Other Ads for Teachers & Consultants", gradient: false }
       ],
-      subheadline: "Specialized other ads strategies designed specifically for consultants. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "At Digi Aerotech, we help teachers & consultants scale with LinkedIn Ads, YouTube Ads, Quora Ads, Display & Native Ads—so you never miss the right audience.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconTarget, { size: 28 }), text: "Start Multi-Channel Ads", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "See Ad Platforms", link: "/platforms", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandLinkedin, { size: 32 }),
+          title: "LinkedIn Ads",
+          description: "Target professionals, businesses, & decision-makers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Consultants served"
+          icon: React.createElement(IconBrandYoutube, { size: 32 }),
+          title: "YouTube Ads",
+          description: "Showcase expertise with engaging video campaigns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrandTwitter, { size: 32 }),
+          title: "Twitter/X Ads",
+          description: "Drive real-time engagement & thought leadership"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Quora & Native Ads",
+          description: "Capture high-intent learners & build authority"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Consultants?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "Best Partner for Multi-Channel Ads", gradient: true, gradientClass: "from-blue-500 via-cyan-500 to-green-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of consultants market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Multi-Platform Expertise",
+          description: "Specialized in LinkedIn, YouTube, Quora, Native, and Display Ads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for consultants businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Niche Targeting",
+          description: "We reach professionals, students, and high-value clients precisely."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "ROI-Focused Approach",
+          description: "Every campaign is designed to generate measurable results."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "Creative Storytelling",
+          description: "Engaging visuals, video, and ad copy tailored to your niche."
+        },
+        {
+          icon: React.createElement(IconSocial, { size: 28 }),
+          title: "Authority Building",
+          description: "Establish yourself as a thought leader in your domain."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Omnichannel Presence",
+          description: "Stay visible across every platform your audience uses."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Launch My Multi-Channel Ads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Other Ads for Consultants',
-      subtitle: 'CONSULTANTS SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for consultants businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for consultants market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for consultants audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for consultants businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Other Ads Process for Consultants',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for consultants businesses.',
+      title: 'Our Multi-Channel Ad Process',
+      subtitle: 'BEYOND GOOGLE & META',
+      description: 'We follow a streamlined approach to maximize your ROI with other ads.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your consultants business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific consultants goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with consultants focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on consultants market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Discovery & Audit', description: 'Understand your audience & identify the best platforms.' },
+        { id: 2, title: 'Platform Strategy', description: 'Choose LinkedIn, YouTube, Quora, or native ads based on goals.' },
+        { id: 3, title: 'Creative Development', description: 'Craft high-converting ad creatives & copy.' },
+        { id: 4, title: 'Targeting & Setup', description: 'Implement precise audience targeting across platforms.' },
+        { id: 5, title: 'Campaign Optimization', description: 'Continuously optimize to reduce CPC & boost conversions.' },
+        { id: 6, title: 'Reporting & Scaling', description: 'Transparent insights & scaling of winning campaigns.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Professionals & Educators Who ", gradient: false },
+        { text: "Scaled with Multi-Channel Ads", gradient: true, gradientClass: "from-blue-500 via-cyan-500 to-green-500" }
       ],
-      description: 'Real results from consultants businesses that achieved remarkable growth.',
+      description: 'Hear from consultants & teachers who expanded reach with Digi Aerotech’s other ad services.',
       testimonials: [
         {
           id: '1',
-          message: 'The other ads services transformed our consultants business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'LinkedIn ads brought me high-value consulting leads that Google never did. Amazing ROI!',
+          highlight: 'High-value consulting leads',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Consultants Company'
+          name: 'Anita Sharma',
+          designation: 'Career Consultant',
+          company: 'AS Consulting'
         },
         {
           id: '2',
-          message: 'Outstanding other ads expertise specifically for consultants. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for consultants',
+          message: 'As a teacher, my YouTube ads helped me get students worldwide for my online courses.',
+          highlight: 'Global student reach',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Consultants Solutions'
+          name: 'Rahul Mehta',
+          designation: 'Online Educator',
+          company: 'SkillBridge Academy'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Consultants Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your consultants business.'
+      title: 'Ready to Expand Beyond Google & Meta?',
+      subtitle: 'MULTI-CHANNEL ADS FOR TEACHERS & CONSULTANTS',
+      description: 'Book a free consultation and discover how LinkedIn, YouTube, Quora, and other ads can bring high-quality leads & visibility.',
     }
   }
 };

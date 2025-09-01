@@ -1,198 +1,204 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconRocket, IconTarget, IconUsers, IconBriefcase, IconTrendingUp,
+  IconWorld, IconChartBar, IconDeviceAnalytics, IconCheck, IconBuildingSkyscraper
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'meta-ads',
   business: 'b2b-services',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant1',
+    whyChooseUs: 'variant2',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'meta-ads',
+    slug: 'meta-ads-b2b',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why B2B Firms Struggle With ", gradient: false },
+            { text: "Meta Ads", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
+          ],
+          subheadline: "B2B buying cycles are complex—generic ad campaigns waste budget and miss decision-makers.",
+          painPoints: [
+            "Generic targeting reaching consumers, not B2B buyers",
+            "High ad spend with low-quality leads",
+            "Difficulty in reaching decision-makers & influencers",
+            "Weak ad creatives not aligned with B2B pain points",
+            "No nurturing funnel for long B2B sales cycles",
+            "Unclear ROI and wasted marketing budget"
+          ],
+          solutionPoints: [
+            "Laser-focused targeting on decision-makers, industries & job titles",
+            "Account-based marketing funnels using Meta Ads",
+            "Lead form integrations for instant B2B inquiries",
+            "Custom creatives that speak to business challenges",
+            "Retargeting campaigns to nurture warm leads",
+            "Data-driven optimization & transparent ROI tracking"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Boost My B2B Leads with Meta Ads"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Are Meta Ads effective for B2B lead generation?',
+              answer: 'Yes. With precise targeting (job titles, industries, behaviors), Meta Ads help B2B firms capture high-quality leads at scale.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How are B2B Meta Ads different from B2C?',
+              answer: 'B2B campaigns focus on decision-makers and longer buying cycles, while B2C focuses on impulse-driven consumer actions.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you provide retargeting campaigns?',
+              answer: 'Absolutely. Retargeting keeps your brand in front of warm leads and accelerates deal closures.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can Meta Ads generate enterprise-level leads?',
+              answer: 'Yes. With account-based targeting and lead form integrations, we capture enterprise inquiries directly from Meta.',
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you measure ROI?',
+              answer: 'We track leads, pipeline impact, and conversions using analytics dashboards and CRM integrations.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Meta Ads That Drive Real B2B Clients",
       headlineKeywords: [
-        "Meta Ads for B2b Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "B2B Meta Ads Services",
+        "Facebook & Instagram Ads for B2B",
+        "B2B Lead Generation with Meta Ads",
+        "Account-Based Targeting",
+        "Enterprise Social Media Ads"
       ],
       brandLine: [
-        { text: "Meta Ads for B2b Services", gradient: false }
+        { text: "🚀 Digi Aerotech runs hyper-targeted Meta Ads that put your B2B firm in front of the right decision-makers at the right time.", gradient: false }
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for b2b services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "Stop wasting money on broad ads. Start generating enterprise-quality B2B leads through precision-targeted Meta campaigns.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Launch My B2B Ads Now", link: "/contact" },
+        { icon: React.createElement(IconDeviceAnalytics, { size: 28 }), text: "Get Free Ad Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "Decision-Maker Targeting",
+          description: "Laser-focus on job titles, industries & geographies"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2b Services served"
+          icon: React.createElement(IconBriefcase, { size: 32 }),
+          title: "Enterprise-Grade Campaigns",
+          description: "Perfect for SaaS, IT, consulting & logistics"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "ROI-Focused Ads",
+          description: "Drive qualified B2B leads, not vanity metrics"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "Transparent Reporting",
+          description: "Measure success with clear ROI dashboards"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2b Services?', gradient: false }
+        { text: "Why B2B Firms Trust ", gradient: false },
+        { text: "Digi Aerotech for Meta Ads", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
       trustPoints: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2b services market dynamics and customer behavior patterns.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2b services businesses.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+        { icon: React.createElement(IconUsers, { size: 28 }), title: "B2B Audience Expertise", description: "We know how to target executives, managers & industry professionals." },
+        { icon: React.createElement(IconRocket, { size: 28 }), title: "Lead-Driven Ads", description: "Every ad is designed to capture inquiries & generate pipelines." },
+        { icon: React.createElement(IconDeviceAnalytics, { size: 28 }), title: "Data + Creativity", description: "Compelling creatives powered by real B2B insights." },
+        { icon: React.createElement(IconWorld, { size: 28 }), title: "Global & Local Reach", description: "Perfect for both regional B2B services and international enterprises." },
+        { icon: React.createElement(IconBriefcase, { size: 28 }), title: "Full Funnel Strategy", description: "From awareness to nurturing & conversions." },
+        { icon: React.createElement(IconChartBar, { size: 28 }), title: "ROI-First Reporting", description: "No fluff—just revenue impact & measurable ROI." }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Scale B2B Growth with Meta Ads",
+        link: "#contact",
+        icon: React.createElement(IconRocket, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Meta Ads for B2b Services',
-      subtitle: 'B2B SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for b2b services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for b2b services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for b2b services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2b services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Meta Ads Process for B2b Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for b2b services businesses.',
+      title: 'Our Meta Ads Process for B2B',
+      subtitle: 'TARGET → ENGAGE → NURTURE → CONVERT',
+      description: 'We design Meta Ads tailored for long B2B cycles and high-value decision-makers.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2b services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific b2b services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with b2b services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2b services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Discovery & Research', description: 'Define ICP, industries, and decision-maker profiles' },
+        { id: 2, title: 'Ad Creative Strategy', description: 'Craft tailored ad creatives that resonate with business pain points' },
+        { id: 3, title: 'Precision Targeting', description: 'Target job titles, company size, geography & industries' },
+        { id: 4, title: 'Lead Capture Setup', description: 'Meta Lead Ads + CRM integration for direct inquiries' },
+        { id: 5, title: 'Retargeting Campaigns', description: 'Nurture warm leads through remarketing strategies' },
+        { id: 6, title: 'ROI Optimization', description: 'Monitor, optimize & scale campaigns based on pipeline impact' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2B Firms Scaling with ", gradient: false },
+        { text: "Digi Aerotech’s Meta Ads", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
-      description: 'Real results from b2b services businesses that achieved remarkable growth.',
+      description: 'From SaaS companies to IT consultants, our Meta Ads strategies deliver consistent pipelines and enterprise inquiries.',
       testimonials: [
         {
           id: '1',
-          message: 'The meta ads services transformed our b2b services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our SaaS startup went from 10 to 60 enterprise demo requests per month after Digi Aerotech’s Meta Ads campaigns.',
+          highlight: '500% Increase in Demo Requests',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2b Services Company'
+          name: 'Vikram Rao',
+          designation: 'Founder',
+          company: 'CloudSync Software'
         },
         {
           id: '2',
-          message: 'Outstanding meta ads expertise specifically for b2b services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2b services',
+          message: 'We struggled with irrelevant leads before. Digi Aerotech now brings us targeted logistics inquiries every week.',
+          highlight: 'High-Quality Enterprise Leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2b Services Solutions'
+          name: 'Anjali Mehta',
+          designation: 'CMO',
+          company: 'GlobeLink Logistics'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2b Services Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your b2b services business.'
+      title: 'Ready to Attract Enterprise Decision-Makers?',
+      subtitle: 'LASER-FOCUSED META ADS FOR B2B',
+      description: 'Partner with Digi Aerotech to run data-driven, ROI-focused Meta Ads that bring enterprise clients directly to you.',
     }
   }
 };

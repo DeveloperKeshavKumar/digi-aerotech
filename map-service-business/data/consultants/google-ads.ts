@@ -1,198 +1,260 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTarget, IconChartBar, IconBook, IconUsers, IconTrendingUp,
+  IconArrowRight, IconSearch, IconMoneybag, IconStar, IconBrain,
+  IconSchool, IconPhone, IconGlobe
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'google-ads',
   business: 'consultants',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
+    hero: 'variant2',
+    whyChooseUs: 'variant1',
     process: 'variant3',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'google-ads',
+    slug: 'google-ads-consultants-teachers',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Challenges Consultants & Teachers ", gradient: false },
+            { text: "Face in Client & Student Acquisition", gradient: true, gradientClass: "from-yellow-500 via-orange-500 to-red-500" }
+          ],
+          subheadline: "Many consultants and teachers struggle to get consistent leads and enrollments despite having great expertise.",
+          painPoints: [
+            "Low visibility on Google search results",
+            "Dependence only on referrals and word-of-mouth",
+            "Unclear targeting leading to wasted ad spend",
+            "Getting irrelevant inquiries that don’t convert",
+            "Competition dominating ad placements",
+            "No system to track ROI on ad campaigns"
+          ],
+          solutionPoints: [
+            "Targeted Google Ads campaigns for consultants & teachers",
+            "Precision keyword bidding to appear for high-intent searches",
+            "Smart audience targeting based on demographics & location",
+            "Conversion tracking for calls, forms, and bookings",
+            "Competitor analysis to win better ad positions",
+            "ROI-driven campaigns that maximize every rupee spent"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch My Google Ads Today"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why should consultants & teachers use Google Ads?',
+              answer: 'Because it puts you in front of people actively searching for your services, generating high-quality leads instantly.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Will I waste money on irrelevant clicks?',
+              answer: 'No. We use negative keywords, audience filters, and precise targeting to ensure only relevant students and clients see your ads.',
+              icon: React.createElement(IconBrain, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you track results from ads?',
+              answer: 'Yes. We set up conversion tracking for calls, form fills, and direct inquiries so you see exactly where your money goes.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How soon will I see results?',
+              answer: 'Unlike SEO, Google Ads start generating clicks and inquiries almost immediately after launch.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do I need a big budget for Google Ads?',
+              answer: 'Not at all. We design campaigns that fit your budget and scale as you start getting consistent returns.',
+              icon: React.createElement(IconMoneybag, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Can Google Ads help me compete with bigger institutions?',
+              answer: 'Yes. With smart targeting and ad strategies, independent consultants and teachers can outrank bigger competitors locally.',
+              icon: React.createElement(IconSchool, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
       initial: "Need ",
       headlineKeywords: [
-        "Google Ads for Consultants?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Student Enrollments?",
+        "More Client Leads?",
+        "Instant Visibility?",
+        "Higher ROI?",
+        "Google Ads for Consultants & Teachers?"
       ],
       brandLine: [
-        { text: "Google Ads for Consultants", gradient: false }
+        { text: "🎯 Get Found Instantly. Convert Clicks into Students & Clients.", gradient: false }
       ],
-      subheadline: "Specialized google ads strategies designed specifically for consultants. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "At Digi Aerotech, we run high-converting Google Ads campaigns tailored for consultants and teachers, bringing you more leads, calls, and students — faster than ever.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Get Free Ads Audit", link: "/contact" },
+        { icon: React.createElement(IconGlobe, { size: 28 }), text: "Talk to Ads Expert", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "3000+ Leads",
+          description: "Generated for consultants & teachers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Consultants served"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "150% ROI",
+          description: "Average campaign returns"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "500+ Campaigns",
+          description: "Successfully managed"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Instant Growth",
+          description: "Results from Day 1"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Google Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Consultants?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Google Ads Partner for Consultants & Teachers", gradient: true, gradientClass: "from-yellow-500 via-orange-500 to-red-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of consultants market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Hyper-Targeted Ads",
+          description: "We run ads that reach only high-intent students & clients looking for your services."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for consultants businesses.'
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "ROI-First Strategy",
+          description: "Every ad campaign is designed to maximize conversions, not just clicks."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored google ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Lead Quality Focus",
+          description: "We optimize campaigns to bring in genuine inquiries that convert, not junk leads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconBook, { size: 28 }),
+          title: "Specialized in Education & Consulting",
+          description: "Unlike generic agencies, we understand the unique lead cycle of teachers & consultants."
+        },
+        {
+          icon: React.createElement(IconBrain, { size: 28 }),
+          title: "Smart Bidding & AI Optimization",
+          description: "We use Google’s smart algorithms combined with manual strategy for best results."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Proven Case Studies",
+          description: "We have successfully scaled campaigns for independent professionals and institutions."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My Google Ads Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Google Ads for Consultants',
-      subtitle: 'CONSULTANTS SPECIALIZED SERVICES',
-      description: 'Comprehensive google ads solutions designed specifically for consultants businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom google ads strategy development tailored for consultants market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of google ads campaigns optimized for consultants audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for consultants businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Google Ads Process for Consultants',
-      subtitle: 'PROVEN METHODOLOGY',
+      title: 'Our Google Ads Growth Process',
+      subtitle: 'STEP-BY-STEP CONVERSION SYSTEM',
       className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to google ads that delivers measurable results for consultants businesses.',
+      description: 'We follow a proven system to ensure every rupee spent on ads generates measurable results.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your consultants business and market landscape.'
+          title: 'Discovery & Goal Setting',
+          description: 'Understand your services, students, clients, and lead generation goals.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom google ads strategy tailored for your specific consultants goals.'
+          title: 'Keyword & Audience Research',
+          description: 'Identify high-intent keywords & audiences for maximum lead quality.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of google ads campaigns with consultants focus.'
+          title: 'Ad Copy & Creative Development',
+          description: 'Write compelling ad copy & design creatives that attract attention and clicks.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on consultants market feedback.'
+          title: 'Campaign Setup & Launch',
+          description: 'Launch search, display, and remarketing campaigns for consultants & teachers.'
+        },
+        {
+          id: 5,
+          title: 'Conversion Tracking',
+          description: 'Set up call tracking, form tracking, and lead attribution to measure ROI.'
+        },
+        {
+          id: 6,
+          title: 'Optimization & Scaling',
+          description: 'Refine keywords, targeting, and bidding to scale campaigns profitably.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Google Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for google ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Google Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Consultants & Teachers Who ", gradient: false },
+        { text: "Grew Fast with Our Ads", gradient: true, gradientClass: "from-yellow-500 via-orange-500 to-red-500" }
       ],
-      description: 'Real results from consultants businesses that achieved remarkable growth.',
+      description: 'Here’s what professionals say about Digi Aerotech’s Google Ads campaigns.',
       testimonials: [
         {
           id: '1',
-          message: 'The google ads services transformed our consultants business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Within 2 weeks of running Google Ads with Digi Aerotech, I started getting student enrollments daily.',
+          highlight: 'student enrollments daily',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Consultants Company'
+          name: 'Meera Joshi',
+          designation: 'Spoken English Trainer',
+          company: 'FluentMe Academy'
         },
         {
           id: '2',
-          message: 'Outstanding google ads expertise specifically for consultants. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for consultants',
+          message: 'As a business coach, most of my new clients now come directly from Google Ads campaigns managed by them.',
+          highlight: 'most of my new clients',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Consultants Solutions'
+          name: 'Vivek Sharma',
+          designation: 'Business Consultant',
+          company: 'GrowthX Consulting'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Consultants Business?',
-      subtitle: 'START YOUR GOOGLE ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our google ads can drive growth for your consultants business.'
+      title: 'Ready to Attract More Students & Clients?',
+      subtitle: 'GOOGLE ADS FOR CONSULTANTS & TEACHERS',
+      description: 'Book a free Google Ads audit with Digi Aerotech and start generating high-quality leads instantly.',
     }
   }
 };

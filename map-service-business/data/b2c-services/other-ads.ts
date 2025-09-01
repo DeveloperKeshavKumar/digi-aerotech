@@ -1,198 +1,228 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconVideo, IconBrandYoutube, IconScreenShare, IconTarget, IconShoppingCart,
+  IconRocket, IconUsers, IconArrowRight, IconDeviceTv, IconRepeat
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'other-ads',
   business: 'b2c-services',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    process: 'variant3',
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'other-ads',
+    slug: 'other-ads-b2c',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why B2C Businesses Lose Growth ", gradient: false },
+            { text: "Without Multi-Channel Ads", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
+          ],
+          subheadline: "If you rely only on Google or Meta Ads, you’re missing huge opportunities where your audience spends time — YouTube, OTT, and across the web.",
+          painPoints: [
+            "Over-reliance on one ad channel increases risk",
+            "Missing brand presence on YouTube & OTT platforms",
+            "No remarketing means lost potential customers",
+            "Competitors dominate with multi-channel ads",
+            "Lower recall because of limited visibility",
+            "Not leveraging storytelling in video ads"
+          ],
+          solutionPoints: [
+            "YouTube Ads for brand awareness & storytelling",
+            "Google Display Ads for cross-web visibility",
+            "OTT/CTV Ads to reach streaming audiences",
+            "Remarketing Ads to convert lost visitors",
+            "Native Ads for subtle, non-intrusive marketing",
+            "Multi-channel integration for higher ROI"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Expand My Ad Reach"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'What are “Other Ads” for B2C businesses?',
+              answer: 'These include YouTube Ads, Display Ads, OTT/CTV Ads, Native Ads, and Remarketing campaigns that complement Google & Meta Ads.',
+              icon: React.createElement(IconVideo, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Why should I use YouTube Ads?',
+              answer: 'YouTube is the second largest search engine. Video ads build trust, show your brand personality, and convert better than static content.',
+              icon: React.createElement(IconBrandYoutube, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do OTT/CTV ads help B2C businesses?',
+              answer: 'OTT/CTV ads allow you to target audiences on Netflix, Hotstar, Amazon Prime, and more — perfect for building strong brand recall.',
+              icon: React.createElement(IconDeviceTv, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'What is remarketing?',
+              answer: 'Remarketing shows ads to people who already visited your site or app but didn’t convert, helping you recover lost sales.',
+              icon: React.createElement(IconRepeat, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Is multi-channel advertising expensive?',
+              answer: 'No — when done strategically, it actually lowers cost per acquisition by diversifying ad spend and improving conversions.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Don’t Limit Your Ads. Dominate Everywhere.",
       headlineKeywords: [
-        "Other Ads for B2c Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Other Ads for B2C Services",
+        "YouTube & OTT Ads for Retail & Gyms",
+        "Remarketing Ads for B2C Growth",
+        "Cross-Channel Ads for Salons & Restaurants",
+        "Display & Native Ads for Local Businesses"
       ],
       brandLine: [
-        { text: "Other Ads for B2c Services", gradient: false }
+        { text: "🎯 Reach your customers across YouTube, OTT, and the web — not just on one platform.", gradient: false }
       ],
-      subheadline: "Specialized other ads strategies designed specifically for b2c services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help B2C businesses like salons, gyms, restaurants, fashion brands, and retailers run high-performing campaigns beyond Google & Meta. From YouTube Ads to OTT, Display, and Remarketing, Digi Aerotech ensures your brand stays everywhere your customers are.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Run My Multi-Channel Ads", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "Get Free Ad Strategy", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandYoutube, { size: 32 }),
+          title: "High Engagement",
+          description: "YouTube ads capture attention & build trust"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2c Services served"
+          icon: React.createElement(IconDeviceTv, { size: 32 }),
+          title: "OTT Reach",
+          description: "Target audiences on Netflix, Hotstar, Prime"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconRepeat, { size: 32 }),
+          title: "Better Conversions",
+          description: "Remarketing reduces cart abandonment"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "More Sales",
+          description: "Cross-channel ads drive higher ROI"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2c Services?', gradient: false }
+        { text: "Why B2C Brands Trust ", gradient: false },
+        { text: "Digi Aerotech for Multi-Channel Ads", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2c services market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "Full Ad Spectrum",
+          description: "From YouTube to OTT to remarketing, we manage it all."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2c services businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Precision Targeting",
+          description: "Reach the right customers with the right message."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconScreenShare, { size: 28 }),
+          title: "Creative Storytelling",
+          description: "Video & display ads that connect emotionally."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShoppingCart, { size: 28 }),
+          title: "Sales-First Approach",
+          description: "We focus on conversions, not just impressions."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "ROI-Focused",
+          description: "Transparent reporting and revenue-driven strategy."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Cross-Platform Growth",
+          description: "Your brand is everywhere your customers are."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Launch Multi-Channel Ads",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Other Ads for B2c Services',
-      subtitle: 'B2C SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for b2c services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for b2c services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for b2c services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2c services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Other Ads Process for B2c Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for b2c services businesses.',
+      title: 'Our Multi-Channel Ads Process',
+      subtitle: 'STRATEGY → CREATIVE → LAUNCH → OPTIMIZE',
+      description: 'We don’t just run ads — we craft experiences across multiple channels to maximize conversions for your B2C business.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2c services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific b2c services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with b2c services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2c services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Audit & Strategy', description: 'Analyze your market, audience, and competitors.' },
+        { id: 2, title: 'Creative Production', description: 'Design video, display, and native ads that resonate.' },
+        { id: 3, title: 'Campaign Setup', description: 'Launch ads across YouTube, OTT, Display, and more.' },
+        { id: 4, title: 'Remarketing Setup', description: 'Retarget visitors who didn’t convert the first time.' },
+        { id: 5, title: 'Optimization & Scaling', description: 'Test, refine, and scale campaigns for ROI growth.' },
+        { id: 6, title: 'Transparent Reporting', description: 'Get insights into performance, spend, and ROI.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2C Brands Growing ", gradient: false },
+        { text: "with Digi Aerotech Multi-Channel Ads", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
       ],
-      description: 'Real results from b2c services businesses that achieved remarkable growth.',
+      description: 'From fashion to food, our multi-channel ad strategies have helped B2C brands dominate across YouTube, OTT, and remarketing campaigns.',
       testimonials: [
         {
           id: '1',
-          message: 'The other ads services transformed our b2c services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Running YouTube + Remarketing Ads with Digi Aerotech helped us cut customer acquisition costs by 35% while increasing repeat orders.',
+          highlight: '35% lower acquisition cost',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2c Services Company'
+          name: 'Ritika Sharma',
+          designation: 'Founder',
+          company: 'Glow Fashion'
         },
         {
           id: '2',
-          message: 'Outstanding other ads expertise specifically for b2c services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2c services',
+          message: 'Their OTT campaigns gave our restaurant massive brand visibility. We saw more walk-ins and repeat customers after just 6 weeks.',
+          highlight: 'Higher footfall',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2c Services Solutions'
+          name: 'Arjun Mehta',
+          designation: 'Owner',
+          company: 'Grill & Chill Café'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2c Services Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your b2c services business.'
+      title: 'Ready to Expand Beyond Google & Meta Ads?',
+      subtitle: 'YOUTUBE → OTT → DISPLAY → REMARKETING → SALES',
+      description: 'With Digi Aerotech’s multi-channel ads, your B2C business dominates every platform your customers use. More reach, more conversions, more growth.',
     }
   }
 };

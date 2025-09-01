@@ -1,198 +1,229 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconBrandFacebook, IconBrandInstagram, IconBrandTwitter, IconBrandTiktok,
+  IconUsers, IconTrendingUp, IconChartBar, IconWorld, IconRocket, IconDeviceMobile,
+  IconMessageChatbot, IconTarget
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'social-media-marketing',
   business: 'b2c-services',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    hero: 'variant1',
+    whyChooseUs: 'variant1',
+    process: 'variant2',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'social-media-marketing',
+    slug: 'smm-services-b2c',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why B2C Brands Struggle ", gradient: false },
+            { text: "Without Social Media Marketing", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
+          ],
+          subheadline: "Your customers live on social media — if your brand isn’t active and engaging, you’re invisible to them.",
+          painPoints: [
+            "No strong presence on Facebook, Instagram or TikTok",
+            "Low engagement and poor brand visibility",
+            "Competitors building loyal communities while you lag behind",
+            "Struggling to create viral & shareable content",
+            "No strategy for ads, stories, reels or influencer marketing",
+            "Hard to measure ROI from social media campaigns"
+          ],
+          solutionPoints: [
+            "Consistent content creation & scheduling across platforms",
+            "Targeted ad campaigns on Facebook, Instagram, TikTok & more",
+            "Community building with engaging posts, stories & reels",
+            "Influencer collaborations & brand partnerships",
+            "Creative campaigns designed to go viral",
+            "Transparent reporting with growth & engagement analytics"
+          ],
+          cta: {
+            icon: React.createElement(IconBrandInstagram, { size: 20 }),
+            text: "Boost My Social Media Presence"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is social media marketing important for B2C businesses?',
+              answer: 'Social media builds brand visibility, drives engagement, and creates direct relationships with customers, turning them into loyal buyers.',
+              icon: React.createElement(IconBrandFacebook, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Which platforms do you manage?',
+              answer: 'We handle Facebook, Instagram, TikTok, Twitter, LinkedIn, and emerging platforms depending on your target audience.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you also run paid social media ads?',
+              answer: 'Yes, we create and manage high-ROI ad campaigns on Facebook, Instagram, and TikTok for conversions and brand awareness.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How do you measure social media success?',
+              answer: 'We track KPIs like followers, engagement rate, reach, clicks, leads, and conversions — giving full ROI transparency.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Can you create content for my brand?',
+              answer: 'Absolutely — from graphics and reels to captions and campaigns, we provide complete content creation for your brand identity.',
+              icon: React.createElement(IconMessageChatbot, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Turn Followers Into Paying Customers",
       headlineKeywords: [
-        "Social Media Marketing for B2c Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Social Media Marketing for B2C Brands",
+        "Instagram & TikTok Growth Campaigns",
+        "Facebook Ads & Community Building",
+        "Influencer Marketing for B2C Services",
+        "Content Strategy & Viral Engagement"
       ],
       brandLine: [
-        { text: "Social Media Marketing for B2c Services", gradient: false }
+        { text: "📲 Be where your customers are — dominate social platforms with Digi Aerotech.", gradient: false }
       ],
-      subheadline: "Specialized social media marketing strategies designed specifically for b2c services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help B2C businesses create viral content, run targeted ads, and build engaged communities across Facebook, Instagram, TikTok, and more. More engagement → More visibility → More sales.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Grow My Brand on Social", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "Free Social Media Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandInstagram, { size: 32 }),
+          title: "Engagement Growth",
+          description: "Boost likes, shares & interactions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2c Services served"
+          icon: React.createElement(IconBrandFacebook, { size: 32 }),
+          title: "Targeted Ads",
+          description: "Run paid campaigns for conversions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBrandTiktok, { size: 32 }),
+          title: "Viral Content",
+          description: "Creative reels & videos for awareness"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "Brand Positioning",
+          description: "Build trust & recognition on social"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Social Media Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2c Services?', gradient: false }
+        { text: "Why B2C Businesses Trust ", gradient: false },
+        { text: "Digi Aerotech for Social Media Marketing", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2c services market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Creative First Approach",
+          description: "We craft eye-catching visuals, reels & campaigns that stand out."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2c services businesses.'
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Community Building",
+          description: "Turn followers into loyal customers with consistent engagement."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored social media marketing strategies designed specifically for your business needs.'
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Data-Driven Ads",
+          description: "Laser-focused targeting for maximum ROI on social platforms."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Growth-Focused Strategy",
+          description: "Content, ads, and influencer marketing to fuel steady growth."
+        },
+        {
+          icon: React.createElement(IconWorld, { size: 28 }),
+          title: "Cross-Platform Management",
+          description: "One team managing all your social platforms seamlessly."
+        },
+        {
+          icon: React.createElement(IconDeviceMobile, { size: 28 }),
+          title: "Mobile-First Execution",
+          description: "Optimized for mobile users who make up 90% of social audiences."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost My Social Media",
+        link: "#contact",
+        icon: React.createElement(IconBrandInstagram, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Social Media Marketing for B2c Services',
-      subtitle: 'B2C SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive social media marketing solutions designed specifically for b2c services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom social media marketing strategy development tailored for b2c services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of social media marketing campaigns optimized for b2c services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2c services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Social Media Marketing Process for B2c Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to social media marketing that delivers measurable results for b2c services businesses.',
+      title: 'Our Social Media Marketing Process',
+      subtitle: 'CONTENT → ENGAGEMENT → ADS → SALES',
+      description: 'We build a customized strategy that maximizes brand presence, engagement, and conversions.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2c services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom social media marketing strategy tailored for your specific b2c services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of social media marketing campaigns with b2c services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2c services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Social Media Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for social media marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Audit & Strategy', description: 'Assess current presence & define growth roadmap.' },
+        { id: 2, title: 'Content Creation', description: 'Develop posts, reels, videos & ad creatives.' },
+        { id: 3, title: 'Community Building', description: 'Engage followers with comments, stories & interactions.' },
+        { id: 4, title: 'Paid Campaigns', description: 'Run ROI-focused ad campaigns on Facebook, Instagram & TikTok.' },
+        { id: 5, title: 'Influencer Marketing', description: 'Partner with micro & macro influencers for reach.' },
+        { id: 6, title: 'Reporting & Optimization', description: 'Track analytics & optimize campaigns for growth.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Social Media Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2C Brands Growing ", gradient: false },
+        { text: "with Digi Aerotech Social Media Marketing", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
       ],
-      description: 'Real results from b2c services businesses that achieved remarkable growth.',
+      description: 'From fashion brands to restaurants, Digi Aerotech has helped B2C businesses grow massive audiences and boost sales with social media marketing.',
       testimonials: [
         {
           id: '1',
-          message: 'The social media marketing services transformed our b2c services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our Instagram grew from 2,000 to 15,000 followers in 6 months, and walk-ins increased by 45%.',
+          highlight: '15,000+ followers',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2c Services Company'
+          name: 'Sneha Kapoor',
+          designation: 'Owner',
+          company: 'Glow Beauty Studio'
         },
         {
           id: '2',
-          message: 'Outstanding social media marketing expertise specifically for b2c services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2c services',
+          message: 'Digi Aerotech’s social media ads doubled our online sales in just 3 months!',
+          highlight: '2X online sales',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2c Services Solutions'
+          name: 'Arjun Mehta',
+          designation: 'Founder',
+          company: 'FitFuel Nutrition'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2c Services Business?',
-      subtitle: 'START YOUR SOCIAL MEDIA MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our social media marketing can drive growth for your b2c services business.'
+      title: 'Ready to Dominate Social Media?',
+      subtitle: 'ENGAGE → BUILD TRUST → SELL MORE',
+      description: 'With Digi Aerotech’s Social Media Marketing, B2C businesses attract followers, boost engagement, and convert them into paying customers.',
     }
   }
 };

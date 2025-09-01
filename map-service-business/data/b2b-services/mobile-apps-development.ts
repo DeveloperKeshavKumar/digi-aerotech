@@ -1,198 +1,204 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconRocket, IconTarget, IconUsers, IconBriefcase, IconTrendingUp,
+  IconWorld, IconChartBar, IconDeviceMobile, IconCheck, IconBuildingSkyscraper, IconCode
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
-  service: 'mobile-apps-development',
+  service: 'mobile-app-development',
   business: 'b2b-services',
   variants: {
     hero: 'variant1',
     whyChooseUs: 'variant2',
-    process: 'variant3',
+    process: 'variant2',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'mobile-apps-development',
+    slug: 'mobile-apps-b2b',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why B2B Companies Need ", gradient: false },
+            { text: "Mobile Apps to Scale", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
+          ],
+          subheadline: "B2B firms often face fragmented workflows, poor client engagement, and limited digital visibility without robust mobile apps.",
+          painPoints: [
+            "Complex workflows that slow down client communication",
+            "No dedicated platform for partners, distributors, or enterprise clients",
+            "Lack of data-driven insights from customer interactions",
+            "Missed opportunities for automation & real-time engagement",
+            "Dependence on third-party platforms limiting brand control",
+            "Difficulties in scaling client servicing & onboarding"
+          ],
+          solutionPoints: [
+            "Custom B2B mobile apps built to streamline workflows",
+            "Secure platforms for client portals, distributors & partners",
+            "Integrated analytics for data-driven decisions",
+            "Mobile-first automation & push notifications",
+            "100% ownership & brand control over digital assets",
+            "Scalable solutions that grow with your enterprise needs"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Build My B2B Mobile App"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Do B2B companies really need mobile apps?',
+              answer: 'Yes. Mobile apps simplify client servicing, streamline workflows, and create direct engagement channels for B2B firms.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'What features do you include in B2B mobile apps?',
+              answer: 'We build apps with client dashboards, partner portals, CRM integrations, secure payments, analytics, and push notifications.',
+              icon: React.createElement(IconCode, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can apps integrate with our existing CRM/ERP?',
+              answer: 'Absolutely. We specialize in CRM, ERP, and API integrations for seamless business workflows.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Are your apps scalable for enterprise growth?',
+              answer: 'Yes. We design modular, scalable apps that grow with your business and adapt to changing enterprise needs.',
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you offer post-launch support?',
+              answer: 'Yes. We provide full maintenance, updates, and continuous improvements to keep your app competitive.',
+              icon: React.createElement(IconCheck, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Enterprise-Grade B2B Mobile App Development",
       headlineKeywords: [
-        "Mobile Apps Development for B2b Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "B2B Mobile App Development Services",
+        "Custom Mobile Apps for Enterprises",
+        "Business Workflow Automation Apps",
+        "Partner & Distributor Mobile Apps",
+        "Enterprise Mobility Solutions"
       ],
       brandLine: [
-        { text: "Mobile Apps Development for B2b Services", gradient: false }
+        { text: "📱 Digi Aerotech builds powerful, scalable, and secure B2B mobile apps to transform how enterprises engage, operate, and grow.", gradient: false }
       ],
-      subheadline: "Specialized mobile apps development strategies designed specifically for b2b services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "From client portals to workflow automation apps—our mobile solutions give B2B firms a competitive edge in the digital-first economy.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Get My B2B App Built", link: "/contact" },
+        { icon: React.createElement(IconDeviceMobile, { size: 28 }), text: "Free App Strategy Session", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBriefcase, { size: 32 }),
+          title: "B2B Focused Apps",
+          description: "Tailored for enterprises, distributors & clients"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2b Services served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "Boost Productivity",
+          description: "Automate workflows & reduce manual processes"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global Scalability",
+          description: "Apps that grow with your business across markets"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconCheck, { size: 32 }),
+          title: "Secure & Reliable",
+          description: "Enterprise-grade security & data protection"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Mobile Apps Development', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2b Services?', gradient: false }
+        { text: "Why Leading B2B Enterprises Choose ", gradient: false },
+        { text: "Digi Aerotech for Mobile Apps", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
       ],
       trustPoints: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2b services market dynamics and customer behavior patterns.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2b services businesses.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored mobile apps development strategies designed specifically for your business needs.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+        { icon: React.createElement(IconDeviceMobile, { size: 28 }), title: "Custom-Built Apps", description: "No one-size-fits-all. Every app is crafted to your business needs." },
+        { icon: React.createElement(IconBriefcase, { size: 28 }), title: "B2B Expertise", description: "Deep knowledge of enterprise workflows & client needs." },
+        { icon: React.createElement(IconCode, { size: 28 }), title: "Seamless Integrations", description: "ERP, CRM, and APIs integrated for frictionless operations." },
+        { icon: React.createElement(IconWorld, { size: 28 }), title: "Future-Ready Solutions", description: "Apps built for scalability, cloud, and mobility trends." },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), title: "ROI-Focused", description: "Our apps improve efficiency & reduce costs." },
+        { icon: React.createElement(IconCheck, { size: 28 }), title: "Maintenance & Support", description: "Continuous updates & post-launch support." }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Transform My B2B with Mobile Apps",
+        link: "#contact",
+        icon: React.createElement(IconRocket, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Mobile Apps Development for B2b Services',
-      subtitle: 'B2B SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive mobile apps development solutions designed specifically for b2b services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom mobile apps development strategy development tailored for b2b services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of mobile apps development campaigns optimized for b2b services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2b services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Mobile Apps Development Process for B2b Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to mobile apps development that delivers measurable results for b2b services businesses.',
+      title: 'Our B2B Mobile App Development Process',
+      subtitle: 'DESIGN → DEVELOP → INTEGRATE → SCALE',
+      description: 'We deliver end-to-end app development, from strategy to deployment and maintenance.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2b services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom mobile apps development strategy tailored for your specific b2b services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of mobile apps development campaigns with b2b services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2b services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Mobile Apps Development Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for mobile apps development success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Discovery & Strategy', description: 'Understand workflows, clients & enterprise goals' },
+        { id: 2, title: 'UI/UX & Prototyping', description: 'Design sleek, intuitive, and business-focused interfaces' },
+        { id: 3, title: 'Development', description: 'Build apps with secure, scalable, enterprise-ready code' },
+        { id: 4, title: 'Integration', description: 'CRM, ERP & third-party systems connected seamlessly' },
+        { id: 5, title: 'Testing & Deployment', description: 'Rigorous QA to ensure flawless performance' },
+        { id: 6, title: 'Maintenance & Scaling', description: 'Continuous improvements and enterprise scaling support' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Mobile Apps Development ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2B Enterprises Thriving with ", gradient: false },
+        { text: "Digi Aerotech Mobile Apps", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
       ],
-      description: 'Real results from b2b services businesses that achieved remarkable growth.',
+      description: 'From SaaS providers to logistics firms, our mobile apps have transformed enterprise engagement, operations, and client servicing.',
       testimonials: [
         {
           id: '1',
-          message: 'The mobile apps development services transformed our b2b services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our custom client servicing app built by Digi Aerotech streamlined onboarding and boosted customer satisfaction.',
+          highlight: 'Improved Client Engagement by 300%',
           stars: 5,
-          name: 'John Smith',
+          name: 'Rohit Sharma',
           designation: 'CEO',
-          company: 'B2b Services Company'
+          company: 'Enterprise Consulting Group'
         },
         {
           id: '2',
-          message: 'Outstanding mobile apps development expertise specifically for b2b services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2b services',
+          message: 'They integrated our ERP with a mobile app, saving hours of manual work daily.',
+          highlight: 'Saved 20+ Hours of Manual Work/Week',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2b Services Solutions'
+          name: 'Neha Kapoor',
+          designation: 'CTO',
+          company: 'Global Logistics Solutions'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2b Services Business?',
-      subtitle: 'START YOUR MOBILE APPS DEVELOPMENT JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our mobile apps development can drive growth for your b2b services business.'
+      title: 'Ready to Build Your Enterprise Mobile App?',
+      subtitle: 'CUSTOM, SCALABLE & ROI-FOCUSED MOBILE SOLUTIONS',
+      description: 'Digi Aerotech empowers B2B companies with mobile apps that streamline workflows, improve client servicing, and accelerate growth.',
     }
   }
 };

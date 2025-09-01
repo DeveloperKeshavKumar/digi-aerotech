@@ -1,198 +1,204 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconTarget, IconBuildingSkyscraper, IconTrendingUp, IconBriefcase, IconRocket, 
+  IconChartBar, IconWorld, IconUsers, IconMessage2, IconCoins
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
-  service: 'leads-generation',
+  service: 'lead-generation',
   business: 'b2b-services',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    hero: 'variant1',
+    whyChooseUs: 'variant2',
+    process: 'variant1',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'leads-generation',
+    slug: 'lead-generation-b2b',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Most B2B Companies ", gradient: false },
+            { text: "Struggle with Leads", gradient: true, gradientClass: "from-red-500 via-orange-500 to-yellow-500" }
+          ],
+          subheadline: "Generating high-quality B2B leads requires precision targeting and deep industry knowledge. Most companies either get irrelevant leads or none at all.",
+          painPoints: [
+            "Wasting time on unqualified leads",
+            "Difficulty reaching decision-makers (CXOs, procurement heads, managers)",
+            "Long sales cycles with no nurturing process",
+            "Cold outreach with low conversion rates",
+            "No tracking or visibility on lead sources",
+            "Competitors dominating B2B lead channels"
+          ],
+          solutionPoints: [
+            "Targeted lead generation campaigns focused on decision-makers",
+            "Multi-channel outreach (Google Ads, LinkedIn, Email, SEO)",
+            "Lead nurturing funnels designed for long sales cycles",
+            "Qualification frameworks to filter out low-value leads",
+            "CRM integration & pipeline tracking",
+            "Industry-specific lead generation strategies"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Start My B2B Leads Campaign"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Do you provide leads or generate them?',
+              answer: 'We don’t sell generic lists. We create customized campaigns that generate fresh, qualified B2B leads directly for your business.',
+              icon: React.createElement(IconBriefcase, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Which industries do you serve?',
+              answer: 'We specialize in SaaS, IT, consulting, finance, logistics, healthcare, and other B2B verticals.',
+              icon: React.createElement(IconBuildingSkyscraper, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'What makes B2B lead generation different from B2C?',
+              answer: 'B2B requires targeting decision-makers, nurturing over longer sales cycles, and focusing on quality over volume.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How do you track and report leads?',
+              answer: 'We integrate with CRMs, track calls, form submissions, and provide detailed ROI-based reporting.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you run LinkedIn lead generation too?',
+              answer: 'Yes. LinkedIn Ads + InMail outreach is one of our strongest channels for high-value B2B leads.',
+              icon: React.createElement(IconMessage2, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "B2B Leads That Convert Into Revenue",
       headlineKeywords: [
-        "Leads Generation for B2b Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "B2B Lead Generation Services",
+        "Enterprise Lead Campaigns",
+        "Decision-Maker Targeting",
+        "Qualified B2B Leads",
+        "Pipeline Growth"
       ],
       brandLine: [
-        { text: "Leads Generation for B2b Services", gradient: false }
+        { text: "🚀 Digi Aerotech helps B2B firms fill their pipeline with qualified enterprise leads through precision-targeted campaigns.", gradient: false }
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for b2b services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "No more random cold calls or low-quality lists. We build predictable lead generation systems that deliver decision-makers, not tire-kickers.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Generate Leads Now", link: "/contact" },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), text: "Free Lead Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "Decision-Maker Targeting",
+          description: "Reach CXOs, procurement heads & enterprise buyers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2b Services served"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Qualified Leads",
+          description: "No bulk lists, only fresh high-value leads"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "ROI Tracking",
+          description: "End-to-end tracking of every lead source"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Industry Customization",
+          description: "Tailored strategies for SaaS, IT, consulting & more"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2b Services?', gradient: false }
+        { text: "Why B2B Firms Trust ", gradient: false },
+        { text: "Digi Aerotech for Lead Generation", gradient: true, gradientClass: "from-blue-500 via-green-500 to-purple-500" }
       ],
       trustPoints: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2b services market dynamics and customer behavior patterns.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2b services businesses.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+        { icon: React.createElement(IconTarget, { size: 28 }), title: "B2B Lead Expertise", description: "We design campaigns around long sales cycles & enterprise buyers." },
+        { icon: React.createElement(IconBuildingSkyscraper, { size: 28 }), title: "Decision-Maker Access", description: "Direct targeting of CXOs, managers & procurement heads." },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), title: "Multi-Channel Outreach", description: "Google Ads, LinkedIn, SEO & email nurturing combined." },
+        { icon: React.createElement(IconChartBar, { size: 28 }), title: "ROI Visibility", description: "Every lead is tracked, reported & tied to revenue." },
+        { icon: React.createElement(IconBriefcase, { size: 28 }), title: "Industry Focused", description: "We adapt strategies for SaaS, IT, finance, logistics & more." },
+        { icon: React.createElement(IconRocket, { size: 28 }), title: "Scalable Systems", description: "Build predictable, repeatable lead generation funnels." }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start Generating Enterprise Leads",
+        link: "#contact",
+        icon: React.createElement(IconRocket, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Leads Generation for B2b Services',
-      subtitle: 'B2B SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for b2b services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for b2b services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for b2b services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2b services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Leads Generation Process for B2b Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for b2b services businesses.',
+      title: 'Our B2B Lead Generation Process',
+      subtitle: 'PRECISION → QUALIFICATION → PIPELINE',
+      description: 'We don’t sell leads. We build custom systems that generate & nurture them until they’re ready for your sales team.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2b services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific b2b services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with b2b services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2b services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Audit & Research', description: 'Identify target industries, decision-makers, and buyer personas' },
+        { id: 2, title: 'Channel Strategy', description: 'Select best-fit platforms: Google Ads, LinkedIn, SEO, Email' },
+        { id: 3, title: 'Campaign Setup', description: 'Run high-intent, decision-maker-focused campaigns' },
+        { id: 4, title: 'Lead Nurturing', description: 'Build trust with content, follow-ups & automation' },
+        { id: 5, title: 'Qualification & Filtering', description: 'Score and filter leads to pass only high-value ones' },
+        { id: 6, title: 'Tracking & Reporting', description: 'Measure ROI with full funnel visibility' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2B Companies Growing with ", gradient: false },
+        { text: "Digi Aerotech’s Lead Generation", gradient: true, gradientClass: "from-blue-500 via-green-500 to-purple-500" }
       ],
-      description: 'Real results from b2b services businesses that achieved remarkable growth.',
+      description: 'From SaaS startups to enterprise consulting firms, Digi Aerotech delivers consistent pipelines of qualified leads.',
       testimonials: [
         {
           id: '1',
-          message: 'The leads generation services transformed our b2b services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Before Digi Aerotech, our sales team had no pipeline. Now, we get 40+ qualified B2B leads per month consistently.',
+          highlight: '40+ Qualified Leads / Month',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2b Services Company'
+          name: 'Rohit Sharma',
+          designation: 'Founder',
+          company: 'NextGen IT Solutions'
         },
         {
           id: '2',
-          message: 'Outstanding leads generation expertise specifically for b2b services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2b services',
+          message: 'Their LinkedIn + Google Ads lead gen system is unbeatable. We closed 3 enterprise clients in 60 days.',
+          highlight: 'Enterprise Deals Closed',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2b Services Solutions'
+          name: 'Ananya Mehta',
+          designation: 'CMO',
+          company: 'LogiCore Consulting'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2b Services Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your b2b services business.'
+      title: 'Ready to Fill Your Sales Pipeline?',
+      subtitle: 'CONSISTENT, QUALIFIED B2B LEADS',
+      description: 'Partner with Digi Aerotech to build a lead generation system that connects you with enterprise decision-makers and grows revenue predictably.'
     }
   }
 };

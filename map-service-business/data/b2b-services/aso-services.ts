@@ -1,198 +1,229 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconRocket, IconBuilding, IconTrendingUp, IconSearch,
+  IconChartBar, IconUsers, IconTarget, IconShieldCheck,
+  IconWorld, IconTools, IconWand
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'aso-services',
   business: 'b2b-services',
   variants: {
-    hero: 'variant1',
+    hero: 'variant2',
     whyChooseUs: 'variant2',
-    process: 'variant3',
+    process: 'variant1',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'aso-services',
+    slug: 'aso-services-b2b',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why B2B Apps Struggle ", gradient: false },
+            { text: "Without ASO", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
+          ],
+          subheadline: "In the crowded app marketplace, even B2B apps get buried without proper optimization. Without ASO, your app is invisible to potential enterprise clients.",
+          painPoints: [
+            "Low app visibility in App Store & Play Store searches",
+            "Generic descriptions failing to convince business buyers",
+            "Poor keyword targeting, missing out on high-value searches",
+            "Lack of reviews hurting brand trust",
+            "No localization for global B2B markets",
+            "Competitors dominating search rankings with optimized profiles"
+          ],
+          solutionPoints: [
+            "Keyword research & targeting for B2B industry terms",
+            "Compelling copywriting that speaks to decision-makers",
+            "Optimization of titles, metadata, screenshots & videos",
+            "Review & reputation management to build trust",
+            "Localization for international B2B audiences",
+            "Advanced analytics to track installs & enterprise leads"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Optimize My B2B App"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do B2B apps need ASO?',
+              answer: 'B2B apps compete in a niche but highly valuable market. ASO ensures decision-makers can easily find, trust, and download your app.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can ASO generate enterprise leads?',
+              answer: 'Yes — optimized app listings improve discovery, boost installs, and bring qualified B2B leads directly through the app.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you handle both iOS and Android?',
+              answer: 'Absolutely. We optimize for both Apple App Store and Google Play Store to maximize reach across platforms.',
+              icon: React.createElement(IconTools, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'What industries do you serve?',
+              answer: 'We specialize in B2B SaaS, IT services, manufacturing, logistics, healthcare, finance, and consulting apps.',
+              icon: React.createElement(IconBuilding, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you measure ASO success?',
+              answer: 'We track keyword rankings, app visibility, organic installs, reviews, and most importantly — enterprise lead conversions.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "B2B Apps Deserve Enterprise Visibility",
       headlineKeywords: [
-        "Aso Services for B2b Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "ASO for B2B SaaS Apps",
+        "Enterprise App Store Optimization",
+        "Lead-Generating B2B App Strategies",
+        "Global Visibility for B2B Apps",
+        "Boost Downloads & Conversions"
       ],
       brandLine: [
-        { text: "Aso Services for B2b Services", gradient: false }
+        { text: "🚀 Digi Aerotech helps B2B apps rank higher, attract enterprise clients, and convert installs into business deals.", gradient: false }
       ],
-      subheadline: "Specialized aso services strategies designed specifically for b2b services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "Your B2B app should be more than just live — it should be discoverable, credible, and optimized to generate real business leads.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Start My ASO Strategy", link: "/contact" },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), text: "Free ASO Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Decision-Maker Reach",
+          description: "Target CXOs & managers searching for B2B solutions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2b Services served"
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "Keyword Optimization",
+          description: "Rank for high-intent B2B search terms"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "Trust & Reviews",
+          description: "Build credibility with managed feedback systems"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconWorld, { size: 32 }),
+          title: "Global Visibility",
+          description: "Multi-language ASO for international B2B markets"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2b Services?', gradient: false }
+        { text: "Why B2B Companies Trust ", gradient: false },
+        { text: "Digi Aerotech for ASO", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2b services market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Lead-Driven ASO",
+          description: "Not just downloads — we optimize for quality B2B leads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2b services businesses.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "B2B Keyword Expertise",
+          description: "Deep research into enterprise-focused search terms."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBuilding, { size: 28 }),
+          title: "Cross-Industry Success",
+          description: "Proven ASO results in SaaS, IT, logistics, and consulting."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconWand, { size: 28 }),
+          title: "Conversion-Focused Listings",
+          description: "Optimized visuals, copy, and CTAs that convince buyers."
+        },
+        {
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Data-Backed Strategy",
+          description: "Tracking rankings, installs & ROI in transparent reports."
+        },
+        {
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Scalable Approach",
+          description: "Flexible plans to grow with your B2B app’s lifecycle."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Optimize My B2B App Now",
+        link: "#contact",
+        icon: React.createElement(IconRocket, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Aso Services for B2b Services',
-      subtitle: 'B2B SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for b2b services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for b2b services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for b2b services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2b services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Aso Services Process for B2b Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for b2b services businesses.',
+      title: 'Our B2B App Store Optimization Process',
+      subtitle: 'DISCOVER → OPTIMIZE → RANK → LEADS',
+      description: 'Our ASO process ensures your B2B app doesn’t just appear in stores — it attracts enterprise buyers and drives real opportunities.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2b services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific b2b services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with b2b services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2b services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Market Research', description: 'Analyze competitors & find B2B keyword gaps.' },
+        { id: 2, title: 'Profile Optimization', description: 'Titles, descriptions, screenshots & videos tuned for B2B buyers.' },
+        { id: 3, title: 'Review Strategy', description: 'Build credibility with review & rating systems.' },
+        { id: 4, title: 'Localization', description: 'Expand reach with international market targeting.' },
+        { id: 5, title: 'Analytics & Tracking', description: 'Monitor keyword ranking, downloads & lead flow.' },
+        { id: 6, title: 'Ongoing Optimization', description: 'Continuous updates to stay ahead of competition.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2B Apps Scaling ", gradient: false },
+        { text: "with Digi Aerotech ASO", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
-      description: 'Real results from b2b services businesses that achieved remarkable growth.',
+      description: 'Our ASO strategies have helped B2B SaaS apps, IT service providers & enterprise solutions gain visibility and convert installs into clients.',
       testimonials: [
         {
           id: '1',
-          message: 'The aso services services transformed our b2b services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Digi Aerotech took our SaaS app from invisible to ranking in the top 3 for our niche keywords. We now generate steady enterprise leads.',
+          highlight: 'Top 3 Rankings',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2b Services Company'
+          name: 'Arjun Mehta',
+          designation: 'Founder',
+          company: 'B2B SaaS Solutions'
         },
         {
           id: '2',
-          message: 'Outstanding aso services expertise specifically for b2b services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2b services',
+          message: 'Their ASO process not only boosted our downloads but also brought in actual qualified B2B clients. Incredible ROI!',
+          highlight: 'High-Value Leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2b Services Solutions'
+          name: 'Nidhi Kapoor',
+          designation: 'CEO',
+          company: 'Global Logistics Tech'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2b Services Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your b2b services business.'
+      title: 'Ready to Make Your B2B App Visible to Enterprise Buyers?',
+      subtitle: 'ASO That Drives Leads, Not Just Installs',
+      description: 'Partner with Digi Aerotech to rank higher, attract decision-makers, and convert installs into long-term B2B partnerships.',
     }
   }
 };

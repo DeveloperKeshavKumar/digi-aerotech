@@ -1,198 +1,259 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconUsers, IconChartBar, IconTarget, IconPhone, IconTrendingUp,
+  IconSearch, IconBriefcase, IconBrain, IconCheck, IconArrowRight,
+  IconBuilding, IconWorld, IconStar
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
-  service: 'leads-generation',
+  service: 'lead-generation',
   business: 'consultants',
   variants: {
     hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
-    testimonials: 'variant2'
+    whyChooseUs: 'variant2',
+    process: 'variant3',
+    testimonials: 'variant1'
   },
   data: {
-    slug: 'leads-generation',
+    slug: 'lead-generation-consultants',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Consultants ", gradient: false },
+            { text: "Struggle with Consistent Leads", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
+          ],
+          subheadline: "Most consultants have expertise but lack a predictable client acquisition system.",
+          painPoints: [
+            "Relying only on referrals and word-of-mouth",
+            "Unclear ideal client targeting",
+            "Low visibility on digital channels",
+            "Getting unqualified or irrelevant leads",
+            "Inconsistent pipeline & revenue fluctuations",
+            "No structured follow-up or nurturing process"
+          ],
+          solutionPoints: [
+            "Laser-focused lead generation campaigns tailored for consultants",
+            "Precise targeting by industry, role, and geography",
+            "Omni-channel strategies (LinkedIn, Google, Email, Ads)",
+            "Smart filtering for high-quality, relevant prospects",
+            "Consistent lead flow that fills your pipeline",
+            "Lead nurturing systems that convert inquiries into paying clients"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Start My Lead Generation Now"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is lead generation important for consultants?',
+              answer: 'Without a consistent flow of leads, consultants face unpredictable revenue. Lead generation ensures a stable pipeline of clients.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do you provide B2B or B2C leads?',
+              answer: 'We specialize in both — depending on whether you consult businesses (B2B) or individuals (B2C).',
+              icon: React.createElement(IconBriefcase, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you ensure leads are qualified?',
+              answer: 'Through targeted campaigns, filters, and intent-based marketing, ensuring you only get leads with high conversion potential.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can lead generation work for niche consultants?',
+              answer: 'Yes, whether you are a business consultant, career coach, financial advisor, or niche expert, campaigns are customized to your audience.',
+              icon: React.createElement(IconBrain, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How soon can I expect results?',
+              answer: 'Depending on the channel, you can start seeing leads within days from Google Ads/LinkedIn Ads, and steady growth via SEO/email nurturing.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you also help with lead nurturing?',
+              answer: 'Yes. We not only generate leads but also build systems for follow-ups, email drip campaigns, and conversions.',
+              icon: React.createElement(IconCheck, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
       initial: "Need ",
       headlineKeywords: [
-        "Leads Generation for Consultants?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Clients?",
+        "Predictable Leads?",
+        "High-Value Prospects?",
+        "Consistent Growth?",
+        "Lead Generation for Consultants?"
       ],
       brandLine: [
-        { text: "Leads Generation for Consultants", gradient: false }
+        { text: "💼 Fill Your Pipeline with High-Quality Leads, Not Just Random Inquiries.", gradient: false }
       ],
-      subheadline: "Specialized leads generation strategies designed specifically for consultants. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "At Digi Aerotech, we build customized lead generation systems for consultants that deliver consistent, high-value clients and ensure steady revenue growth.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Get Free Lead Gen Audit", link: "/contact" },
+        { icon: React.createElement(IconWorld, { size: 28 }), text: "Talk to Lead Expert", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "10,000+ Leads",
+          description: "Generated for consultants across industries"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Consultants served"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "70% Conversion",
+          description: "Leads turned into paying clients"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBuilding, { size: 32 }),
+          title: "25+ Niches",
+          description: "Business, career, coaching & more"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Proven Systems",
+          description: "That keep your pipeline full"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Leads Generation', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Consultants?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Choice for Consultant Lead Generation", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of consultants market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Laser Targeting",
+          description: "We reach your exact audience — decision-makers, professionals, or individuals who need your expertise."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for consultants businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Omni-Channel Approach",
+          description: "Google Ads, LinkedIn, SEO, email campaigns — all working together for results."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored leads generation strategies designed specifically for your business needs.'
+          icon: React.createElement(IconBriefcase, { size: 28 }),
+          title: "B2B & B2C Mastery",
+          description: "Whether you consult businesses or individuals, we design unique lead gen funnels."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconBrain, { size: 28 }),
+          title: "Quality Over Quantity",
+          description: "We focus on bringing you high-intent leads, not just random contact lists."
+        },
+        {
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "ROI-Driven Campaigns",
+          description: "Every rupee spent is optimized for maximum client acquisition and revenue growth."
+        },
+        {
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Proven Case Studies",
+          description: "We’ve successfully scaled independent consultants to 6- and 7-figure revenues."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Start My Lead Flow Now",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Leads Generation for Consultants',
-      subtitle: 'CONSULTANTS SPECIALIZED SERVICES',
-      description: 'Comprehensive leads generation solutions designed specifically for consultants businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom leads generation strategy development tailored for consultants market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of leads generation campaigns optimized for consultants audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for consultants businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Leads Generation Process for Consultants',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to leads generation that delivers measurable results for consultants businesses.',
+      title: 'Our Lead Generation System',
+      subtitle: 'CONSULTANT-SPECIFIC PIPELINE STRATEGY',
+      description: 'We build predictable systems that fill your calendar with qualified client calls.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your consultants business and market landscape.'
+          title: 'Discovery & ICP Setup',
+          description: 'Define your Ideal Client Profile (ICP) and unique value proposition.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom leads generation strategy tailored for your specific consultants goals.'
+          title: 'Channel Selection',
+          description: 'Pick the right channels — LinkedIn, Google Ads, SEO, Email — based on your consulting niche.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of leads generation campaigns with consultants focus.'
+          title: 'Campaign Development',
+          description: 'Craft ad copy, landing pages, and funnels that attract high-value clients.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on consultants market feedback.'
+          title: 'Lead Capture & Tracking',
+          description: 'Implement systems to capture inquiries via calls, forms, and emails.'
+        },
+        {
+          id: 5,
+          title: 'Lead Nurturing',
+          description: 'Automated email drips, follow-ups, and content to convert leads into clients.'
+        },
+        {
+          id: 6,
+          title: 'Optimization & Scaling',
+          description: 'Refine campaigns, improve CPL, and scale up once results are consistent.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Leads Generation Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for leads generation success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Leads Generation ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Consultants Who ", gradient: false },
+        { text: "Transformed with Our Lead Systems", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
-      description: 'Real results from consultants businesses that achieved remarkable growth.',
+      description: 'Here’s how Digi Aerotech helped consultants scale with predictable lead generation.',
       testimonials: [
         {
           id: '1',
-          message: 'The leads generation services transformed our consultants business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Before Digi Aerotech, my leads were irregular. Now I get 20+ qualified calls every month like clockwork.',
+          highlight: '20+ qualified calls',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Consultants Company'
+          name: 'Anita Verma',
+          designation: 'Career Consultant',
+          company: 'FuturePath Consulting'
         },
         {
           id: '2',
-          message: 'Outstanding leads generation expertise specifically for consultants. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for consultants',
+          message: 'Their system filled my pipeline with exactly the kind of business clients I wanted. Best decision for my consulting practice.',
+          highlight: 'pipeline with ideal clients',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Consultants Solutions'
+          name: 'Rohit Mehta',
+          designation: 'Business Strategy Consultant',
+          company: 'ScaleX Advisory'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Consultants Business?',
-      subtitle: 'START YOUR LEADS GENERATION JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our leads generation can drive growth for your consultants business.'
+      title: 'Want a Steady Flow of Clients Every Month?',
+      subtitle: 'LEAD GENERATION SERVICES FOR CONSULTANTS',
+      description: 'Book a free lead generation audit with Digi Aerotech and start building a predictable client acquisition system today.'
     }
   }
 };

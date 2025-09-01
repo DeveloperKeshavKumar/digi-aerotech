@@ -1,198 +1,229 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconDeviceDesktop, IconWorld, IconWand, IconCode, IconTools,
+  IconShieldCheck, IconCloud, IconChartBar, IconRefresh, IconRocket,
+  IconBug, IconUsers
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
-  service: 'website-maintenance',
-  business: 'b2c-services',
+  service: 'web-design-development-maintenance',
+  business: 'combined-services',
   variants: {
-    hero: 'variant1',
-    whyChooseUs: 'variant2',
-    process: 'variant3',
+    hero: 'variant2',
+    whyChooseUs: 'variant1',
+    process: 'variant2',
     testimonials: 'variant1'
   },
   data: {
-    slug: 'website-maintenance',
+    slug: 'web-design-development-maintenance',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Businesses Struggle ", gradient: false },
+            { text: "Without a Professional Website", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
+          ],
+          subheadline: "Your website is your digital storefront — but if it looks outdated, loads slowly, or isn’t maintained, you lose customers instantly.",
+          painPoints: [
+            "Outdated website design that doesn’t reflect brand identity",
+            "Slow, buggy websites that frustrate visitors",
+            "Mobile-unfriendly sites losing mobile customers",
+            "Security vulnerabilities leading to hacks & downtime",
+            "Broken links, outdated content & poor user experience",
+            "No ongoing maintenance leading to costly breakdowns"
+          ],
+          solutionPoints: [
+            "Modern, responsive & conversion-focused web design",
+            "Custom web development tailored to your business goals",
+            "Mobile-first design for seamless experience across devices",
+            "Secure hosting, backups & performance optimization",
+            "Content updates, bug fixes & technical support",
+            "Continuous monitoring, reporting & maintenance plans"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Build & Maintain My Website"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Do you provide both design and development?',
+              answer: 'Yes — we handle everything from UI/UX design to custom coding, ensuring a fully functional and attractive website.',
+              icon: React.createElement(IconWand, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'What is included in website maintenance?',
+              answer: 'Maintenance includes regular updates, bug fixes, backups, security patches, content updates, and performance monitoring.',
+              icon: React.createElement(IconTools, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you redesign my old website?',
+              answer: 'Absolutely — we specialize in website redesigns to modernize the look, improve usability, and boost conversions.',
+              icon: React.createElement(IconRefresh, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Will my website be SEO-friendly?',
+              answer: 'Yes — we integrate on-page SEO, fast load times, and mobile responsiveness to maximize visibility on Google.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'What industries do you serve?',
+              answer: 'We work with B2B, B2C, consultants, doctors, startups, restaurants, fashion brands, gyms, e-commerce, and more.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Your Website is Your Growth Engine",
       headlineKeywords: [
-        "Website Maintenance for B2c Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Web Design That Converts",
+        "Custom Web Development for Growth",
+        "Website Maintenance & Security",
+        "Mobile-First, SEO-Friendly Websites",
+        "Complete Digital Presence Solutions"
       ],
       brandLine: [
-        { text: "Website Maintenance for B2c Services", gradient: false }
+        { text: "🚀 Digi Aerotech designs, develops & maintains websites that drive traffic, leads & sales.", gradient: false }
       ],
-      subheadline: "Specialized website maintenance strategies designed specifically for b2c services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "From stunning design to secure coding and long-term maintenance, we build websites that don’t just look great — they perform, scale, and grow with your business.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Start My Website Project", link: "/contact" },
+        { icon: React.createElement(IconDeviceDesktop, { size: 28 }), text: "Free Website Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconWand, { size: 32 }),
+          title: "Creative Design",
+          description: "Modern, engaging UI/UX to attract customers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2c Services served"
+          icon: React.createElement(IconCode, { size: 32 }),
+          title: "Custom Development",
+          description: "Fast, scalable, and secure web apps & sites"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "24/7 Maintenance",
+          description: "Security, updates & performance monitoring"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconCloud, { size: 32 }),
+          title: "SEO & Mobile Ready",
+          description: "Optimized for speed, ranking & mobile devices"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Website Maintenance', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2c Services?', gradient: false }
+        { text: "Why Businesses Trust ", gradient: false },
+        { text: "Digi Aerotech for Websites", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2c services market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconWand, { size: 28 }),
+          title: "Custom Design",
+          description: "Unique, brand-focused layouts that impress & convert."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2c services businesses.'
+          icon: React.createElement(IconCode, { size: 28 }),
+          title: "Full-Stack Development",
+          description: "From landing pages to complex apps, we handle it all."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored website maintenance strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTools, { size: 28 }),
+          title: "Ongoing Maintenance",
+          description: "Regular updates, bug fixes & performance tuning."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconShieldCheck, { size: 28 }),
+          title: "Secure & Reliable",
+          description: "SSL, backups & proactive security monitoring."
+        },
+        {
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Growth-Focused",
+          description: "Built with SEO, conversions & scalability in mind."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "Cross-Industry Expertise",
+          description: "Experience across B2B, B2C, healthcare, education & retail."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get My Website Designed",
+        link: "#contact",
+        icon: React.createElement(IconDeviceDesktop, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Website Maintenance for B2c Services',
-      subtitle: 'B2C SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive website maintenance solutions designed specifically for b2c services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom website maintenance strategy development tailored for b2c services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of website maintenance campaigns optimized for b2c services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2c services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Website Maintenance Process for B2c Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to website maintenance that delivers measurable results for b2c services businesses.',
+      title: 'Our Web Design, Development & Maintenance Process',
+      subtitle: 'DESIGN → DEVELOP → LAUNCH → MAINTAIN',
+      description: 'We don’t just build websites. We create digital ecosystems that keep performing for years with consistent updates and support.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2c services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom website maintenance strategy tailored for your specific b2c services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of website maintenance campaigns with b2c services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2c services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Website Maintenance Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for website maintenance success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Discovery & Strategy', description: 'Understand business goals & plan website roadmap.' },
+        { id: 2, title: 'UI/UX Design', description: 'Craft user-centric designs with stunning visuals.' },
+        { id: 3, title: 'Custom Development', description: 'Code websites with speed, SEO & scalability in mind.' },
+        { id: 4, title: 'Testing & Launch', description: 'Quality checks, bug fixes & smooth deployment.' },
+        { id: 5, title: 'Ongoing Maintenance', description: 'Updates, security patches & performance optimization.' },
+        { id: 6, title: 'Support & Growth', description: 'Monitor, upgrade & scale with business growth.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Website Maintenance ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Businesses Growing ", gradient: false },
+        { text: "with Digi Aerotech Websites", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
       ],
-      description: 'Real results from b2c services businesses that achieved remarkable growth.',
+      description: 'From startups to enterprises, our websites are helping businesses grow leads, sales & trust online.',
       testimonials: [
         {
           id: '1',
-          message: 'The website maintenance services transformed our b2c services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Digi Aerotech redesigned our outdated site into a sleek, modern platform that doubled our online inquiries.',
+          highlight: '2X leads',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2c Services Company'
+          name: 'Rohit Sharma',
+          designation: 'Founder',
+          company: 'NextGen Consulting'
         },
         {
           id: '2',
-          message: 'Outstanding website maintenance expertise specifically for b2c services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2c services',
+          message: 'Their maintenance plans keep our e-commerce website fast, secure, and updated. Highly recommended!',
+          highlight: '99.9% uptime',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2c Services Solutions'
+          name: 'Priya Nair',
+          designation: 'Owner',
+          company: 'Urban Style Fashion'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2c Services Business?',
-      subtitle: 'START YOUR WEBSITE MAINTENANCE JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our website maintenance can drive growth for your b2c services business.'
+      title: 'Ready for a Website That Works 24/7?',
+      subtitle: 'DESIGN + DEVELOPMENT + MAINTENANCE = GROWTH',
+      description: 'Partner with Digi Aerotech to get a stunning, secure & scalable website that attracts customers and grows your business.',
     }
   }
 };

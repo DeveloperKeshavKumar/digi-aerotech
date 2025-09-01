@@ -1,198 +1,205 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconShoppingCart, IconBuilding, IconTrendingUp, IconRocket,
+  IconUsers, IconTarget, IconChartBar, IconWorld,
+  IconCreditCard, IconDeviceMobile, IconShieldCheck
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'ecommerce-marketing',
   business: 'b2b-services',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
-    process: 'variant2',
-    testimonials: 'variant3'
+    process: 'variant1',
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'ecommerce-marketing',
+    slug: 'ecommerce-marketing-b2b',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why B2B E-Commerce Companies ", gradient: false },
+            { text: "Struggle Without Marketing", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
+          ],
+          subheadline: "B2B buyers have moved online, but many service providers & suppliers struggle to attract enterprise clients to their platforms without a strategic e-commerce marketing plan.",
+          painPoints: [
+            "Low visibility in search results for B2B solutions",
+            "Lack of trust-building elements for corporate buyers",
+            "Complicated buyer journeys leading to drop-offs",
+            "Poor targeting in ads, wasting budgets on irrelevant clicks",
+            "Weak product/service positioning in crowded markets",
+            "No data-driven strategies to convert visitors into clients"
+          ],
+          solutionPoints: [
+            "Full-funnel B2B e-commerce marketing strategies",
+            "SEO & content marketing to attract enterprise buyers",
+            "Conversion optimization for smoother buyer journeys",
+            "Targeted ad campaigns (Google, Meta, LinkedIn)",
+            "Brand credibility via case studies & testimonials",
+            "Data-driven lead nurturing & remarketing systems"
+          ],
+          cta: {
+            icon: React.createElement(IconRocket, { size: 20 }),
+            text: "Boost My B2B E-Commerce"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do B2B companies need e-commerce marketing?',
+              answer: 'Today’s B2B buyers research and purchase online. E-commerce marketing ensures your brand is visible, credible, and trusted in the digital buying cycle.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Which B2B industries benefit most?',
+              answer: 'Manufacturing, wholesale, SaaS, IT, logistics, healthcare, professional consulting — any B2B business selling products or services online benefits.',
+              icon: React.createElement(IconBuilding, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Do you handle global campaigns?',
+              answer: 'Yes. We create e-commerce marketing strategies that target both local and international B2B buyers.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can you integrate with B2B platforms?',
+              answer: 'Absolutely. We optimize and market on platforms like Shopify B2B, Magento, BigCommerce, and custom ERP-linked systems.',
+              icon: React.createElement(IconDeviceMobile, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'How do you measure ROI?',
+              answer: 'We track lead generation, buyer engagement, order values, and repeat customer lifetime value, not just clicks.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Scale Your B2B E-Commerce to Global Heights",
       headlineKeywords: [
-        "Ecommerce Marketing for B2b Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "B2B E-Commerce Marketing",
+        "Enterprise Online Growth",
+        "Digital Buyer Acquisition",
+        "E-Commerce for B2B Services",
+        "Lead-Focused E-Commerce Strategies"
       ],
       brandLine: [
-        { text: "Ecommerce Marketing for B2b Services", gradient: false }
+        { text: "📈 Digi Aerotech helps B2B companies transform their e-commerce platforms into powerful lead generation & sales engines.", gradient: false }
       ],
-      subheadline: "Specialized ecommerce marketing strategies designed specifically for b2b services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "From SEO to paid ads to conversion optimization, we build strategies that bring enterprise buyers directly to your online store or platform.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Start My Campaign", link: "/contact" },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), text: "Free Audit", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "Enterprise Buyers",
+          description: "Target managers, CXOs & procurement heads"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2b Services served"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "Conversion Strategies",
+          description: "Optimize buyer journey for higher deal closures"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "Brand Trust",
+          description: "Case studies, testimonials & reviews that convert"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconCreditCard, { size: 32 }),
+          title: "Revenue Growth",
+          description: "Drive qualified leads into profitable orders"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Ecommerce Marketing', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2b Services?', gradient: false }
+        { text: "Why B2B Brands Choose ", gradient: false },
+        { text: "Digi Aerotech for E-Commerce Marketing", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
       trustPoints: [
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2b services market dynamics and customer behavior patterns.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2b services businesses.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored ecommerce marketing strategies designed specifically for your business needs.'
-        },
-        {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
-        }
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), title: "Lead-Focused", description: "We focus on enterprise lead generation, not vanity traffic." },
+        { icon: React.createElement(IconShoppingCart, { size: 28 }), title: "E-Commerce Specialists", description: "Deep expertise in B2B marketplaces & e-commerce funnels." },
+        { icon: React.createElement(IconBuilding, { size: 28 }), title: "Industry Coverage", description: "From SaaS to wholesale to IT services, we deliver results." },
+        { icon: React.createElement(IconTarget, { size: 28 }), title: "Precision Targeting", description: "Reach exactly the decision-makers who matter." },
+        { icon: React.createElement(IconChartBar, { size: 28 }), title: "ROI Transparency", description: "Full reporting on leads, orders, and ROI metrics." },
+        { icon: React.createElement(IconShieldCheck, { size: 28 }), title: "Scalable Solutions", description: "Campaigns that grow with your e-commerce business." }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost My B2B E-Commerce Now",
+        link: "#contact",
+        icon: React.createElement(IconRocket, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Ecommerce Marketing for B2b Services',
-      subtitle: 'B2B SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive ecommerce marketing solutions designed specifically for b2b services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom ecommerce marketing strategy development tailored for b2b services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of ecommerce marketing campaigns optimized for b2b services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2b services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Ecommerce Marketing Process for B2b Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to ecommerce marketing that delivers measurable results for b2b services businesses.',
+      title: 'Our B2B E-Commerce Marketing Process',
+      subtitle: 'ATTRACT → CONVERT → SCALE',
+      description: 'We create a structured process that ensures your B2B e-commerce platform isn’t just a catalog — it’s a lead generation & sales powerhouse.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2b services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom ecommerce marketing strategy tailored for your specific b2b services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of ecommerce marketing campaigns with b2b services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2b services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Ecommerce Marketing Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for ecommerce marketing success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Market Research', description: 'Analyze target industries & procurement trends.' },
+        { id: 2, title: 'Platform Optimization', description: 'Improve user experience & conversion flows.' },
+        { id: 3, title: 'SEO & Content', description: 'Attract decision-makers through organic visibility.' },
+        { id: 4, title: 'Paid Campaigns', description: 'Run high-targeted ads on Google, LinkedIn & Meta.' },
+        { id: 5, title: 'Lead Nurturing', description: 'Email, remarketing & automation to convert prospects.' },
+        { id: 6, title: 'Analytics & Scaling', description: 'Monitor performance & scale successful strategies.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Ecommerce Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2B Brands Growing Online ", gradient: false },
+        { text: "with Digi Aerotech", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
-      description: 'Real results from b2b services businesses that achieved remarkable growth.',
+      description: 'From manufacturing suppliers to SaaS firms, our e-commerce marketing has helped B2B brands attract more enterprise clients and close bigger deals.',
       testimonials: [
         {
           id: '1',
-          message: 'The ecommerce marketing services transformed our b2b services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our wholesale portal went from silent to generating steady enterprise leads after Digi Aerotech’s B2B e-commerce marketing strategy.',
+          highlight: '200% Lead Growth',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2b Services Company'
+          name: 'Ravi Sharma',
+          designation: 'Director',
+          company: 'Global Parts Wholesale'
         },
         {
           id: '2',
-          message: 'Outstanding ecommerce marketing expertise specifically for b2b services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2b services',
+          message: 'Their campaigns brought us real CXOs & procurement managers instead of random traffic. That’s exactly what we needed.',
+          highlight: 'High-Quality Leads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2b Services Solutions'
+          name: 'Ananya Verma',
+          designation: 'CEO',
+          company: 'B2B SaaS Hub'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2b Services Business?',
-      subtitle: 'START YOUR ECOMMERCE MARKETING JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our ecommerce marketing can drive growth for your b2b services business.'
+      title: 'Ready to Scale Your B2B E-Commerce?',
+      subtitle: 'Get Enterprise Buyers, Not Just Traffic',
+      description: 'Partner with Digi Aerotech to turn your e-commerce platform into a B2B growth engine with SEO, ads, and conversion strategies.',
     }
   }
 };

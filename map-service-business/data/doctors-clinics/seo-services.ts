@@ -1,198 +1,259 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconStethoscope, IconSearch, IconUsers, IconArrowRight,
+  IconTarget, IconTrendingUp, IconRocket, IconGlobe,
+  IconReportAnalytics, IconMapPin, IconBuildingHospital, IconStar
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'seo-services',
   business: 'doctors-clinics',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
-    process: 'variant2',
+    hero: 'variant1',
+    whyChooseUs: 'variant2',
+    process: 'variant1',
     testimonials: 'variant3'
   },
   data: {
-    slug: 'seo-services',
+    slug: 'seo-services-doctors-clinics',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "SEO for Doctors & Clinics – ", gradient: false },
+            { text: "Rank Higher, Book More Patients", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
+          ],
+          subheadline: "Patients search on Google before choosing a doctor. If you’re not ranking high, you’re losing patients to competitors.",
+          painPoints: [
+            "Clinic website stuck on page 3 or lower of Google",
+            "Patients only finding competitor clinics online",
+            "Low website traffic & few appointment bookings",
+            "No visibility for local searches like 'dentist near me'",
+            "Not ranking for treatment-specific keywords",
+            "Poor content & slow-loading websites hurting SEO"
+          ],
+          solutionPoints: [
+            "Local SEO to rank for 'near me' & city-specific searches",
+            "On-page SEO to optimize site speed, structure & content",
+            "Content marketing that builds patient trust & authority",
+            "Google My Business SEO for maps visibility",
+            "High-quality backlinks for domain authority",
+            "Monthly reporting to track keyword growth & patients"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Clinic SEO"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is SEO important for doctors?',
+              answer: 'Because 77% of patients search online before booking. Ranking higher means more patients discovering your clinic.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How long does SEO take for clinics?',
+              answer: 'Typically 3–6 months to see strong results, depending on competition and keywords.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Will SEO bring me more patients?',
+              answer: 'Yes. SEO ensures patients searching for your treatments find your clinic first, leading to more bookings.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you do local SEO?',
+              answer: 'Yes. We specialize in local SEO so your clinic shows up for “near me” searches and on Google Maps.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do I need SEO if I run ads?',
+              answer: 'Yes. Ads stop when budget ends, but SEO builds long-term organic visibility that keeps bringing patients.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Will you provide reports?',
+              answer: 'Yes. We provide detailed monthly reports on rankings, traffic, leads & ROI.',
+              icon: React.createElement(IconReportAnalytics, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "SEO Services for ",
       headlineKeywords: [
-        "Seo Services for Doctors Clinics?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Doctors",
+        "Clinics",
+        "Dentists",
+        "Specialists",
+        "Medical Centers"
       ],
       brandLine: [
-        { text: "Seo Services for Doctors Clinics", gradient: false }
+        { text: "📈 Rank Higher on Google & Get More Patients", gradient: false }
       ],
-      subheadline: "Specialized seo services strategies designed specifically for doctors clinics. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help doctors & clinics rank #1 on Google and dominate local searches with proven healthcare SEO strategies.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book SEO Audit", link: "/contact" },
+        { icon: React.createElement(IconTrendingUp, { size: 28 }), text: "Rank My Clinic", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconSearch, { size: 32 }),
+          title: "90% Patients",
+          description: "Trust Google when searching for doctors"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Doctors Clinics served"
+          icon: React.createElement(IconMapPin, { size: 32 }),
+          title: "Local Dominance",
+          description: "Appear for 'near me' & city keywords"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBuildingHospital, { size: 32 }),
+          title: "Clinic Visibility",
+          description: "Get found on Google Maps & directories"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Authority Boost",
+          description: "Build credibility with SEO content"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Seo Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Doctors Clinics?', gradient: false }
+        { text: "Why Choose Digi Aerotech for ", gradient: false },
+        { text: "Healthcare SEO?", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of doctors clinics market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Local SEO Experts",
+          description: "We make your clinic rank for 'near me' searches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for doctors clinics businesses.'
+          icon: React.createElement(IconGlobe, { size: 28 }),
+          title: "Healthcare Niche SEO",
+          description: "Custom strategies built for doctors & clinics."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored seo services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Keyword Dominance",
+          description: "Rank for treatments, symptoms & specialties."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconReportAnalytics, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Know exactly how your SEO investment performs."
+        },
+        {
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "ROI Driven",
+          description: "SEO campaigns focused on appointments, not clicks."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Long-Term Growth",
+          description: "Sustainable SEO that keeps patients coming."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Rank My Clinic Higher",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Seo Services for Doctors Clinics',
-      subtitle: 'DOCTORS CLINICS SPECIALIZED SERVICES',
-      description: 'Comprehensive seo services solutions designed specifically for doctors clinics businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom seo services strategy development tailored for doctors clinics market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of seo services campaigns optimized for doctors clinics audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for doctors clinics businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Seo Services Process for Doctors Clinics',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to seo services that delivers measurable results for doctors clinics businesses.',
+      title: 'Our SEO Process for Clinics',
+      subtitle: 'RANK • ATTRACT • BOOK',
+      description: 'We use a structured SEO framework designed exclusively for doctors and clinics.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your doctors clinics business and market landscape.'
+          title: 'SEO Audit',
+          description: 'Analyze current rankings, site performance & competitors.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom seo services strategy tailored for your specific doctors clinics goals.'
+          title: 'Keyword Research',
+          description: 'Identify treatment & local keywords patients search.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of seo services campaigns with doctors clinics focus.'
+          title: 'On-Page SEO',
+          description: 'Optimize content, site speed & structure for Google.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on doctors clinics market feedback.'
+          title: 'Local SEO & GMB',
+          description: 'Optimize Google Business Profile & Maps ranking.'
+        },
+        {
+          id: 5,
+          title: 'Content Marketing',
+          description: 'Blogs, articles & FAQs that build trust & authority.'
+        },
+        {
+          id: 6,
+          title: 'Backlinks & Reporting',
+          description: 'High-quality backlinks + transparent monthly reports.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Seo Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for seo services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Seo Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Clinics Who Grew with ", gradient: false },
+        { text: "SEO Services", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
       ],
-      description: 'Real results from doctors clinics businesses that achieved remarkable growth.',
+      description: 'See how SEO transformed visibility & patient acquisition.',
       testimonials: [
         {
           id: '1',
-          message: 'The seo services services transformed our doctors clinics business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'After Digi Aerotech’s SEO, we rank on page 1 for “dentist near me” and doubled our monthly patient bookings.',
+          highlight: '2X more patients',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Doctors Clinics Company'
+          name: 'Dr. Anjali Sharma',
+          designation: 'Dentist',
+          company: 'SmileCare Dental'
         },
         {
           id: '2',
-          message: 'Outstanding seo services expertise specifically for doctors clinics. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for doctors clinics',
+          message: 'We started showing up for cardiology searches in our city and saw a 55% rise in appointment requests.',
+          highlight: '+55% bookings',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Doctors Clinics Solutions'
+          name: 'Dr. Ravi Gupta',
+          designation: 'Cardiologist',
+          company: 'Heartwell Clinic'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Doctors Clinics Business?',
-      subtitle: 'START YOUR SEO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our seo services can drive growth for your doctors clinics business.'
+      title: 'Ready to Rank Your Clinic #1 on Google?',
+      subtitle: 'LOCAL SEO • ORGANIC TRAFFIC • MORE PATIENTS',
+      description: 'Book a free SEO audit with Digi Aerotech and discover how we can boost your clinic’s visibility and patient bookings.',
     }
   }
 };

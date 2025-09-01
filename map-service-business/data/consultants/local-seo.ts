@@ -1,198 +1,258 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconSearch, IconTarget, IconMapPin, IconTrendingUp, IconBuilding, 
+  IconWorld, IconUsers, IconChartBar, IconPhone, IconArrowRight, IconStar
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'local-seo',
   business: 'consultants',
   variants: {
-    hero: 'variant3',
-    whyChooseUs: 'variant1',
+    hero: 'variant2',
+    whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'local-seo',
+    slug: 'local-seo-consultants',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Consultants ", gradient: false },
+            { text: "Struggle with Local Visibility", gradient: true, gradientClass: "from-blue-500 via-green-500 to-teal-500" }
+          ],
+          subheadline: "Consultants often have expertise but remain invisible to potential clients searching locally.",
+          painPoints: [
+            "Not showing up on Google for local searches",
+            "Competitors appearing in the top 3-pack results",
+            "Weak or inconsistent online presence",
+            "Low credibility due to lack of reviews",
+            "Losing walk-in and local client leads",
+            "No strategy for Google Maps and geo-based visibility"
+          ],
+          solutionPoints: [
+            "Optimize your Google Business Profile for maximum exposure",
+            "Rank higher in the Google Local 3-Pack",
+            "Strong keyword-rich consultant website SEO",
+            "Reputation management with positive review strategies",
+            "Geo-targeted campaigns that bring nearby clients",
+            "Consistent visibility across Maps, directories, and local searches"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Local SEO Now"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why is local SEO important for consultants?',
+              answer: 'Because most clients search for consultants near them. Local SEO ensures you appear in those searches, driving more inquiries.',
+              icon: React.createElement(IconMapPin, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can local SEO work for niche consultants?',
+              answer: 'Yes. Whether you are a financial advisor, business consultant, or career coach, local SEO brings in targeted clients from your city or region.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How soon can I expect results?',
+              answer: 'Local SEO starts showing traction in 3-6 weeks with consistent optimization and improvements.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do reviews impact my local SEO ranking?',
+              answer: 'Yes. Positive reviews on Google significantly increase visibility and trust for consultants.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'What’s the difference between SEO and Local SEO?',
+              answer: 'SEO focuses on global/national ranking, while Local SEO ensures you dominate searches in your city or region where your clients are.',
+              icon: React.createElement(IconWorld, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you provide reporting?',
+              answer: 'Yes. We give transparent reports on search rankings, map visibility, and lead growth.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Want ",
       headlineKeywords: [
-        "Local Seo for Consultants?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "More Local Clients?",
+        "Top Google Rankings?",
+        "Local SEO Growth?",
+        "Visibility Near You?",
+        "Consultant SEO Services?"
       ],
       brandLine: [
-        { text: "Local Seo for Consultants", gradient: false }
+        { text: "📍 Appear Where Your Clients Search – Dominate Local SEO for Consultants", gradient: false }
       ],
-      subheadline: "Specialized local seo strategies designed specifically for consultants. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "Digi Aerotech helps consultants rank in Google’s Local 3-Pack, Maps, and search results – bringing more clients from your area directly to your business.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconPhone, { size: 28 }), text: "Get Free SEO Audit", link: "/contact" },
+        { icon: React.createElement(IconWorld, { size: 28 }), text: "Talk to SEO Expert", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconUsers, { size: 32 }),
+          title: "5000+ Local Leads",
+          description: "Generated for consultants across niches"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Consultants served"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "3X Visibility",
+          description: "Average increase in local search rankings"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconBuilding, { size: 32 }),
+          title: "30+ Cities",
+          description: "Consultants ranked locally across regions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Proven Success",
+          description: "With consultant SEO & local marketing"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Local Seo', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Consultants?', gradient: false }
+        { text: "Why Digi Aerotech is the ", gradient: false },
+        { text: "#1 Choice for Consultant Local SEO", gradient: true, gradientClass: "from-blue-500 via-green-500 to-teal-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of consultants market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Consultant-Specific SEO",
+          description: "We know exactly how consultants attract local clients online."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for consultants businesses.'
+          icon: React.createElement(IconMapPin, { size: 28 }),
+          title: "Google Maps Domination",
+          description: "Appear in the local 3-pack and map searches consistently."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored local seo strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Geo-Targeted Campaigns",
+          description: "We target searches in your area for maximum relevance."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconTrendingUp, { size: 28 }),
+          title: "Faster Local Growth",
+          description: "Our local SEO tactics drive visibility in weeks, not months."
+        },
+        {
+          icon: React.createElement(IconBuilding, { size: 28 }),
+          title: "Proven Consultant Case Studies",
+          description: "We’ve scaled consultants from invisible to authority in their regions."
+        },
+        {
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Transparent Reporting",
+          description: "Track your rankings, leads, and ROI with clarity."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Rank Me Higher Locally",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Local Seo for Consultants',
-      subtitle: 'CONSULTANTS SPECIALIZED SERVICES',
-      description: 'Comprehensive local seo solutions designed specifically for consultants businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom local seo strategy development tailored for consultants market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of local seo campaigns optimized for consultants audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for consultants businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Local Seo Process for Consultants',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to local seo that delivers measurable results for consultants businesses.',
+      title: 'Our Local SEO Process for Consultants',
+      subtitle: 'STEP-BY-STEP VISIBILITY GROWTH',
+      description: 'We design local SEO strategies that make your consulting practice visible and trusted.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your consultants business and market landscape.'
+          title: 'Local Audit',
+          description: 'Identify current rankings, issues, and competitor landscape.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom local seo strategy tailored for your specific consultants goals.'
+          title: 'GMB Optimization',
+          description: 'Optimize your Google Business Profile for maximum impact.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of local seo campaigns with consultants focus.'
+          title: 'On-Page SEO',
+          description: 'Optimize your website with local keywords and content.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on consultants market feedback.'
+          title: 'Review & Reputation',
+          description: 'Generate and manage reviews to build authority.'
+        },
+        {
+          id: 5,
+          title: 'Local Citations',
+          description: 'List and optimize profiles on directories and maps.'
+        },
+        {
+          id: 6,
+          title: 'Tracking & Scaling',
+          description: 'Monitor growth and expand to new nearby markets.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Local Seo Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for local seo success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Local Seo ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Consultants Who ", gradient: false },
+        { text: "Dominated Local Search with Us", gradient: true, gradientClass: "from-blue-500 via-green-500 to-teal-500" }
       ],
-      description: 'Real results from consultants businesses that achieved remarkable growth.',
+      description: 'See how Digi Aerotech helped consultants capture more local clients with SEO.',
       testimonials: [
         {
           id: '1',
-          message: 'The local seo services transformed our consultants business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'I wasn’t visible in my own city. After 2 months with Digi Aerotech, I now rank in the top 3 for my consulting services!',
+          highlight: 'Top 3 rankings in 2 months',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Consultants Company'
+          name: 'Ritika Sharma',
+          designation: 'Career Consultant',
+          company: 'NextStep Consulting'
         },
         {
           id: '2',
-          message: 'Outstanding local seo expertise specifically for consultants. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for consultants',
+          message: 'Local SEO brought me clients I didn’t even know were searching nearby. My calendar is now full every week!',
+          highlight: 'Consistent local clients',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Consultants Solutions'
+          name: 'Vivek Khanna',
+          designation: 'Business Consultant',
+          company: 'ScaleEdge Advisors'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Consultants Business?',
-      subtitle: 'START YOUR LOCAL SEO JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our local seo can drive growth for your consultants business.'
+      title: 'Want More Local Clients for Your Consulting Practice?',
+      subtitle: 'LOCAL SEO SERVICES FOR CONSULTANTS',
+      description: 'Book a free local SEO audit with Digi Aerotech and start dominating Google searches in your city.',
     }
   }
 };

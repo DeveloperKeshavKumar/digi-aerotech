@@ -1,8 +1,11 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconUsers, IconTarget, IconChartBar, IconSparkles, IconArrowRight,
+  IconShoppingCart, IconRocket, IconBrandFacebook, IconBrandInstagram, IconMessageCircle
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'meta-ads',
@@ -14,185 +17,212 @@ export const map: ServiceBusinessMap = {
     testimonials: 'variant1'
   },
   data: {
-    slug: 'meta-ads',
+    slug: 'meta-ads-b2c',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Why Most B2C Businesses Fail ", gradient: false },
+            { text: "with Facebook & Instagram Ads", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
+          ],
+          subheadline: "Running ads isn’t enough. Without the right targeting & creatives, you burn cash instead of getting customers.",
+          painPoints: [
+            "High ad spend but very few conversions",
+            "Irrelevant audience targeting",
+            "Generic creatives that don’t engage",
+            "No retargeting strategy for lost leads",
+            "Poor tracking & unclear ROI",
+            "Competitors winning with better ads"
+          ],
+          solutionPoints: [
+            "Laser-focused audience targeting",
+            "High-converting creative design",
+            "Retargeting campaigns to bring back lost leads",
+            "A/B testing for best-performing ads",
+            "Conversion tracking & ROI dashboards",
+            "End-to-end ad management by experts"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Run My Ads Profitably"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why should B2C businesses use Meta Ads?',
+              answer: 'Facebook & Instagram ads help salons, gyms, restaurants, and retailers reach local customers, increase walk-ins, and drive online sales quickly.',
+              icon: React.createElement(IconBrandFacebook, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'How do you target the right audience?',
+              answer: 'We use advanced targeting filters — interests, demographics, behavior, location — to reach only potential buyers and avoid wasted spend.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'Can you guarantee results?',
+              answer: 'We guarantee optimized campaigns with data-driven decisions. While no agency can guarantee exact sales, our proven framework consistently delivers higher ROI.',
+              icon: React.createElement(IconChartBar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'How much should I spend on Meta Ads?',
+              answer: 'It depends on your goals. Most B2C businesses see great results with ₹15k–₹50k monthly budgets. We maximize ROI no matter the spend.',
+              icon: React.createElement(IconShoppingCart, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Do you manage creatives too?',
+              answer: 'Yes, we design ad copies, visuals, and videos that resonate with your audience and convert them into paying customers.',
+              icon: React.createElement(IconSparkles, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Turn Likes into Sales. Turn Views into Walk-Ins.",
       headlineKeywords: [
-        "Meta Ads for B2c Services?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Meta Ads for B2C Businesses",
+        "Facebook Ads That Convert",
+        "Instagram Ads That Attract Customers",
+        "Boost Local Footfall & Online Sales",
+        "High-ROI Ad Campaigns"
       ],
       brandLine: [
-        { text: "Meta Ads for B2c Services", gradient: false }
+        { text: "🎯 Hyper-Targeted Ads for Salons, Gyms, Cafés, and More", gradient: false }
       ],
-      subheadline: "Specialized meta ads strategies designed specifically for b2c services. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "At Digi Aerotech, we design, run, and optimize Facebook & Instagram ads for B2C businesses. Whether you want walk-ins, bookings, or online sales, our Meta Ads strategies deliver real, measurable growth.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Run My Ads Now", link: "/contact" },
+        { icon: React.createElement(IconUsers, { size: 28 }), text: "Free Ad Strategy Call", link: "/audit", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTarget, { size: 32 }),
+          title: "Precise Targeting",
+          description: "Reach only buyers, not random scrollers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "B2c Services served"
+          icon: React.createElement(IconChartBar, { size: 32 }),
+          title: "Proven ROI",
+          description: "Data-driven campaigns with measurable growth"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconMessageCircle, { size: 32 }),
+          title: "Engaging Ads",
+          description: "Creatives that convert views into actions"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconShoppingCart, { size: 32 }),
+          title: "More Sales",
+          description: "Turn ads into walk-ins, bookings & purchases"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Meta Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for B2c Services?', gradient: false }
+        { text: "Why B2C Businesses Trust ", gradient: false },
+        { text: "Digi Aerotech for Meta Ads", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of b2c services market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBrandFacebook, { size: 28 }),
+          title: "Facebook Ads Experts",
+          description: "We craft ad strategies designed to maximize ROI for B2C niches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for b2c services businesses.'
+          icon: React.createElement(IconBrandInstagram, { size: 28 }),
+          title: "Instagram Growth",
+          description: "Visual-first creatives that drive engagement and conversions."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored meta ads strategies designed specifically for your business needs.'
+          icon: React.createElement(IconTarget, { size: 28 }),
+          title: "Advanced Audience Targeting",
+          description: "We identify your ideal customers and serve ads directly to them."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconSparkles, { size: 28 }),
+          title: "Creative Ad Design",
+          description: "Eye-catching graphics, videos, and copies that sell."
+        },
+        {
+          icon: React.createElement(IconChartBar, { size: 28 }),
+          title: "Conversion Tracking",
+          description: "We set up pixels & tracking to measure ROI accurately."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Proven B2C Success",
+          description: "Gyms, salons, cafés & retailers have scaled fast with us."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Boost My Ads Performance",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Meta Ads for B2c Services',
-      subtitle: 'B2C SERVICES SPECIALIZED SERVICES',
-      description: 'Comprehensive meta ads solutions designed specifically for b2c services businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom meta ads strategy development tailored for b2c services market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of meta ads campaigns optimized for b2c services audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for b2c services businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Meta Ads Process for B2c Services',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to meta ads that delivers measurable results for b2c services businesses.',
+      title: 'Our Meta Ads Process',
+      subtitle: 'FROM IMPRESSIONS TO CUSTOMERS',
+      description: 'We follow a proven framework that ensures every rupee spent on Meta Ads brings real results for your B2C business.',
       steps: [
-        {
-          id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your b2c services business and market landscape.'
-        },
-        {
-          id: 2,
-          title: 'Strategy Development',
-          description: 'Custom meta ads strategy tailored for your specific b2c services goals.'
-        },
-        {
-          id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of meta ads campaigns with b2c services focus.'
-        },
-        {
-          id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on b2c services market feedback.'
-        }
-      ]
-    },
-    techStack: {
-      title: 'Our Meta Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for meta ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
+        { id: 1, title: 'Business & Audience Research', description: 'Understand your business goals and define the right target audience.' },
+        { id: 2, title: 'Ad Strategy & Funnel Setup', description: 'Design full-funnel ad strategy (awareness → engagement → conversion).' },
+        { id: 3, title: 'Creative Development', description: 'Design high-impact visuals, videos & ad copies tailored to your audience.' },
+        { id: 4, title: 'Campaign Launch & Testing', description: 'Launch ads with A/B testing to identify best-performing creatives & audiences.' },
+        { id: 5, title: 'Retargeting & Optimization', description: 'Retarget warm leads & optimize ads for maximum ROI.' },
+        { id: 6, title: 'Reporting & Scaling', description: 'Track ROI, scale winning campaigns, and lower cost-per-lead.' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Meta Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "B2C Brands Growing ", gradient: false },
+        { text: "with Digi Aerotech Meta Ads", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
       ],
-      description: 'Real results from b2c services businesses that achieved remarkable growth.',
+      description: 'From salons to restaurants, Digi Aerotech has helped B2C businesses drive walk-ins, leads, and sales with high-ROI Meta Ads.',
       testimonials: [
         {
           id: '1',
-          message: 'The meta ads services transformed our b2c services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our gym membership signups doubled in 45 days after Digi Aerotech’s Instagram ads campaign. Their targeting is spot-on!',
+          highlight: '2x more signups',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2c Services Company'
+          name: 'Ritika Sharma',
+          designation: 'Manager',
+          company: 'FitLife Gym'
         },
         {
           id: '2',
-          message: 'Outstanding meta ads expertise specifically for b2c services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2c services',
+          message: 'We were struggling with low walk-ins. After their Facebook ads strategy, our salon gets 60% of new clients from ads alone.',
+          highlight: '60% new clients from ads',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2c Services Solutions'
+          name: 'Arjun Mehta',
+          designation: 'Owner',
+          company: 'Glow & Shine Salon'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your B2c Services Business?',
-      subtitle: 'START YOUR META ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our meta ads can drive growth for your b2c services business.'
+      title: 'Ready to Scale with Meta Ads?',
+      subtitle: 'B2C GROWTH → MORE CUSTOMERS → MORE SALES',
+      description: 'Digi Aerotech helps B2C businesses turn Facebook & Instagram ads into a consistent growth engine. Let’s create your next winning campaign.',
     }
   }
 };

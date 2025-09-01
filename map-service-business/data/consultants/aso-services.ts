@@ -1,198 +1,259 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconChartLine, IconBulb, IconTarget, IconRocket,
+  IconTrendingUp, IconSearch, IconStar, IconShieldCheck,
+  IconUsers, IconReportAnalytics, IconArrowRight, IconBuildingSkyscraper
+} from '@tabler/icons-react';
 
 export const map: ServiceBusinessMap = {
   service: 'aso-services',
   business: 'consultants',
   variants: {
-    hero: 'variant3',
+    hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
+    testimonials: 'variant2'
   },
   data: {
-    slug: 'aso-services',
+    slug: 'aso-services-for-consultants',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "ASO Services for ", gradient: false },
+            { text: "Consultants & Advisors", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
+          ],
+          subheadline: "Your consulting app deserves visibility. Without proper ASO, even the best app gets buried under competitors.",
+          painPoints: [
+            "Low app visibility in Google Play & App Store",
+            "Target audience cannot find the consulting app",
+            "Poor keyword optimization, weak rankings",
+            "Low installs and weak conversion rate",
+            "Bad reviews & poor ratings hurting credibility",
+            "No retention strategy after app install"
+          ],
+          solutionPoints: [
+            "Keyword-optimized titles, tags & descriptions",
+            "Category-specific ASO for consultants",
+            "Boosted app installs & engagement",
+            "Review & rating management strategy",
+            "Localized ASO to reach niche markets",
+            "Analytics-driven optimizations for long-term growth"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Boost My Consulting App"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why do consultants need ASO?',
+              answer: 'ASO helps your consulting app rank higher in app stores, making it easier for potential clients to discover and trust you.',
+              icon: React.createElement(IconSearch, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Can ASO increase my client base?',
+              answer: 'Yes. With the right keywords and reviews strategy, we ensure your app attracts the right audience — qualified leads for your consulting business.',
+              icon: React.createElement(IconTrendingUp, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'How do you improve app ratings?',
+              answer: 'We implement review management strategies, encourage positive feedback, and respond to negative reviews professionally.',
+              icon: React.createElement(IconStar, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Do you provide ASO for both iOS & Android?',
+              answer: 'Yes. We optimize apps for both App Store (iOS) and Google Play (Android) with tailored strategies.',
+              icon: React.createElement(IconBulb, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Is ASO a one-time or ongoing service?',
+              answer: 'ASO is ongoing. Algorithms, keywords, and competition change — we continuously optimize to keep your consulting app ahead.',
+              icon: React.createElement(IconReportAnalytics, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Can ASO help with retention?',
+              answer: 'Yes. Along with installs, we focus on engagement strategies so your clients keep using your consulting app.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "App Store Optimization for ",
       headlineKeywords: [
-        "Aso Services for Consultants?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Consultants",
+        "Advisors",
+        "Coaches",
+        "Legal Experts",
+        "Financial Consultants"
       ],
       brandLine: [
-        { text: "Aso Services for Consultants", gradient: false }
+        { text: "📈 Rank Higher, Get More Clients, Build Authority", gradient: false }
       ],
-      subheadline: "Specialized aso services strategies designed specifically for consultants. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We optimize your consulting app to rank higher, attract clients, and generate real business growth.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book Free ASO Audit", link: "/contact" },
+        { icon: React.createElement(IconTarget, { size: 28 }), text: "Boost My Consulting App", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconTrendingUp, { size: 32 }),
+          title: "65% Installs",
+          description: "Come from app store search results"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Consultants served"
+          icon: React.createElement(IconChartLine, { size: 32 }),
+          title: "3x More Clients",
+          description: "With optimized consulting apps"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(IconStar, { size: 32 }),
+          title: "Ratings Growth",
+          description: "Boost app credibility & installs"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconShieldCheck, { size: 32 }),
+          title: "Trusted Optimization",
+          description: "Secure & ethical ASO practices"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Aso Services', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Consultants?', gradient: false }
+        { text: "Why Choose Digi Aerotech for ", gradient: false },
+        { text: "Consultant ASO?", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of consultants market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconBuildingSkyscraper, { size: 28 }),
+          title: "Consulting Industry Focus",
+          description: "We understand the unique needs of consultants, advisors, and coaches."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for consultants businesses.'
+          icon: React.createElement(IconSearch, { size: 28 }),
+          title: "Keyword Research Experts",
+          description: "We target high-intent keywords that drive client downloads."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored aso services strategies designed specifically for your business needs.'
+          icon: React.createElement(IconStar, { size: 28 }),
+          title: "Review & Ratings Strategy",
+          description: "We build credibility through genuine client feedback."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconReportAnalytics, { size: 28 }),
+          title: "Data-Driven Execution",
+          description: "We track installs, engagement & optimize continuously."
+        },
+        {
+          icon: React.createElement(IconRocket, { size: 28 }),
+          title: "Full Growth Partner",
+          description: "Beyond ASO, we help with ads, branding & retention."
+        },
+        {
+          icon: React.createElement(IconUsers, { size: 28 }),
+          title: "More Clients, More Trust",
+          description: "ASO that brings real business for consultants."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Get My Consulting App Optimized",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Aso Services for Consultants',
-      subtitle: 'CONSULTANTS SPECIALIZED SERVICES',
-      description: 'Comprehensive aso services solutions designed specifically for consultants businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom aso services strategy development tailored for consultants market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of aso services campaigns optimized for consultants audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for consultants businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Aso Services Process for Consultants',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to aso services that delivers measurable results for consultants businesses.',
+      title: 'Our ASO Process for Consultants',
+      subtitle: 'VISIBILITY • INSTALLS • CLIENTS',
+      description: 'We follow a proven ASO strategy tailored for consulting apps.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your consultants business and market landscape.'
+          title: 'Consulting App Audit',
+          description: 'We analyze your current app visibility, keywords, ratings & installs.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom aso services strategy tailored for your specific consultants goals.'
+          title: 'Keyword Research',
+          description: 'Identify high-intent keywords for consulting niches.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of aso services campaigns with consultants focus.'
+          title: 'App Store Optimization',
+          description: 'Optimize title, description, visuals, and metadata.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on consultants market feedback.'
+          title: 'Ratings & Reviews',
+          description: 'Implement strategies to improve app ratings & credibility.'
+        },
+        {
+          id: 5,
+          title: 'Analytics & Reporting',
+          description: 'Track performance, installs, and engagement improvements.'
+        },
+        {
+          id: 6,
+          title: 'Retention Strategy',
+          description: 'Ensure clients keep using your consulting app.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Aso Services Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for aso services success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Aso Services ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Consultants Growing with ", gradient: false },
+        { text: "ASO Services", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
       ],
-      description: 'Real results from consultants businesses that achieved remarkable growth.',
+      description: 'See how consultants boosted app installs with Digi Aerotech.',
       testimonials: [
         {
           id: '1',
-          message: 'The aso services services transformed our consultants business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our consulting app was invisible before. Now we rank in top 5 for our niche keywords.',
+          highlight: 'Top Ranking in Niche',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Consultants Company'
+          name: 'Rohit Malhotra',
+          designation: 'Business Consultant',
+          company: 'Malhotra Advisory'
         },
         {
           id: '2',
-          message: 'Outstanding aso services expertise specifically for consultants. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for consultants',
+          message: 'Digi Aerotech helped us improve reviews and downloads. More clients are finding us now.',
+          highlight: 'More Clients from ASO',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Consultants Solutions'
+          name: 'Ananya Desai',
+          designation: 'Career Coach',
+          company: 'Desai Consulting'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Consultants Business?',
-      subtitle: 'START YOUR ASO SERVICES JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our aso services can drive growth for your consultants business.'
+      title: 'Want Your Consulting App to Rank Higher?',
+      subtitle: 'INCREASE VISIBILITY • BOOST DOWNLOADS • GET CLIENTS',
+      description: 'Book a free ASO audit with Digi Aerotech and see how we can grow your consulting business with better app visibility.',
     }
   }
 };

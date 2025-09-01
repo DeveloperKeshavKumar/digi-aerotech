@@ -1,198 +1,260 @@
 import React from 'react';
 import { ServiceBusinessMap } from '@/map-service-business/map-service-business.types';
-import { ServiceIcons } from '@/constants/service-icons';
-
-const { IconFreeRights, IconPhone, IconStarsFilled, IconRocket } = ServiceIcons;
+import { Struggles } from '@/components/homepage/struggles';
+import { FaqSection } from '@/components/services/faq-section';
+import {
+  IconStethoscope, IconVideo, IconUsers, IconArrowRight, IconTarget,
+  IconRefresh, IconRocket, IconPresentation, IconChartBar, IconBrandYoutube,
+  IconBrandLinkedin, IconBrain, IconMessageCircle, IconCloud
+} from '@tabler/icons-react';
+import { Monitor } from 'lucide-react';
 
 export const map: ServiceBusinessMap = {
   service: 'other-ads',
   business: 'doctors-clinics',
   variants: {
-    hero: 'variant2',
-    whyChooseUs: 'variant3',
-    process: 'variant1',
+    hero: 'variant3',
+    whyChooseUs: 'variant1',
+    process: 'variant2',
     testimonials: 'variant2'
   },
   data: {
-    slug: 'other-ads',
+    slug: 'other-ads-doctors-clinics',
     showSections: {
       hero: true,
       whyChooseUs: true,
-      typesOfServices: true,
       process: true,
-      techStack: true,
       testimonials: true,
       cta: true
     },
-    customSections: [],
+    customSections: [
+      {
+        component: Struggles,
+        position: 'beforeWhyChooseUs',
+        props: {
+          title: [
+            { text: "Beyond Google & Meta Ads – ", gradient: false },
+            { text: "Smarter Advertising for Clinics", gradient: true, gradientClass: "from-rose-500 via-pink-500 to-red-500" }
+          ],
+          subheadline: "Doctors and clinics lose potential patients by limiting ads only to Google & Meta. Advanced ad channels can build stronger trust, better reach, and more conversions.",
+          painPoints: [
+            "Patients ignoring generic ads due to ad fatigue",
+            "Not visible on professional networks like LinkedIn",
+            "No video presence to build trust & authority",
+            "Losing repeat patients due to lack of retargeting",
+            "Wasting budget on broad, irrelevant ads",
+            "No brand awareness beyond search or social"
+          ],
+          solutionPoints: [
+            "YouTube Ads for strong video storytelling & doctor branding",
+            "LinkedIn Ads to connect with B2B healthcare partners",
+            "Display Ads for building clinic recall everywhere",
+            "Retargeting Ads to re-engage interested patients",
+            "AI-driven targeting for precise audience reach",
+            "Omnichannel campaigns for consistent presence"
+          ],
+          cta: {
+            icon: React.createElement(IconArrowRight, { size: 20 }),
+            text: "Launch Smarter Ads Now"
+          }
+        }
+      },
+      {
+        component: FaqSection,
+        position: 'afterTestimonials',
+        props: {
+          faqs: [
+            {
+              id: 'faq-1',
+              question: 'Why should clinics run ads beyond Google & Meta?',
+              answer: 'Because patients and healthcare partners are also on LinkedIn, YouTube, and across the web. Other ads build stronger recall and trust.',
+              icon: React.createElement(IconTarget, { size: 22 })
+            },
+            {
+              id: 'faq-2',
+              question: 'Do YouTube Ads really work for doctors?',
+              answer: 'Yes! Patients trust doctors more after watching explainer videos, testimonials, or awareness campaigns.',
+              icon: React.createElement(IconBrandYoutube, { size: 22 })
+            },
+            {
+              id: 'faq-3',
+              question: 'What are retargeting ads for clinics?',
+              answer: 'Retargeting ads re-engage patients who visited your website/app but didn’t book an appointment.',
+              icon: React.createElement(IconRefresh, { size: 22 })
+            },
+            {
+              id: 'faq-4',
+              question: 'Can LinkedIn Ads help doctors?',
+              answer: 'Yes. Clinics, diagnostic centers, and B2B healthcare services can connect with corporate HR, insurers, and other professionals.',
+              icon: React.createElement(IconBrandLinkedin, { size: 22 })
+            },
+            {
+              id: 'faq-5',
+              question: 'Will it increase patient acquisition?',
+              answer: 'Yes. Multi-channel ads increase brand trust, visibility, and appointment bookings.',
+              icon: React.createElement(IconUsers, { size: 22 })
+            },
+            {
+              id: 'faq-6',
+              question: 'Do you manage ad creatives too?',
+              answer: 'Yes, we create engaging video ads, graphics, and storytelling campaigns that build trust with patients.',
+              icon: React.createElement(IconPresentation, { size: 22 })
+            }
+          ]
+        }
+      }
+    ],
     hero: {
-      initial: "Need ",
+      initial: "Expand Beyond ",
       headlineKeywords: [
-        "Other Ads for Doctors Clinics?",
-        "Better Results?",
-        "More Growth?",
-        "Success?",
-        "ROI?"
+        "Google & Meta Ads",
+        "Video Advertising",
+        "LinkedIn Campaigns",
+        "Retargeting Patients",
+        "Smarter Clinic Ads"
       ],
       brandLine: [
-        { text: "Other Ads for Doctors Clinics", gradient: false }
+        { text: "🎯 Reach Patients Everywhere with Smarter Ads", gradient: false }
       ],
-      subheadline: "Specialized other ads strategies designed specifically for doctors clinics. Drive growth and achieve measurable results with our targeted approach.",
+      subheadline: "We help doctors & clinics run LinkedIn, YouTube, Display & Retargeting Ads that build trust, awareness, and consistent patient flow.",
       ctaButtons: [
-        { icon: React.createElement(IconFreeRights, { size: 30 }), text: "Get Free Consultation", link: "/contact" },
-        { icon: React.createElement(IconPhone, { size: 30 }), text: "+91 86071 19872", link: "tel:+918607119872", variant: "secondary" }
+        { icon: React.createElement(IconRocket, { size: 28 }), text: "Book My Ads Strategy Call", link: "/contact" },
+        { icon: React.createElement(IconTarget, { size: 28 }), text: "Launch Smart Ads", link: "/contact", variant: "secondary" }
       ],
       stats: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "300%+ Growth",
-          description: "Average improvement"
+          icon: React.createElement(IconBrandYoutube, { size: 32 }),
+          title: "70% Trust Boost",
+          description: "Patients trust clinics more after seeing video ads"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "500+ Clients",
-          description: "Doctors Clinics served"
+          icon: React.createElement(IconBrandLinkedin, { size: 32 }),
+          title: "B2B Partnerships",
+          description: "LinkedIn ads connect you with healthcare decision makers"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "4.9/5 Rating",
-          description: "Client satisfaction"
+          icon: React.createElement(Monitor, { size: 32 }),
+          title: "Omnichannel Reach",
+          description: "Your clinic stays visible everywhere patients are"
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 34 }),
-          title: "24/7 Support",
-          description: "Always available"
+          icon: React.createElement(IconRefresh, { size: 32 }),
+          title: "Retention Growth",
+          description: "Retargeting keeps patients coming back"
         }
       ]
     },
     whyChooseUs: {
       title: [
-        { text: 'Why Choose Our ', gradient: false },
-        { text: 'Other Ads', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-        { text: ' for Doctors Clinics?', gradient: false }
+        { text: "Why Choose Digi Aerotech for ", gradient: false },
+        { text: "Advanced Ads in Healthcare", gradient: true, gradientClass: "from-rose-500 via-pink-500 to-red-500" }
       ],
       trustPoints: [
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Industry Expertise',
-          description: 'Deep understanding of doctors clinics market dynamics and customer behavior patterns.'
+          icon: React.createElement(IconVideo, { size: 28 }),
+          title: "Video Storytelling",
+          description: "Professional YouTube Ads to build trust & credibility."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Proven Results',
-          description: 'Track record of delivering measurable results for doctors clinics businesses.'
+          icon: React.createElement(IconBrandLinkedin, { size: 28 }),
+          title: "B2B Healthcare Ads",
+          description: "LinkedIn Ads for referrals, insurers & corporate health tie-ups."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Customized Approach',
-          description: 'Tailored other ads strategies designed specifically for your business needs.'
+          icon: React.createElement(Monitor, { size: 28 }),
+          title: "Display Ad Campaigns",
+          description: "Engage patients across news, apps, and healthcare portals."
         },
         {
-          icon: React.createElement(IconStarsFilled, { size: 24 }),
-          title: 'Ongoing Support',
-          description: 'Continuous optimization and support to ensure long-term success and growth.'
+          icon: React.createElement(IconRefresh, { size: 28 }),
+          title: "Smart Retargeting",
+          description: "Re-engage patients who showed interest but didn’t book."
+        },
+        {
+          icon: React.createElement(IconBrain, { size: 28 }),
+          title: "AI-Powered Targeting",
+          description: "Reach the right patients at the right time."
+        },
+        {
+          icon: React.createElement(IconCloud, { size: 28 }),
+          title: "Creative & Analytics",
+          description: "We handle creatives, tracking & ROI optimization."
         }
       ],
       cta: {
-        text: 'Get Started Today',
-        link: '#contact',
-        icon: React.createElement(IconRocket, { size: 24 })
+        text: "Run Smarter Ads for My Clinic",
+        link: "#contact",
+        icon: React.createElement(IconArrowRight, { size: 20 })
       }
     },
-    typesOfServices: {
-      title: 'Our Other Ads for Doctors Clinics',
-      subtitle: 'DOCTORS CLINICS SPECIALIZED SERVICES',
-      description: 'Comprehensive other ads solutions designed specifically for doctors clinics businesses.',
-      services: [
-        {
-          id: 1,
-          title: 'Strategy & Planning',
-          description: 'Custom other ads strategy development tailored for doctors clinics market requirements.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 2,
-          title: 'Implementation & Execution',
-          description: 'Expert implementation of other ads campaigns optimized for doctors clinics audience.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        },
-        {
-          id: 3,
-          title: 'Monitoring & Optimization',
-          description: 'Continuous monitoring and optimization to maximize ROI and performance for doctors clinics businesses.',
-          icon: React.createElement(IconStarsFilled, { size: 24 })
-        }
-      ]
-    },
     process: {
-      title: 'Our Other Ads Process for Doctors Clinics',
-      subtitle: 'PROVEN METHODOLOGY',
-      className: 'border-t border-border dark:border-gray-700',
-      description: 'A systematic approach to other ads that delivers measurable results for doctors clinics businesses.',
+      title: 'Our Smart Ads Process',
+      subtitle: 'YOUTUBE • LINKEDIN • DISPLAY • RETARGETING',
+      description: 'We combine advanced ad channels with healthcare expertise to drive more patients and stronger brand recall.',
       steps: [
         {
           id: 1,
-          title: 'Discovery & Analysis',
-          description: 'Comprehensive analysis of your doctors clinics business and market landscape.'
+          title: 'Discovery & Strategy',
+          description: 'Understand your clinic goals, patient base & ad budgets.'
         },
         {
           id: 2,
-          title: 'Strategy Development',
-          description: 'Custom other ads strategy tailored for your specific doctors clinics goals.'
+          title: 'Channel Selection',
+          description: 'Choose best mix of YouTube, LinkedIn, Display & Retargeting.'
         },
         {
           id: 3,
-          title: 'Implementation',
-          description: 'Expert execution of other ads campaigns with doctors clinics focus.'
+          title: 'Creative Development',
+          description: 'Design video, graphics & storytelling ads patients trust.'
         },
         {
           id: 4,
-          title: 'Optimization',
-          description: 'Continuous refinement and optimization based on doctors clinics market feedback.'
+          title: 'Targeting Setup',
+          description: 'AI-powered audience targeting for maximum reach.'
+        },
+        {
+          id: 5,
+          title: 'Campaign Launch',
+          description: 'Ads go live across multiple platforms.'
+        },
+        {
+          id: 6,
+          title: 'Optimization & Reporting',
+          description: 'Weekly optimizations & transparent performance reports.'
         }
-      ]
-    },
-    techStack: {
-      title: 'Our Other Ads Technology Stack',
-      subtitle: 'ADVANCED TOOLS & PLATFORMS',
-      description: 'Industry-leading tools and platforms for other ads success.',
-      categories: ['Analytics', 'Automation', 'Optimization', 'Reporting'],
-      technologies: [
-        { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
-        { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
       ]
     },
     testimonials: {
       title: [
-        { text: 'Other Ads ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
+        { text: "Clinics Who Grew with ", gradient: false },
+        { text: "Smarter Ads", gradient: true, gradientClass: "from-rose-500 via-pink-500 to-red-500" }
       ],
-      description: 'Real results from doctors clinics businesses that achieved remarkable growth.',
+      description: 'See how advanced ad campaigns transformed visibility & patient flow for clinics.',
       testimonials: [
         {
           id: '1',
-          message: 'The other ads services transformed our doctors clinics business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
+          message: 'Our YouTube ads positioned us as trusted experts and increased consultations by 40%.',
+          highlight: '40% more consultations',
           stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Doctors Clinics Company'
+          name: 'Dr. Neha Verma',
+          designation: 'Founder',
+          company: 'Wellness Plus Clinic'
         },
         {
           id: '2',
-          message: 'Outstanding other ads expertise specifically for doctors clinics. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for doctors clinics',
+          message: 'Retargeting ads helped us bring back patients who had dropped off earlier. ROI improved significantly.',
+          highlight: 'Better patient retention',
           stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Doctors Clinics Solutions'
+          name: 'Dr. Sameer Khan',
+          designation: 'MD',
+          company: 'Medicare Clinic'
         }
       ]
     },
     cta: {
-      title: 'Ready to Transform Your Doctors Clinics Business?',
-      subtitle: 'START YOUR OTHER ADS JOURNEY',
-      description: 'Contact us today for a comprehensive consultation and see how our other ads can drive growth for your doctors clinics business.'
+      title: 'Ready to Run Smarter Ads for Your Clinic?',
+      subtitle: 'EXPAND VISIBILITY • BUILD TRUST • ACQUIRE MORE PATIENTS',
+      description: 'Book a free ad strategy consultation with Digi Aerotech and unlock YouTube, LinkedIn, Display & Retargeting Ads for your clinic today.'
     }
   }
 };
