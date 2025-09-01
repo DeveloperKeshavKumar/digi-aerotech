@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { StatsSection } from "@/components/stats-section";
-import { IconFreeRights, IconPhone, IconReportAnalytics, IconSchool, IconStarsFilled, IconUsersGroup, IconTarget, IconBrain, IconUsers, IconHeartHandshake } from "@tabler/icons-react";
+import { IconFreeRights, IconPhone, IconReportAnalytics, IconSchool, IconStarsFilled, IconUsersGroup, IconTarget, IconBrain, IconUsers, IconHeartHandshake, IconBrandMeta, IconBrandFacebook, IconStars } from "@tabler/icons-react";
 import { Hero } from '@/components/homepage/hero';
 import { ContactForm } from "@/components/contact-form";
 import Image from 'next/image';
@@ -191,14 +191,14 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap gap-8 justify-center">
+          <div className="flex flex-col md:flex-row gap-8 justify-center">
             {team.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isTeamInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all border border-gray-200 dark:border-gray-800 w-1/4"
+                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all border border-gray-200 dark:border-gray-800 md:w-1/4"
               >
                 <div className="h-48 relative bg-gradient-to-br from-orange-100 to-pink-200 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
                   <IconUsers size={60} className="text-primary" />
@@ -215,36 +215,363 @@ export default function AboutPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-950">
-        <div className="max-w-6xl mx-auto text-center mb-15">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-3xl md:text-4xl max-w-max mx-auto font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-pink-500 to-red-600"
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-950 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="text-3xl md:text-4xl max-w-max mx-auto font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-pink-500 to-red-600"
+            >
+              Let's Work Together
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
+            >
+              Ready to take your business to the next level? Get in touch with our team today.
+            </motion.p>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="flex justify-evenly lg:gap-12 items-center">
+            {/* Left Side - Circular Motion Icons with Particles */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="relative h-96 flex items-center justify-center"
+            >
+              {/* Background Particles */}
+              {Array.from({ length: 50 }).map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 0.5,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+
+              {/* Rotating Background Circle */}
+              <motion.div
+                className="absolute w-72 h-72 rounded-full border border-gray-200 dark:border-gray-700 opacity-30"
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+
+              {/* Icons in Circular Motion */}
+              {[
+                { Icon: IconStars, angle: 60 },
+                { Icon: IconReportAnalytics, angle: 0 },
+                { Icon: IconUsersGroup, angle: 120 },
+                { Icon: IconPhone, angle: 180 },
+                { Icon: IconTarget, angle: 240 },
+                { Icon: IconBrandFacebook, angle: 300 }
+              ].map(({ Icon, angle }, index) => {
+                const radius = 120;
+                return (
+                  <motion.div
+                    key={index}
+                    className="absolute"
+                    style={{
+                      transformOrigin: "center",
+                    }}
+                    animate={{
+                      rotate: 360,
+                    }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear",
+                      delay: index * 0.5
+                    }}
+                  >
+                    <motion.div
+                      className="bg-white dark:bg-gray-900 p-3 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+                      style={{
+                        x: Math.cos((angle * Math.PI) / 180) * radius,
+                        y: Math.sin((angle * Math.PI) / 180) * radius,
+                      }}
+                      animate={{
+                        scale: [1, 1.1, 1],
+                        rotate: -360, // Counter-rotate to keep icon upright
+                      }}
+                      transition={{
+                        scale: {
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: index * 0.3
+                        },
+                        rotate: {
+                          duration: 20,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }
+                      }}
+                      whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
+                    >
+                      <Icon size={20} className="text-gradient-to-r from-orange-500 to-pink-500" style={{
+                        background: 'linear-gradient(45deg, #f97316, #ec4899)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
+                      }} />
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+
+              {/* Center Pulse Effect */}
+              <motion.div
+                className="w-16 h-16 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center relative z-10"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  boxShadow: [
+                    "0 0 0 0 rgba(249, 115, 22, 0.4)",
+                    "0 0 0 20px rgba(249, 115, 22, 0)",
+                    "0 0 0 0 rgba(249, 115, 22, 0)"
+                  ]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity
+                }}
+              >
+                <IconHeartHandshake size={32} className="text-white" />
+              </motion.div>
+
+            </motion.div>
+
+            {/* Center - Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="lg:col-span-1 z-10"
+            >
+              <ContactForm />
+            </motion.div>
+
+            {/* Right Side - Beautiful Floating Cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="relative h-96 flex items-center justify-center"
+            >
+              {/* Gradient Background Orbs */}
+              <motion.div
+                className="absolute w-32 h-32 bg-gradient-to-r from-orange-200 to-pink-200 dark:from-orange-900/30 dark:to-pink-900/30 rounded-full blur-xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                }}
+              />
+              <motion.div
+                className="absolute w-24 h-24 bg-gradient-to-r from-pink-200 to-red-200 dark:from-pink-900/30 dark:to-red-900/30 rounded-full blur-xl"
+                style={{ x: 60, y: -40 }}
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.4, 0.7, 0.4],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 1
+                }}
+              />
+              {/* Background Particles */}
+              {Array.from({ length: 8 }).map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 0.5,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+
+              {/* Floating Achievement Cards */}
+              {[
+                {
+                  icon: IconStarsFilled,
+                  number: "140+",
+                  label: "Happy Clients",
+                  color: "from-orange-500 to-red-500",
+                  delay: 0,
+                  x: -60,
+                  y: -80
+                },
+                {
+                  icon: IconTarget,
+                  number: "98%",
+                  label: "Success Rate",
+                  color: "from-red-500 to-pink-500",
+                  delay: 0.2,
+                  x: 70,
+                  y: -50
+                },
+                {
+                  icon: IconUsersGroup,
+                  number: "5+",
+                  label: "Years Exp",
+                  color: "from-red-500 to-pink-500",
+                  delay: 0.4,
+                  x: -50,
+                  y: 70
+                },
+                {
+                  icon: IconPhone,
+                  number: "24/7",
+                  label: "Support",
+                  color: "from-red-500 to-orange-500",
+                  delay: 0.6,
+                  x: 80,
+                  y: 80
+                }
+              ].map((card, index) => (
+                <motion.div
+                  key={index}
+                  className="absolute cursor-pointer"
+                  style={{ x: card.x, y: card.y }}
+                  initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: card.delay,
+                    type: "spring",
+                    bounce: 0.4
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 5,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <div
+                    className={`bg-gradient-to-br ${card.color} text-white p-4 rounded-2xl shadow-xl min-w-[100px] text-center backdrop-blur-sm border border-white/20`}
+                  >
+                    <card.icon size={20} className="mx-auto mb-2 text-white/90" />
+                    <div className="text-xl font-bold">{card.number}</div>
+                    <div className="text-xs opacity-90 font-medium">{card.label}</div>
+                  </div>
+                </motion.div>
+              ))}
+
+
+              {/* Central Animated Element */}
+              <motion.div
+                className="relative z-10"
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                <div className="w-16 h-16 bg-white dark:bg-gray-900 rounded-full shadow-lg border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center">
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      rotate: -360, // Counter rotate
+                    }}
+                    transition={{
+                      scale: {
+                        duration: 2,
+                        repeat: Infinity
+                      },
+                      rotate: {
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }
+                    }}
+                  >
+                    <IconUsers size={24} className="text-gray-600 dark:text-gray-400" />
+                  </motion.div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Bottom Fun Element */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
           >
-            Let's Work Together
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-5"
-          >
-            Ready to take your business to the next level? Get in touch with our team today.
-          </motion.p>
+            <motion.div
+              className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400"
+              animate={{
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity
+              }}
+            >
+              <motion.span
+                animate={{ rotate: [0, 15, -15, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                🚀
+              </motion.span>
+              <span>Ready to launch your digital success?</span>
+              <motion.span
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                ✨
+              </motion.span>
+            </motion.div>
+          </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="max-w-lg mx-auto"
-        >
-          <ContactForm />
-        </motion.div>
       </section>
     </main>
   );
