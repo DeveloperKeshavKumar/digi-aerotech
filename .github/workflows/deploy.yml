@@ -1,4 +1,4 @@
-name: Recommit as Owner for Vercel
+name: Create Deployment Commit for Vercel
 
 on:
   push:
@@ -9,9 +9,8 @@ permissions:
   contents: write
 
 jobs:
-  recommit:
+  deploy-commit:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -21,10 +20,13 @@ jobs:
 
       - name: Configure git as repo owner
         run: |
-          git config user.name "Keshav Kumar | <DeveloperKeshavKumar>"
+          git config user.name "Keshav Kumar"
           git config user.email "digiaerotech@gmail.com"
 
-      - name: Recommit latest changes as owner
+      - name: Create deployment commit
         run: |
-          git commit --amend --no-edit --reset-author || echo "No changes to amend"
-          git push origin HEAD:main --force
+          # Add a no-op change so a commit is created
+          echo "Deployment: $(date)" > .vercel-deploy
+          git add .vercel-deploy
+          git commit -m "chore: deployment commit for Vercel"
+          git push origin HEAD:main
