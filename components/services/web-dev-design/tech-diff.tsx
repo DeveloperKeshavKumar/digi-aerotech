@@ -1,3 +1,4 @@
+"use client"
 import React, { useMemo, useState } from 'react';
 import { motion, Reorder } from 'motion/react';
 import { GripVertical, Smartphone, Monitor } from 'lucide-react';

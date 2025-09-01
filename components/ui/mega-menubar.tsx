@@ -142,12 +142,16 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
             )}
         >
             {items.map((item, idx) => {
-                const isActive = pathname === item.link ||
-                    (item.dropdown?.some(subItem => pathname === subItem.link) ?? false) ||
+                // Check if any child items are active
+                const hasActiveChild = (item.dropdown?.some(subItem => pathname === subItem.link) ?? false) ||
                     (item.megaMenu?.categories.some(category =>
                         category.items.some(subItem => pathname === subItem.link)
                     ) ?? false);
+
+                // For items with dropdowns/megamenus, only consider them active if they have active children
+                // For items without dropdowns, consider them active if pathname matches their link
                 const hasDropdown = (item.dropdown && item.dropdown.length > 0) || item.megaMenu;
+                const isActive = hasDropdown ? hasActiveChild : pathname === item.link;
 
                 return (
                     <div key={`nav-item-${idx}`} className="relative mr-0">
@@ -167,7 +171,8 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
                                         className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
                                     />
                                 )}
-                                {isActive && (
+                                {/* Only show active background for dropdown items when they have active subitems */}
+                                {hasActiveChild && (
                                     <motion.div
                                         layoutId="active"
                                         className="absolute inset-0 h-full w-full rounded-full bg-gray-200 dark:bg-neutral-700"
@@ -193,6 +198,11 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
                                 )}
                             >
                                 <span className="relative z-20">{item.name}</span>
+                                {isActive && <motion.div
+                                    layoutId="active"
+                                    className="absolute inset-0 h-full w-full rounded-full bg-gray-200 dark:bg-neutral-700"
+                                    initial={false}
+                                />}
                             </Link>
                         )}
 

@@ -36,7 +36,7 @@ import * as b2cServiceswebDesignDevelopment from './data/b2c-services/web-design
 import * as b2cServiceswebsiteMaintenance from './data/b2c-services/website-maintenance';
 import * as consultantsasoServices from './data/consultants/aso-services';
 import * as consultants360DigitalMarketing from './data/consultants/360-digital-marketing';
-import * as consultantsecommerceMarketing from './data/consultants/ecommerce-marketing';
+// import * as consultantsecommerceMarketing from './data/consultants/ecommerce-marketing';
 import * as consultantsgmbServices from './data/consultants/gmb-services';
 import * as consultantsgoogleAds from './data/consultants/google-ads';
 import * as consultantsleadsGeneration from './data/consultants/leads-generation';
@@ -51,7 +51,7 @@ import * as consultantswebDesignDevelopment from './data/consultants/web-design-
 import * as consultantswebsiteMaintenance from './data/consultants/website-maintenance';
 import * as doctorsClinicsasoServices from './data/doctors-clinics/aso-services';
 import * as doctorsClinics360DigitalMarketing from './data/doctors-clinics/360-digital-marketing';
-import * as doctorsClinicsecommerceMarketing from './data/doctors-clinics/ecommerce-marketing';
+// import * as doctorsClinicsecommerceMarketing from './data/doctors-clinics/ecommerce-marketing';
 import * as doctorsClinicsgmbServices from './data/doctors-clinics/gmb-services';
 import * as doctorsClinicsgoogleAds from './data/doctors-clinics/google-ads';
 import * as doctorsClinicsleadsGeneration from './data/doctors-clinics/leads-generation';
@@ -66,7 +66,7 @@ import * as doctorsClinicswebDesignDevelopment from './data/doctors-clinics/web-
 import * as doctorsClinicswebsiteMaintenance from './data/doctors-clinics/website-maintenance';
 import * as eCommerceBrandsasoServices from './data/e-commerce-brands/aso-services';
 import * as eCommerceBrands360DigitalMarketing from './data/e-commerce-brands/360-digital-marketing';
-import * as eCommerceBrandsecommerceMarketing from './data/e-commerce-brands/ecommerce-marketing';
+// import * as eCommerceBrandsecommerceMarketing from './data/e-commerce-brands/ecommerce-marketing';
 import * as eCommerceBrandsgmbServices from './data/e-commerce-brands/gmb-services';
 import * as eCommerceBrandsgoogleAds from './data/e-commerce-brands/google-ads';
 import * as eCommerceBrandsleadsGeneration from './data/e-commerce-brands/leads-generation';
@@ -81,7 +81,7 @@ import * as eCommerceBrandswebDesignDevelopment from './data/e-commerce-brands/w
 import * as eCommerceBrandswebsiteMaintenance from './data/e-commerce-brands/website-maintenance';
 import * as educationalInstitutionsasoServices from './data/educational-institutions/aso-services';
 import * as educationalInstitutions360DigitalMarketing from './data/educational-institutions/360-digital-marketing';
-import * as educationalInstitutionsecommerceMarketing from './data/educational-institutions/ecommerce-marketing';
+// import * as educationalInstitutionsecommerceMarketing from './data/educational-institutions/ecommerce-marketing';
 import * as educationalInstitutionsgmbServices from './data/educational-institutions/gmb-services';
 import * as educationalInstitutionsgoogleAds from './data/educational-institutions/google-ads';
 import * as educationalInstitutionsleadsGeneration from './data/educational-institutions/leads-generation';
@@ -111,7 +111,7 @@ import * as fashionBrandswebDesignDevelopment from './data/fashion-brands/web-de
 import * as fashionBrandswebsiteMaintenance from './data/fashion-brands/website-maintenance';
 import * as gymsFitnessasoServices from './data/gyms-fitness/aso-services';
 import * as gymsFitness360DigitalMarketing from './data/gyms-fitness/360-digital-marketing';
-import * as gymsFitnessecommerceMarketing from './data/gyms-fitness/ecommerce-marketing';
+// import * as gymsFitnessecommerceMarketing from './data/gyms-fitness/ecommerce-marketing';
 import * as gymsFitnessgmbServices from './data/gyms-fitness/gmb-services';
 import * as gymsFitnessgoogleAds from './data/gyms-fitness/google-ads';
 import * as gymsFitnessleadsGeneration from './data/gyms-fitness/leads-generation';
@@ -126,12 +126,12 @@ import * as gymsFitnesswebDesignDevelopment from './data/gyms-fitness/web-design
 import * as gymsFitnesswebsiteMaintenance from './data/gyms-fitness/website-maintenance';
 import * as hotelResortsasoServices from './data/hotel-resorts/aso-services';
 import * as hotelResorts360DigitalMarketing from './data/hotel-resorts/360-digital-marketing';
-import * as hotelResortsecommerceMarketing from './data/hotel-resorts/ecommerce-marketing';
+// import * as hotelResortsecommerceMarketing from './data/hotel-resorts/ecommerce-marketing';
 import * as hotelResortsgmbServices from './data/hotel-resorts/gmb-services';
 import * as hotelResortsgoogleAds from './data/hotel-resorts/google-ads';
 import * as hotelResortsleadsGeneration from './data/hotel-resorts/leads-generation';
 import * as hotelResortslocalSeo from './data/hotel-resorts/local-seo';
-import * as hotelResortsmarketingAutomation from './data/hotel-resorts/marketing-automation';
+// import * as hotelResortsmarketingAutomation from './data/hotel-resorts/marketing-automation';
 import * as hotelResortsmetaAds from './data/hotel-resorts/meta-ads';
 import * as hotelResortsmobileAppsDevelopment from './data/hotel-resorts/mobile-apps-development';
 import * as hotelResortsotherAds from './data/hotel-resorts/other-ads';
@@ -141,7 +141,7 @@ import * as hotelResortswebDesignDevelopment from './data/hotel-resorts/web-desi
 import * as hotelResortswebsiteMaintenance from './data/hotel-resorts/website-maintenance';
 import * as interiorDesignersasoServices from './data/interior-designers/aso-services';
 import * as interiorDesigners360DigitalMarketing from './data/interior-designers/360-digital-marketing';
-import * as interiorDesignersecommerceMarketing from './data/interior-designers/ecommerce-marketing';
+// import * as interiorDesignersecommerceMarketing from './data/interior-designers/ecommerce-marketing';
 import * as interiorDesignersgmbServices from './data/interior-designers/gmb-services';
 import * as interiorDesignersgoogleAds from './data/interior-designers/google-ads';
 import * as interiorDesignersleadsGeneration from './data/interior-designers/leads-generation';
@@ -161,7 +161,7 @@ import * as localBusinessesgmbServices from './data/local-businesses/gmb-service
 import * as localBusinessesgoogleAds from './data/local-businesses/google-ads';
 import * as localBusinessesleadsGeneration from './data/local-businesses/leads-generation';
 import * as localBusinesseslocalSeo from './data/local-businesses/local-seo';
-import * as localBusinessesmarketingAutomation from './data/local-businesses/marketing-automation';
+// import * as localBusinessesmarketingAutomation from './data/local-businesses/marketing-automation';
 import * as localBusinessesmetaAds from './data/local-businesses/meta-ads';
 import * as localBusinessesmobileAppsDevelopment from './data/local-businesses/mobile-apps-development';
 import * as localBusinessesotherAds from './data/local-businesses/other-ads';
@@ -171,7 +171,7 @@ import * as localBusinesseswebDesignDevelopment from './data/local-businesses/we
 import * as localBusinesseswebsiteMaintenance from './data/local-businesses/website-maintenance';
 import * as pharmaCompaniesasoServices from './data/pharma-companies/aso-services';
 import * as pharmaCompanies360DigitalMarketing from './data/pharma-companies/360-digital-marketing';
-import * as pharmaCompaniesecommerceMarketing from './data/pharma-companies/ecommerce-marketing';
+// import * as pharmaCompaniesecommerceMarketing from './data/pharma-companies/ecommerce-marketing';
 import * as pharmaCompaniesgmbServices from './data/pharma-companies/gmb-services';
 import * as pharmaCompaniesgoogleAds from './data/pharma-companies/google-ads';
 import * as pharmaCompaniesleadsGeneration from './data/pharma-companies/leads-generation';
@@ -186,14 +186,14 @@ import * as pharmaCompanieswebDesignDevelopment from './data/pharma-companies/we
 import * as pharmaCompanieswebsiteMaintenance from './data/pharma-companies/website-maintenance';
 import * as realEstateasoServices from './data/real-estate/aso-services';
 import * as realEstate360DigitalMarketing from './data/real-estate/360-digital-marketing';
-import * as realEstateecommerceMarketing from './data/real-estate/ecommerce-marketing';
+// import * as realEstateecommerceMarketing from './data/real-estate/ecommerce-marketing';
 import * as realEstategmbServices from './data/real-estate/gmb-services';
 import * as realEstategoogleAds from './data/real-estate/google-ads';
 import * as realEstateleadsGeneration from './data/real-estate/leads-generation';
 import * as realEstatelocalSeo from './data/real-estate/local-seo';
 // import * as realEstatemarketingAutomation from './data/real-estate/marketing-automation';
 import * as realEstatemetaAds from './data/real-estate/meta-ads';
-import * as realEstatemobileAppsDevelopment from './data/real-estate/mobile-apps-development';
+// import * as realEstatemobileAppsDevelopment from './data/real-estate/mobile-apps-development';
 import * as realEstateotherAds from './data/real-estate/other-ads';
 import * as realEstateseoServices from './data/real-estate/seo-services';
 import * as realEstatesocialMediaMarketing from './data/real-estate/social-media-marketing';
@@ -278,7 +278,7 @@ const maps: ServiceBusinessMap[] = [
   b2cServiceswebsiteMaintenance.map,
   consultantsasoServices.map,
   consultants360DigitalMarketing.map,
-  consultantsecommerceMarketing.map,
+  // consultantsecommerceMarketing.map,
   consultantsgmbServices.map,
   consultantsgoogleAds.map,
   consultantsleadsGeneration.map,
@@ -293,7 +293,7 @@ const maps: ServiceBusinessMap[] = [
   consultantswebsiteMaintenance.map,
   doctorsClinicsasoServices.map,
   doctorsClinics360DigitalMarketing.map,
-  doctorsClinicsecommerceMarketing.map,
+  // doctorsClinicsecommerceMarketing.map,
   doctorsClinicsgmbServices.map,
   doctorsClinicsgoogleAds.map,
   doctorsClinicsleadsGeneration.map,
@@ -308,7 +308,7 @@ const maps: ServiceBusinessMap[] = [
   doctorsClinicswebsiteMaintenance.map,
   eCommerceBrandsasoServices.map,
   eCommerceBrands360DigitalMarketing.map,
-  eCommerceBrandsecommerceMarketing.map,
+  // eCommerceBrandsecommerceMarketing.map,
   eCommerceBrandsgmbServices.map,
   eCommerceBrandsgoogleAds.map,
   eCommerceBrandsleadsGeneration.map,
@@ -323,7 +323,7 @@ const maps: ServiceBusinessMap[] = [
   eCommerceBrandswebsiteMaintenance.map,
   educationalInstitutionsasoServices.map,
   educationalInstitutions360DigitalMarketing.map,
-  educationalInstitutionsecommerceMarketing.map,
+  // educationalInstitutionsecommerceMarketing.map,
   educationalInstitutionsgmbServices.map,
   educationalInstitutionsgoogleAds.map,
   educationalInstitutionsleadsGeneration.map,
@@ -353,7 +353,7 @@ const maps: ServiceBusinessMap[] = [
   fashionBrandswebsiteMaintenance.map,
   gymsFitnessasoServices.map,
   gymsFitness360DigitalMarketing.map,
-  gymsFitnessecommerceMarketing.map,
+  // gymsFitnessecommerceMarketing.map,
   gymsFitnessgmbServices.map,
   gymsFitnessgoogleAds.map,
   gymsFitnessleadsGeneration.map,
@@ -368,7 +368,7 @@ const maps: ServiceBusinessMap[] = [
   gymsFitnesswebsiteMaintenance.map,
   hotelResortsasoServices.map,
   hotelResorts360DigitalMarketing.map,
-  hotelResortsecommerceMarketing.map,
+  // hotelResortsecommerceMarketing.map,
   hotelResortsgmbServices.map,
   hotelResortsgoogleAds.map,
   hotelResortsleadsGeneration.map,
@@ -383,7 +383,7 @@ const maps: ServiceBusinessMap[] = [
   hotelResortswebsiteMaintenance.map,
   interiorDesignersasoServices.map,
   interiorDesigners360DigitalMarketing.map,
-  interiorDesignersecommerceMarketing.map,
+  // interiorDesignersecommerceMarketing.map,
   interiorDesignersgmbServices.map,
   interiorDesignersgoogleAds.map,
   interiorDesignersleadsGeneration.map,
@@ -413,7 +413,7 @@ const maps: ServiceBusinessMap[] = [
   localBusinesseswebsiteMaintenance.map,
   pharmaCompaniesasoServices.map,
   pharmaCompanies360DigitalMarketing.map,
-  pharmaCompaniesecommerceMarketing.map,
+  // pharmaCompaniesecommerceMarketing.map,
   pharmaCompaniesgmbServices.map,
   pharmaCompaniesgoogleAds.map,
   pharmaCompaniesleadsGeneration.map,
@@ -428,14 +428,14 @@ const maps: ServiceBusinessMap[] = [
   pharmaCompanieswebsiteMaintenance.map,
   realEstateasoServices.map,
   realEstate360DigitalMarketing.map,
-  realEstateecommerceMarketing.map,
+  // realEstateecommerceMarketing.map,
   realEstategmbServices.map,
   realEstategoogleAds.map,
   realEstateleadsGeneration.map,
   realEstatelocalSeo.map,
   // realEstatemarketingAutomation.map,
   realEstatemetaAds.map,
-  realEstatemobileAppsDevelopment.map,
+  // realEstatemobileAppsDevelopment.map,
   realEstateotherAds.map,
   realEstateseoServices.map,
   realEstatesocialMediaMarketing.map,
