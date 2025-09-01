@@ -20,7 +20,7 @@ jobs:
 
       - name: Configure git as repo owner
         run: |
-          git config user.name "Keshav Kumar"
+          git config user.name "Keshav Kumar | <DeveloperKeshavKumar>"
           git config user.email "digiaerotech@gmail.com"
 
       - name: Create deployment commit
