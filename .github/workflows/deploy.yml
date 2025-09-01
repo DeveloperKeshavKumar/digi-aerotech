@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   recommit:
     runs-on: ubuntu-latest
@@ -14,13 +17,14 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure git as repo owner
         run: |
-          git config user.name "Keshav Kumar"
+          git config user.name "Keshav Kumar | <DeveloperKeshavKumar>"
           git config user.email "digiaerotech@gmail.com"
 
       - name: Recommit latest changes as owner
         run: |
-          git commit --amend --no-edit --reset-author
+          git commit --amend --no-edit --reset-author || echo "No changes to amend"
           git push origin HEAD:main --force
