@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/mega-menubar";
 import { ModeToggle } from "../ui/toggle";
 import { cn } from "@/lib/utils";
-import { IconSearch } from "@tabler/icons-react";
+import { IconSearch, IconSmartHome } from "@tabler/icons-react";
 import { useScroll, useMotionValueEvent } from "motion/react";
 
 export default function MegaMenuExample() {
@@ -184,7 +184,7 @@ export default function MegaMenuExample() {
                         aria-label="Search"
                         title="Search"
                     >
-                        <IconSearch />
+                        <IconSmartHome />
                     </NavbarButton>
                 </div>
             </NavBody>
@@ -222,7 +222,7 @@ export default function MegaMenuExample() {
                             aria-label="Search"
                         >
                             <div className="flex items-center justify-center gap-x-2.5">
-                                <IconSearch /> Search Now
+                                <IconSmartHome /> Go to Home
                             </div>
                         </NavbarButton>
                     </div>

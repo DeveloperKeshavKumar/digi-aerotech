@@ -132,9 +132,14 @@ export default function AboutPage() {
               className="relative h-[400px] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-pink-200 dark:from-gray-800 dark:to-gray-700 shadow-xl flex items-center justify-center"
             >
               <div className="text-center p-8">
-                <IconUsersGroup size={80} className="mx-auto text-primary mb-4" />
+                {/* <IconUsersGroup size={80} className="mx-auto text-primary mb-4" />
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Our Journey</h3>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">From small beginnings to industry leaders</p>
+                <p className="text-gray-600 dark:text-gray-300 mt-2">From small beginnings to industry leaders</p> */}
+                <Image
+                className='object-cover'
+                  src={'/our-office.jpg'}
+                  alt='our-office'
+                  fill />
               </div>
             </motion.div>
           </div>

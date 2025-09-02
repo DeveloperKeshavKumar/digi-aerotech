@@ -76,105 +76,105 @@ export const b2cServices: BusinessData = {
         title: 'Complete B2C Services Marketing',
         description: 'Integrated omnichannel marketing campaigns combining customer journey mapping, emotional branding, social proof strategies, and customer retention programs to maximize B2C service visibility and customer acquisition.',
         icon: React.createElement(IconPlanet, { size: 30 }),
-        link: '/services/360-digital-marketing'
+        link: '/360-digital-marketing'
       },
       {
         id: 'meta-ads',
         title: 'Facebook & Instagram B2C Advertising',
         description: 'Targeted Meta advertising campaigns focusing on consumer demographics, lifestyle interests, and local service needs with emotional storytelling that drives service bookings and customer engagement.',
         icon: React.createElement(IconBrandMeta, { size: 30 }),
-        link: '/services/meta-ads'
+        link: '/meta-ads'
       },
       {
         id: 'google-ads',
         title: 'Google Ads for Consumer Services',
         description: 'Strategic PPC campaigns targeting high-intent consumer searches like "home cleaning services", "beauty salon near me", and lifestyle service keywords that connect with customers ready to book.',
         icon: React.createElement(IconBrandGoogle, { size: 30 }),
-        link: '/services/google-ads'
+        link: '/google-ads'
       },
       {
         id: 'other-ads',
         title: 'YouTube & Display B2C Advertising',
         description: 'Engaging video content and display advertising showcasing service benefits, customer testimonials, and lifestyle improvements to build consumer trust and drive service inquiries.',
         icon: React.createElement(IconBrandYoutube, { size: 30 }),
-        link: '/services/other-ads'
+        link: '/other-ads'
       },
       {
         id: 'local-seo',
         title: 'Local B2C Services SEO',
         description: 'Dominate local consumer searches like "services near me", "[service type] in [city]", and neighborhood-specific keywords to attract customers in your service area.',
         icon: React.createElement(IconMapSearch, { size: 30 }),
-        link: '/services/local-seo'
+        link: '/local-seo'
       },
       {
         id: 'ecommerce-marketing',
         title: 'B2C Service Booking Optimization',
         description: 'Conversion-optimized booking systems, service package sales, subscription models, and customer retention strategies that maximize customer lifetime value and repeat bookings.',
         icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/services/ecommerce-marketing'
+        link: '/ecommerce-marketing'
       },
       {
         id: 'web-design-development',
         title: 'B2C Services Website Development',
         description: 'Customer-friendly websites with service showcases, online booking systems, customer testimonials, before/after galleries, and trust-building elements that convert visitors into customers.',
         icon: React.createElement(IconCode, { size: 30 }),
-        link: '/services/web-design-development'
+        link: '/web-design-development'
       },
       {
         id: 'social-media-marketing',
         title: 'B2C Social Media Marketing',
         description: 'Strategic social media management across Facebook, Instagram, and TikTok with customer-focused content, service demonstrations, and community building that drives customer engagement.',
         icon: React.createElement(IconBrandInstagram, { size: 30 }),
-        link: '/services/social-media-marketing'
+        link: '/social-media-marketing'
       },
       {
         id: 'seo-services',
         title: 'Consumer Services SEO',
         description: 'Comprehensive SEO for B2C services targeting customer-focused keywords, service-related searches, and local market terms to increase visibility among potential customers.',
         icon: React.createElement(IconSeo, { size: 30 }),
-        link: '/services/seo-services'
+        link: '/seo-services'
       },
       {
         id: 'gmb-services',
         title: 'Google Business Profile for B2C Services',
         description: 'Optimized Google My Business profiles with service photos, customer reviews, booking capabilities, and regular updates to dominate local consumer service searches.',
         icon: React.createElement(IconMapPin, { size: 30 }),
-        link: '/services/gmb-services'
+        link: '/gmb-services'
       },
       {
         id: 'aso-services',
         title: 'B2C Service App Optimization',
         description: 'Improve visibility for consumer service apps in app stores by optimizing for "home services", "beauty services", and "lifestyle apps" searches that customers use.',
         icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-        link: '/services/aso-services'
+        link: '/aso-services'
       },
       {
         id: 'mobile-apps-development',
         title: 'Custom B2C Service Mobile Apps',
         description: 'User-friendly mobile applications with service booking, customer profiles, loyalty programs, push notifications, and seamless payment systems for enhanced customer experience.',
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
-        link: '/services/mobile-apps-development'
+        link: '/mobile-apps-development'
       },
       {
         id: 'website-maintenance',
         title: 'B2C Services Website Maintenance',
         description: 'Ongoing website support including service updates, customer testimonial management, seasonal promotions, and performance optimization for consumer service websites.',
         icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/services/website-maintenance'
+        link: '/website-maintenance'
       },
       {
         id: 'leads-generation',
         title: 'B2C Customer Acquisition',
         description: 'Multi-channel lead generation using customer referral programs, promotional offers, service trials, and conversion-optimized campaigns that attract quality consumers.',
         icon: React.createElement(IconUsers, { size: 30 }),
-        link: '/services/leads-generation'
+        link: '/leads-generation'
       },
       {
         id: 'marketing-automation',
         title: 'B2C Marketing Automation',
         description: 'Automated email and SMS campaigns for appointment reminders, follow-up services, customer feedback collection, loyalty rewards, and personalized service recommendations.',
         icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/services/marketing-automation'
+        link: '/marketing-automation'
       }
     ]
   },

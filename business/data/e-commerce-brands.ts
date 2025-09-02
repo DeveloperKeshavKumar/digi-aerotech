@@ -76,105 +76,105 @@ export const ecommerceBrands: BusinessData = {
         title: 'Complete E-commerce Digital Marketing',
         description: 'Integrated omnichannel marketing campaigns combining performance advertising, conversion optimization, customer lifecycle management, and brand building to maximize e-commerce revenue and profitability.',
         icon: React.createElement(IconPlanet, { size: 30 }),
-        link: '/services/360-digital-marketing'
+        link: '/360-digital-marketing'
       },
       {
         id: 'meta-ads',
         title: 'Facebook & Instagram E-commerce Advertising',
         description: 'High-converting Meta advertising campaigns featuring product catalogs, dynamic retargeting, lookalike audiences, and social commerce integration that drive sales and build brand awareness.',
         icon: React.createElement(IconBrandMeta, { size: 30 }),
-        link: '/services/meta-ads'
+        link: '/meta-ads'
       },
       {
         id: 'google-ads',
         title: 'Google Ads for E-commerce',
         description: 'Strategic PPC campaigns including Shopping Ads, Search Ads, and Performance Max campaigns targeting high-intent buyers and product searches that maximize ROAS and drive qualified traffic.',
         icon: React.createElement(IconBrandGoogle, { size: 30 }),
-        link: '/services/google-ads'
+        link: '/google-ads'
       },
       {
         id: 'other-ads',
         title: 'YouTube & Performance Display Advertising',
         description: 'Video commerce advertising on YouTube and programmatic display campaigns showcasing products, unboxing videos, and brand stories that drive awareness and conversions.',
         icon: React.createElement(IconBrandYoutube, { size: 30 }),
-        link: '/services/other-ads'
+        link: '/other-ads'
       },
       {
         id: 'local-seo',
         title: 'E-commerce Local SEO',
         description: 'Optimize for location-based product searches, "near me" shopping queries, and local marketplace visibility to capture customers looking for products in their area.',
         icon: React.createElement(IconMapSearch, { size: 30 }),
-        link: '/services/local-seo'
+        link: '/local-seo'
       },
       {
         id: 'ecommerce-marketing',
         title: 'Advanced E-commerce Optimization',
         description: 'Comprehensive conversion rate optimization, checkout funnel improvements, abandoned cart recovery, upselling strategies, and customer lifetime value maximization for online stores.',
         icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/services/ecommerce-marketing'
+        link: '/ecommerce-marketing'
       },
       {
         id: 'web-design-development',
         title: 'E-commerce Website Development',
         description: 'High-converting e-commerce websites with mobile optimization, fast loading speeds, secure payment gateways, product showcases, and seamless shopping experiences that drive sales.',
         icon: React.createElement(IconCode, { size: 30 }),
-        link: '/services/web-design-development'
+        link: '/web-design-development'
       },
       {
         id: 'social-media-marketing',
         title: 'E-commerce Social Media Marketing',
         description: 'Strategic social commerce across Instagram, Facebook, TikTok, and Pinterest with product showcases, user-generated content, influencer partnerships, and community building.',
         icon: React.createElement(IconBrandInstagram, { size: 30 }),
-        link: '/services/social-media-marketing'
+        link: '/social-media-marketing'
       },
       {
         id: 'seo-services',
         title: 'E-commerce SEO Services',
         description: 'Comprehensive SEO for online stores targeting product keywords, category pages, brand terms, and commercial searches to increase organic traffic and sales.',
         icon: React.createElement(IconSeo, { size: 30 }),
-        link: '/services/seo-services'
+        link: '/seo-services'
       },
       {
         id: 'gmb-services',
         title: 'Google Business Profile for E-commerce',
         description: 'Optimized Google My Business profiles for e-commerce brands with product photos, customer reviews, business information, and local shopping integration.',
         icon: React.createElement(IconMapPin, { size: 30 }),
-        link: '/services/gmb-services'
+        link: '/gmb-services'
       },
       {
         id: 'aso-services',
         title: 'E-commerce App Store Optimization',
         description: 'Improve visibility for e-commerce mobile apps in app stores by optimizing for "online shopping", "product finder", and brand-specific searches that drive app downloads.',
         icon: React.createElement(IconBrandGooglePlay, { size: 30 }),
-        link: '/services/aso-services'
+        link: '/aso-services'
       },
       {
         id: 'mobile-apps-development',
         title: 'Custom E-commerce Mobile Apps',
         description: 'Feature-rich shopping apps with personalized recommendations, push notifications, loyalty programs, one-click checkout, and seamless mobile commerce experience.',
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
-        link: '/services/mobile-apps-development'
+        link: '/mobile-apps-development'
       },
       {
         id: 'website-maintenance',
         title: 'E-commerce Website Maintenance',
         description: 'Ongoing e-commerce support including product updates, inventory management, security patches, performance optimization, and seasonal campaign implementation.',
         icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/services/website-maintenance'
+        link: '/website-maintenance'
       },
       {
         id: 'leads-generation',
         title: 'E-commerce Customer Acquisition',
         description: 'Multi-channel lead generation using email capture, product recommendations, exclusive offers, and conversion-optimized campaigns that attract high-value customers.',
         icon: React.createElement(IconUsers, { size: 30 }),
-        link: '/services/leads-generation'
+        link: '/leads-generation'
       },
       {
         id: 'marketing-automation',
         title: 'E-commerce Marketing Automation',
         description: 'Automated email marketing, abandoned cart recovery, customer segmentation, personalized product recommendations, and lifecycle marketing campaigns for maximum revenue.',
         icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/services/marketing-automation'
+        link: '/marketing-automation'
       }
     ]
   },

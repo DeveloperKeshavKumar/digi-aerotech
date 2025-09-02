@@ -58,7 +58,7 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, text, href }) => (
 );
 
 const SocialIcon: React.FC<{ href: string; icon: React.ReactNode; label: string }> = ({ href, icon, label }) => (
-    <Link href={href} aria-label={label}>
+    <Link href={href} aria-label={label} target="_blank" rel="noopener noreferrer">
         <motion.div
             className="p-2 sm:p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             whileHover={{
