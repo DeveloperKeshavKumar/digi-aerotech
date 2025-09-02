@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'google-ads-travel-tourism',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Landing Page Optimization', description: 'Design conversion-focused booking pages with strong CTAs.' },
         { id: 5, title: 'Performance Tracking & Scaling', description: 'Monitor conversions, optimize budgets, and scale winning ads.' },
         { id: 6, title: 'Seasonal Campaigns & Retargeting', description: 'Re-engage travelers with remarketing and seasonal offers.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands That ", gradient: false },
-        { text: "Scaled with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel agencies and tourism operators grow bookings through targeted Google Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Google Ads bookings tripled in just 2 months thanks to Digi Aerotech’s smart targeting and seasonal strategy.',
-          highlight: 'bookings tripled',
-          stars: 5,
-          name: 'Ananya Gupta',
-          designation: 'CEO',
-          company: 'GoExplore Tours'
-        },
-        {
-          id: '2',
-          message: 'We wasted lakhs on ads before. Now every rupee works. Our ROI is 4X higher with their campaigns.',
-          highlight: '4X higher ROI',
-          stars: 5,
-          name: 'Ramesh Nair',
-          designation: 'Founder',
-          company: 'Kerala Backwaters Travel'
-        }
       ]
     },
     cta: {

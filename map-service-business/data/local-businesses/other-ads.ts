@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "other-ads-local-business",
@@ -197,36 +196,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Reporting & Scaling",
           description: "We provide transparent reports and scale winning campaigns.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Winning", gradient: false },
-        { text: "With Multi-Channel Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From cafés to gyms to boutiques, local businesses are seeing massive growth with TikTok, YouTube, and Snapchat ads.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our TikTok ads brought in so many young customers! Footfall increased by 40% in just two weeks.",
-          highlight: "40% More Customers",
-          stars: 5,
-          name: "Priya Sharma",
-          designation: "Owner",
-          company: "Glow Salon",
-        },
-        {
-          id: "2",
-          message:
-            "YouTube ads helped us showcase our story in a way Google ads couldn’t. Our bookings doubled!",
-          highlight: "2x More Bookings",
-          stars: 5,
-          name: "Rakesh Verma",
-          designation: "Founder",
-          company: "FitZone Gym",
         },
       ],
     },

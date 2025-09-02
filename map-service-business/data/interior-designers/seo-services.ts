@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "seo-services-interior-designers",
@@ -193,36 +192,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Reporting & Growth",
           description: "Track keyword improvements, organic traffic, and lead conversions monthly.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers Who", gradient: false },
-        { text: "Grew With SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our SEO strategies have helped interior designers gain consistent leads, rank higher, and secure premium design projects.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Thanks to their SEO, we now rank #1 for 'luxury interior designers in Mumbai'. Our leads have doubled!",
-          highlight: "SEO Success",
-          stars: 5,
-          name: "Ritika Malhotra",
-          designation: "Founder",
-          company: "Ritika Designs",
-        },
-        {
-          id: "2",
-          message:
-            "Local SEO gave us more inquiries from homeowners in our city than we ever got from ads. A total game-changer!",
-          highlight: "Local SEO Growth",
-          stars: 5,
-          name: "Nikhil Gupta",
-          designation: "Creative Director",
-          company: "Elite Spaces",
         },
       ],
     },

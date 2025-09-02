@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "mobile-apps-development-pharma-companies",
@@ -207,36 +206,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Launch & Support",
           description: "We deploy apps on stores and provide ongoing updates, security & maintenance.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Leaders", gradient: false },
-        { text: "Trust Our Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From global manufacturers to local distributors, our pharma apps have transformed operations, boosted efficiency, and created new revenue channels.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our mobile app streamlined distributor orders and reduced errors by 70%. Now, every retailer connects directly with us through the app.",
-          highlight: "70% Fewer Errors",
-          stars: 5,
-          name: "Rajesh Malhotra",
-          designation: "CEO",
-          company: "LifeCare Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "The patient engagement app increased repeat medicine purchases and improved customer loyalty significantly. Truly a game-changer.",
-          highlight: "2.8X More Repeat Purchases",
-          stars: 5,
-          name: "Dr. Neha Verma",
-          designation: "Director",
-          company: "MediHealth Labs",
         },
       ],
     },

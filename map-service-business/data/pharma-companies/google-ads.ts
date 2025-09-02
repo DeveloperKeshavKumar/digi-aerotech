@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "google-ads-pharma-companies",
@@ -212,36 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Monitoring & Scaling",
           description: "We track clicks, leads, and conversions, optimizing ad spend to maximize ROI and scale winning campaigns.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Companies", gradient: false },
-        { text: "Winning with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From local pharmacies to global pharma manufacturers, our Google Ads campaigns deliver quality leads and measurable growth.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "We started getting daily inquiries from distributors and bulk buyers within 3 weeks of running ads. Their pharma-focused strategy works.",
-          highlight: "2.8X More Pharma Leads",
-          stars: 5,
-          name: "Dr. Sandeep Patel",
-          designation: "Director",
-          company: "WellCare Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "Our medicine sales increased drastically after launching Google Ads with them. The campaigns are cost-effective and results-driven.",
-          highlight: "3.2X Increase in Sales",
-          stars: 5,
-          name: "Meera Kapoor",
-          designation: "Marketing Head",
-          company: "LifePlus Pharma",
         },
       ],
     },

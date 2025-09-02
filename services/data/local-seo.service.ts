@@ -283,42 +283,6 @@ export const localSeoService: ServiceData = {
                 }
             ]
         },
-        testimonials: {
-            title: [
-                { text: 'Local SEO ', gradient: false },
-                { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-            ],
-            description: 'Real results from local businesses that dominate their markets',
-            testimonials: [
-                {
-                    id: '1',
-                    message: 'Our restaurant now appears #1 for "best restaurant in Gurgaon" and similar searches. DigiAerotech increased our foot traffic by 180% and online orders by 250% through strategic local SEO.',
-                    highlight: 'foot traffic increased 180%, online orders up 250%',
-                    stars: 5,
-                    name: 'Ravi Khanna',
-                    designation: 'Restaurant Owner',
-                    company: 'Delhi Delights Restaurant'
-                },
-                {
-                    id: '2',
-                    message: 'As a dental clinic, local visibility was crucial. DigiAerotech got us ranking in the top 3 for dental searches in our area. New patient appointments increased by 300% within 6 months.',
-                    highlight: 'new patient appointments increased 300%',
-                    stars: 5,
-                    name: 'Dr. Priya Sharma',
-                    designation: 'Dental Surgeon',
-                    company: 'Smile Care Dental Clinic'
-                },
-                {
-                    id: '3',
-                    message: 'Our home services business now dominates local search results across 5 cities. Lead generation increased 400% and our Google My Business gets over 1000 views monthly thanks to their local SEO expertise.',
-                    highlight: 'lead generation increased 400%',
-                    stars: 5,
-                    name: 'Amit Singh',
-                    designation: 'Business Owner',
-                    company: 'Home Repair Services'
-                }
-            ]
-        },
         cta: {
             title: 'Ready to Dominate Your Local Market?',
             subtitle: 'START LOCAL SEO TODAY',

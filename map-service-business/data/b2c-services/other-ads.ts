@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'other-ads-b2c',
@@ -190,33 +189,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Remarketing Setup', description: 'Retarget visitors who didn’t convert the first time.' },
         { id: 5, title: 'Optimization & Scaling', description: 'Test, refine, and scale campaigns for ROI growth.' },
         { id: 6, title: 'Transparent Reporting', description: 'Get insights into performance, spend, and ROI.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Brands Growing ", gradient: false },
-        { text: "with Digi Aerotech Multi-Channel Ads", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
-      ],
-      description: 'From fashion to food, our multi-channel ad strategies have helped B2C brands dominate across YouTube, OTT, and remarketing campaigns.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Running YouTube + Remarketing Ads with Digi Aerotech helped us cut customer acquisition costs by 35% while increasing repeat orders.',
-          highlight: '35% lower acquisition cost',
-          stars: 5,
-          name: 'Ritika Sharma',
-          designation: 'Founder',
-          company: 'Glow Fashion'
-        },
-        {
-          id: '2',
-          message: 'Their OTT campaigns gave our restaurant massive brand visibility. We saw more walk-ins and repeat customers after just 6 weeks.',
-          highlight: 'Higher footfall',
-          stars: 5,
-          name: 'Arjun Mehta',
-          designation: 'Owner',
-          company: 'Grill & Chill Café'
-        }
       ]
     },
     cta: {

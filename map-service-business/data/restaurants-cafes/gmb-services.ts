@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'gmb-services-restaurants-cafes',
@@ -206,33 +205,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Performance Tracking',
           description: 'We track calls, direction requests, and bookings to refine your GMB strategy for more growth.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants & Cafés Winning with ", gradient: false },
-        { text: "Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how restaurants and cafés boosted reservations, walk-ins, and online orders with our GMB optimization.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'After GMB optimization, our café started getting 3x more calls daily. Foot traffic has increased massively.',
-          highlight: '3X More Calls',
-          stars: 5,
-          name: 'Aman Sharma',
-          designation: 'Owner',
-          company: 'Brew & Bite Café'
-        },
-        {
-          id: '2',
-          message: 'Our restaurant appears in “best restaurants near me” searches consistently now. Bookings went up by 70%.',
-          highlight: '70% More Bookings',
-          stars: 5,
-          name: 'Ritika Malhotra',
-          designation: 'Manager',
-          company: 'Urban Spice'
         }
       ]
     },

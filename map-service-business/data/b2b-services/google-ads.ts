@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'google-ads-b2b',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Landing Page Setup', description: 'Optimize pages for conversions & lead capture' },
         { id: 5, title: 'Smart Bidding & Optimization', description: 'Use AI-driven bidding for best ROI' },
         { id: 6, title: 'Tracking & Reporting', description: 'Full visibility on cost per lead & ROI' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Success Stories with ", gradient: false },
-        { text: "Digi Aerotech’s Google Ads", gradient: true, gradientClass: "from-blue-500 via-green-500 to-purple-500" }
-      ],
-      description: 'From SaaS startups to established IT consultancies, Digi Aerotech’s B2B ad campaigns deliver consistent enterprise leads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We were burning ad spend with no results before. Digi Aerotech restructured everything and now we generate qualified enterprise leads consistently.',
-          highlight: 'High-Quality Enterprise Leads',
-          stars: 5,
-          name: 'Nitin Verma',
-          designation: 'Founder',
-          company: 'CloudEdge Solutions'
-        },
-        {
-          id: '2',
-          message: 'Their landing page + ad strategy helped us close two Fortune 500 contracts. Best ROI we’ve seen from ads.',
-          highlight: 'Fortune 500 Conversions',
-          stars: 5,
-          name: 'Sonal Mehra',
-          designation: 'CMO',
-          company: 'FinCore Consulting'
-        }
       ]
     },
     cta: {

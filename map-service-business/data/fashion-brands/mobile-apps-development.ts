@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-apps-development-fashion-brands',
@@ -227,33 +226,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Launch & Support',
           description: 'Deploy on App Store & Play Store with ongoing updates.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands That ", gradient: false },
-        { text: "Loved Their Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands boost engagement, sales, and brand loyalty with custom mobile apps.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our mobile app transformed our online sales, making it easier for customers to shop directly.',
-          highlight: 'transformed our online sales',
-          stars: 5,
-          name: 'Ananya Kapoor',
-          designation: 'Founder',
-          company: 'Vogue Threads'
-        },
-        {
-          id: '2',
-          message: 'The app is smooth, stylish, and keeps users engaged, significantly increasing repeat purchases.',
-          highlight: 'significantly increasing repeat purchases',
-          stars: 5,
-          name: 'Rahul Mehta',
-          designation: 'Owner',
-          company: 'Urban Chic'
         }
       ]
     },

@@ -219,53 +219,6 @@ export const matrimonial: BusinessData = {
       },
     ],
   },
-
-  testimonials: {
-    title: [
-      { text: "Matrimonial Client " },
-      {
-        text: "Success Stories",
-        gradient: true,
-        gradientClass: "from-pink-500 via-red-500 to-purple-600",
-      },
-    ],
-    subtitle: "Trusted By Leading Matrimonial Brands & Bureaus",
-    description:
-      "Our matrimonial clients witness unmatched growth, credibility, and long-term user engagement with our digital campaigns.",
-    items: [
-      {
-        id: "1",
-        message:
-          "They helped us grow our signups by 3X in just 4 months with targeted campaigns. Families trust us more than ever.",
-        highlight: "3X more signups",
-        stars: 5,
-        name: "Rajesh Malhotra",
-        designation: "Founder",
-        company: "Sacred Bond Matrimonials",
-      },
-      {
-        id: "2",
-        message:
-          "Our app downloads doubled, and paid memberships increased rapidly. Their SEO strategy was outstanding.",
-        highlight: "Doubled downloads",
-        stars: 5,
-        name: "Anjali Nair",
-        designation: "Marketing Head",
-        company: "Elite Matrimony",
-      },
-      {
-        id: "3",
-        message:
-          "With their automation, we now handle leads effortlessly, and our community engagement is at an all-time high.",
-        highlight: "Effortless automation",
-        stars: 5,
-        name: "Aman Verma",
-        designation: "Director",
-        company: "TrueMatch Services",
-      },
-    ],
-  },
-
   cta: {
     title: "Ready To Grow Your Matrimonial Business?",
     subtitle: "Increase Signups, Boost Matches & Build Trust",

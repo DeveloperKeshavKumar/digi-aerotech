@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'website-maintenance-startups-entrepreneurs',
@@ -211,33 +210,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Backup & Recovery',
           description: 'Daily backups and disaster recovery plans ensure your data is always safe.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Scaling with ", gradient: false },
-        { text: "Reliable Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how entrepreneurs protected their startup websites and built investor confidence with our maintenance services.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Their maintenance saved us from a major downtime during our investor pitch week. Truly lifesaving!',
-          highlight: 'Zero Downtime',
-          stars: 5,
-          name: 'Aarav Malhotra',
-          designation: 'Co-founder',
-          company: 'SaaSly'
-        },
-        {
-          id: '2',
-          message: 'We used to face constant bugs and slow load speeds. Now our site runs faster than ever and our leads doubled.',
-          highlight: '2X Faster Website',
-          stars: 5,
-          name: 'Ishita Kapoor',
-          designation: 'Founder',
-          company: 'HealthStart'
         }
       ]
     },

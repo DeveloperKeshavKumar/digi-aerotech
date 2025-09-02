@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "gmb-services-interior-designers",
@@ -189,36 +188,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Tracking & Growth",
           description: "We monitor insights, calls, and conversions to ensure consistent results.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers Trust", gradient: false },
-        { text: "Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "We’ve helped design studios dominate local Google searches, resulting in more walk-ins, calls, and premium project opportunities.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Before optimization, I barely got 2 calls a week. Now my GMB profile ranks in the top 3, and I receive 10+ inquiries weekly.",
-          highlight: "10+ Weekly Leads",
-          stars: 5,
-          name: "Sanya Verma",
-          designation: "Founder",
-          company: "CreativeNest Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "Our Google Maps profile now looks professional, with client reviews and high rankings. Project bookings have increased drastically.",
-          highlight: "Higher Conversions",
-          stars: 5,
-          name: "Amit Sharma",
-          designation: "Interior Designer",
-          company: "SpaceRevamp",
         },
       ],
     },

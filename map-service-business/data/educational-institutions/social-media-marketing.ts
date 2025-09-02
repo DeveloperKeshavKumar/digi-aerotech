@@ -25,7 +25,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'social-media-marketing-educational-institutions',
@@ -229,33 +228,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Performance Analysis & Optimization',
           description: 'Track KPIs, adjust strategies, and improve campaigns for maximum ROI.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Educational Institutions Who ", gradient: false },
-        { text: "Grew Socially with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped schools, colleges, and e-learning platforms engage students and drive enrollments through social media.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our social media channels now attract hundreds of prospective students every month, driving inquiries and applications!',
-          highlight: 'hundreds of prospective students every month',
-          stars: 5,
-          name: 'Dr. Anjali Rao',
-          designation: 'Principal',
-          company: 'Sunrise College'
-        },
-        {
-          id: '2',
-          message: 'Thanks to Digi Aerotech, our coaching center built an active online community and saw enrollment rise by 40%.',
-          highlight: 'enrollment rise by 40%',
-          stars: 5,
-          name: 'Rohit Singh',
-          designation: 'Director',
-          company: 'Bright Minds Academy'
         }
       ]
     },

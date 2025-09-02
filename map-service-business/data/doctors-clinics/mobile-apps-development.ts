@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-app-development-doctors-clinics',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Launch & Maintenance',
           description: 'App store deployment, updates & ongoing support.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Doctors Who ", gradient: false },
-        { text: "Transformed with Our Apps", gradient: true, gradientClass: "from-blue-500 via-cyan-500 to-indigo-500" }
-      ],
-      description: 'See how doctors & clinics improved patient engagement and clinic efficiency with our mobile app development services.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our clinic app reduced no-shows by 35% and improved patient engagement drastically.',
-          highlight: '35% fewer no-shows',
-          stars: 5,
-          name: 'Dr. Meera Sharma',
-          designation: 'Owner',
-          company: 'City Health Clinic'
-        },
-        {
-          id: '2',
-          message: 'Patients love the convenience of booking and consulting online. Digi Aerotech made it seamless.',
-          highlight: 'Higher patient satisfaction',
-          stars: 5,
-          name: 'Dr. Arjun Kapoor',
-          designation: 'Specialist',
-          company: 'Care Plus Clinic'
         }
       ]
     },

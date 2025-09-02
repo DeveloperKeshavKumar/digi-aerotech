@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'web-design-development-maintenance',
@@ -150,33 +149,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Testing & Launch', description: 'Performance, device & security testing' },
         { id: 5, title: 'Ongoing Maintenance', description: 'Updates, bug fixes, content edits, and upgrades' },
         { id: 6, title: 'Growth & Scaling', description: 'SEO, analytics, and CRO improvements' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Web Success Stories with ", gradient: false },
-        { text: "Digi Aerotech", gradient: true, gradientClass: "from-indigo-500 via-blue-500 to-cyan-500" }
-      ],
-      description: 'From startups to enterprises, we’ve built & maintained websites that scale globally while converting locally.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Digi Aerotech redesigned our website and the results were instant — faster, cleaner, and higher leads.',
-          highlight: '60% Increase in Lead Conversions',
-          stars: 5,
-          name: 'Priya Mehra',
-          designation: 'Founder',
-          company: 'EduCare Consulting'
-        },
-        {
-          id: '2',
-          message: 'They don’t just build websites, they maintain and grow them with us. A true long-term partner.',
-          highlight: 'Zero Downtime & Seamless Upgrades',
-          stars: 5,
-          name: 'Rahul Bansal',
-          designation: 'CTO',
-          company: 'NextWave Technologies'
-        }
       ]
     },
     cta: {

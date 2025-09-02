@@ -19,7 +19,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: '360-digital-marketing-fashion-brands',
@@ -226,33 +225,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Expansion',
           description: 'Once successful, we scale campaigns globally and across new product lines.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: 'Fashion Brands That ', gradient: false },
-        { text: 'Scaled with Us', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'From emerging designers to global brands, Digi Aerotech has transformed fashion labels into household names.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our sales tripled after Digi Aerotech optimized our e-commerce store and ran Instagram campaigns. We even went viral on TikTok!',
-          highlight: 'sales tripled + viral TikTok campaign',
-          stars: 5,
-          name: 'Rhea Kapoor',
-          designation: 'Founder',
-          company: 'Rhea Luxe Wear'
-        },
-        {
-          id: '2',
-          message: 'From just a local boutique, our brand is now shipping internationally. Their influencer campaigns built us a loyal global following.',
-          highlight: 'shipping internationally + loyal following',
-          stars: 5,
-          name: 'Karan Singh',
-          designation: 'CEO',
-          company: 'Urban Streetwear'
         }
       ]
     },

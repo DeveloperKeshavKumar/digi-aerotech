@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "local-seo-hotel-resort",
@@ -201,36 +200,6 @@ export const map: ServiceBusinessMap = {
           title: "Performance Tracking & Optimization",
           description:
             "Monitor rankings, clicks, calls, and bookings; refine strategies to continuously improve results.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts That", gradient: false },
-        { text: "Ranked Locally & Boosted Bookings", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From boutique stays to luxury resorts, our local SEO campaigns drive inquiries, footfalls, and direct bookings consistently.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our resort started appearing on top in Google Maps and nearby searches, leading to a 50% increase in direct bookings.",
-          highlight: "Top in Google Maps",
-          stars: 5,
-          name: "Anil Kumar",
-          designation: "Owner",
-          company: "Sea Breeze Resort",
-        },
-        {
-          id: "2",
-          message:
-            "Local SEO helped us get more walk-ins and corporate clients. We’re now the most booked hotel in our city.",
-          highlight: "Most booked hotel locally",
-          stars: 5,
-          name: "Ritu Sharma",
-          designation: "GM",
-          company: "Mountain View Retreat",
         },
       ],
     },

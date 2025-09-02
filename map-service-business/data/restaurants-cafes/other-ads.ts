@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "other-ads-restaurants-cafes",
@@ -236,40 +235,6 @@ export const map: ServiceBusinessMap = {
           title: "Analytics & Reporting",
           description:
             "Transparent reporting on reach, engagement, walk-ins, and online orders driven by ad campaigns.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Growing with ", gradient: false },
-        {
-          text: "YouTube & TikTok Ads",
-          gradient: true,
-          gradientClass: "from-orange-500 via-pink-500 to-red-600",
-        },
-      ],
-      description:
-        "From viral food reels to geo-targeted Snapchat campaigns, restaurants are seeing massive brand awareness & conversions.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our TikTok ads went viral — we doubled our weekend reservations in just 2 months!",
-          highlight: "TikTok Growth",
-          stars: 5,
-          name: "Chef Arvind Rao",
-          designation: "Head Chef",
-          company: "Grill & Chill Café",
-        },
-        {
-          id: "2",
-          message:
-            "YouTube shorts showcasing our ambience helped us attract corporate clients for team lunches.",
-          highlight: "Corporate Bookings",
-          stars: 5,
-          name: "Neha Kapoor",
-          designation: "Owner",
-          company: "The Urban Dine",
         },
       ],
     },

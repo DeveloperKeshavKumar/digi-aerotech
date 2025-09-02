@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "other-ads-hotel-resort",
@@ -199,36 +198,6 @@ export const map: ServiceBusinessMap = {
           title: "Monitoring & Optimization",
           description:
             "Continuously track performance and optimize creatives, targeting, and bidding to improve results.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts That ", gradient: false },
-        { text: "Increased Bookings with Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Discover how our social & video ad campaigns helped hotels and resorts reach more guests, boost bookings, and increase brand visibility.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our resort's TikTok & YouTube campaigns increased direct bookings by 40% within 3 months!",
-          highlight: "40% increase in direct bookings",
-          stars: 5,
-          name: "Rohit Mehra",
-          designation: "Owner",
-          company: "Oceanview Resort",
-        },
-        {
-          id: "2",
-          message:
-            "We reached thousands of potential guests via Snapchat & Twitter ads, and our weekend occupancy soared.",
-          highlight: "High engagement & occupancy",
-          stars: 5,
-          name: "Priya Nair",
-          designation: "Manager",
-          company: "Mountainview Hotel",
         },
       ],
     },

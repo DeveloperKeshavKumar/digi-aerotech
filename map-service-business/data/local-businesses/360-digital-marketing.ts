@@ -18,7 +18,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: '360-digital-marketing-local-businesses',
@@ -225,33 +224,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling Sales',
           description: 'Expand from local reach to online orders & wider coverage.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Who ", gradient: false },
-        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech has helped shops, cafes, salons, and local stores grow their footfall & online sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Before Digi Aerotech, our shop was invisible online. Within 3 months, we started ranking #1 in Google Maps and footfall doubled.',
-          highlight: 'footfall doubled',
-          stars: 5,
-          name: 'Anjali Mehta',
-          designation: 'Owner',
-          company: 'Mehta Bakery'
-        },
-        {
-          id: '2',
-          message: 'They set up our ads and reviews system — we now get 70% of our clients through Google search and repeat customers.',
-          highlight: '70% of clients via Google',
-          stars: 5,
-          name: 'Ravi Patel',
-          designation: 'Owner',
-          company: 'Glow Salon'
         }
       ]
     },

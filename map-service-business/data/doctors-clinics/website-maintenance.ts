@@ -17,7 +17,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant2',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'web-design-development-maintenance-doctors-clinics',
@@ -222,33 +221,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Maintenance & Support',
           description: '24/7 monitoring, backups, security & updates.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Doctors Growing with ", gradient: false },
-        { text: "Professional Websites", gradient: true, gradientClass: "from-blue-500 via-green-500 to-cyan-500" }
-      ],
-      description: 'See how Digi Aerotech websites transformed clinics.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our new website looks modern and patients love the easy booking system.',
-          highlight: 'Seamless Patient Bookings',
-          stars: 5,
-          name: 'Dr. Neha Sharma',
-          designation: 'Dentist',
-          company: 'SmileCare Dental'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech redesigned our old website. Now it loads faster and gets more traffic.',
-          highlight: 'Fast & SEO-Optimized',
-          stars: 5,
-          name: 'Dr. Arvind Kapoor',
-          designation: 'Cardiologist',
-          company: 'HeartWell Clinic'
         }
       ]
     },

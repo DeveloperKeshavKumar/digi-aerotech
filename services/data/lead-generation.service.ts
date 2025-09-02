@@ -175,14 +175,6 @@ export const leadGenerationService: ServiceData = {
             { id: 3, name: 'Google Ads', logo: '/tech/icons8-google-ads-96.png', category: 'Ads' }
         ]
     },
-    testimonials: {
-        title: [ { text: 'Lead Generation ' }, { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ],
-        description: 'Clients who expanded their pipeline with us.',
-        testimonials: [
-            { id: '1', message: 'Their campaigns increased our qualified leads by 250% in three months.', highlight: '', stars: 5, name: 'Rohit Singh', designation: 'Sales Director', company: 'B2B SaaS Co.' },
-            { id: '2', message: 'Seamless CRM integration and excellent support. Our sales team loves the quality of leads.', highlight: '', stars: 5, name: 'Anjali Verma', designation: 'Marketing Manager', company: 'Enterprise Solutions' }
-        ]
-    },
     cta: {
         title: 'Ready to Fill Your Pipeline?',
         subtitle: 'START GENERATING NOW',

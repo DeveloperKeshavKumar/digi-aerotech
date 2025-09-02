@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "local-seo-gyms-fitness",
@@ -212,36 +211,6 @@ export const map: ServiceBusinessMap = {
           title: "Monitoring & Reporting",
           description:
             "Track rankings, traffic, and lead conversions to continuously refine and improve your local SEO strategy.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms & Fitness Studios Who ", gradient: false },
-        { text: "Ranked Higher Locally", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how our Local SEO strategies helped gyms and fitness studios attract nearby clients and grow memberships consistently.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our gym now appears in the top 3 results for 'gym near me'. Membership inquiries have doubled within 2 months.",
-          highlight: "top 3 results for 'gym near me'",
-          stars: 5,
-          name: "Rohit Kumar",
-          designation: "Owner",
-          company: "PowerHouse Gym",
-        },
-        {
-          id: "2",
-          message:
-            "The local SEO campaign increased our walk-ins and online trial sign-ups significantly. Highly recommended!",
-          highlight: "increased walk-ins and trial sign-ups",
-          stars: 5,
-          name: "Priya Verma",
-          designation: "Founder",
-          company: "FitCore Studio",
         },
       ],
     },

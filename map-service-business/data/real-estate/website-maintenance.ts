@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant3",
     whyChooseUs: "variant2",
     process: "variant1",
-    testimonials: "variant1",
   },
   data: {
     slug: "website-maintenance-real-estate",
@@ -219,36 +218,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Ongoing Monitoring",
           description: "Continuous support & monitoring to keep your website running smoothly 24/7.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Agencies", gradient: false },
-        { text: "That Trust Our Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From independent brokers to large developers, we keep real estate websites secure, updated & optimized.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Their maintenance team keeps our property website updated and secure. We no longer worry about downtime.",
-          highlight: "No downtime",
-          stars: 5,
-          name: "Rohit Mehta",
-          designation: "Broker",
-          company: "Elite Realty",
-        },
-        {
-          id: "2",
-          message:
-            "Thanks to their continuous updates, our listings stay fresh and our SEO rankings improved significantly.",
-          highlight: "SEO rankings improved",
-          stars: 5,
-          name: "Priya Kapoor",
-          designation: "Marketing Head",
-          company: "Skyline Properties",
         },
       ],
     },

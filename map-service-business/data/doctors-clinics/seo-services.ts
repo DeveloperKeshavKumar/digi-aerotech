@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'seo-services-doctors-clinics',
@@ -220,33 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Backlinks & Reporting',
           description: 'High-quality backlinks + transparent monthly reports.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Clinics Who Grew with ", gradient: false },
-        { text: "SEO Services", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
-      ],
-      description: 'See how SEO transformed visibility & patient acquisition.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'After Digi Aerotech’s SEO, we rank on page 1 for “dentist near me” and doubled our monthly patient bookings.',
-          highlight: '2X more patients',
-          stars: 5,
-          name: 'Dr. Anjali Sharma',
-          designation: 'Dentist',
-          company: 'SmileCare Dental'
-        },
-        {
-          id: '2',
-          message: 'We started showing up for cardiology searches in our city and saw a 55% rise in appointment requests.',
-          highlight: '+55% bookings',
-          stars: 5,
-          name: 'Dr. Ravi Gupta',
-          designation: 'Cardiologist',
-          company: 'Heartwell Clinic'
         }
       ]
     },

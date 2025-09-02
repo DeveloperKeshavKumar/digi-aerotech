@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant3",
     whyChooseUs: "variant2",
     process: "variant1",
-    testimonials: "variant3",
   },
   data: {
     slug: "meta-ads-for-local-business",
@@ -196,36 +195,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Reporting & Scaling",
           description: "We provide transparent reports and scale winning campaigns for maximum ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Winning", gradient: false },
-        { text: "With Our Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From gyms to restaurants to clinics, our Meta Ads have helped local businesses achieve higher visibility, more bookings, and consistent customer growth.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "We used to waste money boosting posts. After switching to Meta Ads with this team, we get daily calls and walk-ins from Facebook ads.",
-          highlight: "Daily Calls from Ads",
-          stars: 5,
-          name: "Amit Verma",
-          designation: "Owner",
-          company: "Verma Dental Clinic",
-        },
-        {
-          id: "2",
-          message:
-            "Our small clothing store started appearing everywhere locally. We saw a 4x ROI within 6 weeks of running targeted Meta Ads.",
-          highlight: "4X ROI in 6 Weeks",
-          stars: 5,
-          name: "Pooja Mehra",
-          designation: "Founder",
-          company: "TrendWear Boutique",
         },
       ],
     },

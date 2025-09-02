@@ -17,7 +17,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'web-design-development-restaurants-cafes',
@@ -209,33 +208,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Ongoing Support',
           description: 'We provide maintenance and growth support to ensure your website keeps bringing in customers.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Growing with ", gradient: false },
-        { text: "Our Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Our web design & development services help restaurants increase direct orders, reduce commissions, and improve brand presence online.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our online ordering system doubled our direct sales and cut down reliance on food apps.',
-          highlight: 'Direct Sales Growth',
-          stars: 5,
-          name: 'Rahul Sharma',
-          designation: 'Owner',
-          company: 'Spice & Soul Bistro'
-        },
-        {
-          id: '2',
-          message: 'We loved how our café website reflects our brand identity and now customers book tables directly online!',
-          highlight: 'Brand + Bookings',
-          stars: 5,
-          name: 'Simran Kaur',
-          designation: 'Founder',
-          company: 'Brew Haven Café'
         }
       ]
     },

@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'web-design-development-travel-tourism',
@@ -220,33 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Maintenance & Scaling',
           description: 'We provide ongoing support, updates, and scalability to handle growing traffic, seasonal campaigns, and new features.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands Who ", gradient: false },
-        { text: "Transformed Their Websites with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech redesigned websites for travel agencies & tour operators, improving bookings, SEO rankings, and traveler trust.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our outdated website was costing us bookings. Digi Aerotech rebuilt it into a fast, mobile-friendly platform with online payments.',
-          highlight: 'fast, mobile-friendly platform',
-          stars: 5,
-          name: 'Ravi Khanna',
-          designation: 'Founder',
-          company: 'Explore India Tours'
-        },
-        {
-          id: '2',
-          message: 'They designed a modern travel website for us with SEO integration. We now rank for major travel keywords and get 3x more leads.',
-          highlight: '3x more leads',
-          stars: 5,
-          name: 'Simran Kaur',
-          designation: 'CEO',
-          company: 'Holiday Vibes'
         }
       ]
     },

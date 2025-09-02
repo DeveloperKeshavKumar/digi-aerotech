@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "other-ads-pharma-companies",
@@ -207,36 +206,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Scaling & Optimization",
           description: "Successful campaigns are scaled with budget optimization and audience retargeting.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Brands", gradient: false },
-        { text: "Scaling with Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our pharma clients have successfully tapped into new audiences, generated stronger leads, and improved brand authority through ads beyond Google & Meta.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "LinkedIn Ads connected us with hospital chains directly, cutting middlemen and boosting B2B orders significantly.",
-          highlight: "300% More B2B Orders",
-          stars: 5,
-          name: "Ramesh Khanna",
-          designation: "Director",
-          company: "MediCore Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "YouTube Ads positioned our new product launch in front of millions of doctors and patients. We saw instant trust building.",
-          highlight: "2.5M Views in 30 Days",
-          stars: 5,
-          name: "Anita Kapoor",
-          designation: "Marketing Head",
-          company: "BioHealth Labs",
         },
       ],
     },

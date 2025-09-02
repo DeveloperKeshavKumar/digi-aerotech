@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "mobile-apps-development-gyms-fitness",
@@ -207,36 +206,6 @@ export const map: ServiceBusinessMap = {
           title: "Support & Optimization",
           description:
             "Continuous updates, new feature implementation, and performance monitoring to maximize app adoption and member retention.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms Who Scaled with", gradient: false },
-        { text: "Our Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how fitness studios enhanced member experience, retention, and revenue through our custom mobile app solutions.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our members love the new app! Class bookings, progress tracking, and push notifications have increased engagement tremendously.",
-          highlight: "increased engagement tremendously",
-          stars: 5,
-          name: "Rohit Mehta",
-          designation: "Owner",
-          company: "PowerFit Gym",
-        },
-        {
-          id: "2",
-          message:
-            "The custom app helped us manage memberships efficiently and boost revenue from personal training packages.",
-          highlight: "boost revenue from personal training packages",
-          stars: 5,
-          name: "Priya Sharma",
-          designation: "Founder",
-          company: "Elite Fitness Studio",
         },
       ],
     },

@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-apps-development-travel-tourism',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Integration & Security', description: 'Integrate APIs, payments, and secure traveler data.' },
         { id: 5, title: 'Testing & QA', description: 'Ensure seamless performance & bug-free experience.' },
         { id: 6, title: 'Launch & Scaling', description: 'Deploy apps and optimize for long-term traveler engagement.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands Who ", gradient: false },
-        { text: "Transformed with Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel brands build engaging mobile apps that drive bookings, retention, and global reach.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our custom app streamlined bookings and boosted traveler engagement by 5X.',
-          highlight: 'boosted engagement by 5X',
-          stars: 5,
-          name: 'Anita Kapoor',
-          designation: 'Founder',
-          company: 'Skyline Journeys'
-        },
-        {
-          id: '2',
-          message: 'From itineraries to secure payments, Digi Aerotech built an app that became our biggest growth driver.',
-          highlight: 'our biggest growth driver',
-          stars: 5,
-          name: 'Vikram Joshi',
-          designation: 'CEO',
-          company: 'Nomad Treks'
-        }
       ]
     },
     cta: {

@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'meta-ads-restaurants-cafes',
@@ -202,33 +201,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Performance Tracking',
           description: 'We monitor ad spend, ROI, bookings, and delivery orders with transparent weekly reports and ongoing optimization.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Growing with ", gradient: false },
-        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how cafés and restaurants are filling tables and doubling food orders using our targeted Meta Ads campaigns.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram ads brought 60+ new walk-ins in just 10 days. The ROI was insane compared to random boosting we used to do.',
-          highlight: 'High ROI',
-          stars: 5,
-          name: 'Rohit Verma',
-          designation: 'Owner',
-          company: 'Brew & Bite Café'
-        },
-        {
-          id: '2',
-          message: 'We doubled our Swiggy orders by running local ads that targeted nearby office employees. Huge impact on delivery sales!',
-          highlight: 'Delivery Growth',
-          stars: 5,
-          name: 'Simran Kaur',
-          designation: 'Owner',
-          company: 'Tandoori Tales'
         }
       ]
     },

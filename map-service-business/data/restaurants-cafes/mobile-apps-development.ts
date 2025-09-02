@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'mobile-apps-development-restaurants-cafes',
@@ -203,33 +202,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Ongoing Support',
           description: 'We provide updates, maintenance, and new feature integrations to ensure long-term success of your restaurant app.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Growing with ", gradient: false },
-        { text: "Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Restaurants and cafés are seeing higher sales, stronger customer loyalty, and reduced dependency on third-party apps through custom apps.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our app now drives 45% of our orders directly, cutting down delivery platform commissions. Huge boost for margins!',
-          highlight: 'Direct Orders',
-          stars: 5,
-          name: 'Ramesh Gupta',
-          designation: 'Owner',
-          company: 'Spice & Sizzle Restaurant'
-        },
-        {
-          id: '2',
-          message: 'The loyalty feature is brilliant. Customers love earning rewards, and it’s driving repeat business consistently.',
-          highlight: 'Customer Loyalty',
-          stars: 5,
-          name: 'Anjali Mehta',
-          designation: 'Founder',
-          company: 'Café Aroma'
         }
       ]
     },

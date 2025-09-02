@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'mobile-apps-development-startups-entrepreneurs',
@@ -212,33 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Launch & Scale',
           description: 'We publish your app on App Store & Google Play, with ongoing support, scaling, and updates.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Scaling with ", gradient: false },
-        { text: "Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how our mobile app development services helped startups launch faster, attract investors, and scale successfully.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our MVP was built in just 6 weeks and helped us secure seed funding. Their startup-first approach is brilliant.',
-          highlight: 'Secured Seed Funding',
-          stars: 5,
-          name: 'Rohit Agarwal',
-          designation: 'Founder',
-          company: 'HealthGo'
-        },
-        {
-          id: '2',
-          message: 'They transformed our app idea into a sleek, scalable product. Within 3 months, we onboarded 5,000+ users.',
-          highlight: '5,000+ Users in 3 Months',
-          stars: 5,
-          name: 'Sneha Kapoor',
-          designation: 'Co-Founder',
-          company: 'EduNest'
         }
       ]
     },

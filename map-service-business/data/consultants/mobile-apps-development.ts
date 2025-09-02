@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-app-development-teachers-consultants',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Testing & QA', description: 'Ensure flawless performance across devices.' },
         { id: 5, title: 'Deployment', description: 'Launch apps on Play Store & App Store seamlessly.' },
         { id: 6, title: 'Maintenance & Scaling', description: 'Continuous support, updates & new features as you grow.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants & Teachers Who ", gradient: false },
-        { text: "Scaled with Digi Aerotech Apps", gradient: true, gradientClass: "from-indigo-500 via-purple-500 to-pink-500" }
-      ],
-      description: 'Real experiences from professionals who embraced mobile-first growth.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'My personal coaching app made me look more professional and helped me reach clients globally. Digi Aerotech nailed it!',
-          highlight: 'Global client reach',
-          stars: 5,
-          name: 'Ravi Malhotra',
-          designation: 'Business Consultant',
-          company: 'RM Consulting'
-        },
-        {
-          id: '2',
-          message: 'I wanted to keep students engaged beyond the classroom. With my custom app, they access lessons anytime and I see 2X retention.',
-          highlight: '2X student retention',
-          stars: 5,
-          name: 'Dr. Neha Kapoor',
-          designation: 'Teacher & Educator',
-          company: 'EduBridge'
-        }
       ]
     },
     cta: {

@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'gmb-services-real-estate',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Tracking & Growth',
           description: 'We monitor calls, clicks, and inquiries to measure ROI and scale results.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Agencies That", gradient: false },
-        { text: "Won with Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how our GMB optimization helped brokers and agencies generate more walk-ins and property inquiries.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We started getting daily calls for property inquiries just from Google Maps after optimization!',
-          highlight: 'daily property calls',
-          stars: 5,
-          name: 'Vikas Sharma',
-          designation: 'Broker',
-          company: 'Sharma Realty'
-        },
-        {
-          id: '2',
-          message: 'Our agency jumped to the top 3 listings on Google Maps and leads grew by 3X in 2 months.',
-          highlight: '3X more leads',
-          stars: 5,
-          name: 'Neha Gupta',
-          designation: 'Director',
-          company: 'DreamHome Realtors'
         }
       ]
     },

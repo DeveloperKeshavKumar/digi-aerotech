@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "social-media-marketing-hotel-resort",
@@ -205,36 +204,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Analysis & Continuous Improvement",
           description: "Track KPIs, engagement, and conversions to refine the strategy for ongoing success.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts Who ", gradient: false },
-        { text: "Thrived on Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how our social media strategies helped hotels and resorts increase followers, engagement, and direct bookings.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our resort’s Instagram engagement skyrocketed! We get daily inquiries and bookings thanks to their social media campaigns.",
-          highlight: "Instagram engagement skyrocketed",
-          stars: 5,
-          name: "Priya Nair",
-          designation: "Manager",
-          company: "Lakeside Resort",
-        },
-        {
-          id: "2",
-          message:
-            "They helped us run seasonal TikTok campaigns that brought in young travelers and boosted off-season bookings.",
-          highlight: "Boosted off-season bookings",
-          stars: 5,
-          name: "Vikram Singh",
-          designation: "Owner",
-          company: "Hilltop Boutique Hotel",
         },
       ],
     },

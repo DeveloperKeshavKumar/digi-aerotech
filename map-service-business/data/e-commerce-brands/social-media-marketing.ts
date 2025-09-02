@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'social-media-marketing-ecommerce-brands',
@@ -172,33 +171,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Paid Advertising & Retargeting', description: 'Run targeted ad campaigns to reach high-intent customers and retarget potential buyers for increased conversions.' },
         { id: 5, title: 'Analytics & Performance Tracking', description: 'Monitor engagement, reach, clicks, and conversions to continuously optimize campaigns for better results.' },
         { id: 6, title: 'Scaling & Growth Optimization', description: 'Refine strategies, increase ad spend wisely, and expand reach while maintaining ROI and brand consistency.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands Who ", gradient: false },
-        { text: "Grew with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped e-commerce stores increase followers, engagement, and sales with our social media marketing strategies.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram engagement tripled within months thanks to Digi Aerotech’s targeted social campaigns.',
-          highlight: 'Instagram engagement tripled',
-          stars: 5,
-          name: 'Priya Sharma',
-          designation: 'Founder',
-          company: 'StyleKart'
-        },
-        {
-          id: '2',
-          message: 'TikTok and Facebook ads generated consistent sales and increased brand awareness significantly.',
-          highlight: 'consistent sales',
-          stars: 5,
-          name: 'Rohit Verma',
-          designation: 'CEO',
-          company: 'UrbanTrendz'
-        }
       ]
     },
     cta: {

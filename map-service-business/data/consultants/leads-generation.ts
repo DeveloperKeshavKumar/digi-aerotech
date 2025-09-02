@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'lead-generation-consultants',
@@ -220,33 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Optimization & Scaling',
           description: 'Refine campaigns, improve CPL, and scale up once results are consistent.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants Who ", gradient: false },
-        { text: "Transformed with Our Lead Systems", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
-      ],
-      description: 'Here’s how Digi Aerotech helped consultants scale with predictable lead generation.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Before Digi Aerotech, my leads were irregular. Now I get 20+ qualified calls every month like clockwork.',
-          highlight: '20+ qualified calls',
-          stars: 5,
-          name: 'Anita Verma',
-          designation: 'Career Consultant',
-          company: 'FuturePath Consulting'
-        },
-        {
-          id: '2',
-          message: 'Their system filled my pipeline with exactly the kind of business clients I wanted. Best decision for my consulting practice.',
-          highlight: 'pipeline with ideal clients',
-          stars: 5,
-          name: 'Rohit Mehta',
-          designation: 'Business Strategy Consultant',
-          company: 'ScaleX Advisory'
         }
       ]
     },

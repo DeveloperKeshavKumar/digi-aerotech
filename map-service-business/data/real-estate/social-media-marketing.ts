@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "social-media-marketing-real-estate",
@@ -219,36 +218,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Analytics & ROI Tracking",
           description: "We measure inquiries, leads, CTR & conversions to optimize and scale campaigns.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Brands That", gradient: false },
-        { text: "Grew with Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our social media campaigns have turned property brands into trusted leaders, generating consistent inquiries & site visits.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Digi Aerotech turned our real estate Instagram into a lead machine. We generated 300+ inquiries in 2 months.",
-          highlight: "300+ inquiries",
-          stars: 5,
-          name: "Ananya Sharma",
-          designation: "Marketing Head",
-          company: "DreamNest Realty",
-        },
-        {
-          id: "2",
-          message:
-            "From property reels to investor campaigns, their strategies helped us sell 70% of inventory within launch week.",
-          highlight: "sold 70% of inventory",
-          stars: 5,
-          name: "Vikram Malhotra",
-          designation: "Director",
-          company: "UrbanSky Builders",
         },
       ],
     },

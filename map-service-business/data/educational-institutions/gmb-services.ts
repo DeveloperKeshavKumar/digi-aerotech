@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'gmb-services-educational-institutions',
@@ -226,33 +225,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Continuous Optimization',
           description: 'Regular updates and improvements to maintain top local visibility.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Institutions Who ", gradient: false },
-        { text: "Boosted Local Visibility with GMB", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers attract more local students through optimized Google Business Profiles.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our college inquiries increased by 40% after GMB optimization by Digi Aerotech.',
-          highlight: 'inquiries increased by 40%',
-          stars: 5,
-          name: 'Dr. Anjali Mehra',
-          designation: 'Principal',
-          company: 'Sunrise College'
-        },
-        {
-          id: '2',
-          message: 'Parents find our school easily now, thanks to professional GMB management.',
-          highlight: 'parents find our school easily',
-          stars: 5,
-          name: 'Rohit Verma',
-          designation: 'Director',
-          company: 'Bright Minds Academy'
         }
       ]
     },

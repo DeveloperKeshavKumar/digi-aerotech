@@ -13,7 +13,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'meta-ads-ecomm-brands',
@@ -194,17 +193,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'A/B Testing & Optimization', description: 'Test creatives, copy, and audiences to maximize ROI.' },
         { id: 5, title: 'Remarketing Strategies', description: 'Recover abandoned carts and re-engage interested customers.' },
         { id: 6, title: 'Reporting & Scaling', description: 'Track performance metrics, scale winning campaigns, and continually refine for better results.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands Who ", gradient: false },
-        { text: "Scaled Sales with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped e-commerce brands run high-converting Meta Ads campaigns and generate massive sales.',
-      testimonials: [
-        { id: '1', message: 'Our Facebook & Instagram ads are now driving consistent sales. ROI has improved drastically.', highlight: 'consistent sales', stars: 5, name: 'Riya Kapoor', designation: 'Founder', company: 'TrendyCart' },
-        { id: '2', message: 'Meta Ads campaigns created by Digi Aerotech brought us more conversions than we expected.', highlight: 'more conversions', stars: 5, name: 'Amit Singh', designation: 'CEO', company: 'ShopSmart' }
       ]
     },
     cta: {

@@ -345,43 +345,6 @@ export const webDevelopmentService: ServiceData = {
             // { id: 18, name: 'GitHub', logo: '/tech/icons8-github-96.png', category: 'DevOps' }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'What ', gradient: false },
-            { text: 'Our Clients ', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" },
-            { text: 'Say', gradient: false }
-        ],
-        description: 'Success stories from businesses we\'ve worked with',
-        testimonials: [
-            {
-                id: '1',
-                message: 'DigiAerotech transformed our outdated website into a modern, user-friendly platform that has significantly increased our customer engagement and lead generation.',
-                highlight: 'significantly increased our customer engagement',
-                stars: 5,
-                name: 'John Smith',
-                designation: 'CEO',
-                company: 'TechSolutions Inc.'
-            },
-            {
-                id: '2',
-                message: 'The team at DigiAerotech delivered our e-commerce website ahead of schedule and under budget. The attention to detail and custom features have helped us increase our online sales by 200%.',
-                highlight: 'increase our online sales by 200%',
-                stars: 5,
-                name: 'Sarah Johnson',
-                designation: 'Marketing Director',
-                company: 'FashionRetail Ltd.'
-            },
-            {
-                id: '3',
-                message: 'Working with DigiAerotech was a seamless experience from start to finish. Their development team understood our unique needs and delivered a website that perfectly represents our brand.',
-                highlight: 'perfectly represents our brand',
-                stars: 4.5,
-                name: 'Michael Brown',
-                designation: 'Operations Manager',
-                company: 'HealthCare Plus'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Start Your Web Development Project?',
         subtitle: 'GET IN TOUCH',

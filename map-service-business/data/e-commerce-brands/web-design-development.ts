@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'web-design-development-maintenance',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Maintenance & Support',
           description: 'Continuous monitoring, updates, backups, and security patches to ensure your website remains fully functional, secure, and high-performing.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Clients Who ", gradient: false },
-        { text: "Trusted Our Web Solutions", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how businesses across industries have transformed their online presence with Digi Aerotech’s web design, development, and maintenance services.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our website went from slow and outdated to a modern, responsive, and lead-generating platform thanks to Digi Aerotech.',
-          highlight: 'lead-generating platform',
-          stars: 5,
-          name: 'Sanjay Kapoor',
-          designation: 'Founder',
-          company: 'Kapoor Solutions'
-        },
-        {
-          id: '2',
-          message: 'The team manages our website continuously, fixing issues and keeping it secure, freeing us to focus on our business.',
-          highlight: 'manages our website continuously',
-          stars: 5,
-          name: 'Pooja Singh',
-          designation: 'CEO',
-          company: 'Singh Enterprises'
         }
       ]
     },

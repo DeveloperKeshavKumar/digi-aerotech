@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'social-media-marketing-startups-entrepreneurs',
@@ -211,33 +210,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Ads',
           description: 'We integrate smart ad campaigns to amplify reach, scale engagement, and generate qualified leads.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Scaling with ", gradient: false },
-        { text: "Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Here’s how entrepreneurs built massive online visibility and leads with our startup-focused SMM.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram reels went viral and brought us 20K+ organic followers in just 3 months!',
-          highlight: '20K+ Followers',
-          stars: 5,
-          name: 'Ritika Malhotra',
-          designation: 'Founder',
-          company: 'EcoGlow'
-        },
-        {
-          id: '2',
-          message: 'Their LinkedIn strategy positioned me as a thought leader and got us multiple investor meetings.',
-          highlight: 'Investor Outreach',
-          stars: 5,
-          name: 'Arjun Kapoor',
-          designation: 'CEO',
-          company: 'TechNova'
         }
       ]
     },

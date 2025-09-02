@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "ecommerce-marketing-local-business",
@@ -197,36 +196,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Retention & Loyalty",
           description: "We set up email, SMS, and loyalty campaigns to increase repeat purchases.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses", gradient: false },
-        { text: "Thriving with Our E-commerce Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From retail shops to service providers, our e-commerce strategies have helped local businesses scale sales, improve retention, and dominate digital marketplaces.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our bakery started selling online, and their strategy helped us triple our sales in just 3 months.",
-          highlight: "3X Sales Growth",
-          stars: 5,
-          name: "Riya Sharma",
-          designation: "Owner",
-          company: "Sweet Bakes",
-        },
-        {
-          id: "2",
-          message:
-            "Their e-commerce marketing helped our boutique compete online and get repeat customers effortlessly.",
-          highlight: "Boosted Online Visibility",
-          stars: 5,
-          name: "Kunal Mehta",
-          designation: "Founder",
-          company: "Urban Threads",
         },
       ],
     },

@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "web-design-development-gyms-fitness",
@@ -192,34 +191,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Ongoing Maintenance & Updates",
           description: "Regularly update content, plugins, security patches, and performance enhancements for consistent results.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms Who ", gradient: false },
-        { text: "Transformed Their Online Presence", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how our web design and maintenance strategies helped gyms attract more members, streamline bookings, and enhance their brand online.",
-      testimonials: [
-        {
-          id: "1",
-          message: "Our new website is visually stunning and converts more visitors into members than ever before!",
-          highlight: "converts more visitors",
-          stars: 5,
-          name: "Rahul Mehta",
-          designation: "Owner",
-          company: "PowerGym Fitness",
-        },
-        {
-          id: "2",
-          message: "The ongoing maintenance ensures our site is always fast, secure, and up-to-date.",
-          highlight: "fast, secure, and up-to-date",
-          stars: 5,
-          name: "Sneha Kapoor",
-          designation: "Founder",
-          company: "FitZone Studio",
         },
       ],
     },

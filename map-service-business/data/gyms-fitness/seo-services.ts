@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "seo-services-gyms-fitness",
@@ -201,36 +200,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Monitoring & Continuous Improvement",
           description: "Track rankings, leads, and traffic; continuously refine strategies to maintain top positions.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms Who ", gradient: false },
-        { text: "Ranked #1 with Our SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how gyms & fitness studios improved visibility, attracted members, and increased revenue with our SEO services.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "After optimizing our website and Google Maps listings, our local gym saw a 4X increase in new members within 4 months.",
-          highlight: "4X increase in new members",
-          stars: 5,
-          name: "Rohan Mehra",
-          designation: "Owner",
-          company: "PowerHouse Gym",
-        },
-        {
-          id: "2",
-          message:
-            "The SEO strategy brought us top rankings for all our classes and boosted membership signups significantly.",
-          highlight: "top rankings for all classes",
-          stars: 5,
-          name: "Simran Kaur",
-          designation: "Founder",
-          company: "Flex Fitness Studio",
         },
       ],
     },

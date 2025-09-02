@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "other-ads-gyms-fitness",
@@ -203,36 +202,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Scaling Campaigns",
           description: "Increase ad spend strategically to boost ROI and maximize membership signups.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms Growing with", gradient: false },
-        { text: "Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how fitness studios leveraged YouTube, TikTok, and Snapchat ads to boost memberships and brand engagement.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "YouTube and TikTok ads completely changed our gym’s visibility. We’ve doubled new memberships in 3 months.",
-          highlight: "doubled new memberships",
-          stars: 5,
-          name: "Rajat Singh",
-          designation: "Founder",
-          company: "MuscleX Gym",
-        },
-        {
-          id: "2",
-          message:
-            "Snapchat ads helped us connect with younger audiences, and now our evening classes are always full.",
-          highlight: "evening classes are always full",
-          stars: 5,
-          name: "Anjali Verma",
-          designation: "Owner",
-          company: "FitZone Studio",
         },
       ],
     },

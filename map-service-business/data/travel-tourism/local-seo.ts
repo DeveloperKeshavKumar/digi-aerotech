@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'local-seo-travel-tourism',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Review & Reputation Building', description: 'Gather 5-star reviews and manage responses.' },
         { id: 5, title: 'Citations & Local Backlinks', description: 'Boost local authority with directory & media listings.' },
         { id: 6, title: 'Tracking & Optimization', description: 'Monitor maps rankings and optimize continuously.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands That ", gradient: false },
-        { text: "Won with Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel agencies & local tourism brands boost local visibility, reviews, and bookings.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We went from being invisible to ranking in the top 3 on Google Maps. Walk-ins and calls increased immediately.',
-          highlight: 'top 3 on Google Maps',
-          stars: 5,
-          name: 'Ananya Gupta',
-          designation: 'Founder',
-          company: 'ExploreCity Tours'
-        },
-        {
-          id: '2',
-          message: 'Our local bookings doubled thanks to Digi Aerotech’s local SEO strategy and review management.',
-          highlight: 'local bookings doubled',
-          stars: 5,
-          name: 'Ravi Sharma',
-          designation: 'CEO',
-          company: 'Heritage Holidays'
-        }
       ]
     },
     cta: {

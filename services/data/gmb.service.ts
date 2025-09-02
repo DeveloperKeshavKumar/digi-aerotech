@@ -300,42 +300,6 @@ export const gmbService: ServiceData = {
             }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'GMB ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Local businesses dominating Google Maps and attracting more customers than ever before',
-        testimonials: [
-            {
-                id: '1',
-                message: 'After GMB optimization, our restaurant went from invisible to #1 in local search results. We now get 50+ calls daily and our dining room is consistently full. The ROI has been incredible!',
-                highlight: 'went from invisible to #1 in local search',
-                stars: 5,
-                name: 'Suresh Patel',
-                designation: 'Owner',
-                company: 'Family Restaurant'
-            },
-            {
-                id: '2',
-                message: 'DigiAerotech transformed our GMB listing with professional photos, regular posts, and review management. We went from 8 reviews to 120+ five-star reviews in 6 months. Business has tripled!',
-                highlight: 'business has tripled in 6 months',
-                stars: 5,
-                name: 'Kavita Sharma',
-                designation: 'Manager',
-                company: 'Beauty Salon'
-            },
-            {
-                id: '3',
-                message: 'Their GMB management got our dental clinic ranking #1 for all local searches. Patient inquiries increased 400% and we\'re booked solid weeks in advance. Best marketing investment we\'ve made.',
-                highlight: 'patient inquiries increased 400%',
-                stars: 5,
-                name: 'Dr. Rohit Gupta',
-                designation: 'Dentist',
-                company: 'Dental Clinic'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Dominate Local Search Results?',
         subtitle: 'START YOUR GMB OPTIMIZATION',

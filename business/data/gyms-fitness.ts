@@ -205,69 +205,6 @@ export const gymsFitness: BusinessData = {
     ]
   },
 
-  testimonials: {
-    title: [
-      { text: "Gym & Fitness " },
-      { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-    ],
-    subtitle: "How We've Helped Fitness Businesses Grow",
-    description: "Read testimonials from successful gym owners, fitness studio managers, and personal trainers who have transformed their businesses with our digital marketing expertise.",
-    items: [
-      {
-        id: '1',
-        message: 'Our gym membership doubled within 3 months thanks to their targeted Google Ads and social media campaigns. The automation system they set up has reduced our admin work by 60% while increasing member engagement.',
-        highlight: 'gym membership doubled within 3 months',
-        stars: 5,
-        name: 'Karan Mehta',
-        designation: 'Gym Owner',
-        company: 'StrengthLab Fitness Delhi'
-      },
-      {
-        id: '2',
-        message: 'Their local SEO strategies got us ranking #1 for "yoga studio Mumbai" and "pilates classes near me". Our class bookings increased by 180% and we consistently have wait lists now.',
-        highlight: 'class bookings increased by 180%',
-        stars: 5,
-        name: 'Anita Thomas',
-        designation: 'Studio Manager',
-        company: 'ZenFit Yoga Mumbai'
-      },
-      {
-        id: '3',
-        message: 'The Facebook and Instagram campaigns they created featuring our transformation stories brought in 95 new members in just 6 weeks. Their content strategy is absolutely phenomenal.',
-        highlight: '95 new members in just 6 weeks',
-        stars: 5,
-        name: 'Rohan Kapoor',
-        designation: 'Fitness Center Owner',
-        company: 'FitCore Pune'
-      },
-      {
-        id: '4',
-        message: 'Working with this team has been game-changing for our CrossFit box. They handle everything from our website to Google Ads, and we\'ve seen 240% growth in new member signups.',
-        highlight: '240% growth in new member signups',
-        stars: 5,
-        name: 'Divya Nair',
-        designation: 'Marketing Head',
-        company: 'Alpha Athletics Hyderabad'
-      },
-      {
-        id: '5',
-        message: 'As a personal trainer, I struggled with online marketing. Their lead generation system now brings me 15-20 qualified leads every month, and my booking calendar is always full.',
-        stars: 4,
-        name: 'Rajesh Sharma',
-        designation: 'Personal Trainer',
-        company: 'Fitness Pro Bangalore'
-      },
-      {
-        id: '6',
-        message: 'The mobile app they developed for our gym has been incredible. Members love the workout tracking and class booking features. Our retention rate improved by 45% since launch.',
-        highlight: 'retention rate improved by 45%',
-        stars: 5,
-        name: 'Priya Patel',
-        designation: 'Gym Chain Owner',
-        company: 'FitZone Gyms Gujarat'
-      }
-    ],
-  },
 
   cta: {
     title: 'Ready to Fill Your Gym with Motivated Members?',

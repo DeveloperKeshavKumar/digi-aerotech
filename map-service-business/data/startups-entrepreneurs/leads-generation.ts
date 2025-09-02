@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'leads-generation-startups-entrepreneurs',
@@ -212,33 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Optimization',
           description: 'Once profitable, we scale ad spend, expand outreach, and optimize funnels for exponential startup growth and consistent revenue.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Scaling Fast with ", gradient: false },
-        { text: "Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how entrepreneurs use our lead generation strategies to get consistent, qualified customers every month.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We went from struggling for clients to booking 50+ sales calls every month. The pipeline is consistent and predictable.',
-          highlight: '50+ Sales Calls Monthly',
-          stars: 5,
-          name: 'Kunal Verma',
-          designation: 'Founder',
-          company: 'GrowthX SaaS'
-        },
-        {
-          id: '2',
-          message: 'Their multi-channel lead gen strategy completely transformed our business. We scaled from 5 to 200 paying customers in 6 months.',
-          highlight: '200 Customers in 6 Months',
-          stars: 5,
-          name: 'Ayesha Khan',
-          designation: 'Co-Founder',
-          company: 'FinEdge Solutions'
         }
       ]
     },

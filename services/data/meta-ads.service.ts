@@ -282,42 +282,6 @@ export const metaAdsService: ServiceData = {
             }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'Meta Ads ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Real results from businesses that chose our Meta advertising expertise',
-        testimonials: [
-            {
-                id: '1',
-                message: 'Our e-commerce sales tripled within 3 months of working with DigiAerotech. Their Meta Ads strategy and creative approach generated a consistent 6x ROAS across Facebook and Instagram campaigns.',
-                highlight: 'sales tripled with 6x ROAS',
-                stars: 5,
-                name: 'Anjali Reddy',
-                designation: 'E-commerce Manager',
-                company: 'Fashion Boutique Online'
-            },
-            {
-                id: '2',
-                message: 'The lead quality from their Facebook campaigns is incredible - 40% of leads convert to paying customers. Their targeting expertise and lead nurturing approach has transformed our business growth.',
-                highlight: '40% of leads convert to paying customers',
-                stars: 5,
-                name: 'Rajesh Kumar',
-                designation: 'Business Owner',
-                company: 'Real Estate Services'
-            },
-            {
-                id: '3',
-                message: 'DigiAerotech reduced our cost per app install by 70% while increasing install quality. Their mobile-first approach and creative testing methodology delivers consistent results for our mobile app.',
-                highlight: 'reduced cost per install by 70%',
-                stars: 5,
-                name: 'Priya Nair',
-                designation: 'Growth Manager',
-                company: 'EdTech Startup'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Dominate Facebook & Instagram?',
         subtitle: 'START YOUR META ADS CAMPAIGN',

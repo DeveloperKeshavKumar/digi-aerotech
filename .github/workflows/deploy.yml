@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   deploy-commit:
+    if: github.repository == 'digiaerotech-Dev/Website'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo

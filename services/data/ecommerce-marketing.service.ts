@@ -282,42 +282,6 @@ export const ecommerceMarketingService: ServiceData = {
                 }
             ]
         },
-        testimonials: {
-            title: [
-                { text: 'E-commerce ', gradient: false },
-                { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-            ],
-            description: 'Real results from e-commerce businesses that achieved remarkable growth',
-            testimonials: [
-                {
-                    id: '1',
-                    message: 'DigiAerotech increased our Shopify store revenue by 450% in 8 months. Their conversion optimization and email marketing strategies transformed our business from struggling to thriving.',
-                    highlight: 'revenue increased by 450% in 8 months',
-                    stars: 5,
-                    name: 'Sneha Agarwal',
-                    designation: 'Founder',
-                    company: 'Handcrafted Jewelry Store'
-                },
-                {
-                    id: '2',
-                    message: 'Our Amazon sales tripled after their marketplace optimization. Their product listing improvements and PPC management helped us dominate our category with 40% market share increase.',
-                    highlight: 'Amazon sales tripled, 40% market share increase',
-                    stars: 5,
-                    name: 'Vikram Gupta',
-                    designation: 'E-commerce Manager',
-                    company: 'Electronics Brand'
-                },
-                {
-                    id: '3',
-                    message: 'The email marketing automation they set up recovers 35% of abandoned carts and generates ₹2 lakhs additional revenue monthly. Their customer retention strategies are game-changing.',
-                    highlight: 'recovers 35% abandoned carts, ₹2L additional monthly revenue',
-                    stars: 5,
-                    name: 'Ritu Sharma',
-                    designation: 'Owner',
-                    company: 'Fashion E-commerce Store'
-                }
-            ]
-        },
         cta: {
             title: 'Ready to Scale Your E-commerce Store?',
             subtitle: 'ACCELERATE YOUR SALES',

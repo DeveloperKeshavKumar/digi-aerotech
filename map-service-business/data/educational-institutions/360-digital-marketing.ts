@@ -18,7 +18,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: '360-digital-marketing-educational-institutions',
@@ -225,33 +224,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'ROI Reporting',
           description: 'Transparent dashboards showing inquiries, admissions, and actual ROI.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: '360° Digital Marketing ', gradient: false },
-        { text: 'Success Stories in Education', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'Institutions that partnered with Digi Aerotech achieved record-breaking admissions and stronger brand recognition.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We struggled with admissions every year. After partnering with Digi Aerotech, we saw a 300% increase in applications within just 6 months.',
-          highlight: '300% increase in applications',
-          stars: 5,
-          name: 'Dr. Arjun Mehta',
-          designation: 'Director',
-          company: 'Sunrise International School'
-        },
-        {
-          id: '2',
-          message: 'The campaigns were laser-focused. Parents started finding us on Google, and we filled all our MBA seats before the deadline.',
-          highlight: 'filled all MBA seats before deadline',
-          stars: 5,
-          name: 'Prof. Neha Sharma',
-          designation: 'Dean',
-          company: 'Global Business College'
         }
       ]
     },

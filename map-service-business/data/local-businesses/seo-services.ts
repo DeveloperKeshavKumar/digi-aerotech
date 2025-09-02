@@ -19,7 +19,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "seo-services-local-business",
@@ -194,36 +193,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Tracking & Reporting",
           description: "Transparent SEO reports with ranking, calls & visits tracked.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Growing", gradient: false },
-        { text: "With Our SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From salons to gyms to clinics, our SEO strategies help local businesses dominate search and bring more customers daily.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our salon now shows up in the top 3 Google results! We get 20+ new customers every week thanks to their local SEO service.",
-          highlight: "20+ Weekly Customers",
-          stars: 5,
-          name: "Ritu Malhotra",
-          designation: "Owner",
-          company: "Glow Beauty Salon",
-        },
-        {
-          id: "2",
-          message:
-            "Our gym membership inquiries tripled after our business started ranking for ‘gym near me’. Amazing SEO results!",
-          highlight: "3x More Leads",
-          stars: 5,
-          name: "Amit Sharma",
-          designation: "Founder",
-          company: "FitZone Gym",
         },
       ],
     },

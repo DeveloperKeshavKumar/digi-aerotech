@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'aso-services-doctors-clinics',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Monitoring, Reporting & Retention',
           description: 'Track app performance, rankings, and user engagement; implement push notifications and updates to keep patients returning.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Clinics & Doctors Who ", gradient: false },
-        { text: "Boosted App Engagement with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech has helped medical apps improve downloads, ratings, and patient retention across clinics.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our clinic app downloads doubled after Digi Aerotech optimized our App Store listing and visuals.',
-          highlight: 'downloads doubled',
-          stars: 5,
-          name: 'Dr. Ananya Roy',
-          designation: 'Founder',
-          company: 'CareWell Clinics'
-        },
-        {
-          id: '2',
-          message: 'The ASO strategies increased our app engagement and patient bookings significantly in just a few months.',
-          highlight: 'increased app engagement',
-          stars: 5,
-          name: 'Dr. Rajiv Menon',
-          designation: 'CEO',
-          company: 'Healthy Life Clinic'
         }
       ]
     },

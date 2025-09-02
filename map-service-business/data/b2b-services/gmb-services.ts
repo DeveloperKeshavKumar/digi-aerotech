@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'gmb-services-b2b',
@@ -167,33 +166,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Content & Updates', description: 'Publish posts, offers, and case studies for credibility.' },
         { id: 5, title: 'Local SEO Boost', description: 'Rank in the Google 3-Pack and dominate Maps.' },
         { id: 6, title: 'Tracking & Reporting', description: 'Monitor calls, inquiries & ROI for complete transparency.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Companies Growing ", gradient: false },
-        { text: "with Digi Aerotech’s GMB Services", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
-      ],
-      description: 'From IT consultants to logistics firms, Digi Aerotech’s GMB services have helped B2B brands gain visibility, credibility, and quality enterprise leads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We were invisible to local clients before. After Digi Aerotech’s GMB optimization, we started getting weekly inquiries from real corporate buyers.',
-          highlight: 'Consistent Enterprise Leads',
-          stars: 5,
-          name: 'Rohan Malhotra',
-          designation: 'Managing Director',
-          company: 'TechWave Consulting'
-        },
-        {
-          id: '2',
-          message: 'Their review generation and content strategy made our firm look highly credible online. Decision-makers trust us more now.',
-          highlight: 'Stronger Online Trust',
-          stars: 5,
-          name: 'Priya Khanna',
-          designation: 'CEO',
-          company: 'Global Logistics Hub'
-        }
       ]
     },
     cta: {

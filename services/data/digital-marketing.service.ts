@@ -314,42 +314,6 @@ export const digitalMarketingService: ServiceData = {
             { id: 8, name: 'Hootsuite', logo: '/tech/icons8-hootsuite-96.png', category: 'Automation' }
         ]
     },
-    testimonials: {
-        title: [
-            { text: '360° Marketing ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Real results from businesses that chose our comprehensive digital marketing approach',
-        testimonials: [
-            {
-                id: '1',
-                message: 'DigiAerotech\'s 360° approach transformed our entire digital presence. Within 6 months, our website traffic increased 400%, leads grew by 250%, and our revenue doubled. Their integrated strategy works!',
-                highlight: 'revenue doubled within 6 months',
-                stars: 5,
-                name: 'Amit Gupta',
-                designation: 'CEO',
-                company: 'Manufacturing Solutions Ltd.'
-            },
-            {
-                id: '2',
-                message: 'The comprehensive digital strategy created perfect synergy between our SEO, social media, and paid ads. Our cost per lead dropped by 60% while lead quality improved dramatically. Best investment we\'ve made.',
-                highlight: 'cost per lead dropped by 60%',
-                stars: 5,
-                name: 'Riya Sharma',
-                designation: 'Marketing Director',
-                company: 'HealthTech Startup'
-            },
-            {
-                id: '3',
-                message: 'Working with DigiAerotech feels like having an entire marketing department. Their 360° service covers everything from strategy to execution. Our brand visibility and customer acquisition have never been better.',
-                highlight: 'brand visibility and customer acquisition have never been better',
-                stars: 5,
-                name: 'Vikash Patel',
-                designation: 'Founder',
-                company: 'E-learning Platform'
-            }
-        ]
-    },
     cta: {
         title: 'Ready for Complete Digital Transformation?',
         subtitle: 'START YOUR 360° JOURNEY',

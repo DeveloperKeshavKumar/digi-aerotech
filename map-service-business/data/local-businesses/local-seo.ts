@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "local-seo-for-local-business",
@@ -195,36 +194,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Tracking & Reporting",
           description: "We monitor rankings, traffic, and calls to measure ROI and refine strategies.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Ranking", gradient: false },
-        { text: "With Our SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our Local SEO services have helped small shops, restaurants, gyms, and service providers dominate local searches and grow their customer base.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Before Local SEO, we were invisible online. Now we’re in the top 3 on Google Maps and get 40+ calls monthly from local customers.",
-          highlight: "Top 3 on Google Maps",
-          stars: 5,
-          name: "Ramesh Sharma",
-          designation: "Owner",
-          company: "Sharma Electronics",
-        },
-        {
-          id: "2",
-          message:
-            "We started showing up for ‘near me’ searches within 2 months. Foot traffic to our bakery has doubled thanks to Local SEO.",
-          highlight: "2X Foot Traffic",
-          stars: 5,
-          name: "Neha Kapoor",
-          designation: "Founder",
-          company: "Sweet Treats Bakery",
         },
       ],
     },

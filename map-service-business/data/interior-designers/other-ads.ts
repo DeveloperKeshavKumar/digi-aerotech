@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "other-ads-interior-designers",
@@ -189,36 +188,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Reporting",
           description: "Deliver detailed insights into ad performance, leads, and ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers", gradient: false },
-        { text: "Winning with Other Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From Pinterest boards to YouTube tours, our ad strategies help interior designers inspire audiences, build credibility, and attract more clients.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our YouTube ad showcasing a living room transformation went viral and brought in 20+ new inquiries within a week!",
-          highlight: "Video Ads Success",
-          stars: 5,
-          name: "Ananya Rao",
-          designation: "Founder",
-          company: "Studio Aura Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "Pinterest ads helped us showcase our portfolio directly to homeowners searching for design inspiration. Highly recommended!",
-          highlight: "Pinterest Growth",
-          stars: 5,
-          name: "Kunal Sharma",
-          designation: "Creative Director",
-          company: "Elite Interiors",
         },
       ],
     },

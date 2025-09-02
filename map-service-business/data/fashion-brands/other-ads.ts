@@ -26,7 +26,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'other-ads-fashion-brands',
@@ -230,33 +229,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Reporting & Insights',
           description: 'Provide detailed analytics and recommendations for future campaigns.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands Who ", gradient: false },
-        { text: "Scaled with Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how our campaigns on Twitter, TikTok, YouTube, and LinkedIn helped fashion brands increase visibility, engagement, and sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our sales skyrocketed after running TikTok and YouTube campaigns. Truly ROI-driven!',
-          highlight: 'sales skyrocketed',
-          stars: 5,
-          name: 'Riya Kapoor',
-          designation: 'Founder',
-          company: 'Chic Trends'
-        },
-        {
-          id: '2',
-          message: 'Twitter and LinkedIn ads brought us high-quality leads and boosted brand awareness.',
-          highlight: 'high-quality leads',
-          stars: 5,
-          name: 'Karan Mehta',
-          designation: 'CEO',
-          company: 'Urban Vogue'
         }
       ]
     },

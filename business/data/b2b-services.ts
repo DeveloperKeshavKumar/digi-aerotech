@@ -209,69 +209,6 @@ export const b2bServices: BusinessData = {
     ]
   },
 
-  testimonials: {
-    title: [
-      { text: "B2B Services " },
-      { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-    ],
-    subtitle: "How We've Helped B2B Companies Scale",
-    description: "Read testimonials from successful B2B service providers, consultants, and business solution companies who have transformed their lead generation with our digital marketing expertise.",
-    items: [
-      {
-        id: '1',
-        message: 'Our B2B consulting firm\'s lead quality improved by 420% within 6 months of working with this team. Their LinkedIn campaigns and content strategy positioned us as industry thought leaders, resulting in 3 major enterprise contracts.',
-        highlight: 'lead quality improved by 420% and 3 major enterprise contracts',
-        stars: 5,
-        name: 'Vikram Agarwal',
-        designation: 'Managing Director',
-        company: 'Strategic Business Solutions Mumbai'
-      },
-      {
-        id: '2',
-        message: 'The SEO and content marketing strategies they implemented got our IT services company ranking #1 for "enterprise software solutions India". Our monthly qualified leads increased from 15 to 180.',
-        highlight: 'monthly qualified leads increased from 15 to 180',
-        stars: 5,
-        name: 'Priya Sharma',
-        designation: 'CEO',
-        company: 'TechForward Solutions Bangalore'
-      },
-      {
-        id: '3',
-        message: 'Their Google Ads and LinkedIn campaigns for our financial services firm have been phenomenal. We\'re getting C-level executive inquiries and our average deal size increased by 60%.',
-        highlight: 'average deal size increased by 60%',
-        stars: 5,
-        name: 'Rajesh Malhotra',
-        designation: 'Partner',
-        company: 'Corporate Finance Associates Delhi'
-      },
-      {
-        id: '4',
-        message: 'As a management consulting firm, we needed marketing that reflected our expertise. Their thought leadership content and webinar campaigns generated 250 high-quality prospects in 4 months.',
-        highlight: 'generated 250 high-quality prospects in 4 months',
-        stars: 5,
-        name: 'Anita Patel',
-        designation: 'Senior Partner',
-        company: 'Excellence Consulting Group Ahmedabad'
-      },
-      {
-        id: '5',
-        message: 'Their B2B marketing automation setup transformed our lead nurturing process. Our sales team now focuses on qualified opportunities, increasing our conversion rate by 75%.',
-        stars: 4,
-        name: 'Suresh Reddy',
-        designation: 'Business Development Head',
-        company: 'Enterprise Solutions Hyderabad'
-      },
-      {
-        id: '6',
-        message: 'The professional website and case study portfolio they developed for our HR consulting firm has been incredible. We now attract Fortune 500 clients and our revenue grew 300%.',
-        highlight: 'revenue grew 300% and attract Fortune 500 clients',
-        stars: 5,
-        name: 'Meera Gupta',
-        designation: 'Founder',
-        company: 'People First Consulting Pune'
-      }
-    ],
-  },
 
   cta: {
     title: 'Ready to Dominate Your B2B Market?',

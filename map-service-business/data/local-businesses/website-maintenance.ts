@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "website-maintenance-local-business",
@@ -200,36 +199,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Ongoing Monitoring",
           description: "Your website is monitored 24/7 for uptime, threats, and smooth customer experience.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Trust", gradient: false },
-        { text: "Our Website Care", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From cafés to gyms to clinics, we ensure local business websites remain updated, secure, and always customer-ready.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "My restaurant’s website is always updated with new menus & offers. Customers love it, and it boosted online reservations by 35%.",
-          highlight: "35% More Bookings",
-          stars: 5,
-          name: "Amit Verma",
-          designation: "Owner",
-          company: "SpiceHub Restaurant",
-        },
-        {
-          id: "2",
-          message:
-            "Earlier, my website used to crash frequently. Now, it runs smoothly, loads fast, and even ranks higher on Google. Amazing service!",
-          highlight: "99.9% Uptime",
-          stars: 5,
-          name: "Ritika Singh",
-          designation: "Owner",
-          company: "FitZone Gym",
         },
       ],
     },

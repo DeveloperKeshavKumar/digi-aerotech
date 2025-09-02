@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'web-design-development-maintenance-fashion-brands',
@@ -227,33 +226,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Ongoing Maintenance',
           description: 'Regular updates, backups, security patches, and optimizations to keep your site performing at its best.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands Who ", gradient: false },
-        { text: "Loved Their New Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands launch stunning, high-performing websites that convert visitors into customers.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our website now perfectly reflects our brand identity, and our sales increased by 40% after launch!',
-          highlight: 'sales increased by 40%',
-          stars: 5,
-          name: 'Sneha Kapoor',
-          designation: 'Founder',
-          company: 'VogueTrend'
-        },
-        {
-          id: '2',
-          message: 'The maintenance and support have been exceptional. No downtime and our site always runs smoothly.',
-          highlight: 'always runs smoothly',
-          stars: 5,
-          name: 'Rahul Sharma',
-          designation: 'CEO',
-          company: 'Urban Chic Fashion'
         }
       ]
     },

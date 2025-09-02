@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "google-ads-local-business",
@@ -196,36 +195,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Optimization & Scaling",
           description: "We continuously refine campaigns, lower CPC, and scale profitable ads for long-term growth.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Growing", gradient: false },
-        { text: "With Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our Google Ads services have helped local businesses—from retail shops to restaurants—generate more calls, walk-ins, and leads consistently.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "After running Google Ads with this team, my bakery started getting 15+ calls daily and more customers walking in. Best investment I’ve made!",
-          highlight: "15+ Daily Calls",
-          stars: 5,
-          name: "Ritika Sharma",
-          designation: "Owner",
-          company: "Sweet Cravings Bakery",
-        },
-        {
-          id: "2",
-          message:
-            "Our fitness studio got fully booked within weeks of running ads. We now appear at the top for ‘gyms near me’.",
-          highlight: "Fully Booked in Weeks",
-          stars: 5,
-          name: "Amit Verma",
-          designation: "Founder",
-          company: "FlexFit Studio",
         },
       ],
     },

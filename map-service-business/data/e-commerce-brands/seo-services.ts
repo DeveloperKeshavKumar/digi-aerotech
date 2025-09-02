@@ -13,7 +13,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'seo-services-ecomm-brands',
@@ -154,17 +153,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Content Strategy & Marketing', description: 'Create blog posts, category guides, and product content that attracts, educates, and converts your target audience.' },
         { id: 5, title: 'Link Building & Authority', description: 'Acquire high-quality backlinks from authoritative sources to strengthen your domain authority and SERP rankings.' },
         { id: 6, title: 'Monitoring & Optimization', description: 'Track performance, refine keywords, adjust content and strategies to maximize organic traffic and sales over time.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands That ", gradient: false },
-        { text: "Grew Organically with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Discover how our SEO strategies helped e-commerce stores increase organic traffic, conversions, and revenue consistently.',
-      testimonials: [
-        { id: '1', message: 'Our organic traffic tripled within 4 months thanks to Digi Aerotech’s SEO strategies. Highly recommend.', highlight: 'organic traffic tripled', stars: 5, name: 'Rohit Verma', designation: 'Founder', company: 'TechStyle' },
-        { id: '2', message: 'We ranked for 150+ high-value keywords and saw a huge boost in sales. Their team is exceptional.', highlight: '150+ high-value keywords', stars: 5, name: 'Simran Kaur', designation: 'CEO', company: 'GlamCart' }
       ]
     },
     cta: {

@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'leads-generation-travel-tourism',
@@ -197,33 +196,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Lead Qualification & Filtering', description: 'Ensure only high-quality, genuine leads are passed.' },
         { id: 5, title: 'Nurturing & Retargeting', description: 'Automated follow-ups that warm up cold leads.' },
         { id: 6, title: 'Scaling & Optimization', description: 'Double down on best campaigns to grow bookings consistently.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands That ", gradient: false },
-        { text: "Scaled with Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel agencies & tour operators consistently get high-quality leads and boost bookings.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Earlier we got random leads from OTAs. Now Digi Aerotech gives us exclusive, high-quality leads that actually book.',
-          highlight: 'exclusive, high-quality leads',
-          stars: 5,
-          name: 'Pooja Verma',
-          designation: 'Founder',
-          company: 'DreamTrips Holidays'
-        },
-        {
-          id: '2',
-          message: 'Our leads doubled within a month and conversion rates improved with their nurturing system. Incredible results.',
-          highlight: 'leads doubled',
-          stars: 5,
-          name: 'Siddharth Malhotra',
-          designation: 'CEO',
-          company: 'SkyHigh Travels'
-        }
       ]
     },
     cta: {

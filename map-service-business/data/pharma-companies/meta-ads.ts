@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "meta-ads-pharma-companies",
@@ -202,36 +201,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Optimization & Scaling",
           description: "We track performance, optimize bidding & creatives, and scale campaigns to achieve 3X–4X ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Brands", gradient: false },
-        { text: "Growing with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From pharma manufacturers to retail pharmacies, our Meta Ads campaigns have delivered consistent approvals, higher engagement, and stronger lead pipelines.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our pharma ads were constantly getting disapproved until we worked with this team. Now, our campaigns run smoothly and deliver consistent leads.",
-          highlight: "95% Ad Approval Rate",
-          stars: 5,
-          name: "Rohit Sharma",
-          designation: "Marketing Head",
-          company: "HealthWell Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "We generated 3.5X more hospital inquiries in 2 months with their Meta Ads strategies. Truly experts in healthcare advertising.",
-          highlight: "3.5X More B2B Leads",
-          stars: 5,
-          name: "Dr. Anita Kapoor",
-          designation: "Director",
-          company: "Medicare Distributors",
         },
       ],
     },

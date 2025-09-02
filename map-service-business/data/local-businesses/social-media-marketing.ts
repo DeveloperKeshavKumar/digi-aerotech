@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant3",
     whyChooseUs: "variant2",
     process: "variant1",
-    testimonials: "variant3",
   },
   data: {
     slug: "social-media-marketing-local-business",
@@ -201,36 +200,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Analytics & Scaling",
           description: "We track growth, optimize campaigns, and scale what brings maximum ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Winning", gradient: false },
-        { text: "With Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From salons to gyms to local restaurants, our social media campaigns bring walk-ins, calls & loyal customers every day.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our restaurant went viral locally with their Instagram reels campaign! We see 30% more table bookings now.",
-          highlight: "30% More Bookings",
-          stars: 5,
-          name: "Rohit Mehra",
-          designation: "Owner",
-          company: "TasteHub Café",
-        },
-        {
-          id: "2",
-          message:
-            "My gym’s membership doubled in 3 months thanks to their geo-targeted Facebook ads. Highly recommend!",
-          highlight: "2x Membership Growth",
-          stars: 5,
-          name: "Simran Kaur",
-          designation: "Founder",
-          company: "Pulse Fitness",
         },
       ],
     },

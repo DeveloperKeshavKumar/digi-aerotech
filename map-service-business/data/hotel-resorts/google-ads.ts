@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "google-ads-hotel-resort",
@@ -190,36 +189,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Ongoing Optimization",
           description: "We continuously refine campaigns to keep you ahead of competitors.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts That", gradient: false },
-        { text: "Boosted Bookings With Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From boutique resorts to luxury hotels, our ad campaigns have delivered a steady flow of direct bookings while reducing OTA commissions.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Within weeks, our bookings doubled. We spend less on OTAs and get more direct guests from ads.",
-          highlight: "2x Bookings",
-          stars: 5,
-          name: "Amit Verma",
-          designation: "Owner",
-          company: "Seaside Resort",
-        },
-        {
-          id: "2",
-          message:
-            "Our seasonal offers now sell out quickly thanks to optimized campaigns. Truly amazing ROI!",
-          highlight: "High ROI",
-          stars: 5,
-          name: "Neha Kapoor",
-          designation: "GM",
-          company: "Hillside Luxury Stay",
         },
       ],
     },

@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'social-media-marketing-restaurants-cafes',
@@ -207,33 +206,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Analytics & Scaling',
           description: 'We track follower growth, engagement, and ROI — scaling what works best for continuous growth and bookings.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Winning with ", gradient: false },
-        { text: "Social Media Marketing", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Restaurants & cafés are seeing massive growth in online orders, walk-ins, and brand visibility with our social media strategies.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram reels went viral, and we had customers saying they came after watching them!',
-          highlight: 'Reels Success',
-          stars: 5,
-          name: 'Aarav Kapoor',
-          designation: 'Owner',
-          company: 'Brew & Bite Café'
-        },
-        {
-          id: '2',
-          message: 'We built a strong online brand presence with their strategies, and our catering business grew via LinkedIn campaigns.',
-          highlight: 'B2B & B2C Growth',
-          stars: 5,
-          name: 'Priya Mehta',
-          designation: 'Founder',
-          company: 'TasteHub Restaurant'
         }
       ]
     },

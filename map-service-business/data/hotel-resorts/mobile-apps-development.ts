@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "mobile-apps-development-hotel-resort",
@@ -200,36 +199,6 @@ export const map: ServiceBusinessMap = {
           title: "Launch & Optimization",
           description:
             "Launch the app and continuously monitor analytics to improve engagement, conversion, and retention.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts Using Our", gradient: false },
-        { text: "Mobile Apps to Boost Bookings", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how custom mobile apps helped hotels and resorts increase direct bookings, improve guest engagement, and build loyalty.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our resort app increased direct bookings by 35% and guest engagement skyrocketed. Truly game-changing.",
-          highlight: "35% increase in direct bookings",
-          stars: 5,
-          name: "Anil Kumar",
-          designation: "Owner",
-          company: "Sunset Beach Resort",
-        },
-        {
-          id: "2",
-          message:
-            "The mobile app allowed us to offer personalized packages, send notifications, and retain guests year-round.",
-          highlight: "Improved guest retention",
-          stars: 5,
-          name: "Meera Joshi",
-          designation: "Manager",
-          company: "Hilltop Hotel & Spa",
         },
       ],
     },

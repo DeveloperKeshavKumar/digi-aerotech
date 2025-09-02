@@ -180,17 +180,6 @@ export const mobileDevelopmentService: ServiceData = {
             { id: 4, name: 'Flutter', logo: '/tech/icons8-flutter-96.png', category: 'Cross-Platform' }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'Mobile App ' },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Hear from our satisfied clients.',
-        testimonials: [
-            { id: '1', message: 'They built our iOS app from scratch and delivered exceptional quality within 10 weeks. User feedback has been phenomenal!', highlight: '', stars: 5, name: 'Aisha Patel', designation: 'Product Manager', company: 'HealthTech Co.' },
-            { id: '2', message: 'The cross-platform app works flawlessly on both iOS and Android. We saw a 40% increase in user engagement.', highlight: '', stars: 5, name: 'Manish Gupta', designation: ' CTO', company: 'EduGames' }
-        ]
-    },
     cta: {
         title: 'Ready to Build Your Mobile App?',
         subtitle: 'LAUNCH YOUR APP NOW',

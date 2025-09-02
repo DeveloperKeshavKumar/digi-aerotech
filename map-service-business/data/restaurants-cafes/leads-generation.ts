@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'leads-generation-restaurants-cafes',
@@ -201,33 +200,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Tracking & Scaling',
           description: 'We monitor reservations, calls, and orders to identify winning funnels and scale campaigns for higher ROI.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Growing With ", gradient: false },
-        { text: "Our Lead Funnels", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how restaurants and cafés attract more bookings, repeat diners, and direct delivery orders through our lead gen system.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within a month, we built a database of 500+ customers. Now, every new dish launch gets direct orders through WhatsApp blasts!',
-          highlight: '500+ Leads',
-          stars: 5,
-          name: 'Arjun Mehta',
-          designation: 'Owner',
-          company: 'Masala-e-Magic'
-        },
-        {
-          id: '2',
-          message: 'Our table reservations doubled, and repeat customers increased after setting up loyalty lead funnels. Game-changer!',
-          highlight: '2X Reservations',
-          stars: 5,
-          name: 'Sneha Batra',
-          designation: 'Manager',
-          company: 'The Coffee Mill'
         }
       ]
     },

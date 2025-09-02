@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "gmb-services-local-business",
@@ -196,36 +195,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Insights & Growth",
           description: "We track profile insights, customer actions, and continuously improve visibility.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses", gradient: false },
-        { text: "Winning with Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From retail shops to local services, our GMB optimization services have helped businesses increase visibility, attract more calls, and grow consistently.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "My salon started getting 10+ new walk-ins every week after GMB optimization. We now show up #1 in local searches.",
-          highlight: "10+ New Clients Weekly",
-          stars: 5,
-          name: "Meera Kapoor",
-          designation: "Owner",
-          company: "Glow Beauty Salon",
-        },
-        {
-          id: "2",
-          message:
-            "Our café saw a huge increase in calls & map searches. Now we dominate the ‘coffee near me’ results in our area.",
-          highlight: "Top 3 Local Rankings",
-          stars: 5,
-          name: "Rajesh Nair",
-          designation: "Founder",
-          company: "Urban Brew Café",
         },
       ],
     },

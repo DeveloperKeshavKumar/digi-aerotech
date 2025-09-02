@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: '360-digital-marketing',
@@ -242,33 +241,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Sales-Ready Delivery',
           description: 'Deliver well-qualified leads to your sales team, ready to close deals efficiently.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: '360 Digital Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'Real results from b2b services businesses that achieved remarkable growth.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'The 360 digital marketing services transformed our b2b services business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'B2b Services Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding 360 digital marketing expertise specifically for b2b services. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for b2b services',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'B2b Services Solutions'
         }
       ]
     },

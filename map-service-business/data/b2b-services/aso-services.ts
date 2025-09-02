@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'aso-services-b2b',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Localization', description: 'Expand reach with international market targeting.' },
         { id: 5, title: 'Analytics & Tracking', description: 'Monitor keyword ranking, downloads & lead flow.' },
         { id: 6, title: 'Ongoing Optimization', description: 'Continuous updates to stay ahead of competition.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Apps Scaling ", gradient: false },
-        { text: "with Digi Aerotech ASO", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
-      ],
-      description: 'Our ASO strategies have helped B2B SaaS apps, IT service providers & enterprise solutions gain visibility and convert installs into clients.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Digi Aerotech took our SaaS app from invisible to ranking in the top 3 for our niche keywords. We now generate steady enterprise leads.',
-          highlight: 'Top 3 Rankings',
-          stars: 5,
-          name: 'Arjun Mehta',
-          designation: 'Founder',
-          company: 'B2B SaaS Solutions'
-        },
-        {
-          id: '2',
-          message: 'Their ASO process not only boosted our downloads but also brought in actual qualified B2B clients. Incredible ROI!',
-          highlight: 'High-Value Leads',
-          stars: 5,
-          name: 'Nidhi Kapoor',
-          designation: 'CEO',
-          company: 'Global Logistics Tech'
-        }
       ]
     },
     cta: {

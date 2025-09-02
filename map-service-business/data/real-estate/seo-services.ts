@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "seo-services-real-estate",
@@ -218,36 +217,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Reporting & Scaling",
           description: "We track rankings, leads, and conversions, scaling campaigns for maximum ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Brands That", gradient: false },
-        { text: "Ranked Higher with SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our SEO strategies have helped real estate developers, brokers & agencies dominate Google, generating consistent property inquiries.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "With Digi Aerotech’s SEO, our property listings started ranking in the top 3 for ‘luxury apartments in Gurgaon’. Inquiries doubled in 3 months.",
-          highlight: "Inquiries doubled",
-          stars: 5,
-          name: "Rahul Mehta",
-          designation: "Managing Director",
-          company: "Skyline Developers",
-        },
-        {
-          id: "2",
-          message:
-            "Their local SEO strategy helped our projects rank for multiple locations. Site visits went up by 70% within 4 months.",
-          highlight: "70% more site visits",
-          stars: 5,
-          name: "Pooja Sinha",
-          designation: "Marketing Head",
-          company: "DreamHome Realty",
         },
       ],
     },

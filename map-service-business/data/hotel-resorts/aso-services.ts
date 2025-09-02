@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "aso-services-hotel-resort",
@@ -189,36 +188,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Ongoing Tracking & Updates",
           description: "We track rankings, analyze data, and update strategies to keep your app growing long-term.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts That", gradient: false },
-        { text: "Increased Bookings via ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From boutique hotels to luxury resorts, our ASO services have helped hospitality brands reduce OTA dependency and increase direct bookings.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our hotel app downloads grew by 60% in three months. Now, 40% of our bookings come directly through our app.",
-          highlight: "Direct Bookings",
-          stars: 5,
-          name: "Rakesh Patel",
-          designation: "Owner",
-          company: "Seaside Luxury Resort",
-        },
-        {
-          id: "2",
-          message:
-            "Thanks to ASO, our app ranks higher than competitors in our city. We now get consistent new bookings every week.",
-          highlight: "App Store Ranking",
-          stars: 5,
-          name: "Ananya Gupta",
-          designation: "Manager",
-          company: "Urban Stay Hotels",
         },
       ],
     },

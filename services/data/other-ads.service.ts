@@ -287,42 +287,6 @@ export const otherAdsService: ServiceData = {
             }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'Multi-Platform ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Real results from businesses that diversified their advertising across multiple platforms',
-        testimonials: [
-            {
-                id: '1',
-                message: 'DigiAerotech\'s LinkedIn campaigns generated 300% more qualified B2B leads than our previous agency. Their understanding of professional targeting and content strategy is exceptional.',
-                highlight: '300% more qualified B2B leads',
-                stars: 5,
-                name: 'Rohit Malhotra',
-                designation: 'Sales Director',
-                company: 'Enterprise Software Company'
-            },
-            {
-                id: '2',
-                message: 'Our TikTok campaigns reached 2 million users and increased brand awareness by 150% among our target demographic. Their creative approach and trend awareness is outstanding.',
-                highlight: 'reached 2 million users, awareness increased 150%',
-                stars: 5,
-                name: 'Kavya Reddy',
-                designation: 'Brand Manager',
-                company: 'Fashion Startup'
-            },
-            {
-                id: '3',
-                message: 'By diversifying our ad spend across LinkedIn, Pinterest, and YouTube, we reduced our overall cost-per-acquisition by 45% while reaching new audience segments we never accessed before.',
-                highlight: 'reduced cost-per-acquisition by 45%',
-                stars: 5,
-                name: 'Arjun Patel',
-                designation: 'Growth Manager',
-                company: 'E-learning Platform'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Expand Beyond Google & Facebook?',
         subtitle: 'DIVERSIFY YOUR ADVERTISING',

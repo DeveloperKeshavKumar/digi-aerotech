@@ -24,7 +24,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'local-seo-educational-institutions',
@@ -228,33 +227,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Monitoring & Reporting',
           description: 'Track rankings, leads, and engagement; continuously refine for better results.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Institutions Who ", gradient: false },
-        { text: "Improved Local Visibility with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers dominate local search results and attract more local students.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our campus appears at the top in local search, resulting in a surge of nearby student inquiries.',
-          highlight: 'top in local search',
-          stars: 5,
-          name: 'Priya Sharma',
-          designation: 'Principal',
-          company: 'Bright Future School'
-        },
-        {
-          id: '2',
-          message: 'With Digi Aerotech’s local SEO, our coaching center has become the go-to choice for students in our city.',
-          highlight: 'go-to choice for students',
-          stars: 5,
-          name: 'Rakesh Mehta',
-          designation: 'Director',
-          company: 'Elite Coaching Center'
         }
       ]
     },

@@ -26,7 +26,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'other-ads-educational-institutions',
@@ -230,33 +229,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Reporting & Continuous Improvement',
           description: 'Analyze results, tweak targeting, and improve ad performance continuously.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Educational Institutions Who ", gradient: false },
-        { text: "Grew with Our Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how our targeted ads on social media platforms increased enrollments, engagement, and awareness.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our coaching institute saw a 40% increase in enrollment after TikTok and LinkedIn campaigns.',
-          highlight: '40% increase in enrollment',
-          stars: 5,
-          name: 'Dr. Priya Verma',
-          designation: 'Director',
-          company: 'Excel Coaching Center'
-        },
-        {
-          id: '2',
-          message: 'Twitter and Snapchat campaigns brought in highly engaged students within weeks.',
-          highlight: 'highly engaged students',
-          stars: 5,
-          name: 'Rajesh Gupta',
-          designation: 'Principal',
-          company: 'Sunrise School'
         }
       ]
     },

@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'meta-ads-travel-tourism',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Retargeting Funnels', description: 'Recover abandoned inquiries & convert warm leads.' },
         { id: 5, title: 'Seasonal Campaigns', description: 'Custom ad strategies for holidays, festivals & events.' },
         { id: 6, title: 'Scaling & Optimization', description: 'Monitor results & scale winning campaigns for maximum ROI.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands Who ", gradient: false },
-        { text: "Scaled with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel agencies & tourism brands generate bookings and global reach through Meta Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Digi Aerotech’s Instagram reels & retargeting ads doubled our inquiries in just 3 weeks.',
-          highlight: 'doubled our inquiries',
-          stars: 5,
-          name: 'Pooja Nair',
-          designation: 'Founder',
-          company: 'OceanVista Holidays'
-        },
-        {
-          id: '2',
-          message: 'Our Facebook ads went from random clicks to a 5X ROI, thanks to their precise targeting and seasonal campaigns.',
-          highlight: '5X ROI',
-          stars: 5,
-          name: 'Rahul Verma',
-          designation: 'CEO',
-          company: 'AdventureQuest Tours'
-        }
       ]
     },
     cta: {

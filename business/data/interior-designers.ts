@@ -216,69 +216,6 @@ export const interiorDesigners: BusinessData = {
         ]
     },
 
-    testimonials: {
-        title: [
-            { text: "Interior Design " },
-            { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        subtitle: "How We've Helped Design Professionals Build Prestigious Brands",
-        description: "Read testimonials from successful interior designers, architects, and design studio owners who have transformed their businesses with our visual-first marketing expertise.",
-        items: [
-            {
-                id: '1',
-                message: 'My interior design business transformed completely within 6 months of working with this team. Their Instagram and portfolio website strategies attracted 15 luxury home projects worth ₹2.5 crore total. My consultation rates tripled.',
-                highlight: '15 luxury projects worth ₹2.5 crore and tripled consultation rates',
-                stars: 5,
-                name: 'Kavya Sharma',
-                designation: 'Interior Designer',
-                company: 'Elegant Spaces Mumbai'
-            },
-            {
-                id: '2',
-                message: 'Their visual content strategy and Pinterest marketing for my home decor consultancy generated 280 high-quality leads in 4 months. I now work exclusively with premium clients and my project values increased by 400%.',
-                highlight: '280 leads in 4 months and 400% higher project values',
-                stars: 5,
-                name: 'Arjun Patel',
-                designation: 'Home Design Consultant',
-                company: 'Luxury Living Designs Ahmedabad'
-            },
-            {
-                id: '3',
-                message: 'The local SEO and Google Ads campaigns they managed for our design studio brought in 45 consultation bookings per month. We rank #1 for "interior designers Bangalore" and our studio is booked 3 months in advance.',
-                highlight: '45 consultation bookings monthly and #1 ranking',
-                stars: 5,
-                name: 'Priya Reddy',
-                designation: 'Design Studio Owner',
-                company: 'Modern Interiors Bangalore'
-            },
-            {
-                id: '4',
-                message: 'As an architect specializing in residential design, their marketing helped me establish thought leadership in luxury home design. Featured in 3 design magazines and landed a ₹5 crore villa project.',
-                highlight: 'featured in 3 magazines and ₹5 crore villa project',
-                stars: 5,
-                name: 'Rajesh Malhotra',
-                designation: 'Residential Architect',
-                company: 'Architectural Visions Delhi'
-            },
-            {
-                id: '5',
-                message: 'Their social media marketing and before/after content strategy for my renovation business increased inquiries by 350%. I now focus only on high-end home makeovers and my margins improved significantly.',
-                stars: 4,
-                name: 'Meera Gupta',
-                designation: 'Home Renovation Specialist',
-                company: 'Transform Homes Pune'
-            },
-            {
-                id: '6',
-                message: 'The mobile app they developed for my design consultancy allows clients to visualize spaces in 3D. Client satisfaction scores reached 4.9/5 and referrals increased by 200%.',
-                highlight: '4.9/5 client satisfaction and 200% more referrals',
-                stars: 5,
-                name: 'Vikram Singh',
-                designation: 'Interior Design Consultant',
-                company: 'Spatial Creations Jaipur'
-            }
-        ],
-    },
 
     cta: {
         title: 'Ready to Attract Your Dream Design Clients?',

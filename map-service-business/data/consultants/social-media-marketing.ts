@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'social-media-marketing-consultants-teachers',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Posting & Engagement', description: 'Consistent publishing & interaction with followers.' },
         { id: 5, title: 'Ads & Campaigns', description: 'Run targeted paid ads for leads & visibility.' },
         { id: 6, title: 'Analytics & Reporting', description: 'Monthly tracking of engagement, reach & ROI.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants & Teachers Who ", gradient: false },
-        { text: "Grew with Our Social Media Marketing", gradient: true, gradientClass: "from-purple-500 via-pink-500 to-orange-500" }
-      ],
-      description: 'Real educators & consultants who boosted visibility and leads with Digi Aerotech SMM.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'LinkedIn growth brought me 3x more inquiries for consulting services. My brand visibility skyrocketed.',
-          highlight: '3x more inquiries',
-          stars: 5,
-          name: 'Amit Verma',
-          designation: 'Business Consultant',
-          company: 'AV Consulting'
-        },
-        {
-          id: '2',
-          message: 'Instagram campaigns helped me enroll 50+ new students in my coaching program. Amazing ROI!',
-          highlight: '50+ student enrollments',
-          stars: 5,
-          name: 'Pooja Sharma',
-          designation: 'IELTS Trainer',
-          company: 'Global English Academy'
-        }
       ]
     },
     cta: {

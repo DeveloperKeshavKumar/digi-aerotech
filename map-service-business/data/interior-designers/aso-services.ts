@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "aso-services-interior-designers",
@@ -188,36 +187,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Ongoing Monitoring & Updates",
           description: "We keep optimizing your app for algorithm updates and seasonal search trends.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers Love", gradient: false },
-        { text: "Our ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "We’ve helped interior design apps rank higher, attract homeowners, and generate real client projects consistently.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our app was almost invisible on the Play Store. After ASO, installs grew 5X, and I now get daily leads from homeowners!",
-          highlight: "5X More Installs",
-          stars: 5,
-          name: "Aarav Mehta",
-          designation: "Founder",
-          company: "DreamSpace Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "With optimized visuals and keywords, my design app ranks in the top 5 for ‘home decor ideas’. Clients contact me directly via the app.",
-          highlight: "Top 5 Ranking",
-          stars: 5,
-          name: "Rhea Kapoor",
-          designation: "Interior Designer",
-          company: "Rhea Interiors",
         },
       ],
     },

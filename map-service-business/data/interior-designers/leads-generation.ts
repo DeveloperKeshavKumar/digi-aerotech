@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "leads-generation-interior-designers",
@@ -189,36 +188,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Lead Delivery & Nurturing",
           description: "We deliver leads directly to you and guide nurturing strategies for maximum conversions.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "What Interior Designers", gradient: false },
-        { text: "Say About Our Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From freelancers to full interior firms, our lead generation strategies have helped designers grow their client base consistently.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Before this, I was only getting 1-2 inquiries a month. Now I get daily leads, many of which convert into big-ticket projects.",
-          highlight: "Daily Leads",
-          stars: 5,
-          name: "Kunal Sharma",
-          designation: "Interior Designer",
-          company: "DesignCraft Studio",
-        },
-        {
-          id: "2",
-          message:
-            "Their system delivers serious clients only. I no longer waste time on casual inquiries. My business revenue has doubled in 6 months.",
-          highlight: "Serious Clients",
-          stars: 5,
-          name: "Ankit Malhotra",
-          designation: "Founder",
-          company: "ModernSpaces",
         },
       ],
     },

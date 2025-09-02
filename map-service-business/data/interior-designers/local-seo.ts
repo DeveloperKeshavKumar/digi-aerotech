@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant3",
     whyChooseUs: "variant2",
     process: "variant1",
-    testimonials: "variant3",
   },
   data: {
     slug: "local-seo-interior-designers",
@@ -189,36 +188,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Tracking & Reporting",
           description: "Monthly reports showing ranking improvements, calls, and client leads generated.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers Who", gradient: false },
-        { text: "Ranked Locally with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From solo interior freelancers to established studios, our Local SEO strategies help design businesses attract more nearby clients & projects.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "I was invisible in Google Maps earlier, but within 4 months I started showing up for every interior design search in my city.",
-          highlight: "Top Map Rankings",
-          stars: 5,
-          name: "Meera Joshi",
-          designation: "Interior Designer",
-          company: "Urban Nest Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "Thanks to their local SEO, I now get daily calls from homeowners looking for design services. My projects have doubled in just 6 months.",
-          highlight: "More Calls & Clients",
-          stars: 5,
-          name: "Rohit Kapoor",
-          designation: "Founder",
-          company: "DreamSpace Interiors",
         },
       ],
     },

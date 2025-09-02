@@ -24,7 +24,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'social-media-marketing-fashion-brands',
@@ -228,33 +227,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Analytics & Optimization',
           description: 'Track performance, A/B test campaigns, and refine strategy for continual improvement.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands Who ", gradient: false },
-        { text: "Grew Socially with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Discover how Digi Aerotech helped fashion brands increase engagement, followers, and online sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram engagement tripled thanks to their social media strategy!',
-          highlight: 'engagement tripled',
-          stars: 5,
-          name: 'Ananya Singh',
-          designation: 'Founder',
-          company: 'Trendify'
-        },
-        {
-          id: '2',
-          message: 'We gained thousands of new followers and boosted online sales from social campaigns.',
-          highlight: 'boosted online sales',
-          stars: 5,
-          name: 'Rohit Mehra',
-          designation: 'CEO',
-          company: 'Urban Chic'
         }
       ]
     },

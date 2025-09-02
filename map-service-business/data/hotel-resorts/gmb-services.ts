@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "gmb-services-hotel-resort",
@@ -189,36 +188,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Ongoing Monitoring",
           description: "We track rankings, calls, and bookings to ensure long-term success.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts That", gradient: false },
-        { text: "Rank #1 on Google Maps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our GMB optimization has helped boutique hotels, luxury resorts, and budget stays attract more direct bookings from Google Maps.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Within 2 months, our hotel ranked in the top 3 on Google Maps. Direct bookings increased by 45%.",
-          highlight: "Top 3 Ranking",
-          stars: 5,
-          name: "Rajesh Sharma",
-          designation: "Owner",
-          company: "Blue Lagoon Resort",
-        },
-        {
-          id: "2",
-          message:
-            "We stopped depending on OTAs for most bookings. Now, 60% of our guests come directly through Google Maps.",
-          highlight: "Direct Guests",
-          stars: 5,
-          name: "Pooja Mehra",
-          designation: "Manager",
-          company: "Urban Escape Hotel",
         },
       ],
     },

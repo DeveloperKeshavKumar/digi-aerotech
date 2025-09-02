@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'lead-generation-b2b',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Lead Nurturing', description: 'Build trust with content, follow-ups & automation' },
         { id: 5, title: 'Qualification & Filtering', description: 'Score and filter leads to pass only high-value ones' },
         { id: 6, title: 'Tracking & Reporting', description: 'Measure ROI with full funnel visibility' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Companies Growing with ", gradient: false },
-        { text: "Digi Aerotech’s Lead Generation", gradient: true, gradientClass: "from-blue-500 via-green-500 to-purple-500" }
-      ],
-      description: 'From SaaS startups to enterprise consulting firms, Digi Aerotech delivers consistent pipelines of qualified leads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Before Digi Aerotech, our sales team had no pipeline. Now, we get 40+ qualified B2B leads per month consistently.',
-          highlight: '40+ Qualified Leads / Month',
-          stars: 5,
-          name: 'Rohit Sharma',
-          designation: 'Founder',
-          company: 'NextGen IT Solutions'
-        },
-        {
-          id: '2',
-          message: 'Their LinkedIn + Google Ads lead gen system is unbeatable. We closed 3 enterprise clients in 60 days.',
-          highlight: 'Enterprise Deals Closed',
-          stars: 5,
-          name: 'Ananya Mehta',
-          designation: 'CMO',
-          company: 'LogiCore Consulting'
-        }
       ]
     },
     cta: {

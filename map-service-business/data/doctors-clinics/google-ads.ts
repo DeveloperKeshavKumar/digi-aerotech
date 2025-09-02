@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'google-ads-doctors-clinics',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Monitoring & Reporting',
           description: 'We continuously monitor campaigns, adjust bids, and provide detailed performance reports for transparency.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Clinics Who ", gradient: false },
-        { text: "Increased Appointments via Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech helped clinics improve visibility, attract more patients, and maximize ROI using Google Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our clinic appointments doubled within 2 months thanks to Digi Aerotech’s Google Ads strategy.',
-          highlight: 'appointments doubled',
-          stars: 5,
-          name: 'Dr. Anika Sharma',
-          designation: 'Founder',
-          company: 'Sharma Care Clinic'
-        },
-        {
-          id: '2',
-          message: 'The targeted ads brought high-quality leads and patients from our city, improving our revenue significantly.',
-          highlight: 'high-quality leads and patients',
-          stars: 5,
-          name: 'Dr. Rohan Verma',
-          designation: 'CEO',
-          company: 'Verma Health'
         }
       ]
     },

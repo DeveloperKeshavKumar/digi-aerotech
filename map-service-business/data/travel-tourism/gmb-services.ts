@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'gmb-services-travel-tourism',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Photo & Post Optimization', description: 'Engaging photos & posts for higher click-throughs.' },
         { id: 5, title: 'Local SEO Integration', description: 'Strengthen visibility with backlinks & citations.' },
         { id: 6, title: 'Monitoring & Reporting', description: 'Track insights, calls, and bookings from GMB.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Businesses That ", gradient: false },
-        { text: "Won with GMB", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel brands dominate Google Maps and grow local bookings.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our tour agency started ranking in the Google 3-Pack for “Jaipur city tours” and bookings doubled within 2 months.',
-          highlight: 'Google 3-Pack',
-          stars: 5,
-          name: 'Meera Kapoor',
-          designation: 'Founder',
-          company: 'Jaipur Explore'
-        },
-        {
-          id: '2',
-          message: 'With Digi Aerotech’s GMB optimization, our hotel stays fully booked during peak season.',
-          highlight: 'Fully booked hotel',
-          stars: 5,
-          name: 'Rohit Malhotra',
-          designation: 'Manager',
-          company: 'Himalaya Retreats'
-        }
       ]
     },
     cta: {

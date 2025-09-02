@@ -316,42 +316,6 @@ export const seoService: ServiceData = {
             { id: 8, name: 'Ubersuggest', logo: '/tech/icons8-ubersuggest-96.png', category: 'Research Tools' }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'SEO ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Real businesses achieving top Google rankings and explosive organic growth',
-        testimonials: [
-            {
-                id: '1',
-                message: 'DigiAerotech took our website from page 5 to position #1 for our main keywords in just 8 months. Our organic traffic increased 600% and leads doubled. Their SEO expertise is unmatched!',
-                highlight: 'organic traffic increased 600%',
-                stars: 5,
-                name: 'Rajesh Kumar',
-                designation: 'Business Owner',
-                company: 'Legal Services Firm'
-            },
-            {
-                id: '2',
-                message: 'We were struggling with visibility on Google. Their comprehensive SEO strategy got us ranking for 50+ keywords in the top 3 positions. Our website now generates 10x more qualified leads.',
-                highlight: 'ranking for 50+ keywords in top 3',
-                stars: 5,
-                name: 'Priya Singh',
-                designation: 'Marketing Manager',
-                company: 'Healthcare Clinic'
-            },
-            {
-                id: '3',
-                message: 'The technical SEO fixes alone improved our site speed by 70% and mobile performance dramatically. Combined with their content strategy, we now dominate local search results.',
-                highlight: 'dominate local search results',
-                stars: 5,
-                name: 'Ankit Sharma',
-                designation: 'Founder',
-                company: 'Home Services Company'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Dominate Google Search Results?',
         subtitle: 'START YOUR SEO JOURNEY',

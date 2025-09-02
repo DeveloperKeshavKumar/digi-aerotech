@@ -25,7 +25,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'google-ads-fashion-brands',
@@ -229,33 +228,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Reporting & Scaling',
           description: 'Provide transparent reports and scale winning campaigns for more revenue.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands That ", gradient: false },
-        { text: "Grew with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Discover how Digi Aerotech helped fashion brands increase traffic, leads, and sales through Google Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our online boutique saw a 5x ROI within the first month of Google Ads managed by Digi Aerotech.',
-          highlight: '5x ROI',
-          stars: 5,
-          name: 'Ananya Kapoor',
-          designation: 'Owner',
-          company: 'Chic Vogue'
-        },
-        {
-          id: '2',
-          message: 'The campaigns brought high-quality traffic that converted to real sales, boosting our revenue significantly.',
-          highlight: 'boosting our revenue',
-          stars: 5,
-          name: 'Rishi Malhotra',
-          designation: 'Founder',
-          company: 'Urban Fashion Hub'
         }
       ]
     },

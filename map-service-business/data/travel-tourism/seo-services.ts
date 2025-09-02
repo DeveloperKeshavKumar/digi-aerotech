@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'seo-services-travel-tourism',
@@ -224,33 +223,6 @@ export const map: ServiceBusinessMap = {
           id: 7,
           title: 'Tracking & Reporting',
           description: 'Detailed reports with keyword rankings, traffic growth, and conversion insights.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "SEO Success Stories from ", gradient: false },
-        { text: "Travel Businesses", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Our SEO campaigns helped travel agencies, tour operators, and booking platforms dominate search results and drive organic bookings.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 6 months, our website ranked for top travel keywords. We now get 60% more organic bookings.',
-          highlight: '60% more organic bookings',
-          stars: 5,
-          name: 'Priya Nair',
-          designation: 'CEO',
-          company: 'Dreamscape Travels'
-        },
-        {
-          id: '2',
-          message: 'They helped us rank locally on Google Maps and attract international travelers searching our destination.',
-          highlight: 'rank locally on Google Maps',
-          stars: 5,
-          name: 'Amit Kapoor',
-          designation: 'Founder',
-          company: 'Global Horizon Tours'
         }
       ]
     },

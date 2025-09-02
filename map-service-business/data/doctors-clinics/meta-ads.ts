@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'meta-ads-services',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Reporting & Scaling',
           description: 'Detailed ROI reports & scaling of winning campaigns.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Brands That ", gradient: false },
-        { text: "Scaled with Our Meta Ads", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
-      ],
-      description: 'Hear from clients who experienced real growth and ROI through our Facebook & Instagram ad strategies.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We wasted money on Meta Ads before Digi Aerotech. Their strategy tripled our sales in just 2 months.',
-          highlight: '3x more sales',
-          stars: 5,
-          name: 'Rohit Malhotra',
-          designation: 'Founder',
-          company: 'Urban Fitwear'
-        },
-        {
-          id: '2',
-          message: 'Our clinic campaigns on Facebook now bring us a steady stream of patient inquiries every week.',
-          highlight: 'Steady patient leads',
-          stars: 5,
-          name: 'Dr. Neha Singh',
-          designation: 'Owner',
-          company: 'Wellness Clinic'
         }
       ]
     },

@@ -180,43 +180,6 @@ export const furniture: BusinessData = {
         ]
     },
 
-    testimonials: {
-        title: [
-            { text: "Furniture Brand " },
-            { text: "Success Stories", gradient: true, gradientClass: "from-yellow-500 via-orange-500 to-red-500" }
-        ],
-        subtitle: "How We've Helped Furniture Stores Grow Their Online Sales",
-        description: "Read testimonials from successful furniture stores, manufacturers, and e-commerce platforms who have transformed their sales with our furniture-focused digital marketing expertise.",
-        items: [
-            {
-                id: '1',
-                message: 'We saw a 500% increase in online sales after optimizing our website and running targeted Google Ads. Our furniture store is now the go-to choice in our area.',
-                highlight: '500% increase in online sales',
-                stars: 5,
-                name: 'John Doe',
-                designation: 'CEO',
-                company: 'Elegant Furniture Co.'
-            },
-            {
-                id: '2',
-                message: 'The social media strategies they implemented helped us gain 1,000+ new followers on Instagram, driving more foot traffic to our showroom.',
-                highlight: '1,000+ new followers',
-                stars: 5,
-                name: 'Sara Smith',
-                designation: 'Marketing Manager',
-                company: 'Classic Furniture & Decor'
-            },
-            {
-                id: '3',
-                message: 'With their help, our Google Ads campaign attracted high-intent furniture buyers, and we saw a 200% increase in sales conversions.',
-                highlight: '200% increase in sales conversions',
-                stars: 5,
-                name: 'Michael Williams',
-                designation: 'Founder',
-                company: 'FurnitureLand Online'
-            }
-        ],
-    },
 
     cta: {
         title: 'Ready to Grow Your Furniture Business?',

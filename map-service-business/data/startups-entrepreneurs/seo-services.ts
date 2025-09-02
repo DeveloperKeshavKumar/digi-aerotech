@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'seo-services-startups-entrepreneurs',
@@ -206,33 +205,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Growth & Analytics',
           description: 'Tracking keyword rankings, conversions, and investor interest to refine and scale SEO campaigns.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Growing with ", gradient: false },
-        { text: "Our SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how startups like yours scaled visibility, traffic, and funding with our SEO expertise.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our organic traffic grew 4X in 6 months, reducing ad spend drastically and boosting investor confidence.',
-          highlight: '4X Organic Traffic',
-          stars: 5,
-          name: 'Rohan Sharma',
-          designation: 'Founder',
-          company: 'FinTechUp'
-        },
-        {
-          id: '2',
-          message: 'We went from zero visibility to ranking for 50+ keywords in less than a year. The ROI was game-changing.',
-          highlight: '50+ Keywords Ranked',
-          stars: 5,
-          name: 'Ananya Verma',
-          designation: 'Co-Founder',
-          company: 'EduStart'
         }
       ]
     },

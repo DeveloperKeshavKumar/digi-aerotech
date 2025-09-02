@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'lead-generation-doctors-clinics',
@@ -220,33 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Performance Reporting & Optimization',
           description: 'Analyze campaign results and continuously optimize to reduce cost per lead and increase patient acquisition.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Clinics Who ", gradient: false },
-        { text: "Gained Consistent Leads with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech helped clinics attract qualified patients, increase appointments, and improve ROI through lead generation.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We started getting 50+ high-quality patient leads per month after Digi Aerotech optimized our campaigns and landing pages.',
-          highlight: '50+ high-quality patient leads',
-          stars: 5,
-          name: 'Dr. Meera Iyer',
-          designation: 'Founder',
-          company: 'Iyer Care Clinic'
-        },
-        {
-          id: '2',
-          message: 'The lead generation campaigns helped us fill our appointment slots consistently, increasing revenue by 40%.',
-          highlight: 'increasing revenue by 40%',
-          stars: 5,
-          name: 'Dr. Rajat Kapoor',
-          designation: 'CEO',
-          company: 'Kapoor Health Center'
         }
       ]
     },

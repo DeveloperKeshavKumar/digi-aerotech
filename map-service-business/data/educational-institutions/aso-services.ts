@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'aso-services-educational-institutions',
@@ -227,33 +226,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Continuous Optimization',
           description: 'Monitor rankings, reviews, and competition to maintain top visibility.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Educational Institutions Who ", gradient: false },
-        { text: "Boosted Enrollment with ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped schools, colleges, and e-learning platforms increase app downloads and student engagement.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our e-learning app downloads doubled within 2 months thanks to Digi Aerotech’s ASO strategies.',
-          highlight: 'downloads doubled',
-          stars: 5,
-          name: 'Dr. Priya Verma',
-          designation: 'Founder',
-          company: 'SmartLearn'
-        },
-        {
-          id: '2',
-          message: 'ASO helped our college app reach top rankings and attract more student registrations.',
-          highlight: 'top rankings',
-          stars: 5,
-          name: 'Rajat Singh',
-          designation: 'Director',
-          company: 'Future Academy'
         }
       ]
     },

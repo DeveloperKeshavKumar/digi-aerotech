@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'local-seo-consultants',
@@ -219,33 +218,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Tracking & Scaling',
           description: 'Monitor growth and expand to new nearby markets.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants Who ", gradient: false },
-        { text: "Dominated Local Search with Us", gradient: true, gradientClass: "from-blue-500 via-green-500 to-teal-500" }
-      ],
-      description: 'See how Digi Aerotech helped consultants capture more local clients with SEO.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'I wasn’t visible in my own city. After 2 months with Digi Aerotech, I now rank in the top 3 for my consulting services!',
-          highlight: 'Top 3 rankings in 2 months',
-          stars: 5,
-          name: 'Ritika Sharma',
-          designation: 'Career Consultant',
-          company: 'NextStep Consulting'
-        },
-        {
-          id: '2',
-          message: 'Local SEO brought me clients I didn’t even know were searching nearby. My calendar is now full every week!',
-          highlight: 'Consistent local clients',
-          stars: 5,
-          name: 'Vivek Khanna',
-          designation: 'Business Consultant',
-          company: 'ScaleEdge Advisors'
         }
       ]
     },

@@ -18,7 +18,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: '360-digital-marketing',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Campaign Execution', description: 'Run ads, influencer, and social media campaigns that sell.' },
         { id: 5, title: 'Retention & Remarketing', description: 'Convert one-time buyers into loyal, repeat customers.' },
         { id: 6, title: 'Scale & Expansion', description: 'Double down on winning campaigns and expand to new markets.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: 'B2C Growth ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
-      ],
-      description: 'Real results from B2C brands that achieved massive sales growth with Digi Aerotech.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our e-commerce sales doubled in just 3 months thanks to Digi Aerotech’s 360 campaigns.',
-          highlight: 'sales doubled in just 3 months',
-          stars: 5,
-          name: 'Priya Sharma',
-          designation: 'Founder',
-          company: 'D2C Fashion Brand'
-        },
-        {
-          id: '2',
-          message: 'They understand B2C psychology perfectly — our campaigns now actually convert customers.',
-          highlight: 'campaigns now actually convert',
-          stars: 5,
-          name: 'Amit Verma',
-          designation: 'CEO',
-          company: 'Fitness Equipment Store'
-        }
       ]
     },
     cta: {

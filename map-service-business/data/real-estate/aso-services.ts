@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'aso-services-real-estate',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Ongoing ASO & Updates',
           description: 'Continuous tracking, updates, and trend-based keyword tweaks keep your app on top.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Apps That", gradient: false },
-        { text: "Scaled with Our ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped property apps boost installs, rankings, and generate consistent property inquiries.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our property rental app saw a 250% increase in downloads within 3 months thanks to Digi Aerotech’s ASO strategies.',
-          highlight: '250% increase in downloads',
-          stars: 5,
-          name: 'Rohit Malhotra',
-          designation: 'Founder',
-          company: 'RentEasy'
-        },
-        {
-          id: '2',
-          message: 'They helped us rank in the top 5 for "buy house app" keyword — property inquiries doubled in 2 months!',
-          highlight: 'rank in the top 5',
-          stars: 5,
-          name: 'Anita Kapoor',
-          designation: 'CEO',
-          company: 'DreamHomes'
         }
       ]
     },

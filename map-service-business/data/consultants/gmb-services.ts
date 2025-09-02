@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'gmb-services-consultants-teachers',
@@ -222,33 +221,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Continuous Growth',
           description: 'Optimize further with geo-tagging, service area targeting, and advanced local SEO strategies.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants & Teachers Who ", gradient: false },
-        { text: "Ranked Higher with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech transformed consultants and teachers into local leaders with Google Business Profile services.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Before Digi Aerotech, I was invisible on Google Maps. Now I consistently get student inquiries directly from GMB!',
-          highlight: 'student inquiries',
-          stars: 5,
-          name: 'Anita Verma',
-          designation: 'IELTS Trainer',
-          company: 'Verma Language Institute'
-        },
-        {
-          id: '2',
-          message: 'As a business consultant, most of my leads now come from my Google profile thanks to their optimization strategies.',
-          highlight: 'most of my leads',
-          stars: 5,
-          name: 'Ravi Kapoor',
-          designation: 'Business Consultant',
-          company: 'Kapoor Consulting'
         }
       ]
     },

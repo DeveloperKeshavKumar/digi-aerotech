@@ -210,69 +210,6 @@ export const doctorsClinics: BusinessData = {
     ]
   },
 
-  testimonials: {
-    title: [
-      { text: "Medical Practice " },
-      { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-    ],
-    subtitle: "How We've Helped Doctors & Clinics Grow Their Patient Base",
-    description: "Read testimonials from successful doctors, medical specialists, and clinic owners who have transformed their patient acquisition with our healthcare-focused digital marketing expertise.",
-    items: [
-      {
-        id: '1',
-        message: 'Our cardiology clinic\'s patient bookings increased by 420% within 6 months of working with this team. Their Google My Business optimization and medical SEO strategies got us ranking #1 for "cardiologist Mumbai" and we now have a 3-week waiting list.',
-        highlight: 'patient bookings increased by 420% and #1 ranking',
-        stars: 5,
-        name: 'Dr. Rajesh Sharma',
-        designation: 'Cardiologist',
-        company: 'Heart Care Clinic Mumbai'
-      },
-      {
-        id: '2',
-        message: 'The Facebook and Instagram campaigns they created for our dental practice brought in 240 new patients in 4 months. The educational content about oral health they produce has positioned us as the go-to dental experts in our area.',
-        highlight: '240 new patients in 4 months',
-        stars: 5,
-        name: 'Dr. Priya Patel',
-        designation: 'Dental Surgeon',
-        company: 'Smile Dental Care Ahmedabad'
-      },
-      {
-        id: '3',
-        message: 'As a dermatologist, visual content is crucial for my practice. Their social media marketing showcasing before/after results and skin care tips increased my consultation bookings by 350% and established my authority in cosmetic dermatology.',
-        highlight: 'consultation bookings increased by 350%',
-        stars: 5,
-        name: 'Dr. Kavya Reddy',
-        designation: 'Dermatologist',
-        company: 'Glow Skin Clinic Hyderabad'
-      },
-      {
-        id: '4',
-        message: 'Their patient lead generation system for our multi-specialty clinic has been phenomenal. We now receive 150+ qualified patient inquiries monthly, and our appointment booking rate improved by 80% through their automated systems.',
-        highlight: '150+ qualified inquiries monthly and 80% better booking rate',
-        stars: 5,
-        name: 'Dr. Suresh Kumar',
-        designation: 'Medical Director',
-        company: 'City Hospital Bangalore'
-      },
-      {
-        id: '5',
-        message: 'The telemedicine app they developed for our clinic during COVID became our biggest revenue generator. Patient consultations increased by 500% and we now serve patients across 3 states through the platform.',
-        stars: 4,
-        name: 'Dr. Meera Gupta',
-        designation: 'General Physician',
-        company: 'HealthFirst Clinic Delhi'
-      },
-      {
-        id: '6',
-        message: 'Their healthcare marketing automation has streamlined our patient communication. Appointment no-shows reduced by 60% and patient satisfaction scores reached 4.8/5 through personalized follow-ups and health reminders.',
-        highlight: '60% reduction in no-shows and 4.8/5 satisfaction',
-        stars: 5,
-        name: 'Dr. Vikram Singh',
-        designation: 'Orthopedic Surgeon',
-        company: 'Joint Care Center Pune'
-      }
-    ],
-  },
 
   cta: {
     title: 'Ready to Transform Your Medical Practice?',

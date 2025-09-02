@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'seo-services-consultants',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Technical SEO', description: 'Fix site speed, mobile usability, indexing & structure.' },
         { id: 5, title: 'Content Marketing', description: 'Create blogs, guides, and authority-building resources.' },
         { id: 6, title: 'Tracking & Reporting', description: 'Monitor performance & refine strategies monthly.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants Who ", gradient: false },
-        { text: "Grew with Our SEO", gradient: true, gradientClass: "from-blue-500 via-cyan-500 to-green-500" }
-      ],
-      description: 'Real consultants who scaled their visibility & leads with Digi Aerotech SEO services.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 4 months, I started ranking for “business consultant in Mumbai” and my inbound leads doubled.',
-          highlight: 'Inbound leads doubled',
-          stars: 5,
-          name: 'Ravi Kapoor',
-          designation: 'Business Consultant',
-          company: 'RK Advisory'
-        },
-        {
-          id: '2',
-          message: 'SEO brought me consistent clients without spending heavily on ads. Digi Aerotech nailed it!',
-          highlight: 'Consistent client flow',
-          stars: 5,
-          name: 'Neha Malhotra',
-          designation: 'Career Consultant',
-          company: 'Pathway Careers'
-        }
       ]
     },
     cta: {

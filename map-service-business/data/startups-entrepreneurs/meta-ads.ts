@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'meta-ads-startups-entrepreneurs',
@@ -212,33 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Reporting',
           description: 'Once winning campaigns are identified, we scale budgets strategically while providing transparent performance reports.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Growing with ", gradient: false },
-        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how our Meta Ads campaigns have transformed startups into fast-growing businesses with more leads and sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our lead flow increased 400% within the first month of running Facebook Ads. They know exactly how to target the right audience.',
-          highlight: '400% More Leads',
-          stars: 5,
-          name: 'Ankit Mehra',
-          designation: 'Founder',
-          company: 'QuickLaunch'
-        },
-        {
-          id: '2',
-          message: 'We went from struggling with organic reach to generating consistent sales via Instagram Ads. Perfect for startups like ours!',
-          highlight: 'Consistent Sales via Ads',
-          stars: 5,
-          name: 'Pooja Sharma',
-          designation: 'Co-Founder',
-          company: 'StyleNest'
         }
       ]
     },

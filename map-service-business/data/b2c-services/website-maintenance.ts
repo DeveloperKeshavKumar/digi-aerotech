@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'web-design-development-maintenance',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Testing & Launch', description: 'Quality checks, bug fixes & smooth deployment.' },
         { id: 5, title: 'Ongoing Maintenance', description: 'Updates, security patches & performance optimization.' },
         { id: 6, title: 'Support & Growth', description: 'Monitor, upgrade & scale with business growth.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Businesses Growing ", gradient: false },
-        { text: "with Digi Aerotech Websites", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
-      ],
-      description: 'From startups to enterprises, our websites are helping businesses grow leads, sales & trust online.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Digi Aerotech redesigned our outdated site into a sleek, modern platform that doubled our online inquiries.',
-          highlight: '2X leads',
-          stars: 5,
-          name: 'Rohit Sharma',
-          designation: 'Founder',
-          company: 'NextGen Consulting'
-        },
-        {
-          id: '2',
-          message: 'Their maintenance plans keep our e-commerce website fast, secure, and updated. Highly recommended!',
-          highlight: '99.9% uptime',
-          stars: 5,
-          name: 'Priya Nair',
-          designation: 'Owner',
-          company: 'Urban Style Fashion'
-        }
       ]
     },
     cta: {

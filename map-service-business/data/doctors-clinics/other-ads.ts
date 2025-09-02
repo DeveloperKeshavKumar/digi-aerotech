@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'other-ads-doctors-clinics',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Optimization & Reporting',
           description: 'Weekly optimizations & transparent performance reports.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Clinics Who Grew with ", gradient: false },
-        { text: "Smarter Ads", gradient: true, gradientClass: "from-rose-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how advanced ad campaigns transformed visibility & patient flow for clinics.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our YouTube ads positioned us as trusted experts and increased consultations by 40%.',
-          highlight: '40% more consultations',
-          stars: 5,
-          name: 'Dr. Neha Verma',
-          designation: 'Founder',
-          company: 'Wellness Plus Clinic'
-        },
-        {
-          id: '2',
-          message: 'Retargeting ads helped us bring back patients who had dropped off earlier. ROI improved significantly.',
-          highlight: 'Better patient retention',
-          stars: 5,
-          name: 'Dr. Sameer Khan',
-          designation: 'MD',
-          company: 'Medicare Clinic'
         }
       ]
     },

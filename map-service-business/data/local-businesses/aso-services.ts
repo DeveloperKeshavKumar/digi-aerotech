@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant3",
     whyChooseUs: "variant1",
     process: "variant2",
-    testimonials: "variant3",
   },
   data: {
     slug: "aso-services-local-business",
@@ -197,36 +196,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Monitoring & Reporting",
           description: "We track rankings, downloads, and reviews to continuously improve ASO performance.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses", gradient: false },
-        { text: "Who Succeeded with Our ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From cafes to gyms, salons to service providers—our ASO strategies have helped local businesses increase app visibility, downloads, and loyal customers.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our salon app downloads doubled after their ASO strategy. We now get new walk-ins daily from local searches.",
-          highlight: "2X More Installs",
-          stars: 5,
-          name: "Anjali Verma",
-          designation: "Owner",
-          company: "Glow Salon & Spa",
-        },
-        {
-          id: "2",
-          message:
-            "Their ASO optimization helped our restaurant app rank for ‘food delivery near me’. Our orders increased by 60%.",
-          highlight: "Increased Orders",
-          stars: 5,
-          name: "Rohit Mehra",
-          designation: "Founder",
-          company: "CityBites Café",
         },
       ],
     },

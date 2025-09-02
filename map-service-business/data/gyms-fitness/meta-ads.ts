@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "meta-ads-gyms-fitness",
@@ -208,36 +207,6 @@ export const map: ServiceBusinessMap = {
           title: "Reporting & Insights",
           description:
             "Provide detailed reports on leads generated, cost per lead, click-through rates, and membership growth.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms & Fitness Studios Who ", gradient: false },
-        { text: "Scaled with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how gyms and fitness studios attracted local clients and boosted memberships with our Meta Ads campaigns.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our membership inquiries tripled after launching Meta Ads. The campaigns targeted the right local audience perfectly.",
-          highlight: "membership inquiries tripled",
-          stars: 5,
-          name: "Sandeep Rao",
-          designation: "Owner",
-          company: "IronFlex Gym",
-        },
-        {
-          id: "2",
-          message:
-            "The Meta Ads campaign helped us fill classes faster and grow our community of fitness enthusiasts.",
-          highlight: "fill classes faster",
-          stars: 5,
-          name: "Anita Singh",
-          designation: "Founder",
-          company: "FitZone Studio",
         },
       ],
     },

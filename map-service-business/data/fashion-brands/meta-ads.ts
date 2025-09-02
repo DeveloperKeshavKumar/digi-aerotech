@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'meta-ads-fashion-brands',
@@ -227,33 +226,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Reporting & Insights',
           description: 'Track metrics like CTR, CPC, conversions, and ROAS for data-driven decisions.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands That ", gradient: false },
-        { text: "Grew with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands attract the right audience, boost engagement, and increase sales with Meta Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram campaigns now reach the right customers, and sales have doubled within 2 months!',
-          highlight: 'sales have doubled',
-          stars: 5,
-          name: 'Ananya Kapoor',
-          designation: 'Founder',
-          company: 'Vogue Threads'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech’s Meta Ads strategy helped us reach fashion enthusiasts effectively, improving conversions significantly.',
-          highlight: 'improving conversions significantly',
-          stars: 5,
-          name: 'Rahul Mehta',
-          designation: 'Owner',
-          company: 'Urban Chic'
         }
       ]
     },

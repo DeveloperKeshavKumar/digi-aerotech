@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'smm-services-b2c',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Paid Campaigns', description: 'Run ROI-focused ad campaigns on Facebook, Instagram & TikTok.' },
         { id: 5, title: 'Influencer Marketing', description: 'Partner with micro & macro influencers for reach.' },
         { id: 6, title: 'Reporting & Optimization', description: 'Track analytics & optimize campaigns for growth.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Brands Growing ", gradient: false },
-        { text: "with Digi Aerotech Social Media Marketing", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
-      ],
-      description: 'From fashion brands to restaurants, Digi Aerotech has helped B2C businesses grow massive audiences and boost sales with social media marketing.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram grew from 2,000 to 15,000 followers in 6 months, and walk-ins increased by 45%.',
-          highlight: '15,000+ followers',
-          stars: 5,
-          name: 'Sneha Kapoor',
-          designation: 'Owner',
-          company: 'Glow Beauty Studio'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech’s social media ads doubled our online sales in just 3 months!',
-          highlight: '2X online sales',
-          stars: 5,
-          name: 'Arjun Mehta',
-          designation: 'Founder',
-          company: 'FitFuel Nutrition'
-        }
       ]
     },
     cta: {

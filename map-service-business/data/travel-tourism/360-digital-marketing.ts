@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: '360-digital-marketing-travel-tourism',
@@ -219,33 +218,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Global Expansion',
           description: 'Target global travelers with multilingual, multi-country campaigns.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands Who ", gradient: false },
-        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech helped travel agencies & tourism operators attract more travelers, boost bookings, and scale globally.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our small travel agency now gets international clients thanks to Digi Aerotech’s SEO and Instagram marketing.',
-          highlight: 'international clients',
-          stars: 5,
-          name: 'Neha Sharma',
-          designation: 'Founder',
-          company: 'TravelNest'
-        },
-        {
-          id: '2',
-          message: 'They helped us craft seasonal ad campaigns that increased bookings by 300% during holidays. Highly recommended.',
-          highlight: 'bookings by 300%',
-          stars: 5,
-          name: 'Arjun Mehta',
-          designation: 'CEO',
-          company: 'Himalayan Treks'
         }
       ]
     },

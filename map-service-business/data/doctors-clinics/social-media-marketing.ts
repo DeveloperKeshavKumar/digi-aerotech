@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'social-media-marketing-doctors-clinics',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Analytics & Scaling',
           description: 'Track results & scale campaigns that work best.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Doctors Who Grew with ", gradient: false },
-        { text: "Social Media Marketing", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
-      ],
-      description: 'See how we transformed clinics with patient-focused campaigns.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram reels went viral and brought 3x more patient inquiries within 2 months.',
-          highlight: '3X patient inquiries',
-          stars: 5,
-          name: 'Dr. Meera Kapoor',
-          designation: 'Dermatologist',
-          company: 'SkinGlow Clinic'
-        },
-        {
-          id: '2',
-          message: 'Facebook ads helped us reach more patients in our city. We now get daily booking requests.',
-          highlight: '+Daily bookings',
-          stars: 5,
-          name: 'Dr. Arjun Patel',
-          designation: 'Orthopedic Surgeon',
-          company: 'HealWell Ortho Care'
         }
       ]
     },

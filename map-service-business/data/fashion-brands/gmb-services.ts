@@ -24,7 +24,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'gmb-services-fashion-brands',
@@ -228,33 +227,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Continuous Updates & Scaling',
           description: 'Regularly update profile, add offers, and scale visibility to more locations.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Stores That ", gradient: false },
-        { text: "Grew Locally with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands increase local visibility and store visits.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our local boutique saw a 200% increase in footfall after GMB optimization by Digi Aerotech.',
-          highlight: '200% increase in footfall',
-          stars: 5,
-          name: 'Meera Kapoor',
-          designation: 'Owner',
-          company: 'Chic Boutique'
-        },
-        {
-          id: '2',
-          message: 'They managed reviews, updated posts, and our store ranking improved in local searches!',
-          highlight: 'store ranking improved',
-          stars: 5,
-          name: 'Rohan Singh',
-          designation: 'Founder',
-          company: 'Urban Threads'
         }
       ]
     },

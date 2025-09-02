@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'b2b-other-ads',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Campaign Launch', description: 'Multi-channel rollout with precise targeting & tracking' },
         { id: 5, title: 'Retargeting & ABM', description: 'Stay visible to key accounts & shorten sales cycles' },
         { id: 6, title: 'Optimization & Scaling', description: 'Continuous A/B testing & ROI-based scaling' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Firms Growing with ", gradient: false },
-        { text: "Digi Aerotech Ads", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-600" }
-      ],
-      description: 'From SaaS companies to manufacturers, our multi-channel ads deliver quality leads and industry authority.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Digi Aerotech helped us scale with LinkedIn ABM campaigns targeting our top 50 enterprise clients.',
-          highlight: 'Closed 7 High-Value Contracts in 90 Days',
-          stars: 5,
-          name: 'Vikram Mehta',
-          designation: 'CMO',
-          company: 'Global IT Solutions'
-        },
-        {
-          id: '2',
-          message: 'Their programmatic display strategy increased our visibility on industry websites our buyers trust.',
-          highlight: 'Lead Quality Improved by 250%',
-          stars: 5,
-          name: 'Anita Verma',
-          designation: 'Marketing Head',
-          company: 'Industrial Manufacturing Corp'
-        }
       ]
     },
     cta: {

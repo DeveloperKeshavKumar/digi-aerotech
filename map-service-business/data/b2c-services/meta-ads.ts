@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'meta-ads-b2c',
@@ -190,33 +189,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Campaign Launch & Testing', description: 'Launch ads with A/B testing to identify best-performing creatives & audiences.' },
         { id: 5, title: 'Retargeting & Optimization', description: 'Retarget warm leads & optimize ads for maximum ROI.' },
         { id: 6, title: 'Reporting & Scaling', description: 'Track ROI, scale winning campaigns, and lower cost-per-lead.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Brands Growing ", gradient: false },
-        { text: "with Digi Aerotech Meta Ads", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
-      ],
-      description: 'From salons to restaurants, Digi Aerotech has helped B2C businesses drive walk-ins, leads, and sales with high-ROI Meta Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our gym membership signups doubled in 45 days after Digi Aerotech’s Instagram ads campaign. Their targeting is spot-on!',
-          highlight: '2x more signups',
-          stars: 5,
-          name: 'Ritika Sharma',
-          designation: 'Manager',
-          company: 'FitLife Gym'
-        },
-        {
-          id: '2',
-          message: 'We were struggling with low walk-ins. After their Facebook ads strategy, our salon gets 60% of new clients from ads alone.',
-          highlight: '60% new clients from ads',
-          stars: 5,
-          name: 'Arjun Mehta',
-          designation: 'Owner',
-          company: 'Glow & Shine Salon'
-        }
       ]
     },
     cta: {

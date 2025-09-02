@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'seo-services-fashion-brands',
@@ -226,33 +225,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Link Building & Authority',
           description: 'High-quality backlinks and influencer collaborations to boost domain authority.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands Who ", gradient: false },
-        { text: "Grew Organically with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands achieve top Google rankings, drive traffic, and increase sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our organic traffic doubled within 4 months thanks to their SEO strategy!',
-          highlight: 'traffic doubled',
-          stars: 5,
-          name: 'Anika Sharma',
-          designation: 'Founder',
-          company: 'VogueLine'
-        },
-        {
-          id: '2',
-          message: 'We now rank on the first page for our top products. SEO really works!',
-          highlight: 'first page rankings',
-          stars: 5,
-          name: 'Rahul Kapoor',
-          designation: 'CEO',
-          company: 'Chic Street'
         }
       ]
     },

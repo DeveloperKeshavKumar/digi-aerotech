@@ -25,7 +25,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'local-seo-fashion-brands',
@@ -229,33 +228,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Tracking & Continuous Optimization',
           description: 'Monitor rankings, traffic, and adjust strategies to maximize local visibility and foot traffic.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Stores That ", gradient: false },
-        { text: "Ranked Locally & Grew with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion boutiques increase local search visibility, attract nearby customers, and grow sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our boutique now appears at the top of local searches, and foot traffic has doubled in 3 months!',
-          highlight: 'doubled in 3 months',
-          stars: 5,
-          name: 'Sana Kapoor',
-          designation: 'Owner',
-          company: 'Style Avenue'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech’s local SEO strategy made our brand visible to nearby shoppers and boosted our in-store sales significantly.',
-          highlight: 'boosted our in-store sales',
-          stars: 5,
-          name: 'Rohan Mehra',
-          designation: 'Founder',
-          company: 'Urban Threads'
         }
       ]
     },

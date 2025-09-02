@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant2",
   },
   data: {
     slug: "aso-services-pharma-companies",
@@ -213,36 +212,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Ongoing Monitoring & Scaling",
           description: "We continuously track performance, analyze competitors, and scale strategies to maintain top rankings.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Companies", gradient: false },
-        { text: "That Trust Our ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Leading pharma brands partner with us to increase app downloads, build digital trust, and maximize visibility.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "We struggled with low downloads for our pharma app. Their ASO team transformed our visibility and brought us a steady stream of doctors and patients.",
-          highlight: "3X App Downloads",
-          stars: 5,
-          name: "Dr. Manish Sharma",
-          designation: "Founder",
-          company: "MediCure Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "Our pharma app now ranks at the top for key healthcare terms. We’ve built strong trust with distributors & customers thanks to their ASO expertise.",
-          highlight: "Top Ranking in Play Store",
-          stars: 5,
-          name: "Anjali Gupta",
-          designation: "Marketing Head",
-          company: "PharmaTrust",
         },
       ],
     },

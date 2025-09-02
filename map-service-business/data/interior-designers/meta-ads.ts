@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "meta-ads-interior-designers",
@@ -190,36 +189,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Reporting & Optimization",
           description: "Monitor performance & scale the best ads for maximum ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers", gradient: false },
-        { text: "Winning Clients with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our Meta Ads campaigns help interior designers showcase their creativity, attract premium clients, and build a consistent flow of projects.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Facebook & Instagram Ads helped me connect with homeowners looking for luxury interiors. Within weeks, I closed 2 big projects.",
-          highlight: "High-Value Projects",
-          stars: 5,
-          name: "Ritika Sharma",
-          designation: "Founder",
-          company: "ArtSpace Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "Before Meta Ads, I relied only on referrals. Now, I get daily inquiries directly from my ads, and clients love the way my designs are showcased.",
-          highlight: "Consistent Leads",
-          stars: 5,
-          name: "Aditya Kapoor",
-          designation: "Creative Director",
-          company: "Aura Interiors",
         },
       ],
     },

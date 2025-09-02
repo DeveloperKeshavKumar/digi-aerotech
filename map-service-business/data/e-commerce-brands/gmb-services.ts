@@ -13,7 +13,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'gmb-services-ecomm-brands',
@@ -194,17 +193,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Review & Reputation Management', description: 'Respond to reviews, encourage positive feedback, and resolve negative feedback professionally.' },
         { id: 5, title: 'Local SEO Boost', description: 'Integrate relevant local keywords to rank higher in Google searches and Maps.' },
         { id: 6, title: 'Performance Monitoring', description: 'Track views, clicks, calls, and direction requests to measure the impact and optimize further.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands Who ", gradient: false },
-        { text: "Grew Locally with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped e-commerce brands enhance local visibility, gain reviews, and drive more sales.',
-      testimonials: [
-        { id: '1', message: 'Our online store now appears at the top for all local searches thanks to their GMB optimization.', highlight: 'top for all local searches', stars: 5, name: 'Anita Kapoor', designation: 'Founder', company: 'StyleKart' },
-        { id: '2', message: 'GMB services helped us get more local customers and improve our online credibility.', highlight: 'more local customers', stars: 5, name: 'Rohit Mehra', designation: 'CEO', company: 'ShopEase' }
       ]
     },
     cta: {

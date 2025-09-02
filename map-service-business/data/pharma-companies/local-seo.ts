@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "local-seo-pharma-companies",
@@ -205,36 +204,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Performance Tracking",
           description: "We monitor local rankings, CTRs, and leads while continuously optimizing for maximum ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Businesses", gradient: false },
-        { text: "Winning with Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Pharma companies and pharmacies that invested in local SEO with us now enjoy consistent walk-ins, distributor leads, and local partnerships.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our pharmacy was invisible on Google Maps. Within 6 weeks, we ranked in the top 3 for ‘pharmacy near me’ searches and saw a 2.5X increase in walk-ins.",
-          highlight: "2.5X More Walk-ins",
-          stars: 5,
-          name: "Dr. Meera Patel",
-          designation: "Owner",
-          company: "LifeCare Pharmacy",
-        },
-        {
-          id: "2",
-          message:
-            "As a wholesale pharma distributor, local SEO helped us get more hospital inquiries and retail pharmacy partnerships. Highly recommend their strategies!",
-          highlight: "3.1X Growth in Distributor Leads",
-          stars: 5,
-          name: "Sandeep Verma",
-          designation: "Director",
-          company: "MediTrade Pharma",
         },
       ],
     },

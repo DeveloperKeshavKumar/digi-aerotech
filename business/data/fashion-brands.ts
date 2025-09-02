@@ -209,69 +209,6 @@ export const fashionBrands: BusinessData = {
     ]
   },
 
-  testimonials: {
-    title: [
-      { text: "Fashion Brand " },
-      { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-    ],
-    subtitle: "How We've Helped Fashion Businesses Thrive",
-    description: "Read testimonials from successful fashion designers, clothing brand owners, and style entrepreneurs who have transformed their businesses with our digital marketing expertise.",
-    items: [
-      {
-        id: '1',
-        message: 'Our fashion brand\'s online sales increased by 520% within 8 months thanks to their Instagram and influencer marketing campaigns. The content they create perfectly captures our brand aesthetic and attracts our target audience.',
-        highlight: 'online sales increased by 520% within 8 months',
-        stars: 5,
-        name: 'Ananya Malhotra',
-        designation: 'Fashion Designer & Brand Owner',
-        company: 'Ethereal Couture Mumbai'
-      },
-      {
-        id: '2',
-        message: 'Their TikTok and YouTube strategies made our sustainable fashion brand viral. We gained 50K followers in 3 months and our eco-friendly clothing line is now sold out every launch.',
-        highlight: 'gained 50K followers in 3 months',
-        stars: 5,
-        name: 'Rohan Sharma',
-        designation: 'Sustainable Fashion Entrepreneur',
-        company: 'Green Threads Delhi'
-      },
-      {
-        id: '3',
-        message: 'The e-commerce optimization and Google Ads campaigns they managed brought in 300% more customers. Our conversion rate improved dramatically and average order value increased by 60%.',
-        highlight: '300% more customers and 60% higher order value',
-        stars: 5,
-        name: 'Priya Patel',
-        designation: 'Online Boutique Owner',
-        company: 'Chic Styles Ahmedabad'
-      },
-      {
-        id: '4',
-        message: 'Working with this team transformed our traditional textile business into a modern fashion brand. Their digital strategies helped us reach younger customers and increase revenue by 400%.',
-        highlight: 'increase revenue by 400%',
-        stars: 5,
-        name: 'Rajesh Gupta',
-        designation: 'Fashion Business Owner',
-        company: 'Heritage Weaves Jaipur'
-      },
-      {
-        id: '5',
-        message: 'As a new fashion designer, I struggled with brand visibility. Their social media marketing and influencer collaborations got my designs featured in fashion magazines and increased sales by 280%.',
-        stars: 4,
-        name: 'Kavya Nair',
-        designation: 'Independent Fashion Designer',
-        company: 'Threads of Kerala'
-      },
-      {
-        id: '6',
-        message: 'The mobile app they developed for our fashion brand has been incredible. Customers love the virtual try-on feature and our app-exclusive sales drive 40% of our total revenue.',
-        highlight: 'app-exclusive sales drive 40% of total revenue',
-        stars: 5,
-        name: 'Neha Singh',
-        designation: 'Fashion Brand Marketing Head',
-        company: 'Urban Diva Bangalore'
-      }
-    ],
-  },
 
   cta: {
     title: 'Ready to Make Your Fashion Brand the Next Big Thing?',

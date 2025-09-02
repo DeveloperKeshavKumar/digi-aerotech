@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
   },
   data: {
     slug: '360-digital-marketing',
@@ -238,33 +237,6 @@ export const map: ServiceBusinessMap = {
           id: 4,
           title: 'Optimization',
           description: 'Continuous refinement and optimization based on gyms fitness market feedback.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: '360 Digital Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'Real results from gyms fitness businesses that achieved remarkable growth.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'The 360 digital marketing services transformed our gyms fitness business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Gyms Fitness Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding 360 digital marketing expertise specifically for gyms fitness. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for gyms fitness',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Gyms Fitness Solutions'
         }
       ]
     },

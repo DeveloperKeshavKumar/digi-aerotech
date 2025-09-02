@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'other-ads-teachers-consultants',
@@ -198,33 +197,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Targeting & Setup', description: 'Implement precise audience targeting across platforms.' },
         { id: 5, title: 'Campaign Optimization', description: 'Continuously optimize to reduce CPC & boost conversions.' },
         { id: 6, title: 'Reporting & Scaling', description: 'Transparent insights & scaling of winning campaigns.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Professionals & Educators Who ", gradient: false },
-        { text: "Scaled with Multi-Channel Ads", gradient: true, gradientClass: "from-blue-500 via-cyan-500 to-green-500" }
-      ],
-      description: 'Hear from consultants & teachers who expanded reach with Digi Aerotech’s other ad services.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'LinkedIn ads brought me high-value consulting leads that Google never did. Amazing ROI!',
-          highlight: 'High-value consulting leads',
-          stars: 5,
-          name: 'Anita Sharma',
-          designation: 'Career Consultant',
-          company: 'AS Consulting'
-        },
-        {
-          id: '2',
-          message: 'As a teacher, my YouTube ads helped me get students worldwide for my online courses.',
-          highlight: 'Global student reach',
-          stars: 5,
-          name: 'Rahul Mehta',
-          designation: 'Online Educator',
-          company: 'SkillBridge Academy'
-        }
       ]
     },
     cta: {

@@ -316,42 +316,6 @@ export const asoService: ServiceData = {
             { id: 8, name: 'Appfigures', logo: '/tech/icons8-appfigures-96.png', category: 'Tracking' }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'ASO ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Real apps achieving top rankings and explosive download growth through strategic ASO',
-        testimonials: [
-            {
-                id: '1',
-                message: 'Our fitness app went from 1,000 to 50,000 downloads per month after DigiAerotech\'s ASO optimization. We now rank in top 5 for all our target keywords in both app stores. ROI has been phenomenal!',
-                highlight: 'went from 1,000 to 50,000 downloads per month',
-                stars: 5,
-                name: 'Arjun Mehta',
-                designation: 'Co-founder',
-                company: 'Fitness App Startup'
-            },
-            {
-                id: '2',
-                message: 'The ASO strategy transformed our e-learning app\'s visibility completely. Download costs dropped 70% while organic downloads increased 400%. We\'re now a top-ranked app in our category.',
-                highlight: 'organic downloads increased 400%',
-                stars: 5,
-                name: 'Sneha Patel',
-                designation: 'Product Manager',
-                company: 'EdTech Company'
-            },
-            {
-                id: '3',
-                message: 'Within 6 months of ASO optimization, our gaming app hit #1 rankings for competitive keywords. Daily downloads increased from 200 to 3,000+. Their expertise in app stores is unmatched.',
-                highlight: 'daily downloads increased from 200 to 3,000+',
-                stars: 5,
-                name: 'Vikram Singh',
-                designation: 'CEO',
-                company: 'Mobile Gaming Studio'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Dominate App Store Rankings?',
         subtitle: 'START YOUR ASO JOURNEY',

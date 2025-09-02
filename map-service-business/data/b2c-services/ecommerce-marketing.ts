@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'ecommerce-marketing-b2c',
@@ -197,33 +196,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Conversion Rate Optimization', description: 'We implement A/B testing, UX improvements, and checkout optimization to maximize sales.' },
         { id: 5, title: 'Retention & Loyalty', description: 'We build repeat sales strategies via email, SMS, and loyalty programs.' },
         { id: 6, title: 'Scaling & Global Expansion', description: 'We expand your reach with international SEO and targeted ads for new markets.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands That ", gradient: false },
-        { text: "Scaled With Us", gradient: true, gradientClass: "from-indigo-500 via-purple-500 to-pink-500" }
-      ],
-      description: 'From fashion labels to D2C health brands, Digi Aerotech has transformed B2C e-commerce businesses into growth machines.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our store’s ROAS went from 1.8x to 4.5x within 4 months. Digi Aerotech’s e-commerce marketing completely changed our growth trajectory.',
-          highlight: '4.5x ROAS in 4 months',
-          stars: 5,
-          name: 'Radhika Sharma',
-          designation: 'Founder',
-          company: 'GlowWear Clothing'
-        },
-        {
-          id: '2',
-          message: 'Abandoned cart recovery and loyalty campaigns helped us grow repeat sales by 37%. Best investment we made for our online store.',
-          highlight: '37% increase in repeat sales',
-          stars: 5,
-          name: 'Ankit Mehta',
-          designation: 'CEO',
-          company: 'NutriFit E-store'
-        }
       ]
     },
     cta: {

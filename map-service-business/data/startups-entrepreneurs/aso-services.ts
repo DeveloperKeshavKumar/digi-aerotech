@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'aso-services-startups-entrepreneurs',
@@ -219,33 +218,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Analytics & Scaling',
           description: 'Performance tracking, A/B testing, and scaling strategies to ensure sustainable app growth.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startup Success Stories with ", gradient: false },
-        { text: "ASO Growth", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'From early-stage apps to fast-scaling platforms, we’ve helped startups climb app store charts and attract loyal users.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our app went from invisible to ranking in the top 10 of our category in just 4 months thanks to Digi Aerotech’s ASO strategies.',
-          highlight: 'Top 10 App Ranking',
-          stars: 5,
-          name: 'Rohan Mehta',
-          designation: 'Founder',
-          company: 'FinEase Startup'
-        },
-        {
-          id: '2',
-          message: 'The ASO team not only boosted installs but also helped us improve retention and user engagement, a game-changer for our growth.',
-          highlight: 'Boosted Retention & Engagement',
-          stars: 5,
-          name: 'Ananya Singh',
-          designation: 'Co-Founder',
-          company: 'HealthifyGo App'
         }
       ]
     },

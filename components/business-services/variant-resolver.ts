@@ -20,15 +20,8 @@ const Process = {
   variant3: dynamic(() => import('./process/variant3'))
 };
 
-const Testimonials = {
-  variant1: dynamic(() => import('./testimonials/variant1')),
-  variant2: dynamic(() => import('./testimonials/variant2')),
-  variant3: dynamic(() => import('./testimonials/variant3'))
-};
-
 export const pickVariant = {
   hero: (variant: VariantKey = 'variant1') => Hero[variant],
   whyChooseUs: (variant: VariantKey = 'variant1') => WhyChooseUs[variant],
   process: (variant: VariantKey = 'variant1') => Process[variant],
-  testimonials: (variant: VariantKey = 'variant1') => Testimonials[variant]
 };

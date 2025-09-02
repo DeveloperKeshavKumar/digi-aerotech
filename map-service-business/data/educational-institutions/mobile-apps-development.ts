@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-apps-development-educational-institutions',
@@ -227,33 +226,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Maintenance & Updates',
           description: 'Ongoing support, feature upgrades, and performance optimization.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Educational Institutions Who ", gradient: false },
-        { text: "Transformed With Our Mobile Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech’s mobile apps increased engagement, simplified course management, and improved parent-student communication.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our college app improved student engagement and attendance tracking drastically.',
-          highlight: 'improved student engagement',
-          stars: 5,
-          name: 'Dr. Anjali Mehta',
-          designation: 'Principal',
-          company: 'Sunrise College'
-        },
-        {
-          id: '2',
-          message: 'Parents now get timely notifications and updates, making communication seamless.',
-          highlight: 'communication seamless',
-          stars: 5,
-          name: 'Rohit Sinha',
-          designation: 'Director',
-          company: 'Elite Coaching Academy'
         }
       ]
     },

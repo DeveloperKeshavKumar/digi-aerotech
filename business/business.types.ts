@@ -93,23 +93,6 @@ export interface BusinessData {
         items: StatsProps[];
     };
 
-    // Testimonials section
-    testimonials: {
-        title?: string | { text: string; gradient?: boolean; gradientClass?: string }[];
-        subtitle?: string;
-        description?: string;
-        items: {
-            id: string;
-            image?: string;
-            message: string;
-            highlight?: string;
-            stars: number;
-            name: string;
-            designation: string;
-            company?: string;
-        }[];
-    };
-
     // CTA section
     cta: CTAProps;
 }

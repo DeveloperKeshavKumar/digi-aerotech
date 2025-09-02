@@ -223,53 +223,6 @@ export const jewellery: BusinessData = {
       },
     ],
   },
-
-  testimonials: {
-    title: [
-      { text: "Jewellery Brand " },
-      {
-        text: "Success Stories",
-        gradient: true,
-        gradientClass: "from-amber-400 via-yellow-500 to-rose-500",
-      },
-    ],
-    subtitle: "How We Turn Browsers Into Buyers For Fine Jewellery",
-    description:
-      "From boutique ateliers to multi-city retailers, our clients unlock consistent growth with creative that sparks desire and experiences that build trust.",
-    items: [
-      {
-        id: "1",
-        message:
-          "Our bridal pipeline exploded after the new website and Instagram funnels. Appointments doubled and average ticket size climbed.",
-        highlight: "2X appointments, higher AOV",
-        stars: 5,
-        name: "Ananya Kapoor",
-        designation: "Founder",
-        company: "Aarika Fine Jewels",
-      },
-      {
-        id: "2",
-        message:
-          "Their Shopping Ads and SEO helped us scale online orders without discounts. Review volumes soared and repeat buyers increased.",
-        highlight: "178% YoY online orders",
-        stars: 5,
-        name: "Rohan Mehta",
-        designation: "E-Commerce Head",
-        company: "Solitaire Lane",
-      },
-      {
-        id: "3",
-        message:
-          "Their automation and WhatsApp campaigns turned casual browsers into loyal buyers. Every festive season now breaks records.",
-        highlight: "3.1X repeat sales",
-        stars: 5,
-        name: "Mira Patel",
-        designation: "Marketing Lead",
-        company: "Noor Gold & Diamonds",
-      },
-    ],
-  },
-
   cta: {
     title: "Ready To Make Your Jewellery Irresistible?",
     subtitle: "Book More Appointments, Increase Online Orders, Grow LTV",

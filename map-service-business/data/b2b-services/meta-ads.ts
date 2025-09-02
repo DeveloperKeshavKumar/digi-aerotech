@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'meta-ads-b2b',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Lead Capture Setup', description: 'Meta Lead Ads + CRM integration for direct inquiries' },
         { id: 5, title: 'Retargeting Campaigns', description: 'Nurture warm leads through remarketing strategies' },
         { id: 6, title: 'ROI Optimization', description: 'Monitor, optimize & scale campaigns based on pipeline impact' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Firms Scaling with ", gradient: false },
-        { text: "Digi Aerotech’s Meta Ads", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
-      ],
-      description: 'From SaaS companies to IT consultants, our Meta Ads strategies deliver consistent pipelines and enterprise inquiries.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our SaaS startup went from 10 to 60 enterprise demo requests per month after Digi Aerotech’s Meta Ads campaigns.',
-          highlight: '500% Increase in Demo Requests',
-          stars: 5,
-          name: 'Vikram Rao',
-          designation: 'Founder',
-          company: 'CloudSync Software'
-        },
-        {
-          id: '2',
-          message: 'We struggled with irrelevant leads before. Digi Aerotech now brings us targeted logistics inquiries every week.',
-          highlight: 'High-Quality Enterprise Leads',
-          stars: 5,
-          name: 'Anjali Mehta',
-          designation: 'CMO',
-          company: 'GlobeLink Logistics'
-        }
       ]
     },
     cta: {

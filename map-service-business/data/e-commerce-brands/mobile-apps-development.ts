@@ -13,7 +13,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-apps-development-ecomm-brands',
@@ -170,17 +169,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Integration & Testing', description: 'Integrate payment gateways, analytics, and perform thorough testing.' },
         { id: 5, title: 'Launch & Deployment', description: 'Deploy apps to Google Play Store and Apple App Store efficiently.' },
         { id: 6, title: 'Maintenance & Updates', description: 'Continuous updates, optimization, and feature enhancement to retain users.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Apps That ", gradient: false },
-        { text: "Boosted Sales & Retention", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped e-commerce brands create mobile apps that drive engagement, conversions, and revenue.',
-      testimonials: [
-        { id: '1', message: 'Our mobile app now contributes 40% of our monthly sales. Highly efficient and user-friendly.', highlight: '40% of monthly sales', stars: 5, name: 'Priya Malhotra', designation: 'Founder', company: 'ShopEase' },
-        { id: '2', message: 'The app improved our retention rates and repeat purchases significantly. Excellent development team.', highlight: 'retention rates', stars: 5, name: 'Rohit Verma', designation: 'CEO', company: 'FashionCart' }
       ]
     },
     cta: {

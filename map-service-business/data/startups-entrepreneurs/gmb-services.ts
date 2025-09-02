@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'gmb-services-startups-entrepreneurs',
@@ -212,33 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Local SEO',
           description: 'We integrate GMB optimization with broader local SEO tactics to continuously boost rankings and customer acquisition.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startup Success Stories with ", gradient: false },
-        { text: "GMB Optimization", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how startups leveraged GMB services to dominate local search and attract clients faster.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 2 months, our startup began appearing in the top 3 results for local searches. Digi Aerotech’s GMB strategies gave us instant visibility.',
-          highlight: 'Top 3 Local Ranking',
-          stars: 5,
-          name: 'Arjun Malhotra',
-          designation: 'Founder',
-          company: 'TechSpark Solutions'
-        },
-        {
-          id: '2',
-          message: 'As an online-first startup, we didn’t think GMB mattered. But after optimization, we got investor interest and new client leads through local visibility.',
-          highlight: 'Boosted Leads & Credibility',
-          stars: 5,
-          name: 'Priya Nair',
-          designation: 'Co-Founder',
-          company: 'FinEdge Startup'
         }
       ]
     },

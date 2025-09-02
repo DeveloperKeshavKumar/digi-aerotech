@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'social-media-marketing-travel-tourism',
@@ -181,33 +180,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Analytics',
           description: 'We track KPIs like reach, engagement, CTR, and conversions across all platforms. Successful campaigns are scaled with paid ads and optimization to maximize ROI for your travel business.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands That ", gradient: false },
-        { text: "Grew on Social Media with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech transformed travel agencies & tourism operators into social-first brands loved by millions worldwide.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our Instagram Reels went viral and doubled our bookings in just 3 months.',
-          highlight: 'doubled our bookings',
-          stars: 5,
-          name: 'Ananya Gupta',
-          designation: 'Founder',
-          company: 'Skyline Travels'
-        },
-        {
-          id: '2',
-          message: 'TikTok ads and influencer collabs gave us 10X engagement and a new wave of young travelers.',
-          highlight: '10X engagement',
-          stars: 5,
-          name: 'Kabir Malhotra',
-          designation: 'CEO',
-          company: 'GoBeyond Tours'
         }
       ]
     },

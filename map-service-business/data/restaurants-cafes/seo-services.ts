@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'seo-services-restaurants-cafes',
@@ -208,33 +207,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Tracking & Growth',
           description: 'We monitor results and continuously improve rankings for consistent diner growth.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Thriving with ", gradient: false },
-        { text: "Our SEO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Our SEO strategies help restaurants & cafés dominate local search, attract more customers, and grow online orders consistently.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We now appear for “best café near me” searches and our walk-ins have doubled.',
-          highlight: 'Local SEO Success',
-          stars: 5,
-          name: 'Arjun Khanna',
-          designation: 'Owner',
-          company: 'Urban Grind Café'
-        },
-        {
-          id: '2',
-          message: 'Our restaurant menu now shows directly in Google search—online orders have grown massively.',
-          highlight: 'Menu Optimization Win',
-          stars: 5,
-          name: 'Simran Bhatia',
-          designation: 'Founder',
-          company: 'Flavors & Spices'
         }
       ]
     },

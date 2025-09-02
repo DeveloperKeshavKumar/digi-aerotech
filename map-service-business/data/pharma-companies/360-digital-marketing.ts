@@ -18,7 +18,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: '360-digital-marketing-pharma-companies',
@@ -223,33 +222,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Global Expansion',
           description: 'Grow from local markets to global reach with tailored campaigns.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Companies Who ", gradient: false },
-        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech transformed pharma companies with compliant, high-ROI strategies.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We struggled with digital visibility due to compliance issues, but Digi Aerotech built a compliant marketing framework that doubled our hospital partnerships.',
-          highlight: 'doubled our hospital partnerships',
-          stars: 5,
-          name: 'Dr. Manish Kapoor',
-          designation: 'Director',
-          company: 'MediLife Pharma'
-        },
-        {
-          id: '2',
-          message: 'Their team helped us launch global SEO & LinkedIn outreach, generating consistent leads from distributors in multiple countries.',
-          highlight: 'consistent leads from distributors',
-          stars: 5,
-          name: 'Anita Reddy',
-          designation: 'Head of Marketing',
-          company: 'PharmaGrowth Ltd.'
         }
       ]
     },

@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: '360-digital-marketing',
@@ -206,17 +205,6 @@ export const map: ServiceBusinessMap = {
         { id: 3, title: 'Lead Generation Execution', description: 'Run targeted ads, SEO, and campaigns that fill your pipeline with quality prospects.' },
         { id: 4, title: 'Conversion Optimization', description: 'Deploy landing pages, funnels, and nurturing workflows to convert leads into loyal clients.' },
         { id: 5, title: 'Continuous Optimization', description: 'Monitor performance, refine strategies, and scale your consultancy sustainably.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: 'Consultants Who ', gradient: false },
-        { text: 'Scaled with Us', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech has helped consultants build authority, generate leads, and scale revenue.',
-      testimonials: [
-        { id: '1', message: 'Digi Aerotech helped me attract consistent leads through LinkedIn and SEO. Within 4 months, I doubled my consulting clients.', highlight: 'doubled my consulting clients', stars: 5, name: 'Raj Malhotra', designation: 'Independent Business Consultant', company: 'Raj Consulting' },
-        { id: '2', message: 'Their team understands the consulting industry inside out. My firm now has a predictable pipeline of high-value clients.', highlight: 'predictable pipeline of high-value clients', stars: 5, name: 'Sarah Khan', designation: 'Founder', company: 'Khan Advisory' }
       ]
     },
     cta: {

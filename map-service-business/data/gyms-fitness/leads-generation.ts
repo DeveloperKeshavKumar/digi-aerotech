@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "leads-generation-gyms-fitness",
@@ -205,36 +204,6 @@ export const map: ServiceBusinessMap = {
           title: "Tracking & Optimization",
           description:
             "Monitor all campaigns and refine strategies based on lead quality and conversion performance.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms Who ", gradient: false },
-        { text: "Boosted Memberships with Our Leads Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how our leads generation strategies helped gyms and fitness studios attract local members and grow revenue.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "We saw 200+ new trial sign-ups in the first month! The leads were highly targeted and easy to convert.",
-          highlight: "200+ new trial sign-ups",
-          stars: 5,
-          name: "Raghav Singh",
-          designation: "Owner",
-          company: "MuscleUp Gym",
-        },
-        {
-          id: "2",
-          message:
-            "Their lead nurturing system turned inquiries into loyal members. Membership numbers have doubled in 3 months.",
-          highlight: "doubled membership numbers",
-          stars: 5,
-          name: "Anita Roy",
-          designation: "Founder",
-          company: "Fit & Strong Studio",
         },
       ],
     },

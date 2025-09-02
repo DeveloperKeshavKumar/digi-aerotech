@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "web-design-development-pharma-companies",
@@ -203,36 +202,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Ongoing Support",
           description: "We provide maintenance, security, and SEO support to keep your pharma site thriving.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Companies", gradient: false },
-        { text: "Who Trust Our Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our pharma websites have helped companies boost trust, stay compliant, and achieve higher lead generation with SEO-friendly design.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our pharma site redesign boosted inquiries by 150% while ensuring HIPAA compliance. Excellent work!",
-          highlight: "150% More Leads",
-          stars: 5,
-          name: "Anil Sharma",
-          designation: "CEO",
-          company: "MedCare Labs",
-        },
-        {
-          id: "2",
-          message:
-            "They built a secure and professional website that positioned us as a trusted pharma brand online.",
-          highlight: "Trusted Branding",
-          stars: 5,
-          name: "Dr. Priya Nair",
-          designation: "Director",
-          company: "BioTrust Pharma",
         },
       ],
     },

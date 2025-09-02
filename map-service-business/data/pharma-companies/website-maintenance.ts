@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "website-maintenance-pharma-companies",
@@ -202,36 +201,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Reporting & Support",
           description: "We provide monthly reports on uptime, security, SEO performance, and maintenance activities.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Companies", gradient: false },
-        { text: "Who Trust Our Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "We’ve helped pharma companies maintain compliance, security, and trust by ensuring their websites run flawlessly 24/7.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Their maintenance support is top-notch. We never worry about downtime or compliance issues anymore.",
-          highlight: "Zero Downtime",
-          stars: 5,
-          name: "Ravi Mehta",
-          designation: "CTO",
-          company: "GlobalPharma Ltd.",
-        },
-        {
-          id: "2",
-          message:
-            "Our website is always updated, secure, and optimized. Their proactive monitoring saved us from a major security breach.",
-          highlight: "100% Secure",
-          stars: 5,
-          name: "Dr. Sneha Kapoor",
-          designation: "Director",
-          company: "HealthCare Pharma",
         },
       ],
     },

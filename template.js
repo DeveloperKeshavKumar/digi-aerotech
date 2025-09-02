@@ -28,7 +28,6 @@ function getVariant(businessIndex, serviceIndex) {
         hero: variants[(businessIndex + serviceIndex) % 3],
         whyChooseUs: variants[(businessIndex + serviceIndex + 1) % 3],
         process: variants[(businessIndex + serviceIndex + 2) % 3],
-        testimonials: variants[(businessIndex + serviceIndex + 3) % 3]
     };
 }
 
@@ -51,7 +50,6 @@ export const map: ServiceBusinessMap = {
     hero: '${variants.hero}',
     whyChooseUs: '${variants.whyChooseUs}',
     process: '${variants.process}',
-    testimonials: '${variants.testimonials}'
   },
   data: {
     slug: '${service}',
@@ -200,33 +198,6 @@ export const map: ServiceBusinessMap = {
       technologies: [
         { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
         { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: '${serviceName} ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'Real results from ${businessName.toLowerCase()} businesses that achieved remarkable growth.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'The ${serviceName.toLowerCase()} services transformed our ${businessName.toLowerCase()} business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: '${businessName} Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding ${serviceName.toLowerCase()} expertise specifically for ${businessName.toLowerCase()}. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for ${businessName.toLowerCase()}',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: '${businessName} Solutions'
-        }
       ]
     },
     cta: {

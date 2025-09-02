@@ -152,14 +152,6 @@ export const websiteMaintenanceService: ServiceData = {
             { id: 4, name: 'Sucuri', logo: '/tech/icons8-sucuri-96.png', category: 'Security' }
         ]
     },
-    testimonials: {
-        title: [ { text: 'Maintenance ' }, { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ],
-        description: 'Clients trust us to keep their sites running flawlessly.',
-        testimonials: [
-            { id: '1', message: 'Their maintenance team has kept our site secure and online 24/7. Performance has never been better.', highlight: '', stars: 5, name: 'Sanjay Mehta', designation: 'IT Manager', company: 'FinTech Solutions' },
-            { id: '2', message: 'We love the monthly reports and proactive support. No more worrying about updates or downtime.', highlight: '', stars: 5, name: 'Nisha Rao', designation: 'Operations Head', company: 'E-Commerce Store' }
-        ]
-    },
     cta: {
         title: 'Ready to Secure Your Website?',
         subtitle: 'START MAINTENANCE NOW',

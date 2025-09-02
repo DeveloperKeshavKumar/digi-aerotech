@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'aso-services-b2c',
@@ -197,33 +196,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Review & Ratings Management', description: 'We help generate positive reviews and manage negative feedback for better trust.' },
         { id: 5, title: 'Launch & Ongoing Optimization', description: 'We track performance and continuously tweak strategies for sustainable growth.' },
         { id: 6, title: 'Localization & Scaling', description: 'Expand reach by optimizing your app for different regions and languages globally.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Brands Who ", gradient: false },
-        { text: "Grew with Our ASO", gradient: true, gradientClass: "from-pink-500 via-red-500 to-yellow-500" }
-      ],
-      description: 'From startups to established apps, Digi Aerotech has helped B2C businesses gain visibility, boost downloads, and increase revenue through App Store Optimization.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our food delivery app went from invisible to ranking in the top 5 for key searches. Downloads doubled within 3 months.',
-          highlight: '2x downloads in 90 days',
-          stars: 5,
-          name: 'Sneha Kapoor',
-          designation: 'Founder',
-          company: 'QuickBite App'
-        },
-        {
-          id: '2',
-          message: 'We spent so much on ads but got little ROI. With ASO by Digi Aerotech, our fitness app gets daily organic downloads now!',
-          highlight: 'Steady daily organic installs',
-          stars: 5,
-          name: 'Vikram Shah',
-          designation: 'CEO',
-          company: 'FitTrack'
-        }
       ]
     },
     cta: {

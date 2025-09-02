@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'meta-ads-teachers-consultants',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Campaign Launch', description: 'Run optimized ads on Facebook & Instagram.' },
         { id: 5, title: 'Retargeting Setup', description: 'Re-engage visitors who showed interest but didn’t convert.' },
         { id: 6, title: 'Tracking & Scaling', description: 'Measure results, optimize spend, and scale successful campaigns.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Teachers & Consultants Who ", gradient: false },
-        { text: "Grew with Meta Ads", gradient: true, gradientClass: "from-pink-500 via-purple-500 to-indigo-500" }
-      ],
-      description: 'Real stories from professionals who trusted Digi Aerotech for Meta Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'As a career coach, I struggled to get consistent leads. Digi Aerotech’s Meta Ads brought me daily inquiries within the first 10 days.',
-          highlight: 'Daily leads in 10 days',
-          stars: 5,
-          name: 'Aman Verma',
-          designation: 'Career Consultant',
-          company: 'SkillPath Advisory'
-        },
-        {
-          id: '2',
-          message: 'My online classes were not filling up. With their ad strategy, I now get 3X enrollments every month!',
-          highlight: '3X student enrollments',
-          stars: 5,
-          name: 'Pooja Mehra',
-          designation: 'Online Teacher',
-          company: 'EduCraft Academy'
-        }
       ]
     },
     cta: {

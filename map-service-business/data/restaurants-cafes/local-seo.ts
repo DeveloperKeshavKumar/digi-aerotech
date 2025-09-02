@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'local-seo-restaurants-cafes',
@@ -202,33 +201,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Tracking & Reporting',
           description: 'We monitor your ranking, traffic, calls, and bookings with transparent reports, scaling what works best.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Winning with ", gradient: false },
-        { text: "Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how cafés and restaurants are filling tables and delivery slots with our proven local SEO strategies.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 2 months, our café ranked in the Google Maps top 3 for “coffee near me”. Foot traffic and takeaway orders doubled!',
-          highlight: 'Top 3 Ranking',
-          stars: 5,
-          name: 'Ankit Sharma',
-          designation: 'Owner',
-          company: 'Bean & Brew Café'
-        },
-        {
-          id: '2',
-          message: 'We started showing up for “best biryani in Delhi” and “restaurants open now”. The increase in walk-ins has been amazing!',
-          highlight: 'High Local Visibility',
-          stars: 5,
-          name: 'Meera Kapoor',
-          designation: 'Owner',
-          company: 'Spice Junction'
         }
       ]
     },

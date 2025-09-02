@@ -23,7 +23,6 @@ export default function BusinessServiceRenderer({
   const HeroComponent = pickVariant.hero(variants.hero);
   const WhyChooseUsComponent = pickVariant.whyChooseUs(variants.whyChooseUs);
   const ProcessComponent = pickVariant.process(variants.process);
-  const TestimonialsComponent = pickVariant.testimonials(variants.testimonials);
 
   // Custom sections renderer
   const renderCustomSections = (position: string) => {
@@ -67,7 +66,7 @@ export default function BusinessServiceRenderer({
 
       {/* Testimonials Section with Variant */}
       {showSections.testimonials !== false && (
-        <Testimonials {...service.testimonials} />
+        <Testimonials  />
       )}
       {renderCustomSections('afterTestimonials')}
       {renderCustomSections('beforeCTA')}

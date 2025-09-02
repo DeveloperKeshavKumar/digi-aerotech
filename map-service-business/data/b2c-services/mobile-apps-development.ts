@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-apps-b2c',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Integration & Testing', description: 'Integrate bookings, payments, and loyalty while ensuring bug-free performance.' },
         { id: 5, title: 'Launch & Optimization', description: 'Deploy apps to stores with ASO & early user acquisition strategies.' },
         { id: 6, title: 'Maintenance & Upgrades', description: 'Continuous support, new features, and performance monitoring.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Businesses Growing ", gradient: false },
-        { text: "with Digi Aerotech Apps", gradient: true, gradientClass: "from-indigo-500 via-purple-500 to-pink-500" }
-      ],
-      description: 'From salons to retailers, Digi Aerotech apps help businesses improve loyalty, bookings, and sales with mobile-first experiences.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our restaurant app built by Digi Aerotech increased repeat orders by 40% within 2 months. The loyalty program works like magic!',
-          highlight: '40% more repeat orders',
-          stars: 5,
-          name: 'Sonal Verma',
-          designation: 'Owner',
-          company: 'Urban Tandoor'
-        },
-        {
-          id: '2',
-          message: 'The app Digi Aerotech built for our gym simplified bookings and increased membership renewals. Our clients love the experience.',
-          highlight: 'Higher renewals',
-          stars: 5,
-          name: 'Vikram Singh',
-          designation: 'Manager',
-          company: 'FitZone Gym'
-        }
       ]
     },
     cta: {

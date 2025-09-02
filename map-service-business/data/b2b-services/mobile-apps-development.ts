@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'mobile-apps-b2b',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Integration', description: 'CRM, ERP & third-party systems connected seamlessly' },
         { id: 5, title: 'Testing & Deployment', description: 'Rigorous QA to ensure flawless performance' },
         { id: 6, title: 'Maintenance & Scaling', description: 'Continuous improvements and enterprise scaling support' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Enterprises Thriving with ", gradient: false },
-        { text: "Digi Aerotech Mobile Apps", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
-      ],
-      description: 'From SaaS providers to logistics firms, our mobile apps have transformed enterprise engagement, operations, and client servicing.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our custom client servicing app built by Digi Aerotech streamlined onboarding and boosted customer satisfaction.',
-          highlight: 'Improved Client Engagement by 300%',
-          stars: 5,
-          name: 'Rohit Sharma',
-          designation: 'CEO',
-          company: 'Enterprise Consulting Group'
-        },
-        {
-          id: '2',
-          message: 'They integrated our ERP with a mobile app, saving hours of manual work daily.',
-          highlight: 'Saved 20+ Hours of Manual Work/Week',
-          stars: 5,
-          name: 'Neha Kapoor',
-          designation: 'CTO',
-          company: 'Global Logistics Solutions'
-        }
       ]
     },
     cta: {

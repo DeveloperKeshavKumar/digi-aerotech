@@ -93,20 +93,6 @@ export interface ServiceData {
             category: string;
         }[];
     };
-    testimonials: {
-        title: string | { text: string; gradient?: boolean; gradientClass?: string }[];
-        description: string;
-        testimonials: {
-            id: string;
-            image?: string;
-            message: string;
-            highlight?: string;
-            stars: number;
-            name: string;
-            designation: string;
-            company?: string;
-        }[];
-    };
     cta: {
         title: string;
         subtitle?: string;
@@ -128,7 +114,6 @@ export interface SectionVariants {
   hero?: VariantKey;
   whyChooseUs?: VariantKey;
   process?: VariantKey;
-  testimonials?: VariantKey;
 }
 
 export interface ServiceBusinessMap {

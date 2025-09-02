@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'ecommerce-marketing-fashion-brands',
@@ -227,33 +226,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Continuous Monitoring & Scaling',
           description: 'Track performance, optimize campaigns, and scale for maximum ROI.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Stores That ", gradient: false },
-        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands boost sales, conversions, and customer loyalty.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our fashion e-commerce store saw a 300% increase in sales within 6 months thanks to Digi Aerotech.',
-          highlight: '300% increase in sales',
-          stars: 5,
-          name: 'Sana Kapoor',
-          designation: 'Founder',
-          company: 'StyleHaven'
-        },
-        {
-          id: '2',
-          message: 'They optimized our ads, checkout process, and retention campaigns. Revenue skyrocketed!',
-          highlight: 'Revenue skyrocketed',
-          stars: 5,
-          name: 'Aditya Sharma',
-          designation: 'CEO',
-          company: 'FashionFi Store'
         }
       ]
     },

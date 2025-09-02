@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "local-seo-real-estate",
@@ -192,33 +191,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Tracking & Reporting",
           description: "Transparent reporting with call tracking, Maps visibility, and leads growth from local searches.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Agencies That", gradient: false },
-        { text: "Ranked #1 Locally", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description: "See how local SEO boosted visibility and lead flow for property consultants.",
-      testimonials: [
-        {
-          id: "1",
-          message: "We went from not showing up in Maps to ranking #1 for '2BHK apartments in Pune'. Inquiries doubled within 2 months.",
-          highlight: "Doubled Local Inquiries",
-          stars: 5,
-          name: "Ravi Kapoor",
-          designation: "Realtor",
-          company: "Skyline Properties",
-        },
-        {
-          id: "2",
-          message: "Digi Aerotech’s Local SEO strategies helped us dominate Google Maps across multiple neighborhoods.",
-          highlight: "Top 3 in Google Maps",
-          stars: 5,
-          name: "Nidhi Sharma",
-          designation: "Developer",
-          company: "GreenLand Builders",
         },
       ],
     },

@@ -18,7 +18,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "seo-services-hotel-resort",
@@ -207,36 +206,6 @@ export const map: ServiceBusinessMap = {
           title: "Monitoring & Continuous Optimization",
           description:
             "Track rankings, traffic, and conversions, continually adjusting strategies for peak performance.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts Who ", gradient: false },
-        { text: "Ranked #1 with Our SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how our SEO strategies helped hotels and resorts attract more guests, increase direct bookings, and grow their brand online.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our resort now ranks at the top for 'luxury resort near me' and 'beach resort bookings'. Bookings increased dramatically!",
-          highlight: "Top Google Rankings",
-          stars: 5,
-          name: "Anita Desai",
-          designation: "Owner",
-          company: "Seaside Resort",
-        },
-        {
-          id: "2",
-          message:
-            "Thanks to the SEO services, our boutique hotel now receives a steady flow of direct bookings every month.",
-          highlight: "Steady Direct Bookings",
-          stars: 5,
-          name: "Rohan Kapoor",
-          designation: "Manager",
-          company: "Mountainview Boutique Hotel",
         },
       ],
     },

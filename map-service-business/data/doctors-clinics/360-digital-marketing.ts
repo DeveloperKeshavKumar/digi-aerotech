@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: '360-digital-marketing',
@@ -229,33 +228,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Website & Funnel Setup', description: 'Build conversion-optimized booking systems.' },
         { id: 5, title: 'Reputation Management', description: 'Manage reviews and improve trust signals.' },
         { id: 6, title: 'Continuous Optimization', description: 'Refine strategies based on results and scale campaigns.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: 'Doctors & Clinics Who ', gradient: false },
-        { text: 'Grew with Us', gradient: true, gradientClass: "from-blue-500 via-teal-500 to-green-500" }
-      ],
-      description: 'Real stories from healthcare providers who scaled their practices with Digi Aerotech.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Digi Aerotech helped our clinic triple online patient bookings in just 3 months.',
-          highlight: 'triple online patient bookings',
-          stars: 5,
-          name: 'Dr. Ramesh Verma',
-          designation: 'Cardiologist',
-          company: 'Verma Heart Clinic'
-        },
-        {
-          id: '2',
-          message: 'Their review management & SEO strategies positioned our hospital as the #1 choice in the city.',
-          highlight: '#1 choice in the city',
-          stars: 5,
-          name: 'Dr. Shalini Mehra',
-          designation: 'Hospital Director',
-          company: 'Sunrise Multispeciality Hospital'
-        }
       ]
     },
     cta: {

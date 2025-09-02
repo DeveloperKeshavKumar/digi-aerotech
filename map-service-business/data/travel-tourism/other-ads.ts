@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'other-ads-travel-tourism',
@@ -156,33 +155,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Campaign Launch', description: 'Run tailored ads across TikTok, YouTube, Twitter & more.' },
         { id: 5, title: 'Engagement & Optimization', description: 'Boost conversions with A/B testing & retargeting.' },
         { id: 6, title: 'Scaling Success', description: 'Scale winning campaigns across regions & platforms.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Brands That ", gradient: false },
-        { text: "Went Viral with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel agencies and tourism operators reach millions through TikTok, YouTube, Twitter, and Snapchat ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our TikTok travel reels went viral, generating 5,000+ bookings in one season.',
-          highlight: '5,000+ bookings',
-          stars: 5,
-          name: 'Priya Malhotra',
-          designation: 'Founder',
-          company: 'DreamScape Tours'
-        },
-        {
-          id: '2',
-          message: 'The YouTube video ad Digi Aerotech produced became our #1 driver of international inquiries.',
-          highlight: '#1 driver of inquiries',
-          stars: 5,
-          name: 'Rohit Desai',
-          designation: 'CEO',
-          company: 'WanderWorld'
-        }
       ]
     },
     cta: {

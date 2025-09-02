@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'seo-services-educational-institutions',
@@ -226,33 +225,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Monitoring & Continuous Optimization',
           description: 'Track rankings, traffic, and conversions while continuously refining the SEO strategy.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Educational Institutions Who ", gradient: false },
-        { text: "Grew Organically with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers improve search visibility and attract more students.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our college website now ranks on the first page for multiple programs. Organic student inquiries have doubled!',
-          highlight: 'Organic student inquiries have doubled',
-          stars: 5,
-          name: 'Dr. Anjali Rao',
-          designation: 'Principal',
-          company: 'Sunrise College'
-        },
-        {
-          id: '2',
-          message: 'Thanks to Digi Aerotech’s SEO strategies, our coaching center saw a 50% increase in student enrollment organically.',
-          highlight: '50% increase in student enrollment',
-          stars: 5,
-          name: 'Rohit Singh',
-          designation: 'Director',
-          company: 'Bright Minds Academy'
         }
       ]
     },

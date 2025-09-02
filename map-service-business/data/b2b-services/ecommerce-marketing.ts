@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'ecommerce-marketing-b2b',
@@ -167,33 +166,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Paid Campaigns', description: 'Run high-targeted ads on Google, LinkedIn & Meta.' },
         { id: 5, title: 'Lead Nurturing', description: 'Email, remarketing & automation to convert prospects.' },
         { id: 6, title: 'Analytics & Scaling', description: 'Monitor performance & scale successful strategies.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Brands Growing Online ", gradient: false },
-        { text: "with Digi Aerotech", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
-      ],
-      description: 'From manufacturing suppliers to SaaS firms, our e-commerce marketing has helped B2B brands attract more enterprise clients and close bigger deals.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our wholesale portal went from silent to generating steady enterprise leads after Digi Aerotech’s B2B e-commerce marketing strategy.',
-          highlight: '200% Lead Growth',
-          stars: 5,
-          name: 'Ravi Sharma',
-          designation: 'Director',
-          company: 'Global Parts Wholesale'
-        },
-        {
-          id: '2',
-          message: 'Their campaigns brought us real CXOs & procurement managers instead of random traffic. That’s exactly what we needed.',
-          highlight: 'High-Quality Leads',
-          stars: 5,
-          name: 'Ananya Verma',
-          designation: 'CEO',
-          company: 'B2B SaaS Hub'
-        }
       ]
     },
     cta: {

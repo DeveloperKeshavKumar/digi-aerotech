@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'web-design-development-startups-entrepreneurs',
@@ -211,33 +210,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Testing & Launch',
           description: 'Rigorous testing ensures flawless performance before your startup goes live with investor-ready confidence.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Scaling with ", gradient: false },
-        { text: "High-Impact Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Here’s how entrepreneurs transformed their ideas into powerful digital brands with our web design & development services.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our new website helped us close our seed funding round with an investor-ready presence.',
-          highlight: 'Investor-Ready Website',
-          stars: 5,
-          name: 'Neha Sharma',
-          designation: 'Founder',
-          company: 'FinTechPro'
-        },
-        {
-          id: '2',
-          message: 'The website they built not only looks great but also generates consistent inbound leads.',
-          highlight: '50+ Leads / Month',
-          stars: 5,
-          name: 'Rahul Verma',
-          designation: 'CEO',
-          company: 'EduSpark'
         }
       ]
     },

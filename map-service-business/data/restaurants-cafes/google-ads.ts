@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'google-ads-restaurants-cafes',
@@ -202,33 +201,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Conversion Tracking & Scaling',
           description: 'We measure reservations, calls, and orders, then scale winning ads for more consistent results.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Growing With ", gradient: false },
-        { text: "Our Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how cafés and restaurants increased orders, reservations, and ROI with our Google Ads campaigns.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our ads started generating calls within the first week. Reservations doubled on weekends!',
-          highlight: '2X Reservations',
-          stars: 5,
-          name: 'Saurabh Khanna',
-          designation: 'Owner',
-          company: 'Café Mocha Vibes'
-        },
-        {
-          id: '2',
-          message: 'We get more takeaway orders daily thanks to Google Ads campaigns. Great ROI and optimization!',
-          highlight: '40% More Orders',
-          stars: 5,
-          name: 'Neha Kapoor',
-          designation: 'Manager',
-          company: 'Tandoor Tales'
         }
       ]
     },

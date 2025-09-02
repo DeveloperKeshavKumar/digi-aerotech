@@ -223,53 +223,6 @@ export const logistics: BusinessData = {
       },
     ],
   },
-
-  testimonials: {
-    title: [
-      { text: "Logistics Client " },
-      {
-        text: "Success Stories",
-        gradient: true,
-        gradientClass: "from-blue-500 via-cyan-500 to-green-500",
-      },
-    ],
-    subtitle: "From Local Courier Firms To Global Supply Chains",
-    description:
-      "Our logistics clients unlock compounding growth with data-driven campaigns that capture demand, generate trust, and close high-value contracts.",
-    items: [
-      {
-        id: "1",
-        message:
-          "Within 4 months, we started receiving daily B2B freight inquiries. Their LinkedIn campaigns positioned us as an authority in logistics.",
-        highlight: "3X more B2B inquiries",
-        stars: 5,
-        name: "Suresh R",
-        designation: "Managing Director",
-        company: "Global Freight Movers",
-      },
-      {
-        id: "2",
-        message:
-          "They redesigned our website with shipment calculators and lead capture forms. Our conversion rates jumped significantly.",
-        highlight: "172% website conversion boost",
-        stars: 5,
-        name: "Fatima Khan",
-        designation: "Head of Sales",
-        company: "Swift Logistics India",
-      },
-      {
-        id: "3",
-        message:
-          "Automation helped us retain long-term e-commerce clients. Every festive season, our volumes now break new records.",
-        highlight: "2.8X repeat business",
-        stars: 5,
-        name: "David Chen",
-        designation: "Operations Head",
-        company: "NextGen Courier",
-      },
-    ],
-  },
-
   cta: {
     title: "Ready To Accelerate Your Logistics Growth?",
     subtitle: "Generate More Leads, Secure Bigger Contracts, Build Trust",

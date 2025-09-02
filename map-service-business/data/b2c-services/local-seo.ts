@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'local-seo-b2c',
@@ -190,33 +189,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Citations & Listings', description: 'Ensure NAP consistency across directories & maps.' },
         { id: 5, title: 'Review Management', description: 'Generate positive reviews & manage negative ones.' },
         { id: 6, title: 'Tracking & Reporting', description: 'Monitor local rankings, calls, and customer engagement.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Businesses Growing ", gradient: false },
-        { text: "with Digi Aerotech Local SEO", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
-      ],
-      description: 'From salons to restaurants, Digi Aerotech has helped B2C brands dominate local search and attract new customers.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'After Digi Aerotech optimized our Google profile, our café now appears in the top 3 local results. Walk-ins have doubled!',
-          highlight: '2x increase in walk-ins',
-          stars: 5,
-          name: 'Priya Mehra',
-          designation: 'Owner',
-          company: 'Brew Bliss Café'
-        },
-        {
-          id: '2',
-          message: 'We went from invisible to #1 in Maps for “gym near me.” Digi Aerotech’s local SEO gave us a steady stream of new members.',
-          highlight: '#1 in local rankings',
-          stars: 5,
-          name: 'Ankit Sinha',
-          designation: 'Founder',
-          company: 'FlexPro Gym'
-        }
       ]
     },
     cta: {

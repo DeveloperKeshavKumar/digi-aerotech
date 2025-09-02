@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "google-ads-interior-designers",
@@ -188,36 +187,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Scaling Campaigns",
           description: "Once ROI is proven, we scale campaigns to capture more premium leads.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "What Interior Designers", gradient: false },
-        { text: "Say About Our Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From independent designers to full-fledged studios, our Google Ads services have transformed how interior businesses get clients.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "I was struggling to get clients. Within weeks of launching ads, I started receiving daily inquiries. It changed my business completely.",
-          highlight: "Daily Inquiries",
-          stars: 5,
-          name: "Rohit Verma",
-          designation: "Founder",
-          company: "SpaceCraft Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "Thanks to Google Ads, I now get luxury project leads regularly. My ROI has more than doubled compared to traditional marketing.",
-          highlight: "Luxury Leads",
-          stars: 5,
-          name: "Amit Khanna",
-          designation: "Principal Designer",
-          company: "EliteSpaces",
         },
       ],
     },

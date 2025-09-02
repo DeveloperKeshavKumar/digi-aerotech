@@ -17,8 +17,7 @@ export const map: ServiceBusinessMap = {
   variants: {
     hero: 'variant1',
     whyChooseUs: 'variant2',
-    process: 'variant3',
-    testimonials: 'variant2'
+    process: 'variant3'
   },
   data: {
     slug: '360-digital-marketing-interior-designers',
@@ -225,33 +224,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling Projects',
           description: 'Expand from residential to corporate & luxury projects.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: 'Interior Designers Who ', gradient: false },
-        { text: 'Scaled with Us', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'From solo designers to boutique studios, we’ve helped design businesses win premium clients.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Thanks to Digi Aerotech, my portfolio went from a simple Instagram feed to a professional website that consistently brings in projects.',
-          highlight: 'portfolio → consistent projects',
-          stars: 5,
-          name: 'Aditi Sharma',
-          designation: 'Founder',
-          company: 'Aditi Interiors'
-        },
-        {
-          id: '2',
-          message: 'Earlier, 80% of our business came from referrals. Now, with their marketing, 70% comes from digital campaigns.',
-          highlight: '70% of clients via digital campaigns',
-          stars: 5,
-          name: 'Rohit Mehra',
-          designation: 'Principal Designer',
-          company: 'Urban Edge Interiors'
         }
       ]
     },

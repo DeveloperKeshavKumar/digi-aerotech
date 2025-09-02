@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'gmb-services-doctors-clinics',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Monitoring & Reporting',
           description: 'Track profile performance, map rankings, and patient interactions to optimize continuously.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Clinics Who ", gradient: false },
-        { text: "Attracted More Patients with GMB", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech helped clinics improve visibility, reputation, and patient acquisition via Google My Business optimization.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our clinic now appears on top in local searches, and patient appointments increased dramatically after GMB optimization.',
-          highlight: 'patient appointments increased dramatically',
-          stars: 5,
-          name: 'Dr. Neha Verma',
-          designation: 'Founder',
-          company: 'Verma Care Clinic'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech’s GMB services helped us manage reviews, posts, and listings effectively, gaining patient trust and credibility.',
-          highlight: 'gaining patient trust and credibility',
-          stars: 5,
-          name: 'Dr. Amit Saxena',
-          designation: 'CEO',
-          company: 'Saxena Health'
         }
       ]
     },

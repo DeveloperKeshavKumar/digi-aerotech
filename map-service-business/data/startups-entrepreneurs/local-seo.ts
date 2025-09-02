@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'local-seo-startups-entrepreneurs',
@@ -212,33 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Tracking & Scaling',
           description: 'We monitor calls, directions, and website clicks to measure ROI, then scale strategies for exponential local growth.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Winning with ", gradient: false },
-        { text: "Local SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how entrepreneurs dominate their local markets and attract customers directly through Google Maps and search.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We went from invisible online to ranking #1 in Google Maps in just 8 weeks. Local calls have doubled!',
-          highlight: 'Ranked #1 in 8 Weeks',
-          stars: 5,
-          name: 'Neha Sharma',
-          designation: 'Founder',
-          company: 'EcoStart Solutions'
-        },
-        {
-          id: '2',
-          message: 'Thanks to their Local SEO strategy, we get 60% of our leads directly from “near me” searches. Game changer for our startup.',
-          highlight: '60% Leads from Local Search',
-          stars: 5,
-          name: 'Ravi Malhotra',
-          designation: 'Co-Founder',
-          company: 'UrbanX Technologies'
         }
       ]
     },

@@ -24,7 +24,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'web-design-development-maintenance-educational-institutions',
@@ -228,33 +227,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Maintenance & Support',
           description: 'Regular updates, backups, security patches, and performance monitoring.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Educational Institutions Who ", gradient: false },
-        { text: "Upgraded Their Websites with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers get modern, secure, and engaging websites that drive student engagement.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our new website is fast, modern, and allows students to register online easily. Fantastic work by Digi Aerotech!',
-          highlight: 'fast, modern, and allows students to register online easily',
-          stars: 5,
-          name: 'Dr. Meera Sharma',
-          designation: 'Principal',
-          company: 'Global Academy'
-        },
-        {
-          id: '2',
-          message: 'Thanks to Digi Aerotech, our college website now attracts more visitors, and course registration has increased by 35%.',
-          highlight: 'course registration has increased by 35%',
-          stars: 5,
-          name: 'Ravi Kumar',
-          designation: 'Director',
-          company: 'Techno College'
         }
       ]
     },

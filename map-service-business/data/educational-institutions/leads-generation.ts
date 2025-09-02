@@ -24,7 +24,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'leads-generation-educational-institutions',
@@ -228,33 +227,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Continuous Improvement & Reporting',
           description: 'Refine campaigns based on data and provide detailed reports on lead quality and ROI.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Institutions Who ", gradient: false },
-        { text: "Generated Leads with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped schools, colleges, and coaching centers consistently attract qualified student inquiries and boost enrollments.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our student inquiries increased by 250% after implementing Digi Aerotech’s lead generation strategies.',
-          highlight: 'increased by 250%',
-          stars: 5,
-          name: 'Anjali Verma',
-          designation: 'Principal',
-          company: 'Sunrise Academy'
-        },
-        {
-          id: '2',
-          message: 'We now receive highly relevant leads that actually convert into enrollments, saving us time and ad spend.',
-          highlight: 'highly relevant leads',
-          stars: 5,
-          name: 'Rohit Malhotra',
-          designation: 'Director',
-          company: 'Excel Coaching Center'
         }
       ]
     },

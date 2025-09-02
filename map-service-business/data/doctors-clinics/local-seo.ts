@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'local-seo-doctors-clinics',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Tracking & Optimization',
           description: 'Monitor rankings, calls, and inquiries, then refine strategies for growth.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Doctors Who ", gradient: false },
-        { text: "Dominate Local Search with Us", gradient: true, gradientClass: "from-green-500 via-emerald-500 to-teal-500" }
-      ],
-      description: 'See how Digi Aerotech helped doctors and clinics improve their local visibility and attract more patients.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our clinic started ranking in the top 3 of Google Maps within 2 months. Patient calls and inquiries doubled!',
-          highlight: '2x patient inquiries',
-          stars: 5,
-          name: 'Dr. Ananya Sharma',
-          designation: 'Founder',
-          company: 'CareWell Clinic'
-        },
-        {
-          id: '2',
-          message: 'Local SEO helped us gain more visibility and improve reputation with positive reviews. Our clinic is now the top choice in our city.',
-          highlight: 'Top clinic in our city',
-          stars: 5,
-          name: 'Dr. Prakash Mehta',
-          designation: 'CEO',
-          company: 'Mehta Medical Center'
         }
       ]
     },

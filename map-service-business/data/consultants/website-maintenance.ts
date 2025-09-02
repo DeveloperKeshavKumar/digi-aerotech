@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'web-design-development-maintenance',
@@ -197,33 +196,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Testing & Launch', description: 'Cross-device, performance, and security testing before going live.' },
         { id: 5, title: 'Ongoing Maintenance', description: 'Regular updates, backups, security checks, and bug fixes.' },
         { id: 6, title: 'Performance Optimization', description: 'Continuous monitoring, speed tuning, and SEO updates for growth.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Businesses Who ", gradient: false },
-        { text: "Scaled With Our Web Solutions", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
-      ],
-      description: 'From small businesses to enterprises, Digi Aerotech has transformed outdated websites into modern, conversion-focused growth platforms.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our old site was slow and unattractive. Digi Aerotech redesigned it beautifully, and now it loads fast, looks professional, and generates real leads.',
-          highlight: 'Fast-loading & lead-generating site',
-          stars: 5,
-          name: 'Rohit Malhotra',
-          designation: 'Founder',
-          company: 'RM Legal Consulting'
-        },
-        {
-          id: '2',
-          message: 'They not only developed our site but also handle full maintenance. No more downtime, no more stress — only results!',
-          highlight: '100% peace of mind with maintenance',
-          stars: 5,
-          name: 'Priya Nair',
-          designation: 'Director',
-          company: 'EduFuture Academy'
-        }
       ]
     },
     cta: {

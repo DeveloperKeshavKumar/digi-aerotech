@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'lead-generation-b2c',
@@ -190,33 +189,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Lead Capture & Tracking', description: 'Implement forms, call tracking, and lead management tools.' },
         { id: 5, title: 'Optimization & Scaling', description: 'Test, refine, and scale campaigns for maximum ROI.' },
         { id: 6, title: 'Reporting & Insights', description: 'Provide transparent reports on leads, costs, and ROI.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Businesses Scaling ", gradient: false },
-        { text: "with Digi Aerotech Leads", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
-      ],
-      description: 'From retail stores to gyms and restaurants, Digi Aerotech has helped B2C businesses create predictable lead pipelines.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Earlier, we relied only on word of mouth. After Digi Aerotech’s lead gen campaigns, our salon gets 30+ new inquiries every week!',
-          highlight: '30+ new inquiries weekly',
-          stars: 5,
-          name: 'Shalini Verma',
-          designation: 'Owner',
-          company: 'Glow Beauty Salon'
-        },
-        {
-          id: '2',
-          message: 'Our gym grew from 100 to 400 members in 6 months thanks to the lead generation system built by Digi Aerotech.',
-          highlight: '4x growth in members',
-          stars: 5,
-          name: 'Rohit Sharma',
-          designation: 'Founder',
-          company: 'IronFit Gym'
-        }
       ]
     },
     cta: {

@@ -275,42 +275,6 @@ export const googleAdsService: ServiceData = {
             }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'Google Ads ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'Real results from businesses powered by our Google Ads expertise',
-        testimonials: [
-            {
-                id: '1',
-                message: 'DigiAerotech transformed our Google Ads performance - our lead cost dropped by 65% while lead quality improved dramatically. We now get 5x more qualified inquiries every month.',
-                highlight: 'lead cost dropped by 65% with 5x more inquiries',
-                stars: 5,
-                name: 'Suresh Agarwal',
-                designation: 'Business Owner',
-                company: 'Solar Energy Solutions'
-            },
-            {
-                id: '2',
-                message: 'Our e-commerce sales increased 400% within 4 months of their Google Shopping optimization. Their strategic approach to product feeds and bidding is exceptional.',
-                highlight: 'sales increased 400% within 4 months',
-                stars: 5,
-                name: 'Meera Joshi',
-                designation: 'E-commerce Director',
-                company: 'Home Decor Store'
-            },
-            {
-                id: '3',
-                message: 'The ROI from our Google Ads campaigns is now 8:1 thanks to DigiAerotech\'s strategic keyword research and conversion optimization. Best investment we\'ve made in digital marketing.',
-                highlight: 'ROI is now 8:1',
-                stars: 5,
-                name: 'Kartik Sharma',
-                designation: 'Marketing Manager',
-                company: 'B2B Software Company'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Dominate Google Search Results?',
         subtitle: 'START YOUR GOOGLE ADS CAMPAIGN',

@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "leads-generation-hotel-resort",
@@ -202,36 +201,6 @@ export const map: ServiceBusinessMap = {
           title: "Performance Tracking & Optimization",
           description:
             "Continuously analyze data to improve conversion rates, reduce cost-per-lead, and increase confirmed bookings.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts That", gradient: false },
-        { text: "Boosted Bookings With Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From boutique stays to luxury resorts, our lead generation campaigns deliver consistent inquiries and higher occupancy rates.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "After partnering with them, our inquiries doubled and direct bookings increased by 60%.",
-          highlight: "Direct bookings +60%",
-          stars: 5,
-          name: "Rajesh Sharma",
-          designation: "Owner",
-          company: "Seaside Resort",
-        },
-        {
-          id: "2",
-          message:
-            "Their lead capture and retargeting strategies filled our off-season rooms within weeks.",
-          highlight: "Off-season rooms filled",
-          stars: 5,
-          name: "Priya Kapoor",
-          designation: "GM",
-          company: "Mountainview Luxury Stay",
         },
       ],
     },

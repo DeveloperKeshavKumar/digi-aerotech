@@ -177,14 +177,6 @@ export const marketingAutomationService: ServiceData = {
             { id: 3, name: 'Zapier', logo: '/tech/icons8-zapier-96.png', category: 'Integrations' }
         ]
     },
-    testimonials: {
-        title: [ { text: 'Automation ' }, { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" } ],
-        description: 'Clients who streamlined their marketing efforts.',
-        testimonials: [
-            { id: '1', message: 'Automated sequences boosted our lead engagement by 80%.', highlight: '', stars: 5, name: 'Deepa Sen', designation: 'Head of Marketing', company: 'SaaS Platform' },
-            { id: '2', message: 'Integration with our CRM saved our sales team hours of manual work.', highlight: '', stars: 5, name: 'Vikram Patel', designation: 'Sales Ops Manager', company: 'B2B Services' }
-        ]
-    },
     cta: {
         title: 'Ready to Automate Marketing?',
         subtitle: 'GET STARTED',

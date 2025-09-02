@@ -276,42 +276,6 @@ export const socialMediaMarketingService: ServiceData = {
             }
         ]
     },
-    testimonials: {
-        title: [
-            { text: 'Social Media ', gradient: false },
-            { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        description: 'See how we\'ve helped brands transform their social media presence',
-        testimonials: [
-            {
-                id: '1',
-                message: 'DigiAerotech took our Instagram from 2,000 to 50,000+ followers in 8 months. Their content strategy and community engagement transformed our social presence into a major lead generation channel.',
-                highlight: 'from 2,000 to 50,000+ followers in 8 months',
-                stars: 5,
-                name: 'Priya Sharma',
-                designation: 'Marketing Director',
-                company: 'Fashion Boutique'
-            },
-            {
-                id: '2',
-                message: 'Our LinkedIn leads increased by 300% after implementing DigiAerotech\'s strategy. They understand how to create content that attracts our ideal B2B clients.',
-                highlight: 'LinkedIn leads increased by 300%',
-                stars: 5,
-                name: 'Rahul Mehta',
-                designation: 'CEO',
-                company: 'SaaS Startup'
-            },
-            {
-                id: '3',
-                message: 'The Facebook ad campaigns managed by DigiAerotech have consistently delivered a 5x ROI. Their targeting and creative approach is unmatched in our industry.',
-                highlight: 'consistently delivered a 5x ROI',
-                stars: 5,
-                name: 'Neha Patel',
-                designation: 'E-commerce Manager',
-                company: 'Home Decor Brand'
-            }
-        ]
-    },
     cta: {
         title: 'Ready to Transform Your Social Media Presence?',
         subtitle: 'GET STARTED TODAY',

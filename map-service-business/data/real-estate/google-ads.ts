@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'google-ads-real-estate',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Optimization',
           description: 'We continuously optimize campaigns, A/B test creatives, and scale ads that generate maximum qualified leads.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Agencies That", gradient: false },
-        { text: "Scaled with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how our campaigns turned ad clicks into high-ticket property sales and rentals.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our brokerage closed 7 flats in just 2 months thanks to highly targeted Google Ads!',
-          highlight: '7 flats sold in 2 months',
-          stars: 5,
-          name: 'Rohit Verma',
-          designation: 'Broker',
-          company: 'Urban Nest Realty'
-        },
-        {
-          id: '2',
-          message: 'From struggling with low inquiries, we now get 20+ qualified leads weekly from Google Ads.',
-          highlight: '20+ weekly leads',
-          stars: 5,
-          name: 'Ananya Mehta',
-          designation: 'Director',
-          company: 'Prime Properties'
         }
       ]
     },

@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant3",
     whyChooseUs: "variant2",
     process: "variant1",
-    testimonials: "variant3",
   },
   data: {
     slug: "leads-generation-local-business",
@@ -195,36 +194,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Tracking & Scaling",
           description: "We monitor conversions, optimize campaigns, and scale the best-performing strategies for maximum ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Winning", gradient: false },
-        { text: "With Our Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our lead generation services have helped countless local businesses generate consistent inquiries, calls, and sales.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Before working with this team, we barely had 2-3 calls a day. Now we receive 25+ leads every day, and our salon is fully booked most weeks.",
-          highlight: "25+ Daily Leads",
-          stars: 5,
-          name: "Pooja Mehta",
-          designation: "Owner",
-          company: "Glam Studio Salon",
-        },
-        {
-          id: "2",
-          message:
-            "As a gym owner, I struggled to get new members. After their campaigns, my membership grew by 60% in just 3 months.",
-          highlight: "60% Growth",
-          stars: 5,
-          name: "Ravi Kumar",
-          designation: "Founder",
-          company: "IronCore Gym",
         },
       ],
     },

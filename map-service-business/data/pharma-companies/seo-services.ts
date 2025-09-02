@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "seo-services-pharma-companies",
@@ -200,36 +199,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Analytics & Reporting",
           description: "We track rankings, traffic, and lead conversions to measure SEO ROI for pharma businesses.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Brands", gradient: false },
-        { text: "Winning with SEO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our SEO campaigns have helped pharma companies dominate search engines, increase patient trust, and generate qualified B2B and B2C leads.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our pharma brand went from page 4 to page 1 on Google in just 6 months. The organic patient leads we now receive are invaluable.",
-          highlight: "Ranked on Page 1",
-          stars: 5,
-          name: "Dr. Meera Nair",
-          designation: "Director",
-          company: "HealthPlus Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "With local SEO, our pharmacy outlets started ranking for ‘near me’ searches, driving more walk-ins and inquiries.",
-          highlight: "Local SEO Success",
-          stars: 5,
-          name: "Rajesh Sharma",
-          designation: "Owner",
-          company: "PharmaCare Distributors",
         },
       ],
     },

@@ -25,7 +25,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'aso-services-ecommerce-brands',
@@ -229,33 +228,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Ongoing Optimization',
           description: 'Regular updates to keywords, visuals, and metadata to maintain top rankings and maximize downloads.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-Commerce Apps That ", gradient: false },
-        { text: "Increased Downloads with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped online stores and shopping apps improve app store rankings, downloads, and user engagement.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our shopping app downloads doubled within 2 months thanks to Digi Aerotech’s ASO strategies.',
-          highlight: 'downloads doubled',
-          stars: 5,
-          name: 'Priya Singh',
-          designation: 'Founder',
-          company: 'FashionCart'
-        },
-        {
-          id: '2',
-          message: 'They optimized our app store listing perfectly, resulting in higher installs and better user retention.',
-          highlight: 'higher installs and better user retention',
-          stars: 5,
-          name: 'Rohan Mehta',
-          designation: 'CEO',
-          company: 'TechMart'
         }
       ]
     },

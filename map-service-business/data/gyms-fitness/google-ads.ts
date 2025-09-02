@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "google-ads-gyms-fitness",
@@ -205,36 +204,6 @@ export const map: ServiceBusinessMap = {
           title: "Continuous Optimization",
           description:
             "Refine targeting, copy, visuals, and bids to increase conversions and reduce wasted ad spend.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms Who ", gradient: false },
-        { text: "Scaled Memberships with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how our Google Ads campaigns helped fitness studios and gyms boost local visibility, sign-ups, and revenue.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "After running Google Ads with this team, our trial memberships tripled in just 2 months!",
-          highlight: "trial memberships tripled",
-          stars: 5,
-          name: "Rohit Verma",
-          designation: "Owner",
-          company: "Powerhouse Gym",
-        },
-        {
-          id: "2",
-          message:
-            "The campaigns were targeted, cost-efficient, and converted clicks into loyal members seamlessly.",
-          highlight: "converted clicks into loyal members",
-          stars: 5,
-          name: "Simran Kaur",
-          designation: "Founder",
-          company: "FitLife Studio",
         },
       ],
     },

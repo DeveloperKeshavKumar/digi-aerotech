@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'google-ads-b2c',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Landing Page Optimization', description: 'We ensure your landing page is built to convert visitors into leads.' },
         { id: 5, title: 'Campaign Launch', description: 'Your ads go live with targeted bidding strategies.' },
         { id: 6, title: 'Monitoring & Reporting', description: 'We optimize performance continuously and send transparent ROI reports.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Businesses Winning ", gradient: false },
-        { text: "with Google Ads", gradient: true, gradientClass: "from-yellow-500 via-orange-500 to-red-500" }
-      ],
-      description: 'From local retail shops to gyms and restaurants, Digi Aerotech has helped B2C businesses generate consistent leads and customers with Google Ads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our gym saw a 4x increase in new member sign-ups within 2 months of starting Google Ads with Digi Aerotech.',
-          highlight: '4x increase in sign-ups',
-          stars: 5,
-          name: 'Vikram Singh',
-          designation: 'Owner',
-          company: 'ProFit Gym'
-        },
-        {
-          id: '2',
-          message: 'Earlier, we wasted ad budget with no results. Now 70% of our new restaurant bookings come via Google Ads!',
-          highlight: '70% bookings via Ads',
-          stars: 5,
-          name: 'Ananya Gupta',
-          designation: 'Manager',
-          company: 'Spice & Soul Restaurant'
-        }
       ]
     },
     cta: {

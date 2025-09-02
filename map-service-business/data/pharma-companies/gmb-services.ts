@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "gmb-services-pharma-companies",
@@ -212,36 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Performance Tracking",
           description: "We track calls, visits, and rankings to measure results and fine-tune your GMB strategy for growth.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Businesses", gradient: false },
-        { text: "Winning with Our GMB Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From local pharma stores to nationwide distributors, we’ve helped pharma companies increase visibility, calls, and walk-in customers.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our pharmacy now ranks #1 on Google Maps for 'pharmacy near me'. We get more local calls and daily footfall than ever before.",
-          highlight: "5X More Local Calls",
-          stars: 5,
-          name: "Ramesh Mehta",
-          designation: "Owner",
-          company: "MediCare Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "Their GMB optimization doubled our distributor inquiries. Our pharma brand now dominates local search results in multiple cities.",
-          highlight: "3X Local Visibility",
-          stars: 5,
-          name: "Priya Sharma",
-          designation: "Marketing Head",
-          company: "PharmaLink",
         },
       ],
     },

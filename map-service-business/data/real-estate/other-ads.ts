@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "other-ads-real-estate",
@@ -227,40 +226,6 @@ export const map: ServiceBusinessMap = {
           title: "Scaling & ROI Growth",
           description:
             "Campaigns that perform well are scaled aggressively to maximize ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Brands Who", gradient: false },
-        {
-          text: "Grew with Multi-Platform Ads",
-          gradient: true,
-          gradientClass: "from-orange-500 via-pink-500 to-red-600",
-        },
-      ],
-      description:
-        "See how we helped real estate businesses generate more leads, buyers, and investors through emerging ad platforms.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Digi Aerotech ran TikTok & YouTube ads for our new property launch and we closed 40% of bookings in just 3 weeks.",
-          highlight: "closed 40% bookings",
-          stars: 5,
-          name: "Rohit Verma",
-          designation: "Director",
-          company: "Skyline Builders",
-        },
-        {
-          id: "2",
-          message:
-            "Our LinkedIn ad campaigns generated serious investor leads for our commercial property project. Excellent ROI!",
-          highlight: "serious investor leads",
-          stars: 5,
-          name: "Priya Malhotra",
-          designation: "CEO",
-          company: "UrbanSpaces Realty",
         },
       ],
     },

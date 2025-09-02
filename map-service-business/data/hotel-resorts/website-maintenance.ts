@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "web-design-development-maintenance-hotel-resort",
@@ -205,36 +204,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Ongoing Maintenance & Support",
           description: "Regular updates, backups, security patches, and performance monitoring to ensure uninterrupted website operation.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts Who ", gradient: false },
-        { text: "Loved Our Web Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Hear from hotel and resort owners who transformed their online presence and boosted bookings with our web design and maintenance services.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our resort’s website now loads instantly, looks stunning on mobile, and our bookings have doubled! The maintenance support is top-notch.",
-          highlight: "bookings have doubled",
-          stars: 5,
-          name: "Anjali Mehta",
-          designation: "Manager",
-          company: "SeaView Resort",
-        },
-        {
-          id: "2",
-          message:
-            "They redesigned our hotel website with a modern look, integrated our booking system flawlessly, and handle all updates seamlessly.",
-          highlight: "modern look & seamless updates",
-          stars: 5,
-          name: "Rohit Kapoor",
-          designation: "Owner",
-          company: "MountainTop Hotel",
         },
       ],
     },

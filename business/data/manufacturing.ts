@@ -220,53 +220,6 @@ export const manufacturing: BusinessData = {
       },
     ],
   },
-
-  testimonials: {
-    title: [
-      { text: "Manufacturing Client " },
-      {
-        text: "Success Stories",
-        gradient: true,
-        gradientClass: "from-yellow-500 via-orange-500 to-red-600",
-      },
-    ],
-    subtitle: "Trusted By OEMs, Exporters & Industrial Giants",
-    description:
-      "Our manufacturing clients expand globally with campaigns that capture demand, win contracts, and build long-term buyer relationships.",
-    items: [
-      {
-        id: "1",
-        message:
-          "We doubled our export orders within 6 months thanks to their SEO and PPC campaigns. A game-changer for our factory.",
-        highlight: "2X more export orders",
-        stars: 5,
-        name: "Ankit Sharma",
-        designation: "Export Head",
-        company: "Prime Steel Works",
-      },
-      {
-        id: "2",
-        message:
-          "Their LinkedIn outreach brought us buyers from 12 new countries. Our brand is now recognised globally.",
-        highlight: "Expanded to 12 countries",
-        stars: 5,
-        name: "Linda Perez",
-        designation: "Director of Sales",
-        company: "Global Tools Manufacturing",
-      },
-      {
-        id: "3",
-        message:
-          "They built our website with a product catalog and inquiry automation. We receive daily qualified leads now.",
-        highlight: "Daily qualified inquiries",
-        stars: 5,
-        name: "Rahul Verma",
-        designation: "Managing Director",
-        company: "Verma Engineering Works",
-      },
-    ],
-  },
-
   cta: {
     title: "Ready To Expand Your Manufacturing Business?",
     subtitle: "Generate More Inquiries, Win More Contracts, Go Global",

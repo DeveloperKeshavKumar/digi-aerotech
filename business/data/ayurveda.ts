@@ -180,44 +180,6 @@ export const ayurveda: BusinessData = {
         ]
     },
 
-    testimonials: {
-        title: [
-            { text: "Ayurveda Practice " },
-            { text: "Success Stories", gradient: true, gradientClass: "from-green-500 via-teal-500 to-blue-500" }
-        ],
-        subtitle: "How We've Helped Ayurvedic Clinics Grow Their Client Base",
-        description: "Read success stories from Ayurvedic clinics, wellness centers, and holistic health practitioners who have transformed their client acquisition with our Ayurveda-focused digital marketing expertise.",
-        items: [
-            {
-                id: '1',
-                message: 'Our Ayurveda center saw a 400% increase in appointments within 6 months of implementing SEO strategies. We now rank #1 for "Ayurveda treatment in Mumbai" and have doubled our client base.',
-                highlight: '400% increase and #1 ranking',
-                stars: 5,
-                name: 'Dr. Anjali Joshi',
-                designation: 'Ayurveda Practitioner',
-                company: 'Ayurvedic Healing Center Mumbai'
-            },
-            {
-                id: '2',
-                message: 'The targeted Facebook and Instagram campaigns helped us bring in 300+ new clients in just 3 months. The educational content focused on holistic healing gave us more credibility in the local community.',
-                highlight: '300+ new clients in 3 months',
-                stars: 5,
-                name: 'Dr. Rajesh Kumar',
-                designation: 'Ayurveda Specialist',
-                company: 'Pure Ayurveda Wellness Delhi'
-            },
-            {
-                id: '3',
-                message: 'Our website and booking system integration helped streamline client appointments and service inquiries. We saw a 350% growth in online consultations through digital marketing and SEO.',
-                highlight: '350% growth in consultations',
-                stars: 5,
-                name: 'Dr. Neha Mehta',
-                designation: 'Ayurvedic Doctor',
-                company: 'Herbal Life Ayurveda Center Pune'
-            },
-        ],
-    },
-
     cta: {
         title: 'Ready to Grow Your Ayurveda Practice?',
         subtitle: 'Get More Clients, Build Ayurveda Authority, and Expand Your Wellness Business',

@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "meta-ads-real-estate",
@@ -199,33 +198,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Tracking & Reporting",
           description: "We provide transparent reports on cost per lead, ad performance, and booked site visits.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Agencies Winning With", gradient: false },
-        { text: "Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description: "See how property brands generated high-quality inquiries with our Facebook & Instagram campaigns.",
-      testimonials: [
-        {
-          id: "1",
-          message: "Our apartments started selling 3X faster with Digi Aerotech’s Meta Ads campaigns. Inquiries flooded in within weeks.",
-          highlight: "3X Faster Sales",
-          stars: 5,
-          name: "Karan Malhotra",
-          designation: "Realtor",
-          company: "Sunrise Properties",
-        },
-        {
-          id: "2",
-          message: "We closed 40+ property deals last quarter thanks to high-quality leads from their Facebook & Instagram Ads.",
-          highlight: "40+ Deals Closed",
-          stars: 5,
-          name: "Priya Nair",
-          designation: "Developer",
-          company: "Elite Constructions",
         },
       ],
     },

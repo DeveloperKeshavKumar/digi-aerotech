@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'aso-services-for-consultants',
@@ -220,33 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Retention Strategy',
           description: 'Ensure clients keep using your consulting app.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants Growing with ", gradient: false },
-        { text: "ASO Services", gradient: true, gradientClass: "from-blue-500 via-purple-500 to-indigo-500" }
-      ],
-      description: 'See how consultants boosted app installs with Digi Aerotech.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our consulting app was invisible before. Now we rank in top 5 for our niche keywords.',
-          highlight: 'Top Ranking in Niche',
-          stars: 5,
-          name: 'Rohit Malhotra',
-          designation: 'Business Consultant',
-          company: 'Malhotra Advisory'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech helped us improve reviews and downloads. More clients are finding us now.',
-          highlight: 'More Clients from ASO',
-          stars: 5,
-          name: 'Ananya Desai',
-          designation: 'Career Coach',
-          company: 'Desai Consulting'
         }
       ]
     },

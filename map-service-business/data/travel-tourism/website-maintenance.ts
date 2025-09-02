@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'website-maintenance-travel-tourism',
@@ -219,33 +218,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Backups & Recovery',
           description: 'Automated backups and quick recovery solutions ensure your data is always safe and your website stays live.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Trusted Website Maintenance for ", gradient: false },
-        { text: "Travel & Tourism Brands", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Our website maintenance has helped travel agencies, tour operators, and booking platforms achieve uptime, speed, and reliability.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our travel website used to crash during peak season. Digi Aerotech now maintains it, and uptime has been flawless.',
-          highlight: 'uptime has been flawless',
-          stars: 5,
-          name: 'Ankit Mehta',
-          designation: 'Founder',
-          company: 'Skyline Holidays'
-        },
-        {
-          id: '2',
-          message: 'They handle all our seasonal updates and backups. We focus on tours, while they keep our site secure and fast.',
-          highlight: 'secure and fast',
-          stars: 5,
-          name: 'Nisha Verma',
-          designation: 'CEO',
-          company: 'GoExplore Tours'
         }
       ]
     },

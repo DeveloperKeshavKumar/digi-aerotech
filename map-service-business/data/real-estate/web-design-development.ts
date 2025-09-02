@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "web-design-development-real-estate",
@@ -220,36 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Launch & Support",
           description: "Deploying your site with ongoing support, maintenance, and lead-tracking setup.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Brands", gradient: false },
-        { text: "That Trust Our Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From property listing portals to agency websites, we’ve built digital platforms that drive visibility & sales.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our new website with smart filters and virtual tours helped us close 3x more deals in 6 months.",
-          highlight: "3x more deals",
-          stars: 5,
-          name: "Amit Sharma",
-          designation: "CEO",
-          company: "Dream Homes Realty",
-        },
-        {
-          id: "2",
-          message:
-            "The property website they built was fast, SEO-friendly, and generated high-quality leads from Day 1.",
-          highlight: "High-quality leads",
-          stars: 5,
-          name: "Sonal Mehra",
-          designation: "Marketing Head",
-          company: "Skyline Developers",
         },
       ],
     },

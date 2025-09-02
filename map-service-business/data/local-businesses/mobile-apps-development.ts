@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant2",
   },
   data: {
     slug: "mobile-apps-development-local-business",
@@ -197,36 +196,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Launch & Support",
           description: "Your app is deployed to app stores with ongoing support, updates, and improvements.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Thriving", gradient: false },
-        { text: "With Our Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From restaurants to gyms to boutiques, our apps have helped local businesses boost engagement, increase repeat customers, and grow sales.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our restaurant app transformed our business! Customers now order directly from us, and we don’t pay commissions to delivery apps anymore.",
-          highlight: "Saved 20% Commission",
-          stars: 5,
-          name: "Rahul Mehta",
-          designation: "Owner",
-          company: "Mehta’s Kitchen",
-        },
-        {
-          id: "2",
-          message:
-            "We run a fitness studio and the app keeps our members engaged with class schedules, reminders, and loyalty rewards. Customer retention improved massively.",
-          highlight: "Stronger Customer Loyalty",
-          stars: 5,
-          name: "Anita Sharma",
-          designation: "Founder",
-          company: "FitLife Studio",
         },
       ],
     },

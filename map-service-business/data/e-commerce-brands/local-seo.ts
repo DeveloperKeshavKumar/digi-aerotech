@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'local-seo-ecomm-brands',
@@ -195,17 +194,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Citations & Directory Listings', description: 'List your brand in local directories to increase visibility and trust.' },
         { id: 5, title: 'Review & Reputation Management', description: 'Collect, manage, and respond to customer reviews to boost credibility.' },
         { id: 6, title: 'Tracking & Reporting', description: 'Measure rankings, traffic, and local conversions, and continually optimize for better results.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands Who ", gradient: false },
-        { text: "Increased Local Visibility with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Discover how Digi Aerotech helped e-commerce brands dominate local search, attract nearby customers, and boost conversions.',
-      testimonials: [
-        { id: '1', message: 'Our local traffic has skyrocketed. We now get quality leads from our city and nearby areas.', highlight: 'local traffic', stars: 5, name: 'Ankit Verma', designation: 'Founder', company: 'UrbanCart' },
-        { id: '2', message: 'Thanks to Digi Aerotech, our Google Business Profile ranks at the top and customers call us directly.', highlight: 'Google Business Profile', stars: 5, name: 'Priya Sharma', designation: 'CEO', company: 'ShopEase' }
       ]
     },
     cta: {

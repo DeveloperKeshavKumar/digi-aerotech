@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'aso-services-travel-tourism',
@@ -197,33 +196,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Ratings & Review Strategy', description: 'Boost positive reviews & handle feedback smartly.' },
         { id: 5, title: 'Localization for Global Reach', description: 'Translate & optimize app listings for international travelers.' },
         { id: 6, title: 'Performance Tracking & Scaling', description: 'Monitor rankings, downloads & iterate for maximum growth.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Travel Apps That ", gradient: false },
-        { text: "Scaled with Our ASO", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped travel & tourism apps boost downloads, ratings, and global visibility.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our flight booking app went from invisible to top 5 results for “cheap flights” in 3 months. Downloads skyrocketed.',
-          highlight: 'Top 5 keyword ranking',
-          stars: 5,
-          name: 'Rahul Joshi',
-          designation: 'CEO',
-          company: 'FlyNow'
-        },
-        {
-          id: '2',
-          message: 'Thanks to their ASO strategies, our local tours app got featured on Play Store and doubled monthly bookings.',
-          highlight: 'Featured on Play Store',
-          stars: 5,
-          name: 'Sanya Kapoor',
-          designation: 'Founder',
-          company: 'GoExplore'
-        }
       ]
     },
     cta: {

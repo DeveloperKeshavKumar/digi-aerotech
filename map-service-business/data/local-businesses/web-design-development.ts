@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "web-design-development-local-business",
@@ -200,36 +199,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Growth & Support",
           description: "Post-launch, we monitor, optimize & support your website for continuous growth.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Local Businesses Growing", gradient: false },
-        { text: "With Our Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From clinics to restaurants to service providers, our websites have helped hundreds of local businesses gain visibility, trust & daily customers.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "My salon’s website brought 40% more online bookings within 2 months. Customers love how easy it is to book online.",
-          highlight: "40% More Bookings",
-          stars: 5,
-          name: "Pooja Sharma",
-          designation: "Owner",
-          company: "Glow Beauty Salon",
-        },
-        {
-          id: "2",
-          message:
-            "Our clinic website ranks on Google and brings us 20+ new patient inquiries every week. Highly professional team!",
-          highlight: "20+ Weekly Leads",
-          stars: 5,
-          name: "Dr. Arjun Mehta",
-          designation: "Founder",
-          company: "CareWell Clinic",
         },
       ],
     },

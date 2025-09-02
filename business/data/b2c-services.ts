@@ -210,69 +210,6 @@ export const b2cServices: BusinessData = {
     ]
   },
 
-  testimonials: {
-    title: [
-      { text: "B2C Services " },
-      { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-    ],
-    subtitle: "How We've Helped Consumer Service Businesses Thrive",
-    description: "Read testimonials from successful B2C service providers, home service businesses, and consumer-focused companies who have transformed their customer acquisition with our marketing expertise.",
-    items: [
-      {
-        id: '1',
-        message: 'Our home cleaning service business transformed completely within 5 months of working with this team. Their Google Ads and local SEO strategies increased our monthly bookings from 50 to 320, and we expanded to 3 new neighborhoods.',
-        highlight: 'monthly bookings from 50 to 320 and expanded to 3 neighborhoods',
-        stars: 5,
-        name: 'Priya Sharma',
-        designation: 'Business Owner',
-        company: 'SparkleClean Home Services Mumbai'
-      },
-      {
-        id: '2',
-        message: 'Their Facebook and Instagram campaigns for our beauty salon brought in 280 new customers in 4 months. The before/after content strategy they created made our posts viral, and we\'re now booked 3 weeks in advance.',
-        highlight: '280 new customers and booked 3 weeks in advance',
-        stars: 5,
-        name: 'Kavya Patel',
-        designation: 'Salon Owner',
-        company: 'Glamour Studio Ahmedabad'
-      },
-      {
-        id: '3',
-        message: 'As a personal fitness trainer, I struggled to find clients online. Their lead generation campaigns and Google My Business optimization now bring me 40-50 inquiries monthly, and my training slots are fully booked.',
-        highlight: '40-50 inquiries monthly with fully booked slots',
-        stars: 5,
-        name: 'Rajesh Kumar',
-        designation: 'Personal Fitness Trainer',
-        company: 'FitLife Personal Training Delhi'
-      },
-      {
-        id: '4',
-        message: 'Their marketing automation system for our home maintenance service has been incredible. Customer retention improved by 70% and our average customer lifetime value doubled through personalized follow-ups.',
-        highlight: '70% better retention and doubled customer lifetime value',
-        stars: 5,
-        name: 'Suresh Reddy',
-        designation: 'Service Manager',
-        company: 'FixIt Home Solutions Hyderabad'
-      },
-      {
-        id: '5',
-        message: 'The mobile app they developed for our laundry service revolutionized our business. Customers love the pickup scheduling feature, and our orders increased by 400% with the convenience factor.',
-        stars: 4,
-        name: 'Meera Gupta',
-        designation: 'Laundry Business Owner',
-        company: 'QuickWash Laundry Pune'
-      },
-      {
-        id: '6',
-        message: 'Their social media marketing for our pet grooming service created a loyal community of pet owners. Our monthly revenue increased 350% and we now have customers traveling from 5 different areas.',
-        highlight: '350% revenue increase with customers from 5 areas',
-        stars: 5,
-        name: 'Vikram Singh',
-        designation: 'Pet Grooming Specialist',
-        company: 'Pawsome Care Bangalore'
-      }
-    ],
-  },
 
   cta: {
     title: 'Ready to Transform Your Consumer Service Business?',

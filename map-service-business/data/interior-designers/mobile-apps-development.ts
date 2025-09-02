@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "mobile-apps-development-interior-designers",
@@ -189,36 +188,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Launch & Support",
           description: "Publish apps and provide continuous updates & maintenance.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers", gradient: false },
-        { text: "Growing with Apps", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our mobile apps help interior designers stand out, impress clients with 3D previews, and grow their design business with digital presence.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our new mobile app lets clients browse my portfolio and book consultations instantly. It has made client acquisition so much smoother.",
-          highlight: "Client-Friendly",
-          stars: 5,
-          name: "Priya Mehta",
-          designation: "Interior Designer",
-          company: "Urban Living Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "The 3D walkthrough feature wowed my clients. They could see exactly how their spaces would look before starting the project.",
-          highlight: "3D Previews",
-          stars: 5,
-          name: "Rohan Kapoor",
-          designation: "Creative Head",
-          company: "DreamSpace Interiors",
         },
       ],
     },

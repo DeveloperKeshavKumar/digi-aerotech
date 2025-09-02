@@ -13,7 +13,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'google-ads-ecomm-brands',
@@ -194,17 +193,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Bidding & Budget Allocation', description: 'Optimize bids and budgets for cost-efficient conversions.' },
         { id: 5, title: 'Performance Monitoring & A/B Testing', description: 'Continuously test and tweak campaigns to improve CTR and ROAS.' },
         { id: 6, title: 'Reporting & Insights', description: 'Provide actionable reports to track revenue, conversions, and ROI.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands Who ", gradient: false },
-        { text: "Boosted Sales with Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped e-commerce brands maximize ROI, increase traffic, and generate more sales with Google Ads.',
-      testimonials: [
-        { id: '1', message: 'Our campaigns now deliver 5x ROI and a steady stream of new customers every month.', highlight: '5x ROI', stars: 5, name: 'Anjali Verma', designation: 'Founder', company: 'TrendyCart' },
-        { id: '2', message: 'Their Google Ads expertise increased our online sales by 300% within 2 months.', highlight: '300%', stars: 5, name: 'Siddharth Rao', designation: 'CEO', company: 'ShopMate' }
       ]
     },
     cta: {

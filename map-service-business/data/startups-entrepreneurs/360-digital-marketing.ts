@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: '360-digital-marketing-startups',
@@ -220,33 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Investor Visibility',
           description: 'Scale campaigns globally & enhance credibility with investors.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups & Founders Who ", gradient: false },
-        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech helped startups acquire users, attract investors, and scale globally.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'As a first-time founder, Digi Aerotech helped me position my brand and acquire 5,000+ users within 6 months.',
-          highlight: '5,000+ users within 6 months',
-          stars: 5,
-          name: 'Rohit Verma',
-          designation: 'Founder & CEO',
-          company: 'TechHive'
-        },
-        {
-          id: '2',
-          message: 'Their digital campaigns not only brought customers but also boosted my credibility for investors. We closed our seed round confidently.',
-          highlight: 'boosted my credibility for investors',
-          stars: 5,
-          name: 'Ananya Gupta',
-          designation: 'Co-Founder',
-          company: 'HealthBridge'
         }
       ]
     },

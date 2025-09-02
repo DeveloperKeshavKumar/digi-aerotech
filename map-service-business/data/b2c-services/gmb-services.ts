@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'gmb-services-b2c',
@@ -196,33 +195,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Review Management', description: 'We help generate positive reviews & manage customer feedback.' },
         { id: 5, title: 'Rank Boost', description: 'We apply advanced local SEO techniques to push you into the Google 3-Pack.' },
         { id: 6, title: 'Reports & Tracking', description: 'Get transparent reports on calls, directions, and profile engagement.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Brands That ", gradient: false },
-        { text: "Won with GMB", gradient: true, gradientClass: "from-green-500 via-teal-500 to-blue-500" }
-      ],
-      description: 'From local gyms and cafes to salons and clinics, Digi Aerotech has helped B2C businesses dominate local search and attract more customers.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our salon now gets 3x more walk-ins just from Google Maps. Digi Aerotech made us visible when it mattered most.',
-          highlight: '3x more walk-ins',
-          stars: 5,
-          name: 'Pooja Verma',
-          designation: 'Owner',
-          company: 'Glow Beauty Salon'
-        },
-        {
-          id: '2',
-          message: 'We used to struggle with low online presence. Now 40% of our new customers find us through GMB!',
-          highlight: '40% new customers via GMB',
-          stars: 5,
-          name: 'Rahul Malhotra',
-          designation: 'Manager',
-          company: 'FitZone Gym'
-        }
       ]
     },
     cta: {

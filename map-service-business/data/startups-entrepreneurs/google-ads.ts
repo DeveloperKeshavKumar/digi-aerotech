@@ -16,7 +16,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'google-ads-startups-entrepreneurs',
@@ -213,33 +212,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Expansion',
           description: 'Once profitable, we expand campaigns across Search, Display, YouTube, and Retargeting for maximum startup growth.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Scaling Fast with ", gradient: false },
-        { text: "Google Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how entrepreneurs used our Google Ads services to generate leads, increase ROI, and scale confidently.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 3 weeks, our SaaS startup generated 200+ qualified leads at half the cost we used to spend. The ROI has been phenomenal.',
-          highlight: '200+ Leads in 3 Weeks',
-          stars: 5,
-          name: 'Rohan Gupta',
-          designation: 'Co-Founder',
-          company: 'CloudScale AI'
-        },
-        {
-          id: '2',
-          message: 'We were burning cash with no results until Digi Aerotech restructured our Google Ads. Now we get steady conversions at a predictable cost.',
-          highlight: 'Consistent Conversions',
-          stars: 5,
-          name: 'Neha Sharma',
-          designation: 'Founder',
-          company: 'FinTech Hive'
         }
       ]
     },

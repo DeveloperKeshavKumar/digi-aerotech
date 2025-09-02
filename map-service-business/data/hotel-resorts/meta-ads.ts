@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant2",
   },
   data: {
     slug: "meta-ads-hotel-resort",
@@ -200,36 +199,6 @@ export const map: ServiceBusinessMap = {
           title: "Conversion Tracking & Reporting",
           description:
             "Track clicks, leads, bookings, and ROI to ensure every ad dollar drives measurable results.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Hotels & Resorts That", gradient: false },
-        { text: "Boosted Bookings with Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how our Meta Ads campaigns helped hotels and resorts attract travelers, increase inquiries, and maximize ROI.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Meta Ads brought us over 300 inquiries in the first month, resulting in a 40% increase in direct bookings.",
-          highlight: "40% increase in direct bookings",
-          stars: 5,
-          name: "Rohit Gupta",
-          designation: "Owner",
-          company: "Beachside Resort",
-        },
-        {
-          id: "2",
-          message:
-            "Instagram & Facebook campaigns created by the team helped us fill rooms during the off-season.",
-          highlight: "Off-season bookings increased",
-          stars: 5,
-          name: "Priya Sharma",
-          designation: "Manager",
-          company: "Mountain View Hotel",
         },
       ],
     },

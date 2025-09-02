@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'b2b-social-media-marketing',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Paid Campaigns', description: 'Targeted LinkedIn Ads & retargeting campaigns' },
         { id: 5, title: 'Lead Nurturing', description: 'Funnels built around decision-maker journeys' },
         { id: 6, title: 'Analytics & Scaling', description: 'Reports tied to MQLs, SQLs, and closed deals' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "How B2B Leaders Grew with ", gradient: false },
-        { text: "Digi Aerotech Social Media", gradient: true, gradientClass: "from-blue-500 via-cyan-500 to-green-500" }
-      ],
-      description: 'From IT consulting to manufacturing, our clients see real authority and lead generation growth via social platforms.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our LinkedIn presence grew 5X and started generating inbound SQLs monthly.',
-          highlight: '320% Increase in Social Engagement',
-          stars: 5,
-          name: 'Anil Kapoor',
-          designation: 'Marketing Director',
-          company: 'NextGen IT Solutions'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech helped us become thought leaders in our industry on LinkedIn.',
-          highlight: 'Authority Recognition in 3 Months',
-          stars: 5,
-          name: 'Sonal Mehta',
-          designation: 'VP Sales',
-          company: 'B2B Global Consulting'
-        }
       ]
     },
     cta: {

@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: '360-digital-marketing',
@@ -243,33 +242,6 @@ export const map: ServiceBusinessMap = {
       technologies: [
         { id: 1, name: 'Google Analytics', logo: '/tech/icons8-google-analytics-96.png', category: 'Analytics' },
         { id: 2, name: 'HubSpot', logo: '/tech/icons8-hubspot-96.png', category: 'Automation' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: '360 Digital Marketing ', gradient: false },
-        { text: 'Success Stories', gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'Real results from hotel resorts businesses that achieved remarkable growth.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'The 360 digital marketing services transformed our hotel resorts business. We saw incredible growth and results beyond our expectations.',
-          highlight: 'incredible growth and results beyond expectations',
-          stars: 5,
-          name: 'John Smith',
-          designation: 'CEO',
-          company: 'Hotel Resorts Company'
-        },
-        {
-          id: '2',
-          message: 'Outstanding 360 digital marketing expertise specifically for hotel resorts. Highly recommend their services.',
-          highlight: 'outstanding expertise specifically for hotel resorts',
-          stars: 5,
-          name: 'Jane Doe',
-          designation: 'Marketing Director',
-          company: 'Hotel Resorts Solutions'
-        }
       ]
     },
     cta: {

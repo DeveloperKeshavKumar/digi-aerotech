@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'seo-services-b2c',
@@ -190,33 +189,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Content Strategy', description: 'Create engaging blogs, guides & landing pages.' },
         { id: 5, title: 'Link Building', description: 'Acquire high-quality backlinks for authority.' },
         { id: 6, title: 'Reporting & Scaling', description: 'Monthly reports & continuous optimization.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2C Brands Growing ", gradient: false },
-        { text: "with Digi Aerotech SEO Services", gradient: true, gradientClass: "from-green-500 via-blue-500 to-purple-500" }
-      ],
-      description: 'From restaurants to retailers, our SEO services have helped B2C businesses dominate Google rankings, drive traffic, and increase sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 4 months, Digi Aerotech ranked our restaurant in the top 3 for “best Italian food near me.” Our walk-ins doubled!',
-          highlight: 'Top 3 in Google Maps',
-          stars: 5,
-          name: 'Rohit Malhotra',
-          designation: 'Owner',
-          company: 'La Piazza Diner'
-        },
-        {
-          id: '2',
-          message: 'Our fashion store saw a 220% increase in organic traffic and more online orders after their SEO strategy.',
-          highlight: '220% increase in traffic',
-          stars: 5,
-          name: 'Ayesha Khan',
-          designation: 'Founder',
-          company: 'Trend Couture'
-        }
       ]
     },
     cta: {

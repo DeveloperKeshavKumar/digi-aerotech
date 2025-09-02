@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "leads-generation-pharma-companies",
@@ -206,36 +205,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Conversion Optimization",
           description: "We track KPIs like CPL (cost per lead), CTR, and conversions to refine and scale campaigns for higher ROI.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Companies", gradient: false },
-        { text: "Growing with Our Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Pharma manufacturers, exporters, and distributors trust us to deliver qualified leads that fuel long-term business growth.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Within 2 months, we started getting consistent inquiries from international distributors. Their pharma lead generation expertise is unmatched.",
-          highlight: "3.1X Growth in Distributor Leads",
-          stars: 5,
-          name: "Rajesh Sharma",
-          designation: "Director",
-          company: "BioCare Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "We struggled for years to generate quality B2B pharma leads. Their strategies gave us a pipeline full of doctors and hospitals in just weeks.",
-          highlight: "2.5X Increase in Qualified Leads",
-          stars: 5,
-          name: "Anita Desai",
-          designation: "Head of Marketing",
-          company: "MediLife Pharma",
         },
       ],
     },

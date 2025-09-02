@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant3",
     whyChooseUs: "variant1",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "social-media-marketing-gyms-fitness",
@@ -193,36 +192,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: "Analytics & Optimization",
           description: "Track metrics, test creatives, and refine campaigns for maximum ROI and lead generation.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms Who ", gradient: false },
-        { text: "Grew Their Social Media & Memberships", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Discover how our social media marketing strategies helped gyms increase followers, engagement, and memberships consistently.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our Instagram and TikTok engagement skyrocketed, bringing 200+ new members within 3 months!",
-          highlight: "200+ new members",
-          stars: 5,
-          name: "Amit Verma",
-          designation: "Owner",
-          company: "FitLife Gym",
-        },
-        {
-          id: "2",
-          message:
-            "The social media campaigns increased class bookings and brand visibility tremendously.",
-          highlight: "increased class bookings",
-          stars: 5,
-          name: "Priya Sharma",
-          designation: "Founder",
-          company: "Strong Body Studio",
         },
       ],
     },

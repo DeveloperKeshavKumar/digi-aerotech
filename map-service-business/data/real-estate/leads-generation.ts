@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'lead-generation-real-estate',
@@ -191,33 +190,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Optimization & Scaling',
           description: 'Campaigns are continuously monitored, optimized, and scaled to maximize ROI.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Real Estate Brands That", gradient: false },
-        { text: "Boosted Closures with Leads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how our lead funnels turned property inquiries into real sales.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 3 months, we got 250+ high-quality property leads and closed 12 site visits.',
-          highlight: '250+ leads in 3 months',
-          stars: 5,
-          name: 'Karan Mehta',
-          designation: 'Broker',
-          company: 'Cityline Realty'
-        },
-        {
-          id: '2',
-          message: 'From struggling with junk calls to verified buyers — Digi Aerotech transformed our sales pipeline.',
-          highlight: 'Verified buyer leads',
-          stars: 5,
-          name: 'Priya Sharma',
-          designation: 'Founder',
-          company: 'Elite Homes Realty'
         }
       ]
     },

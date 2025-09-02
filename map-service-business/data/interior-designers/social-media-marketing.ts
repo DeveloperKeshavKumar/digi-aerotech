@@ -22,7 +22,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant2",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "social-media-marketing-interior-designers",
@@ -194,36 +193,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Analytics & Growth",
           description: "Monthly reports on engagement, followers, and client conversions.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers Who", gradient: false },
-        { text: "Grew With Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From growing Instagram followers to generating real client consultations, our social media strategies deliver results for interior designers.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our Instagram is now our biggest source of new projects. We’ve doubled consultations thanks to their SMM strategy!",
-          highlight: "Instagram Growth",
-          stars: 5,
-          name: "Ananya Kapoor",
-          designation: "Founder",
-          company: "Kapoor Interiors",
-        },
-        {
-          id: "2",
-          message:
-            "Pinterest campaigns brought us high-end clients we never reached before. Totally worth the investment.",
-          highlight: "Pinterest Leads",
-          stars: 5,
-          name: "Rajesh Malhotra",
-          designation: "Creative Director",
-          company: "UrbanNest Designs",
         },
       ],
     },

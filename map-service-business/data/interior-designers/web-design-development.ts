@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "web-design-development-maintenance-interior-designers",
@@ -195,36 +194,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Performance Monitoring",
           description: "We provide regular reports on traffic, performance, and improvements for long-term growth.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Interior Designers Who", gradient: false },
-        { text: "Upgraded Their Websites", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "From stunning portfolio websites to ongoing maintenance, we’ve helped interior designers build their online presence and attract more clients.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our website redesign transformed our online presence. Clients love browsing our portfolio, and inquiries have doubled!",
-          highlight: "Website Redesign",
-          stars: 5,
-          name: "Ritu Sharma",
-          designation: "Founder",
-          company: "Elegant Spaces Studio",
-        },
-        {
-          id: "2",
-          message:
-            "They don’t just build websites, they maintain them too. I can focus on design projects while my website runs perfectly.",
-          highlight: "Maintenance & Support",
-          stars: 5,
-          name: "Arjun Mehta",
-          designation: "Creative Head",
-          company: "Urban Nest Interiors",
         },
       ],
     },

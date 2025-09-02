@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant3",
     process: "variant1",
-    testimonials: "variant2",
   },
   data: {
     slug: "social-media-marketing-pharma-companies",
@@ -201,36 +200,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Analytics & Scaling",
           description: "Tracking performance, optimizing strategies, and scaling high-ROI campaigns.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Pharma Companies", gradient: false },
-        { text: "Winning on Social Media", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Our social media campaigns have helped pharma companies build stronger trust, engage doctors & patients, and generate consistent brand visibility.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our pharma brand saw a 3x increase in patient engagement and trust after launching educational campaigns with this team.",
-          highlight: "3x Engagement",
-          stars: 5,
-          name: "Suresh Menon",
-          designation: "Marketing Head",
-          company: "BioCare Pharma",
-        },
-        {
-          id: "2",
-          message:
-            "LinkedIn campaigns helped us connect with doctors & hospitals, positioning us as a trusted healthcare partner.",
-          highlight: "Doctor Outreach Success",
-          stars: 5,
-          name: "Dr. Kavita Rao",
-          designation: "Director",
-          company: "MedTrust Pharma",
         },
       ],
     },

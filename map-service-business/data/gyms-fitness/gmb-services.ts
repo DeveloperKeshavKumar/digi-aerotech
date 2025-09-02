@@ -20,7 +20,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant1",
     whyChooseUs: "variant3",
     process: "variant2",
-    testimonials: "variant1",
   },
   data: {
     slug: "gmb-services-gyms-fitness",
@@ -204,36 +203,6 @@ export const map: ServiceBusinessMap = {
           title: "Insights & Reporting",
           description:
             "Analyze clicks, calls, and direction requests to continuously refine strategies and drive more members.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Gyms & Fitness Centers Who ", gradient: false },
-        { text: "Boosted Local Presence with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "See how we helped fitness studios and gyms increase visibility, attract new members, and dominate local searches.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our gym now ranks at the top of local searches, and we’ve seen a 3X increase in foot traffic. Amazing GMB optimization!",
-          highlight: "3X increase in foot traffic",
-          stars: 5,
-          name: "Rahul Mehta",
-          designation: "Owner",
-          company: "FitZone Gym",
-        },
-        {
-          id: "2",
-          message:
-            "The team handled our GMB listing and review management. Local members started finding us easily and memberships skyrocketed.",
-          highlight: "memberships skyrocketed",
-          stars: 5,
-          name: "Anjali Sharma",
-          designation: "Founder",
-          company: "Flex Fitness Studio",
         },
       ],
     },

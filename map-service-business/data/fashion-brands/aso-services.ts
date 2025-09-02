@@ -23,7 +23,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant3',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'aso-services-fashion-brands',
@@ -227,33 +226,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Continuous Monitoring & Updates',
           description: 'Track performance, A/B test visuals, and iterate for ongoing ASO success.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Apps That ", gradient: false },
-        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands achieve top app store rankings and massive downloads.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our fashion app saw a 400% increase in organic downloads within 3 months thanks to Digi Aerotech.',
-          highlight: '400% increase in organic downloads',
-          stars: 5,
-          name: 'Priya Verma',
-          designation: 'Founder',
-          company: 'TrendyCloset App'
-        },
-        {
-          id: '2',
-          message: 'They helped optimize our visuals and keywords. Downloads skyrocketed, and retention improved significantly.',
-          highlight: 'Downloads skyrocketed',
-          stars: 5,
-          name: 'Rohit Singh',
-          designation: 'CEO',
-          company: 'FashionFi App'
         }
       ]
     },

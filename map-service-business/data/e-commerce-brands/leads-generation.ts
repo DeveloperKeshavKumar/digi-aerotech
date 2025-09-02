@@ -13,7 +13,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'leads-generation-ecomm-brands',
@@ -194,17 +193,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Lead Nurturing Automation', description: 'Automate follow-ups via email, SMS, and retargeting.' },
         { id: 5, title: 'Monitoring & Optimization', description: 'Track leads and continuously optimize campaigns for better conversions.' },
         { id: 6, title: 'Reporting & Insights', description: 'Provide actionable reports to measure lead quality and ROI.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands Who ", gradient: false },
-        { text: "Scaled with Our Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped e-commerce brands acquire high-quality leads that converted into loyal customers.',
-      testimonials: [
-        { id: '1', message: 'Our lead flow has never been better. Every week we get qualified inquiries that convert into sales.', highlight: 'qualified inquiries', stars: 5, name: 'Rohit Sharma', designation: 'Founder', company: 'StyleCart' },
-        { id: '2', message: 'Thanks to Digi Aerotech, we have a systematic lead nurturing process that consistently increases our revenue.', highlight: 'systematic lead nurturing', stars: 5, name: 'Meera Jain', designation: 'CEO', company: 'Trendify' }
       ]
     },
     cta: {

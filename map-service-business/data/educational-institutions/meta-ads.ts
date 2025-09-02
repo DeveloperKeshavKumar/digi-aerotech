@@ -25,7 +25,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'meta-ads-educational-institutions',
@@ -229,33 +228,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Reporting & Insights',
           description: 'Provide detailed reports on clicks, leads, conversions, and improvements.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Institutions Who ", gradient: false },
-        { text: "Saw Growth with Our Meta Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Discover how Digi Aerotech helped educational institutions attract students through high-performing Meta Ads campaigns.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our college registrations increased by 40% in just a few weeks thanks to Meta Ads managed by Digi Aerotech.',
-          highlight: 'increased by 40%',
-          stars: 5,
-          name: 'Anita Desai',
-          designation: 'Principal',
-          company: 'Global Knowledge College'
-        },
-        {
-          id: '2',
-          message: 'The Meta Ads campaigns targeted parents effectively, giving us a steady flow of student inquiries every day.',
-          highlight: 'steady flow of student inquiries',
-          stars: 5,
-          name: 'Rohit Kapoor',
-          designation: 'Director',
-          company: 'City Smart Coaching Center'
         }
       ]
     },

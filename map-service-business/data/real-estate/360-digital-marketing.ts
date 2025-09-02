@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: '360-digital-marketing-real-estate',
@@ -220,33 +219,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Performance Tracking & Scaling',
           description: 'Measure ROI, optimize campaigns & scale lead volume.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Builders & Realtors Who ", gradient: false },
-        { text: "Scaled with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: 'See how Digi Aerotech helped real estate firms attract buyers, close deals, and scale revenue.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our project struggled to attract buyers. Digi Aerotech generated 1,200+ leads in 3 months with highly targeted campaigns.',
-          highlight: '1,200+ leads in 3 months',
-          stars: 5,
-          name: 'Amit Sharma',
-          designation: 'Director',
-          company: 'Skyline Builders'
-        },
-        {
-          id: '2',
-          message: 'Their team helped us sell out our luxury villas faster than ever before. The quality of leads was top-notch.',
-          highlight: 'sold out our luxury villas',
-          stars: 5,
-          name: 'Priya Mehta',
-          designation: 'CEO',
-          company: 'Elite Estates'
         }
       ]
     },

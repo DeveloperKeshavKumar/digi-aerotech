@@ -210,69 +210,6 @@ export const consultants: BusinessData = {
         ]
     },
 
-    testimonials: {
-        title: [
-            { text: "Consultant & Coach " },
-            { text: "Success Stories", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-        ],
-        subtitle: "How We've Helped Consultants Build Authority & Scale",
-        description: "Read testimonials from successful consultants, coaches, and advisors who have transformed their practices with our digital marketing expertise and authority-building strategies.",
-        items: [
-            {
-                id: '1',
-                message: 'As a management consultant, I was struggling to differentiate myself in a crowded market. Their thought leadership strategy and LinkedIn campaigns positioned me as an industry expert, leading to a 500% increase in consultation requests and doubling my rates.',
-                highlight: '500% increase in consultation requests and doubled rates',
-                stars: 5,
-                name: 'Dr. Rajesh Khanna',
-                designation: 'Management Consultant',
-                company: 'Strategic Excellence Consulting Mumbai'
-            },
-            {
-                id: '2',
-                message: 'Their SEO and content marketing strategies got my executive coaching practice ranking #1 for "leadership coach India". My monthly client inquiries increased from 8 to 65, and I now have a 3-month waiting list.',
-                highlight: 'monthly inquiries increased from 8 to 65 with 3-month waiting list',
-                stars: 5,
-                name: 'Priya Sharma',
-                designation: 'Executive Leadership Coach',
-                company: 'Transformational Leadership Delhi'
-            },
-            {
-                id: '3',
-                message: 'The professional website and case study portfolio they developed for my HR consulting practice has been incredible. I\'ve landed 4 Fortune 500 clients and my average project value increased by 400%.',
-                highlight: 'landed 4 Fortune 500 clients and 400% higher project values',
-                stars: 5,
-                name: 'Vikram Agarwal',
-                designation: 'HR Strategy Consultant',
-                company: 'People Excellence Consulting Bangalore'
-            },
-            {
-                id: '4',
-                message: 'Their LinkedIn marketing and thought leadership campaigns established me as a go-to digital transformation consultant. I now speak at industry conferences and my consulting fees have tripled.',
-                highlight: 'consulting fees tripled and speaking at conferences',
-                stars: 5,
-                name: 'Anita Patel',
-                designation: 'Digital Transformation Consultant',
-                company: 'FutureTech Consulting Ahmedabad'
-            },
-            {
-                id: '5',
-                message: 'As a business coach, I needed to build credibility online. Their content strategy and webinar campaigns helped me gain 15,000 LinkedIn followers and generated 180 coaching inquiries in 6 months.',
-                stars: 4,
-                name: 'Suresh Reddy',
-                designation: 'Business Growth Coach',
-                company: 'Success Catalyst Coaching Hyderabad'
-            },
-            {
-                id: '6',
-                message: 'The marketing automation system they set up for my coaching business has been transformational. I now nurture 500+ prospects automatically, and my conversion rate from lead to client increased by 85%.',
-                highlight: 'conversion rate increased by 85%',
-                stars: 5,
-                name: 'Meera Gupta',
-                designation: 'Life & Career Coach',
-                company: 'Breakthrough Coaching Pune'
-            }
-        ],
-    },
 
     cta: {
         title: 'Ready to Become the Go-To Expert in Your Field?',

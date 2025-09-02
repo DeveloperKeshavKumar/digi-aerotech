@@ -21,7 +21,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: '360-digital-marketing',
@@ -253,33 +252,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: "Scale & Optimize",
           description: "Data-driven scaling with continuous optimization & growth tracking."
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Brands That ", gradient: false },
-        { text: "Scaled with Digi Aerotech", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-500" }
-      ],
-      description: "See how we helped D2C and e-commerce brands achieve explosive growth.",
-      testimonials: [
-        {
-          id: "1",
-          message: "Within 3 months, Digi Aerotech turned our 1.5x ROAS into a consistent 5x. We scaled from ₹5L to ₹25L monthly revenue without burning cash.",
-          highlight: "scaled from ₹5L to ₹25L monthly revenue",
-          stars: 5,
-          name: "Ananya Sharma",
-          designation: "Founder",
-          company: "GlowSkin Naturals"
-        },
-        {
-          id: "2",
-          message: "They helped us dominate Google & Meta ads while building loyalty through email flows. Our repeat purchase rate jumped by 40%.",
-          highlight: "repeat purchase rate jumped by 40%",
-          stars: 5,
-          name: "Rohit Mehta",
-          designation: "Co-Founder",
-          company: "FitFuel Nutrition"
         }
       ]
     },

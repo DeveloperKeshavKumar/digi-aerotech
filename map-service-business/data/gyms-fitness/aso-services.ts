@@ -19,7 +19,6 @@ export const map: ServiceBusinessMap = {
     hero: "variant2",
     whyChooseUs: "variant1",
     process: "variant3",
-    testimonials: "variant1",
   },
   data: {
     slug: "aso-services-gyms-fitness",
@@ -203,36 +202,6 @@ export const map: ServiceBusinessMap = {
           title: "Performance Monitoring & Updates",
           description:
             "Track ASO performance, implement improvements, and update app content regularly for sustained growth.",
-        },
-      ],
-    },
-    testimonials: {
-      title: [
-        { text: "Fitness Apps & Gyms Who ", gradient: false },
-        { text: "Boosted Downloads with Us", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" },
-      ],
-      description:
-        "Hear from gym owners and fitness app developers who increased app downloads and engagement through our ASO expertise.",
-      testimonials: [
-        {
-          id: "1",
-          message:
-            "Our fitness app climbed to the top charts in Google Play and App Store, and user engagement has skyrocketed. Amazing ASO service!",
-          highlight: "top charts",
-          stars: 5,
-          name: "Rohit Singh",
-          designation: "Founder",
-          company: "FitTrack App",
-        },
-        {
-          id: "2",
-          message:
-            "The team optimized our gym membership app’s keywords and visuals, leading to a 3X increase in downloads and higher active users.",
-          highlight: "3X increase in downloads",
-          stars: 5,
-          name: "Sneha Kapoor",
-          designation: "Owner",
-          company: "PowerZone Gym App",
         },
       ],
     },

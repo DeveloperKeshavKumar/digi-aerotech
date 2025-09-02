@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'aso-services-restaurants-cafes',
@@ -206,33 +205,6 @@ export const map: ServiceBusinessMap = {
           id: 5,
           title: 'Tracking & Scaling',
           description: 'We continuously monitor rankings, downloads, and conversions to refine and scale your ASO strategy.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants & Cafés Growing with ", gradient: false },
-        { text: "Our ASO Services", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how restaurants and cafés boosted downloads, orders, and footfall with our ASO strategies.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our restaurant app downloads tripled after ASO optimization. Online orders have never been this high!',
-          highlight: '3X More Downloads',
-          stars: 5,
-          name: 'Chef Arjun Mehta',
-          designation: 'Owner',
-          company: 'Urban Tandoor'
-        },
-        {
-          id: '2',
-          message: 'We saw a huge boost in table reservations and delivery orders thanks to better app visibility.',
-          highlight: 'Increased Orders',
-          stars: 5,
-          name: 'Sonal Kapoor',
-          designation: 'Founder',
-          company: 'Bean & Bite Café'
         }
       ]
     },

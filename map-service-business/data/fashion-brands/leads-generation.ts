@@ -26,7 +26,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'leads-generation-fashion-brands',
@@ -230,33 +229,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling Successful Campaigns',
           description: 'Identify winning campaigns and scale them for maximum leads and revenue.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Fashion Brands That ", gradient: false },
-        { text: "Grew with Our Lead Generation", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped fashion brands generate high-quality leads and convert them into loyal customers.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our boutique now receives 200+ high-quality leads per month, all thanks to Digi Aerotech’s lead campaigns.',
-          highlight: '200+ high-quality leads',
-          stars: 5,
-          name: 'Ananya Kapoor',
-          designation: 'Owner',
-          company: 'Chic Vogue'
-        },
-        {
-          id: '2',
-          message: 'The leads generated were well-targeted, converting into real sales almost immediately.',
-          highlight: 'converting into real sales',
-          stars: 5,
-          name: 'Rishi Malhotra',
-          designation: 'Founder',
-          company: 'Urban Fashion Hub'
         }
       ]
     },

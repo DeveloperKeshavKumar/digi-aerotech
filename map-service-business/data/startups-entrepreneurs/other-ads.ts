@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant3',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant3'
   },
   data: {
     slug: 'other-ads-startups-entrepreneurs',
@@ -212,33 +211,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Scaling & Reporting',
           description: 'We scale winning campaigns and provide transparent reports showing startup growth.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Startups Scaling with ", gradient: false },
-        { text: "Multi-Platform Ads", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how entrepreneurs used TikTok, YouTube, LinkedIn, Snapchat & Twitter ads to grow fast.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our TikTok and YouTube ads went viral in just weeks, bringing 50K+ app installs with a small budget.',
-          highlight: '50K+ Installs in Weeks',
-          stars: 5,
-          name: 'Karan Mehta',
-          designation: 'Co-Founder',
-          company: 'FitTrack'
-        },
-        {
-          id: '2',
-          message: 'Their LinkedIn ads helped us get investor leads and B2B clients within the first 2 months.',
-          highlight: 'Investor & B2B Clients',
-          stars: 5,
-          name: 'Ananya Sharma',
-          designation: 'Founder',
-          company: 'BizHive'
         }
       ]
     },

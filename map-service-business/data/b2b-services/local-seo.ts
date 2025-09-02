@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'local-seo-b2b',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Citations & Listings', description: 'Ensure NAP consistency across directories & B2B platforms' },
         { id: 5, title: 'Reviews & Reputation', description: 'Build and manage reviews to boost trust' },
         { id: 6, title: 'Tracking & Reporting', description: 'Monthly reporting of rankings, calls & inquiries' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Companies Growing with ", gradient: false },
-        { text: "Digi Aerotech’s Local SEO", gradient: true, gradientClass: "from-blue-500 via-indigo-500 to-purple-500" }
-      ],
-      description: 'From IT service providers to enterprise consultants, we help B2B firms dominate their local markets.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our IT consulting firm now appears in the top 3 for “Enterprise IT Solutions near me.” Leads have increased 60% in 3 months.',
-          highlight: '60% More Leads',
-          stars: 5,
-          name: 'Ramesh Khanna',
-          designation: 'Director',
-          company: 'TechCore Solutions'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech put our logistics business on the map—literally. We now receive steady inquiries from corporate buyers in our region.',
-          highlight: 'Consistent Corporate Inquiries',
-          stars: 5,
-          name: 'Neha Kapoor',
-          designation: 'CMO',
-          company: 'TransGlobe Logistics'
-        }
       ]
     },
     cta: {

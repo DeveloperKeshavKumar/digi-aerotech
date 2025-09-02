@@ -14,7 +14,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant2',
     process: 'variant1',
-    testimonials: 'variant2'
   },
   data: {
     slug: 'b2b-seo-services',
@@ -166,33 +165,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Link Building & Authority', description: 'High-quality backlinks from trusted industry sites' },
         { id: 5, title: 'Conversion SEO', description: 'Landing pages optimized to turn visitors into MQLs/SQLs' },
         { id: 6, title: 'Analytics & Scaling', description: 'Monthly reports tied to pipeline growth & ROI' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "B2B Companies Growing with ", gradient: false },
-        { text: "Digi Aerotech SEO", gradient: true, gradientClass: "from-green-500 via-teal-500 to-blue-600" }
-      ],
-      description: 'From SaaS to manufacturing, Digi Aerotech SEO has helped global B2B firms build authority and capture high-value clients.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Our manufacturing website went from invisible to page 1 for critical keywords in 4 months.',
-          highlight: '120% Increase in Qualified Leads',
-          stars: 5,
-          name: 'Amit Khurana',
-          designation: 'VP Marketing',
-          company: 'Global Industrial Corp'
-        },
-        {
-          id: '2',
-          message: 'Digi Aerotech understands B2B buyer intent deeply. Their SEO brought us steady SQLs from the US & EU markets.',
-          highlight: 'Expanded to 3 New International Markets',
-          stars: 5,
-          name: 'Ritika Sharma',
-          designation: 'Head of Growth',
-          company: 'TechConsult Solutions'
-        }
       ]
     },
     cta: {

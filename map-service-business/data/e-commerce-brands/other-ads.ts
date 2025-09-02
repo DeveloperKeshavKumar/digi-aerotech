@@ -13,7 +13,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant1',
     whyChooseUs: 'variant3',
     process: 'variant2',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'other-ads-ecomm-brands',
@@ -154,17 +153,6 @@ export const map: ServiceBusinessMap = {
         { id: 4, title: 'Audience Targeting & Campaign Setup', description: 'Implement precise targeting with demographic, interest, lookalike, and retargeting strategies to reach the ideal customers.' },
         { id: 5, title: 'Monitoring & Optimization', description: 'Track performance in real-time, A/B test creatives, adjust bids, and optimize campaigns for the best ROI.' },
         { id: 6, title: 'Scaling & Reporting', description: 'Scale successful campaigns, expand to new audiences, and provide detailed performance reports to keep stakeholders informed.' }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "E-commerce Brands That ", gradient: false },
-        { text: "Succeed Across Platforms", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'See how Digi Aerotech helped e-commerce brands maximize ROI and conversions across multiple ad networks.',
-      testimonials: [
-        { id: '1', message: 'Our campaigns on TikTok and YouTube now drive 3X the revenue. Exceptional targeting and creatives.', highlight: '3X the revenue', stars: 5, name: 'Ananya Singh', designation: 'Founder', company: 'StyleCart' },
-        { id: '2', message: 'We saw a significant lift in app installs and sales after Digi Aerotech managed our multi-platform ads.', highlight: 'significant lift in app installs', stars: 5, name: 'Vikram Rao', designation: 'CEO', company: 'TechWear' }
       ]
     },
     cta: {

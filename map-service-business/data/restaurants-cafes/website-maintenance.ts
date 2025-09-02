@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'website-maintenance-restaurants-cafes',
@@ -207,33 +206,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Ongoing SEO',
           description: 'We fine-tune SEO settings so your restaurant ranks higher and gets more diners online.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Restaurants Growing with ", gradient: false },
-        { text: "Our Website Maintenance", gradient: true, gradientClass: "from-orange-500 via-pink-500 to-red-600" }
-      ],
-      description: 'Our maintenance services keep restaurant websites secure, fast, and always up-to-date, bringing more direct orders and loyal diners.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'We no longer worry about outdated menus or downtime—everything is handled perfectly.',
-          highlight: 'Stress-Free Maintenance',
-          stars: 5,
-          name: 'Chef Aman Verma',
-          designation: 'Owner',
-          company: 'Flavors of India'
-        },
-        {
-          id: '2',
-          message: 'Our café website is always updated with seasonal specials and never crashes during peak hours.',
-          highlight: 'Always Online',
-          stars: 5,
-          name: 'Ritu Mehra',
-          designation: 'Founder',
-          company: 'The Brew Spot'
         }
       ]
     },

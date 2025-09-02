@@ -15,7 +15,6 @@ export const map: ServiceBusinessMap = {
     hero: 'variant2',
     whyChooseUs: 'variant1',
     process: 'variant3',
-    testimonials: 'variant1'
   },
   data: {
     slug: 'google-ads-consultants-teachers',
@@ -221,33 +220,6 @@ export const map: ServiceBusinessMap = {
           id: 6,
           title: 'Optimization & Scaling',
           description: 'Refine keywords, targeting, and bidding to scale campaigns profitably.'
-        }
-      ]
-    },
-    testimonials: {
-      title: [
-        { text: "Consultants & Teachers Who ", gradient: false },
-        { text: "Grew Fast with Our Ads", gradient: true, gradientClass: "from-yellow-500 via-orange-500 to-red-500" }
-      ],
-      description: 'Here’s what professionals say about Digi Aerotech’s Google Ads campaigns.',
-      testimonials: [
-        {
-          id: '1',
-          message: 'Within 2 weeks of running Google Ads with Digi Aerotech, I started getting student enrollments daily.',
-          highlight: 'student enrollments daily',
-          stars: 5,
-          name: 'Meera Joshi',
-          designation: 'Spoken English Trainer',
-          company: 'FluentMe Academy'
-        },
-        {
-          id: '2',
-          message: 'As a business coach, most of my new clients now come directly from Google Ads campaigns managed by them.',
-          highlight: 'most of my new clients',
-          stars: 5,
-          name: 'Vivek Sharma',
-          designation: 'Business Consultant',
-          company: 'GrowthX Consulting'
         }
       ]
     },
