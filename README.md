@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DigiAerotech - Digital Marketing Services Platform
 
-## Getting Started
+A comprehensive Next.js application providing digital marketing services across multiple industries including restaurants, gyms, real estate, and B2B services. The platform specializes in App Store Optimization (ASO), website development, and digital marketing solutions.
 
-First, run the development server:
+## 🚀 Features
 
+- **Multi-Industry Support**: Tailored services for restaurants & cafés, gyms & fitness, real estate, and B2B businesses
+- **App Store Optimization (ASO)**: Complete ASO services with keyword research, creative optimization, and performance tracking
+- **Website Development & Maintenance**: Custom web solutions with ongoing support
+- **Responsive Design**: Built with modern UI components and mobile-first approach
+- **Service Management**: Automated template generation and content management system
+
+## 🛠️ Technologies Used
+
+- **Framework**: Next.js 15+ with App Router
+- **Styling**: Tailwind CSS with custom components
+- **UI Components**: Custom component library with icons inspired from Aceternity
+- **Language**: TypeScript
+- **Deployment**: Vercel-ready configuration
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 22+ 
+- npm 11+
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/DeveloperKeshavKumar/digi-aerotech
+cd digi-aerotech
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .example.env .env
+```
+Configure the required environment variables in `.env`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Development Tools
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Template Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project includes automated template generation for service pages:
 
-## Deploy on Vercel
+```bash
+node template.js
+node template-registry.js
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This script updates service templates across all business categories and maintains consistency across the platform.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Database Testing
+
+```bash
+node test-db.js
+```
+
+## 🚀 Deployment
+
+### Deploy on Vercel
+
+The easiest way to deploy this Next.js app is using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme):
+
+1. Push your code to a Git repository
+2. Import your project on Vercel
+3. Configure environment variables
+4. Deploy automatically
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more deployment options.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is proprietary software developed by [Keshav Kumar](href:https://github.com/developerKeshavKumar) for [DigiAerotech](https://digiaerotech.com).
+
+## 📞 Contact
+
+For business inquiries and support, please contact us through the application's contact form or visit our website.
