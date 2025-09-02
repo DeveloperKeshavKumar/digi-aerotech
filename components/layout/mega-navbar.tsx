@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/mega-menubar";
 import { ModeToggle } from "../ui/toggle";
 import { cn } from "@/lib/utils";
-import { IconSearch, IconSmartHome } from "@tabler/icons-react";
+import { IconBrandWhatsapp, IconSearch, IconSmartHome } from "@tabler/icons-react";
 import { useScroll, useMotionValueEvent } from "motion/react";
 
 export default function MegaMenuExample() {
@@ -177,14 +177,14 @@ export default function MegaMenuExample() {
                         Contact Us
                     </NavbarButton>
                     <NavbarButton
-                        href="/"
+                        href="https://wa.me/+918307105140"
                         variant="primary"
                         visible={visible}
                         className="bg-black text-white dark:bg-white dark:text-black px-2"
                         aria-label="Search"
                         title="Search"
                     >
-                        <IconSmartHome />
+                        <IconBrandWhatsapp />
                     </NavbarButton>
                 </div>
             </NavBody>
@@ -214,7 +214,7 @@ export default function MegaMenuExample() {
                             Contact
                         </NavbarButton>
                         <NavbarButton
-                            href="/"
+                            href="https://wa.me/+918307105140"
                             onClick={() => setIsMobileMenuOpen(false)}
                             variant="primary"
                             visible={visible}
@@ -222,7 +222,7 @@ export default function MegaMenuExample() {
                             aria-label="Search"
                         >
                             <div className="flex items-center justify-center gap-x-2.5">
-                                <IconSmartHome /> Go to Home
+                                <IconBrandWhatsapp /> <span>WhatsApp</span>
                             </div>
                         </NavbarButton>
                     </div>

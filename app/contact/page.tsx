@@ -305,7 +305,7 @@ export default function ContactPage() {
                         <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 via-pink-600 to-red-500 rounded-xl blur opacity-30"></div>
                         <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800 h-[450px]">
                             <iframe
-                                src="https://www.google.com/maps?q=Shop+No.4,+Palika+Bazar,+New+Bus+Stand+Rd,+opposite+Nidhi+Glass+Works,+Dera+Surjanhar,+Ratia,+Haryana+125051&output=embed"
+                                src="https://www.google.com/maps?q=digiaerotech,Shop+No.4,+Palika+Bazar,+New+Bus+Stand+Rd,+opposite+Nidhi+Glass+Works,+Dera+Surjanhar,+Ratia,+Haryana+125051&output=embed"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
@@ -320,7 +320,7 @@ export default function ContactPage() {
                     <div className="mt-8 flex flex-wrap justify-center gap-6">
                         <div className="flex items-center gap-2 bg-white dark:bg-gray-900 px-5 py-3 rounded-full shadow-md border border-gray-200 dark:border-gray-800">
                             <IconMapPin size={18} className="text-orange-500" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300">Shop No.4, Palika Bazar, Ratia, HR- </span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">Shop No.4, Palika Bazar, Ratia, HR </span>
                         </div>
                         <div className="flex items-center gap-2 bg-white dark:bg-gray-900 px-5 py-3 rounded-full shadow-md border border-gray-200 dark:border-gray-800">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-600">
@@ -328,7 +328,7 @@ export default function ContactPage() {
                                 <path d="M3.34 19a10 10 0 1 1 17.32 0" />
                                 <path d="M13 19H7a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h4" />
                             </svg>
-                            <span className="text-sm text-gray-700 dark:text-gray-300">5 mins from New Bus Stand</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">2 mins from New Bus Stand</span>
                         </div>
                         <div className="flex items-center gap-2 bg-white dark:bg-gray-900 px-5 py-3 rounded-full shadow-md border border-gray-200 dark:border-gray-800">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-500">
