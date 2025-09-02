@@ -103,13 +103,6 @@ export const hotelResorts: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Hotel Booking Engine Optimization',
-        description: 'Conversion-optimized direct booking systems, package deals, upselling strategies, and checkout flows that maximize revenue and reduce OTA dependency.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'Hotel Website Development',
         description: 'Mobile-responsive hospitality websites with integrated booking engines, virtual tours, amenity showcases, and seamless user experience that converts visitors into guests.',
@@ -151,13 +144,13 @@ export const hotelResorts: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'Hotel Website Maintenance',
-        description: 'Ongoing website support including rate updates, seasonal promotions, amenity information management, and performance optimization for hospitality websites.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'Hotel Website Maintenance',
+      //   description: 'Ongoing website support including rate updates, seasonal promotions, amenity information management, and performance optimization for hospitality websites.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'Hotel Lead Generation',
@@ -165,13 +158,6 @@ export const hotelResorts: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Hospitality Marketing Automation',
-        description: 'Automated email and SMS campaigns for booking confirmations, pre-arrival communications, post-stay follow-ups, loyalty programs, and win-back sequences.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

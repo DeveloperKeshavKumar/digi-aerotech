@@ -107,13 +107,6 @@ export const travelTourism: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Travel Booking Optimization',
-        description: 'Conversion-optimized travel booking systems, package deal promotions, early bird discounts, and seamless payment gateways that maximize travel sales and reduce booking abandonment.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'Travel Website Development',
         description: 'Inspiring travel websites with destination galleries, itinerary builders, booking systems, travel guides, customer testimonials, and immersive visual experiences that convert browsers into bookers.',
@@ -155,13 +148,13 @@ export const travelTourism: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'Travel Website Maintenance',
-        description: 'Ongoing website support including seasonal package updates, destination content management, booking system maintenance, and travel trend integration for travel websites.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'Travel Website Maintenance',
+      //   description: 'Ongoing website support including seasonal package updates, destination content management, booking system maintenance, and travel trend integration for travel websites.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'Travel Lead Generation',
@@ -169,13 +162,6 @@ export const travelTourism: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Travel Marketing Automation',
-        description: 'Automated email and SMS campaigns for booking confirmations, travel reminders, post-trip follow-ups, seasonal promotions, and personalized travel recommendations.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

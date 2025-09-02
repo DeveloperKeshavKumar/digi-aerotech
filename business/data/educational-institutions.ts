@@ -107,13 +107,6 @@ export const educationalInstitutions: BusinessData = {
                 link: '/local-seo'
             },
             {
-                id: 'ecommerce-marketing',
-                title: 'Educational Service Sales Optimization',
-                description: 'Conversion-optimized admission portals, online course sales, fee payment systems, and enrollment funnel optimization that streamline the student admission and registration process.',
-                icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/ecommerce-marketing'
-            },
-            {
                 id: 'web-design-development',
                 title: 'Educational Website Development',
                 description: 'Academic-grade websites with course information, faculty profiles, admission portals, virtual campus tours, student testimonials, and trust-building elements that convert visitors into students.',
@@ -155,13 +148,13 @@ export const educationalInstitutions: BusinessData = {
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
                 link: '/mobile-apps-development'
             },
-            {
-                id: 'website-maintenance',
-                title: 'Educational Website Maintenance',
-                description: 'Ongoing website support including academic content updates, admission information management, event listings, and performance optimization for educational websites.',
-                icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/website-maintenance'
-            },
+            // {
+            //     id: 'website-maintenance',
+            //     title: 'Educational Website Maintenance',
+            //     description: 'Ongoing website support including academic content updates, admission information management, event listings, and performance optimization for educational websites.',
+            //     icon: React.createElement(IconSettings, { size: 30 }),
+            //     link: '/website-maintenance'
+            // },
             {
                 id: 'leads-generation',
                 title: 'Student Enrollment Lead Generation',
@@ -169,13 +162,6 @@ export const educationalInstitutions: BusinessData = {
                 icon: React.createElement(IconUsers, { size: 30 }),
                 link: '/leads-generation'
             },
-            {
-                id: 'marketing-automation',
-                title: 'Education Marketing Automation',
-                description: 'Automated email campaigns, admission follow-ups, student communication, parent updates, and enrollment nurture sequences designed for educational institution workflows.',
-                icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/marketing-automation'
-            }
         ]
     },
 

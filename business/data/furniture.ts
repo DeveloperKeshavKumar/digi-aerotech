@@ -98,13 +98,6 @@ export const furniture: BusinessData = {
                 link: '/social-media-marketing'
             },
             {
-                id: 'seo-services',
-                title: 'Furniture SEO Services',
-                description: 'Comprehensive SEO for furniture stores, optimizing for product-specific keywords, buying intent searches, and long-tail keywords to rank higher in Google search results.',
-                icon: React.createElement(IconSeo, { size: 30 }),
-                link: '/seo-services'
-            },
-            {
                 id: 'gmb-services',
                 title: 'Google My Business for Furniture Stores',
                 description: 'Optimize your Google My Business profile to enhance local visibility, display product images, offer promotions, and enable client reviews for better trust-building.',
@@ -126,26 +119,12 @@ export const furniture: BusinessData = {
                 link: '/mobile-apps-development'
             },
             {
-                id: 'website-maintenance',
-                title: 'Furniture Website Maintenance',
-                description: 'Ensure your furniture website is always up-to-date with regular content updates, product catalog management, and security compliance for smooth user experiences.',
-                icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/website-maintenance'
-            },
-            {
                 id: 'leads-generation',
                 title: 'Furniture Lead Generation',
                 description: 'Attract potential customers using targeted campaigns, health checks, and offer-driven funnels to generate quality furniture leads from your website and social media platforms.',
                 icon: React.createElement(IconUsers, { size: 30 }),
                 link: '/leads-generation'
             },
-            {
-                id: 'marketing-automation',
-                title: 'Furniture Marketing Automation',
-                description: 'Automate lead nurturing, email campaigns, and client follow-ups to increase engagement and drive sales for your furniture store or online platform.',
-                icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/marketing-automation'
-            }
         ]
     },
 

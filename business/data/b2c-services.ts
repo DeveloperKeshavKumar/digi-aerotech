@@ -128,13 +128,6 @@ export const b2cServices: BusinessData = {
         link: '/social-media-marketing'
       },
       {
-        id: 'seo-services',
-        title: 'Consumer Services SEO',
-        description: 'Comprehensive SEO for B2C services targeting customer-focused keywords, service-related searches, and local market terms to increase visibility among potential customers.',
-        icon: React.createElement(IconSeo, { size: 30 }),
-        link: '/seo-services'
-      },
-      {
         id: 'gmb-services',
         title: 'Google Business Profile for B2C Services',
         description: 'Optimized Google My Business profiles with service photos, customer reviews, booking capabilities, and regular updates to dominate local consumer service searches.',
@@ -156,26 +149,12 @@ export const b2cServices: BusinessData = {
         link: '/mobile-apps-development'
       },
       {
-        id: 'website-maintenance',
-        title: 'B2C Services Website Maintenance',
-        description: 'Ongoing website support including service updates, customer testimonial management, seasonal promotions, and performance optimization for consumer service websites.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
-      {
         id: 'leads-generation',
         title: 'B2C Customer Acquisition',
         description: 'Multi-channel lead generation using customer referral programs, promotional offers, service trials, and conversion-optimized campaigns that attract quality consumers.',
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'B2C Marketing Automation',
-        description: 'Automated email and SMS campaigns for appointment reminders, follow-up services, customer feedback collection, loyalty rewards, and personalized service recommendations.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

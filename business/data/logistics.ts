@@ -107,14 +107,6 @@ export const logistics: BusinessData = {
         link: "/local-seo",
       },
       {
-        id: "ecommerce-marketing",
-        title: "E-Commerce Logistics Marketing",
-        description:
-          "Win e-commerce brands as long-term clients by showcasing fast delivery, last-mile tracking, and competitive partnerships.",
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: "/ecommerce-marketing",
-      },
-      {
         id: "web-design-development",
         title: "Logistics Website Development",
         description:
@@ -162,14 +154,14 @@ export const logistics: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: "/mobile-apps-development",
       },
-      {
-        id: "website-maintenance",
-        title: "Logistics Website Maintenance",
-        description:
-          "Ensure your logistics website stays secure, updated, and fast with 24/7 technical support and performance monitoring.",
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: "/website-maintenance",
-      },
+      // {
+      //   id: "website-maintenance",
+      //   title: "Logistics Website Maintenance",
+      //   description:
+      //     "Ensure your logistics website stays secure, updated, and fast with 24/7 technical support and performance monitoring.",
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: "/website-maintenance",
+      // },
       {
         id: "leads-generation",
         title: "Lead Generation For Logistics Firms",
@@ -177,14 +169,6 @@ export const logistics: BusinessData = {
           "Capture high-value B2B leads with industry-focused landing pages, LinkedIn funnels, and targeted campaigns.",
         icon: React.createElement(IconUsers, { size: 30 }),
         link: "/leads-generation",
-      },
-      {
-        id: "marketing-automation",
-        title: "Logistics Marketing Automation",
-        description:
-          "Nurture prospects with automated workflows, shipment alerts, and drip campaigns to close deals faster.",
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: "/marketing-automation",
       },
     ],
   },

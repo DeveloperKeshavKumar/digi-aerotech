@@ -105,13 +105,6 @@ export const restaurantsCafes: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Food Delivery & Online Ordering Optimization',
-        description: 'Optimization for food delivery platforms like Zomato, Swiggy, and direct online ordering systems to increase visibility, orders, and average order value.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'Restaurant Website Development',
         description: 'Mobile-responsive restaurant websites with online menus, reservation systems, food gallery, customer reviews, and integrated ordering capabilities that convert visitors into customers.',
@@ -153,13 +146,13 @@ export const restaurantsCafes: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'Restaurant Website Maintenance',
-        description: 'Ongoing website support including menu updates, seasonal promotions, event listings, reservation system maintenance, and performance optimization.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'Restaurant Website Maintenance',
+      //   description: 'Ongoing website support including menu updates, seasonal promotions, event listings, reservation system maintenance, and performance optimization.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'Restaurant Customer Acquisition',
@@ -167,13 +160,6 @@ export const restaurantsCafes: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Restaurant Marketing Automation',
-        description: 'Automated email and SMS campaigns for reservation confirmations, birthday offers, loyalty rewards, new menu announcements, and customer re-engagement sequences.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

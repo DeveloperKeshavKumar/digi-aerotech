@@ -113,13 +113,6 @@ export const pharmaCompanies: BusinessData = {
                 link: '/local-seo'
             },
             {
-                id: 'ecommerce-marketing',
-                title: 'Pharmaceutical E-commerce Optimization',
-                description: 'Compliant online pharmaceutical sales optimization, prescription fulfillment systems, patient support programs, and medication delivery platform integration.',
-                icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/ecommerce-marketing'
-            },
-            {
                 id: 'web-design-development',
                 title: 'Pharmaceutical Website Development',
                 description: 'Medical-grade websites with product information, clinical data, patient resources, HCP portals, and regulatory compliance features that meet pharmaceutical industry standards.',
@@ -161,13 +154,13 @@ export const pharmaCompanies: BusinessData = {
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
                 link: '/mobile-apps-development'
             },
-            {
-                id: 'website-maintenance',
-                title: 'Pharma Website Maintenance',
-                description: 'Ongoing website support including regulatory updates, clinical data management, product information updates, and compliance monitoring for pharmaceutical websites.',
-                icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/website-maintenance'
-            },
+            // {
+            //     id: 'website-maintenance',
+            //     title: 'Pharma Website Maintenance',
+            //     description: 'Ongoing website support including regulatory updates, clinical data management, product information updates, and compliance monitoring for pharmaceutical websites.',
+            //     icon: React.createElement(IconSettings, { size: 30 }),
+            //     link: '/website-maintenance'
+            // },
             {
                 id: 'leads-generation',
                 title: 'Healthcare Professional Lead Generation',
@@ -175,13 +168,6 @@ export const pharmaCompanies: BusinessData = {
                 icon: React.createElement(IconUsers, { size: 30 }),
                 link: '/leads-generation'
             },
-            {
-                id: 'marketing-automation',
-                title: 'Pharma Marketing Automation',
-                description: 'Automated email campaigns, CRM integration, and nurture sequences designed for pharmaceutical sales cycles, medical education delivery, and HCP relationship management.',
-                icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/marketing-automation'
-            }
         ]
     },
 

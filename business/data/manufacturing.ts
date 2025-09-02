@@ -104,14 +104,6 @@ export const manufacturing: BusinessData = {
         link: "/local-seo",
       },
       {
-        id: "ecommerce-marketing",
-        title: "E-Commerce Marketing For Manufacturers",
-        description:
-          "Promote industrial tools, spare parts, and B2C product lines across marketplaces and D2C channels.",
-        icon: React.createElement(IconReceipt2, { size: 30 }),
-        link: "/ecommerce-marketing",
-      },
-      {
         id: "web-design-development",
         title: "Industrial Website Development",
         description:
@@ -159,14 +151,14 @@ export const manufacturing: BusinessData = {
         icon: React.createElement(IconServerCog, { size: 30 }),
         link: "/mobile-apps-development",
       },
-      {
-        id: "website-maintenance",
-        title: "Factory Website Maintenance",
-        description:
-          "Keep your industrial website secure, fast, and up-to-date with regular monitoring and updates.",
-        icon: React.createElement(IconTools, { size: 30 }),
-        link: "/website-maintenance",
-      },
+      // {
+      //   id: "website-maintenance",
+      //   title: "Factory Website Maintenance",
+      //   description:
+      //     "Keep your industrial website secure, fast, and up-to-date with regular monitoring and updates.",
+      //   icon: React.createElement(IconTools, { size: 30 }),
+      //   link: "/website-maintenance",
+      // },
       {
         id: "leads-generation",
         title: "B2B Lead Generation For Manufacturers",
@@ -174,14 +166,6 @@ export const manufacturing: BusinessData = {
           "Generate high-value industrial leads with LinkedIn funnels, industry campaigns, and global outreach.",
         icon: React.createElement(IconUserStar, { size: 30 }),
         link: "/leads-generation",
-      },
-      {
-        id: "marketing-automation",
-        title: "Manufacturing Marketing Automation",
-        description:
-          "Automate lead nurturing, inquiry responses, and client follow-ups with smart workflows.",
-        icon: React.createElement(IconAssembly, { size: 30 }),
-        link: "/marketing-automation",
       },
     ],
   },

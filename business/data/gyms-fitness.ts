@@ -102,13 +102,6 @@ export const gymsFitness: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Gym Membership Sales Optimization',
-        description: 'Conversion-optimized membership signup flows, online personal training packages, and supplement sales funnels that turn visitors into paying members.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'Gym Website Development',
         description: 'Mobile-responsive fitness websites with class scheduling, trainer profiles, membership plans, virtual tour capabilities, and seamless booking integration.',
@@ -150,13 +143,13 @@ export const gymsFitness: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'Gym Website Maintenance',
-        description: 'Ongoing website support including class schedule updates, trainer profile management, membership pricing changes, and performance optimization.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'Gym Website Maintenance',
+      //   description: 'Ongoing website support including class schedule updates, trainer profile management, membership pricing changes, and performance optimization.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'Gym Lead Generation',
@@ -164,13 +157,6 @@ export const gymsFitness: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Fitness Marketing Automation',
-        description: 'Automated email and SMS campaigns for member onboarding, class reminders, renewal notifications, win-back sequences, and referral programs.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

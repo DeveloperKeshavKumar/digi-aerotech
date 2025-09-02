@@ -107,13 +107,6 @@ export const ecommerceBrands: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Advanced E-commerce Optimization',
-        description: 'Comprehensive conversion rate optimization, checkout funnel improvements, abandoned cart recovery, upselling strategies, and customer lifetime value maximization for online stores.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'E-commerce Website Development',
         description: 'High-converting e-commerce websites with mobile optimization, fast loading speeds, secure payment gateways, product showcases, and seamless shopping experiences that drive sales.',
@@ -155,13 +148,13 @@ export const ecommerceBrands: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'E-commerce Website Maintenance',
-        description: 'Ongoing e-commerce support including product updates, inventory management, security patches, performance optimization, and seasonal campaign implementation.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'E-commerce Website Maintenance',
+      //   description: 'Ongoing e-commerce support including product updates, inventory management, security patches, performance optimization, and seasonal campaign implementation.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'E-commerce Customer Acquisition',
@@ -169,13 +162,6 @@ export const ecommerceBrands: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'E-commerce Marketing Automation',
-        description: 'Automated email marketing, abandoned cart recovery, customer segmentation, personalized product recommendations, and lifecycle marketing campaigns for maximum revenue.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

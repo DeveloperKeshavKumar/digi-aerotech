@@ -107,13 +107,6 @@ export const startupsEntrepreneurs: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Startup Product Launch Optimization',
-        description: 'Conversion-optimized product launch strategies, subscription models, freemium conversions, and customer onboarding funnels that maximize startup revenue and growth metrics.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'Startup Website Development',
         description: 'Investor-ready websites with product demos, founder stories, growth metrics, investor relations pages, and conversion-optimized landing pages that build startup credibility.',
@@ -155,13 +148,13 @@ export const startupsEntrepreneurs: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'Startup Website Maintenance',
-        description: 'Ongoing website support including growth metric updates, product feature additions, investor information management, and performance optimization for startup sites.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'Startup Website Maintenance',
+      //   description: 'Ongoing website support including growth metric updates, product feature additions, investor information management, and performance optimization for startup sites.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'Startup Customer & Investor Lead Generation',
@@ -169,13 +162,6 @@ export const startupsEntrepreneurs: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Startup Marketing Automation',
-        description: 'Automated email campaigns, CRM integration, and growth funnel optimization for customer onboarding, investor updates, user engagement, and retention strategies.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

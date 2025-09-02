@@ -127,13 +127,6 @@ export const fashionBrands: BusinessData = {
         link: '/social-media-marketing'
       },
       {
-        id: 'seo-services',
-        title: 'Fashion SEO Services',
-        description: 'Comprehensive SEO for fashion brands targeting keywords like "sustainable fashion India", "designer wear online", and trend-based searches to increase organic visibility.',
-        icon: React.createElement(IconSeo, { size: 30 }),
-        link: '/seo-services'
-      },
-      {
         id: 'gmb-services',
         title: 'Google Business Profile for Fashion Stores',
         description: 'Optimized Google My Business profiles with fashion photography, customer reviews, collection highlights, and regular posts to dominate local fashion searches.',
@@ -155,26 +148,12 @@ export const fashionBrands: BusinessData = {
         link: '/mobile-apps-development'
       },
       {
-        id: 'website-maintenance',
-        title: 'Fashion Website Maintenance',
-        description: 'Ongoing website support including seasonal collection updates, trend integration, inventory management, and performance optimization for fashion e-commerce sites.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
-      {
         id: 'leads-generation',
         title: 'Fashion Customer Acquisition',
         description: 'Multi-channel lead generation using style quizzes, lookbook downloads, exclusive previews, and conversion-optimized campaigns that attract fashion-conscious customers.',
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Fashion Marketing Automation',
-        description: 'Automated email and SMS campaigns for new collection launches, personalized style recommendations, abandoned cart recovery, and customer loyalty programs.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

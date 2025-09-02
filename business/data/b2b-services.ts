@@ -127,13 +127,6 @@ export const b2bServices: BusinessData = {
         link: '/social-media-marketing'
       },
       {
-        id: 'seo-services',
-        title: 'B2B SEO Services',
-        description: 'Comprehensive SEO for B2B services targeting keywords like "enterprise solutions", "business consulting", and industry-specific terms to increase organic visibility among decision-makers.',
-        icon: React.createElement(IconSeo, { size: 30 }),
-        link: '/seo-services'
-      },
-      {
         id: 'gmb-services',
         title: 'Google Business Profile for B2B',
         description: 'Optimized Google My Business profiles with professional imagery, client reviews, service descriptions, and regular updates to dominate local B2B searches.',
@@ -155,26 +148,12 @@ export const b2bServices: BusinessData = {
         link: '/mobile-apps-development'
       },
       {
-        id: 'website-maintenance',
-        title: 'B2B Website Maintenance',
-        description: 'Ongoing website support including case study updates, service portfolio management, client testimonial integration, and performance optimization for professional B2B sites.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
-      {
         id: 'leads-generation',
         title: 'B2B Lead Generation',
         description: 'Multi-channel B2B lead generation using whitepapers, industry reports, webinars, and conversion-optimized campaigns that attract decision-makers and generate sales-ready opportunities.',
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'B2B Marketing Automation',
-        description: 'Automated email sequences, CRM integration, lead scoring, and nurture campaigns designed for complex B2B sales cycles and multi-stakeholder decision processes.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

@@ -98,13 +98,6 @@ export const ayurveda: BusinessData = {
                 link: '/social-media-marketing'
             },
             {
-                id: 'seo-services',
-                title: 'Ayurvedic SEO Services',
-                description: 'Comprehensive SEO for Ayurveda practitioners focusing on Ayurvedic treatments, wellness services, and local Ayurvedic searches to increase organic client acquisition.',
-                icon: React.createElement(IconSeo, { size: 30 }),
-                link: '/seo-services'
-            },
-            {
                 id: 'gmb-services',
                 title: 'Google My Business for Ayurveda Practices',
                 description: 'Optimize your Google My Business profile with credentials, client reviews, clinic photos, and appointment scheduling features to dominate local searches and enhance client trust.',
@@ -126,26 +119,12 @@ export const ayurveda: BusinessData = {
                 link: '/mobile-apps-development'
             },
             {
-                id: 'website-maintenance',
-                title: 'Ayurvedic Website Maintenance',
-                description: 'Ongoing maintenance services for Ayurvedic websites, ensuring content updates, booking system maintenance, and compliance with the latest digital marketing trends.',
-                icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/website-maintenance'
-            },
-            {
                 id: 'leads-generation',
                 title: 'Ayurvedic Client Lead Generation',
                 description: 'Generate high-quality leads for Ayurveda clinics through digital health screenings, informative webinars, and conversion-optimized campaigns that attract clients seeking holistic treatments.',
                 icon: React.createElement(IconUsers, { size: 30 }),
                 link: '/leads-generation'
             },
-            {
-                id: 'marketing-automation',
-                title: 'Ayurvedic Marketing Automation',
-                description: 'Automated client communication, appointment reminders, follow-up care, health tips, and patient retention strategies tailored for Ayurveda practices to ensure smooth workflows.',
-                icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/marketing-automation'
-            }
         ]
     },
 

@@ -134,13 +134,6 @@ export const localBusinesses: BusinessData = {
                 link: '/social-media-marketing'
             },
             {
-                id: 'seo-services',
-                title: 'Local Business SEO Services',
-                description: 'Comprehensive local SEO targeting neighborhood keywords, service area optimization, and location-based content to dominate local search results and attract nearby customers.',
-                icon: React.createElement(IconSeo, { size: 30 }),
-                link: '/seo-services'
-            },
-            {
                 id: 'gmb-services',
                 title: 'Google My Business Optimization',
                 description: 'Complete Google My Business management with local photos, customer reviews, Q&A optimization, posts, and local attributes to dominate local map searches and attract walk-ins.',
@@ -162,26 +155,12 @@ export const localBusinesses: BusinessData = {
                 link: '/mobile-apps-development'
             },
             {
-                id: 'website-maintenance',
-                title: 'Local Business Website Maintenance',
-                description: 'Ongoing website support including hours updates, seasonal promotions, local event listings, customer testimonial management, and local SEO maintenance.',
-                icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/website-maintenance'
-            },
-            {
                 id: 'leads-generation',
                 title: 'Local Customer Acquisition',
                 description: 'Neighborhood-focused lead generation using local offers, community events, referral programs, and geo-targeted campaigns that attract customers from your immediate service area.',
                 icon: React.createElement(IconUsers, { size: 30 }),
                 link: '/leads-generation'
             },
-            {
-                id: 'marketing-automation',
-                title: 'Local Marketing Automation',
-                description: 'Automated email and SMS campaigns for appointment reminders, local promotions, customer follow-ups, birthday offers, and neighborhood event notifications.',
-                icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/marketing-automation'
-            }
         ]
     },
 

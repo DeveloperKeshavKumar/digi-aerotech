@@ -77,13 +77,6 @@ export const realEstate: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Property Marketplace Optimization',
-        description: 'Enhanced listing optimization for 99acres, MagicBricks, Housing.com and other property portals with professional descriptions and strategic keyword placement.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'Real Estate Website Development',
         description: 'Mobile-responsive realtor websites with IDX/MLS integration, virtual tour capabilities, lead capture forms, and mortgage calculators that convert visitors into clients.',
@@ -125,13 +118,13 @@ export const realEstate: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'Real Estate Website Maintenance',
-        description: 'Ongoing website support including security updates, performance optimization, MLS integration maintenance, and regular content updates to keep your site running smoothly.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'Real Estate Website Maintenance',
+      //   description: 'Ongoing website support including security updates, performance optimization, MLS integration maintenance, and regular content updates to keep your site running smoothly.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'Real Estate Lead Generation',
@@ -139,13 +132,6 @@ export const realEstate: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Real Estate Marketing Automation',
-        description: 'Automated email and SMS sequences, CRM integration, and behavioral trigger campaigns that nurture leads from first contact to successful property transactions.',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ],
   },
   stats: {

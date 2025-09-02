@@ -113,13 +113,6 @@ export const interiorDesigners: BusinessData = {
                 link: '/local-seo'
             },
             {
-                id: 'ecommerce-marketing',
-                title: 'Design Service Sales Optimization',
-                description: 'Conversion-optimized consultation booking systems, design package sales, virtual consultation platforms, and premium service offerings that maximize project value.',
-                icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/ecommerce-marketing'
-            },
-            {
                 id: 'web-design-development',
                 title: 'Interior Design Website Development',
                 description: 'Stunning, portfolio-focused websites with high-resolution galleries, project showcases, client testimonials, design process explanations, and seamless consultation booking.',
@@ -161,13 +154,13 @@ export const interiorDesigners: BusinessData = {
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
                 link: '/mobile-apps-development'
             },
-            {
-                id: 'website-maintenance',
-                title: 'Design Website Maintenance',
-                description: 'Ongoing website support including portfolio updates, new project additions, client testimonial management, design trend content, and performance optimization.',
-                icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/website-maintenance'
-            },
+            // {
+            //     id: 'website-maintenance',
+            //     title: 'Design Website Maintenance',
+            //     description: 'Ongoing website support including portfolio updates, new project additions, client testimonial management, design trend content, and performance optimization.',
+            //     icon: React.createElement(IconSettings, { size: 30 }),
+            //     link: '/website-maintenance'
+            // },
             {
                 id: 'leads-generation',
                 title: 'High-End Client Lead Generation',
@@ -175,13 +168,6 @@ export const interiorDesigners: BusinessData = {
                 icon: React.createElement(IconUsers, { size: 30 }),
                 link: '/leads-generation'
             },
-            {
-                id: 'marketing-automation',
-                title: 'Design Marketing Automation',
-                description: 'Automated email campaigns, CRM integration, and client nurture sequences for consultation follow-ups, project updates, design inspiration, and client relationship management.',
-                icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/marketing-automation'
-            }
         ]
     },
 

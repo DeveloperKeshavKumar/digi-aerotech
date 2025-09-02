@@ -131,14 +131,6 @@ export const jewellery: BusinessData = {
         link: "/social-media-marketing",
       },
       {
-        id: "seo-services",
-        title: "Jewellery SEO Services",
-        description:
-          "Comprehensive SEO to rank for key jewellery terms like diamond rings, gold sets, and bridal jewellery collections.",
-        icon: React.createElement(IconSeo, { size: 30 }),
-        link: "/seo-services",
-      },
-      {
         id: "gmb-services",
         title: "Google My Business Optimization",
         description:
@@ -163,28 +155,12 @@ export const jewellery: BusinessData = {
         link: "/mobile-apps-development",
       },
       {
-        id: "website-maintenance",
-        title: "Jewellery Website Maintenance",
-        description:
-          "Keep your website updated with the latest collections, secure transactions, and a smooth, premium customer experience.",
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: "/website-maintenance",
-      },
-      {
         id: "leads-generation",
         title: "Jewellery Lead Generation",
         description:
           "Capture and nurture high-value leads through targeted campaigns, appointment booking funnels, and special offer promotions.",
         icon: React.createElement(IconUsers, { size: 30 }),
         link: "/leads-generation",
-      },
-      {
-        id: "marketing-automation",
-        title: "Jewellery Marketing Automation",
-        description:
-          "Automated workflows for cart recovery, festival launches, and anniversary gifting campaigns to maximise repeat sales.",
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: "/marketing-automation",
       },
     ],
   },

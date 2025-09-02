@@ -103,14 +103,6 @@ export const matrimonial: BusinessData = {
         link: "/local-seo",
       },
       {
-        id: "ecommerce-marketing",
-        title: "Premium Plans Promotion",
-        description:
-          "Market paid membership and premium matchmaking packages through targeted campaigns.",
-        icon: React.createElement(IconForms, { size: 30 }),
-        link: "/ecommerce-marketing",
-      },
-      {
         id: "web-design-development",
         title: "Matrimonial Website Development",
         description:
@@ -158,14 +150,14 @@ export const matrimonial: BusinessData = {
         icon: React.createElement(IconDeviceMobileHeart, { size: 30 }),
         link: "/mobile-apps-development",
       },
-      {
-        id: "website-maintenance",
-        title: "Matrimonial Website Maintenance",
-        description:
-          "Ensure smooth, secure, and updated functioning of your matrimonial platforms.",
-        icon: React.createElement(IconShieldHeart, { size: 30 }),
-        link: "/website-maintenance",
-      },
+      // {
+      //   id: "website-maintenance",
+      //   title: "Matrimonial Website Maintenance",
+      //   description:
+      //     "Ensure smooth, secure, and updated functioning of your matrimonial platforms.",
+      //   icon: React.createElement(IconShieldHeart, { size: 30 }),
+      //   link: "/website-maintenance",
+      // },
       {
         id: "leads-generation",
         title: "Leads Generation For Matrimonial Businesses",
@@ -173,14 +165,6 @@ export const matrimonial: BusinessData = {
           "Attract new users with inquiry funnels, landing pages, and targeted ad campaigns.",
         icon: React.createElement(IconSearch, { size: 30 }),
         link: "/leads-generation",
-      },
-      {
-        id: "marketing-automation",
-        title: "Matrimonial Marketing Automation",
-        description:
-          "Automate follow-ups, match suggestions, and personalized communication for users.",
-        icon: React.createElement(IconAutomation, { size: 30 }),
-        link: "/marketing-automation",
       },
     ],
   },

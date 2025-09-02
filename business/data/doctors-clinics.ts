@@ -107,13 +107,6 @@ export const doctorsClinics: BusinessData = {
         link: '/local-seo'
       },
       {
-        id: 'ecommerce-marketing',
-        title: 'Medical Appointment Booking Optimization',
-        description: 'Conversion-optimized online appointment systems, telemedicine platforms, health packages, and patient portal integration that streamlines healthcare service delivery and booking processes.',
-        icon: React.createElement(IconShoppingCart, { size: 30 }),
-        link: '/ecommerce-marketing'
-      },
-      {
         id: 'web-design-development',
         title: 'Medical Website Development',
         description: 'HIPAA-compliant medical websites with appointment booking, patient portals, medical credentials showcase, health resources, and trust-building elements that convert visitors into patients[8].',
@@ -155,13 +148,13 @@ export const doctorsClinics: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/mobile-apps-development'
       },
-      {
-        id: 'website-maintenance',
-        title: 'Medical Website Maintenance',
-        description: 'Ongoing healthcare website support including medical content updates, appointment system maintenance, patient portal management, and HIPAA compliance monitoring.',
-        icon: React.createElement(IconSettings, { size: 30 }),
-        link: '/website-maintenance'
-      },
+      // {
+      //   id: 'website-maintenance',
+      //   title: 'Medical Website Maintenance',
+      //   description: 'Ongoing healthcare website support including medical content updates, appointment system maintenance, patient portal management, and HIPAA compliance monitoring.',
+      //   icon: React.createElement(IconSettings, { size: 30 }),
+      //   link: '/website-maintenance'
+      // },
       {
         id: 'leads-generation',
         title: 'Patient Lead Generation',
@@ -169,13 +162,6 @@ export const doctorsClinics: BusinessData = {
         icon: React.createElement(IconUsers, { size: 30 }),
         link: '/leads-generation'
       },
-      {
-        id: 'marketing-automation',
-        title: 'Healthcare Marketing Automation',
-        description: 'Automated patient communication, appointment reminders, follow-up care messages, health tips delivery, and patient retention campaigns designed for medical practice workflows[13].',
-        icon: React.createElement(IconRobot, { size: 30 }),
-        link: '/marketing-automation'
-      }
     ]
   },
 

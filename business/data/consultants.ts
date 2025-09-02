@@ -107,13 +107,6 @@ export const consultants: BusinessData = {
                 link: '/local-seo'
             },
             {
-                id: 'ecommerce-marketing',
-                title: 'Consultant Service Sales Optimization',
-                description: 'Conversion-optimized booking systems for consultations, online course sales, coaching packages, and premium service offerings that maximize revenue per client interaction.',
-                icon: React.createElement(IconShoppingCart, { size: 30 }),
-                link: '/ecommerce-marketing'
-            },
-            {
                 id: 'web-design-development',
                 title: 'Professional Consultant Website Development',
                 description: 'Authority-building websites with case studies, client testimonials, expertise showcases, speaking portfolios, and consultation booking systems that convert prospects into paying clients.',
@@ -155,13 +148,13 @@ export const consultants: BusinessData = {
                 icon: React.createElement(IconDeviceMobile, { size: 30 }),
                 link: '/mobile-apps-development'
             },
-            {
-                id: 'website-maintenance',
-                title: 'Consultant Website Maintenance',
-                description: 'Ongoing website support including content updates, case study additions, testimonial management, speaking engagement updates, and performance optimization for consultant websites.',
-                icon: React.createElement(IconSettings, { size: 30 }),
-                link: '/website-maintenance'
-            },
+            // {
+            //     id: 'website-maintenance',
+            //     title: 'Consultant Website Maintenance',
+            //     description: 'Ongoing website support including content updates, case study additions, testimonial management, speaking engagement updates, and performance optimization for consultant websites.',
+            //     icon: React.createElement(IconSettings, { size: 30 }),
+            //     link: '/website-maintenance'
+            // },
             {
                 id: 'leads-generation',
                 title: 'High-Value Client Lead Generation',
@@ -169,13 +162,6 @@ export const consultants: BusinessData = {
                 icon: React.createElement(IconUsers, { size: 30 }),
                 link: '/leads-generation'
             },
-            {
-                id: 'marketing-automation',
-                title: 'Consultant Marketing Automation',
-                description: 'Automated email sequences, CRM integration, and nurture campaigns designed for consultant sales cycles, including proposal follow-ups, client onboarding, and relationship maintenance.',
-                icon: React.createElement(IconRobot, { size: 30 }),
-                link: '/marketing-automation'
-            }
         ]
     },
 
