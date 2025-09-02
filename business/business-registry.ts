@@ -107,7 +107,6 @@ export const validateBusinessData = (business: BusinessData): boolean => {
     business.hero?.subheadline &&
     business.services?.description &&
     business.stats &&
-    business.testimonials &&
     business.cta?.description
   );
 };

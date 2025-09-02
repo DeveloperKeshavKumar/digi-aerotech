@@ -132,7 +132,7 @@ export function ServiceRenderer({ serviceData }: ServiceRendererProps) {
                         transition={{ duration: 0.6, delay: 0.5 }}
                         className='border-t border-border dark:border-gray-700'
                     >
-                        <Testimonials {...serviceData.testimonials} />
+                        <Testimonials />
                     </motion.div>
                 )}
 

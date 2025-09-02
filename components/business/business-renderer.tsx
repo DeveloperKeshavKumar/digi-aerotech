@@ -147,12 +147,7 @@ export function BusinessRenderer({ businessData }: BusinessRendererProps) {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <Testimonials
-                            title={businessData.testimonials.title}
-                            // subtitle={businessData.testimonials.subtitle}
-                            description={businessData.testimonials.description}
-                            testimonials={businessData.testimonials.items}
-                        />
+                        <Testimonials />
                     </motion.div>
                 )}
 
