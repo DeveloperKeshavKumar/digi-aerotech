@@ -24,14 +24,6 @@ export const websiteMaintenanceService: ServiceData = {
     customSections: [
         { component: Companies, position: 'beforeWhyChooseUs' },
         {
-            component: ProvideServicesTo,
-            position: 'afterWhyChooseUs',
-            props: {
-                heading: 'We provide Website Maintenance for',
-                subheading: 'Businesses requiring reliable website upkeep'
-            }
-        },
-        {
             component: FaqSection,
             position: 'afterTestimonials',
             props: {

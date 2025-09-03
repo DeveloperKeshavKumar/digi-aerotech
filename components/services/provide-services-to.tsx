@@ -123,7 +123,20 @@ export function ProvideServicesTo({ services = servicess, heading, subheading }:
   const parent = pathName.split('/')[2];
   const [isPaused, setIsPaused] = React.useState(false);
   // Duplicate services for infinite scroll effect
-  const infiniteServices = [...services, ...services, ...services];
+
+  // Fisher-Yates shuffle
+  const randomizedServices = React.useMemo(() => {
+    const shuffled = [...services];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, [services]);
+
+  const infiniteServices = React.useMemo(() => {
+    return [...randomizedServices, ...randomizedServices, ...randomizedServices];
+  }, [randomizedServices]);
 
   return (
     <section className="relative py-20 overflow-hidden bg-white dark:bg-black border-b border-border dark:border-gray-700">

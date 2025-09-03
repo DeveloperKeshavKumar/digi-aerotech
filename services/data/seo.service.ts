@@ -31,7 +31,81 @@ export const seoService: ServiceData = {
             position: "afterWhyChooseUs",
             props: {
                 heading: 'We provide SEO Services for',
-                subheading: 'Businesses seeking sustainable organic growth and top search rankings'
+                subheading: 'Businesses seeking sustainable organic growth and top search rankings',
+                services: [
+                    {
+                        id: '1',
+                        name: 'Real Estate',
+                        image: '/business/real-estate.jpeg',
+                        slug: 'real-estate'
+                    },
+                    {
+                        id: '2',
+                        name: 'Hotel & Resorts',
+                        image: '/business/hotel-resorts.jpeg',
+                        slug: 'hotel-resorts'
+                    },
+                    {
+                        id: '3',
+                        name: 'Gyms & Fitness',
+                        image: '/business/gyms.jpeg',
+                        slug: 'gyms-fitness'
+                    },
+                    {
+                        id: '4',
+                        name: 'Restaurants & Cafes',
+                        image: '/business/cafes.jpeg',
+                        slug: 'restaurants-cafes'
+                    },
+                    {
+                        id: '7',
+                        name: 'Consultants & Coaches',
+                        image: '/business/consultants.jpeg',
+                        slug: 'consultants'
+                    },
+                    {
+                        id: '9',
+                        name: 'Pharma Companies',
+                        image: '/business/pharma.jpeg',
+                        slug: 'pharma-companies'
+                    },
+                    {
+                        id: '10',
+                        name: 'Interior Designers',
+                        image: '/business/interior-designers.jpeg',
+                        slug: 'interior-designers'
+                    },
+                    {
+                        id: '11',
+                        name: 'Travel & Tourism',
+                        image: '/business/travel-tourism.jpeg',
+                        slug: 'travel-tourism'
+                    },
+                    {
+                        id: '12',
+                        name: 'Doctors & Clinics',
+                        image: '/business/doctors-clinics.jpeg',
+                        slug: 'doctors-clinics'
+                    },
+                    {
+                        id: '13',
+                        name: 'Startups & Entrepreneurs',
+                        image: '/business/startups.jpeg',
+                        slug: 'startups-entrepreneurs'
+                    },
+                    {
+                        id: '15',
+                        name: 'Educational Institutions',
+                        image: '/business/educational.jpeg',
+                        slug: 'educational-institutions'
+                    },
+                    {
+                        id: '16',
+                        name: 'E-Commerce Brands',
+                        image: '/business/ecommerce.jpeg',
+                        slug: 'e-commerce-brands'
+                    }
+                ]
             }
         },
         {

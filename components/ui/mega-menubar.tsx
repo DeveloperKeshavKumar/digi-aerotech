@@ -681,6 +681,7 @@ export const NavbarButton = ({
 
     return (
         <Tag
+            target={Tag === "a" ? "_blank" : undefined}
             href={href || undefined}
             className={cn(baseStyles, variantStyles[variant], className, visible ? "rounded-full" : "rounded-lg")}
             {...props}

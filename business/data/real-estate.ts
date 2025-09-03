@@ -111,20 +111,20 @@ export const realEstate: BusinessData = {
         icon: React.createElement(IconDeviceMobile, { size: 30 }),
         link: '/aso-services'
       },
-      {
-        id: 'mobile-apps-development',
-        title: 'Custom Real Estate Mobile Apps',
-        description: 'Feature-rich mobile applications with property search, AR virtual tours, mortgage calculators, push notifications for new listings, and seamless lead management.',
-        icon: React.createElement(IconDeviceMobile, { size: 30 }),
-        link: '/mobile-apps-development'
-      },
       // {
-      //   id: 'website-maintenance',
-      //   title: 'Real Estate Website Maintenance',
-      //   description: 'Ongoing website support including security updates, performance optimization, MLS integration maintenance, and regular content updates to keep your site running smoothly.',
-      //   icon: React.createElement(IconSettings, { size: 30 }),
-      //   link: '/website-maintenance'
+      //   id: 'mobile-apps-development',
+      //   title: 'Custom Real Estate Mobile Apps',
+      //   description: 'Feature-rich mobile applications with property search, AR virtual tours, mortgage calculators, push notifications for new listings, and seamless lead management.',
+      //   icon: React.createElement(IconDeviceMobile, { size: 30 }),
+      //   link: '/mobile-apps-development'
       // },
+      {
+        id: 'website-maintenance',
+        title: 'Real Estate Website Maintenance',
+        description: 'Ongoing website support including security updates, performance optimization, MLS integration maintenance, and regular content updates to keep your site running smoothly.',
+        icon: React.createElement(IconSettings, { size: 30 }),
+        link: '/website-maintenance'
+      },
       {
         id: 'leads-generation',
         title: 'Real Estate Lead Generation',
