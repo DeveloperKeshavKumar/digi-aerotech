@@ -5,11 +5,14 @@ interface Params {
   params: { id: string };
 }
 
-export async function GET(request: NextRequest, { params }: Params) {
+export async function GET(request: NextRequest, ) {
   try {
+     const url = new URL(request.url);
+    const params = url.pathname.split('/');
+    const id = params.pop();
     const jobs: any = await query(
       'SELECT * FROM jobs WHERE id = ? AND is_active = true',
-      [params.id]
+      [id]
     );
 
     if (jobs.length === 0) {
@@ -29,16 +32,18 @@ export async function GET(request: NextRequest, { params }: Params) {
   }
 }
 
-export async function PUT(request: NextRequest, { params }: Params) {
+export async function PUT(request: NextRequest) {
   try {
+    const url = new URL(request.url);
+    const params = url.pathname.split('/').pop();
     const body = await request.json();
-    
+
     // Check if job exists
     const existingJobs: any = await query(
       'SELECT id FROM jobs WHERE id = ?',
-      [params.id]
+      [params]
     );
-    
+
     if (existingJobs.length === 0) {
       return NextResponse.json(
         { error: 'Job not found' },
@@ -46,9 +51,9 @@ export async function PUT(request: NextRequest, { params }: Params) {
       );
     }
 
-    const { 
-      title, department, location, type, description, 
-      requirements, responsibilities, salary_range, is_active 
+    const {
+      title, department, location, type, description,
+      requirements, responsibilities, salary_range, is_active
     } = body;
 
     await query(
@@ -64,8 +69,8 @@ export async function PUT(request: NextRequest, { params }: Params) {
         is_active = COALESCE(?, is_active)
        WHERE id = ?`,
       [
-        title, department, location, type, description, 
-        requirements, responsibilities, salary_range, is_active, params.id
+        title, department, location, type, description,
+        requirements, responsibilities, salary_range, is_active, params
       ]
     );
 

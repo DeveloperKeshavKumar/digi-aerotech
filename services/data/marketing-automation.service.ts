@@ -46,14 +46,14 @@ export const marketingAutomationService: ServiceData = {
                 cta: { icon: React.createElement(ArrowRight), text: 'Automate Now', link: '/contact' }
             }
         },
-        {
-            component: ProvideServicesTo,
-            position: 'afterWhyChooseUs',
-            props: {
-                heading: 'We provide Marketing Automation for',
-                subheading: 'Businesses seeking scalable, data-driven workflows'
-            }
-        },
+        // {
+        //     component: ProvideServicesTo,
+        //     position: 'afterWhyChooseUs',
+        //     props: {
+        //         heading: 'We provide Marketing Automation for',
+        //         subheading: 'Businesses seeking scalable, data-driven workflows'
+        //     }
+        // },
         {
             component: FaqSection,
             position: 'afterTestimonials',

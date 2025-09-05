@@ -195,7 +195,7 @@ export const Footer: React.FC = () => {
                                     <FooterLink href="/about">About Us</FooterLink>
                                     <FooterLink href="/contact">Contact Us</FooterLink>
                                     <FooterLink href="/careers">Careers</FooterLink>
-                                    <FooterLink href="/report-bug">Report A Bug</FooterLink>
+                                    <FooterLink href="/bug-report">Report A Bug</FooterLink>
                                     <FooterLink href="/privacy">Privacy Policy</FooterLink>
                                 </div>
                             </div>
