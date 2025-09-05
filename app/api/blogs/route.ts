@@ -19,24 +19,6 @@ export async function GET(request: Request) {
         // Get a connection from the pool
         connection = await pool.getConnection();
 
-        // Check if blogs table exists, create if not
-        await connection.execute(`
-      CREATE TABLE IF NOT EXISTS blogs (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        heading VARCHAR(255) NOT NULL,
-        subheading VARCHAR(500) NOT NULL,
-        paragraphs JSON NOT NULL,
-        slug VARCHAR(255) NOT NULL UNIQUE,
-        featured_image VARCHAR(500),
-        author VARCHAR(100),
-        tags JSON,
-        published BOOLEAN DEFAULT FALSE,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        FULLTEXT INDEX (heading, subheading)
-      )
-    `);
-
         // Get total count of published blogs
         const [totalCount] = await connection.execute(
             `SELECT COUNT(*) as count FROM blogs ${published ? "WHERE published = ?" : ""}`,

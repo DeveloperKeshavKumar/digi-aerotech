@@ -237,23 +237,6 @@ export async function POST(request: Request) {
     // Get a connection from the pool
     connection = await pool.getConnection();
 
-    // Create table if it doesn't exist. This is idempotent and safe to run on every request.
-    await connection.execute(`
-            CREATE TABLE IF NOT EXISTS contact_queries (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                name VARCHAR(255) NOT NULL,
-                email VARCHAR(255) NOT NULL,
-                phone VARCHAR(20) NOT NULL,
-                service VARCHAR(100) NOT NULL,
-                business_type VARCHAR(100) NOT NULL,
-                form_type VARCHAR(100) NOT NULL,
-                start_date VARCHAR(255) NOT NULL,
-                website VARCHAR(500) NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                status ENUM('new', 'in_progress', 'resolved') DEFAULT 'new'
-            )
-        `);
-
     // Insert the query into the database using a parameterized query to prevent SQL injection.
     const [result] = await connection.execute(
       'INSERT INTO contact_queries (name, email, phone, service, business_type, start_date, website, form_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',

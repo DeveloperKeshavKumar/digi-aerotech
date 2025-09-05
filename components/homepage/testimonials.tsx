@@ -142,9 +142,28 @@ export const Testimonials = ({
     fast: "20s",
   };
 
+  const columnTestimonials = React.useMemo(() => {
+    const shuffled = [...testimonials].sort(() => Math.random() - 0.5);
+    const result: any[][] = Array(columns).fill(null).map(() => []);
+
+    // Distribute items evenly across columns
+    shuffled.forEach((testimonial, index) => {
+      const targetColumn = index % columns;
+      result[targetColumn].push(testimonial);
+    });
+
+    return result;
+  }, [testimonials, columns]);
+
   const getColumnTestimonials = (colIndex: number) => {
-    const startPos = Math.floor(testimonials.length * (colIndex / columns));
-    return [...testimonials.slice(startPos), ...testimonials.slice(0, startPos), ...testimonials];
+    const items = columnTestimonials[colIndex];
+
+    // Handle case where a column might be empty
+    if (items.length === 0) {
+      return [];
+    }
+
+    return [...items, ...items, ...items, ...items, ...items];
   };
 
   const renderStars = (rating: number) => {

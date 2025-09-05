@@ -44,6 +44,8 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, text, href }) => (
         </div>
         {href ? (
             <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href={href}
                 className="text-xs sm:text-sm text-muted-foreground leading-relaxed hover:text-foreground transition-colors duration-300"
             >
@@ -154,7 +156,7 @@ export const Footer: React.FC = () => {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="pt-8 sm:pt-12 lg:pt-16 pb-6 sm:pb-8 lg:pb-10">
-                    <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-4 mb-8 sm:mb-10 lg:mb-12">
+                    <div className="mx-auto grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-3 mb-8 sm:mb-10 lg:mb-12">
                         <div className="space-y-4 sm:space-y-6">
                             <Link
                                 href="/"
@@ -186,28 +188,18 @@ export const Footer: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className=" px-3 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:col-span-3">
-                            <div className="space-y-3 sm:space-y-4">
+                        <div className=" px-3 grid grid-cols-2 gap-6 sm:gap-8 lg:col-span-2">
+                            <div className="flex flex-col items-center space-y-3 sm:space-y-4">
                                 <h3 className="font-semibold text-base sm:text-lg text-foreground">Company Link</h3>
                                 <div className="flex flex-col space-y-2 sm:space-y-3">
-                                    <FooterLink href="/">About Us</FooterLink>
-                                    <FooterLink href="/">FAQ</FooterLink>
-                                    <FooterLink href="/">Careers</FooterLink>
-                                    <FooterLink href="/">Contact Us</FooterLink>
-                                    <FooterLink href="/">Report A Bug</FooterLink>
+                                    <FooterLink href="/about">About Us</FooterLink>
+                                    <FooterLink href="/contact">Contact Us</FooterLink>
+                                    <FooterLink href="/careers">Careers</FooterLink>
+                                    <FooterLink href="/report-bug">Report A Bug</FooterLink>
+                                    <FooterLink href="/privacy">Privacy Policy</FooterLink>
                                 </div>
                             </div>
-
-                            <div className="space-y-3 sm:space-y-4">
-                                <h3 className="font-semibold text-base sm:text-lg text-foreground">Support</h3>
-                                <div className="flex flex-col space-y-2 sm:space-y-3">
-                                    <FooterLink href="/">Privacy Policy</FooterLink>
-                                    <FooterLink href="/">Jobs</FooterLink>
-                                    <FooterLink href="/">Linkedin</FooterLink>
-                                    <FooterLink href="/">Community</FooterLink>
-                                </div>
-                            </div>
-
+            
                             <div className="space-y-3 sm:space-y-4 col-span-2 sm:col-span-2 lg:col-span-1">
                                 <h3 className="font-semibold text-base sm:text-lg text-foreground">Connect Us Here</h3>
                                 <div className="space-y-3 sm:space-y-4">
