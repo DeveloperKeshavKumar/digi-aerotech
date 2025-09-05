@@ -1,15 +1,20 @@
+// app/api/jobs/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db.utils';
 
-interface Params {
-  params: { id: string };
+// Define the params type
+interface RouteParams {
+  params: Promise<{ id: string }>;
 }
 
-export async function GET(request: NextRequest, ) {
+// Helper to extract params
+async function getParams(params: Promise<{ id: string }>) {
+  return await params;
+}
+
+export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
-     const url = new URL(request.url);
-    const params = url.pathname.split('/');
-    const id = params.pop();
+    const { id } = await getParams(params);
     const jobs: any = await query(
       'SELECT * FROM jobs WHERE id = ? AND is_active = true',
       [id]
@@ -32,18 +37,17 @@ export async function GET(request: NextRequest, ) {
   }
 }
 
-export async function PUT(request: NextRequest) {
+export async function PUT(request: NextRequest, { params }: RouteParams) {
   try {
-    const url = new URL(request.url);
-    const params = url.pathname.split('/').pop();
+    const { id } = await getParams(params);
     const body = await request.json();
 
     // Check if job exists
     const existingJobs: any = await query(
       'SELECT id FROM jobs WHERE id = ?',
-      [params]
+      [id]
     );
-
+    
     if (existingJobs.length === 0) {
       return NextResponse.json(
         { error: 'Job not found' },
@@ -51,9 +55,9 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const {
-      title, department, location, type, description,
-      requirements, responsibilities, salary_range, is_active
+    const { 
+      title, department, location, type, description, 
+      requirements, responsibilities, salary_range, is_active 
     } = body;
 
     await query(
@@ -69,8 +73,8 @@ export async function PUT(request: NextRequest) {
         is_active = COALESCE(?, is_active)
        WHERE id = ?`,
       [
-        title, department, location, type, description,
-        requirements, responsibilities, salary_range, is_active, params
+        title, department, location, type, description, 
+        requirements, responsibilities, salary_range, is_active, id
       ]
     );
 
@@ -84,11 +88,12 @@ export async function PUT(request: NextRequest) {
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: Params) {
+export async function DELETE(request: NextRequest, { params }: RouteParams) {
   try {
+    const { id } = await getParams(params);
     const result: any = await query(
       'DELETE FROM jobs WHERE id = ?',
-      [params.id]
+      [id]
     );
 
     if (result.affectedRows === 0) {

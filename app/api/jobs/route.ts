@@ -1,3 +1,4 @@
+// app/api/jobs/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db.utils';
 
@@ -7,8 +8,12 @@ export async function GET(request: NextRequest) {
     const department = searchParams.get('department');
     const location = searchParams.get('location');
     const type = searchParams.get('type');
+    const isActive = searchParams.get('is_active');
+    const search = searchParams.get('search');
+    const limit = parseInt(searchParams.get('limit') || '10');
+    const offset = parseInt(searchParams.get('offset') || '0');
     
-    let sql = 'SELECT * FROM jobs WHERE is_active = true';
+    let sql = 'SELECT * FROM jobs WHERE 1=1';
     const params: any[] = [];
     
     if (department) {
@@ -26,10 +31,69 @@ export async function GET(request: NextRequest) {
       params.push(type);
     }
     
+    if (isActive !== null) {
+      sql += ' AND is_active = ?';
+      params.push(isActive === 'true');
+    }
+    
+    if (search) {
+      sql += ' AND (title LIKE ? OR description LIKE ? OR department LIKE ?)';
+      const searchTerm = `%${search}%`;
+      params.push(searchTerm, searchTerm, searchTerm);
+    }
+    
     sql += ' ORDER BY created_at DESC';
     
+    // For pagination
+    if (limit !== null) {
+      sql += ' LIMIT ? OFFSET ?';
+      params.push(limit, offset);
+    }
+    
     const jobs = await query(sql, params);
-    return NextResponse.json({ jobs });
+    
+    // Get total count for pagination
+    let countSql = 'SELECT COUNT(*) as total FROM jobs WHERE 1=1';
+    const countParams: any[] = [];
+    
+    if (department) {
+      countSql += ' AND department = ?';
+      countParams.push(department);
+    }
+    
+    if (location) {
+      countSql += ' AND location = ?';
+      countParams.push(location);
+    }
+    
+    if (type) {
+      countSql += ' AND type = ?';
+      countParams.push(type);
+    }
+    
+    if (isActive !== null) {
+      countSql += ' AND is_active = ?';
+      countParams.push(isActive === 'true');
+    }
+    
+    if (search) {
+      countSql += ' AND (title LIKE ? OR description LIKE ? OR department LIKE ?)';
+      const searchTerm = `%${search}%`;
+      countParams.push(searchTerm, searchTerm, searchTerm);
+    }
+    
+    const totalResult: any = await query(countSql, countParams);
+    const total = totalResult[0]?.total || 0;
+    
+    return NextResponse.json({
+      jobs,
+      pagination: {
+        total,
+        limit,
+        offset,
+        hasMore: offset + limit < total
+      }
+    });
   } catch (error) {
     console.error('Error fetching jobs:', error);
     return NextResponse.json(
@@ -44,17 +108,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     
     const { 
-      title, 
-      department, 
-      location, 
-      type, 
-      description, 
-      requirements, 
-      responsibilities, 
-      salary_range 
+      title, department, location, type, description, 
+      requirements, responsibilities, salary_range 
     } = body;
     
-    // Validation
     if (!title || !department || !location || !type || !description || !requirements || !responsibilities) {
       return NextResponse.json(
         { error: 'Missing required fields' },
