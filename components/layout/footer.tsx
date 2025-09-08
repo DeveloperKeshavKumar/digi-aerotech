@@ -189,14 +189,15 @@ export const Footer: React.FC = () => {
                         </div>
 
                         <div className=" px-3 grid grid-cols-2 gap-6 sm:gap-8 lg:col-span-2">
-                            <div className="flex flex-col items-center space-y-3 sm:space-y-4">
-                                <h3 className="font-semibold text-base sm:text-lg text-foreground">Company Link</h3>
+                            <div className="flex flex-col sm:items-center space-y-3 sm:space-y-4">
+                                <h3 className="font-semibold md:-ml-12 text-base sm:text-lg text-foreground">Company Link</h3>
                                 <div className="flex flex-col space-y-2 sm:space-y-3">
                                     <FooterLink href="/about">About Us</FooterLink>
                                     <FooterLink href="/contact">Contact Us</FooterLink>
                                     <FooterLink href="/careers">Careers</FooterLink>
                                     <FooterLink href="/bug-report">Report A Bug</FooterLink>
-                                    <FooterLink href="/privacy">Privacy Policy</FooterLink>
+                                    <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+                                    <FooterLink href="/terms-and-conditions">Terms and Conditions</FooterLink>
                                 </div>
                             </div>
             
