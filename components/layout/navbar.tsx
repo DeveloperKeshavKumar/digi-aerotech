@@ -11,43 +11,13 @@ import {
     MobileNavMenu,
     MobileNavItems,
 } from "@/components/ui/resizable-navbar";
-import { IconSearch } from "@tabler/icons-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { useState, useRef } from "react";
 import { useScroll, useMotionValueEvent } from "motion/react";
 import { ModeToggle } from "../ui/toggle";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-    const navItems = [
-        {
-            name: "Home",
-            link: "/",
-        },
-        {
-            name: "Services",
-            link: "/services",
-            dropdown: [
-                { name: "Web Development", link: "/services/web-development" },
-                { name: "Mobile Apps", link: "/services/mobile-apps" },
-                { name: "UI/UX Design", link: "/services/ui-ux-design" },
-                { name: "Digital Marketing", link: "/services/digital-marketing" },
-                { name: "SEO Services", link: "/services/seo" },
-                { name: "Consulting", link: "/services/consulting" },
-            ],
-        },
-        {
-            name: "Blog",
-            link: "/blog",
-        },
-        {
-            name: "Results",
-            link: "/results",
-        },
-        {
-            name: "About",
-            link: "/about",
-        }
-    ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const ref = useRef(null);
@@ -68,7 +38,6 @@ export function Navbar() {
                 {/* Desktop Navigation */}
                 <NavBody>
                     <NavbarLogo visible={visible} />
-                    <NavItems items={navItems} />
                     <div className={cn("flex items-center justify-center ml-10", !visible && "mr-8")}>
                         <ModeToggle className={cn(visible && "hidden")} />
                         <NavbarButton
@@ -86,10 +55,10 @@ export function Navbar() {
                             variant="primary"
                             visible={visible}
                             className="bg-black text-white dark:bg-white dark:text-black px-2"
-                            aria-label="Search"
-                            title="Search"
+                            aria-label="WhatsApp Us"
+                            title="WhatsApp Us"
                         >
-                            <IconSearch />
+                            <IconBrandWhatsapp />
                         </NavbarButton>
                     </div>
                 </NavBody>
@@ -108,10 +77,6 @@ export function Navbar() {
                         isOpen={isMobileMenuOpen}
                         onClose={() => setIsMobileMenuOpen(false)}
                     >
-                        <MobileNavItems
-                            items={navItems}
-                            onItemClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        />
                         <div className="flex w-full flex-col gap-4">
                             <NavbarButton
                                 onClick={() => setIsMobileMenuOpen(false)}
@@ -128,10 +93,10 @@ export function Navbar() {
                                 variant="primary"
                                 visible={visible}
                                 className="w-full"
-                                aria-label="Search"
+                                aria-label="WhatsApp Us"
                             >
                                 <div className="flex items-center justify-center gap-x-2.5">
-                                    <IconSearch /> Search Now
+                                    <IconBrandWhatsapp /> Whatsapp Us
                                 </div>
                             </NavbarButton>
                         </div>
