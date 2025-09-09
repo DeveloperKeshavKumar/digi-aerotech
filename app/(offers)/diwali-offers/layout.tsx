@@ -5,6 +5,10 @@ import { Inter } from "next/font/google";
 import "../../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
+import dynamic from "next/dynamic";
+
+const PixelTracker = dynamic(() => import('@/components/pixel-tracker'));
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -40,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} flex min-h-screen flex-col antialiased  bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 `}
       >
+        <PixelTracker />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
