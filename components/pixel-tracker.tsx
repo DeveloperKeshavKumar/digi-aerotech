@@ -29,7 +29,12 @@ export default function PixelTracker() {
         `
       }} />
       <noscript>
-        <Image alt="meta-pixel" height={1} width={1} style={{ display: "none" }}
+        <Image
+          alt="facebook-pixel"
+          unoptimized
+          height={1}
+          width={1}
+          style={{ display: "none" }}
           src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`} />
       </noscript>
     </>
