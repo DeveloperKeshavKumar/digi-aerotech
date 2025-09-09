@@ -1467,7 +1467,7 @@ const OurIntroductionSection = () => {
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="flex flex-col md:flex-row justify-center gap-10 items-stretch">
                     {/* Left side - Achievements */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -1517,30 +1517,32 @@ const OurIntroductionSection = () => {
                             <BorderBeam size={300} colorFrom="fuchsia" colorTo="blue" />
 
                             <div className="relative z-10">
-                                {/* Avatar placeholder */}
-                                <div className="relative w-30 h-30 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <Image src="/employees/deepak.png" alt="Deepak Goyal" fill className="rounded-full object-cover" />
+                                <div className="flex flex-col justify-center items-center gap-2">
+                                    <div className="relative w-30 h-30 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mb-6">
+                                        <Image src="/employees/deepak.png" alt="Deepak Goyal" fill className="rounded-full object-cover" />
+                                    </div>
+                                    <div className="align-left">
+                                        <h3 className="text-2xl font-bold text-black dark:text-white mb-1 text-center">
+                                            Deepak Goyal
+                                        </h3>
+
+                                        <p className="text-orange-600 dark:text-orange-400 font-semibold mb-1 text-center">
+                                            Founder, DigiAerotech
+                                        </p>
+
+                                        <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400 mb-4">
+                                            <MapPin className="w-4 h-4" />
+                                            <span>Ratia, Haryana</span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <h3 className="text-2xl font-bold text-black dark:text-white mb-1 text-center">
-                                    Deepak Goyal
-                                </h3>
-
-                                <p className="text-orange-600 dark:text-orange-400 font-semibold mb-1 text-center">
-                                    Founder, DigiAerotech
-                                </p>
-
-                                <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400 mb-4">
-                                    <MapPin className="w-4 h-4" />
-                                    <span>Ratia, Haryana</span>
-                                </div>
-
-                                <blockquote className="text-lg text-gray-700 dark:text-gray-300 italic text-center leading-relaxed">
+                                <blockquote className="text-lg text-gray-700 py-2 dark:text-gray-300 italic text-center leading-relaxed">
                                     "We don't just run ads - we build revenue machines. Every campaign is crafted to deliver maximum ROI for our D2C partners."
                                 </blockquote>
 
                                 {/* Social proof indicators */}
-                                <div className="mt-5 flex justify-center gap-4">
+                                <div className="mt-6 flex justify-center gap-4">
                                     <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-md">
                                         <Shield className="w-4 h-4 text-green-500" />
                                         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Verified Expert</span>
