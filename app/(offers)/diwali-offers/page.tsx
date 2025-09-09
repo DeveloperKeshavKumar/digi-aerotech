@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useCallback, memo } from "react";
+import React, { useState, useEffect, useCallback, memo, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Star, Gift, Rocket, Zap, Clock, CheckCircle, Calendar, Phone, User, Building, DollarSign,
@@ -12,6 +12,31 @@ import {
 import { FaqSection } from "@/components/services/faq-section";
 import { Testimonials } from "@/components/homepage/testimonials";
 import { BorderBeam } from "@/components/ui/border-beam";
+
+const DIWALI_DATE = new Date("2025-10-21T23:59:59");
+const DEADLINE = new Date("2025-09-20T23:59:59");
+
+function getDaysLeft() {
+    const today = new Date();
+    const diffTime = DIWALI_DATE.getTime() - today.getTime();
+    return Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+}
+
+function getTimeLeft() {
+    const now = new Date();
+    const diff = DEADLINE.getTime() - now.getTime();
+
+    if (diff <= 0) {
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    return {
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((diff / (1000 * 60)) % 60),
+        seconds: Math.floor((diff / 1000) % 60),
+    };
+}
 
 // Floating Animation Component
 const FloatingElement = ({ delay = 0, duration = 3, children, className = "" }: {
@@ -38,12 +63,7 @@ const FloatingElement = ({ delay = 0, duration = 3, children, className = "" }: 
 );
 
 const DiwaliLandingPage = () => {
-    const [timeLeft, setTimeLeft] = useState({
-        days: 12,
-        hours: 8,
-        minutes: 4,
-        seconds: 0
-    });
+    const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
     const [formData, setFormData] = useState({
         name: "",
@@ -52,8 +72,6 @@ const DiwaliLandingPage = () => {
         revenue: "",
         package: ""
     });
-
-    const [activeItems, setActiveItems] = useState(new Set());
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -102,17 +120,6 @@ Please contact me to discuss further.`;
         document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const toggleFaq = useCallback((id: string) => {
-        setActiveItems(prev => {
-            const newActiveItems = new Set(prev);
-            if (newActiveItems.has(id)) {
-                newActiveItems.delete(id);
-            } else {
-                newActiveItems.add(id);
-            }
-            return newActiveItems;
-        });
-    }, []);
 
     const productCategories = [
         { icon: Home, name: "Home Decor & Lighting", desc: "Diyas, candles, fairy lights, decorative items", color: "from-amber-500 to-orange-600" },
@@ -123,33 +130,6 @@ Please contact me to discuss further.`;
         { icon: Sparkles, name: "Beauty & Wellness", desc: "Skincare, fragrances, grooming kits, wellness products", color: "from-purple-500 to-violet-600" },
         { icon: Package, name: "Corporate Gifts & Hampers", desc: "Curated gift boxes, customized Diwali packages", color: "from-red-500 to-pink-600" },
         { icon: Baby, name: "Kids & Toys", desc: "Children's clothing, toys, educational products", color: "from-cyan-500 to-blue-600" }
-    ];
-
-    const processSteps = [
-        {
-            icon: Handshake,
-            step: "Step 1",
-            title: "Understanding Your Business",
-            subtitle: "Onboarding & Discovery",
-            desc: "We dive deep into your products, business model, and specific festive needs after onboarding. No generic templates - custom strategy for each client.",
-            color: "from-orange-500 to-red-500"
-        },
-        {
-            icon: Settings,
-            step: "Step 2",
-            title: "Optimizing Everything for Results",
-            subtitle: "Store & Campaign Optimization",
-            desc: "We optimize your product pages, offers, images, and create festival-ready creatives. Gift bundles, Diwali deals, and compelling visuals get uploaded for maximum impact.",
-            color: "from-pink-500 to-purple-500"
-        },
-        {
-            icon: Target,
-            step: "Step 3",
-            title: "Launch Perfect Campaigns",
-            subtitle: "Campaign Launch & Management",
-            desc: "We run, monitor, and scale your Meta & Google campaigns. From ad copy to audience targeting and daily optimization - we handle EVERYTHING.",
-            color: "from-blue-500 to-indigo-500"
-        }
     ];
 
     const faqs = [
@@ -290,7 +270,7 @@ const HeroSection = () => {
                         <div className="mb-8">
                             <motion.div
                                 animate={{
-                                    rotate: [0, 10, -10, 0],
+                                    rotate: [0, 180, 0, -10, 0],
                                     scale: [1, 1.1, 1]
                                 }}
                                 transition={{
@@ -300,7 +280,7 @@ const HeroSection = () => {
                                 }}
                                 className="inline-block p-6 bg-gradient-to-br from-orange-500 via-pink-500 to-red-500 rounded-3xl shadow-2xl"
                             >
-                                <Gift className="w-12 h-12 text-white" />
+                                <Sparkles className="w-12 h-12 text-white" />
                             </motion.div>
                         </div>
                     </FloatingElement>
@@ -311,7 +291,7 @@ const HeroSection = () => {
                         transition={{ delay: 0.2, duration: 0.8 }}
                         className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8 leading-tight"
                     >
-                        🪔 Diwali Rush is Coming -
+                        🪔 Diwali Rush is Coming
                         <span className="block mt-4 bg-gradient-to-r italic from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
                             Is Your D2C Store Ready to Cash In?
                         </span>
@@ -324,8 +304,9 @@ const HeroSection = () => {
                         className="text-2xl md:text-3xl font-medium mb-8"
                     >
                         <span className="bg-gradient-to-r from-orange-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-                            48 Days to Diwali. The Biggest Shopping Season in India.
+                            {getDaysLeft()} Days to Diwali. The Biggest Shopping Season in India.
                         </span>
+                        ✨
                     </motion.h3>
 
                     <motion.p
@@ -361,7 +342,7 @@ const HeroSection = () => {
 
 const StatsSection = () => {
     return (
-        <section className="py-20 bg-gray-50 dark:bg-gray-950 relative z-10 border-t border-gray-400 dark:border-gray-700">
+        <section className="py-20 bg-gray-50 dark:bg-gray-950 relative z-10 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -413,10 +394,11 @@ const StatsSection = () => {
 }
 
 const MakeOrBreakSection = () => {
+    const daysLeft = useMemo(() => getDaysLeft(), []);
     const stats = [
         { icon: IndianRupee, value: "40%", label: "of annual shopping budget spent during festive season" },
         { icon: Users, value: "70%+", label: "of consumers shop for Diwali gifts" },
-        { icon: Calendar, value: "48", label: "days until Diwali to prepare" },
+        { icon: Calendar, value: daysLeft.toString(), label: "days until Diwali to prepare" },
     ];
 
     const cards = [
@@ -599,7 +581,7 @@ const MakeOrBreakSection = () => {
 const ProfitOpportunitySection = () => {
     const stats = [
         { value: "3-5x", label: "Higher ROAS", desc: "Festive campaigns deliver 3-5x better return on ad spend compared to regular months", icon: TrendingUp },
-        { value: "₹2,000", label: "Higher AOV", desc: "Average order values jump by ₹1,500-₹2,000 during Diwali shopping season", icon: DollarSign },
+        { value: "₹2,000", label: "Higher AOV", desc: "Average order values jump by ₹1,500-₹2,000 during Diwali shopping season", icon: IndianRupee },
         { value: "300%", label: "Traffic Boost", desc: "Website traffic increases by 200-300% during the pre-Diwali shopping rush", icon: BarChart3 },
         { value: "85%", label: "Conversion Rate", desc: "Festive-optimized stores see conversion rates up to 85% higher than regular periods", icon: Target },
     ];
@@ -736,7 +718,7 @@ const PerfectProductsSection = ({ productCategories }: { productCategories: any[
                 >
                     <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
                         Is Your Product Category Perfect for Diwali?
-                        <span className="block mt-2 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">Check This List!</span>
+                        <span className="block mt-2 max-w-max mx-auto bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent">Check This List!</span>
                     </h2>
                     <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
                         If you're dealing in these categories, Diwali can be VERY GOOD for you!
@@ -757,15 +739,17 @@ const PerfectProductsSection = ({ productCategories }: { productCategories: any[
                                 className="relative group"
                             >
                                 <div className="h-full p-8 rounded-3xl shadow-lg border border-orange-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
-                                    <div className="relative z-10">
+                                    <div className="relative z-10 flex flex-col justify-center items-center">
+                                        <div className="relative border dark:border-pink-700 mb-4 uppercase rounded-lg bg-orange-50 dark:bg-pink-100 px-3 py-1 text-sm font-bold text-gray-900">
+                                            <BorderBeam />
+                                            <BorderBeam />
+                                            High Demand ✨
+                                        </div>
                                         <div className="w-16 h-16 bg-gradient-to-br from-orange-500 via-pink-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                                             <IconComponent className="w-8 h-8 text-white" />
                                         </div>
                                         <h3 className="text-xl font-bold text-black dark:text-white mb-4 text-center">{category.name}</h3>
                                         <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center">{category.desc}</p>
-                                        <div className="mt-4 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold py-1 px-3 rounded-full inline-block">
-                                            High Demand
-                                        </div>
                                     </div>
                                 </div>
                             </motion.div>
@@ -916,7 +900,7 @@ const ProcessSection = () => {
             title: "Understanding Your Business",
             subtitle: "Onboarding & Discovery",
             desc: "We dive deep into your products, business model, and specific festive needs after onboarding. No generic templates - custom strategy for each client.",
-            color: "from-orange-500 to-red-500"
+            color: "from-pink-500 to-purple-500"
         },
         {
             icon: Settings,
@@ -924,7 +908,7 @@ const ProcessSection = () => {
             title: "Optimizing Everything for Results",
             subtitle: "Store & Campaign Optimization",
             desc: "We optimize your product pages, offers, images, and create festival-ready creatives. Gift bundles, Diwali deals, and compelling visuals get uploaded for maximum impact.",
-            color: "from-pink-500 to-purple-500"
+            color: "from-orange-500 to-yellow-500"
         },
         {
             icon: Target,
@@ -932,7 +916,7 @@ const ProcessSection = () => {
             title: "Launch Perfect Campaigns",
             subtitle: "Campaign Launch & Management",
             desc: "We run, monitor, and scale your Meta & Google campaigns. From ad copy to audience targeting and daily optimization - we handle EVERYTHING.",
-            color: "from-blue-500 to-indigo-500"
+            color: "from-blue-500 to-fuchsia-500"
         }
     ];
 
@@ -959,7 +943,7 @@ const ProcessSection = () => {
                     {/* Connection line */}
                     <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 transform -translate-y-1/2 hidden lg:block"></div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10 items-stretch">
                         {processSteps.map((step, index) => {
                             const IconComponent = step.icon;
                             return (
@@ -969,15 +953,15 @@ const ProcessSection = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="relative group"
+                                    className="relative group h-full"
                                 >
-                                    <div className="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-xl border border-orange-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                                    <div className="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-xl border border-orange-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 relative overflow-hidden h-full flex flex-col">
                                         {/* Step number badge */}
-                                        <div className={`absolute -top-4 left-8 px-4 py-2 bg-gradient-to-r ${step.color} text-white text-sm font-bold rounded-full shadow-lg`}>
+                                        <div className={`absolute -top-0 left-0 px-6 py-2 bg-gradient-to-r ${step.color} text-white text-sm font-bold rounded-br-full shadow-lg`}>
                                             {step.step}
                                         </div>
 
-                                        <div className="pt-4">
+                                        <div className="pt-4 flex-grow flex flex-col">
                                             <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                                                 <IconComponent className="w-8 h-8 text-white" />
                                             </div>
@@ -990,7 +974,7 @@ const ProcessSection = () => {
                                                 {step.subtitle}
                                             </p>
 
-                                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+                                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center flex-grow">
                                                 {step.desc}
                                             </p>
                                         </div>
@@ -999,6 +983,7 @@ const ProcessSection = () => {
                                         <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
                                     </div>
                                 </motion.div>
+
                             );
                         })}
                     </div>
@@ -1093,7 +1078,7 @@ const WhatYouGetSection = () => {
                                         </div>
 
                                         <h3 className="text-xl font-bold text-black dark:text-white mb-3 text-center">
-                                            ✅ {feature.title}
+                                            {feature.title}
                                         </h3>
 
                                         <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center">
@@ -1227,7 +1212,7 @@ const PackagesSection = ({ selectPackage }: { selectPackage: (packageType: strin
                         <div className="h-full bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl shadow-xl border-2 border-blue-200 dark:border-blue-800 overflow-hidden relative">
                             {/* Popular Badge */}
                             <div className="absolute -top-0 left-1/2 transform -translate-x-1/2 z-30">
-                                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-b-lg  text-sm font-semibold shadow-lg">
                                     🔥 MOST POPULAR
                                 </div>
                             </div>
@@ -1289,7 +1274,7 @@ const PackagesSection = ({ selectPackage }: { selectPackage: (packageType: strin
                         <div className="h-full bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl shadow-xl border border-violet-200 dark:border-violet-800 overflow-hidden relative">
                             {/* Premium Badge */}
                             <div className="absolute -top-0 left-1/2 transform -translate-x-1/2 z-30">
-                                <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                                <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-2 rounded-b-lg text-sm font-semibold shadow-lg">
                                     ✨ PREMIUM
                                 </div>
                             </div>
@@ -1546,7 +1531,8 @@ const OurIntroductionSection = () => {
                         className="relative"
                     >
                         <div className="bg-gradient-to-br from-orange-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 p-8 rounded-3xl shadow-xl border border-orange-200 dark:border-gray-700 relative overflow-hidden">
-                            <BorderBeam size={300} />
+                            <BorderBeam size={300} colorFrom="fuchsia" colorTo="blue" />
+                            <BorderBeam size={300} colorFrom="fuchsia" colorTo="blue" />
 
                             <div className="relative z-10">
                                 {/* Avatar placeholder */}
@@ -1679,7 +1665,8 @@ const ContactFormSection = ({ formData, handleChange, handleSubmit }: ContactFor
                             className="relative"
                         >
                             <div className="bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-2xl border border-orange-200 dark:border-gray-700 relative overflow-hidden">
-                                <BorderBeam size={300} />
+                                <BorderBeam size={300} colorFrom="fuchsia" colorTo="blue" reverse />
+                                <BorderBeam size={300} colorFrom="fuchsia" colorTo="blue" reverse />
                                 <div className="relative z-10">
                                     <h4 className="text-2xl font-bold text-black dark:text-white mb-8 text-center">Quick Registration Form</h4>
 
