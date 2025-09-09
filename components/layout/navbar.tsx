@@ -51,9 +51,11 @@ export function Navbar() {
                             Contact Us
                         </NavbarButton>
                         <NavbarButton
-                            href="/"
+                            href="https://wa.me/+918307105140"
                             variant="primary"
                             visible={visible}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-black text-white dark:bg-white dark:text-black px-2"
                             aria-label="WhatsApp Us"
                             title="WhatsApp Us"
@@ -88,9 +90,11 @@ export function Navbar() {
                                 Contact
                             </NavbarButton>
                             <NavbarButton
-                                href="/"
+                                href="https://wa.me/+918307105140"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 variant="primary"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 visible={visible}
                                 className="w-full"
                                 aria-label="WhatsApp Us"

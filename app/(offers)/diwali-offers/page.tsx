@@ -13,7 +13,7 @@ import { FaqSection } from "@/components/services/faq-section";
 import { Testimonials } from "@/components/homepage/testimonials";
 import { BorderBeam } from "@/components/ui/border-beam";
 
-const DIWALI_DATE = new Date("2025-10-21T23:59:59");
+const DIWALI_DATE = new Date("2025-10-20T23:59:59");
 const DEADLINE = new Date("2025-09-20T23:59:59");
 
 function getDaysLeft() {
@@ -259,32 +259,13 @@ Please contact me to discuss further.`;
 
 const HeroSection = () => {
     return (
-        <section className="lg:min-h-screen py-20 md:py-28 text-black dark:text-white relative z-10 bg-white dark:bg-black">
+        <section className="lg:min-h-screen flex flex-1 justify-center items-center py-20 md:py-28 text-black dark:text-white relative z-10 bg-white dark:bg-black">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <FloatingElement delay={0.5}>
-                        <div className="mb-8">
-                            <motion.div
-                                animate={{
-                                    rotate: [0, 180, 0, -10, 0],
-                                    scale: [1, 1.1, 1]
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    repeatDelay: 2
-                                }}
-                                className="inline-block p-6 bg-gradient-to-br from-orange-500 via-pink-500 to-red-500 rounded-3xl shadow-2xl"
-                            >
-                                <Sparkles className="w-12 h-12 text-white" />
-                            </motion.div>
-                        </div>
-                    </FloatingElement>
-
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -1417,7 +1398,7 @@ const CountdownSection = ({ timeLeft }: { timeLeft: { days: number, hours: numbe
                     </FloatingElement>
 
                     <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
-                        ⚡ Register Before 20th September - Only
+                        Register Before 20th September <br />Only
                         <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-clip-text text-transparent"> {timeLeft.days} Days Left!</span>
                     </h2>
 
@@ -1451,7 +1432,7 @@ const CountdownSection = ({ timeLeft }: { timeLeft: { days: number, hours: numbe
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="px-10 py-4 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 text-lg"
+                        className="px-10 py-3 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white font-bold rounded-md shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 text-lg"
                     >
                         Start Now
                     </motion.button>
