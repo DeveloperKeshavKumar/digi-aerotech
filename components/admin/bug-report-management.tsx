@@ -141,7 +141,7 @@ export function BugReportsManagement() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md mb-6"
+      className=" p-6 mb-6"
     >
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Bug Reports Management</h2>
@@ -170,7 +170,7 @@ export function BugReportsManagement() {
             <select
               value={filters.status}
               onChange={(e) => handleFilterChange('status', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-950"
             >
               <option value="all">All Statuses</option>
               <option value="open">Open</option>
@@ -184,7 +184,7 @@ export function BugReportsManagement() {
             <select
               value={filters.severity}
               onChange={(e) => handleFilterChange('severity', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md"
+              className=" w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-950"
             >
               <option value="all">All Severities</option>
               <option value="low">Low</option>
@@ -214,9 +214,9 @@ export function BugReportsManagement() {
       )}
 
       {/* Bug Reports Table */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto outline rounded-md">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+          <thead className="bg-gray-50 dark:bg-gray-950">
             <tr>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Title</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Severity</th>

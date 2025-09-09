@@ -7,6 +7,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Footer } from "@/components/layout/footer";
 import MegaMenuExample from "@/components/layout/mega-navbar";
 import { GoToWhatsApp } from "@/components/layout/go-to-whatsapp";
+import dynamic from "next/dynamic";
+
+const PixelTracker = dynamic(() => import("@/components/pixel-tracker"));
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -20,7 +24,10 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Digi Aerotech",
+  title: {
+    default: "Digi Aerotech",
+    template: "%s | Digi Aerotech"
+  },
   description: "At Digi Aerotech, we build predictable, scalable, and profitable marketing systems for service businesses, eCommerce brands, and local entrepreneurs. If you're tired of low leads, poor ROI, and unreliable agencies — you've just found your team.",
   icons: {
     icon: [
@@ -48,7 +55,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Navbar /> */}
+          <PixelTracker />
           <MegaMenuExample />
           <main className="flex-1 mt-10 p-1 lg:p-0 overflow-hidden">
             {children}

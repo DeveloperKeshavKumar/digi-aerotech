@@ -131,7 +131,7 @@ export function JobsManagement() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white dark:bg-gray-900 p-6 rounded-lg mx-auto mb-6"
+      className="bg-white dark:bg-black p-6 rounded-lg mx-auto mb-6"
     >
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold">Jobs Management</h2>
@@ -151,7 +151,7 @@ export function JobsManagement() {
           </button>
           <Link
             href="/careers/create"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md"
           >
             <Plus size={16} /> New Job
           </Link>
@@ -160,7 +160,7 @@ export function JobsManagement() {
 
       {/* Filters */}
       {showFilters && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-md">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 p-4 bg-gray-50 dark:bg-gray-950 outline rounded-md">
           <div>
             <label className="block text-sm font-medium mb-1">Department</label>
             <input
@@ -186,7 +186,7 @@ export function JobsManagement() {
             <select
               value={filters.type}
               onChange={(e) => handleFilterChange('type', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-950"
             >
               <option value="">All Types</option>
               <option value="full-time">Full Time</option>
@@ -200,7 +200,7 @@ export function JobsManagement() {
             <select
               value={filters.status}
               onChange={(e) => handleFilterChange('status', e.target.value as any)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-950"
             >
               <option value="all">All Statuses</option>
               <option value="active">Active</option>
@@ -218,9 +218,9 @@ export function JobsManagement() {
       )}
 
       {/* Jobs Table */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto outline rounded-md">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+          <thead className="bg-gray-50 dark:bg-gray-950">
             <tr>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Title</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Department</th>

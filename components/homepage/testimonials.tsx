@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Star, StarHalf } from "lucide-react";
 import Image from "next/image";
+import { image } from "motion/react-client";
 
 interface Testimonial {
   id: string;
@@ -57,6 +58,7 @@ const realTestimonials = [
     stars: 5,
     name: "Aman Kumar",
     designation: "Director",
+    image: 'aman.png'
   },
   {
     id: "5",
@@ -72,7 +74,8 @@ const realTestimonials = [
     stars: 4.5,
     name: "Priyanshi Lohia",
     designation: "Director",
-    company: "Delta Co"
+    company: "Delta Co",
+    image: 'priyanshi.png'
   },
   {
     id: "7",
@@ -95,6 +98,7 @@ const realTestimonials = [
     stars: 4.5,
     name: "Sahil Chopra",
     designation: "Owner",
+    image: 'sahil.png'
   },
   {
     id: "10",
@@ -102,6 +106,7 @@ const realTestimonials = [
     stars: 5,
     name: "Yuvi Bajaj",
     designation: "Director",
+    image: 'yuvi.png'
   },
   {
     id: "11",
@@ -117,7 +122,7 @@ const realTestimonials = [
     stars: 5,
     name: "Ankit Sehra",
     designation: "Director",
-
+    image: 'ankit.png'
   },
 ]
 

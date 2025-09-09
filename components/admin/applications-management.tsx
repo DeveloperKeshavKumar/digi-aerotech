@@ -146,7 +146,7 @@ export function ApplicationsManagement() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md mb-6"
+      className="p-6 rounded-lg mb-6"
     >
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Applications Management</h2>
@@ -169,13 +169,13 @@ export function ApplicationsManagement() {
 
       {/* Filters */}
       {showFilters && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-md">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 dark:bg-gray-950 outline rounded-md">
           <div>
             <label className="block text-sm font-medium mb-1">Status</label>
             <select
               value={filters.status}
               onChange={(e) => handleFilterChange('status', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-950"
             >
               <option value="all">All Statuses</option>
               <option value="pending">Pending</option>
@@ -189,7 +189,7 @@ export function ApplicationsManagement() {
             <select
               value={filters.job_id}
               onChange={(e) => handleFilterChange('job_id', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-950"
             >
               <option value="all">All Jobs</option>
               {jobs.map(job => (
@@ -218,9 +218,9 @@ export function ApplicationsManagement() {
       )}
 
       {/* Applications Table */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto outline rounded-md">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+          <thead className="bg-gray-50 dark:bg-gray-950">
             <tr>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Applicant</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Job</th>

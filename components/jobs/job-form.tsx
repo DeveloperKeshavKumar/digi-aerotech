@@ -77,7 +77,7 @@ export default function JobForm() {
       const data = await response.json();
 
       if (response.ok) {
-        router.push('/jobs');
+        router.push('/careers');
         router.refresh();
       } else {
         setError(data.error || `Failed to ${jobId ? 'update' : 'create'} job`);

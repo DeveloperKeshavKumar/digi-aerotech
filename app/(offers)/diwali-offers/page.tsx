@@ -12,6 +12,7 @@ import {
 import { FaqSection } from "@/components/services/faq-section";
 import { Testimonials } from "@/components/homepage/testimonials";
 import { BorderBeam } from "@/components/ui/border-beam";
+import Image from "next/image";
 
 const DIWALI_DATE = new Date("2025-10-20T23:59:59");
 const DEADLINE = new Date("2025-09-20T23:59:59");
@@ -111,7 +112,7 @@ Monthly Revenue: ${formData.revenue}
 Package Interest: ${formData.package}
 
 Please contact me to discuss further.`;
-        const whatsappUrl = `https://wa.me/918607119872?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/918307105140?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
 
@@ -1511,25 +1512,25 @@ const OurIntroductionSection = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative"
                     >
-                        <div className="bg-gradient-to-br from-orange-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 p-8 rounded-3xl shadow-xl border border-orange-200 dark:border-gray-700 relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-orange-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 p-7 rounded-3xl shadow-xl border border-orange-200 dark:border-gray-700 relative overflow-hidden">
                             <BorderBeam size={300} colorFrom="fuchsia" colorTo="blue" />
                             <BorderBeam size={300} colorFrom="fuchsia" colorTo="blue" />
 
                             <div className="relative z-10">
                                 {/* Avatar placeholder */}
-                                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <User className="w-10 h-10 text-white" />
+                                <div className="relative w-30 h-30 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <Image src="/employees/deepak.png" alt="Deepak Goyal" fill className="rounded-full object-cover" />
                                 </div>
 
-                                <h3 className="text-2xl font-bold text-black dark:text-white mb-2 text-center">
+                                <h3 className="text-2xl font-bold text-black dark:text-white mb-1 text-center">
                                     Deepak Goyal
                                 </h3>
 
-                                <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2 text-center">
+                                <p className="text-orange-600 dark:text-orange-400 font-semibold mb-1 text-center">
                                     Founder, DigiAerotech
                                 </p>
 
-                                <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400 mb-6">
+                                <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400 mb-4">
                                     <MapPin className="w-4 h-4" />
                                     <span>Ratia, Haryana</span>
                                 </div>
@@ -1539,7 +1540,7 @@ const OurIntroductionSection = () => {
                                 </blockquote>
 
                                 {/* Social proof indicators */}
-                                <div className="mt-6 flex justify-center gap-4">
+                                <div className="mt-5 flex justify-center gap-4">
                                     <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-md">
                                         <Shield className="w-4 h-4 text-green-500" />
                                         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Verified Expert</span>
@@ -1606,7 +1607,7 @@ const ContactFormSection = ({ formData, handleChange, handleSubmit }: ContactFor
                                     </div>
                                     <div>
                                         <div className="font-semibold text-black dark:text-white">WhatsApp Support</div>
-                                        <div className="text-gray-600 dark:text-gray-300">+91 8607119872</div>
+                                        <div className="text-gray-600 dark:text-gray-300">+91 83071 05140</div>
                                     </div>
                                 </motion.div>
 
@@ -1744,7 +1745,7 @@ const ContactFormSection = ({ formData, handleChange, handleSubmit }: ContactFor
                                             type="submit"
                                             className="w-full py-4 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
                                         >
-                                            Send WhatsApp Message
+                                            Schedule Meeting Now
                                         </motion.button>
                                     </form>
                                 </div>
