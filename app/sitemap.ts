@@ -46,6 +46,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/diwali-offers`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
   ]
 
   // Business pages (/business/:slug)

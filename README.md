@@ -93,7 +93,7 @@ Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## 📄 License
 
-This project is proprietary software developed by [Keshav Kumar](href:https://github.com/developerKeshavKumar) for [DigiAerotech](https://digiaerotech.com).
+This project is proprietary software developed by [Keshav Kumar](https://github.com/developerKeshavKumar) for [DigiAerotech](https://digiaerotech.com).
 
 ## 📞 Contact
 
