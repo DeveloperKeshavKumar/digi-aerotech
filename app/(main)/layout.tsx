@@ -46,6 +46,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="google-site-verification" content="PlS1sMxFtV_j9Kj_ZuBGrSvuece3Dy3-tssjEKJC0Bk" />
+      </head>
       <body
         className={`${inter.variable} flex min-h-screen flex-col antialiased`}
       >
