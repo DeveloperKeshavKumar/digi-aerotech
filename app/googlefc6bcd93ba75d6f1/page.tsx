@@ -1,3 +1,0 @@
-export default function GoogleVerificationPage() {
-    return <>google-site-verification: googlefc6bcd93ba75d6f1.html</>
-}
