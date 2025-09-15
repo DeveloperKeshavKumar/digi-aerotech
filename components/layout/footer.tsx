@@ -200,7 +200,7 @@ export const Footer: React.FC = () => {
                                     <FooterLink href="/terms-and-conditions">Terms and Conditions</FooterLink>
                                 </div>
                             </div>
-            
+
                             <div className="space-y-3 sm:space-y-4 col-span-2 sm:col-span-2 lg:col-span-1">
                                 <h3 className="font-semibold text-base sm:text-lg text-foreground">Connect Us Here</h3>
                                 <div className="space-y-3 sm:space-y-4">
@@ -258,6 +258,28 @@ export const Footer: React.FC = () => {
                             />
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="bg-black py-4 border-t border-gray-800">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <p className="text-xs text-gray-500 leading-relaxed">
+                        Crafted with dedication by&nbsp;
+                        <Link
+                            href="https://github.com/developerKeshavKumar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-dotted"
+                        >
+                            Keshav Kumar
+                        </Link>
+                        , Full-Stack Developer.&nbsp;
+                        <span className="block sm:inline">
+                            Looking to build an impactful website or web app?&nbsp;
+                            <Link href={"mailto:keshav0kumar@hotmail.com"} className="underline decoration-dotted">
+                                Let’s connect.
+                            </Link>
+                        </span>
+                    </p>
                 </div>
             </div>
         </footer>
